@@ -650,11 +650,13 @@
     return arr;
   }
 
+  const SEARCH_LIMIT = 20;
+
   async function searchTermPage(term, offset, market) {
     const url = new URL('https://api.spotify.com/v1/search');
     url.searchParams.set('q', term);
     url.searchParams.set('type', 'track');
-    url.searchParams.set('limit', '50');
+    url.searchParams.set('limit', String(SEARCH_LIMIT));
     url.searchParams.set('offset', String(offset));
     if (market) url.searchParams.set('market', market);
     const res = await spotifyFetch(url.toString());
@@ -674,13 +676,13 @@
 
   async function collectCandidates(terms, market, targetEstimate) {
     const byId = new Map();
-    const maxRounds = 3;
+    const maxRounds = 5;
     let lastError = null;
     for (let round = 0; round < maxRounds; round++) {
       for (const term of terms) {
         let items;
         try {
-          items = await searchTermPage(term, round * 50, market);
+          items = await searchTermPage(term, round * SEARCH_LIMIT, market);
         } catch (e) {
           lastError = e;
           continue;
