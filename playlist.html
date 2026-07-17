@@ -658,7 +658,16 @@
     url.searchParams.set('offset', String(offset));
     if (market) url.searchParams.set('market', market);
     const res = await spotifyFetch(url.toString());
-    if (!res.ok) return [];
+    if (!res.ok) {
+      let detail = 'HTTP ' + res.status;
+      try {
+        const errBody = await res.json();
+        if (errBody && errBody.error && errBody.error.message) detail += ' - ' + errBody.error.message;
+      } catch (e) { /* body wasn't JSON */ }
+      const err = new Error(detail);
+      err.status = res.status;
+      throw err;
+    }
     const data = await res.json();
     return (data.tracks && data.tracks.items) || [];
   }
@@ -666,9 +675,16 @@
   async function collectCandidates(terms, market, targetEstimate) {
     const byId = new Map();
     const maxRounds = 3;
+    let lastError = null;
     for (let round = 0; round < maxRounds; round++) {
       for (const term of terms) {
-        const items = await searchTermPage(term, round * 50, market);
+        let items;
+        try {
+          items = await searchTermPage(term, round * 50, market);
+        } catch (e) {
+          lastError = e;
+          continue;
+        }
         for (const track of items) {
           if (track && track.id && !byId.has(track.id) && track.is_playable !== false) {
             byId.set(track.id, track);
@@ -677,6 +693,7 @@
       }
       if (byId.size >= targetEstimate) break;
     }
+    if (byId.size === 0 && lastError) throw lastError;
     return Array.from(byId.values());
   }
 
@@ -734,7 +751,8 @@
       $('resultsSection').style.display = 'block';
       $('resultsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (e) {
-      showToast('Erro ao buscar músicas no Spotify. Tente novamente.', true);
+      const detail = (e && e.message) ? e.message : '';
+      showToast(detail ? 'Erro ao buscar músicas: ' + detail : 'Erro ao buscar músicas no Spotify. Tente novamente.', true);
     } finally {
       genBtn.disabled = false;
       regenBtn.disabled = false;
