@@ -468,6 +468,15 @@
     return data.access_token;
   }
 
+  async function responseErrorDetail(res) {
+    let detail = 'HTTP ' + res.status;
+    try {
+      const errBody = await res.json();
+      if (errBody && errBody.error && errBody.error.message) detail += ' - ' + errBody.error.message;
+    } catch (e) { /* body wasn't JSON */ }
+    return detail;
+  }
+
   async function spotifyFetch(url, opts) {
     opts = opts || {};
     const token = await ensureValidToken();
@@ -650,7 +659,7 @@
     return arr;
   }
 
-  const SEARCH_LIMIT = 20;
+  const SEARCH_LIMIT = 10; // Spotify Development Mode apps cap search limit at 10 (Feb 2026 API change)
 
   async function searchTermPage(term, offset, market) {
     const url = new URL('https://api.spotify.com/v1/search');
@@ -661,12 +670,7 @@
     if (market) url.searchParams.set('market', market);
     const res = await spotifyFetch(url.toString());
     if (!res.ok) {
-      let detail = 'HTTP ' + res.status;
-      try {
-        const errBody = await res.json();
-        if (errBody && errBody.error && errBody.error.message) detail += ' - ' + errBody.error.message;
-      } catch (e) { /* body wasn't JSON */ }
-      const err = new Error(detail);
+      const err = new Error(await responseErrorDetail(res));
       err.status = res.status;
       throw err;
     }
@@ -676,7 +680,7 @@
 
   async function collectCandidates(terms, market, targetEstimate) {
     const byId = new Map();
-    const maxRounds = 5;
+    const maxRounds = 10;
     let lastError = null;
     for (let round = 0; round < maxRounds; round++) {
       for (const term of terms) {
@@ -807,21 +811,12 @@
     $('successBox').style.display = 'none';
 
     try {
-      let profile = null;
-      try { profile = JSON.parse(localStorage.getItem(LS.profile) || 'null'); } catch (e) {}
-      if (!profile || !profile.id) {
-        const meRes = await spotifyFetch('https://api.spotify.com/v1/me');
-        if (!meRes.ok) throw new Error('profile-failed');
-        profile = await meRes.json();
-        localStorage.setItem(LS.profile, JSON.stringify(profile));
-      }
-
-      const createRes = await spotifyFetch('https://api.spotify.com/v1/users/' + encodeURIComponent(profile.id) + '/playlists', {
+      const createRes = await spotifyFetch('https://api.spotify.com/v1/me/playlists', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, description, public: visibility === 'public' })
       });
-      if (!createRes.ok) throw new Error('create-failed');
+      if (!createRes.ok) throw new Error('Falha ao criar playlist: ' + (await responseErrorDetail(createRes)));
       const playlist = await createRes.json();
 
       exportBtn.textContent = 'Adicionando músicas...';
@@ -833,7 +828,7 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ uris: chunk })
         });
-        if (!addRes.ok) throw new Error('add-tracks-failed');
+        if (!addRes.ok) throw new Error('Falha ao adicionar músicas: ' + (await responseErrorDetail(addRes)));
       }
 
       const link = playlist.external_urls && playlist.external_urls.spotify;
@@ -843,7 +838,8 @@
         (link ? '<a href="' + link + '" target="_blank" rel="noopener">Abrir no Spotify →</a>' : '');
       showToast('Playlist exportada com sucesso!');
     } catch (e) {
-      showToast('Não foi possível exportar a playlist. Verifique a conexão e tente novamente.', true);
+      const detail = (e && e.message) ? e.message : '';
+      showToast(detail || 'Não foi possível exportar a playlist. Verifique a conexão e tente novamente.', true);
     } finally {
       exportBtn.disabled = false;
       exportBtn.textContent = 'Exportar para o Spotify';
