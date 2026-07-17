@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Dieta por Calorias</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #7C5CFF;
+    --accent-light: #A78BFA;
+    --dark: #0A0C10;
+    --dark-2: #12141B;
+    --dark-3: #1A1D27;
+    --border: rgba(124,92,255,0.22);
+    --border-light: rgba(255,255,255,0.06);
+    --text: #E8EAF0;
+    --text-muted: #7A8094;
+    --good: #4ADE80;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    padding: 32px 20px 60px;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(124,92,255,0.16) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    z-index: 1;
+  }
+
+  header { text-align: center; }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    font-weight: 700;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+    letter-spacing: 0.03em;
+    color: #fff;
+    margin-top: 4px;
+  }
+
+  .subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 6px;
+  }
+
+  .card {
+    width: 100%;
+    background: var(--dark-2);
+    border: 1px solid var(--border-light);
+    border-radius: 18px;
+    padding: 24px;
+  }
+
+  .form-card { display: flex; flex-direction: column; gap: 18px; }
+
+  .field { display: flex; flex-direction: column; gap: 8px; }
+
+  .field label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  input[type="number"], select {
+    background: var(--dark-3);
+    border: 1px solid var(--border-light);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    padding: 12px 14px;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  input[type="number"]:focus, select:focus { border-color: var(--accent); }
+
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  button#generateBtn {
+    margin-top: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    color: #fff;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    padding: 14px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  button#generateBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(124,92,255,0.35);
+  }
+
+  #result { display: none; width: 100%; flex-direction: column; gap: 18px; }
+
+  .summary-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .kcal-total {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.4rem, 9vw, 3.4rem);
+    color: #fff;
+    line-height: 1;
+  }
+
+  .kcal-total span {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-left: 8px;
+  }
+
+  .macro-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .macro-box {
+    background: var(--dark-3);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 14px 10px;
+    text-align: center;
+  }
+
+  .macro-box .m-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+  }
+
+  .macro-box .m-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--accent-light);
+    margin-top: 4px;
+  }
+
+  .macro-box .m-pct { font-size: 0.7rem; color: var(--text-muted); margin-top: 2px; }
+
+  .meal-card .meal-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .meal-header .meal-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+
+  .meal-header .meal-kcal {
+    font-size: 0.82rem;
+    color: var(--accent-light);
+    font-weight: 700;
+  }
+
+  .food-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 0.88rem;
+  }
+
+  .food-item .f-name { color: var(--text); }
+  .food-item .f-qty { color: var(--text-muted); font-size: 0.78rem; }
+  .food-item .f-macro { color: var(--text-muted); font-size: 0.76rem; white-space: nowrap; }
+
+  .extras {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border-light);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .extras span { color: var(--good); }
+
+  .disclaimer {
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    padding: 16px;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    background: var(--dark-2);
+  }
+
+  .disclaimer strong { color: var(--accent-light); }
+
+  footer {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    text-align: center;
+  }
+
+  footer a { color: var(--accent-light); text-decoration: none; }
+
+  @media (max-width: 480px) {
+    .row2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Nutrição · Plano Alimentar</div>
+    <h1>Gerador de Dieta por Calorias</h1>
+    <p class="subtitle">Defina a meta calórica diária e gere um cardápio completo com distribuição profissional de macronutrientes.</p>
+  </header>
+
+  <div class="card form-card">
+    <div class="row2">
+      <div class="field">
+        <label for="calInput">Meta calórica diária (kcal)</label>
+        <input type="number" id="calInput" value="2000" min="800" max="6000" step="50">
+      </div>
+      <div class="field">
+        <label for="dietType">Tipo de dieta</label>
+        <select id="dietType">
+          <option value="standard">Padrão (balanceada)</option>
+          <option value="lowcarb">Low-carb</option>
+        </select>
+      </div>
+    </div>
+    <button id="generateBtn">Gerar plano alimentar</button>
+  </div>
+
+  <div id="result">
+    <div class="card">
+      <div class="summary-title">Resumo do plano</div>
+      <div class="kcal-total" id="kcalTotal">0 <span>kcal/dia</span></div>
+      <div class="macro-grid" id="macroGrid"></div>
+    </div>
+
+    <div id="mealsContainer" style="width:100%; display:flex; flex-direction:column; gap:16px;"></div>
+
+    <div class="disclaimer">
+      <strong>Aviso:</strong> este plano é gerado automaticamente com base em valores nutricionais médios e serve apenas como orientação geral. Ele não substitui a avaliação individual de um nutricionista ou médico, que deve considerar histórico de saúde, exames, objetivos e restrições alimentares específicas.
+    </div>
+  </div>
+
+  <footer>Gerador estático · cálculos aproximados · <a href="index.html">← voltar à contagem regressiva</a></footer>
+
+</div>
+
+<script>
+const FOOD_DB = {
+  frango:        { name: 'Peito de frango grelhado',                 kcal: 165, p: 31,   c: 0,    f: 3.6 },
+  peixe:         { name: 'Filé de peixe grelhado (tilápia)',         kcal: 128, p: 26,   c: 0,    f: 2.7 },
+  carne:         { name: 'Carne bovina magra grelhada (patinho)',    kcal: 172, p: 31,   c: 0,    f: 5   },
+  ovos:          { name: 'Ovos mexidos',                             kcal: 155, p: 13,   c: 1.1,  f: 11  },
+  iogurteGrego:  { name: 'Iogurte grego natural',                    kcal: 97,  p: 9,    c: 6,    f: 4   },
+  cottage:       { name: 'Queijo cottage',                           kcal: 98,  p: 11,   c: 3.4,  f: 4.3 },
+  paoIntegral:   { name: 'Pão integral',                             kcal: 247, p: 13,   c: 41,   f: 4.2 },
+  arroz:         { name: 'Arroz branco cozido',                      kcal: 130, p: 2.7,  c: 28,   f: 0.3 },
+  batataDoce:    { name: 'Batata-doce cozida',                       kcal: 86,  p: 1.6,  c: 20,   f: 0.1 },
+  banana:        { name: 'Banana',                                   kcal: 89,  p: 1.1,  c: 23,   f: 0.3 },
+  morango:       { name: 'Morangos',                                 kcal: 32,  p: 0.7,  c: 7.7,  f: 0.3 },
+  legumes:       { name: 'Legumes variados (brócolis, abobrinha, cenoura)', kcal: 35, p: 2.5, c: 6, f: 0.3 },
+  azeite:        { name: 'Azeite de oliva extra virgem',             kcal: 884, p: 0,    c: 0,    f: 100, unit: 'oil' },
+  castanhas:     { name: 'Mix de castanhas',                         kcal: 600, p: 20,   c: 20,   f: 54  },
+  pastaAmendoim: { name: 'Pasta de amendoim integral',                kcal: 588, p: 25,   c: 20,   f: 50  },
+  abacate:       { name: 'Abacate',                                  kcal: 160, p: 2,    c: 8.5,  f: 14.7 },
+};
+
+const DIET_MACROS = {
+  standard: { p: 0.25, c: 0.50, f: 0.25, label: 'Padrão (balanceada)' },
+  lowcarb:  { p: 0.30, c: 0.20, f: 0.50, label: 'Low-carb' },
+};
+
+const MEALS = [
+  { key: 'breakfast',      name: 'Café da Manhã',   pct: 0.25 },
+  { key: 'morningSnack',   name: 'Lanche da Manhã', pct: 0.10 },
+  { key: 'lunch',          name: 'Almoço',          pct: 0.30 },
+  { key: 'afternoonSnack', name: 'Lanche da Tarde', pct: 0.10 },
+  { key: 'dinner',         name: 'Jantar',          pct: 0.25 },
+];
+
+const MEAL_PLAN = {
+  standard: {
+    breakfast:      { foods: [['ovos','protein'], ['paoIntegral','carb'], ['pastaAmendoim','fat']], extras: 'Café ou chá sem açúcar (à vontade)' },
+    morningSnack:   { foods: [['iogurteGrego','protein'], ['banana','carb'], ['castanhas','fat']] },
+    lunch:          { foods: [['frango','protein'], ['arroz','carb'], ['azeite','fat']], extras: 'Salada de folhas verdes e legumes (à vontade)' },
+    afternoonSnack: { foods: [['cottage','protein'], ['morango','carb'], ['castanhas','fat']] },
+    dinner:         { foods: [['peixe','protein'], ['batataDoce','carb'], ['azeite','fat']], extras: 'Salada de folhas verdes (à vontade)' },
+  },
+  lowcarb: {
+    breakfast:      { foods: [['ovos','protein'], ['legumes','carb'], ['abacate','fat']], extras: 'Café ou chá sem açúcar (à vontade)' },
+    morningSnack:   { foods: [['iogurteGrego','protein'], ['morango','carb'], ['castanhas','fat']] },
+    lunch:          { foods: [['carne','protein'], ['legumes','carb'], ['azeite','fat']], extras: 'Salada de folhas verdes e legumes (à vontade)' },
+    afternoonSnack: { foods: [['cottage','protein'], ['legumes','carb'], ['castanhas','fat']] },
+    dinner:         { foods: [['peixe','protein'], ['legumes','carb'], ['abacate','fat']], extras: 'Salada de folhas verdes (à vontade)' },
+  },
+};
+
+const ROLE_KEY = { protein: 'p', carb: 'c', fat: 'f' };
+
+function buildPlan(totalCal, dietKey) {
+  const macros = DIET_MACROS[dietKey];
+  const dayP = (totalCal * macros.p) / 4;
+  const dayC = (totalCal * macros.c) / 4;
+  const dayF = (totalCal * macros.f) / 9;
+
+  const plan = MEAL_PLAN[dietKey];
+  const computed = [];
+
+  MEALS.forEach(meal => {
+    const mealTargetP = dayP * meal.pct;
+    const mealTargetC = dayC * meal.pct;
+    const mealTargetF = dayF * meal.pct;
+    const mealDef = plan[meal.key];
+
+    const items = mealDef.foods.map(([foodKey, role]) => {
+      const fd = FOOD_DB[foodKey];
+      const macroKey = ROLE_KEY[role];
+      const target = role === 'protein' ? mealTargetP : role === 'carb' ? mealTargetC : mealTargetF;
+      const per100 = fd[macroKey];
+      const grams = per100 > 0 ? (target / per100) * 100 : 0;
+      return { foodKey, fd, role, grams };
+    });
+
+    computed.push({ meal, items, extras: mealDef.extras });
+  });
+
+  // Global scale so total daily kcal matches the target exactly.
+  let totalActualKcal = 0;
+  computed.forEach(m => m.items.forEach(it => { totalActualKcal += (it.grams / 100) * it.fd.kcal; }));
+  const scale = totalActualKcal > 0 ? totalCal / totalActualKcal : 1;
+
+  computed.forEach(m => m.items.forEach(it => {
+    let grams = it.grams * scale;
+    grams = Math.max(5, Math.round(grams / 5) * 5);
+    it.grams = grams;
+    it.kcal = (grams / 100) * it.fd.kcal;
+    it.p = (grams / 100) * it.fd.p;
+    it.c = (grams / 100) * it.fd.c;
+    it.f = (grams / 100) * it.fd.f;
+  }));
+
+  const dayTotals = { kcal: 0, p: 0, c: 0, f: 0 };
+  computed.forEach(m => m.items.forEach(it => {
+    dayTotals.kcal += it.kcal; dayTotals.p += it.p; dayTotals.c += it.c; dayTotals.f += it.f;
+  }));
+
+  return { computed, dayTotals, macros };
+}
+
+function fmt(n) { return Math.round(n); }
+
+function foodQtyLabel(it) {
+  if (it.fd.unit === 'oil') {
+    const tbsp = it.grams / 13;
+    return `${fmt(it.grams)} g (≈ ${tbsp.toFixed(1).replace('.0','')} colher${tbsp >= 1.5 ? 's' : ''} de sopa)`;
+  }
+  return `${fmt(it.grams)} g`;
+}
+
+function render(totalCal, dietKey) {
+  const { computed, dayTotals, macros } = buildPlan(totalCal, dietKey);
+
+  document.getElementById('kcalTotal').innerHTML = `${fmt(dayTotals.kcal)} <span>kcal/dia · ${DIET_MACROS[dietKey].label}</span>`;
+
+  const macroGrid = document.getElementById('macroGrid');
+  macroGrid.innerHTML = '';
+  const macroDefs = [
+    { label: 'Proteína', value: dayTotals.p, pct: (dayTotals.p * 4 / dayTotals.kcal) * 100, target: macros.p * 100 },
+    { label: 'Carboidrato', value: dayTotals.c, pct: (dayTotals.c * 4 / dayTotals.kcal) * 100, target: macros.c * 100 },
+    { label: 'Gordura', value: dayTotals.f, pct: (dayTotals.f * 9 / dayTotals.kcal) * 100, target: macros.f * 100 },
+  ];
+  macroDefs.forEach(m => {
+    const box = document.createElement('div');
+    box.className = 'macro-box';
+    box.innerHTML = `<div class="m-label">${m.label}</div><div class="m-value">${fmt(m.value)}g</div><div class="m-pct">${m.pct.toFixed(0)}% (meta ${m.target.toFixed(0)}%)</div>`;
+    macroGrid.appendChild(box);
+  });
+
+  const container = document.getElementById('mealsContainer');
+  container.innerHTML = '';
+  computed.forEach(m => {
+    const card = document.createElement('div');
+    card.className = 'card meal-card';
+    let itemsHtml = '';
+    m.items.forEach(it => {
+      itemsHtml += `
+        <div class="food-item">
+          <div>
+            <div class="f-name">${it.fd.name}</div>
+            <div class="f-qty">${foodQtyLabel(it)}</div>
+          </div>
+          <div class="f-macro">${fmt(it.kcal)} kcal · P${fmt(it.p)} C${fmt(it.c)} G${fmt(it.f)}</div>
+        </div>`;
+    });
+    const mealKcal = m.items.reduce((s, it) => s + it.kcal, 0);
+    card.innerHTML = `
+      <div class="meal-header">
+        <div class="meal-name">${m.meal.name}</div>
+        <div class="meal-kcal">${fmt(mealKcal)} kcal</div>
+      </div>
+      ${itemsHtml}
+      ${m.extras ? `<div class="extras"><span>+</span> ${m.extras}</div>` : ''}
+    `;
+    container.appendChild(card);
+  });
+
+  document.getElementById('result').style.display = 'flex';
+}
+
+document.getElementById('generateBtn').addEventListener('click', () => {
+  let cal = parseInt(document.getElementById('calInput').value, 10);
+  if (isNaN(cal)) cal = 2000;
+  cal = Math.min(6000, Math.max(800, cal));
+  document.getElementById('calInput').value = cal;
+  const dietKey = document.getElementById('dietType').value;
+  render(cal, dietKey);
+});
+
+render(2000, 'standard');
+</script>
+</body>
+</html>
