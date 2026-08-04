@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agenda de 101 Dias — Calorias por Voz</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #7C5CFF;
+    --accent-light: #A78BFA;
+    --dark: #0A0C10;
+    --dark-2: #12141B;
+    --dark-3: #1A1D27;
+    --border: rgba(124,92,255,0.22);
+    --border-light: rgba(255,255,255,0.06);
+    --text: #E8EAF0;
+    --text-muted: #7A8094;
+    --green: #1FB86B;
+    --amber: #E5A83D;
+    --red: #E5544D;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    padding: 32px 20px 64px;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(124,92,255,0.16) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .wrap { width: 100%; max-width: 920px; display: flex; flex-direction: column; gap: 24px; z-index: 1; }
+
+  header { text-align: center; display: flex; flex-direction: column; gap: 6px; }
+  .eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-light); font-weight: 700; }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.9rem, 6vw, 2.8rem); letter-spacing: 0.03em; color: #fff; font-weight: 400; }
+  .subtitle { color: var(--text-muted); font-size: 0.92rem; max-width: 620px; margin: 0 auto; line-height: 1.5; }
+
+  .card { background: var(--dark-2); border: 1px solid var(--border-light); border-radius: 20px; padding: 24px; }
+  .card h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; color: #fff; font-weight: 400; letter-spacing: 0.02em; margin-bottom: 4px; }
+  .card .card-sub { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 16px; }
+
+  /* ── STATS ── */
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .stat-item { background: var(--dark-3); border: 1px solid var(--border-light); border-radius: 14px; padding: 14px; text-align: center; }
+  .stat-value { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: #fff; }
+  .stat-label { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 3px; }
+
+  .goal-edit { display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 14px; font-size: 0.85rem; color: var(--text-muted); }
+  .goal-edit input {
+    background: var(--dark-3); border: 1px solid var(--border-light); color: #fff;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; border-radius: 8px; padding: 4px 10px; width: 90px; text-align: center; outline: none;
+  }
+  .goal-edit input:focus { border-color: var(--accent); }
+
+  /* ── DAY NAV ── */
+  .day-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .nav-btn {
+    background: var(--dark-3); border: 1px solid var(--border-light); color: var(--text);
+    padding: 10px 16px; border-radius: 12px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: border-color .2s;
+  }
+  .nav-btn:hover { border-color: var(--border); }
+  .nav-center { text-align: center; flex: 1; min-width: 160px; }
+  .nav-day { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: #fff; }
+  .nav-date { font-size: 0.78rem; color: var(--text-muted); text-transform: capitalize; }
+  .badge { display: inline-block; margin-top: 4px; font-size: 0.65rem; padding: 3px 10px; border-radius: 999px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+  .badge.green { background: rgba(31,184,107,0.15); color: var(--green); }
+  .badge.amber { background: rgba(229,168,61,0.15); color: var(--amber); }
+  .badge.red { background: rgba(229,84,77,0.15); color: var(--red); }
+  .badge.gray { background: rgba(255,255,255,0.06); color: var(--text-muted); }
+
+  /* ── MINI CALENDAR ── */
+  .mini-cal { display: grid; grid-template-columns: repeat(auto-fill, minmax(26px, 1fr)); gap: 5px; margin-top: 6px; }
+  .mini-cell {
+    aspect-ratio: 1; border-radius: 6px; background: var(--dark-3); border: 1px solid var(--border-light);
+    display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--text-muted);
+    cursor: pointer; transition: transform .15s; position: relative;
+  }
+  .mini-cell:hover { transform: scale(1.15); z-index: 2; }
+  .mini-cell.today { border: 2px solid var(--accent-light); color: #fff; }
+  .mini-cell.selected { box-shadow: 0 0 0 2px var(--accent); }
+  .mini-cell.green { background: rgba(31,184,107,0.35); color: #fff; }
+  .mini-cell.amber { background: rgba(229,168,61,0.35); color: #fff; }
+  .mini-cell.red { background: rgba(229,84,77,0.35); color: #fff; }
+  .mini-legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 0.72rem; color: var(--text-muted); }
+  .mini-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ── VOICE ── */
+  .voice-area { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .mic-btn {
+    width: 84px; height: 84px; border-radius: 50%; border: none; cursor: pointer;
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 30px rgba(124,92,255,0.35);
+    transition: transform .15s;
+  }
+  .mic-btn:hover { transform: scale(1.05); }
+  .mic-btn svg { width: 34px; height: 34px; fill: #fff; }
+  .mic-btn.listening { animation: pulse-mic 1.2s ease-in-out infinite; background: linear-gradient(135deg, var(--red), #ff8a80); }
+  @keyframes pulse-mic {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(229,84,77,0.5); }
+    50% { box-shadow: 0 0 0 18px rgba(229,84,77,0); }
+  }
+  .voice-status { font-size: 0.82rem; color: var(--text-muted); text-align: center; min-height: 18px; }
+  .transcript-box {
+    width: 100%; min-height: 44px; background: var(--dark-3); border: 1px solid var(--border-light);
+    border-radius: 12px; padding: 12px 16px; font-size: 0.92rem; color: var(--text); text-align: center;
+  }
+  .voice-fallback { width: 100%; display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+  .voice-fallback textarea {
+    width: 100%; min-height: 64px; background: var(--dark-3); border: 1px solid var(--border-light); color: var(--text);
+    border-radius: 12px; padding: 10px 14px; font-family: 'Inter', sans-serif; font-size: 0.88rem; resize: vertical; outline: none;
+  }
+  .voice-fallback textarea:focus { border-color: var(--accent); }
+
+  .btn-primary {
+    background: linear-gradient(90deg, var(--accent), var(--accent-light)); border: none; color: #fff; font-weight: 700;
+    font-size: 0.88rem; padding: 11px 18px; border-radius: 12px; cursor: pointer; transition: transform .15s, box-shadow .15s;
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(124,92,255,0.3); }
+  .btn-secondary {
+    background: transparent; border: 1px solid var(--border); color: var(--accent-light);
+    padding: 9px 16px; border-radius: 10px; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: background .2s;
+  }
+  .btn-secondary:hover { background: rgba(124,92,255,0.1); }
+  .btn-danger { border-color: rgba(229,84,77,0.4); color: var(--red); }
+  .btn-danger:hover { background: rgba(229,84,77,0.1); }
+
+  /* ── STAGING ── */
+  #staging { display: none; flex-direction: column; gap: 10px; margin-top: 8px; }
+  .stage-row {
+    display: grid; grid-template-columns: 1fr 90px 90px auto; gap: 8px; align-items: center;
+    background: var(--dark-3); border: 1px solid var(--border-light); border-radius: 12px; padding: 8px 10px;
+  }
+  .stage-row select, .stage-row input {
+    background: var(--dark-2); border: 1px solid var(--border-light); color: var(--text);
+    border-radius: 8px; padding: 6px 8px; font-size: 0.8rem; outline: none; width: 100%;
+  }
+  .stage-row .kcal-out { font-size: 0.8rem; color: var(--accent-light); font-weight: 700; text-align: center; }
+  .stage-remove { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1rem; }
+  .stage-remove:hover { color: var(--red); }
+
+  /* ── MANUAL ADD ── */
+  .manual-row { display: grid; grid-template-columns: 1.4fr 0.7fr 0.7fr auto; gap: 8px; align-items: center; }
+  .manual-row select, .manual-row input {
+    background: var(--dark-3); border: 1px solid var(--border-light); color: var(--text);
+    border-radius: 10px; padding: 9px 10px; font-size: 0.85rem; outline: none; width: 100%;
+  }
+  .manual-row select:focus, .manual-row input:focus { border-color: var(--accent); }
+
+  /* ── LOG TABLE ── */
+  table.log-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 6px; }
+  table.log-table th { text-align: left; font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; padding: 6px 8px; border-bottom: 1px solid var(--border-light); }
+  table.log-table td { padding: 8px 8px; border-bottom: 1px solid var(--border-light); color: var(--text); }
+  table.log-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  table.log-table tr:last-child td { border-bottom: none; }
+  .del-entry { background: none; border: none; color: var(--text-muted); cursor: pointer; }
+  .del-entry:hover { color: var(--red); }
+  .empty-log { text-align: center; color: var(--text-muted); font-size: 0.82rem; padding: 16px 0; }
+
+  /* ── PROGRESS ── */
+  .kcal-progress { margin-top: 6px; }
+  .kcal-progress-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+  .kcal-total { font-family: 'Bebas Neue', sans-serif; font-size: 1.9rem; color: #fff; }
+  .kcal-goal-txt { font-size: 0.78rem; color: var(--text-muted); }
+  .progress-track { position: relative; width: 100%; height: 14px; background: var(--dark-3); border-radius: 999px; overflow: hidden; border: 1px solid var(--border-light); }
+  .progress-zone { position: absolute; top: 0; bottom: 0; background: rgba(31,184,107,0.18); }
+  .progress-fill { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 999px; background: linear-gradient(90deg, var(--accent), var(--accent-light)); transition: width .4s ease; }
+  .progress-fill.over { background: linear-gradient(90deg, var(--amber), var(--red)); }
+  .progress-caption { font-size: 0.74rem; color: var(--text-muted); margin-top: 8px; }
+  .progress-caption strong { color: var(--accent-light); }
+
+  /* ── TIPS ── */
+  .tips-list { display: flex; flex-direction: column; gap: 10px; }
+  .tip-item { display: flex; gap: 10px; font-size: 0.85rem; color: var(--text); line-height: 1.5; background: var(--dark-3); border: 1px solid var(--border-light); border-radius: 12px; padding: 12px 14px; }
+  .tip-item .tip-icon { flex-shrink: 0; font-size: 1.1rem; }
+
+  .actions-row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+
+  footer { font-size: 0.7rem; color: var(--text-muted); text-align: center; margin-top: 4px; }
+
+  @media (max-width: 560px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stage-row { grid-template-columns: 1fr; }
+    .manual-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Diário Alimentar por Voz · 101 Dias</div>
+    <h1>Agenda de 101 Dias — Calorias & Energia</h1>
+    <p class="subtitle">Fale o que você comeu, o dia calcula as calorias automaticamente. Meta diária de 1800 kcal com foco em manter energia máxima ao longo dos 101 dias.</p>
+  </header>
+
+  <!-- STATS -->
+  <div class="card">
+    <div class="stats-grid" id="statsGrid"></div>
+    <div class="goal-edit">
+      Meta diária:
+      <input type="number" id="goalInput" min="1000" max="4000" step="50">
+      kcal
+    </div>
+  </div>
+
+  <!-- DAY NAV -->
+  <div class="card">
+    <div class="day-nav">
+      <button class="nav-btn" id="prevDay">← Anterior</button>
+      <div class="nav-center">
+        <div class="nav-day" id="navDayLabel">Dia 1 / 101</div>
+        <div class="nav-date" id="navDateLabel">—</div>
+        <div class="badge gray" id="navBadge">Sem registro</div>
+      </div>
+      <button class="nav-btn" id="nextDay">Próximo →</button>
+    </div>
+    <div style="text-align:center; margin-top:12px;">
+      <button class="btn-secondary" id="gotoToday">Ir para hoje</button>
+    </div>
+
+    <div class="mini-cal" id="miniCal"></div>
+    <div class="mini-legend">
+      <span><span class="dot" style="background:var(--green);"></span> Zona ideal de energia</span>
+      <span><span class="dot" style="background:var(--amber);"></span> Fora da faixa ideal</span>
+      <span><span class="dot" style="background:var(--red);"></span> Risco de baixa energia / excesso</span>
+      <span><span class="dot" style="background:var(--dark-3); border:1px solid var(--border-light);"></span> Sem registro</span>
+    </div>
+  </div>
+
+  <!-- VOICE LOGGING -->
+  <div class="card">
+    <h2>Registrar por voz</h2>
+    <div class="card-sub">Toque no microfone e diga o que você comeu. Ex: "comi dois ovos, uma banana e um pão com manteiga".</div>
+    <div class="voice-area">
+      <button class="mic-btn" id="micBtn" title="Falar">
+        <svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg>
+      </button>
+      <div class="voice-status" id="voiceStatus">Toque para falar o que você comeu</div>
+      <div class="transcript-box" id="transcriptBox">—</div>
+
+      <div class="voice-fallback">
+        <label class="card-sub" style="margin:0;">Ou digite (caso o navegador não suporte voz):</label>
+        <textarea id="textFallback" placeholder="Ex: comi 150g de arroz, feijão e frango grelhado"></textarea>
+        <button class="btn-secondary" id="analyzeTextBtn">Analisar texto</button>
+      </div>
+    </div>
+
+    <div id="staging">
+      <div class="card-sub" style="margin-top:14px;">Revise antes de adicionar — ajuste alimento, gramas ou kcal:</div>
+      <div id="stagingRows"></div>
+      <div class="actions-row" style="margin-top:8px;">
+        <button class="btn-primary" id="confirmStagingBtn">Adicionar ao registro de hoje</button>
+        <button class="btn-secondary" id="cancelStagingBtn">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANUAL ADD -->
+  <div class="card">
+    <h2>Adicionar manualmente</h2>
+    <div class="card-sub">Selecione um alimento da lista ou registre um item personalizado.</div>
+    <div class="manual-row">
+      <select id="manualFood"></select>
+      <input type="number" id="manualGrams" placeholder="gramas" min="1">
+      <input type="number" id="manualKcal" placeholder="kcal (auto)" min="0">
+      <button class="btn-primary" id="manualAddBtn">Adicionar</button>
+    </div>
+  </div>
+
+  <!-- TODAY LOG -->
+  <div class="card">
+    <h2 id="logTitle">Registro do dia</h2>
+    <div class="kcal-progress">
+      <div class="kcal-progress-top">
+        <div class="kcal-total" id="dayTotalKcal">0 <small style="font-family:'Inter',sans-serif; font-size:0.85rem; color:var(--text-muted);">kcal</small></div>
+        <div class="kcal-goal-txt">Meta: <strong id="goalLabelTxt" style="color:var(--accent-light);">1800</strong> kcal</div>
+      </div>
+      <div class="progress-track">
+        <div class="progress-zone" id="progressZone"></div>
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="progress-caption" id="progressCaption">—</div>
+    </div>
+
+    <div id="logTableWrap" style="margin-top:16px;"></div>
+  </div>
+
+  <!-- TIPS -->
+  <div class="card">
+    <h2>Energia máxima com 1800 kcal</h2>
+    <div class="card-sub">Bater a meta é só metade do trabalho — como você distribui as calorias decide se você tem energia ou cansaço.</div>
+    <div class="tips-list">
+      <div class="tip-item"><span class="tip-icon">🍳</span>Inclua proteína em toda refeição (ovo, frango, iogurte, whey) — evita picos e quedas de energia.</div>
+      <div class="tip-item"><span class="tip-icon">⏱️</span>Coma a cada 3–4 horas. Ficar mais de 5h sem comer é a causa nº1 de queda de energia.</div>
+      <div class="tip-item"><span class="tip-icon">⚠️</span>Não fique abaixo de ~1500 kcal/dia mesmo em dias de fome baixa — déficit exagerado reduz energia e desempenho.</div>
+      <div class="tip-item"><span class="tip-icon">🌾</span>Prefira carboidratos complexos (aveia, batata-doce, arroz) a açúcar simples para energia estável.</div>
+      <div class="tip-item"><span class="tip-icon">💧</span>Beba 2–3L de água por dia — desidratação leve já causa fadiga e dor de cabeça.</div>
+      <div class="tip-item"><span class="tip-icon">😴</span>Sono de 7–8h importa tanto quanto a dieta para energia — registre também como bônus se quiser.</div>
+    </div>
+  </div>
+
+  <div class="actions-row">
+    <button class="btn-secondary" id="exportBtn">Exportar dados (JSON)</button>
+    <button class="btn-secondary" id="importBtn">Importar dados</button>
+    <button class="btn-secondary btn-danger" id="resetBtn">Reiniciar agenda de 101 dias</button>
+  </div>
+  <input type="file" id="importFile" accept="application/json" style="display:none;">
+
+  <footer>Dados salvos apenas no seu navegador (localStorage) · cálculo estimado, não substitui orientação de nutricionista</footer>
+
+</div>
+
+<script>
+// ── FOOD DATABASE (kcal per 100g, unitGrams = default serving in grams) ──
+const FOODS = [
+  { id:'ovo', name:'Ovo cozido', kcal:155, p:13, c:1.1, f:11, unitGrams:50, keywords:['ovo','ovos'] },
+  { id:'frango', name:'Peito de frango grelhado', kcal:165, p:31, c:0, f:3.6, unitGrams:150, keywords:['peito de frango','frango grelhado','frango'] },
+  { id:'carne', name:'Carne bovina grelhada', kcal:172, p:26, c:0, f:7, unitGrams:150, keywords:['carne bovina','carne','bife','patinho'] },
+  { id:'peixe', name:'Peixe grelhado (tilápia)', kcal:128, p:26, c:0, f:2.7, unitGrams:150, keywords:['tilapia','tilápia','peixe'] },
+  { id:'arroz', name:'Arroz branco cozido', kcal:130, p:2.7, c:28, f:0.3, unitGrams:150, keywords:['arroz'] },
+  { id:'feijao', name:'Feijão cozido', kcal:76, p:4.8, c:13.6, f:0.5, unitGrams:100, keywords:['feijao','feijão'] },
+  { id:'batatadoce', name:'Batata-doce cozida', kcal:86, p:1.6, c:20, f:0.1, unitGrams:150, keywords:['batata doce','batata-doce'] },
+  { id:'batata', name:'Batata cozida', kcal:87, p:1.9, c:20, f:0.1, unitGrams:150, keywords:['batata'] },
+  { id:'macarrao', name:'Macarrão cozido', kcal:158, p:5.8, c:31, f:0.9, unitGrams:150, keywords:['macarrao','macarrão','espaguete','massa'] },
+  { id:'pao', name:'Pão francês', kcal:300, p:9, c:58, f:3, unitGrams:50, keywords:['pao frances','pão francês','pao','pão'] },
+  { id:'paointegral', name:'Pão integral', kcal:247, p:13, c:41, f:4.2, unitGrams:25, keywords:['pao integral','pão integral'] },
+  { id:'aveia', name:'Aveia em flocos', kcal:389, p:17, c:66, f:7, unitGrams:30, keywords:['aveia'] },
+  { id:'banana', name:'Banana', kcal:89, p:1.1, c:23, f:0.3, unitGrams:100, keywords:['banana'] },
+  { id:'maca', name:'Maçã', kcal:52, p:0.3, c:14, f:0.2, unitGrams:130, keywords:['maca','maçã'] },
+  { id:'mamao', name:'Mamão', kcal:43, p:0.5, c:11, f:0.1, unitGrams:150, keywords:['mamao','mamão'] },
+  { id:'laranja', name:'Laranja', kcal:47, p:0.9, c:12, f:0.1, unitGrams:150, keywords:['laranja'] },
+  { id:'leite', name:'Leite integral', kcal:61, p:3.2, c:4.8, f:3.3, unitGrams:200, keywords:['leite'] },
+  { id:'iogurte', name:'Iogurte natural', kcal:41, p:4, c:5.9, f:0.2, unitGrams:170, keywords:['iogurte'] },
+  { id:'queijo', name:'Queijo minas', kcal:264, p:17, c:3, f:20, unitGrams:30, keywords:['queijo'] },
+  { id:'cafe', name:'Café com açúcar', kcal:2, p:0, c:0.5, f:0, unitGrams:50, keywords:['cafe','café'] },
+  { id:'manteiga', name:'Manteiga', kcal:717, p:0.9, c:0.1, f:81, unitGrams:10, keywords:['manteiga'] },
+  { id:'azeite', name:'Azeite de oliva', kcal:884, p:0, c:0, f:100, unitGrams:10, keywords:['azeite'] },
+  { id:'castanhas', name:'Castanhas / nozes', kcal:600, p:15, c:20, f:54, unitGrams:20, keywords:['castanha','castanhas','nozes','amendoas','amêndoas'] },
+  { id:'pastaamendoim', name:'Pasta de amendoim', kcal:588, p:25, c:20, f:50, unitGrams:20, keywords:['pasta de amendoim','amendoim'] },
+  { id:'whey', name:'Whey protein', kcal:400, p:80, c:8, f:5, unitGrams:30, keywords:['whey'] },
+  { id:'salada', name:'Salada verde', kcal:20, p:1.5, c:3, f:0.2, unitGrams:100, keywords:['salada'] },
+  { id:'legumes', name:'Legumes refogados', kcal:35, p:2, c:6, f:0.5, unitGrams:100, keywords:['legumes','vegetais'] },
+  { id:'chocolate', name:'Chocolate', kcal:545, p:5, c:61, f:31, unitGrams:25, keywords:['chocolate'] },
+  { id:'refrigerante', name:'Refrigerante', kcal:41, p:0, c:10.6, f:0, unitGrams:250, keywords:['refrigerante','coca'] },
+  { id:'suco', name:'Suco natural', kcal:45, p:0.5, c:11, f:0.1, unitGrams:200, keywords:['suco'] },
+  { id:'tapioca', name:'Tapioca', kcal:120, p:0, c:29, f:0, unitGrams:60, keywords:['tapioca'] },
+  { id:'pizza', name:'Pizza (fatia média)', kcal:266, p:11, c:33, f:10, unitGrams:100, keywords:['pizza'] },
+  { id:'batatafrita', name:'Batata frita', kcal:312, p:3.4, c:41, f:15, unitGrams:100, keywords:['batata frita','fritas'] },
+];
+const foodById = id => FOODS.find(f => f.id === id);
+
+// ── NUMBER WORDS (pt-BR) ──
+const NUM_WORDS = {
+  'um':1,'uma':1,'dois':2,'duas':2,'tres':3,'três':3,'quatro':4,'cinco':5,'seis':6,
+  'sete':7,'oito':8,'nove':9,'dez':10,'meio':0.5,'meia':0.5,
+};
+
+function normalize(s) {
+  return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').trim();
+}
+
+const FILLER_RE = /\b(eu\s+)?(comi|comer|comendo|tomei|tomando|bebi|beber|bebendo|almocei|almocar|jantei|jantar|lanchei|lanchar|hoje|de manha|de tarde|de noite|no cafe da manha|no almoco|no jantar|no lanche|tambem|um pouco de|mais|no cafe|cafe da manha)\b/g;
+
+function splitSegments(text) {
+  const cleaned = normalize(text).replace(FILLER_RE, ' ');
+  return cleaned.split(/,| e | \+ | com /).map(s => s.trim()).filter(Boolean);
+}
+
+function findFood(segment) {
+  let best = null, bestLen = 0;
+  for (const food of FOODS) {
+    for (const kw of food.keywords) {
+      const nkw = normalize(kw);
+      if (segment.includes(nkw) && nkw.length > bestLen) {
+        best = food; bestLen = nkw.length;
+      }
+    }
+  }
+  return best;
+}
+
+function parseQuantity(segment) {
+  const gramsMatch = segment.match(/(\d+(?:[.,]\d+)?)\s*(g|gramas|grama)\b/);
+  if (gramsMatch) return { grams: parseFloat(gramsMatch[1].replace(',', '.')) };
+
+  const mlMatch = segment.match(/(\d+(?:[.,]\d+)?)\s*(ml|mililitros)\b/);
+  if (mlMatch) return { grams: parseFloat(mlMatch[1].replace(',', '.')) };
+
+  const colherMatch = segment.match(/(\d+|um|uma|dois|duas|tres|três|meio|meia)?\s*colher(es)?(\s+de\s+(sopa|cha|chá))?/);
+  if (colherMatch) {
+    const qty = parseNum(colherMatch[1]) || 1;
+    const size = colherMatch[4] && colherMatch[4].startsWith('ch') ? 5 : 15;
+    return { grams: qty * size };
+  }
+
+  const xicaraMatch = segment.match(/(\d+|um|uma|dois|duas|tres|três)?\s*xicara(s)?/);
+  if (xicaraMatch) return { grams: (parseNum(xicaraMatch[1]) || 1) * 150 };
+
+  const copoMatch = segment.match(/(\d+|um|uma|dois|duas|tres|três)?\s*copo(s)?/);
+  if (copoMatch) return { grams: (parseNum(copoMatch[1]) || 1) * 200 };
+
+  const fatiaMatch = segment.match(/(\d+|um|uma|dois|duas|tres|três)?\s*fatia(s)?/);
+  if (fatiaMatch) return { grams: null, units: (parseNum(fatiaMatch[1]) || 1), isSlice: true };
+
+  const numMatch = segment.match(/^(\d+|um|uma|dois|duas|tres|três|quatro|cinco|seis|sete|oito|nove|dez|meio|meia)\b/);
+  if (numMatch) return { grams: null, units: parseNum(numMatch[1]) || 1 };
+
+  return { grams: null, units: 1 };
+}
+
+function parseNum(token) {
+  if (!token) return null;
+  if (NUM_WORDS[token] !== undefined) return NUM_WORDS[token];
+  const n = parseFloat(token.replace(',', '.'));
+  return isNaN(n) ? null : n;
+}
+
+function parseSegmentToItem(segment) {
+  const food = findFood(segment);
+  if (!food) return { name: segment.charAt(0).toUpperCase() + segment.slice(1), grams: null, kcal: null, unmatched: true };
+
+  const q = parseQuantity(segment);
+  let grams;
+  if (q.grams != null) grams = q.grams;
+  else grams = (q.units || 1) * (food.unitGrams || 100) * (q.isSlice ? 0.5 : 1);
+
+  const factor = grams / 100;
+  return {
+    foodId: food.id, name: food.name, grams: Math.round(grams),
+    kcal: food.kcal * factor, p: food.p * factor, c: food.c * factor, f: food.f * factor,
+  };
+}
+
+function parseTranscript(text) {
+  return splitSegments(text).map(parseSegmentToItem);
+}
+
+// ── STATE ──
+const STORAGE_KEY = 'agendaCalorias101_v1';
+let state = loadState();
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (e) {}
+  return { startDate: todayStr(), goal: 1800, days: {} };
+}
+function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+
+function todayStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+function addDays(dateStr, n) {
+  const [y,m,d] = dateStr.split('-').map(Number);
+  const dt = new Date(y, m-1, d);
+  dt.setDate(dt.getDate() + n);
+  return `${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,'0')}-${String(dt.getDate()).padStart(2,'0')}`;
+}
+function diffDays(a, b) {
+  const [ay,am,ad] = a.split('-').map(Number);
+  const [by,bm,bd] = b.split('-').map(Number);
+  const da = new Date(ay,am-1,ad), db = new Date(by,bm-1,bd);
+  return Math.round((db - da) / 86400000);
+}
+function dayIndexForDate(dateStr) { return diffDays(state.startDate, dateStr) + 1; }
+function dateForDayIndex(n) { return addDays(state.startDate, n - 1); }
+
+let currentViewDate = todayStr();
+
+function dayTotal(dateStr) {
+  const entries = state.days[dateStr] || [];
+  return entries.reduce((s, e) => s + e.kcal, 0);
+}
+
+function statusForTotal(total) {
+  if (total <= 0) return 'gray';
+  const goal = state.goal;
+  const diff = Math.abs(total - goal);
+  if (total < 1500 || total > goal + 400) return 'red';
+  if (diff <= 150) return 'green';
+  return 'amber';
+}
+
+const dateFmt = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+
+// ── RENDER ──
+function render() {
+  renderStats();
+  renderDayNav();
+  renderMiniCal();
+  renderLog();
+  document.getElementById('goalInput').value = state.goal;
+  document.getElementById('goalLabelTxt').textContent = state.goal;
+}
+
+function renderStats() {
+  const todayIdx = dayIndexForDate(todayStr());
+  const loggedDates = Object.keys(state.days).filter(d => (state.days[d]||[]).length > 0);
+  const totals = loggedDates.map(d => dayTotal(d));
+  const avg = totals.length ? Math.round(totals.reduce((a,b)=>a+b,0) / totals.length) : 0;
+
+  let streak = 0;
+  let idx = todayIdx;
+  while (idx >= 1) {
+    const d = dateForDayIndex(idx);
+    const total = dayTotal(d);
+    if (total > 0 && statusForTotal(total) === 'green') { streak++; idx--; }
+    else break;
+  }
+
+  const html = `
+    <div class="stat-item"><div class="stat-value">${Math.min(Math.max(todayIdx,1),101)}/101</div><div class="stat-label">Dia atual</div></div>
+    <div class="stat-item"><div class="stat-value">${loggedDates.length}</div><div class="stat-label">Dias registrados</div></div>
+    <div class="stat-item"><div class="stat-value">${avg}</div><div class="stat-label">Média kcal/dia</div></div>
+    <div class="stat-item"><div class="stat-value">${streak}</div><div class="stat-label">Sequência na meta</div></div>
+  `;
+  document.getElementById('statsGrid').innerHTML = html;
+}
+
+function renderDayNav() {
+  const idx = dayIndexForDate(currentViewDate);
+  document.getElementById('navDayLabel').textContent = `Dia ${idx} / 101`;
+  const dt = new Date(...currentViewDate.split('-').map((v,i)=> i===1? Number(v)-1 : Number(v)));
+  document.getElementById('navDateLabel').textContent = dateFmt.format(dt);
+
+  const total = dayTotal(currentViewDate);
+  const status = statusForTotal(total);
+  const badge = document.getElementById('navBadge');
+  badge.className = 'badge ' + status;
+  badge.textContent = total <= 0 ? 'Sem registro' :
+    status === 'green' ? 'Zona ideal de energia' :
+    status === 'amber' ? 'Fora da faixa ideal' : 'Risco de energia';
+
+  document.getElementById('logTitle').textContent =
+    currentViewDate === todayStr() ? 'Registro de hoje' : `Registro do dia ${idx}`;
+}
+
+function renderMiniCal() {
+  const container = document.getElementById('miniCal');
+  const today = todayStr();
+  let html = '';
+  for (let i = 1; i <= 101; i++) {
+    const date = dateForDayIndex(i);
+    const total = dayTotal(date);
+    const status = statusForTotal(total);
+    const classes = ['mini-cell', status];
+    if (date === today) classes.push('today');
+    if (date === currentViewDate) classes.push('selected');
+    html += `<div class="${classes.join(' ')}" data-date="${date}" title="Dia ${i} — ${date}${total>0 ? ' — ' + Math.round(total) + ' kcal' : ''}">${i}</div>`;
+  }
+  container.innerHTML = html;
+  container.querySelectorAll('.mini-cell').forEach(cell => {
+    cell.addEventListener('click', () => { currentViewDate = cell.dataset.date; render(); });
+  });
+}
+
+function fmt(n, d = 0) { return n.toLocaleString('pt-BR', { minimumFractionDigits: d, maximumFractionDigits: d }); }
+
+function renderLog() {
+  const entries = state.days[currentViewDate] || [];
+  const total = entries.reduce((s,e) => s + e.kcal, 0);
+  const goal = state.goal;
+
+  document.getElementById('dayTotalKcal').innerHTML = `${fmt(total)} <small style="font-family:'Inter',sans-serif; font-size:0.85rem; color:var(--text-muted);">kcal</small>`;
+
+  const zoneLow = Math.max(0, goal - 150), zoneHigh = goal + 150;
+  const maxScale = Math.max(goal * 1.6, total * 1.1, 2200);
+  const zoneEl = document.getElementById('progressZone');
+  zoneEl.style.left = (zoneLow / maxScale * 100) + '%';
+  zoneEl.style.width = ((zoneHigh - zoneLow) / maxScale * 100) + '%';
+
+  const fillEl = document.getElementById('progressFill');
+  const pct = Math.min(100, total / maxScale * 100);
+  fillEl.style.width = pct + '%';
+  fillEl.classList.toggle('over', total > zoneHigh);
+
+  const remaining = goal - total;
+  const cap = document.getElementById('progressCaption');
+  if (total <= 0) cap.innerHTML = `Meta de <strong>${fmt(goal)}</strong> kcal — nenhum item registrado ainda.`;
+  else if (remaining > 0) cap.innerHTML = `Faltam <strong>${fmt(remaining)}</strong> kcal para a meta de ${fmt(goal)}.`;
+  else cap.innerHTML = `<strong>${fmt(-remaining)}</strong> kcal acima da meta de ${fmt(goal)}.`;
+
+  const wrap = document.getElementById('logTableWrap');
+  if (entries.length === 0) {
+    wrap.innerHTML = `<div class="empty-log">Nenhum alimento registrado neste dia ainda.</div>`;
+    return;
+  }
+  const rows = entries.map(e => `
+    <tr>
+      <td>${e.time}</td>
+      <td>${e.name}${e.grams ? ` <span style="color:var(--text-muted)">(${e.grams}g)</span>` : ''}</td>
+      <td class="num">${fmt(e.kcal)}</td>
+      <td class="num"><button class="del-entry" data-id="${e.id}" title="Remover">✕</button></td>
+    </tr>`).join('');
+  wrap.innerHTML = `
+    <table class="log-table">
+      <thead><tr><th>Hora</th><th>Alimento</th><th class="num">Kcal</th><th></th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  wrap.querySelectorAll('.del-entry').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.days[currentViewDate] = (state.days[currentViewDate]||[]).filter(e => e.id !== btn.dataset.id);
+      saveState(); render();
+    });
+  });
+}
+
+// ── MANUAL FOOD SELECT ──
+const manualFoodEl = document.getElementById('manualFood');
+manualFoodEl.innerHTML = `<option value="">Selecione um alimento…</option>` +
+  FOODS.map(f => `<option value="${f.id}">${f.name}</option>`).join('') +
+  `<option value="custom">Outro (personalizado)</option>`;
+
+function updateManualKcalPreview() {
+  const foodId = manualFoodEl.value;
+  const grams = Number(document.getElementById('manualGrams').value) || 0;
+  if (foodId && foodId !== 'custom') {
+    const food = foodById(foodId);
+    document.getElementById('manualGrams').placeholder = `gramas (padrão ${food.unitGrams})`;
+    if (grams > 0) document.getElementById('manualKcal').value = Math.round(food.kcal * grams / 100);
+  }
+}
+manualFoodEl.addEventListener('change', updateManualKcalPreview);
+document.getElementById('manualGrams').addEventListener('input', updateManualKcalPreview);
+
+document.getElementById('manualAddBtn').addEventListener('click', () => {
+  const foodId = manualFoodEl.value;
+  const gramsInput = Number(document.getElementById('manualGrams').value) || 0;
+  const kcalInput = Number(document.getElementById('manualKcal').value) || 0;
+  let entry;
+  if (foodId && foodId !== 'custom') {
+    const food = foodById(foodId);
+    const grams = gramsInput || food.unitGrams;
+    entry = { id: crypto.randomUUID(), time: nowTime(), name: food.name, grams, kcal: food.kcal * grams / 100 };
+  } else {
+    if (!kcalInput) return;
+    entry = { id: crypto.randomUUID(), time: nowTime(), name: 'Item personalizado', grams: null, kcal: kcalInput };
+  }
+  addEntry(entry);
+  manualFoodEl.value = ''; document.getElementById('manualGrams').value = ''; document.getElementById('manualKcal').value = '';
+});
+
+function nowTime() {
+  const d = new Date();
+  return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+}
+function addEntry(entry) {
+  if (!state.days[currentViewDate]) state.days[currentViewDate] = [];
+  state.days[currentViewDate].push(entry);
+  saveState(); render();
+}
+
+// ── STAGING (voice/text review) ──
+let stagedItems = [];
+
+function showStaging(items) {
+  stagedItems = items;
+  const container = document.getElementById('stagingRows');
+  container.innerHTML = stagedItems.map((item, i) => `
+    <div class="stage-row" data-idx="${i}">
+      <select class="stage-food">
+        <option value="">${item.unmatched ? '⚠ Não identificado — selecione' : 'Selecionar alimento'}</option>
+        ${FOODS.map(f => `<option value="${f.id}" ${f.id === item.foodId ? 'selected' : ''}>${f.name}</option>`).join('')}
+      </select>
+      <input class="stage-grams" type="number" placeholder="gramas" value="${item.grams || ''}">
+      <div class="kcal-out stage-kcal">${item.kcal != null ? Math.round(item.kcal) + ' kcal' : '—'}</div>
+      <button class="stage-remove" title="Remover">✕</button>
+    </div>
+  `).join('');
+  document.getElementById('staging').style.display = 'flex';
+
+  container.querySelectorAll('.stage-row').forEach(row => {
+    const idx = Number(row.dataset.idx);
+    const foodSel = row.querySelector('.stage-food');
+    const gramsInp = row.querySelector('.stage-grams');
+    const kcalOut = row.querySelector('.stage-kcal');
+    const removeBtn = row.querySelector('.stage-remove');
+
+    function recompute() {
+      const food = foodById(foodSel.value);
+      const grams = Number(gramsInp.value) || (food ? food.unitGrams : 0);
+      if (!gramsInp.value && food) gramsInp.value = grams;
+      if (food) {
+        const factor = grams / 100;
+        stagedItems[idx] = { foodId: food.id, name: food.name, grams, kcal: food.kcal*factor, p: food.p*factor, c: food.c*factor, f: food.f*factor };
+        kcalOut.textContent = Math.round(stagedItems[idx].kcal) + ' kcal';
+      }
+    }
+    foodSel.addEventListener('change', recompute);
+    gramsInp.addEventListener('input', recompute);
+    removeBtn.addEventListener('click', () => {
+      stagedItems[idx] = null;
+      row.remove();
+    });
+  });
+}
+
+document.getElementById('confirmStagingBtn').addEventListener('click', () => {
+  const valid = stagedItems.filter(it => it && it.kcal != null && it.name);
+  if (valid.length === 0) { document.getElementById('voiceStatus').textContent = 'Nenhum item válido para adicionar — selecione o alimento correspondente.'; return; }
+  valid.forEach(it => addEntry({ id: crypto.randomUUID(), time: nowTime(), name: it.name, grams: it.grams, kcal: it.kcal }));
+  document.getElementById('staging').style.display = 'none';
+  document.getElementById('voiceStatus').textContent = `${valid.length} item(ns) adicionado(s) ao registro.`;
+  document.getElementById('transcriptBox').textContent = '—';
+});
+document.getElementById('cancelStagingBtn').addEventListener('click', () => {
+  document.getElementById('staging').style.display = 'none';
+  document.getElementById('voiceStatus').textContent = 'Toque para falar o que você comeu';
+});
+
+document.getElementById('analyzeTextBtn').addEventListener('click', () => {
+  const text = document.getElementById('textFallback').value.trim();
+  if (!text) return;
+  const items = parseTranscript(text);
+  showStaging(items);
+});
+
+// ── SPEECH RECOGNITION ──
+const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+const micBtn = document.getElementById('micBtn');
+const voiceStatus = document.getElementById('voiceStatus');
+const transcriptBox = document.getElementById('transcriptBox');
+
+if (!SpeechRecognitionAPI) {
+  micBtn.style.display = 'none';
+  voiceStatus.textContent = 'Reconhecimento de voz não suportado neste navegador — use o campo de texto abaixo.';
+} else {
+  const recognition = new SpeechRecognitionAPI();
+  recognition.lang = 'pt-BR';
+  recognition.interimResults = true;
+  recognition.continuous = false;
+  let listening = false;
+
+  recognition.onresult = (e) => {
+    let interim = '', final = '';
+    for (let i = 0; i < e.results.length; i++) {
+      const r = e.results[i];
+      if (r.isFinal) final += r[0].transcript;
+      else interim += r[0].transcript;
+    }
+    transcriptBox.textContent = final || interim || '—';
+    if (final) {
+      const items = parseTranscript(final);
+      showStaging(items);
+      voiceStatus.textContent = 'Revise os itens abaixo antes de confirmar.';
+    }
+  };
+  recognition.onerror = (e) => { voiceStatus.textContent = 'Erro no reconhecimento: ' + e.error; };
+  recognition.onend = () => { listening = false; micBtn.classList.remove('listening'); };
+
+  micBtn.addEventListener('click', () => {
+    if (listening) { recognition.stop(); return; }
+    listening = true;
+    micBtn.classList.add('listening');
+    voiceStatus.textContent = 'Ouvindo… diga o que você comeu';
+    transcriptBox.textContent = '—';
+    try { recognition.start(); } catch (e) {}
+  });
+}
+
+// ── NAV / GOAL / EXPORT ──
+document.getElementById('prevDay').addEventListener('click', () => { currentViewDate = addDays(currentViewDate, -1); render(); });
+document.getElementById('nextDay').addEventListener('click', () => { currentViewDate = addDays(currentViewDate, 1); render(); });
+document.getElementById('gotoToday').addEventListener('click', () => { currentViewDate = todayStr(); render(); });
+
+document.getElementById('goalInput').addEventListener('change', (e) => {
+  const v = Number(e.target.value);
+  if (v >= 1000 && v <= 4000) { state.goal = v; saveState(); render(); }
+});
+
+document.getElementById('exportBtn').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'agenda-calorias-101.json'; a.click();
+  URL.revokeObjectURL(url);
+});
+document.getElementById('importBtn').addEventListener('click', () => document.getElementById('importFile').click());
+document.getElementById('importFile').addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const imported = JSON.parse(reader.result);
+      if (imported && imported.startDate && imported.days) {
+        state = imported;
+        if (!state.goal) state.goal = 1800;
+        saveState(); render();
+      }
+    } catch (err) { alert('Arquivo inválido.'); }
+  };
+  reader.readAsText(file);
+});
+document.getElementById('resetBtn').addEventListener('click', () => {
+  if (!confirm('Isso vai reiniciar a agenda de 101 dias a partir de hoje e apagar todos os registros salvos. Continuar?')) return;
+  state = { startDate: todayStr(), goal: state.goal || 1800, days: {} };
+  currentViewDate = todayStr();
+  saveState(); render();
+});
+
+render();
+</script>
+</body>
+</html>
