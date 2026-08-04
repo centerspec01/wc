@@ -291,6 +291,18 @@
     </div>
   </div>
 
+  <!-- CUSTOM FOOD -->
+  <div class="card">
+    <h2>Cadastrar novo alimento</h2>
+    <div class="card-sub">Não achou o alimento na lista? Cadastre com o peso e as calorias da porção habitual — ele passa a aparecer no seletor manual e a ser reconhecido por voz/texto.</div>
+    <div class="manual-row">
+      <input type="text" id="customName" placeholder="Nome do alimento">
+      <input type="number" id="customGrams" placeholder="porção (g/ml)" min="1">
+      <input type="number" id="customKcal" placeholder="kcal da porção" min="0">
+      <button class="btn-primary" id="customAddBtn">Cadastrar</button>
+    </div>
+  </div>
+
   <!-- TODAY LOG -->
   <div class="card">
     <h2 id="logTitle">Registro do dia</h2>
@@ -307,6 +319,16 @@
     </div>
 
     <div id="logTableWrap" style="margin-top:16px;"></div>
+  </div>
+
+  <!-- CHART -->
+  <div class="card">
+    <h2>Gráfico de calorias</h2>
+    <div class="card-sub">Evolução diária das calorias registradas ao longo dos 101 dias, com a linha da meta.</div>
+    <div style="overflow-x:auto; position:relative;">
+      <canvas id="kcalChart"></canvas>
+    </div>
+    <div id="chartTooltip" style="display:none; position:fixed; background:var(--dark-3); border:1px solid var(--border-light); border-radius:8px; padding:6px 10px; font-size:0.75rem; color:var(--text); pointer-events:none; z-index:50; white-space:nowrap;"></div>
   </div>
 
   <!-- TIPS -->
@@ -370,8 +392,36 @@ const FOODS = [
   { id:'tapioca', name:'Tapioca', kcal:120, p:0, c:29, f:0, unitGrams:60, keywords:['tapioca'] },
   { id:'pizza', name:'Pizza (fatia média)', kcal:266, p:11, c:33, f:10, unitGrams:100, keywords:['pizza'] },
   { id:'batatafrita', name:'Batata frita', kcal:312, p:3.4, c:41, f:15, unitGrams:100, keywords:['batata frita','fritas'] },
+  // bebidas alcoólicas
+  { id:'vinho', name:'Vinho (taça)', kcal:85, p:0.1, c:2.6, f:0, unitGrams:150, keywords:['vinho tinto','vinho branco','vinho'] },
+  { id:'champagne', name:'Champagne / espumante (taça)', kcal:76, p:0.2, c:1.5, f:0, unitGrams:120, keywords:['champagne','espumante'] },
+  { id:'caipirinha', name:'Caipirinha', kcal:100, p:0, c:12, f:0, unitGrams:200, keywords:['caipirinha','capirinha'] },
+  { id:'negroni', name:'Negroni', kcal:250, p:0, c:8, f:0, unitGrams:90, keywords:['negroni'] },
+  { id:'sake', name:'Sakê', kcal:134, p:0.5, c:5, f:0, unitGrams:60, keywords:['sake','sakê','saque'] },
+  { id:'cerveja', name:'Cerveja', kcal:43, p:0.5, c:3.6, f:0, unitGrams:350, keywords:['cerveja','chopp'] },
+  // frutas
+  { id:'uva', name:'Uva', kcal:69, p:0.7, c:18, f:0.2, unitGrams:100, keywords:['uva','uvas'] },
+  { id:'kiwi', name:'Kiwi', kcal:61, p:1.1, c:15, f:0.5, unitGrams:90, keywords:['kiwi'] },
+  { id:'manga', name:'Manga', kcal:60, p:0.8, c:15, f:0.4, unitGrams:150, keywords:['manga','mangas'] },
+  { id:'morango', name:'Morango', kcal:32, p:0.7, c:7.7, f:0.3, unitGrams:100, keywords:['morango','morangos'] },
+  { id:'abacaxi', name:'Abacaxi', kcal:50, p:0.5, c:13, f:0.1, unitGrams:150, keywords:['abacaxi'] },
+  // queijos
+  { id:'queijoprato', name:'Queijo prato', kcal:356, p:23, c:1.5, f:29, unitGrams:30, keywords:['queijo prato'] },
+  { id:'mussarela', name:'Queijo mussarela', kcal:280, p:22, c:2.2, f:20, unitGrams:30, keywords:['mussarela','mozzarella','muçarela'] },
+  { id:'queijocoalho', name:'Queijo coalho grelhado', kcal:330, p:24, c:1, f:26, unitGrams:50, keywords:['queijo coalho','coalho'] },
+  // outros
+  { id:'farofa', name:'Farofa', kcal:380, p:2, c:60, f:14, unitGrams:50, keywords:['farofa'] },
+  // comida japonesa
+  { id:'sushi', name:'Sushi (peça/combinado)', kcal:150, p:5, c:28, f:1.5, unitGrams:100, keywords:['sushi'] },
+  { id:'sashimi', name:'Sashimi', kcal:127, p:20, c:0, f:5, unitGrams:100, keywords:['sashimi'] },
+  { id:'temaki', name:'Temaki', kcal:180, p:6, c:28, f:4, unitGrams:200, keywords:['temaki'] },
+  { id:'yakisoba', name:'Yakisoba', kcal:150, p:6, c:20, f:5, unitGrams:250, keywords:['yakisoba'] },
+  { id:'gyoza', name:'Guioza (gyoza)', kcal:180, p:6, c:20, f:8, unitGrams:100, keywords:['gyoza','guioza','guiosa'] },
+  { id:'hotroll', name:'Hot roll', kcal:280, p:8, c:25, f:16, unitGrams:100, keywords:['hot roll','hotroll'] },
+  { id:'comidajaponesa', name:'Comida japonesa (combinado misto)', kcal:160, p:7, c:22, f:5, unitGrams:250, keywords:['comida japonesa','japonesa'] },
 ];
-const foodById = id => FOODS.find(f => f.id === id);
+function getAllFoods() { return FOODS.concat(state.customFoods || []); }
+const foodById = id => getAllFoods().find(f => f.id === id);
 
 // ── NUMBER WORDS (pt-BR) ──
 const NUM_WORDS = {
@@ -392,7 +442,7 @@ function splitSegments(text) {
 
 function findFood(segment) {
   let best = null, bestLen = 0;
-  for (const food of FOODS) {
+  for (const food of getAllFoods()) {
     for (const kw of food.keywords) {
       const nkw = normalize(kw);
       if (segment.includes(nkw) && nkw.length > bestLen) {
@@ -468,7 +518,7 @@ function loadState() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) return JSON.parse(raw);
   } catch (e) {}
-  return { startDate: todayStr(), goal: 1800, days: {} };
+  return { startDate: todayStr(), goal: 1800, days: {}, customFoods: [] };
 }
 function saveState() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
 
@@ -515,6 +565,7 @@ function render() {
   renderDayNav();
   renderMiniCal();
   renderLog();
+  drawChart();
   document.getElementById('goalInput').value = state.goal;
   document.getElementById('goalLabelTxt').textContent = state.goal;
 }
@@ -633,9 +684,14 @@ function renderLog() {
 
 // ── MANUAL FOOD SELECT ──
 const manualFoodEl = document.getElementById('manualFood');
-manualFoodEl.innerHTML = `<option value="">Selecione um alimento…</option>` +
-  FOODS.map(f => `<option value="${f.id}">${f.name}</option>`).join('') +
-  `<option value="custom">Outro (personalizado)</option>`;
+function renderManualFoodOptions() {
+  const current = manualFoodEl.value;
+  manualFoodEl.innerHTML = `<option value="">Selecione um alimento…</option>` +
+    getAllFoods().map(f => `<option value="${f.id}">${f.name}</option>`).join('') +
+    `<option value="custom">Outro (personalizado, sem salvar)</option>`;
+  manualFoodEl.value = current;
+}
+renderManualFoodOptions();
 
 function updateManualKcalPreview() {
   const foodId = manualFoodEl.value;
@@ -676,6 +732,26 @@ function addEntry(entry) {
   saveState(); render();
 }
 
+// ── CUSTOM FOOD REGISTRATION ──
+document.getElementById('customAddBtn').addEventListener('click', () => {
+  const name = document.getElementById('customName').value.trim();
+  const grams = Number(document.getElementById('customGrams').value);
+  const kcalPortion = Number(document.getElementById('customKcal').value);
+  if (!name || !grams || !kcalPortion) return;
+  const slug = normalize(name).replace(/[^a-z0-9]+/g, '_');
+  if (!state.customFoods) state.customFoods = [];
+  state.customFoods.push({
+    id: 'custom_' + slug + '_' + Date.now(),
+    name, kcal: kcalPortion / grams * 100, p: 0, c: 0, f: 0,
+    unitGrams: grams, keywords: [normalize(name)],
+  });
+  saveState();
+  renderManualFoodOptions();
+  document.getElementById('customName').value = '';
+  document.getElementById('customGrams').value = '';
+  document.getElementById('customKcal').value = '';
+});
+
 // ── STAGING (voice/text review) ──
 let stagedItems = [];
 
@@ -686,7 +762,7 @@ function showStaging(items) {
     <div class="stage-row" data-idx="${i}">
       <select class="stage-food">
         <option value="">${item.unmatched ? '⚠ Não identificado — selecione' : 'Selecionar alimento'}</option>
-        ${FOODS.map(f => `<option value="${f.id}" ${f.id === item.foodId ? 'selected' : ''}>${f.name}</option>`).join('')}
+        ${getAllFoods().map(f => `<option value="${f.id}" ${f.id === item.foodId ? 'selected' : ''}>${f.name}</option>`).join('')}
       </select>
       <input class="stage-grams" type="number" placeholder="gramas" value="${item.grams || ''}">
       <div class="kcal-out stage-kcal">${item.kcal != null ? Math.round(item.kcal) + ' kcal' : '—'}</div>
@@ -741,11 +817,110 @@ document.getElementById('analyzeTextBtn').addEventListener('click', () => {
   showStaging(items);
 });
 
+// ── CHART ──
+let chartBars = [];
+function drawChart() {
+  const canvas = document.getElementById('kcalChart');
+  if (!canvas) return;
+  const todayIdx = dayIndexForDate(todayStr());
+  const loggedIdxs = Object.keys(state.days)
+    .filter(d => (state.days[d] || []).length > 0)
+    .map(d => dayIndexForDate(d));
+  const maxIdx = Math.min(101, Math.max(todayIdx, 1, ...loggedIdxs));
+
+  const barW = 16, gap = 4, padLeft = 10, padRight = 10, padTop = 22, padBottom = 24;
+  const height = 220;
+  const containerW = canvas.parentElement.clientWidth || 600;
+  const width = Math.max(containerW, padLeft + padRight + maxIdx * (barW + gap));
+
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = width * dpr;
+  canvas.height = height * dpr;
+  canvas.style.width = width + 'px';
+  canvas.style.height = height + 'px';
+  const ctx = canvas.getContext('2d');
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, width, height);
+
+  const goal = state.goal;
+  const chartH = height - padTop - padBottom;
+  let maxVal = goal * 1.4;
+  for (let i = 1; i <= maxIdx; i++) maxVal = Math.max(maxVal, dayTotal(dateForDayIndex(i)));
+  maxVal = Math.max(maxVal, 2200) * 1.05;
+
+  const goalY = padTop + chartH - (goal / maxVal * chartH);
+  ctx.strokeStyle = 'rgba(167,139,250,0.6)';
+  ctx.setLineDash([5, 4]);
+  ctx.beginPath(); ctx.moveTo(padLeft, goalY); ctx.lineTo(width - padRight, goalY); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#A78BFA';
+  ctx.font = '11px Inter, sans-serif';
+  ctx.textAlign = 'left';
+  ctx.fillText(`Meta ${goal} kcal`, padLeft, goalY - 6);
+
+  const colors = { green: '#1FB86B', amber: '#E5A83D', red: '#E5544D', gray: 'rgba(255,255,255,0.10)' };
+  const today = todayStr();
+  chartBars = [];
+
+  for (let i = 1; i <= maxIdx; i++) {
+    const date = dateForDayIndex(i);
+    const total = dayTotal(date);
+    const status = statusForTotal(total);
+    const x = padLeft + (i - 1) * (barW + gap);
+    const barH = total > 0 ? Math.max(total / maxVal * chartH, 2) : 2;
+    const y = padTop + chartH - barH;
+    ctx.fillStyle = colors[status];
+    ctx.fillRect(x, y, barW, barH);
+    if (date === today) {
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(x + 0.5, y + 0.5, barW - 1, Math.max(barH - 1, 1));
+    }
+    chartBars.push({ x, y, w: barW, h: barH, dayIdx: i, date, total });
+    if (i === 1 || i % 10 === 0 || i === maxIdx) {
+      ctx.fillStyle = '#7A8094';
+      ctx.font = '10px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(String(i), x + barW / 2, height - 8);
+    }
+  }
+}
+
+const chartCanvas = document.getElementById('kcalChart');
+const chartTooltip = document.getElementById('chartTooltip');
+if (chartCanvas) {
+  chartCanvas.addEventListener('mousemove', (e) => {
+    const rect = chartCanvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const bar = chartBars.find(b => x >= b.x && x <= b.x + b.w);
+    if (bar) {
+      chartTooltip.style.display = 'block';
+      chartTooltip.style.left = (e.clientX + 12) + 'px';
+      chartTooltip.style.top = (e.clientY - 30) + 'px';
+      const dt = new Date(...bar.date.split('-').map((v, i) => i === 1 ? Number(v) - 1 : Number(v)));
+      chartTooltip.textContent = `Dia ${bar.dayIdx} · ${dt.toLocaleDateString('pt-BR')} — ${Math.round(bar.total)} kcal`;
+    } else {
+      chartTooltip.style.display = 'none';
+    }
+  });
+  chartCanvas.addEventListener('mouseleave', () => { chartTooltip.style.display = 'none'; });
+  window.addEventListener('resize', drawChart);
+}
+
 // ── SPEECH RECOGNITION ──
 const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
 const micBtn = document.getElementById('micBtn');
 const voiceStatus = document.getElementById('voiceStatus');
 const transcriptBox = document.getElementById('transcriptBox');
+
+const ERROR_MESSAGES = {
+  'not-allowed': 'Permissão de microfone negada. Toque no ícone de cadeado/site na barra de endereço e permita o microfone, depois toque no botão de novo.',
+  'service-not-allowed': 'O navegador bloqueou o microfone (contexto não seguro). Se você abriu este arquivo por "Abrir com" no gerenciador de arquivos, digite o caminho completo (file://...) direto na barra de endereço do Chrome em vez disso — ou use o campo de texto abaixo.',
+  'no-speech': 'Nenhuma fala detectada. Toque no microfone e tente falar mais perto.',
+  'audio-capture': 'Nenhum microfone encontrado neste dispositivo.',
+  'network': 'Erro de rede no reconhecimento de voz. Verifique sua conexão e tente de novo.',
+  'aborted': 'Reconhecimento interrompido.',
+};
 
 if (!SpeechRecognitionAPI) {
   micBtn.style.display = 'none';
@@ -756,8 +931,10 @@ if (!SpeechRecognitionAPI) {
   recognition.interimResults = true;
   recognition.continuous = false;
   let listening = false;
+  let listenTimeout = null;
 
   recognition.onresult = (e) => {
+    clearTimeout(listenTimeout);
     let interim = '', final = '';
     for (let i = 0; i < e.results.length; i++) {
       const r = e.results[i];
@@ -771,8 +948,17 @@ if (!SpeechRecognitionAPI) {
       voiceStatus.textContent = 'Revise os itens abaixo antes de confirmar.';
     }
   };
-  recognition.onerror = (e) => { voiceStatus.textContent = 'Erro no reconhecimento: ' + e.error; };
-  recognition.onend = () => { listening = false; micBtn.classList.remove('listening'); };
+  recognition.onerror = (e) => {
+    clearTimeout(listenTimeout);
+    listening = false;
+    micBtn.classList.remove('listening');
+    voiceStatus.textContent = ERROR_MESSAGES[e.error] || ('Erro no reconhecimento: ' + e.error + '. Use o campo de texto abaixo como alternativa.');
+  };
+  recognition.onend = () => {
+    clearTimeout(listenTimeout);
+    listening = false;
+    micBtn.classList.remove('listening');
+  };
 
   micBtn.addEventListener('click', () => {
     if (listening) { recognition.stop(); return; }
@@ -780,7 +966,18 @@ if (!SpeechRecognitionAPI) {
     micBtn.classList.add('listening');
     voiceStatus.textContent = 'Ouvindo… diga o que você comeu';
     transcriptBox.textContent = '—';
-    try { recognition.start(); } catch (e) {}
+    try {
+      recognition.start();
+      listenTimeout = setTimeout(() => {
+        if (listening) {
+          voiceStatus.textContent = 'O microfone não respondeu. Se você abriu este arquivo pelo gerenciador de arquivos ("Abrir com"), digite o caminho completo (file://...) direto na barra de endereço do Chrome, ou use o campo de texto abaixo.';
+        }
+      }, 6000);
+    } catch (err) {
+      listening = false;
+      micBtn.classList.remove('listening');
+      voiceStatus.textContent = 'Não foi possível iniciar o microfone: ' + err.message;
+    }
   });
 }
 
@@ -812,15 +1009,16 @@ document.getElementById('importFile').addEventListener('change', (e) => {
       if (imported && imported.startDate && imported.days) {
         state = imported;
         if (!state.goal) state.goal = 1800;
-        saveState(); render();
+        if (!state.customFoods) state.customFoods = [];
+        saveState(); renderManualFoodOptions(); render();
       }
     } catch (err) { alert('Arquivo inválido.'); }
   };
   reader.readAsText(file);
 });
 document.getElementById('resetBtn').addEventListener('click', () => {
-  if (!confirm('Isso vai reiniciar a agenda de 101 dias a partir de hoje e apagar todos os registros salvos. Continuar?')) return;
-  state = { startDate: todayStr(), goal: state.goal || 1800, days: {} };
+  if (!confirm('Isso vai reiniciar a agenda de 101 dias a partir de hoje e apagar todos os registros salvos. Os alimentos cadastrados são mantidos. Continuar?')) return;
+  state = { startDate: todayStr(), goal: state.goal || 1800, days: {}, customFoods: state.customFoods || [] };
   currentViewDate = todayStr();
   saveState(); render();
 });
