@@ -66,12 +66,14 @@
   .stat-value { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: #fff; }
   .stat-label { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 3px; }
 
-  .goal-edit { display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 14px; font-size: 0.85rem; color: var(--text-muted); }
+  .goal-edit { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
   .goal-edit input {
     background: var(--dark-3); border: 1px solid var(--border-light); color: #fff;
-    font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; border-radius: 8px; padding: 4px 10px; width: 90px; text-align: center; outline: none;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; border-radius: 12px; padding: 10px 16px; width: 130px; text-align: center; outline: none;
   }
   .goal-edit input:focus { border-color: var(--accent); }
+  .kcal-unit-label { color: var(--text-muted); font-size: 0.9rem; }
+  .goal-saved { min-height: 18px; font-size: 0.8rem; color: var(--green); margin-top: 8px; }
 
   /* ── DAY NAV ── */
   .day-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
@@ -217,14 +219,21 @@
     <p class="subtitle">Fale o que você comeu, o dia calcula as calorias automaticamente. Meta diária de 1800 kcal com foco em manter energia máxima ao longo dos 101 dias.</p>
   </header>
 
+  <!-- GOAL -->
+  <div class="card">
+    <h2>Meta diária de calorias</h2>
+    <div class="card-sub">Ajuste livremente — a zona ideal de energia (verde) é sempre calculada em torno deste número.</div>
+    <div class="goal-edit">
+      <input type="number" id="goalInput" min="1000" max="4000" step="50">
+      <span class="kcal-unit-label">kcal / dia</span>
+      <button class="btn-primary" id="goalSaveBtn">Salvar meta</button>
+    </div>
+    <div class="goal-saved" id="goalSavedMsg"></div>
+  </div>
+
   <!-- STATS -->
   <div class="card">
     <div class="stats-grid" id="statsGrid"></div>
-    <div class="goal-edit">
-      Meta diária:
-      <input type="number" id="goalInput" min="1000" max="4000" step="50">
-      kcal
-    </div>
   </div>
 
   <!-- DAY NAV -->
@@ -986,10 +995,21 @@ document.getElementById('prevDay').addEventListener('click', () => { currentView
 document.getElementById('nextDay').addEventListener('click', () => { currentViewDate = addDays(currentViewDate, 1); render(); });
 document.getElementById('gotoToday').addEventListener('click', () => { currentViewDate = todayStr(); render(); });
 
-document.getElementById('goalInput').addEventListener('change', (e) => {
-  const v = Number(e.target.value);
-  if (v >= 1000 && v <= 4000) { state.goal = v; saveState(); render(); }
-});
+function saveGoal() {
+  const v = Number(document.getElementById('goalInput').value);
+  const msg = document.getElementById('goalSavedMsg');
+  if (v >= 1000 && v <= 4000) {
+    state.goal = v; saveState(); render();
+    msg.style.color = 'var(--green)';
+    msg.textContent = `Meta salva: ${v} kcal/dia.`;
+    setTimeout(() => { if (msg.textContent.startsWith('Meta salva')) msg.textContent = ''; }, 3000);
+  } else {
+    msg.textContent = 'Digite um valor entre 1000 e 4000 kcal.';
+    msg.style.color = 'var(--red)';
+  }
+}
+document.getElementById('goalInput').addEventListener('change', saveGoal);
+document.getElementById('goalSaveBtn').addEventListener('click', saveGoal);
 
 document.getElementById('exportBtn').addEventListener('click', () => {
   const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
