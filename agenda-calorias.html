@@ -152,7 +152,7 @@
   /* ── STAGING ── */
   #staging { display: none; flex-direction: column; gap: 10px; margin-top: 8px; }
   .stage-row {
-    display: grid; grid-template-columns: 1fr 90px 90px auto; gap: 8px; align-items: center;
+    display: grid; grid-template-columns: 1fr 70px 55px 80px auto; gap: 8px; align-items: center;
     background: var(--dark-3); border: 1px solid var(--border-light); border-radius: 12px; padding: 8px 10px;
   }
   .stage-row select, .stage-row input {
@@ -164,7 +164,7 @@
   .stage-remove:hover { color: var(--red); }
 
   /* ── MANUAL ADD ── */
-  .manual-row { display: grid; grid-template-columns: 1.4fr 0.7fr 0.7fr auto; gap: 8px; align-items: center; }
+  .manual-row { display: grid; grid-template-columns: 1.3fr 0.55fr 0.4fr 0.6fr auto; gap: 8px; align-items: center; }
   .manual-row select, .manual-row input {
     background: var(--dark-3); border: 1px solid var(--border-light); color: var(--text);
     border-radius: 10px; padding: 9px 10px; font-size: 0.85rem; outline: none; width: 100%;
@@ -294,10 +294,12 @@
     <div class="card-sub">Selecione um alimento da lista ou registre um item personalizado.</div>
     <div class="manual-row">
       <select id="manualFood"></select>
-      <input type="number" id="manualGrams" placeholder="gramas" min="1">
+      <input type="number" id="manualGrams" placeholder="g/porção" min="1">
+      <input type="number" id="manualQty" placeholder="qtd" min="1" value="1">
       <input type="number" id="manualKcal" placeholder="kcal (auto)" min="0">
       <button class="btn-primary" id="manualAddBtn">Adicionar</button>
     </div>
+    <div class="card-sub" style="margin-top:8px; margin-bottom:0;">Use "qtd" para somar várias unidades do mesmo item numa só entrada (ex: 3 ovos = qtd 3), sem precisar adicionar um por um.</div>
   </div>
 
   <!-- CUSTOM FOOD -->
@@ -428,6 +430,17 @@ const FOODS = [
   { id:'gyoza', name:'Guioza (gyoza)', kcal:180, p:6, c:20, f:8, unitGrams:100, keywords:['gyoza','guioza','guiosa'] },
   { id:'hotroll', name:'Hot roll', kcal:280, p:8, c:25, f:16, unitGrams:100, keywords:['hot roll','hotroll'] },
   { id:'comidajaponesa', name:'Comida japonesa (combinado misto)', kcal:160, p:7, c:22, f:5, unitGrams:250, keywords:['comida japonesa','japonesa'] },
+  // pães, carnes e castanhas extras
+  { id:'paodeforma', name:'Pão de forma', kcal:253, p:8, c:49, f:3.3, unitGrams:25, keywords:['pao de forma','pão de forma'] },
+  { id:'cordeiro', name:'Cordeiro grelhado', kcal:294, p:25, c:0, f:21, unitGrams:150, keywords:['cordeiro'] },
+  { id:'castanhacaju', name:'Castanha de caju (porção)', kcal:553, p:18, c:30, f:44, unitGrams:30, keywords:['castanha de caju','castanha-de-caju','caju'] },
+  { id:'castanhapara', name:'Castanha do Pará (porção)', kcal:656, p:14, c:12, f:66, unitGrams:30, keywords:['castanha do para','castanha-do-para','castanha do pará'] },
+  // suplementos e doces
+  { id:'creatina', name:'Creatina (dose)', kcal:0, p:0, c:0, f:0, unitGrams:5, keywords:['creatina'] },
+  { id:'gelatina', name:'Gelatina', kcal:62, p:1.5, c:14, f:0, unitGrams:100, keywords:['gelatina'] },
+  { id:'bombom', name:'Chocolate bombom', kcal:500, p:5, c:58, f:28, unitGrams:15, keywords:['bombom','chocolate bombom'] },
+  { id:'chocolatebarra', name:'Chocolate (barra)', kcal:530, p:6, c:57, f:31, unitGrams:30, keywords:['chocolate barra','barra de chocolate'] },
+  { id:'bala', name:'Bala / doce de goma', kcal:392, p:0, c:97, f:0, unitGrams:6, keywords:['bala','balas','mentos'] },
 ];
 function getAllFoods() { return FOODS.concat(state.customFoods || []); }
 const foodById = id => getAllFoods().find(f => f.id === id);
@@ -705,30 +718,39 @@ renderManualFoodOptions();
 function updateManualKcalPreview() {
   const foodId = manualFoodEl.value;
   const grams = Number(document.getElementById('manualGrams').value) || 0;
+  const qty = Number(document.getElementById('manualQty').value) || 1;
   if (foodId && foodId !== 'custom') {
     const food = foodById(foodId);
-    document.getElementById('manualGrams').placeholder = `gramas (padrão ${food.unitGrams})`;
-    if (grams > 0) document.getElementById('manualKcal').value = Math.round(food.kcal * grams / 100);
+    document.getElementById('manualGrams').placeholder = `g/porção (padrão ${food.unitGrams})`;
+    const g = grams || food.unitGrams;
+    document.getElementById('manualKcal').value = Math.round(food.kcal * g / 100 * qty);
   }
 }
 manualFoodEl.addEventListener('change', updateManualKcalPreview);
 document.getElementById('manualGrams').addEventListener('input', updateManualKcalPreview);
+document.getElementById('manualQty').addEventListener('input', updateManualKcalPreview);
 
 document.getElementById('manualAddBtn').addEventListener('click', () => {
   const foodId = manualFoodEl.value;
+  const qty = Number(document.getElementById('manualQty').value) || 1;
   const gramsInput = Number(document.getElementById('manualGrams').value) || 0;
-  const kcalInput = Number(document.getElementById('manualKcal').value) || 0;
-  let entry;
+  const kcalTotal = Number(document.getElementById('manualKcal').value) || 0;
+  if (!kcalTotal) return;
+  let name, grams;
   if (foodId && foodId !== 'custom') {
     const food = foodById(foodId);
-    const grams = gramsInput || food.unitGrams;
-    entry = { id: crypto.randomUUID(), time: nowTime(), name: food.name, grams, kcal: food.kcal * grams / 100 };
+    const gramsPerUnit = gramsInput || food.unitGrams;
+    grams = gramsPerUnit * qty;
+    name = qty > 1 ? `${qty}× ${food.name}` : food.name;
   } else {
-    if (!kcalInput) return;
-    entry = { id: crypto.randomUUID(), time: nowTime(), name: 'Item personalizado', grams: null, kcal: kcalInput };
+    grams = null;
+    name = qty > 1 ? `${qty}× Item personalizado` : 'Item personalizado';
   }
-  addEntry(entry);
-  manualFoodEl.value = ''; document.getElementById('manualGrams').value = ''; document.getElementById('manualKcal').value = '';
+  addEntry({ id: crypto.randomUUID(), time: nowTime(), name, grams, kcal: kcalTotal });
+  manualFoodEl.value = '';
+  document.getElementById('manualGrams').value = '';
+  document.getElementById('manualQty').value = '1';
+  document.getElementById('manualKcal').value = '';
 });
 
 function nowTime() {
@@ -774,6 +796,7 @@ function showStaging(items) {
         ${getAllFoods().map(f => `<option value="${f.id}" ${f.id === item.foodId ? 'selected' : ''}>${f.name}</option>`).join('')}
       </select>
       <input class="stage-grams" type="number" placeholder="gramas" value="${item.grams || ''}">
+      <input class="stage-qty" type="number" placeholder="qtd" min="1" value="1">
       <div class="kcal-out stage-kcal">${item.kcal != null ? Math.round(item.kcal) + ' kcal' : '—'}</div>
       <button class="stage-remove" title="Remover">✕</button>
     </div>
@@ -784,21 +807,25 @@ function showStaging(items) {
     const idx = Number(row.dataset.idx);
     const foodSel = row.querySelector('.stage-food');
     const gramsInp = row.querySelector('.stage-grams');
+    const qtyInp = row.querySelector('.stage-qty');
     const kcalOut = row.querySelector('.stage-kcal');
     const removeBtn = row.querySelector('.stage-remove');
 
     function recompute() {
       const food = foodById(foodSel.value);
       const grams = Number(gramsInp.value) || (food ? food.unitGrams : 0);
+      const qty = Number(qtyInp.value) || 1;
       if (!gramsInp.value && food) gramsInp.value = grams;
       if (food) {
-        const factor = grams / 100;
-        stagedItems[idx] = { foodId: food.id, name: food.name, grams, kcal: food.kcal*factor, p: food.p*factor, c: food.c*factor, f: food.f*factor };
+        const factor = grams / 100 * qty;
+        const name = qty > 1 ? `${qty}× ${food.name}` : food.name;
+        stagedItems[idx] = { foodId: food.id, name, grams: grams * qty, kcal: food.kcal*factor, p: food.p*factor, c: food.c*factor, f: food.f*factor };
         kcalOut.textContent = Math.round(stagedItems[idx].kcal) + ' kcal';
       }
     }
     foodSel.addEventListener('change', recompute);
     gramsInp.addEventListener('input', recompute);
+    qtyInp.addEventListener('input', recompute);
     removeBtn.addEventListener('click', () => {
       stagedItems[idx] = null;
       row.remove();
