@@ -66,8 +66,11 @@
     top: 0;
     z-index: 5;
     background: rgba(10,12,16,0.85);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   .nav-inner {
