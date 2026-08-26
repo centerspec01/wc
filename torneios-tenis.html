@@ -125,6 +125,7 @@
     position: sticky;
     top: 0;
     background: rgba(10,12,16,0.92);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 14px 0;
     margin-bottom: 20px;
@@ -134,6 +135,8 @@
     gap: 10px;
     align-items: center;
     z-index: 5;
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   .search-wrap {
