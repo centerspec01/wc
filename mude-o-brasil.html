@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Hora de Mudar</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde: #00a63e;
+    --amarelo: #ffd400;
+    --azul: #0a2a8c;
+    --branco: #ffffff;
+    --preto: #050505;
+    --vermelho: #e10600;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 100%; height: 100%;
+    background: var(--preto);
+    color: var(--branco);
+    overflow: hidden;
+    font-family: 'Anton', 'Bebas Neue', Impact, sans-serif;
+    -webkit-user-select: none; user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #stage {
+    position: fixed; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 16px;
+    background: var(--preto);
+  }
+
+  .line {
+    text-transform: uppercase;
+    line-height: .92;
+    letter-spacing: .01em;
+    word-break: break-word;
+  }
+  .xl  { font-size: clamp(64px, 22vw, 320px); }
+  .lg  { font-size: clamp(48px, 14vw, 200px); }
+  .md  { font-size: clamp(32px, 8.5vw, 120px); }
+  .sm  { font-size: clamp(20px, 4.8vw, 56px); font-family: 'Bebas Neue', sans-serif; letter-spacing: .06em; }
+
+  .slam  { animation: slam .28s cubic-bezier(.2,1.6,.4,1) both; }
+  .shake { animation: shake .12s linear infinite; }
+  .glow  { text-shadow: 0 0 18px currentColor, 0 0 48px currentColor; }
+  .stroke { -webkit-text-stroke: 3px var(--branco); color: transparent; }
+
+  @keyframes slam {
+    0%   { transform: scale(3.2) rotate(-4deg); opacity: 0; filter: blur(8px); }
+    60%  { transform: scale(.92) rotate(1deg);  opacity: 1; filter: blur(0); }
+    100% { transform: scale(1)   rotate(0); }
+  }
+  @keyframes shake {
+    0%   { transform: translate(0, 0); }
+    25%  { transform: translate(-4px, 3px); }
+    50%  { transform: translate(4px, -3px); }
+    75%  { transform: translate(-3px, -4px); }
+    100% { transform: translate(0, 0); }
+  }
+
+  /* Contagem regressiva */
+  .count {
+    font-size: clamp(120px, 45vw, 520px);
+    color: var(--amarelo);
+    line-height: 1;
+  }
+
+  /* Barra com as cores do Brasil */
+  #flag {
+    position: fixed; left: 0; right: 0; bottom: 0; height: 10px;
+    background: linear-gradient(90deg, var(--verde) 0 33%, var(--amarelo) 33% 66%, var(--azul) 66% 100%);
+    z-index: 5;
+  }
+
+  /* Tela inicial */
+  #start {
+    position: fixed; inset: 0; z-index: 10;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 28px; padding: 0 16px; text-align: center;
+    background: radial-gradient(circle at 50% 40%, #0d3d1f 0%, var(--preto) 70%);
+  }
+  #start h1 {
+    font-size: clamp(48px, 13vw, 140px);
+    line-height: .9;
+    color: var(--amarelo);
+  }
+  #start h1 span { color: var(--branco); display: block; }
+  #start button, #controls button {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: .08em;
+    border: 0; cursor: pointer;
+    border-radius: 999px;
+  }
+  #start button {
+    font-size: clamp(24px, 6vw, 40px);
+    padding: 16px 44px;
+    background: var(--verde); color: var(--branco);
+    box-shadow: 0 0 0 4px var(--amarelo), 0 10px 40px rgba(0,166,62,.5);
+    animation: pulse 1s ease-in-out infinite;
+  }
+  @keyframes pulse { 50% { transform: scale(1.06); } }
+  #start .warn {
+    font-family: system-ui, sans-serif;
+    font-size: 13px; opacity: .65; max-width: 420px; line-height: 1.4;
+  }
+
+  #controls {
+    position: fixed; top: 12px; right: 12px; z-index: 6;
+    display: flex; gap: 8px; opacity: 0; transition: opacity .3s;
+  }
+  body.done #controls, #controls:hover { opacity: 1; }
+  #controls button {
+    font-size: 18px; padding: 8px 16px;
+    background: rgba(255,255,255,.14); color: var(--branco);
+    backdrop-filter: blur(6px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .slam, .shake { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="stage"></div>
+<div id="flag"></div>
+
+<div id="controls">
+  <button id="replay" type="button">↻ Repetir</button>
+  <button id="fs" type="button">⛶ Tela cheia</button>
+</div>
+
+<div id="start">
+  <h1>Seu voto<span>tem poder</span></h1>
+  <button id="go" type="button">▶ Começar</button>
+  <p class="warn">Atenção: esta apresentação tem luzes piscando muito rápido. Se você tem sensibilidade a luzes, ative "reduzir movimento" no seu aparelho.</p>
+</div>
+
+<script>
+(function () {
+  const stage = document.getElementById('stage');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const C = {
+    verde: '#00a63e', amarelo: '#ffd400', azul: '#0a2a8c',
+    branco: '#ffffff', preto: '#050505', vermelho: '#e10600'
+  };
+
+  // Cada cena: html, fundo, cor do texto, duração (ms), strobe (cores alternando rápido)
+  const scenes = [
+    // Ato 1 — 18 anos (piscando em vermelho/preto)
+    { html: '<div class="line xl shake">18 ANOS</div>', bg: C.preto, fg: C.vermelho, ms: 900, strobe: [C.preto, '#2a0000'] },
+    { html: '<div class="line lg slam">SEM MUDAR</div>', bg: C.preto, fg: C.branco, ms: 600, strobe: [C.preto, '#1a1a1a'] },
+    { html: '<div class="line md slam">A NOSSA VIDA</div>', bg: C.preto, fg: C.branco, ms: 600 },
+    { html: '<div class="line lg slam">PARA MELHOR</div>', bg: C.vermelho, fg: C.branco, ms: 700, strobe: [C.vermelho, C.preto] },
+
+    // Ato 2 — Contagem regressiva: em 5 segundos...
+    { html: '<div class="line sm">EM</div><div class="count slam">5</div><div class="line sm">SEGUNDOS</div>', bg: C.preto, fg: C.amarelo, ms: 1000 },
+    { html: '<div class="count slam">4</div>', bg: C.preto, fg: C.amarelo, ms: 1000 },
+    { html: '<div class="count slam">3</div>', bg: C.preto, fg: C.amarelo, ms: 1000 },
+    { html: '<div class="count slam">2</div>', bg: C.preto, fg: C.amarelo, ms: 1000 },
+    { html: '<div class="count slam shake">1</div>', bg: C.preto, fg: C.amarelo, ms: 1000, strobe: [C.preto, '#332b00'] },
+
+    // Ato 3 — Explosão: HORA DE MUDAR (strobe ultra rápido)
+    { html: '<div class="line xl slam glow">HORA</div>', bg: C.branco, fg: C.verde, ms: 450, strobe: [C.branco, C.amarelo] },
+    { html: '<div class="line xl slam glow">DE</div>', bg: C.amarelo, fg: C.azul, ms: 300, strobe: [C.amarelo, C.verde] },
+    { html: '<div class="line xl slam shake">MUDAR!</div>', bg: C.verde, fg: C.amarelo, ms: 1100, strobe: [C.verde, C.amarelo, C.azul, C.branco] },
+
+    // Ato 4 — Seu voto tem poder
+    { html: '<div class="line lg slam">SEU VOTO</div>', bg: C.azul, fg: C.branco, ms: 550, strobe: [C.azul, C.preto] },
+    { html: '<div class="line xl slam glow">TEM PODER</div>', bg: C.preto, fg: C.amarelo, ms: 900, strobe: [C.preto, C.azul] },
+    { html: '<div class="line md slam">MUDE O</div><div class="line xl slam">BRASIL</div>', bg: C.verde, fg: C.amarelo, ms: 1200, strobe: [C.verde, C.amarelo, C.azul] },
+
+    // Ato 5 — MAIS
+    { html: '<div class="line sm">MAIS</div><div class="line lg slam">JUSTIÇA</div>', bg: C.amarelo, fg: C.azul, ms: 650, strobe: [C.amarelo, C.branco] },
+    { html: '<div class="line sm">MAIS</div><div class="line lg slam">LIBERDADE</div>', bg: C.azul, fg: C.amarelo, ms: 650, strobe: [C.azul, C.preto] },
+    { html: '<div class="line sm">MAIS</div><div class="line md slam">OPORTUNIDADE</div>', bg: C.verde, fg: C.branco, ms: 650, strobe: [C.verde, C.amarelo] },
+
+    // Ato 6 — Bandidos presos / MENOS
+    { html: '<div class="line lg slam shake">BANDIDOS</div><div class="line lg slam">PRESOS</div>', bg: C.preto, fg: C.vermelho, ms: 850, strobe: [C.preto, '#3a0000', C.preto, C.branco] },
+    { html: '<div class="line sm">MENOS</div><div class="line md slam">BUROCRACIA</div>', bg: C.branco, fg: C.preto, ms: 650, strobe: [C.branco, '#cccccc'] },
+    { html: '<div class="line sm">MENOS</div><div class="line lg slam">PROMESSA</div>', bg: C.preto, fg: C.branco, ms: 650, strobe: [C.preto, '#222'] },
+
+    // Final — MAIS AÇÃO
+    { html: '<div class="line md slam">MAIS</div><div class="line xl slam glow shake">AÇÃO!</div>', bg: C.verde, fg: C.amarelo, ms: 1600, strobe: [C.verde, C.amarelo, C.azul, C.branco, C.preto] },
+    { html: '<div class="line md slam" style="color:' + C.branco + '">SEU VOTO TEM PODER</div><div class="line lg slam glow" style="margin-top:.15em">MUDE O BRASIL</div><div class="line sm" style="margin-top:.8em;color:' + C.branco + '">MAIS JUSTIÇA · MAIS LIBERDADE · MAIS OPORTUNIDADE</div>', bg: C.azul, fg: C.amarelo, ms: 0 }
+  ];
+
+  let timers = [];
+  let strobeTimer = null;
+
+  function clearAll() {
+    timers.forEach(clearTimeout);
+    timers = [];
+    clearInterval(strobeTimer);
+    strobeTimer = null;
+  }
+
+  function show(s) {
+    clearInterval(strobeTimer);
+    stage.style.background = s.bg;
+    stage.style.color = s.fg;
+    stage.innerHTML = s.html;
+    if (s.strobe && !reduce) {
+      let i = 0;
+      // ~16 trocas por segundo: piscando ultra rápido
+      strobeTimer = setInterval(() => {
+        i = (i + 1) % s.strobe.length;
+        stage.style.background = s.strobe[i];
+      }, 60);
+    }
+  }
+
+  function play() {
+    clearAll();
+    document.body.classList.remove('done');
+    let t = 0;
+    scenes.forEach((s, idx) => {
+      timers.push(setTimeout(() => {
+        show(s);
+        if (idx === scenes.length - 1) document.body.classList.add('done');
+      }, t));
+      t += reduce ? Math.max(s.ms, 1200) : s.ms;
+    });
+  }
+
+  function fullscreen() {
+    const el = document.documentElement;
+    const req = el.requestFullscreen || el.webkitRequestFullscreen;
+    if (req && !document.fullscreenElement) {
+      try { req.call(el); } catch (e) {}
+    }
+  }
+
+  document.getElementById('go').addEventListener('click', () => {
+    fullscreen();
+    document.getElementById('start').remove();
+    play();
+  });
+  document.getElementById('replay').addEventListener('click', play);
+  document.getElementById('fs').addEventListener('click', fullscreen);
+})();
+</script>
+</body>
+</html>
