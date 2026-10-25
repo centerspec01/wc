@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown Fim do PT</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #FF6B35;
+    --accent-light: #FFB38A;
+    --dark: #0A0C10;
+    --dark-2: #12141B;
+    --border: rgba(255,107,53,0.25);
+    --text: #E8EAF0;
+    --text-muted: #7A8094;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    padding: 24px 16px;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    max-width: 200vw;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(255,107,53,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+    z-index: 1;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.6rem, 11vw, 5rem);
+    letter-spacing: 0.05em;
+    line-height: 1;
+    color: #fff;
+  }
+  h1 span { color: var(--accent); }
+
+  .subtitle {
+    margin-top: 8px;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .timer {
+    display: flex;
+    gap: clamp(8px, 3vw, 20px);
+    justify-content: center;
+    width: 100%;
+  }
+
+  .unit {
+    flex: 1;
+    max-width: 200px;
+    background: var(--dark-2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: clamp(14px, 4vw, 26px) 6px;
+  }
+
+  .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 16vw, 7rem);
+    line-height: 1;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 0 30px rgba(255,107,53,0.35);
+  }
+
+  .lbl {
+    margin-top: 6px;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .unit.sec .num { animation: none; }
+  .unit.sec.pulse .num { animation: pulse 0.35s ease-out; }
+  @keyframes pulse {
+    0% { transform: scale(1.12); color: var(--accent-light); }
+    100% { transform: scale(1); color: #fff; }
+  }
+
+  .final .unit { border-color: var(--accent); }
+  .final .num { color: var(--accent); }
+
+  .progress {
+    width: 100%;
+    height: 8px;
+    background: var(--dark-2);
+    border-radius: 99px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    transition: width 1s linear;
+  }
+
+  .now {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .now b { color: var(--text); font-variant-numeric: tabular-nums; }
+
+  button {
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    border: none;
+    border-radius: 99px;
+    padding: 12px 26px;
+    cursor: pointer;
+    transition: transform 0.15s, opacity 0.15s;
+  }
+  button:hover { transform: translateY(-1px); }
+  button.off { background: transparent; border: 1px solid var(--border); color: var(--text-muted); }
+
+  .done {
+    display: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 14vw, 6.5rem);
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    animation: glow 1.2s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from { text-shadow: 0 0 10px rgba(255,107,53,0.3); }
+    to { text-shadow: 0 0 40px rgba(255,107,53,0.9); }
+  }
+  .is-done .done { display: block; }
+  .is-done .timer, .is-done .progress { display: none; }
+</style>
+</head>
+<body>
+<main class="wrap" id="app">
+  <header>
+    <h1>Countdown <span>Fim do PT</span></h1>
+    <p class="subtitle">Contagem regressiva para as 17:00</p>
+  </header>
+
+  <div class="timer" id="timer">
+    <div class="unit"><div class="num" id="h">00</div><div class="lbl">Horas</div></div>
+    <div class="unit"><div class="num" id="m">00</div><div class="lbl">Minutos</div></div>
+    <div class="unit sec" id="secBox"><div class="num" id="s">00</div><div class="lbl">Segundos</div></div>
+  </div>
+
+  <div class="done">🎉 Fim do PT! 🎉</div>
+
+  <div class="progress"><div class="bar" id="bar"></div></div>
+
+  <p class="now">Agora: <b id="now">--:--:--</b></p>
+
+  <button id="sound" class="off">🔇 Ativar som</button>
+</main>
+
+<script>
+  const TARGET_HOUR = 17;
+  const START_HOUR = 8; // início do expediente, usado só na barra de progresso
+
+  const $ = id => document.getElementById(id);
+  const pad = n => String(n).padStart(2, '0');
+
+  let ctx = null;
+  let soundOn = false;
+  let tickToggle = false;
+  let lastSec = null;
+  let alarmPlayed = false;
+
+  function beep(freq, dur, vol, type = 'square') {
+    if (!ctx || !soundOn) return;
+    const t = ctx.currentTime;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, t);
+    gain.gain.setValueAtTime(vol, t);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(t);
+    osc.stop(t + dur + 0.02);
+  }
+
+  function tick(remainingSec) {
+    tickToggle = !tickToggle;
+    if (remainingSec <= 10) {
+      // últimos 10 segundos: bipe mais alto e agudo
+      beep(1400, 0.12, 0.35, 'sine');
+    } else {
+      // tic-tac de relógio
+      beep(tickToggle ? 1800 : 1300, 0.03, 0.25);
+    }
+  }
+
+  function alarm() {
+    if (!ctx || !soundOn) return;
+    [0, 0.25, 0.5, 0.9, 1.15, 1.4].forEach((d, i) => {
+      setTimeout(() => beep(i % 2 ? 880 : 1175, 0.22, 0.4, 'triangle'), d * 1000);
+    });
+  }
+
+  $('sound').addEventListener('click', () => {
+    if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+    if (ctx.state === 'suspended') ctx.resume();
+    soundOn = !soundOn;
+    $('sound').textContent = soundOn ? '🔊 Som ligado' : '🔇 Ativar som';
+    $('sound').classList.toggle('off', !soundOn);
+  });
+
+  function update() {
+    const now = new Date();
+    const target = new Date(now);
+    target.setHours(TARGET_HOUR, 0, 0, 0);
+    const start = new Date(now);
+    start.setHours(START_HOUR, 0, 0, 0);
+
+    $('now').textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+
+    const diffMs = target - now;
+    const app = $('app');
+
+    if (diffMs <= 0) {
+      app.classList.add('is-done');
+      if (!alarmPlayed && lastSec !== null) alarm();
+      alarmPlayed = true;
+      lastSec = 0;
+      return;
+    }
+
+    app.classList.remove('is-done');
+    alarmPlayed = false;
+
+    const total = Math.ceil(diffMs / 1000);
+    const h = Math.floor(total / 3600);
+    const m = Math.floor((total % 3600) / 60);
+    const s = total % 60;
+
+    $('h').textContent = pad(h);
+    $('m').textContent = pad(m);
+    $('s').textContent = pad(s);
+
+    $('timer').classList.toggle('final', total <= 60);
+
+    const span = target - start;
+    const pct = span > 0 ? Math.min(100, Math.max(0, ((now - start) / span) * 100)) : 0;
+    $('bar').style.width = pct + '%';
+
+    if (total !== lastSec) {
+      const box = $('secBox');
+      box.classList.remove('pulse');
+      void box.offsetWidth;
+      box.classList.add('pulse');
+      if (lastSec !== null) tick(total);
+      lastSec = total;
+    }
+  }
+
+  update();
+  setInterval(update, 100);
+</script>
+</body>
+</html>
