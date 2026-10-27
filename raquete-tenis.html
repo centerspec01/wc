@@ -154,6 +154,21 @@
   .notes { color: var(--ink-2); font-size: 0.86rem; display: grid; gap: 6px; max-width: 80ch; }
   .notes code { font-family: var(--f-mono); font-size: 0.82rem; background: var(--surface); padding: 1px 5px; border-radius: 3px; border: 1px solid var(--line); }
 
+  .swing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+  .swing-card {
+    display: flex; flex-direction: column; gap: 6px; padding: 10px; border: 1px solid var(--line); border-radius: 6px;
+    background: var(--surface-2); cursor: pointer; text-align: left; color: var(--ink); font: inherit; min-width: 0;
+  }
+  .swing-card[aria-pressed="true"] { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); background: var(--surface); }
+  .swing-card .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-weight: 600; font-size: 0.88rem; }
+  .swing-card .top span:first-child { display: flex; align-items: center; gap: 6px; min-width: 0; }
+  .swing-card canvas { height: 230px; border-radius: 4px; }
+  .swing-card .meta { font: 0.74rem var(--f-mono); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .swing-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.8rem; color: var(--ink-2); }
+  .swing-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .swing-legend svg { width: 22px; height: 12px; }
+  #swing-time { width: 140px; }
+
   @media (max-width: 900px) {
     header, .stage, .lab { grid-template-columns: minmax(0, 1fr); }
     #court { height: 300px; }
@@ -211,6 +226,25 @@
       <p class="desc" id="desc"></p>
     </div>
   </section>
+
+  <section class="panel" id="swing-panel">
+    <div class="panel-head">
+      <h2 id="swing-title">Swing completo — vista lateral</h2>
+      <div class="btns">
+        <button class="btn primary" id="swing-play">❚❚ Pausar</button>
+        <label class="eyebrow" for="swing-time" style="display:flex;align-items:center;gap:8px">Quadro <input type="range" id="swing-time" min="0" max="1000" step="1" value="550"></label>
+      </div>
+    </div>
+    <p class="desc" id="swing-desc">Da preparação até a terminação, em câmera lenta. A bola aparece em posições a cada 20 ms: vazada antes do contato, cheia depois (quanto mais espaçadas, mais rápida). As raquetes claras mostram a sequência do movimento; arraste o controle "Quadro" para avançar quadro a quadro.</p>
+    <div class="swing-legend" aria-hidden="true">
+      <span><svg viewBox="0 0 22 12"><line x1="1" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/></svg>caminho da cabeça da raquete</span>
+      <span><svg viewBox="0 0 22 12"><circle cx="6" cy="6" r="3.5" fill="none" stroke="var(--ball-edge)"/><circle cx="16" cy="6" r="3.5" fill="none" stroke="var(--ball-edge)"/></svg>bola chegando (lançamento no saque)</span>
+      <span><svg viewBox="0 0 22 12"><circle cx="6" cy="6" r="3.5" fill="var(--ball)" stroke="var(--ball-edge)"/><circle cx="16" cy="6" r="3.5" fill="var(--ball)" stroke="var(--ball-edge)" opacity=".5"/></svg>bola saindo, a cada 20 ms</span>
+      <span><svg viewBox="0 0 22 12"><circle cx="11" cy="6" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>ponto de contato</span>
+    </div>
+    <div class="swing-grid" id="swing-grid"></div>
+  </section>
+
 
   <section class="panel">
     <div class="panel-head">
@@ -578,7 +612,7 @@
     $("desc").innerHTML = `<b>${state.sel + 1}. ${v.name}.</b> ${v.d}`;
     document.querySelectorAll("#chips .chip[data-i]").forEach(c => c.setAttribute("aria-pressed", String(+c.dataset.i === state.sel)));
     document.querySelectorAll("#tbody tr").forEach(tr => tr.classList.toggle("sel", +tr.dataset.i === state.sel));
-    drawImpact(); animate();
+    drawImpact(); animate(); markSwingSel();
   }
 
   function renderStroke() {
@@ -609,7 +643,169 @@
     $("ctrl-in").hidden = state.stroke === "sv";
     $("in-h").min = state.stroke === "sv" ? "1.8" : "0.4";
     copyToLab(0);
+    buildSwing();
     renderSelection();
+  }
+
+
+  // ── Swing completo (vista lateral, escala real 1:1) ──
+  const SWING_BREAKS = [0, 0.22, 0.42, 0.55, 0.62, 0.8, 1];   // tempo normalizado → nó da curva; contato em 0.55
+  const SWING_REAL = 1.3, SWING_SLOW = 4.2, CONTACT_U = 0.55;
+  function swingKeys(st, v) {
+    const th = d2r(v.path), c = [0, v.h], dir = [Math.cos(th), Math.sin(th)];
+    const add = (p, x, y) => [p[0] + x, p[1] + y];
+    if (st === "sv") {
+      return [add(c, -0.6, -0.5), add(c, -0.55, -1.45), add(c, -0.35 * dir[0], -0.35 * dir[1]), c,
+              add(c, 0.4 * dir[0], 0.4 * dir[1]), add(c, 0.75, -1.2), add(c, 0.35, -2.15)];
+    }
+    let f1, f2, p0 = add(c, -0.9, 0.55), p1 = add(c, -1.4, 0.15);
+    if (v.path < 0) { p0 = add(c, -0.6, 0.75); p1 = add(c, -1.15, 0.55); f1 = add(c, 0.85, -0.2); f2 = add(c, 0.55, -0.42); }
+    else if (v.id === "lob") { p0 = add(c, -0.5, 0.3); p1 = add(c, -0.8, -0.05); f1 = add(c, 0.35, 0.6); f2 = add(c, 0.2, 0.95); }
+    else { const k = Math.min(1, Math.max(0, v.path / 45)); f1 = add(c, 0.55 - 0.3 * k, 0.5 + 0.3 * k); f2 = add(c, -0.35 * k, 0.85 + 0.2 * k); }
+    const dA = v.id === "lob" ? 0.45 : 0.75;
+    return [p0, p1, add(c, -dA * dir[0], -dA * dir[1]), c, add(c, 0.55 * dir[0], 0.55 * dir[1]), f1, f2];
+  }
+  function crPoint(P, s) {   // Catmull-Rom, s ∈ [0, n-1]
+    const n = P.length, i = Math.min(n - 2, Math.max(0, Math.floor(s))), t = s - i;
+    const p0 = P[Math.max(0, i - 1)], p1 = P[i], p2 = P[i + 1], p3 = P[Math.min(n - 1, i + 2)];
+    const f = (a, b, c, d) => 0.5 * ((2 * b) + (-a + c) * t + (2 * a - 5 * b + 4 * c - d) * t * t + (-a + 3 * b - 3 * c + d) * t * t * t);
+    return [f(p0[0], p1[0], p2[0], p3[0]), f(p0[1], p1[1], p2[1], p3[1])];
+  }
+  function uToS(u) {
+    for (let k = 1; k < SWING_BREAKS.length; k++) if (u <= SWING_BREAKS[k]) {
+      const a = SWING_BREAKS[k - 1], b = SWING_BREAKS[k], t = (u - a) / (b - a);
+      return k - 1 + (k === 4 || k === 3 ? t : 0.5 - 0.5 * Math.cos(Math.PI * t));
+    }
+    return SWING_BREAKS.length - 1;
+  }
+  function ballAt(st, v, r, tReal) {   // tReal em s, 0 = contato
+    if (tReal >= 0) {
+      const pts = r.pts; let p = null;
+      for (const q of pts) { if (q[2] >= tReal) { p = q; break; } }
+      return p ? [p[0], p[1]] : null;
+    }
+    const u = incoming(st);
+    if (st === "sv") {
+      const y = v.h + u[1] * tReal - 0.5 * G * tReal * tReal;
+      if (y < 1.55) return [0.02, 1.55];   // ainda na mão do lançamento
+      return [0.02, y];
+    }
+    return [u[0] * tReal, v.h + u[1] * tReal - 0.5 * G * tReal * tReal];
+  }
+
+  let swingCards = [], swingU = CONTACT_U, swingPlaying = true, swingT0 = null, swingRAF = null;
+  function buildSwing() {
+    const s = STROKES[state.stroke];
+    $("swing-title").textContent = `Swing completo — ${s.name.toLowerCase()}, vista lateral`;
+    $("swing-grid").innerHTML = s.vars.map((v, i) => {
+      const r = results[i];
+      return `<button class="swing-card" data-i="${i}" aria-pressed="${i === state.sel}">
+        <span class="top"><span><span class="swatch" style="background:var(${SERIES[i]});margin:0"></span>${i + 1}. ${v.name}</span>${pill(r.res)}</span>
+        <canvas aria-label="Swing de ${v.name}: preparação, contato e terminação"></canvas>
+        <span class="meta">face ${sgn(v.face, 1)}° · caminho ${sgn(v.path, 0)}° · saída ${fmt(r.vout, 0)} km/h a ${sgn(r.ang, 1)}°</span>
+      </button>`;
+    }).join("");
+    swingCards = [...$("swing-grid").querySelectorAll(".swing-card")];
+    swingCards.forEach(c => c.addEventListener("click", () => { state.sel = +c.dataset.i; renderSelection(); }));
+    drawSwings();
+  }
+  function markSwingSel() { swingCards.forEach(c => c.setAttribute("aria-pressed", String(+c.dataset.i === state.sel))); }
+
+  function drawSwing(cv, i, u) {
+    const st = state.stroke, v = STROKES[st].vars[i], r = results[i];
+    const { ctx, W, H } = setup(cv);
+    const sv = st === "sv";
+    const x0 = sv ? -1.5 : -2.0, x1 = sv ? 2.6 : 2.4, ytop = sv ? 3.7 : 2.6;
+    const sc = Math.min(W / (x1 - x0), (H - 16) / ytop), ox = (W - (x1 - x0) * sc) / 2;
+    const X = x => ox + (x - x0) * sc, Y = y => H - 14 - y * sc;
+    const col = css(SERIES[i]), ink = css("--ink"), mut = css("--muted");
+    ctx.fillStyle = css("--surface"); ctx.fillRect(0, 0, W, H);
+    // chão e referência de altura
+    ctx.fillStyle = css("--court"); ctx.fillRect(0, Y(0), W, 5);
+    ctx.strokeStyle = css("--line"); ctx.lineWidth = 1; ctx.setLineDash([2, 4]);
+    for (let y = 1; y < ytop; y++) { ctx.beginPath(); ctx.moveTo(0, Y(y)); ctx.lineTo(W, Y(y)); ctx.stroke(); }
+    ctx.setLineDash([]); ctx.fillStyle = mut; ctx.font = "10px " + css("--f-mono");
+    for (let y = 1; y < ytop; y++) ctx.fillText(y + " m", 3, Y(y) - 3);
+    ctx.fillText("→ rede", W - 46, Y(0) - 5);
+
+    // jogador (silhueta simples)
+    const bx = sv ? -0.3 : -0.55, shY = sv ? 1.5 : 1.38, S = [bx + (sv ? 0.08 : 0.05), shY];
+    ctx.strokeStyle = mut; ctx.lineWidth = 3; ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(X(bx - 0.2), Y(0)); ctx.lineTo(X(bx), Y(0.9)); ctx.lineTo(X(bx + 0.18), Y(0)); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(X(bx), Y(0.9)); ctx.lineTo(X(S[0]), Y(shY)); ctx.stroke();
+    ctx.beginPath(); ctx.arc(X(S[0] + 0.02), Y(shY + 0.2), 0.1 * sc, 0, 7); ctx.stroke();
+
+    const keys = swingKeys(st, v), N = keys.length - 1;
+    // caminho completo da cabeça
+    ctx.strokeStyle = col; ctx.lineWidth = 1.5; ctx.setLineDash([4, 4]); ctx.beginPath();
+    for (let k = 0; k <= 120; k++) { const p = crPoint(keys, k / 120 * N); k ? ctx.lineTo(X(p[0]), Y(p[1])) : ctx.moveTo(X(p[0]), Y(p[1])); }
+    ctx.stroke(); ctx.setLineDash([]);
+    // rótulos de fase
+    ctx.fillStyle = mut; ctx.font = "10px " + css("--f-mono");
+    const lb = (p, t, dx, dy) => ctx.fillText(t, X(p[0]) + dx, Y(p[1]) + dy);
+    lb(keys[0], "preparação", -30, -8); lb(keys[N], "terminação", -26, sv ? 16 : -8);
+    // ponto de contato
+    ctx.strokeStyle = ink; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(X(0), Y(v.h), 0.07 * sc, 0, 7); ctx.stroke();
+
+    const racketAt = s => {
+      const head = crPoint(keys, s), ahead = crPoint(keys, Math.min(N, s + 0.02)), back = crPoint(keys, Math.max(0, s - 0.02));
+      const tang = Math.atan2(ahead[1] - back[1], ahead[0] - back[0]);
+      let dd = tang - d2r(v.path); while (dd > Math.PI) dd -= 2 * Math.PI; while (dd < -Math.PI) dd += 2 * Math.PI;
+      const faceA = d2r(v.face) + 0.6 * dd;
+      return { head, faceA };
+    };
+    const drawRacket = (s, alpha, w) => {
+      const { head, faceA } = racketAt(s);
+      const t = [-Math.sin(faceA), Math.cos(faceA)], n = [Math.cos(faceA), Math.sin(faceA)];
+      const dx = head[0] - S[0], dy = head[1] - S[1], dist = Math.hypot(dx, dy) || 1;
+      const hand = dist > 0.75 ? [head[0] - dx / dist * 0.5, head[1] - dy / dist * 0.5] : [S[0] + dx / dist * 0.25, S[1] + dy / dist * 0.25];
+      ctx.globalAlpha = alpha; ctx.lineCap = "round";
+      if (w > 2) { ctx.strokeStyle = mut; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(X(S[0]), Y(S[1])); ctx.lineTo(X(hand[0]), Y(hand[1])); ctx.stroke(); }
+      ctx.strokeStyle = ink; ctx.lineWidth = Math.max(1, w * 0.5);
+      ctx.beginPath(); ctx.moveTo(X(hand[0]), Y(hand[1])); ctx.lineTo(X(head[0] - n[0] * 0.02), Y(head[1] - n[1] * 0.02)); ctx.stroke();
+      ctx.strokeStyle = w > 2 ? col : ink; ctx.lineWidth = w;
+      ctx.beginPath(); ctx.moveTo(X(head[0] + t[0] * 0.16), Y(head[1] + t[1] * 0.16)); ctx.lineTo(X(head[0] - t[0] * 0.16), Y(head[1] - t[1] * 0.16)); ctx.stroke();
+      ctx.globalAlpha = 1;
+    };
+    // sequência estroboscópica de raquetes
+    for (let k = 0; k <= 12; k++) drawRacket(uToS(k / 12), 0.16, 2);
+
+    // bola: estrobo a cada 20 ms até o quadro atual
+    const tNow = (u - CONTACT_U) * SWING_REAL;
+    const tFirst = sv ? -0.62 : -0.25;
+    ctx.strokeStyle = css("--ball-edge"); ctx.lineWidth = 1;
+    for (let k = 0, tb = tFirst; tb <= Math.min(tNow, 0.4); k++, tb = tFirst + k * 0.02) {
+      if (sv && tb < -0.01 && k % 3) continue;   // lançamento: uma posição a cada 60 ms
+      const p = ballAt(st, v, r, tb); if (!p || p[0] > x1 + 0.2 || p[0] < x0 - 0.2 || (sv && tb < 0 && p[1] <= 1.55)) continue;
+      ctx.beginPath(); ctx.arc(X(p[0]), Y(p[1]), 0.0335 * sc + 1.2, 0, 7);
+      if (tb < -0.005) { ctx.globalAlpha = 0.8; ctx.stroke(); }   // chegando: vazada
+      else { ctx.globalAlpha = 0.45; ctx.fillStyle = css("--ball"); ctx.fill(); ctx.stroke(); }   // saindo: cheia
+    }
+    ctx.globalAlpha = 1;
+    // raquete e bola no quadro atual
+    drawRacket(uToS(u), 1, 4);
+    const pb = tNow < tFirst && sv ? [0.02, 1.55] : ballAt(st, v, r, Math.max(tNow, tFirst));
+    if (pb && pb[0] <= x1 + 0.2 && pb[0] >= x0 - 0.2) {
+      ctx.fillStyle = css("--ball"); ctx.strokeStyle = css("--ball-edge"); ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.arc(X(pb[0]), Y(pb[1]), 0.0335 * sc + 2.5, 0, 7); ctx.fill(); ctx.stroke();
+    }
+    // fase atual
+    const phase = u < 0.42 ? "preparação" : u < CONTACT_U - 0.01 ? "aceleração" : u <= CONTACT_U + 0.02 ? "contato" : u < 0.7 ? "acompanhamento" : "terminação";
+    ctx.fillStyle = ink; ctx.font = "600 11px " + css("--f-mono"); ctx.textAlign = "right";
+    ctx.fillText(`${phase} · ${tNow >= 0 ? "+" : ""}${Math.round(tNow * 1000)} ms`, W - 6, 14); ctx.textAlign = "left";
+  }
+  function drawSwings() { swingCards.forEach(c => drawSwing(c.querySelector("canvas"), +c.dataset.i, swingU)); $("swing-time").value = Math.round(swingU * 1000); }
+  function swingLoop(now) {
+    if (swingT0 === null) swingT0 = now - swingU * SWING_REAL * SWING_SLOW * 1000;
+    const cycle = SWING_REAL * SWING_SLOW + 1.2, el = ((now - swingT0) / 1000) % cycle;
+    swingU = Math.min(1, el / (SWING_REAL * SWING_SLOW));
+    drawSwings();
+    swingRAF = requestAnimationFrame(swingLoop);
+  }
+  function setSwingPlaying(on) {
+    swingPlaying = on; cancelAnimationFrame(swingRAF); swingT0 = null;
+    $("swing-play").textContent = on ? "❚❚ Pausar" : "▶ Animar";
+    if (on) swingRAF = requestAnimationFrame(swingLoop); else drawSwings();
   }
 
   // ── Conclusões calculadas ──
@@ -783,14 +979,17 @@
   const setSens = k => { state.sensX = k; $("sx-face").setAttribute("aria-pressed", String(k === "face")); $("sx-path").setAttribute("aria-pressed", String(k === "path")); drawSens(); };
   $("sx-face").addEventListener("click", () => setSens("face"));
   $("sx-path").addEventListener("click", () => setSens("path"));
-  const redrawAll = () => { drawCourt(); drawImpact(); drawSens(); };
+  const redrawAll = () => { drawCourt(); drawImpact(); drawSens(); drawSwings(); };
   let rz; window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(redrawAll, 120); });
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", redrawAll);
   new MutationObserver(redrawAll).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 
+  $("swing-play").addEventListener("click", () => setSwingPlaying(!swingPlaying));
+  $("swing-time").addEventListener("input", e => { swingU = +e.target.value / 1000; if (swingPlaying) setSwingPlaying(false); else drawSwings(); });
   window.__tennis = { simulate, STROKES, params };
   bindTips();
   renderStroke();
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) setSwingPlaying(false); else setSwingPlaying(true);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(redrawAll);
 })();
 </script>
