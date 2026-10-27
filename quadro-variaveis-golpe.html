@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Quadro de Variáveis do Golpe</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: um quadro único — resultado no topo, controles à esquerda e trajetória à direita, matriz de efeitos embaixo */
+  :root {
+    --bg: #eef2f5; --surface: #ffffff; --surface-2: #f6f8fa;
+    --ink: #0e1a26; --ink-2: #44525f; --muted: #6f7c89; --line: #d5dde5;
+    --accent: #1d4f80; --court: #2f5f8c; --court-line: #f4f7fb;
+    --ball: #c9dc12; --ball-edge: #8a9a00;
+    --up: #2a78d6; --down: #eb6834;
+    --good: #12733a; --good-bg: #e2f3e8; --warn: #9a4a06; --warn-bg: #fbeedd; --bad: #b3261e; --bad-bg: #fbe4e2;
+    --f-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+    --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0a111c; --surface: #111a28; --surface-2: #0d1522; --ink: #e6edf5; --ink-2: #a8b5c3; --muted: #7d8b9c; --line: #243246;
+      --accent: #84b6ea; --court: #1b3a5b; --court-line: #c9d6e4; --ball: #d6ec2c; --ball-edge: #9fb21a;
+      --up: #3987e5; --down: #d95926;
+      --good: #4cc27a; --good-bg: #12301f; --warn: #eaa04a; --warn-bg: #33230f; --bad: #f07b72; --bad-bg: #3a1716;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0a111c; --surface: #111a28; --surface-2: #0d1522; --ink: #e6edf5; --ink-2: #a8b5c3; --muted: #7d8b9c; --line: #243246;
+    --accent: #84b6ea; --court: #1b3a5b; --court-line: #c9d6e4; --ball: #d6ec2c; --ball-edge: #9fb21a;
+    --up: #3987e5; --down: #d95926;
+    --good: #4cc27a; --good-bg: #12301f; --warn: #eaa04a; --warn-bg: #33230f; --bad: #f07b72; --bad-bg: #3a1716;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5; }
+  .wrap {
+    max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 22px 40px;
+  }
+  h1, h2 { font-family: var(--f-display); font-weight: 700; text-transform: uppercase; margin: 0; line-height: 1.05; letter-spacing: 0.01em; text-wrap: balance; }
+  h1 { font-size: clamp(1.9rem, 4.5vw, 2.7rem); }
+  h2 { font-size: 1.2rem; letter-spacing: 0.03em; }
+  p { margin: 0; }
+  .eyebrow { font: 500 0.72rem var(--f-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+
+  .topbar { display: flex; justify-content: space-between; align-items: end; gap: 14px; flex-wrap: wrap; }
+  .topbar .sub { color: var(--ink-2); max-width: 70ch; margin-top: 6px; font-size: 0.92rem; }
+  .tools { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .seg button { font: 600 0.95rem var(--f-display); letter-spacing: 0.05em; text-transform: uppercase; border: 0; background: var(--surface); color: var(--ink-2); padding: 7px 14px; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+  select { font: 0.85rem var(--f-body); padding: 7px 8px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); max-width: 100%; }
+  button:focus-visible, select:focus-visible, input:focus-visible, tr:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .board { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; display: grid; grid-template-columns: 350px minmax(0, 1fr); }
+  .controls { padding: 16px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+  .var { display: grid; gap: 3px; padding: 10px 10px 10px 12px; border-radius: 6px; border: 1px solid transparent; cursor: pointer; }
+  .var[data-focus="true"] { background: var(--surface-2); border-color: var(--line); box-shadow: inset 3px 0 0 var(--accent); }
+  .var .row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .var .name { font-weight: 600; font-size: 0.9rem; }
+  .var output { font: 500 0.9rem var(--f-mono); font-variant-numeric: tabular-nums; }
+  .var .eff { font: 0.74rem var(--f-mono); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .var .eff b { color: var(--ink); font-weight: 500; }
+  input[type="range"] { width: 100%; accent-color: var(--accent); margin: 2px 0; }
+
+  .chartcol { padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  .result { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
+  .result div { display: flex; flex-direction: column; min-width: 0; }
+  .result .k { font: 0.66rem var(--f-mono); color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; }
+  .result .v { font: 600 1.45rem var(--f-display); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .result .v small { font-size: 0.8rem; color: var(--ink-2); font-weight: 500; margin-left: 2px; }
+  .chart-box { position: relative; }
+  canvas { display: block; width: 100%; height: 380px; border-radius: 4px; }
+  .tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 7px 9px; font-size: 0.78rem; box-shadow: 0 4px 14px rgb(0 0 0 / 0.14); min-width: 170px; z-index: 2; }
+  .tip .r { display: flex; justify-content: space-between; gap: 12px; }
+  .tip .r span:first-child { color: var(--ink-2); }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.8rem; color: var(--ink-2); align-items: center; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend svg { width: 24px; height: 12px; }
+  .fan-note { font-size: 0.86rem; color: var(--ink-2); }
+  .fan-note b { color: var(--ink); }
+
+  .pill { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px; font: 600 0.72rem var(--f-mono); letter-spacing: 0.05em; white-space: nowrap; }
+  .pill.in { color: var(--good); background: var(--good-bg); }
+  .pill.out { color: var(--warn); background: var(--warn-bg); }
+  .pill.net { color: var(--bad); background: var(--bad-bg); }
+
+  .matrix { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .matrix-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .table-box { overflow-x: auto; }
+  table { border-collapse: separate; border-spacing: 3px; width: 100%; min-width: 780px; font-size: 0.86rem; }
+  th { font: 500 0.68rem var(--f-mono); text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); text-align: center; padding: 4px 6px; vertical-align: bottom; }
+  th:first-child { text-align: left; }
+  td { padding: 9px 8px; text-align: center; font-family: var(--f-mono); font-variant-numeric: tabular-nums; border-radius: 4px; }
+  td:first-child { text-align: left; font-family: var(--f-body); font-weight: 600; white-space: nowrap; }
+  td:first-child small { display: block; font: 400 0.72rem var(--f-mono); color: var(--muted); }
+  td.top { box-shadow: inset 0 0 0 2px var(--ink); font-weight: 600; }
+  tbody tr { cursor: pointer; }
+  tbody tr[data-focus="true"] td:first-child { box-shadow: inset 3px 0 0 var(--accent); background: var(--surface-2); }
+  .scale { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--ink-2); flex-wrap: wrap; }
+  .scale i { width: 120px; height: 10px; border-radius: 3px; background: linear-gradient(90deg, var(--down), var(--surface-2), var(--up)); border: 1px solid var(--line); }
+  .reads { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px 20px; color: var(--ink-2); font-size: 0.88rem; }
+  .reads b { color: var(--ink); }
+  .foot { font-size: 0.8rem; color: var(--muted); max-width: 90ch; }
+
+  @media (max-width: 980px) {
+    .board { grid-template-columns: minmax(0, 1fr); }
+    .controls { border-right: 0; border-bottom: 1px solid var(--line); }
+    .result { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  @media (max-width: 480px) {
+    canvas { height: 280px; }
+    .result { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div>
+      <div class="eyebrow">Simulador · vista lateral · rebatida da linha de fundo</div>
+      <h1>Quadro de variáveis do golpe</h1>
+      <p class="sub">Mexa numa variável e veja para onde a bola vai. As linhas finas mostram o mesmo golpe com essa variável um e dois passos acima e abaixo; a matriz embaixo mostra quanto cada variável muda cada resultado.</p>
+    </div>
+    <div class="tools">
+      <div class="seg" role="group" aria-label="Golpe">
+        <button id="st-fh" aria-pressed="true">Forehand</button><button id="st-sv" aria-pressed="false">Saque</button>
+      </div>
+      <label class="eyebrow" for="preset" style="display:flex;gap:8px;align-items:center">Partir de <select id="preset"></select></label>
+    </div>
+  </div>
+
+  <section class="board">
+    <div class="controls" id="controls"></div>
+    <div class="chartcol">
+      <div class="result" id="result"></div>
+      <div class="chart-box" id="chart-box">
+        <canvas id="chart" aria-label="Trajetória da bola após a batida, com variações da variável em foco"></canvas>
+        <div class="tip" id="tip" hidden></div>
+      </div>
+      <div class="legend" aria-hidden="true">
+        <span><svg viewBox="0 0 24 12"><line x1="1" y1="6" x2="23" y2="6" stroke="var(--ink)" stroke-width="3"/></svg>golpe atual</span>
+        <span><svg viewBox="0 0 24 12"><line x1="1" y1="6" x2="23" y2="6" stroke="var(--up)" stroke-width="1.6"/></svg>variável em foco acima (+1, +2 passos)</span>
+        <span><svg viewBox="0 0 24 12"><line x1="1" y1="6" x2="23" y2="6" stroke="var(--down)" stroke-width="1.6" stroke-dasharray="4 3"/></svg>abaixo (−1, −2 passos)</span>
+        <span><svg viewBox="0 0 24 12"><rect x="1" y="3" width="22" height="6" fill="var(--ball)" opacity=".5"/></svg>área válida</span>
+      </div>
+      <p class="fan-note" id="fan-note"></p>
+    </div>
+  </section>
+
+  <section class="matrix">
+    <div class="matrix-head">
+      <h2>O que cada variável muda</h2>
+      <div class="scale"><span>diminui</span><i></i><span>aumenta</span><span>· contorno = maior efeito na coluna</span></div>
+    </div>
+    <p class="fan-note">Cada célula é a mudança no resultado quando a variável sobe <b>um passo</b> a partir do golpe atual. Os passos têm o tamanho de um erro comum de execução, então dá para comparar as linhas entre si. Clique numa linha para pôr a variável em foco no gráfico.</p>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>Variável (+1 passo)</th><th>Vel. saída<br>km/h</th><th>Ângulo saída<br>°</th><th>Efeito<br>rpm</th><th>Margem na rede<br>m</th><th>Quique<br>m</th><th>Altura pós-quique<br>m</th></tr></thead>
+        <tbody id="mbody"></tbody>
+      </table>
+    </div>
+    <div class="reads" id="reads"></div>
+  </section>
+
+  <p class="foot">Modelo 2D: impacto com coeficiente de restituição aparente 0,40 e aderência das cordas (bola rolando no fim do contato); voo com gravidade, arrasto (C<sub>D</sub> 0,55) e efeito Magnus; quique com restituição 0,75 e atrito 0,6. Face: ângulo das cordas em relação à vertical (negativo = fechada). Caminho: direção da cabeça da raquete em relação ao horizontal (positivo = de baixo para cima). Rede a 11,89 m (0,914 m de altura), linha de saque a 18,29 m, fundo a 23,77 m. Não mostra efeito lateral nem a diagonal do saque.</p>
+</div>
+
+<script>
+(() => {
+  // ── Física (mesmo modelo do estudo de face e caminho) ──
+  const G = 9.81, M = 0.0577, R = 0.0335, RHO = 1.21, AREA = Math.PI * R * R, CD = 0.55, IK = 0.55, EA = 0.40;
+  const NET_X = 11.89, NET_H = 0.914, BASE = 23.77, SVC = 18.29;
+  const d2r = d => d * Math.PI / 180, r2d = r => r * 180 / Math.PI, KMH = 3.6, RPM = 60 / (2 * Math.PI);
+
+  function impact(p) {
+    const f = d2r(p.face), th = d2r(p.path);
+    const n = [Math.cos(f), Math.sin(f)], t = [-Math.sin(f), Math.cos(f)];
+    const V = [p.vr * Math.cos(th), p.vr * Math.sin(th)];
+    const w = [p.uin[0] - V[0], p.uin[1] - V[1]];
+    const wn = w[0] * n[0] + w[1] * n[1], wt = w[0] * t[0] + w[1] * t[1];
+    const wn2 = -EA * wn, wt2 = wt / (1 + IK);
+    return { v: [V[0] + wn2 * n[0] + wt2 * t[0], V[1] + wn2 * n[1] + wt2 * t[1]], spin: -wt2 / R };
+  }
+  function simulate(p, limit) {
+    const imp = impact(p);
+    let x = 0, y = p.h, vx = imp.v[0], vy = imp.v[1], w = imp.spin, tt = 0;
+    const dt = 0.002, pts = [[x, y]];
+    let netY = null, land = null, bounceH = 0, hitNet = false;
+    for (let i = 0; i < 6000; i++) {
+      const v = Math.hypot(vx, vy), S = R * Math.abs(w) / v, CL = S > 1e-6 ? 1 / (2 + 1 / S) : 0;
+      const k = 0.5 * RHO * AREA * v / M, sg = Math.sign(w);
+      const ax = -k * CD * vx + k * CL * sg * vy, ay = -G - k * CD * vy - k * CL * sg * vx;
+      const px = x, py = y;
+      vx += ax * dt; vy += ay * dt; x += vx * dt; y += vy * dt; tt += dt; w *= Math.exp(-dt / 20);
+      if (px < NET_X && x >= NET_X && netY === null && !land) {
+        netY = py + (y - py) * (NET_X - px) / (x - px);
+        if (netY < NET_H) { hitNet = true; pts.push([NET_X, netY]); break; }
+      }
+      if (y <= 0 && !land) {
+        const lx = px + (x - px) * py / (py - y);
+        land = lx; pts.push([lx, 0]);
+        if (lx < NET_X) { hitNet = true; break; }
+        const vy0 = vy; y = 0; x = lx; vy = -0.75 * vy0;
+        const vc = vx - w * R; let dvx = -vc / (1 + 1 / IK);
+        const lim = 0.6 * 1.75 * Math.abs(vy0);
+        if (Math.abs(dvx) > lim) dvx = Math.sign(dvx) * lim;
+        vx += dvx; w += -dvx / (IK * R);
+        continue;
+      }
+      if (land !== null) { bounceH = Math.max(bounceH, y); if (y <= 0 || x > land + 9) break; }
+      pts.push([x, y]);
+    }
+    const res = hitNet ? "net" : (land !== null && land > limit ? "out" : "in");
+    return {
+      pts, res, vout: Math.hypot(...imp.v) * KMH, ang: r2d(Math.atan2(imp.v[1], imp.v[0])), rpm: imp.spin * RPM,
+      margin: netY === null ? null : netY - NET_H, land: hitNet ? null : land, bounceH: hitNet ? null : bounceH,
+      touch: pts[pts.length - 1][0] && hitNet ? Math.min(pts[pts.length - 1][0], NET_X) : land
+    };
+  }
+
+  // ── Variáveis e golpes ──
+  const VARS = [
+    { k: "face", name: "Ângulo da face", unit: "°", min: -20, max: 35, step: 0.5, delta: 1, d: 1,
+      show: v => `${sgn(v, 1)}° ${v < 0 ? "fechada" : v > 0 ? "aberta" : "vertical"}`, stepTxt: "+1°" },
+    { k: "path", name: "Caminho da raquete", unit: "°", min: -35, max: 60, step: 1, delta: 5, d: 0,
+      show: v => `${sgn(v, 0)}° ${v > 0 ? "subindo" : v < 0 ? "descendo" : "plano"}`, stepTxt: "+5°" },
+    { k: "vr", name: "Velocidade da raquete", unit: "km/h", min: 30, max: 180, step: 1, delta: 10, d: 0,
+      show: v => `${fmt(v, 0)} km/h`, stepTxt: "+10 km/h" },
+    { k: "h", name: "Altura do contato", unit: "m", min: 0.4, max: 3.2, step: 0.05, delta: 0.1, d: 2,
+      show: v => `${fmt(v, 2)} m`, stepTxt: "+10 cm" },
+    { k: "u", name: "Velocidade da bola recebida", unit: "km/h", min: 20, max: 110, step: 1, delta: 10, d: 0,
+      show: v => `${fmt(v, 0)} km/h`, stepTxt: "+10 km/h", only: "fh" }
+  ];
+  const STROKES = {
+    fh: { name: "Forehand", limit: BASE, limitName: "fundo", inAng: -7.6, presets: [
+      ["Topspin padrão", { face: 0, path: 35, vr: 97, h: 0.95, u: 54 }],
+      ["Topspin pesado", { face: -2, path: 45, vr: 101, h: 0.95, u: 54 }],
+      ["Chapado (flat)", { face: 2.5, path: 10, vr: 97, h: 0.95, u: 54 }],
+      ["Face aberta demais", { face: 8, path: 25, vr: 97, h: 0.95, u: 54 }],
+      ["Face fechada demais", { face: -6, path: 20, vr: 97, h: 0.95, u: 54 }],
+      ["Slice", { face: 8, path: -20, vr: 79, h: 0.95, u: 54 }],
+      ["Balão defensivo", { face: 32, path: 45, vr: 32, h: 0.75, u: 54 }]
+    ] },
+    sv: { name: "Saque", limit: SVC, limitName: "linha de saque", presets: [
+      ["Chapado", { face: -7, path: -3, vr: 151, h: 2.8 }],
+      ["Kick / topspin", { face: -12, path: 30, vr: 137, h: 2.8 }],
+      ["Kick sem fechar a face", { face: -7, path: 30, vr: 137, h: 2.8 }],
+      ["Face aberta", { face: 3, path: 0, vr: 151, h: 2.8 }],
+      ["Face fechada demais", { face: -14, path: -6, vr: 151, h: 2.8 }],
+      ["Contato baixo", { face: -7, path: -3, vr: 151, h: 2.4 }],
+      ["Raquete mais lenta", { face: -7, path: -3, vr: 108, h: 2.8 }]
+    ] }
+  };
+  const OUTS = [
+    { k: "vout", d: 0 }, { k: "ang", d: 1 }, { k: "rpm", d: 0 }, { k: "margin", d: 2 }, { k: "land", d: 1 }, { k: "bounceH", d: 2 }
+  ];
+
+  const state = { st: "fh", v: { ...STROKES.fh.presets[0][1] }, focus: "face" };
+  const $ = id => document.getElementById(id);
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const fmt = (v, d = 1) => v === null || v === undefined || !isFinite(v) ? "—" : v.toLocaleString("pt-BR", { minimumFractionDigits: d, maximumFractionDigits: d });
+  const sgn = (v, d = 1) => {
+    if (v === null || v === undefined || !isFinite(v)) return "—";
+    if (Math.abs(v) < 0.5 * Math.pow(10, -d)) return fmt(0, d);
+    return (v > 0 ? "+" : "−") + fmt(Math.abs(v), d);
+  };
+  const RES = { in: ["in", "✓ DENTRO"], out: ["out", "↑ FORA (LONGA)"], net: ["net", "✕ REDE"] };
+  const pill = r => `<span class="pill ${RES[r][0]}">${RES[r][1]}</span>`;
+  const activeVars = () => VARS.filter(x => !x.only || x.only === state.st);
+
+  function run(v) {
+    const s = STROKES[state.st];
+    const uin = state.st === "fh" ? [-(v.u / KMH) * Math.cos(d2r(s.inAng)), (v.u / KMH) * Math.sin(d2r(s.inAng))] : [0, -1];
+    return simulate({ face: v.face, path: v.path, vr: v.vr / KMH, h: v.h, uin }, s.limit);
+  }
+  const shifted = (k, n) => {
+    const def = VARS.find(x => x.k === k), o = { ...state.v };
+    o[k] = Math.min(def.max, Math.max(def.min, o[k] + n * def.delta));
+    return o;
+  };
+
+  // ── Controles ──
+  function buildControls() {
+    $("controls").innerHTML = activeVars().map(x => `
+      <div class="var" data-k="${x.k}" data-focus="${state.focus === x.k}">
+        <div class="row"><label class="name" for="in-${x.k}">${x.name}</label><output id="o-${x.k}"></output></div>
+        <input type="range" id="in-${x.k}" min="${x.min}" max="${state.st === "sv" && x.k === "h" ? 3.2 : x.max}" step="${x.step}" value="${state.v[x.k]}">
+        <div class="eff" id="e-${x.k}"></div>
+      </div>`).join("");
+    activeVars().forEach(x => {
+      const el = $("in-" + x.k);
+      el.addEventListener("input", () => { state.v[x.k] = +el.value; $("preset").value = ""; update(); });
+      const focus = () => { if (state.focus !== x.k) { state.focus = x.k; update(); } };
+      el.addEventListener("focus", focus); el.addEventListener("pointerdown", focus);
+      el.closest(".var").addEventListener("click", focus);
+    });
+  }
+  function buildPresets() {
+    $("preset").innerHTML = `<option value="">— ajuste livre —</option>` +
+      STROKES[state.st].presets.map((p, i) => `<option value="${i}">${p[0]}</option>`).join("");
+    $("preset").value = "0";
+  }
+
+  // ── Atualização ──
+  let cur, fan, sens;
+  function update() {
+    cur = run(state.v);
+    const x = VARS.find(q => q.k === state.focus);
+    fan = [-2, -1, 1, 2].map(n => ({ n, v: shifted(state.focus, n), r: run(shifted(state.focus, n)) }));
+    sens = activeVars().map(q => {
+      const up = run(shifted(q.k, 1)), dn = run(shifted(q.k, -1));
+      const row = {};
+      for (const o of OUTS) {
+        const a = up[o.k], b = dn[o.k], c = cur[o.k];
+        if (a !== null && b !== null) row[o.k] = (a - b) / 2;
+        else if (a !== null && c !== null) row[o.k] = a - c;
+        else if (b !== null && c !== null) row[o.k] = c - b;
+        else row[o.k] = null;
+      }
+      return { q, row, up, dn };
+    });
+    // controles
+    activeVars().forEach(q => {
+      $("o-" + q.k).textContent = q.show(state.v[q.k]);
+      $("in-" + q.k).value = state.v[q.k];
+      const s = sens.find(z => z.q.k === q.k).row;
+      $("e-" + q.k).innerHTML = `${q.stepTxt} → quique <b>${s.land === null ? "—" : sgn(s.land, 1) + " m"}</b> · rede <b>${s.margin === null ? "—" : sgn(s.margin, 2) + " m"}</b> · <b>${sgn(s.rpm, 0)}</b> rpm`;
+    });
+    document.querySelectorAll(".var").forEach(el => el.dataset.focus = String(el.dataset.k === state.focus));
+    // resultado
+    $("result").innerHTML = `
+      <div><span class="k">Vel. saída</span><span class="v">${fmt(cur.vout, 0)}<small>km/h</small></span></div>
+      <div><span class="k">Ângulo saída</span><span class="v">${sgn(cur.ang, 1)}<small>°</small></span></div>
+      <div><span class="k">Efeito</span><span class="v">${fmt(Math.abs(cur.rpm), 0)}<small>${cur.rpm > 150 ? "top" : cur.rpm < -150 ? "back" : "rpm"}</small></span></div>
+      <div><span class="k">Margem rede</span><span class="v">${cur.margin === null ? "—" : sgn(cur.margin, 2)}<small>m</small></span></div>
+      <div><span class="k">Quique</span><span class="v">${cur.land === null ? "—" : fmt(cur.land, 1)}<small>m</small></span></div>
+      <div><span class="k">Alt. pós-quique</span><span class="v">${cur.bounceH === null ? "—" : fmt(cur.bounceH, 2)}<small>m</small></span></div>
+      <div><span class="k">Resultado</span><span class="v" style="padding-top:5px">${pill(cur.res)}</span></div>`;
+    // texto do leque
+    const tags = fan.map(f => `${f.n > 0 ? "+" : "−"}${Math.abs(f.n)}: ${f.r.land === null ? "rede" : fmt(f.r.land, 1) + " m"}`);
+    $("fan-note").innerHTML = `<b>Em foco: ${x.name.toLowerCase()}</b> (passo de ${x.stepTxt.replace("+", "")}). Onde a bola toca com −2, −1, +1 e +2 passos: ${tags.join(" · ")}. Clique em outra variável para trocar o foco.`;
+    drawChart(); renderMatrix();
+  }
+
+  // ── Gráfico ──
+  let geo = null;
+  function drawChart() {
+    const cv = $("chart"), dpr = window.devicePixelRatio || 1, rc = cv.getBoundingClientRect();
+    cv.width = Math.round(rc.width * dpr); cv.height = Math.round(rc.height * dpr);
+    const ctx = cv.getContext("2d"); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const W = rc.width, H = rc.height, s = STROKES[state.st];
+    const all = [cur, ...fan.map(f => f.r)];
+    let xmax = 28, ymax = state.st === "sv" ? 3.4 : 2.4;
+    for (const r of all) for (const p of r.pts) { if (p[0] < 50) xmax = Math.max(xmax, p[0] + 1); ymax = Math.max(ymax, Math.min(p[1], 16) + 0.4); }
+    xmax = Math.min(50, Math.ceil(xmax / 2) * 2);
+    const padL = 36, padR = 34, padT = 10, padB = 26;
+    const sx = (W - padL - padR) / (xmax + 1), sy = (H - padT - padB) / ymax;
+    const X = x => padL + (x + 1) * sx, Y = y => H - padB - y * sy;
+    geo = { X, Y, sx, padL, xmax };
+    ctx.fillStyle = css("--surface-2"); ctx.fillRect(0, 0, W, H);
+    // grade
+    ctx.strokeStyle = css("--line"); ctx.lineWidth = 1; ctx.fillStyle = css("--muted"); ctx.font = "11px " + css("--f-mono");
+    const ystep = ymax > 9 ? 2 : 1;
+    for (let y = ystep; y < ymax; y += ystep) { ctx.beginPath(); ctx.moveTo(padL, Y(y)); ctx.lineTo(W - padR, Y(y)); ctx.stroke(); ctx.fillText(y + " m", 2, Y(y) + 4); }
+    // chão e área válida
+    ctx.fillStyle = css("--court"); ctx.fillRect(X(-1), Y(0), X(xmax) - X(-1), 6);
+    ctx.fillStyle = css("--ball"); ctx.globalAlpha = 0.45; ctx.fillRect(X(NET_X), Y(0), X(s.limit) - X(NET_X), 6); ctx.globalAlpha = 1;
+    ctx.textAlign = "center";
+    const marks = [[0, "você"], [NET_X, "rede"], [s.limit, W < 600 && state.st === "sv" ? "saque" : s.limitName]];
+    if (state.st === "sv") marks.push([BASE, "fundo"]);
+    let lastR = -1e9;
+    const label = (t, cx) => { const w = ctx.measureText(t).width; if (cx - w / 2 > lastR + 6) { ctx.fillText(t, cx, H - 6); lastR = cx + w / 2; } };
+    for (const [x, l] of marks) { if (x > xmax) continue; ctx.fillStyle = css("--court-line"); ctx.fillRect(X(x) - 1, Y(0), 2, 6); ctx.fillStyle = css("--muted"); label(l, X(x)); }
+    for (let x = 30; x <= xmax; x += 5) label(x + " m", X(x));
+    ctx.textAlign = "left";
+    // rede
+    ctx.strokeStyle = css("--ink-2"); ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(X(NET_X), Y(0)); ctx.lineTo(X(NET_X), Y(NET_H)); ctx.stroke();
+    ctx.fillStyle = css("--court-line"); ctx.fillRect(X(NET_X) - 4, Y(NET_H) - 2, 8, 3);
+    // leque
+    const x = VARS.find(q => q.k === state.focus);
+    for (const f of fan) {
+      ctx.strokeStyle = css(f.n > 0 ? "--up" : "--down"); ctx.lineWidth = 1.6; ctx.globalAlpha = Math.abs(f.n) === 1 ? 0.95 : 0.6;
+      if (f.n < 0) ctx.setLineDash([5, 4]);
+      ctx.beginPath(); f.r.pts.forEach((p, i) => i ? ctx.lineTo(X(p[0]), Y(p[1])) : ctx.moveTo(X(p[0]), Y(p[1]))); ctx.stroke();
+      ctx.setLineDash([]); ctx.globalAlpha = 1;
+      const end = f.r.pts[f.r.pts.length - 1], tp = f.r.land !== null ? [f.r.land, 0] : end;
+      ctx.fillStyle = css(f.n > 0 ? "--up" : "--down"); ctx.strokeStyle = css("--surface-2"); ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(X(tp[0]), Y(tp[1]), 4, 0, 7); ctx.fill(); ctx.stroke();
+      ctx.font = "600 10px " + css("--f-mono"); ctx.textAlign = "center";
+      ctx.fillText((f.n > 0 ? "+" : "−") + Math.abs(f.n), X(tp[0]), Y(tp[1]) - 8 - (Math.abs(f.n) - 1) * 10);
+      ctx.textAlign = "left";
+    }
+    // atual
+    ctx.strokeStyle = css("--ink"); ctx.lineWidth = 3;
+    ctx.beginPath(); cur.pts.forEach((p, i) => i ? ctx.lineTo(X(p[0]), Y(p[1])) : ctx.moveTo(X(p[0]), Y(p[1]))); ctx.stroke();
+    const tp = cur.land !== null ? [cur.land, 0] : cur.pts[cur.pts.length - 1];
+    ctx.fillStyle = css("--ball"); ctx.strokeStyle = css("--ball-edge"); ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(X(tp[0]), Y(tp[1]), 6, 0, 7); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.arc(X(0), Y(state.v.h), 6, 0, 7); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = css("--muted"); ctx.font = "11px " + css("--f-mono");
+    ctx.fillText(`escala vertical ${fmt(sy / sx, 1)}×`, W - padR - 110, padT + 12);
+  }
+
+  // ── Matriz ──
+  function renderMatrix() {
+    const maxAbs = {};
+    for (const o of OUTS) maxAbs[o.k] = Math.max(1e-9, ...sens.map(z => Math.abs(z.row[o.k] ?? 0)));
+    const topRow = {};
+    for (const o of OUTS) { let best = null; sens.forEach((z, i) => { const v = z.row[o.k]; if (v !== null && (best === null || Math.abs(v) > Math.abs(sens[best].row[o.k]))) best = i; }); topRow[o.k] = best; }
+    $("mbody").innerHTML = sens.map((z, i) => `<tr data-k="${z.q.k}" data-focus="${z.q.k === state.focus}" tabindex="0">
+      <td>${z.q.name}<small>passo: ${z.q.stepTxt}</small></td>
+      ${OUTS.map(o => {
+        const v = z.row[o.k];
+        if (v === null) return `<td style="background:var(--surface-2)">—</td>`;
+        const a = Math.round(Math.min(1, Math.abs(v) / maxAbs[o.k]) * 62);
+        const bg = `color-mix(in oklab, var(${v >= 0 ? "--up" : "--down"}) ${a}%, var(--surface-2))`;
+        return `<td class="${topRow[o.k] === i && Math.abs(v) > 1e-6 ? "top" : ""}" style="background:${bg}">${sgn(v, o.d)}</td>`;
+      }).join("")}</tr>`).join("");
+    $("mbody").querySelectorAll("tr").forEach(tr => {
+      const go = () => { state.focus = tr.dataset.k; update(); };
+      tr.addEventListener("click", go);
+      tr.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+    });
+    const name = k => sens[topRow[k]]?.q.name.toLowerCase() ?? "—";
+    const val = (k, d, u) => topRow[k] === null ? "" : ` (${sgn(sens[topRow[k]].row[k], d)} ${u} por passo)`;
+    $("reads").innerHTML = `
+      <p><b>Profundidade do quique:</b> quem mais muda é ${name("land")}${val("land", 1, "m")}.</p>
+      <p><b>Altura sobre a rede:</b> quem mais muda é ${name("margin")}${val("margin", 2, "m")}.</p>
+      <p><b>Efeito (rotação):</b> quem mais muda é ${name("rpm")}${val("rpm", 0, "rpm")}.</p>
+      <p><b>Velocidade de saída:</b> quem mais muda é ${name("vout")}${val("vout", 0, "km/h")}.</p>`;
+  }
+
+  // ── Tooltip ──
+  $("chart").addEventListener("pointermove", e => {
+    if (!geo) return;
+    const rc = e.currentTarget.getBoundingClientRect(), mx = e.clientX - rc.left;
+    const x = (mx - geo.padL) / geo.sx - 1;
+    const tip = $("tip");
+    if (x < 0 || x > geo.xmax) { tip.hidden = true; return; }
+    const at = r => { for (let i = 1; i < r.pts.length; i++) { const p = r.pts[i - 1], q = r.pts[i]; if (p[0] <= x && q[0] >= x) return p[1] + (q[1] - p[1]) * (x - p[0]) / ((q[0] - p[0]) || 1); } return null; };
+    const def = VARS.find(q => q.k === state.focus);
+    let h = `<div class="r"><span>Distância</span><b class="num">${fmt(x, 1)} m</b></div><div class="r"><span>Golpe atual</span><b class="num">${at(cur) === null ? "—" : fmt(at(cur), 2) + " m"}</b></div>`;
+    for (const f of [...fan].sort((a, b) => b.n - a.n)) {
+      const y = at(f.r);
+      h += `<div class="r"><span>${def.name.split(" ")[0]} ${def.show(f.v[state.focus]).split(" ").slice(0, 2).join(" ")}</span><b class="num">${y === null ? "—" : fmt(y, 2) + " m"}</b></div>`;
+    }
+    tip.innerHTML = h; tip.hidden = false;
+    const box = $("chart-box");
+    tip.style.left = Math.max(4, Math.min(mx + 14, box.clientWidth - tip.offsetWidth - 4)) + "px"; tip.style.top = "8px";
+  });
+  $("chart").addEventListener("pointerleave", () => $("tip").hidden = true);
+
+  // ── Eventos ──
+  function setStroke(st) {
+    state.st = st; state.v = { ...STROKES[st].presets[0][1] };
+    if (st === "sv" && state.focus === "u") state.focus = "face";
+    $("st-fh").setAttribute("aria-pressed", String(st === "fh")); $("st-sv").setAttribute("aria-pressed", String(st === "sv"));
+    buildPresets(); buildControls(); update();
+  }
+  $("st-fh").addEventListener("click", () => setStroke("fh"));
+  $("st-sv").addEventListener("click", () => setStroke("sv"));
+  $("preset").addEventListener("change", e => {
+    if (e.target.value === "") return;
+    const p = STROKES[state.st].presets[+e.target.value][1];
+    state.v = { ...state.v, ...p }; update();
+  });
+  let rz; window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(drawChart, 100); });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", drawChart);
+  new MutationObserver(() => { drawChart(); }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+  setStroke("fh");
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawChart);
+})();
+</script>
+</body>
+</html>
