@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Face e Caminho da Raquete</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: laboratório de quadra — vista lateral da quadra no topo, impacto ampliado ao lado, tabela comparativa e bancada de testes abaixo */
+  :root {
+    --bg: #eef2f5;
+    --surface: #ffffff;
+    --surface-2: #f6f8fa;
+    --ink: #0e1a26;
+    --ink-2: #44525f;
+    --muted: #6f7c89;
+    --line: #d5dde5;
+    --accent: #1d4f80;
+    --court: #2f5f8c;
+    --court-2: #3b6e9c;
+    --court-line: #f4f7fb;
+    --ball: #c9dc12;
+    --ball-edge: #8a9a00;
+    --good: #12733a; --good-bg: #e2f3e8;
+    --warn: #9a4a06; --warn-bg: #fbeedd;
+    --bad: #b3261e;  --bad-bg: #fbe4e2;
+    --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4; --s6: #008300; --s7: #6250d6;
+    --f-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+    --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0a111c; --surface: #111a28; --surface-2: #0d1522; --ink: #e6edf5; --ink-2: #a8b5c3; --muted: #7d8b9c; --line: #243246;
+      --accent: #84b6ea; --court: #1b3a5b; --court-2: #22466c; --court-line: #c9d6e4; --ball: #d6ec2c; --ball-edge: #9fb21a;
+      --good: #4cc27a; --good-bg: #12301f; --warn: #eaa04a; --warn-bg: #33230f; --bad: #f07b72; --bad-bg: #3a1716;
+      --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #2f9a2f; --s7: #9085e9;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0a111c; --surface: #111a28; --surface-2: #0d1522; --ink: #e6edf5; --ink-2: #a8b5c3; --muted: #7d8b9c; --line: #243246;
+    --accent: #84b6ea; --court: #1b3a5b; --court-2: #22466c; --court-line: #c9d6e4; --ball: #d6ec2c; --ball-edge: #9fb21a;
+    --good: #4cc27a; --good-bg: #12301f; --warn: #eaa04a; --warn-bg: #33230f; --bad: #f07b72; --bad-bg: #3a1716;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #2f9a2f; --s7: #9085e9;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--ink);
+    font-family: var(--f-body); font-size: 15px; line-height: 1.55;
+  }
+  .wrap {
+    max-width: 1180px; margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 28px 56px;
+    display: flex; flex-direction: column; gap: 28px;
+  }
+  h1, h2, h3 { font-family: var(--f-display); font-weight: 700; line-height: 1.05; margin: 0; text-wrap: balance; letter-spacing: 0.01em; }
+  h1 { font-size: clamp(2.3rem, 6vw, 3.6rem); text-transform: uppercase; }
+  h2 { font-size: 1.7rem; text-transform: uppercase; }
+  h3 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.03em; }
+  p { margin: 0; }
+  .eyebrow { font-family: var(--f-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+
+  header { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 28px; align-items: end; }
+  header .lede { color: var(--ink-2); max-width: 62ch; margin-top: 12px; }
+  .rules { display: grid; gap: 10px; }
+  .rule { display: grid; grid-template-columns: 34px minmax(0,1fr); gap: 12px; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; }
+  .rule b { font-family: var(--f-display); font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.03em; display: block; }
+  .rule span { color: var(--ink-2); font-size: 0.9rem; }
+  .rule svg { width: 34px; height: 34px; }
+
+  .tabs { display: flex; gap: 6px; border-bottom: 2px solid var(--line); flex-wrap: wrap; }
+  .tab {
+    font-family: var(--f-display); font-size: 1.35rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+    background: none; border: 0; color: var(--muted); padding: 8px 18px 10px; cursor: pointer; margin-bottom: -2px;
+    border-bottom: 3px solid transparent;
+  }
+  .tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ball); }
+  .tab:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .stage { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 18px; }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  .panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .canvas-box { position: relative; width: 100%; }
+  canvas { display: block; width: 100%; }
+  #court { height: 360px; border-radius: 4px; }
+  #impact { height: 300px; }
+  #sens { height: 260px; }
+  .tip {
+    position: absolute; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--line);
+    border-radius: 6px; padding: 8px 10px; font-size: 0.8rem; box-shadow: 0 4px 14px rgb(0 0 0 / 0.12); min-width: 160px; z-index: 2;
+  }
+  .tip .row { display: flex; justify-content: space-between; gap: 12px; }
+  .tip .row span:first-child { color: var(--ink-2); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 8px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); font: 500 0.85rem var(--f-body); cursor: pointer;
+  }
+  .chip i { width: 18px; height: 18px; border-radius: 50%; display: inline-grid; place-items: center; color: #fff; font: 600 0.7rem var(--f-mono); font-style: normal; }
+  .chip[aria-pressed="true"] { border-color: var(--ink); background: var(--surface); box-shadow: inset 0 0 0 1px var(--ink); }
+  .chip.chip-lab i { background: transparent; border: 2px dashed var(--ink); color: var(--ink); }
+
+  .readout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; }
+  .readout div { display: flex; flex-direction: column; }
+  .readout .k { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--f-mono); }
+  .readout .v { font-family: var(--f-display); font-size: 1.55rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .readout .v small { font-size: 0.9rem; color: var(--ink-2); font-weight: 500; margin-left: 2px; }
+  .desc { color: var(--ink-2); font-size: 0.92rem; }
+
+  .pill { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px; border-radius: 999px; font: 600 0.72rem var(--f-mono); letter-spacing: 0.06em; white-space: nowrap; }
+  .pill.in { color: var(--good); background: var(--good-bg); }
+  .pill.out { color: var(--warn); background: var(--warn-bg); }
+  .pill.net { color: var(--bad); background: var(--bad-bg); }
+
+  .table-box { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; min-width: 860px; font-size: 0.86rem; }
+  th, td { padding: 9px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { font: 500 0.7rem var(--f-mono); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); vertical-align: bottom; }
+  td { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+  th:first-child, td:first-child { text-align: left; font-family: var(--f-body); }
+  td:last-child, th:last-child { text-align: left; }
+  tbody tr { cursor: pointer; }
+  tbody tr:hover { background: var(--surface-2); }
+  tbody tr.sel { background: var(--surface-2); box-shadow: inset 3px 0 0 var(--ink); }
+  .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; vertical-align: 0; }
+
+  .lab { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 18px; }
+  .ctrl { display: grid; gap: 4px; }
+  .ctrl label { display: flex; justify-content: space-between; font-size: 0.86rem; color: var(--ink-2); }
+  .ctrl label output { font-family: var(--f-mono); color: var(--ink); }
+  .ctrl .hint { font-size: 0.75rem; color: var(--muted); }
+  input[type="range"] { width: 100%; accent-color: var(--accent); }
+  .btns { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn { font: 500 0.85rem var(--f-body); padding: 7px 12px; border-radius: 6px; border: 1px solid var(--line); background: var(--surface-2); color: var(--ink); cursor: pointer; }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .seg button { font: 500 0.8rem var(--f-body); border: 0; background: var(--surface-2); color: var(--ink-2); padding: 5px 10px; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+
+  .findings { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+  .finding { padding: 14px 16px; border-top: 3px solid var(--ink); background: var(--surface); border-radius: 0 0 6px 6px; display: grid; gap: 6px; }
+  .finding p { color: var(--ink-2); font-size: 0.92rem; }
+  .finding .big { font-family: var(--f-display); font-size: 1.9rem; font-weight: 700; color: var(--ink); }
+
+  .notes { color: var(--ink-2); font-size: 0.86rem; display: grid; gap: 6px; max-width: 80ch; }
+  .notes code { font-family: var(--f-mono); font-size: 0.82rem; background: var(--surface); padding: 1px 5px; border-radius: 3px; border: 1px solid var(--line); }
+
+  @media (max-width: 900px) {
+    header, .stage, .lab { grid-template-columns: minmax(0, 1fr); }
+    #court { height: 300px; }
+  }
+  @media (max-width: 480px) {
+    .tab { font-size: 1.15rem; padding: 6px 12px 8px; }
+    #court { height: 260px; }
+    .readout .v { font-size: 1.3rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Estudo de biomecânica · Forehand e saque</div>
+      <h1>Face e caminho da raquete</h1>
+      <p class="lede">Como o ângulo da face no impacto e a direção do swing decidem para onde a bola vai, quanto gira e onde quica. Cada variação abaixo é simulada com um modelo físico de impacto (coeficiente de restituição, aderência das cordas) e de voo (gravidade, arrasto e efeito Magnus).</p>
+    </div>
+    <div class="rules">
+      <div class="rule">
+        <svg viewBox="0 0 34 34" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="29" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="14" y1="17" x2="30" y2="17" stroke="currentColor" stroke-width="2"/><path d="M26 13l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <div><b>A face define a direção</b><span>A bola sai perto da perpendicular às cordas. Poucos graus de face mudam vários metros de profundidade.</span></div>
+      </div>
+      <div class="rule">
+        <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M5 28 Q16 24 28 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M22 8h6v6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="13" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8a5 5 0 0 1 5 5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        <div><b>O caminho define o efeito</b><span>A diferença entre o caminho do swing e a perpendicular da face é o "raspão" que gera topspin (de baixo para cima) ou slice (de cima para baixo).</span></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Golpe">
+    <button class="tab" role="tab" id="tab-fh" aria-selected="true" data-stroke="fh">Forehand</button>
+    <button class="tab" role="tab" id="tab-sv" aria-selected="false" data-stroke="sv">Saque</button>
+  </nav>
+
+  <section class="stage">
+    <div class="panel">
+      <div class="panel-head">
+        <h3 id="court-title">Trajetória — vista lateral</h3>
+        <div class="btns"><button class="btn" id="play">▶ Repetir animação</button></div>
+      </div>
+      <div class="chips" id="chips" aria-label="Variações"></div>
+      <div class="canvas-box" id="court-box">
+        <canvas id="court" aria-label="Trajetórias das variações em vista lateral da quadra"></canvas>
+        <div class="tip" id="court-tip" hidden></div>
+      </div>
+      <p class="eyebrow" id="court-scale"></p>
+    </div>
+    <div class="panel">
+      <h3>No impacto</h3>
+      <canvas id="impact" aria-label="Diagrama do impacto: face da raquete, caminho e saída da bola"></canvas>
+      <div class="readout" id="readout"></div>
+      <p class="desc" id="desc"></p>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2 id="table-title">Comparativo das variações</h2>
+      <span class="eyebrow">Clique numa linha para ver a trajetória</span>
+    </div>
+    <div class="table-box">
+      <table>
+        <thead><tr>
+          <th>Variação</th><th>Face<br>(°)</th><th>Caminho<br>(°)</th><th>Vel. raquete<br>(km/h)</th><th>Vel. saída<br>(km/h)</th><th>Ângulo saída<br>(°)</th><th>Efeito<br>(rpm)</th><th>Margem rede<br>(m)</th><th>Quique<br>(m da linha)</th><th>Altura pós-quique<br>(m)</th><th>Resultado</th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="findings" id="findings"></section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Bancada de testes</h2>
+      <span class="eyebrow">Seu golpe aparece tracejado na quadra acima</span>
+    </div>
+    <div class="lab">
+      <div style="display:grid;gap:14px">
+        <div class="ctrl"><label for="in-face">Ângulo da face <output id="o-face"></output></label><input type="range" id="in-face" min="-20" max="35" step="0.5"><span class="hint">negativo = fechada (cordas para baixo) · positivo = aberta</span></div>
+        <div class="ctrl"><label for="in-path">Caminho da raquete <output id="o-path"></output></label><input type="range" id="in-path" min="-35" max="60" step="1"><span class="hint">positivo = de baixo para cima · negativo = de cima para baixo</span></div>
+        <div class="ctrl"><label for="in-vr">Velocidade da cabeça da raquete <output id="o-vr"></output></label><input type="range" id="in-vr" min="8" max="50" step="0.5"></div>
+        <div class="ctrl"><label for="in-h">Altura do contato <output id="o-h"></output></label><input type="range" id="in-h" min="0.4" max="3.2" step="0.05"></div>
+        <div class="ctrl" id="ctrl-in"><label for="in-u">Velocidade da bola recebida <output id="o-u"></output></label><input type="range" id="in-u" min="5" max="30" step="0.5"></div>
+        <div class="btns"><button class="btn" id="copy-sel">Copiar da variação selecionada</button></div>
+        <div class="readout" id="lab-readout"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:0">
+        <div class="panel-head">
+          <h3 id="sens-title">Sensibilidade</h3>
+          <div class="seg" role="group" aria-label="Variável do eixo horizontal">
+            <button id="sx-face" aria-pressed="true">Variar face</button><button id="sx-path" aria-pressed="false">Variar caminho</button>
+          </div>
+        </div>
+        <div class="canvas-box" id="sens-box">
+          <canvas id="sens" aria-label="Onde a bola quica em função do ângulo escolhido"></canvas>
+          <div class="tip" id="sens-tip" hidden></div>
+        </div>
+        <p class="desc" id="sens-desc"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="notes">
+    <h3>Como o modelo funciona</h3>
+    <p><b>Convenções.</b> Face: ângulo entre as cordas e a vertical (0° = face perpendicular ao chão). Caminho: direção da cabeça da raquete em relação ao horizontal no instante do impacto. Vista lateral, golpe na linha de fundo, bola indo reto para a outra quadra.</p>
+    <p><b>Impacto.</b> No referencial da raquete, a componente normal da bola volta com coeficiente aparente <code>e = 0,40</code> (já inclui o recuo da raquete). A componente tangencial é reduzida pela aderência das cordas até a bola rolar: <code>v<sub>t</sub>' = v<sub>t</sub> / (1 + I/mr²)</code>, com <code>I = 0,55·m·r²</code>, e o giro sai de <code>ω = v<sub>t</sub>'/r</code>.</p>
+    <p><b>Voo.</b> Bola de 57,7 g e 6,7 cm; arrasto <code>C<sub>D</sub> = 0,55</code>; sustentação de Magnus <code>C<sub>L</sub> = 1/(2 + v/rω)</code>; ar a 1,21 kg/m³. Quique com restituição vertical 0,75 e atrito 0,6. Rede de 0,914 m a 11,89 m; fundo a 23,77 m; linha de saque a 18,29 m.</p>
+    <p><b>Limites.</b> É um modelo 2D: não mostra efeito lateral (saque slice, forehand cruzado) nem a geometria diagonal do saque. Os números servem para comparar variações entre si, não como medida exata de um jogador.</p>
+  </section>
+</div>
+
+<script>
+(() => {
+  // ── Física ──
+  const G = 9.81, M = 0.0577, R = 0.0335, RHO = 1.21, AREA = Math.PI * R * R, CD = 0.55, IK = 0.55, EA = 0.40;
+  const NET_X = 11.89, NET_H = 0.914, BASE = 23.77, SVC = 18.29;
+  const d2r = d => d * Math.PI / 180, r2d = r => r * 180 / Math.PI;
+  const KMH = 3.6, RPM = 60 / (2 * Math.PI);
+
+  function impact(p) {
+    const f = d2r(p.face), th = d2r(p.path);
+    const n = [Math.cos(f), Math.sin(f)], t = [-Math.sin(f), Math.cos(f)];
+    const V = [p.vr * Math.cos(th), p.vr * Math.sin(th)];
+    const w = [p.uin[0] - V[0], p.uin[1] - V[1]];
+    const wn = w[0] * n[0] + w[1] * n[1], wt = w[0] * t[0] + w[1] * t[1];
+    const wn2 = -EA * wn, wt2 = wt / (1 + IK);
+    const v = [V[0] + wn2 * n[0] + wt2 * t[0], V[1] + wn2 * n[1] + wt2 * t[1]];
+    return { v, spin: -wt2 / R, n, t, V };
+  }
+
+  function simulate(p, limit) {
+    const imp = impact(p);
+    let x = 0, y = p.h, vx = imp.v[0], vy = imp.v[1], w = imp.spin, tt = 0;
+    const dt = 0.002, pts = [[x, y, 0]];
+    let netY = null, land = null, bounceH = 0, apex = y, hitNet = false;
+    for (let i = 0; i < 6000; i++) {
+      const v = Math.hypot(vx, vy);
+      const S = R * Math.abs(w) / v, CL = S > 1e-6 ? 1 / (2 + 1 / S) : 0;
+      const k = 0.5 * RHO * AREA * v / M, sg = Math.sign(w);
+      const ax = -k * CD * vx + k * CL * sg * vy;
+      const ay = -G - k * CD * vy - k * CL * sg * vx;
+      const px = x, py = y;
+      vx += ax * dt; vy += ay * dt; x += vx * dt; y += vy * dt; tt += dt; w *= Math.exp(-dt / 20);
+      if (px < NET_X && x >= NET_X && netY === null && !land) {
+        netY = py + (y - py) * (NET_X - px) / (x - px);
+        if (netY < NET_H) { hitNet = true; pts.push([NET_X, netY, tt]); break; }
+      }
+      if (y <= 0 && !land) {
+        const lx = px + (x - px) * py / (py - y);
+        land = { x: lx, t: tt };
+        pts.push([lx, 0, tt]);
+        if (lx < NET_X) { hitNet = true; break; }
+        const vy0 = vy; y = 0; x = lx; vy = -0.75 * vy0;
+        const vc = vx - w * R; let dvx = -vc / (1 + 1 / IK);
+        const lim = 0.6 * 1.75 * Math.abs(vy0);
+        if (Math.abs(dvx) > lim) dvx = Math.sign(dvx) * lim;
+        vx += dvx; w += -dvx / (IK * R);
+        continue;
+      }
+      if (land) { bounceH = Math.max(bounceH, y); if (y <= 0 || x > land.x + 9) break; }
+      else apex = Math.max(apex, y);
+      pts.push([x, y, tt]);
+    }
+    const vout = Math.hypot(imp.v[0], imp.v[1]);
+    let res;
+    if (hitNet) res = "net";
+    else if (land && land.x > limit) res = "out";
+    else res = "in";
+    return {
+      imp, pts, res, apex,
+      vout: vout * KMH, ang: r2d(Math.atan2(imp.v[1], imp.v[0])), rpm: imp.spin * RPM,
+      margin: netY === null ? null : netY - NET_H, land: hitNet ? null : (land ? land.x : null),
+      bounceH: hitNet ? null : bounceH, flight: land ? land.t : tt
+    };
+  }
+
+  // ── Variações ──
+  const STROKES = {
+    fh: {
+      name: "Forehand", limit: BASE, limitName: "linha de fundo", uin: 15, uinAng: -7.6, h: 0.95,
+      vars: [
+        { id: "top", name: "Topspin padrão", face: 0, path: 35, vr: 27, h: 0.95,
+          d: "Face vertical e swing subindo 35°. A bola sai com cerca de 6° acima do horizontal e o topspin a puxa para baixo depois da rede: passa com folga e cai no fundo." },
+        { id: "heavy", name: "Topspin pesado", face: -2, path: 45, vr: 28, h: 0.95,
+          d: "Face levemente fechada e swing bem vertical (estilo 'limpador de para-brisa'). Menos velocidade, muito mais rotação e um quique mais alto e mais fundo do que a margem sugere." },
+        { id: "flat", name: "Chapado (flat)", face: 2.5, path: 10, vr: 27, h: 0.95,
+          d: "Swing quase horizontal com a face um pouco aberta. Bola mais rápida e com pouco giro: a margem sobre a rede é mínima e qualquer erro de face vai para a rede ou para fora." },
+        { id: "open", name: "Face aberta demais", face: 8, path: 25, vr: 27, h: 0.95,
+          d: "Mesmo swing de topspin, mas com 8° de face aberta. O giro não é suficiente para trazer a bola para baixo e ela passa da linha de fundo." },
+        { id: "closed", name: "Face fechada demais", face: -6, path: 20, vr: 27, h: 0.95,
+          d: "Face fechada com um swing que sobe pouco. A bola sai apontando para baixo e quica antes da rede." },
+        { id: "slice", name: "Slice", face: 8, path: -20, vr: 22, h: 0.95,
+          d: "Swing de cima para baixo com a face aberta. Gera backspin: a sustentação de Magnus segura a bola no ar, ela voa baixa e quica pouco." },
+        { id: "lob", name: "Balão defensivo", face: 32, path: 45, vr: 9, h: 0.75,
+          d: "Face muito aberta, swing curto e lento subindo. A bola sobe alto, ganha tempo para recuperar posição e cai perto do fundo." }
+      ]
+    },
+    sv: {
+      name: "Saque", limit: SVC, limitName: "linha de saque", uin: 1, uinAng: -90, h: 2.8,
+      vars: [
+        { id: "flat", name: "Chapado", face: -7, path: -3, vr: 42, h: 2.8,
+          d: "Contato alto, face fechada cerca de 7° e swing quase horizontal. A bola sai a mais de 200 km/h apontando para baixo e cai perto da linha de saque." },
+        { id: "kick", name: "Kick / topspin", face: -12, path: 30, vr: 38, h: 2.8,
+          d: "Swing raspando para cima com a face mais fechada. Sai mais lento, com mais de 4.500 rpm: passa alto sobre a rede, mergulha para dentro da área e quica alto." },
+        { id: "kickopen", name: "Kick sem fechar a face", face: -7, path: 30, vr: 38, h: 2.8,
+          d: "Mesmo swing do kick, mas com a face do saque chapado. O caminho para cima levanta a bola e ela passa da linha de saque. O kick exige fechar mais a face." },
+        { id: "open", name: "Face aberta", face: 3, path: 0, vr: 42, h: 2.8,
+          d: "Face levemente aberta com swing de saque chapado: a bola sai subindo e vai muito longe. No saque a janela da face é muito estreita." },
+        { id: "closed", name: "Face fechada demais", face: -14, path: -6, vr: 42, h: 2.8,
+          d: "Face fechada 14° e swing descendo: a bola quica antes da rede." },
+        { id: "low", name: "Contato baixo", face: -7, path: -3, vr: 42, h: 2.4,
+          d: "Mesmo golpe do saque chapado, mas com o contato 40 cm mais baixo (lançamento baixo ou braço dobrado). A bola fica na rede." },
+        { id: "slow", name: "Raquete mais lenta", face: -7, path: -3, vr: 30, h: 2.8,
+          d: "Mesma face do chapado com a raquete a 108 km/h. Com menos velocidade, a gravidade tem mais tempo para agir e a bola cai na rede. Um saque mais lento precisa de face menos fechada ou de efeito." }
+      ]
+    }
+  };
+  const SERIES = ["--s1", "--s2", "--s3", "--s4", "--s5", "--s6", "--s7"];
+
+  const state = { stroke: "fh", sel: 0, lab: null, sensX: "face", anim: null };
+  let results = [];
+
+  const $ = id => document.getElementById(id);
+  const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const fmt = (v, d = 1) => v === null || v === undefined || !isFinite(v) ? "—" : v.toLocaleString("pt-BR", { minimumFractionDigits: d, maximumFractionDigits: d });
+  const sgn = (v, d = 1) => (v > 0 ? "+" : "") + fmt(v, d);
+  const RES = { in: ["in", "✓ DENTRO"], out: ["out", "↑ FORA (LONGA)"], net: ["net", "✕ REDE"] };
+  const pill = r => `<span class="pill ${RES[r][0]}">${RES[r][1]}</span>`;
+
+  function incoming(st, speed) {
+    const s = STROKES[st], a = d2r(s.uinAng);
+    const sp = speed ?? s.uin;
+    return [st === "fh" ? -sp * Math.cos(a) : 0, st === "fh" ? sp * Math.sin(a) : -sp];
+  }
+  function params(st, v, u) { return { face: v.face, path: v.path, vr: v.vr, h: v.h, uin: incoming(st, u) }; }
+
+  function computeAll() {
+    const s = STROKES[state.stroke];
+    results = s.vars.map(v => simulate(params(state.stroke, v), s.limit));
+  }
+  const labU = () => state.stroke === "fh" ? state.lab.u : undefined;
+  function labResult() {
+    const s = STROKES[state.stroke], L = state.lab;
+    return simulate({ face: L.face, path: L.path, vr: L.vr, h: L.h, uin: incoming(state.stroke, labU()) }, s.limit);
+  }
+
+  // ── Canvas helpers ──
+  function setup(cv) {
+    const dpr = window.devicePixelRatio || 1, r = cv.getBoundingClientRect();
+    cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr);
+    const ctx = cv.getContext("2d"); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { ctx, W: r.width, H: r.height };
+  }
+  function arrow(ctx, x1, y1, x2, y2, color, wdt = 2.5, dash) {
+    ctx.save(); ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = wdt; ctx.lineCap = "round";
+    if (dash) ctx.setLineDash(dash);
+    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); ctx.setLineDash([]);
+    const a = Math.atan2(y2 - y1, x2 - x1), h = 9;
+    ctx.beginPath(); ctx.moveTo(x2, y2);
+    ctx.lineTo(x2 - h * Math.cos(a - 0.4), y2 - h * Math.sin(a - 0.4));
+    ctx.lineTo(x2 - h * Math.cos(a + 0.4), y2 - h * Math.sin(a + 0.4)); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  }
+
+  // ── Quadra ──
+  let courtGeo = null;
+  function drawCourt(animT) {
+    const cv = $("court"), { ctx, W, H } = setup(cv), s = STROKES[state.stroke];
+    const lab = state.lab ? labResult() : null;
+    const all = lab ? results.concat([lab]) : results;
+    let xmax = 30, ymax = state.stroke === "sv" ? 3.6 : 2.6;
+    for (const r of all) { for (const p of r.pts) { if (p[0] < 46) xmax = Math.max(xmax, p[0] + 1); ymax = Math.max(ymax, Math.min(p[1], 14) + 0.5); } }
+    xmax = Math.min(46, Math.ceil(xmax / 2) * 2);
+    const padL = 34, padR = 10, padT = 12, padB = 26;
+    const sx = (W - padL - padR) / (xmax + 1.5), sy = (H - padT - padB) / ymax;
+    const X = x => padL + (x + 1.5) * sx, Y = y => H - padB - y * sy;
+    courtGeo = { X, Y, sx, sy, padL, padB, H, W, xmax };
+
+    // céu e piso
+    ctx.fillStyle = css("--surface-2"); ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = css("--court"); ctx.fillRect(X(-1.5), Y(0), X(Math.min(xmax, BASE)) - X(-1.5), 6);
+    if (xmax > BASE) { ctx.fillStyle = css("--court-2"); ctx.fillRect(X(BASE), Y(0), X(xmax) - X(BASE), 6); }
+    // zona válida
+    ctx.fillStyle = css("--ball"); ctx.globalAlpha = 0.18;
+    ctx.fillRect(X(NET_X), Y(0) - 1, X(s.limit) - X(NET_X), 7); ctx.globalAlpha = 1;
+    // grade de altura
+    ctx.strokeStyle = css("--line"); ctx.lineWidth = 1; ctx.fillStyle = css("--muted"); ctx.font = "11px " + css("--f-mono");
+    const ystep = ymax > 8 ? 2 : 1;
+    for (let y = ystep; y < ymax; y += ystep) { ctx.beginPath(); ctx.moveTo(padL, Y(y)); ctx.lineTo(W - padR, Y(y)); ctx.stroke(); ctx.fillText(y + " m", 2, Y(y) + 4); }
+    // marcas no chão
+    const marks = [[0, "0"], [NET_X, "rede"], [SVC, "saque"], [BASE, "fundo"]].filter(m => sx * 5.5 > 34 || m[1] !== "saque" || state.stroke === "sv");
+    ctx.textAlign = "center";
+    for (const [x, l] of marks) { if (x > xmax) continue; ctx.fillStyle = css("--court-line"); ctx.fillRect(X(x) - 1, Y(0), 2, 6); ctx.fillStyle = css("--muted"); ctx.fillText(l, X(x), H - 6); }
+    for (let x = 30; x <= xmax && 5 * sx > 34; x += 5) { ctx.fillStyle = css("--muted"); ctx.fillText(x + " m", X(x), H - 6); }
+    ctx.textAlign = "left";
+    // rede
+    ctx.strokeStyle = css("--ink-2"); ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(X(NET_X), Y(0)); ctx.lineTo(X(NET_X), Y(NET_H)); ctx.stroke();
+    ctx.lineWidth = 1; ctx.setLineDash([2, 3]);
+    for (let yy = 0.15; yy < NET_H; yy += 0.15) { ctx.beginPath(); ctx.moveTo(X(NET_X) - 3, Y(yy)); ctx.lineTo(X(NET_X) + 3, Y(yy)); ctx.stroke(); }
+    ctx.setLineDash([]);
+    ctx.fillStyle = css("--court-line"); ctx.fillRect(X(NET_X) - 4, Y(NET_H) - 2, 8, 3);
+
+    // trajetórias
+    const order = results.map((_, i) => i).filter(i => i !== state.sel).concat([state.sel]);
+    for (const i of order) {
+      const r = results[i], selected = i === state.sel;
+      ctx.strokeStyle = css(SERIES[i]); ctx.lineWidth = selected ? 3 : 1.6; ctx.globalAlpha = selected ? 1 : 0.55;
+      ctx.beginPath(); r.pts.forEach((p, k) => k ? ctx.lineTo(X(p[0]), Y(p[1])) : ctx.moveTo(X(p[0]), Y(p[1]))); ctx.stroke();
+      ctx.globalAlpha = 1;
+      const end = r.res === "net" ? r.pts[r.pts.length - 1] : (r.land ? [r.land, 0] : null);
+      if (end) {
+        ctx.fillStyle = css(SERIES[i]); ctx.strokeStyle = css("--surface-2"); ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(X(end[0]), Y(end[1]), selected ? 5 : 4, 0, 7); ctx.fill(); ctx.stroke();
+        ctx.fillStyle = css("--ink"); ctx.font = "600 10px " + css("--f-mono");
+        ctx.fillText(String(i + 1), X(end[0]) - 3, Y(end[1]) - 9);
+      }
+    }
+    if (lab) {
+      ctx.strokeStyle = css("--ink"); ctx.lineWidth = 2; ctx.setLineDash([6, 5]);
+      ctx.beginPath(); lab.pts.forEach((p, k) => k ? ctx.lineTo(X(p[0]), Y(p[1])) : ctx.moveTo(X(p[0]), Y(p[1]))); ctx.stroke(); ctx.setLineDash([]);
+    }
+    // jogador e bola animada
+    const sel = results[state.sel];
+    ctx.fillStyle = css("--ink-2");
+    ctx.fillRect(X(0) - 2, Y(sel.pts[0][1]) - 2, 4, 4);
+    let bp = sel.pts[0];
+    if (animT !== undefined) {
+      const t = animT; bp = sel.pts[sel.pts.length - 1];
+      for (const p of sel.pts) { if (p[2] >= t) { bp = p; break; } }
+    } else bp = null;
+    if (bp) {
+      ctx.fillStyle = css("--ball"); ctx.strokeStyle = css("--ball-edge"); ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.arc(X(bp[0]), Y(bp[1]), 6, 0, 7); ctx.fill(); ctx.stroke();
+    }
+    const ex = sy / sx;
+    $("court-scale").textContent = `Escala vertical ampliada ${fmt(ex, 1)}× · faixa amarela = área válida até a ${s.limitName} · pontos numerados = onde a bola tocou`;
+  }
+
+  function animate() {
+    cancelAnimationFrame(state.anim);
+    const r = results[state.sel];
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) { drawCourt(r.pts[r.pts.length - 1][2]); return; }
+    const total = r.pts[r.pts.length - 1][2], slow = state.stroke === "sv" ? 2.2 : 1.6;
+    const t0 = performance.now();
+    const step = now => {
+      const t = (now - t0) / 1000 / slow;
+      drawCourt(Math.min(t, total));
+      if (t < total) state.anim = requestAnimationFrame(step);
+    };
+    state.anim = requestAnimationFrame(step);
+  }
+
+  // ── Impacto ──
+  function drawImpact() {
+    const cv = $("impact"), { ctx, W, H } = setup(cv);
+    const v = STROKES[state.stroke].vars[state.sel], r = results[state.sel];
+    const cx = W * 0.42, cy = H * 0.52, br = 22, L = Math.min(W, H) * 0.36;
+    const P = (x, y) => [cx + x, cy - y];
+    ctx.fillStyle = css("--surface"); ctx.fillRect(0, 0, W, H);
+    // horizonte
+    ctx.strokeStyle = css("--line"); ctx.setLineDash([3, 4]); ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(10, cy); ctx.lineTo(W - 10, cy); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx - br, 12); ctx.lineTo(cx - br, H - 12); ctx.stroke(); ctx.setLineDash([]);
+    // raquete (face)
+    const f = d2r(v.face), n = [Math.cos(f), Math.sin(f)], t = [-Math.sin(f), Math.cos(f)];
+    const c0 = [-n[0] * (br + 4), -n[1] * (br + 4)];
+    const a = P(c0[0] + t[0] * 70, c0[1] + t[1] * 70), b = P(c0[0] - t[0] * 70, c0[1] - t[1] * 70);
+    ctx.strokeStyle = css("--ink"); ctx.lineWidth = 7; ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(...a); ctx.lineTo(...b); ctx.stroke();
+    ctx.strokeStyle = css("--surface"); ctx.lineWidth = 1;
+    for (let k = -60; k <= 60; k += 12) { const q = P(c0[0] + t[0] * k, c0[1] + t[1] * k); ctx.beginPath(); ctx.moveTo(q[0] - n[0] * 3, q[1] + n[1] * 3); ctx.lineTo(q[0] + n[0] * 3, q[1] - n[1] * 3); ctx.stroke(); }
+    // bola
+    ctx.fillStyle = css("--ball"); ctx.strokeStyle = css("--ball-edge"); ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(cx, cy, br, 0, 7); ctx.fill(); ctx.stroke();
+    // giro
+    const spin = r.rpm, dir = spin >= 0 ? 1 : -1;
+    if (Math.abs(spin) > 200) {
+      ctx.strokeStyle = css("--ink"); ctx.lineWidth = 2;
+      const s0 = dir > 0 ? -2.2 : -0.9, s1 = dir > 0 ? -0.9 : -2.2;
+      ctx.beginPath(); ctx.arc(cx, cy, br + 8, s0, s1, dir < 0); ctx.stroke();
+      const ex = cx + (br + 8) * Math.cos(s1), ey = cy + (br + 8) * Math.sin(s1);
+      const tg = s1 + (dir > 0 ? Math.PI / 2 : -Math.PI / 2);
+      ctx.fillStyle = css("--ink"); ctx.beginPath(); ctx.moveTo(ex + 6 * Math.cos(tg), ey + 6 * Math.sin(tg));
+      ctx.lineTo(ex + 5 * Math.cos(tg + 2.2), ey + 5 * Math.sin(tg + 2.2)); ctx.lineTo(ex + 5 * Math.cos(tg - 2.2), ey + 5 * Math.sin(tg - 2.2)); ctx.fill();
+    }
+    // vetores
+    const th = d2r(v.path);
+    const startPath = P(c0[0] - Math.cos(th) * L * 0.9, c0[1] - Math.sin(th) * L * 0.9);
+    const endPath = P(c0[0], c0[1]);
+    arrow(ctx, startPath[0], startPath[1], endPath[0], endPath[1], css("--accent"), 2.5, [6, 4]);
+    const nEnd = P(n[0] * L * 0.95, n[1] * L * 0.95);
+    arrow(ctx, cx + n[0] * br, cy - n[1] * br, nEnd[0], nEnd[1], css("--muted"), 1.5, [2, 3]);
+    const oa = d2r(r.ang), oEnd = P(Math.cos(oa) * L * 1.15, Math.sin(oa) * L * 1.15);
+    arrow(ctx, cx + Math.cos(oa) * br, cy - Math.sin(oa) * br, oEnd[0], oEnd[1], css(SERIES[state.sel]), 3.5);
+    // legendas
+    ctx.font = "11px " + css("--f-mono"); ctx.textAlign = "left";
+    ctx.fillStyle = css("--accent"); ctx.fillText(`caminho ${sgn(v.path, 0)}°`, 10, H - 28);
+    ctx.fillStyle = css("--muted"); ctx.fillText(`perpendicular da face ${sgn(v.face, 1)}°`, 10, H - 14);
+    ctx.fillStyle = css("--ink"); ctx.textAlign = "right"; ctx.fillText(`saída ${sgn(r.ang, 1)}°`, W - 10, 18);
+    ctx.textAlign = "left";
+  }
+
+  // ── Leituras ──
+  function readout(r, v) {
+    return `
+      <div><span class="k">Vel. de saída</span><span class="v">${fmt(r.vout, 0)}<small>km/h</small></span></div>
+      <div><span class="k">Ângulo de saída</span><span class="v">${sgn(r.ang, 1)}<small>°</small></span></div>
+      <div><span class="k">Efeito</span><span class="v">${fmt(Math.abs(r.rpm), 0)}<small>rpm ${r.rpm > 150 ? "top" : r.rpm < -150 ? "back" : ""}</small></span></div>
+      <div><span class="k">Margem na rede</span><span class="v">${r.margin === null ? "—" : sgn(r.margin, 2)}<small>m</small></span></div>
+      <div><span class="k">Quique</span><span class="v">${r.land === null ? "—" : fmt(r.land, 1)}<small>m</small></span></div>
+      <div><span class="k">Resultado</span><span class="v" style="font-size:1rem;padding-top:6px">${pill(r.res)}</span></div>`;
+  }
+
+  function renderSelection() {
+    const s = STROKES[state.stroke], v = s.vars[state.sel], r = results[state.sel];
+    $("readout").innerHTML = readout(r, v);
+    $("desc").innerHTML = `<b>${state.sel + 1}. ${v.name}.</b> ${v.d}`;
+    document.querySelectorAll("#chips .chip[data-i]").forEach(c => c.setAttribute("aria-pressed", String(+c.dataset.i === state.sel)));
+    document.querySelectorAll("#tbody tr").forEach(tr => tr.classList.toggle("sel", +tr.dataset.i === state.sel));
+    drawImpact(); animate();
+  }
+
+  function renderStroke() {
+    const s = STROKES[state.stroke];
+    computeAll();
+    $("court-title").textContent = `${s.name} — vista lateral`;
+    $("table-title").textContent = `Comparativo: ${s.vars.length} variações de ${s.name.toLowerCase()}`;
+    $("chips").innerHTML = s.vars.map((v, i) =>
+      `<button class="chip" data-i="${i}" aria-pressed="false"><i style="background:var(${SERIES[i]})">${i + 1}</i>${v.name}</button>`
+    ).join("") + `<span class="chip chip-lab" aria-hidden="true" style="cursor:default"><i>·</i>Seu golpe</span>`;
+    $("chips").querySelectorAll(".chip[data-i]").forEach(c => c.addEventListener("click", () => { state.sel = +c.dataset.i; renderSelection(); }));
+    $("tbody").innerHTML = s.vars.map((v, i) => {
+      const r = results[i];
+      return `<tr data-i="${i}" tabindex="0">
+        <td><span class="swatch" style="background:var(${SERIES[i]})"></span>${i + 1}. ${v.name}</td>
+        <td>${sgn(v.face, 1)}</td><td>${sgn(v.path, 0)}</td><td>${fmt(v.vr * KMH, 0)}</td>
+        <td>${fmt(r.vout, 0)}</td><td>${sgn(r.ang, 1)}</td>
+        <td>${fmt(Math.abs(r.rpm), 0)} ${r.rpm > 150 ? "top" : r.rpm < -150 ? "back" : ""}</td>
+        <td>${r.margin === null ? "—" : sgn(r.margin, 2)}</td><td>${r.land === null ? "—" : fmt(r.land, 1)}</td>
+        <td>${r.bounceH === null ? "—" : fmt(r.bounceH, 2)}</td><td>${pill(r.res)}</td></tr>`;
+    }).join("");
+    $("tbody").querySelectorAll("tr").forEach(tr => {
+      const go = () => { state.sel = +tr.dataset.i; renderSelection(); };
+      tr.addEventListener("click", go);
+      tr.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+    });
+    renderFindings();
+    $("ctrl-in").hidden = state.stroke === "sv";
+    $("in-h").min = state.stroke === "sv" ? "1.8" : "0.4";
+    copyToLab(0);
+    renderSelection();
+  }
+
+  // ── Conclusões calculadas ──
+  function depthPerDegree(st, v) {
+    const s = STROKES[st];
+    const a = simulate(params(st, { ...v, face: v.face - 0.5 }), s.limit), b = simulate(params(st, { ...v, face: v.face + 0.5 }), s.limit);
+    return a.land && b.land ? b.land - a.land : null;
+  }
+  function window_(st, v) {
+    const s = STROKES[st]; let lo = null, hi = null;
+    for (let f = -25; f <= 40; f += 0.1) {
+      const r = simulate(params(st, { ...v, face: f }), s.limit);
+      if (r.res === "in") { if (lo === null) lo = f; hi = f; }
+    }
+    return lo === null ? null : [lo, hi];
+  }
+  function renderFindings() {
+    const st = state.stroke, s = STROKES[st], R0 = results;
+    let html = "";
+    if (st === "fh") {
+      const base = s.vars[0], flat = s.vars[2];
+      const w1 = window_(st, base), w2 = window_(st, flat);
+      const dpd = depthPerDegree(st, base);
+      const top = R0[0], heavy = R0[1], fl = R0[2];
+      html += finding("Janela de face no topspin", w1 ? `${fmt(w1[1] - w1[0], 1)}°` : "—",
+        `Com swing a +35° e 97 km/h de raquete, a bola cai dentro com a face entre ${fmt(w1[0], 1)}° e ${fmt(w1[1], 1)}°. No chapado (+10°) essa janela cai para ${w2 ? fmt(w2[1] - w2[0], 1) + "°" : "zero"}: é por isso que o topspin é o golpe de segurança.`);
+      html += finding("Cada grau de face", dpd ? `${fmt(dpd, 1)} m` : "—",
+        `Abrir a face 1° no topspin padrão empurra o quique cerca de ${fmt(dpd, 1)} m para o fundo. Os erros de profundidade vêm da face, não do caminho.`);
+      html += finding("Trocar velocidade por rotação", `${fmt(heavy.rpm, 0)} rpm`,
+        `Subir o caminho de +35° para +45° (com a face 2° mais fechada) corta ${fmt(top.vout - heavy.vout, 0)} km/h de saída e soma ${fmt(heavy.rpm - top.rpm, 0)} rpm. O chapado sai a ${fmt(fl.vout, 0)} km/h, mas passa a só ${fmt(fl.margin, 2)} m da faixa da rede.`);
+    } else {
+      const base = s.vars[0], kick = s.vars[1];
+      const w1 = window_(st, base), w2 = window_(st, kick);
+      const dpd = depthPerDegree(st, base);
+      const fl = R0[0], kk = R0[1];
+      html += finding("Janela de face no saque chapado", w1 ? `${fmt(w1[1] - w1[0], 1)}°` : "—",
+        `Do contato a 2,80 m, só entra com a face entre ${fmt(w1[0], 1)}° e ${fmt(w1[1], 1)}°. No kick a janela é de ${w2 ? fmt(w2[1] - w2[0], 1) + "°" : "zero"} (${w2 ? fmt(w2[0], 1) + "° a " + fmt(w2[1], 1) + "°" : ""}), por isso ele é o segundo saque.`);
+      html += finding("Cada grau de face", dpd ? `${fmt(dpd, 1)} m` : "—",
+        `No saque chapado, 1° de face muda o quique em cerca de ${fmt(dpd, 1)} m. A área de saque tem 6,4 m de profundidade.`);
+      html += finding("Kick: margem e quique", `${sgn(kk.margin, 2)} m`,
+        `O kick passa ${fmt(kk.margin, 2)} m acima da rede (o chapado passa ${fmt(fl.margin, 2)} m) e sobe até ${fmt(kk.bounceH, 2)} m depois do quique, contra ${fmt(fl.bounceH, 2)} m do chapado.`);
+    }
+    $("findings").innerHTML = html;
+  }
+  const finding = (t, big, p) => `<article class="finding"><span class="eyebrow">${t}</span><span class="big num">${big}</span><p>${p}</p></article>`;
+
+  // ── Bancada ──
+  const inputs = ["face", "path", "vr", "h", "u"];
+  function copyToLab(i) {
+    const v = STROKES[state.stroke].vars[i];
+    state.lab = { face: v.face, path: v.path, vr: v.vr, h: v.h, u: STROKES[state.stroke].uin };
+    $("in-face").value = v.face; $("in-path").value = v.path; $("in-vr").value = v.vr; $("in-h").value = v.h; $("in-u").value = state.lab.u;
+    updateLab(false);
+  }
+  function updateLab(redraw = true) {
+    const L = state.lab;
+    L.face = +$("in-face").value; L.path = +$("in-path").value; L.vr = +$("in-vr").value; L.h = +$("in-h").value; L.u = +$("in-u").value;
+    $("o-face").textContent = `${sgn(L.face, 1)}° ${L.face < 0 ? "fechada" : L.face > 0 ? "aberta" : "vertical"}`;
+    $("o-path").textContent = `${sgn(L.path, 0)}°`;
+    $("o-vr").textContent = `${fmt(L.vr, 1)} m/s · ${fmt(L.vr * KMH, 0)} km/h`;
+    $("o-h").textContent = `${fmt(L.h, 2)} m`;
+    $("o-u").textContent = `${fmt(L.u * KMH, 0)} km/h`;
+    const r = labResult();
+    $("lab-readout").innerHTML = readout(r);
+    drawSens();
+    if (redraw) { cancelAnimationFrame(state.anim); drawCourt(); }
+  }
+
+  let sensGeo = null;
+  function sensData() {
+    const s = STROKES[state.stroke], L = state.lab, key = state.sensX;
+    const [a, b] = key === "face" ? [-20, 35] : [-35, 60];
+    const out = [];
+    for (let x = a; x <= b; x += 0.5) {
+      const r = simulate({ face: key === "face" ? x : L.face, path: key === "path" ? x : L.path, vr: L.vr, h: L.h, uin: incoming(state.stroke, labU()) }, s.limit);
+      out.push({ x, r });
+    }
+    return { out, a, b };
+  }
+  function drawSens() {
+    const cv = $("sens"), { ctx, W, H } = setup(cv), s = STROKES[state.stroke], L = state.lab;
+    const { out, a, b } = sensData();
+    const ymax = 40, padL = 40, padR = 12, padT = 10, padB = 30;
+    const X = x => padL + (x - a) / (b - a) * (W - padL - padR);
+    const Y = y => padT + (1 - Math.min(y, ymax) / ymax) * (H - padT - padB);
+    sensGeo = { X, Y, out, a, b, padL, padR, W };
+    ctx.fillStyle = css("--surface"); ctx.fillRect(0, 0, W, H);
+    // faixas de resultado
+    ctx.fillStyle = css("--bad-bg"); ctx.fillRect(padL, Y(NET_X), W - padL - padR, Y(0) - Y(NET_X));
+    ctx.fillStyle = css("--good-bg"); ctx.fillRect(padL, Y(s.limit), W - padL - padR, Y(NET_X) - Y(s.limit));
+    ctx.fillStyle = css("--warn-bg"); ctx.fillRect(padL, Y(ymax), W - padL - padR, Y(s.limit) - Y(ymax));
+    ctx.font = "10px " + css("--f-mono");
+    ctx.fillStyle = css("--bad"); ctx.fillText("REDE", padL + 6, Y(NET_X / 2) + 4);
+    ctx.fillStyle = css("--good"); ctx.fillText("DENTRO", padL + 6, Y((NET_X + s.limit) / 2) + 4);
+    ctx.fillStyle = css("--warn"); ctx.fillText("FORA", padL + 6, Y((s.limit + ymax) / 2) + 4);
+    // eixos
+    ctx.strokeStyle = css("--line"); ctx.lineWidth = 1; ctx.fillStyle = css("--muted");
+    ctx.textAlign = "right";
+    for (const y of [0, 10, 20, 30, 40]) { ctx.beginPath(); ctx.moveTo(padL, Y(y)); ctx.lineTo(W - padR, Y(y)); ctx.stroke(); ctx.fillText(y + " m", padL - 4, Y(y) + 3); }
+    ctx.textAlign = "center";
+    const step = state.sensX === "face" ? 5 : 10;
+    for (let x = Math.ceil(a / step) * step; x <= b; x += step) ctx.fillText((x > 0 ? "+" : "") + x + "°", X(x), H - 14);
+    ctx.fillText(state.sensX === "face" ? "ângulo da face" : "caminho da raquete", (padL + W - padR) / 2, H - 2);
+    // linha: onde a bola toca (rede = no ponto em que tocou)
+    ctx.strokeStyle = css("--s1"); ctx.lineWidth = 2; ctx.beginPath();
+    out.forEach((p, k) => {
+      const d = p.r.res === "net" ? Math.min(p.r.pts[p.r.pts.length - 1][0], NET_X) : (p.r.land ?? ymax);
+      k ? ctx.lineTo(X(p.x), Y(d)) : ctx.moveTo(X(p.x), Y(d));
+    });
+    ctx.stroke();
+    // marcador atual
+    const cur = state.sensX === "face" ? L.face : L.path, cr = labResult();
+    const cd = cr.res === "net" ? Math.min(cr.pts[cr.pts.length - 1][0], NET_X) : (cr.land ?? ymax);
+    ctx.fillStyle = css("--ink"); ctx.strokeStyle = css("--surface"); ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(X(cur), Y(cd), 6, 0, 7); ctx.fill(); ctx.stroke();
+    ctx.textAlign = "left";
+    const ins = out.filter(p => p.r.res === "in");
+    const lbl = state.sensX === "face" ? "face" : "caminho";
+    $("sens-title").textContent = state.sensX === "face" ? "Onde a bola toca × ângulo da face" : "Onde a bola toca × caminho da raquete";
+    $("sens-desc").textContent = ins.length
+      ? `Mantendo os outros controles, a bola entra com ${lbl} entre ${sgn(ins[0].x, 1)}° e ${sgn(ins[ins.length - 1].x, 1)}° (${fmt(ins[ins.length - 1].x - ins[0].x, 1)}° de margem). O ponto preto é o seu golpe.`
+      : `Com esses controles nenhum ângulo de ${lbl} coloca a bola dentro. Ajuste a velocidade, a altura do contato ou o outro ângulo.`;
+  }
+
+  // ── Tooltips ──
+  function bindTips() {
+    const box = $("court-box"), tip = $("court-tip");
+    $("court").addEventListener("pointermove", e => {
+      if (!courtGeo) return;
+      const rc = e.currentTarget.getBoundingClientRect(), mx = e.clientX - rc.left;
+      const x = (mx - courtGeo.padL) / courtGeo.sx - 1.5;
+      if (x < 0 || x > courtGeo.xmax) { tip.hidden = true; return; }
+      const at = r => { for (let k = 1; k < r.pts.length; k++) { const p = r.pts[k - 1], q = r.pts[k]; if (q[0] >= x && p[0] <= x) return p[1] + (q[1] - p[1]) * (x - p[0]) / ((q[0] - p[0]) || 1); } return null; };
+      const s = STROKES[state.stroke], r = results[state.sel], hy = at(r);
+      let rows = `<div class="row"><span>Distância</span><b class="num">${fmt(x, 1)} m</b></div>`;
+      rows += `<div class="row"><span>${state.sel + 1}. ${s.vars[state.sel].name}</span><b class="num">${hy === null ? "—" : fmt(hy, 2) + " m"}</b></div>`;
+      if (state.lab) { const ly = at(labResult()); rows += `<div class="row"><span>Seu golpe</span><b class="num">${ly === null ? "—" : fmt(ly, 2) + " m"}</b></div>`; }
+      tip.innerHTML = rows; tip.hidden = false;
+      const left = Math.min(mx + 14, box.clientWidth - tip.offsetWidth - 4);
+      tip.style.left = Math.max(4, left) + "px"; tip.style.top = "10px";
+    });
+    $("court").addEventListener("pointerleave", () => tip.hidden = true);
+
+    const sbox = $("sens-box"), stip = $("sens-tip");
+    $("sens").addEventListener("pointermove", e => {
+      if (!sensGeo) return;
+      const rc = e.currentTarget.getBoundingClientRect(), mx = e.clientX - rc.left;
+      const { a, b, padL, padR, W, out } = sensGeo;
+      const x = a + (mx - padL) / (W - padL - padR) * (b - a);
+      if (x < a || x > b) { stip.hidden = true; return; }
+      const p = out.reduce((m, q) => Math.abs(q.x - x) < Math.abs(m.x - x) ? q : m, out[0]);
+      stip.innerHTML = `<div class="row"><span>${state.sensX === "face" ? "Face" : "Caminho"}</span><b class="num">${sgn(p.x, 1)}°</b></div>
+        <div class="row"><span>Quique</span><b class="num">${p.r.land === null ? "—" : fmt(p.r.land, 1) + " m"}</b></div>
+        <div class="row"><span>Efeito</span><b class="num">${fmt(p.r.rpm, 0)} rpm</b></div>
+        <div class="row"><span>Resultado</span>${pill(p.r.res)}</div>`;
+      stip.hidden = false;
+      stip.style.left = Math.max(4, Math.min(mx + 14, sbox.clientWidth - stip.offsetWidth - 4)) + "px"; stip.style.top = "8px";
+    });
+    $("sens").addEventListener("pointerleave", () => stip.hidden = true);
+  }
+
+  // ── Eventos ──
+  document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => {
+    state.stroke = t.dataset.stroke; state.sel = 0;
+    document.querySelectorAll(".tab").forEach(o => o.setAttribute("aria-selected", String(o === t)));
+    renderStroke();
+  }));
+  inputs.forEach(k => $("in-" + k).addEventListener("input", () => updateLab(true)));
+  $("copy-sel").addEventListener("click", () => { copyToLab(state.sel); drawCourt(); });
+  $("play").addEventListener("click", animate);
+  const setSens = k => { state.sensX = k; $("sx-face").setAttribute("aria-pressed", String(k === "face")); $("sx-path").setAttribute("aria-pressed", String(k === "path")); drawSens(); };
+  $("sx-face").addEventListener("click", () => setSens("face"));
+  $("sx-path").addEventListener("click", () => setSens("path"));
+  const redrawAll = () => { drawCourt(); drawImpact(); drawSens(); };
+  let rz; window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(redrawAll, 120); });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", redrawAll);
+  new MutationObserver(redrawAll).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+  window.__tennis = { simulate, STROKES, params };
+  bindTips();
+  renderStroke();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(redrawAll);
+})();
+</script>
+</body>
+</html>
