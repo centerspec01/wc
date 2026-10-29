@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agenda Mundo — Eventos pelo mundo</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #FF6B4A;
+    --accent-2: #7C5CFF;
+    --dark: #0A0C10;
+    --dark-2: #12141B;
+    --dark-3: #1A1D27;
+    --dark-4: #21242F;
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(255,255,255,0.16);
+    --text: #E8EAF0;
+    --text-muted: #8890A4;
+    --text-dim: #5A6078;
+
+    --c-show: #F5539E;
+    --c-teatro: #A78BFA;
+    --c-festival: #FF6B4A;
+    --c-expo: #4CC9F0;
+    --c-esporte: #C9F31D;
+    --c-cultura: #F5C542;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .glow {
+    position: fixed;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1100px;
+    height: 560px;
+    max-width: 100vw;
+    background: radial-gradient(ellipse, rgba(255,107,74,0.12) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  button, input, select { font-family: inherit; }
+
+  /* ── HEADER ── */
+  header { padding: 40px 0 24px; }
+
+  .brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.4rem, 8vw, 3.6rem);
+    letter-spacing: 0.03em;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .brand span { color: var(--accent); }
+
+  .tagline {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 8px;
+    max-width: 640px;
+  }
+
+  /* ── PANELS ── */
+  .panel {
+    background: var(--dark-2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .filters {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 16px;
+  }
+
+  .label {
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .label .link {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  /* ── CITY PICKER ── */
+  .picker { position: relative; }
+
+  .input {
+    width: 100%;
+    background: var(--dark-3);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    color: var(--text);
+    font-size: 0.92rem;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .input:focus { border-color: var(--accent); }
+
+  input[type="month"].input { color-scheme: dark; }
+
+  .dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    max-height: 340px;
+    overflow-y: auto;
+    background: var(--dark-3);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    z-index: 20;
+    display: none;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+  }
+
+  .dropdown.open { display: block; }
+
+  .dd-group {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 700;
+    padding: 12px 14px 6px;
+  }
+
+  .dd-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 9px 14px;
+    background: none;
+    border: none;
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  .dd-item:hover, .dd-item.active { background: var(--dark-4); }
+  .dd-item .flag { font-size: 1.15rem; }
+  .dd-item .country { color: var(--text-muted); font-size: 0.78rem; margin-left: auto; }
+  .dd-item.selected .check { color: var(--accent); }
+  .dd-item .check { width: 14px; color: transparent; font-weight: 800; }
+  .dd-empty { padding: 14px; color: var(--text-muted); font-size: 0.85rem; }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px 6px 12px;
+    border-radius: 999px;
+    background: rgba(255,107,74,0.12);
+    border: 1px solid rgba(255,107,74,0.35);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .chip button {
+    background: rgba(255,255,255,0.08);
+    border: none;
+    color: var(--text);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.8rem;
+    line-height: 1;
+  }
+
+  .chip button:hover { background: var(--accent); color: #0A0C10; }
+
+  .quick {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .pill {
+    background: var(--dark-3);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .pill:hover { color: #fff; border-color: var(--border-strong); }
+  .pill.on { background: #fff; color: #0A0C10; border-color: #fff; }
+
+  /* ── PERIOD ── */
+  .seg {
+    display: inline-flex;
+    background: var(--dark-3);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 3px;
+    margin-bottom: 12px;
+  }
+
+  .seg button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .seg button.on { background: var(--accent); color: #0A0C10; }
+
+  .range-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .range-row label {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .period-summary {
+    margin-top: 12px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .period-summary strong { color: #fff; }
+
+  /* ── CATEGORY BAR ── */
+  .catbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--dark-2);
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .cat .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: 0.4; }
+  .cat.on { color: #fff; border-color: var(--border-strong); background: var(--dark-3); }
+  .cat.on .dot { opacity: 1; background: var(--cc); }
+
+  .search-ev {
+    margin-left: auto;
+    min-width: 200px;
+    flex: 0 1 260px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  /* ── TOOLBAR ── */
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 28px 0 14px;
+  }
+
+  .count {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .count strong { color: #fff; font-size: 1.1rem; }
+
+  /* ── CITY SECTION ── */
+  .city-sec { margin-bottom: 32px; }
+
+  .city-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: start;
+    background: linear-gradient(135deg, var(--dark-2), var(--dark-3));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .city-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.03em;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .city-name .flag { font-family: initial; font-size: 1.6rem; margin-right: 6px; }
+  .city-country { color: var(--text-muted); font-size: 0.82rem; margin-top: 4px; }
+  .city-blurb { color: var(--text); font-size: 0.88rem; margin-top: 10px; line-height: 1.55; max-width: 720px; }
+
+  .city-facts {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 6px 16px;
+    font-size: 0.78rem;
+    text-align: right;
+  }
+
+  .city-facts dt { color: var(--text-dim); }
+  .city-facts dd { color: #fff; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  .news {
+    margin-top: 14px;
+    border-top: 1px dashed var(--border-strong);
+    padding-top: 12px;
+    grid-column: 1 / -1;
+  }
+
+  .news-title {
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .news ul { list-style: none; display: grid; gap: 4px; }
+  .news li { font-size: 0.84rem; color: var(--text); padding-left: 16px; position: relative; line-height: 1.5; }
+  .news li::before { content: '✦'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 2px; }
+
+  .month-h {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin: 20px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .month-h::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 12px;
+  }
+
+  .card {
+    background: var(--dark-2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cc);
+    border-radius: 12px;
+    padding: 14px 16px;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text);
+    transition: transform 0.15s, border-color 0.15s, background 0.15s;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .card:hover { transform: translateY(-2px); background: var(--dark-3); }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .badge {
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--cc);
+  }
+
+  .card-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .card-title { font-size: 1rem; font-weight: 700; color: #fff; line-height: 1.3; }
+  .card-venue { font-size: 0.8rem; color: var(--text-muted); }
+  .card-city { font-size: 0.75rem; color: var(--text-dim); }
+
+  .tag-free {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #0A0C10;
+    background: var(--c-esporte);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .empty {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--text-muted);
+    border: 1px dashed var(--border-strong);
+    border-radius: 16px;
+  }
+
+  .empty strong { display: block; color: #fff; font-size: 1.1rem; margin-bottom: 6px; }
+
+  /* ── MODAL ── */
+  .modal-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(5,6,9,0.75);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    z-index: 50;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .modal-bg.open { display: flex; }
+
+  .modal {
+    background: var(--dark-2);
+    border: 1px solid var(--border-strong);
+    border-top: 4px solid var(--cc);
+    border-radius: 18px;
+    max-width: 560px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 24px;
+    position: relative;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--dark-3);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .modal h2 { font-size: 1.45rem; color: #fff; line-height: 1.25; margin: 6px 40px 4px 0; }
+
+  .modal-meta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 14px;
+    margin: 16px 0;
+    font-size: 0.88rem;
+  }
+
+  .modal-meta dt { color: var(--text-dim); font-weight: 600; }
+  .modal-meta dd { color: #fff; }
+
+  .modal p.desc { color: var(--text); line-height: 1.6; font-size: 0.92rem; }
+
+  .note {
+    margin-top: 14px;
+    font-size: 0.76rem;
+    color: var(--text-muted);
+    background: var(--dark-3);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid var(--border-strong);
+    background: var(--dark-3);
+    color: #fff;
+  }
+
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: #0A0C10; }
+  .btn:hover { opacity: 0.88; }
+
+  footer {
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    padding: 30px 0 40px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 860px) {
+    .filters { grid-template-columns: 1fr; }
+    .city-head { grid-template-columns: 1fr; }
+    .city-facts { text-align: left; grid-template-columns: auto 1fr; }
+    .search-ev { margin-left: 0; flex: 1 1 100%; }
+  }
+
+  @media (max-width: 480px) {
+    header { padding-top: 28px; }
+    .panel { padding: 16px; }
+    .range-row { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="glow"></div>
+
+<div class="container">
+  <header>
+    <div class="brand">Agenda <span>Mundo</span></div>
+    <p class="tagline">Shows, teatro, festivais, exposições e novidades das principais cidades do mundo. Escolha as cidades e o período para ver o que está acontecendo.</p>
+  </header>
+
+  <section class="filters">
+    <div class="panel">
+      <div class="label">
+        <span>Cidades</span>
+        <span>
+          <button class="link" id="btn-all">Todas</button> ·
+          <button class="link" id="btn-clear">Limpar</button>
+        </span>
+      </div>
+      <div class="picker">
+        <input class="input" id="city-search" type="text" placeholder="🔍 Buscar cidade ou país…" autocomplete="off" aria-label="Buscar cidade">
+        <div class="dropdown" id="dropdown" role="listbox"></div>
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="quick" id="continents"></div>
+    </div>
+
+    <div class="panel">
+      <div class="label"><span>Período</span></div>
+      <div class="seg" role="tablist">
+        <button data-mode="month" class="on">Por mês</button>
+        <button data-mode="range">Intervalo de meses</button>
+      </div>
+
+      <div id="mode-month">
+        <input class="input" type="month" id="month" aria-label="Mês">
+      </div>
+
+      <div id="mode-range" hidden>
+        <div class="range-row">
+          <div>
+            <label for="from">De</label>
+            <input class="input" type="month" id="from">
+          </div>
+          <div>
+            <label for="to">Até</label>
+            <input class="input" type="month" id="to">
+          </div>
+        </div>
+      </div>
+
+      <div class="quick" id="period-quick">
+        <button class="pill" data-q="0">Este mês</button>
+        <button class="pill" data-q="1">Próximo mês</button>
+        <button class="pill" data-q="3">Próximos 3 meses</button>
+        <button class="pill" data-q="6">Próximos 6 meses</button>
+        <button class="pill" data-q="12">Próximos 12 meses</button>
+      </div>
+
+      <div class="period-summary" id="period-summary"></div>
+    </div>
+  </section>
+
+  <div class="catbar" id="catbar">
+    <input class="input search-ev" id="ev-search" type="search" placeholder="Filtrar eventos…" aria-label="Filtrar eventos">
+  </div>
+
+  <div class="toolbar">
+    <div class="count" id="count"></div>
+    <div class="seg" style="margin:0">
+      <button data-view="city" class="on">Por cidade</button>
+      <button data-view="timeline">Linha do tempo</button>
+    </div>
+  </div>
+
+  <main id="results"></main>
+
+  <footer>
+    Datas baseadas no calendário típico de cada evento e podem variar de ano para ano.<br>
+    Confirme sempre no site oficial ou na bilheteria antes de comprar ingressos ou viajar.
+  </footer>
+</div>
+
+<div class="modal-bg" id="modal-bg" role="dialog" aria-modal="true">
+  <div class="modal" id="modal"></div>
+</div>
+
+<script>
+// ── CATEGORIAS ─────────────────────────────────────────────
+const CATS = {
+  show:     { name: 'Shows & Música',     color: 'var(--c-show)' },
+  teatro:   { name: 'Teatro & Musicais',  color: 'var(--c-teatro)' },
+  festival: { name: 'Festivais & Festas', color: 'var(--c-festival)' },
+  expo:     { name: 'Exposições & Arte',  color: 'var(--c-expo)' },
+  esporte:  { name: 'Esportes',           color: 'var(--c-esporte)' },
+  cultura:  { name: 'Feiras & Cultura',   color: 'var(--c-cultura)' },
+};
+
+// ── CIDADES ────────────────────────────────────────────────
+const CITIES = [
+  { id: 'sao-paulo', name: 'São Paulo', country: 'Brasil', flag: '🇧🇷', cont: 'América do Sul', tz: 'America/Sao_Paulo', cur: 'Real (BRL)', lang: 'Português',
+    blurb: 'Maior metrópole da América do Sul, com agenda cultural intensa o ano inteiro: musicais, grandes festivais, museus e gastronomia de todos os cantos do mundo.',
+    news: ['O MASP inaugurou em 2024 o edifício Pietro Maria Bardi, ampliando seu espaço de exposições na Av. Paulista.',
+           'Aos domingos e feriados a Av. Paulista fica aberta só para pedestres, com artistas de rua e feiras.',
+           'The Town, festival dos criadores do Rock in Rio, acontece em anos ímpares em Interlagos.'] },
+  { id: 'rio', name: 'Rio de Janeiro', country: 'Brasil', flag: '🇧🇷', cont: 'América do Sul', tz: 'America/Sao_Paulo', cur: 'Real (BRL)', lang: 'Português',
+    blurb: 'Cidade do Carnaval, do Réveillon de Copacabana e do Rock in Rio. Praias, samba e uma das festas de rua mais famosas do planeta.',
+    news: ['O Rock in Rio acontece em anos pares, na Cidade do Rock (Parque Olímpico).',
+           'A região portuária revitalizada concentra o Museu do Amanhã, o MAR e o Boulevard Olímpico.'] },
+  { id: 'buenos-aires', name: 'Buenos Aires', country: 'Argentina', flag: '🇦🇷', cont: 'América do Sul', tz: 'America/Argentina/Buenos_Aires', cur: 'Peso argentino (ARS)', lang: 'Espanhol',
+    blurb: 'Capital do tango, com teatros na Av. Corrientes, o lendário Teatro Colón e uma vida noturna que começa depois da meia-noite.',
+    news: ['O Teatro Colón oferece visitas guiadas diárias, além da temporada de ópera e balé.',
+           'A Noche de los Museos abre gratuitamente dezenas de museus durante uma madrugada.'] },
+  { id: 'cdmx', name: 'Cidade do México', country: 'México', flag: '🇲🇽', cont: 'América do Norte', tz: 'America/Mexico_City', cur: 'Peso mexicano (MXN)', lang: 'Espanhol',
+    blurb: 'Megacidade com uma das maiores concentrações de museus do mundo, lucha libre, Día de Muertos e grandes festivais de música.',
+    news: ['O Estádio Azteca sediou a partida de abertura da Copa do Mundo de 2026.',
+           'O desfile do Día de Muertos ocupa o Paseo de la Reforma até o Zócalo no início de novembro.'] },
+  { id: 'nova-york', name: 'Nova York', country: 'Estados Unidos', flag: '🇺🇸', cont: 'América do Norte', tz: 'America/New_York', cur: 'Dólar (USD)', lang: 'Inglês',
+    blurb: 'Broadway, museus de classe mundial, US Open e o Réveillon da Times Square. A cidade que nunca dorme tem algo acontecendo todos os dias.',
+    news: ['O Perelman Performing Arts Center (PAC NYC), no World Trade Center, abriu em 2023.',
+           'Desde janeiro de 2025 há pedágio urbano (congestion pricing) para carros no sul de Manhattan.'] },
+  { id: 'londres', name: 'Londres', country: 'Reino Unido', flag: '🇬🇧', cont: 'Europa', tz: 'Europe/London', cur: 'Libra (GBP)', lang: 'Inglês',
+    blurb: 'O West End rivaliza com a Broadway, e a agenda inclui Wimbledon, BBC Proms, Notting Hill Carnival e museus gratuitos.',
+    news: ['O V&A East Storehouse abriu em 2025 no Queen Elizabeth Olympic Park, com acesso ao acervo do museu.',
+           'A Elizabeth line liga Heathrow ao centro e ao leste da cidade em trens rápidos.'] },
+  { id: 'edimburgo', name: 'Edimburgo', country: 'Reino Unido', flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿', cont: 'Europa', tz: 'Europe/London', cur: 'Libra (GBP)', lang: 'Inglês',
+    blurb: 'Em agosto vira a capital mundial das artes cênicas com o Fringe, o maior festival de artes do mundo. No fim do ano, o Hogmanay.',
+    news: ['A cidade passou a cobrar taxa turística (Visitor Levy) sobre hospedagens a partir de julho de 2026.',
+           'Durante agosto os preços de hospedagem sobem muito: reserve com antecedência.'] },
+  { id: 'paris', name: 'Paris', country: 'França', flag: '🇫🇷', cont: 'Europa', tz: 'Europe/Paris', cur: 'Euro (EUR)', lang: 'Francês',
+    blurb: 'Ópera, cabarés, Roland-Garros e alguns dos museus mais visitados do mundo. Em junho, a cidade inteira vira palco na Fête de la Musique.',
+    news: ['A Catedral de Notre-Dame foi reaberta em dezembro de 2024, com entrada gratuita.',
+           'O Louvre anunciou em 2025 o projeto “Louvre Nouvelle Renaissance”, com nova entrada e sala para a Mona Lisa.'] },
+  { id: 'lisboa', name: 'Lisboa', country: 'Portugal', flag: '🇵🇹', cont: 'Europa', tz: 'Europe/Lisbon', cur: 'Euro (EUR)', lang: 'Português',
+    blurb: 'Fado em Alfama, Festas de Santo António, grandes festivais de verão e o Web Summit. Tudo com vista para o Tejo.',
+    news: ['O fado é Patrimônio Cultural Imaterial da Humanidade (UNESCO) — casas de fado funcionam todas as noites.',
+           'Em junho, as Marchas Populares descem a Av. da Liberdade na noite de Santo António.'] },
+  { id: 'madri', name: 'Madri', country: 'Espanha', flag: '🇪🇸', cont: 'Europa', tz: 'Europe/Madrid', cur: 'Euro (EUR)', lang: 'Espanhol',
+    blurb: 'Triângulo da arte (Prado, Reina Sofía, Thyssen), musicais na Gran Vía, flamenco e festivais de verão.',
+    news: ['A Galería de las Colecciones Reales, ao lado do Palácio Real, abriu em 2023.',
+           'A Gran Vía é conhecida como a “Broadway madrilenha”, com vários musicais em cartaz.'] },
+  { id: 'barcelona', name: 'Barcelona', country: 'Espanha', flag: '🇪🇸', cont: 'Europa', tz: 'Europe/Madrid', cur: 'Euro (EUR)', lang: 'Catalão / Espanhol',
+    blurb: 'Gaudí, praia, Primavera Sound e Sónar. A cidade combina arquitetura modernista com uma das cenas musicais mais fortes da Europa.',
+    news: ['2026 marca o centenário da morte de Antoni Gaudí, com programação especial na cidade.',
+           'Ingressos da Sagrada Família esgotam rápido: compre com dias de antecedência.'] },
+  { id: 'berlim', name: 'Berlim', country: 'Alemanha', flag: '🇩🇪', cont: 'Europa', tz: 'Europe/Berlin', cur: 'Euro (EUR)', lang: 'Alemão',
+    blurb: 'Capital da música eletrônica, da Berlinale e de uma cena de arte contemporânea sem igual, além de três grandes casas de ópera.',
+    news: ['A Neue Nationalgalerie, de Mies van der Rohe, foi reaberta após restauro completo.',
+           'Os mercados de Natal começam no fim de novembro em dezenas de praças.'] },
+  { id: 'munique', name: 'Munique', country: 'Alemanha', flag: '🇩🇪', cont: 'Europa', tz: 'Europe/Berlin', cur: 'Euro (EUR)', lang: 'Alemão',
+    blurb: 'Lar da Oktoberfest, do Bayern de Munique e de uma das óperas mais prestigiadas da Europa.',
+    news: ['A Oktoberfest começa em um sábado de setembro e termina no primeiro domingo de outubro.',
+           'Hospedagem durante a Oktoberfest costuma esgotar meses antes.'] },
+  { id: 'roma', name: 'Roma', country: 'Itália', flag: '🇮🇹', cont: 'Europa', tz: 'Europe/Rome', cur: 'Euro (EUR)', lang: 'Italiano',
+    blurb: 'Ópera ao ar livre nas Termas de Caracalla, festas religiosas, Masters de tênis e 2.700 anos de história em cada esquina.',
+    news: ['O Jubileu de 2025 trouxe restauros em praças, fontes e igrejas históricas.',
+           'O Natal de Roma (21 de abril) celebra a fundação da cidade com desfiles históricos.'] },
+  { id: 'toquio', name: 'Tóquio', country: 'Japão', flag: '🇯🇵', cont: 'Ásia & Oceania', tz: 'Asia/Tokyo', cur: 'Iene (JPY)', lang: 'Japonês',
+    blurb: 'Kabuki, festivais tradicionais (matsuri), cerejeiras em flor, fogos no rio Sumida e o Tokyo Game Show.',
+    news: ['O teamLab Borderless reabriu em 2024 no complexo Azabudai Hills.',
+           'A floração das cerejeiras costuma atingir o pico entre o fim de março e o início de abril.'] },
+  { id: 'sydney', name: 'Sydney', country: 'Austrália', flag: '🇦🇺', cont: 'Ásia & Oceania', tz: 'Australia/Sydney', cur: 'Dólar australiano (AUD)', lang: 'Inglês',
+    blurb: 'Opera House, Vivid Sydney e um dos primeiros Réveillons do mundo, com fogos sobre a Harbour Bridge.',
+    news: ['A linha de metrô Sydney Metro City foi inaugurada em 2024, cruzando sob a baía.',
+           'As estações são invertidas: dezembro e janeiro são pleno verão.'] },
+];
+
+// ── EVENTOS ────────────────────────────────────────────────
+// Regras de data (repetem todo ano):
+//   {m, d, d2}            dias d..d2 do mês m (d2 omitido = 1 dia)
+//   {m, d, m2, d2}        de d/m até d2/m2 (m2 < m = vira o ano)
+//   {nth, wd, m, len}     n-ésimo dia da semana (0=dom) do mês; nth -1 = último
+//   {easter, len}         dias a partir da Páscoa
+//   {fn: y => [ini, fim]} cálculo próprio
+//   {ongoing, months?}    em cartaz o ano todo (ou só nos meses indicados)
+//   years: 'odd'|'even'   só em anos ímpares/pares
+const EVENTS = [
+  // São Paulo
+  { city: 'sao-paulo', cat: 'festival', title: 'Lollapalooza Brasil', venue: 'Autódromo de Interlagos', when: { fn: y => fridayRun(y, 3, 3, 3) }, price: '$$$',
+    desc: 'Três dias de festival com headliners internacionais de rock, pop, rap e eletrônica, em vários palcos.' },
+  { city: 'sao-paulo', cat: 'festival', title: 'The Town', venue: 'Autódromo de Interlagos', when: { m: 9, d: 5, d2: 14 }, years: 'odd', price: '$$$',
+    desc: 'Festival de música dos criadores do Rock in Rio, com grandes nomes nacionais e internacionais ao longo de dois fins de semana.' },
+  { city: 'sao-paulo', cat: 'cultura', title: 'Virada Cultural', venue: 'Centro e bairros de São Paulo', when: { nth: 3, wd: 6, m: 5, len: 2 }, price: 'free',
+    desc: '24 horas ininterruptas de shows, teatro, dança e intervenções artísticas gratuitas pela cidade.' },
+  { city: 'sao-paulo', cat: 'festival', title: 'Parada do Orgulho LGBT+', venue: 'Avenida Paulista', when: { easter: 63 }, price: 'free',
+    desc: 'Uma das maiores paradas do orgulho do mundo, com trios elétricos da Paulista à Consolação.' },
+  { city: 'sao-paulo', cat: 'cultura', title: 'Mostra Internacional de Cinema', venue: 'Cinemas da cidade', when: { m: 10, d: 16, d2: 29 }, price: '$',
+    desc: 'Centenas de filmes de dezenas de países, com estreias, retrospectivas e sessões gratuitas ao ar livre.' },
+  { city: 'sao-paulo', cat: 'esporte', title: 'Fórmula 1 — GP de São Paulo', venue: 'Autódromo de Interlagos', when: { nth: 2, wd: 5, m: 11, len: 3 }, price: '$$$',
+    desc: 'Etapa brasileira da Fórmula 1, conhecida pela torcida apaixonada e corridas imprevisíveis.' },
+  { city: 'sao-paulo', cat: 'esporte', title: 'Corrida Internacional de São Silvestre', venue: 'Av. Paulista', when: { m: 12, d: 31 }, price: '$',
+    desc: 'Tradicional corrida de rua de 15 km no último dia do ano.' },
+  { city: 'sao-paulo', cat: 'expo', title: 'SP–Arte', venue: 'Pavilhão da Bienal, Ibirapuera', when: { m: 4, d: 1, d2: 5 }, price: '$$',
+    desc: 'Principal feira de arte da América Latina, com galerias do Brasil e do exterior.' },
+  { city: 'sao-paulo', cat: 'teatro', title: 'Musicais em cartaz', venue: 'Teatro Renault, Teatro Santander e outros', when: { ongoing: true }, price: '$$',
+    desc: 'São Paulo é o maior polo de musicais da América Latina, com versões de sucessos da Broadway e produções nacionais em cartaz o ano todo.' },
+  { city: 'sao-paulo', cat: 'teatro', title: 'Temporada lírica do Theatro Municipal', venue: 'Theatro Municipal de São Paulo', when: { ongoing: true, months: [3,4,5,6,7,8,9,10,11,12] }, price: '$$',
+    desc: 'Óperas, concertos e balé no histórico teatro do Centro.' },
+
+  // Rio de Janeiro
+  { city: 'rio', cat: 'festival', title: 'Carnaval — Desfiles do Grupo Especial', venue: 'Sambódromo da Marquês de Sapucaí', when: { easter: -49, len: 2 }, price: '$$',
+    desc: 'O maior espetáculo da Terra: escolas de samba desfilam na Sapucaí em duas noites.' },
+  { city: 'rio', cat: 'festival', title: 'Blocos de Carnaval', venue: 'Ruas da cidade', when: { easter: -51, len: 6 }, price: 'free',
+    desc: 'Centenas de blocos de rua animam bairros como Centro, Santa Teresa, Ipanema e Copacabana.' },
+  { city: 'rio', cat: 'festival', title: 'Rock in Rio', venue: 'Cidade do Rock, Parque Olímpico', when: { m: 9, d: 11, d2: 20 }, years: 'even', price: '$$$',
+    desc: 'Um dos maiores festivais de música do mundo, com sete dias de shows em vários palcos.' },
+  { city: 'rio', cat: 'festival', title: 'Réveillon de Copacabana', venue: 'Praia de Copacabana', when: { m: 12, d: 31 }, price: 'free',
+    desc: 'Milhões de pessoas de branco, shows em palcos na areia e queima de fogos à meia-noite.' },
+  { city: 'rio', cat: 'esporte', title: 'Rio Open (tênis ATP 500)', venue: 'Jockey Club Brasileiro', when: { m: 2, d: 14, d2: 22 }, price: '$$',
+    desc: 'Maior torneio de tênis da América do Sul, disputado no saibro.' },
+  { city: 'rio', cat: 'cultura', title: 'Festival do Rio', venue: 'Cinemas da cidade', when: { m: 10, d: 1, d2: 11 }, price: '$',
+    desc: 'Festival internacional de cinema com mostras competitivas e pré-estreias.' },
+  { city: 'rio', cat: 'expo', title: 'Museu do Amanhã', venue: 'Praça Mauá', when: { ongoing: true }, price: '$',
+    desc: 'Museu de ciências projetado por Santiago Calatrava, com exposições sobre o futuro do planeta.' },
+
+  // Buenos Aires
+  { city: 'buenos-aires', cat: 'festival', title: 'Lollapalooza Argentina', venue: 'Hipódromo de San Isidro', when: { fn: y => fridayRun(y, 3, 2, 3) }, price: '$$$',
+    desc: 'Edição argentina do festival, com line-up internacional e artistas latinos.' },
+  { city: 'buenos-aires', cat: 'show', title: 'Tango BA Festival y Mundial', venue: 'Usina del Arte e outros', when: { m: 8, d: 13, d2: 26 }, price: 'free',
+    desc: 'Festival e campeonato mundial de tango, com aulas, milongas e apresentações gratuitas.' },
+  { city: 'buenos-aires', cat: 'cultura', title: 'Feria Internacional del Libro', venue: 'La Rural', when: { m: 4, d: 23, m2: 5, d2: 11 }, price: '$',
+    desc: 'Uma das maiores feiras do livro do mundo hispânico.' },
+  { city: 'buenos-aires', cat: 'expo', title: 'La Noche de los Museos', venue: 'Museus da cidade', when: { nth: 1, wd: 6, m: 11 }, price: 'free',
+    desc: 'Mais de 200 museus e espaços culturais abertos gratuitamente das 20h às 3h.' },
+  { city: 'buenos-aires', cat: 'teatro', title: 'Temporada do Teatro Colón', venue: 'Teatro Colón', when: { ongoing: true, months: [3,4,5,6,7,8,9,10,11,12] }, price: '$$',
+    desc: 'Óperas, balés e concertos em uma das salas com melhor acústica do mundo.' },
+  { city: 'buenos-aires', cat: 'show', title: 'Shows de tango com jantar', venue: 'San Telmo e Abasto', when: { ongoing: true }, price: '$$',
+    desc: 'Casas tradicionais apresentam shows de tango com orquestra e jantar todas as noites.' },
+
+  // Cidade do México
+  { city: 'cdmx', cat: 'festival', title: 'Desfile do Día de Muertos', venue: 'Paseo de la Reforma → Zócalo', when: { m: 11, d: 1, d2: 2 }, price: 'free',
+    desc: 'Desfile com catrinas, alebrijes gigantes e altares que celebram o Dia dos Mortos.' },
+  { city: 'cdmx', cat: 'festival', title: 'Vive Latino', venue: 'Estadio GNP Seguros', when: { fn: y => fridayRun(y, 3, 2, 2) }, price: '$$',
+    desc: 'Maior festival de rock em espanhol do mundo.' },
+  { city: 'cdmx', cat: 'festival', title: 'Corona Capital', venue: 'Autódromo Hermanos Rodríguez', when: { fn: y => fridayRun(y, 11, 3, 3) }, price: '$$$',
+    desc: 'Festival de indie, rock e pop com headliners internacionais.' },
+  { city: 'cdmx', cat: 'esporte', title: 'Fórmula 1 — GP da Cidade do México', venue: 'Autódromo Hermanos Rodríguez', when: { nth: -1, wd: 5, m: 10, len: 3 }, price: '$$$',
+    desc: 'Corrida na altitude, com a famosa passagem pelo estádio Foro Sol.' },
+  { city: 'cdmx', cat: 'teatro', title: 'Ballet Folklórico de México', venue: 'Palacio de Bellas Artes', when: { ongoing: true }, price: '$$',
+    desc: 'Danças tradicionais de todo o México em espetáculo no Palacio de Bellas Artes.' },
+  { city: 'cdmx', cat: 'esporte', title: 'Lucha Libre', venue: 'Arena México', when: { ongoing: true }, price: '$',
+    desc: 'Noites de luta livre mexicana com máscaras, acrobacias e muita torcida.' },
+
+  // Nova York
+  { city: 'nova-york', cat: 'teatro', title: 'The Lion King', venue: 'Minskoff Theatre, Broadway', when: { ongoing: true }, price: '$$$',
+    desc: 'Musical da Disney em cartaz na Broadway desde 1997.' },
+  { city: 'nova-york', cat: 'teatro', title: 'Wicked', venue: 'Gershwin Theatre, Broadway', when: { ongoing: true }, price: '$$$',
+    desc: 'A história não contada das bruxas de Oz, um dos musicais mais populares da Broadway.' },
+  { city: 'nova-york', cat: 'teatro', title: 'Hamilton', venue: 'Richard Rodgers Theatre, Broadway', when: { ongoing: true }, price: '$$$',
+    desc: 'Musical de Lin-Manuel Miranda sobre Alexander Hamilton, com hip-hop e R&B.' },
+  { city: 'nova-york', cat: 'show', title: 'Christmas Spectacular com as Rockettes', venue: 'Radio City Music Hall', when: { m: 11, d: 14, m2: 1, d2: 3 }, price: '$$$',
+    desc: 'Show natalino tradicional com as dançarinas Rockettes.' },
+  { city: 'nova-york', cat: 'festival', title: "Macy's Thanksgiving Day Parade", venue: 'Central Park West → Herald Square', when: { nth: 4, wd: 4, m: 11 }, price: 'free',
+    desc: 'Desfile de Ação de Graças com balões gigantes, bandas e carros alegóricos.' },
+  { city: 'nova-york', cat: 'festival', title: 'Réveillon na Times Square', venue: 'Times Square', when: { m: 12, d: 31 }, price: 'free',
+    desc: 'A tradicional descida da bola de cristal à meia-noite.' },
+  { city: 'nova-york', cat: 'esporte', title: 'US Open (tênis Grand Slam)', venue: 'USTA Billie Jean King Tennis Center', when: { nth: -1, wd: 1, m: 8, len: 14 }, price: '$$$',
+    desc: 'Último Grand Slam do ano, em quadras duras no Queens.' },
+  { city: 'nova-york', cat: 'esporte', title: 'Maratona de Nova York', venue: 'Cinco distritos da cidade', when: { nth: 1, wd: 0, m: 11 }, price: 'free',
+    desc: 'Maior maratona do mundo, passando pelos cinco distritos. Assistir é gratuito.' },
+  { city: 'nova-york', cat: 'cultura', title: 'Tribeca Festival', venue: 'Lower Manhattan', when: { m: 6, d: 10, d2: 21 }, price: '$$',
+    desc: 'Festival de cinema, TV e música fundado por Robert De Niro.' },
+  { city: 'nova-york', cat: 'expo', title: 'The Met e MoMA', venue: 'Upper East Side / Midtown', when: { ongoing: true }, price: '$$',
+    desc: 'Exposições permanentes e temporárias em dois dos museus mais importantes do mundo.' },
+
+  // Londres
+  { city: 'londres', cat: 'teatro', title: 'Les Misérables', venue: 'Sondheim Theatre, West End', when: { ongoing: true }, price: '$$$',
+    desc: 'O musical em cartaz há mais tempo no West End, desde 1985.' },
+  { city: 'londres', cat: 'teatro', title: 'The Phantom of the Opera', venue: "His Majesty's Theatre, West End", when: { ongoing: true }, price: '$$$',
+    desc: 'O clássico de Andrew Lloyd Webber no teatro onde estreou em 1986.' },
+  { city: 'londres', cat: 'teatro', title: 'The Mousetrap', venue: "St Martin's Theatre", when: { ongoing: true }, price: '$$',
+    desc: 'Peça de Agatha Christie em cartaz desde 1952 — a mais longa temporada da história do teatro.' },
+  { city: 'londres', cat: 'teatro', title: 'Harry Potter and the Cursed Child', venue: 'Palace Theatre', when: { ongoing: true }, price: '$$$',
+    desc: 'Peça em duas partes que continua a história de Harry Potter 19 anos depois.' },
+  { city: 'londres', cat: 'esporte', title: 'Wimbledon', venue: 'All England Lawn Tennis Club', when: { fn: y => wimbledon(y) }, price: '$$$',
+    desc: 'O Grand Slam mais tradicional do tênis, na grama.' },
+  { city: 'londres', cat: 'show', title: 'BBC Proms', venue: 'Royal Albert Hall', when: { m: 7, d: 17, m2: 9, d2: 12 }, price: '$',
+    desc: 'Oito semanas de concertos de música clássica, com ingressos “promming” baratos em pé.' },
+  { city: 'londres', cat: 'festival', title: 'Notting Hill Carnival', venue: 'Notting Hill', when: { fn: y => { const mon = nthWeekday(y, 8, 1, -1); return [addDays(mon, -1), mon]; } }, price: 'free',
+    desc: 'Maior carnaval de rua da Europa, celebrando a cultura caribenha.' },
+  { city: 'londres', cat: 'festival', title: 'Hyde Park Winter Wonderland', venue: 'Hyde Park', when: { m: 11, d: 20, m2: 1, d2: 3 }, price: '$',
+    desc: 'Parque natalino com mercados, rodas-gigantes, pista de gelo e circo.' },
+  { city: 'londres', cat: 'esporte', title: 'Maratona de Londres', venue: 'Greenwich → The Mall', when: { nth: -1, wd: 0, m: 4 }, price: 'free',
+    desc: 'Uma das seis Abbott World Marathon Majors.' },
+  { city: 'londres', cat: 'festival', title: 'Réveillon — fogos no Tâmisa', venue: 'London Eye', when: { m: 12, d: 31 }, price: '$',
+    desc: 'Queima de fogos sobre o rio Tâmisa (área de visualização com ingresso).' },
+
+  // Edimburgo
+  { city: 'edimburgo', cat: 'teatro', title: 'Edinburgh Festival Fringe', venue: 'Centenas de locais', when: { fn: y => { const s = nthWeekday(y, 8, 5, 1); return [s, addDays(s, 24)]; } }, price: '$',
+    desc: 'Maior festival de artes do mundo: milhares de peças, comédias, musicais e performances.' },
+  { city: 'edimburgo', cat: 'show', title: 'Royal Edinburgh Military Tattoo', venue: 'Esplanada do Castelo', when: { m: 8, d: 1, d2: 23 }, price: '$$',
+    desc: 'Espetáculo noturno com bandas militares e gaitas de fole em frente ao castelo.' },
+  { city: 'edimburgo', cat: 'show', title: 'Edinburgh International Festival', venue: 'Usher Hall e teatros', when: { m: 8, d: 1, d2: 24 }, price: '$$',
+    desc: 'Música clássica, ópera, teatro e dança com companhias de todo o mundo.' },
+  { city: 'edimburgo', cat: 'festival', title: 'Hogmanay', venue: 'Princes Street e Castelo', when: { m: 12, d: 29, m2: 1, d2: 1 }, price: '$$',
+    desc: 'Celebração escocesa de Ano Novo com desfile de tochas, street party e fogos.' },
+
+  // Paris
+  { city: 'paris', cat: 'show', title: 'Fête de la Musique', venue: 'Toda a cidade', when: { m: 6, d: 21 }, price: 'free',
+    desc: 'No dia mais longo do ano, músicos tocam de graça em ruas, bares e praças.' },
+  { city: 'paris', cat: 'festival', title: 'Dia da Bastilha', venue: 'Champs-Élysées e Torre Eiffel', when: { m: 7, d: 14 }, price: 'free',
+    desc: 'Desfile militar pela manhã e fogos de artifício na Torre Eiffel à noite.' },
+  { city: 'paris', cat: 'esporte', title: 'Roland-Garros', venue: 'Stade Roland-Garros', when: { fn: y => { let end = nthWeekday(y, 6, 0, 1); if (end.getDate() < 4) end = addDays(end, 7); return [addDays(end, -14), end]; } }, price: '$$$',
+    desc: 'Grand Slam de tênis no saibro.' },
+  { city: 'paris', cat: 'expo', title: 'Nuit Blanche', venue: 'Toda a cidade', when: { nth: 1, wd: 6, m: 6 }, price: 'free',
+    desc: 'Noite de arte contemporânea com instalações gratuitas espalhadas pela cidade.' },
+  { city: 'paris', cat: 'teatro', title: 'Temporada da Ópera de Paris', venue: 'Palais Garnier e Opéra Bastille', when: { ongoing: true, months: [1,2,3,4,5,6,7,9,10,11,12] }, price: '$$$',
+    desc: 'Óperas e balés nas duas casas da Ópera Nacional de Paris.' },
+  { city: 'paris', cat: 'show', title: 'Féerie — Moulin Rouge', venue: 'Moulin Rouge, Montmartre', when: { ongoing: true }, price: '$$$',
+    desc: 'Revista com cancan, plumas e paetês no cabaré mais famoso do mundo.' },
+  { city: 'paris', cat: 'cultura', title: 'Mercados de Natal', venue: 'Tuileries, La Défense e outros', when: { m: 11, d: 22, m2: 1, d2: 2 }, price: 'free',
+    desc: 'Barracas de artesanato, vin chaud e iluminação natalina pela cidade.' },
+
+  // Lisboa
+  { city: 'lisboa', cat: 'festival', title: 'Festas de Lisboa — Santo António', venue: 'Alfama, Mouraria e Av. da Liberdade', when: { m: 6, d: 12, d2: 13 }, price: 'free',
+    desc: 'Marchas Populares, sardinhas assadas e arraiais nos bairros históricos.' },
+  { city: 'lisboa', cat: 'festival', title: 'NOS Alive', venue: 'Passeio Marítimo de Algés', when: { nth: 2, wd: 4, m: 7, len: 3 }, price: '$$$',
+    desc: 'Festival de verão com grandes nomes do rock, pop e indie à beira do Tejo.' },
+  { city: 'lisboa', cat: 'festival', title: 'Rock in Rio Lisboa', venue: 'Parque Tejo', when: { m: 6, d: 20, d2: 28 }, years: 'even', price: '$$$',
+    desc: 'Edição portuguesa do Rock in Rio, em anos pares.' },
+  { city: 'lisboa', cat: 'cultura', title: 'Web Summit', venue: 'MEO Arena e FIL', when: { nth: 2, wd: 1, m: 11, len: 4 }, price: '$$$',
+    desc: 'Uma das maiores conferências de tecnologia do mundo.' },
+  { city: 'lisboa', cat: 'show', title: 'Noites de fado', venue: 'Casas de fado em Alfama e Bairro Alto', when: { ongoing: true }, price: '$$',
+    desc: 'Fado ao vivo com jantar, em casas tradicionais, todas as noites.' },
+
+  // Madri
+  { city: 'madri', cat: 'festival', title: 'Mad Cool Festival', venue: 'Iberdrola Music', when: { m: 7, d: 8, d2: 11 }, price: '$$$',
+    desc: 'Festival de rock e indie com headliners internacionais.' },
+  { city: 'madri', cat: 'festival', title: 'Fiestas de San Isidro', venue: 'Pradera de San Isidro e Plaza Mayor', when: { m: 5, d: 15 }, price: 'free',
+    desc: 'Festa do padroeiro com trajes castiços, chotis e shows gratuitos.' },
+  { city: 'madri', cat: 'esporte', title: 'Mutua Madrid Open (tênis)', venue: 'Caja Mágica', when: { m: 4, d: 22, m2: 5, d2: 3 }, price: '$$',
+    desc: 'Torneio Masters 1000 / WTA 1000 no saibro.' },
+  { city: 'madri', cat: 'expo', title: 'ARCOmadrid', venue: 'IFEMA', when: { m: 3, d: 4, d2: 8 }, price: '$$',
+    desc: 'Feira internacional de arte contemporânea.' },
+  { city: 'madri', cat: 'festival', title: 'Orgullo Madrid (MADO)', venue: 'Chueca e Paseo del Prado', when: { nth: 1, wd: 6, m: 7 }, price: 'free',
+    desc: 'Uma das maiores celebrações do orgulho LGBT+ da Europa.' },
+  { city: 'madri', cat: 'teatro', title: 'El Rey León', venue: 'Teatro Lope de Vega, Gran Vía', when: { ongoing: true }, price: '$$$',
+    desc: 'Versão espanhola do musical da Disney, em cartaz há mais de uma década.' },
+  { city: 'madri', cat: 'expo', title: 'Museo del Prado', venue: 'Paseo del Prado', when: { ongoing: true }, price: '$',
+    desc: 'Velázquez, Goya, El Greco e Bosch. Entrada gratuita nas duas últimas horas do dia.' },
+
+  // Barcelona
+  { city: 'barcelona', cat: 'festival', title: 'Primavera Sound', venue: 'Parc del Fòrum', when: { m: 6, d: 3, d2: 7 }, price: '$$$',
+    desc: 'Festival de música alternativa à beira-mar, referência na Europa.' },
+  { city: 'barcelona', cat: 'show', title: 'Sónar', venue: 'Fira Montjuïc', when: { m: 6, d: 18, d2: 20 }, price: '$$',
+    desc: 'Festival de música eletrônica, criatividade e tecnologia.' },
+  { city: 'barcelona', cat: 'festival', title: 'La Mercè', venue: 'Centro de Barcelona', when: { m: 9, d: 20, d2: 24 }, price: 'free',
+    desc: 'Festa maior da cidade com castells, correfocs e shows gratuitos.' },
+  { city: 'barcelona', cat: 'cultura', title: 'Sant Jordi', venue: 'Las Ramblas e Passeig de Gràcia', when: { m: 4, d: 23 }, price: 'free',
+    desc: 'Dia do livro e da rosa: ruas tomadas por bancas de livros e flores.' },
+  { city: 'barcelona', cat: 'cultura', title: 'Mobile World Congress', venue: 'Fira Gran Via', when: { m: 3, d: 2, d2: 5 }, price: '$$$',
+    desc: 'Maior evento de tecnologia móvel do mundo.' },
+  { city: 'barcelona', cat: 'teatro', title: 'Temporada do Gran Teatre del Liceu', venue: 'Las Ramblas', when: { ongoing: true, months: [1,2,3,4,5,6,7,9,10,11,12] }, price: '$$',
+    desc: 'Ópera e balé em um dos teatros mais emblemáticos da Europa.' },
+  { city: 'barcelona', cat: 'expo', title: 'Sagrada Família', venue: 'Eixample', when: { ongoing: true }, price: '$$',
+    desc: 'A basílica de Gaudí, em construção desde 1882.' },
+
+  // Berlim
+  { city: 'berlim', cat: 'cultura', title: 'Berlinale', venue: 'Potsdamer Platz', when: { m: 2, d: 12, d2: 22 }, price: '$',
+    desc: 'Festival Internacional de Cinema de Berlim, com o Urso de Ouro.' },
+  { city: 'berlim', cat: 'expo', title: 'Festival of Lights', venue: 'Portão de Brandemburgo e monumentos', when: { m: 10, d: 2, d2: 11 }, price: 'free',
+    desc: 'Projeções de luz em mais de 70 monumentos e prédios.' },
+  { city: 'berlim', cat: 'esporte', title: 'Maratona de Berlim', venue: 'Tiergarten', when: { nth: -1, wd: 0, m: 9 }, price: 'free',
+    desc: 'Percurso plano famoso pelos recordes mundiais.' },
+  { city: 'berlim', cat: 'festival', title: 'Karneval der Kulturen', venue: 'Kreuzberg', when: { easter: 48, len: 4 }, price: 'free',
+    desc: 'Festival multicultural com desfile de rua no fim de semana de Pentecostes.' },
+  { city: 'berlim', cat: 'cultura', title: 'Mercados de Natal', venue: 'Gendarmenmarkt, Charlottenburg e outros', when: { m: 11, d: 24, m2: 12, d2: 31 }, price: '$',
+    desc: 'Mais de 80 mercados natalinos com glühwein e artesanato.' },
+  { city: 'berlim', cat: 'show', title: 'Berliner Philharmoniker', venue: 'Philharmonie', when: { ongoing: true, months: [1,2,3,4,5,6,9,10,11,12] }, price: '$$',
+    desc: 'Temporada de uma das melhores orquestras do mundo.' },
+
+  // Munique
+  { city: 'munique', cat: 'festival', title: 'Oktoberfest', venue: 'Theresienwiese', when: { fn: y => oktoberfest(y) }, price: 'free',
+    desc: 'A maior festa da cerveja do mundo, com tendas gigantes, trajes típicos e parque de diversões. Entrada gratuita.' },
+  { city: 'munique', cat: 'cultura', title: 'Christkindlmarkt', venue: 'Marienplatz', when: { m: 11, d: 23, m2: 12, d2: 24 }, price: 'free',
+    desc: 'Mercado de Natal tradicional em frente à prefeitura.' },
+  { city: 'munique', cat: 'teatro', title: 'Münchner Opernfestspiele', venue: 'Bayerische Staatsoper', when: { m: 6, d: 27, m2: 7, d2: 31 }, price: '$$$',
+    desc: 'Festival de ópera de verão, com transmissões gratuitas na praça.' },
+  { city: 'munique', cat: 'esporte', title: 'Jogos do Bayern de Munique', venue: 'Allianz Arena', when: { ongoing: true, months: [1,2,3,4,5,8,9,10,11,12] }, price: '$$',
+    desc: 'Temporada da Bundesliga e Champions League.' },
+
+  // Roma
+  { city: 'roma', cat: 'festival', title: 'Natale di Roma', venue: 'Circo Máximo', when: { m: 4, d: 21 }, price: 'free',
+    desc: 'Aniversário de fundação da cidade, com desfile de gladiadores e legionários.' },
+  { city: 'roma', cat: 'esporte', title: 'Internazionali BNL d’Italia (tênis)', venue: 'Foro Italico', when: { m: 5, d: 6, d2: 17 }, price: '$$',
+    desc: 'Masters 1000 no saibro, último grande torneio antes de Roland-Garros.' },
+  { city: 'roma', cat: 'teatro', title: 'Ópera nas Termas de Caracalla', venue: 'Termas de Caracalla', when: { m: 6, d: 25, m2: 8, d2: 10 }, price: '$$',
+    desc: 'Temporada de verão da Ópera de Roma ao ar livre nas ruínas romanas.' },
+  { city: 'roma', cat: 'festival', title: 'Festa de São Pedro e São Paulo', venue: 'Basílica de São Pedro', when: { m: 6, d: 29 }, price: 'free',
+    desc: 'Feriado dos padroeiros de Roma, com missa papal e a Infiorata.' },
+  { city: 'roma', cat: 'cultura', title: 'Festa del Cinema di Roma', venue: 'Auditorium Parco della Musica', when: { m: 10, d: 15, d2: 26 }, price: '$',
+    desc: 'Festival de cinema com estreias e convidados internacionais.' },
+  { city: 'roma', cat: 'expo', title: 'Coliseu e Fórum Romano', venue: 'Centro histórico', when: { ongoing: true }, price: '$$',
+    desc: 'Visitas ao anfiteatro mais famoso do mundo. Compre o ingresso com horário marcado.' },
+
+  // Tóquio
+  { city: 'toquio', cat: 'festival', title: 'Hanami — cerejeiras em flor', venue: 'Parque Ueno, Shinjuku Gyoen, Meguro', when: { m: 3, d: 24, m2: 4, d2: 7 }, price: 'free',
+    desc: 'Piqueniques sob as cerejeiras em flor nos parques da cidade.' },
+  { city: 'toquio', cat: 'festival', title: 'Sanja Matsuri', venue: 'Santuário Asakusa', when: { nth: 3, wd: 5, m: 5, len: 3 }, price: 'free',
+    desc: 'Um dos maiores festivais xintoístas, com santuários portáteis carregados pelas ruas.' },
+  { city: 'toquio', cat: 'festival', title: 'Fogos do Rio Sumida', venue: 'Rio Sumida, Asakusa', when: { nth: -1, wd: 6, m: 7 }, price: 'free',
+    desc: 'Cerca de 20 mil fogos sobre o rio — um dos espetáculos mais tradicionais do verão.' },
+  { city: 'toquio', cat: 'cultura', title: 'Tokyo Game Show', venue: 'Makuhari Messe', when: { fn: y => { const th = nthWeekday(y, 9, 4, -1); return [th, addDays(th, 3)]; } }, price: '$',
+    desc: 'Maior feira de games da Ásia.' },
+  { city: 'toquio', cat: 'esporte', title: 'Maratona de Tóquio', venue: 'Shinjuku → Tokyo Station', when: { nth: 1, wd: 0, m: 3 }, price: 'free',
+    desc: 'Uma das seis World Marathon Majors.' },
+  { city: 'toquio', cat: 'show', title: 'Summer Sonic', venue: 'ZOZO Marine Stadium', when: { m: 8, d: 15, d2: 16 }, price: '$$$',
+    desc: 'Grande festival de rock e pop do verão japonês.' },
+  { city: 'toquio', cat: 'teatro', title: 'Kabuki', venue: 'Kabuki-za, Ginza', when: { ongoing: true }, price: '$$',
+    desc: 'Teatro tradicional japonês, com ingressos por ato (hitomaku-mi) para visitantes.' },
+
+  // Sydney
+  { city: 'sydney', cat: 'expo', title: 'Vivid Sydney', venue: 'Opera House, Circular Quay e Darling Harbour', when: { m: 5, d: 22, m2: 6, d2: 13 }, price: 'free',
+    desc: 'Festival de luzes, música e ideias, com projeções na Opera House.' },
+  { city: 'sydney', cat: 'festival', title: 'Réveillon na Harbour Bridge', venue: 'Sydney Harbour', when: { m: 12, d: 31 }, price: 'free',
+    desc: 'Um dos primeiros Réveillons do mundo, com fogos na ponte e na Opera House.' },
+  { city: 'sydney', cat: 'festival', title: 'Sydney Gay and Lesbian Mardi Gras', venue: 'Oxford Street', when: { nth: 1, wd: 6, m: 3 }, price: 'free',
+    desc: 'Desfile noturno do orgulho LGBT+ mais famoso do hemisfério sul.' },
+  { city: 'sydney', cat: 'cultura', title: 'Sydney Festival', venue: 'Diversos locais', when: { m: 1, d: 8, d2: 26 }, price: '$',
+    desc: 'Festival de artes de verão com teatro, dança, música e eventos gratuitos.' },
+  { city: 'sydney', cat: 'teatro', title: 'Sydney Opera House', venue: 'Bennelong Point', when: { ongoing: true }, price: '$$',
+    desc: 'Ópera, balé, concertos e teatro no edifício mais icônico da Austrália.' },
+];
+
+// ── DATAS ──────────────────────────────────────────────────
+function mk(y, m, d) { return new Date(y, m - 1, d); }
+function addDays(dt, n) { const r = new Date(dt); r.setDate(r.getDate() + n); return r; }
+
+function nthWeekday(y, m, wd, n) {
+  if (n > 0) {
+    const first = mk(y, m, 1);
+    const shift = (wd - first.getDay() + 7) % 7;
+    return mk(y, m, 1 + shift + (n - 1) * 7);
+  }
+  const last = mk(y, m + 1, 0);
+  const shift = (last.getDay() - wd + 7) % 7;
+  return addDays(last, -shift);
+}
+
+function easter(y) {
+  const a = y % 19, b = Math.floor(y / 100), c = y % 100, d = Math.floor(b / 4), e = b % 4;
+  const f = Math.floor((b + 8) / 25), g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30, i = Math.floor(c / 4), k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7, m = Math.floor((a + 11 * h + 22 * l) / 451);
+  return mk(y, Math.floor((h + l - 7 * m + 114) / 31), ((h + l - 7 * m + 114) % 31) + 1);
+}
+
+// Sexta-feira n do mês (n = -1: última) e os `days` dias seguintes
+function fridayRun(y, m, n, days) {
+  const fri = nthWeekday(y, m, 5, n);
+  return [fri, addDays(fri, days - 1)];
+}
+
+function oktoberfest(y) {
+  let end = nthWeekday(y, 10, 0, 1);
+  if (end.getDate() < 3) end = mk(y, 10, 3);
+  return [addDays(nthWeekday(y, 10, 0, 1), -15), end];
+}
+
+function wimbledon(y) {
+  // Termina no 2º domingo de julho; começa 13 dias antes (segunda)
+  const end = nthWeekday(y, 7, 0, 2);
+  return [addDays(end, -13), end];
+}
+
+function occurrence(ev, y) {
+  if (ev.years === 'odd' && y % 2 === 0) return null;
+  if (ev.years === 'even' && y % 2 === 1) return null;
+  const w = ev.when;
+  if (w.fn) return w.fn(y);
+  if (w.easter !== undefined) {
+    const s = addDays(easter(y), w.easter);
+    return [s, addDays(s, (w.len || 1) - 1)];
+  }
+  if (w.nth) {
+    const s = nthWeekday(y, w.m, w.wd, w.nth);
+    return [s, addDays(s, (w.len || 1) - 1)];
+  }
+  const s = mk(y, w.m, w.d);
+  if (w.m2) return [s, mk(w.m2 < w.m ? y + 1 : y, w.m2, w.d2)];
+  return [s, mk(y, w.m, w.d2 || w.d)];
+}
+
+// ── ESTADO ─────────────────────────────────────────────────
+const today = new Date();
+const ym = (y, m) => `${y}-${String(m).padStart(2, '0')}`;
+const thisYm = ym(today.getFullYear(), today.getMonth() + 1);
+
+function shiftYm(s, n) {
+  const [y, m] = s.split('-').map(Number);
+  const d = new Date(y, m - 1 + n, 1);
+  return ym(d.getFullYear(), d.getMonth() + 1);
+}
+
+const DEFAULT_STATE = {
+  cities: ['sao-paulo', 'rio', 'nova-york', 'londres', 'paris', 'lisboa'],
+  mode: 'range',
+  month: thisYm,
+  from: thisYm,
+  to: shiftYm(thisYm, 2),
+  cats: Object.keys(CATS),
+  view: 'city',
+};
+
+let state = { ...DEFAULT_STATE };
+try {
+  const saved = JSON.parse(localStorage.getItem('agenda-mundo') || 'null');
+  if (saved) state = { ...state, ...saved };
+} catch (e) {}
+state.cities = state.cities.filter(id => CITIES.some(c => c.id === id));
+let evQuery = '';
+
+function save() {
+  try { localStorage.setItem('agenda-mundo', JSON.stringify(state)); } catch (e) {}
+}
+
+function getPeriod() {
+  let a = state.mode === 'month' ? state.month : state.from;
+  let b = state.mode === 'month' ? state.month : state.to;
+  if (!a) a = thisYm;
+  if (!b) b = a;
+  if (b < a) [a, b] = [b, a];
+  const [ya, ma] = a.split('-').map(Number);
+  const [yb, mb] = b.split('-').map(Number);
+  return { start: mk(ya, ma, 1), end: mk(yb, mb + 1, 0), a, b };
+}
+
+// ── FORMATAÇÃO ─────────────────────────────────────────────
+const fmtMonthYear = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' });
+const fmtDay = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short' });
+const fmtLong = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const sameDay = (a, b) => a.toDateString() === b.toDateString();
+const clean = s => s.replace(/\.$/, '');
+
+function rangeShort(s, e) {
+  return sameDay(s, e) ? clean(fmtDay.format(s)) : `${clean(fmtDay.format(s))} – ${clean(fmtDay.format(e))}`;
+}
+
+function rangeLong(s, e) {
+  return sameDay(s, e) ? cap(fmtLong.format(s)) : `De ${fmtLong.format(s)} a ${fmtLong.format(e)}`;
+}
+
+function priceLabel(p) {
+  return { free: 'Gratuito', '$': 'Até ~R$ 100', '$$': 'R$ 100 – 500', '$$$': 'Acima de R$ 500' }[p] || '—';
+}
+
+function monthsLabel(months) {
+  if (!months) return 'O ano todo';
+  const names = months.map(m => clean(new Intl.DateTimeFormat('pt-BR', { month: 'short' }).format(mk(2000, m, 1))));
+  return names.join(', ');
+}
+
+// ── BUSCA DE EVENTOS ───────────────────────────────────────
+function collect() {
+  const { start, end } = getPeriod();
+  const out = [];
+  const q = evQuery.trim().toLowerCase();
+
+  EVENTS.forEach((ev, idx) => {
+    if (!state.cities.includes(ev.city) || !state.cats.includes(ev.cat)) return;
+    if (q && !`${ev.title} ${ev.venue} ${ev.desc}`.toLowerCase().includes(q)) return;
+
+    if (ev.when.ongoing) {
+      const months = ev.when.months;
+      for (let d = new Date(start); d <= end; d.setMonth(d.getMonth() + 1)) {
+        if (!months || months.includes(d.getMonth() + 1)) {
+          out.push({ ev, idx, ongoing: true });
+          return;
+        }
+      }
+      return;
+    }
+
+    for (let y = start.getFullYear() - 1; y <= end.getFullYear(); y++) {
+      const occ = occurrence(ev, y);
+      if (!occ) continue;
+      const [s, e] = occ;
+      if (s <= end && e >= start) out.push({ ev, idx, s, e });
+    }
+  });
+
+  out.sort((a, b) => (a.s || 0) - (b.s || 0));
+  return out;
+}
+
+// ── RENDER: FILTROS ────────────────────────────────────────
+const $ = id => document.getElementById(id);
+const cityById = id => CITIES.find(c => c.id === id);
+
+function renderChips() {
+  $('chips').innerHTML = state.cities.map(id => {
+    const c = cityById(id);
+    return `<span class="chip">${c.flag} ${esc(c.name)}<button data-rm="${c.id}" aria-label="Remover ${esc(c.name)}">✕</button></span>`;
+  }).join('') || '<span class="count">Nenhuma cidade selecionada</span>';
+}
+
+function renderContinents() {
+  const conts = [...new Set(CITIES.map(c => c.cont))];
+  $('continents').innerHTML = conts.map(ct => {
+    const ids = CITIES.filter(c => c.cont === ct).map(c => c.id);
+    const on = ids.every(id => state.cities.includes(id));
+    return `<button class="pill ${on ? 'on' : ''}" data-cont="${esc(ct)}">${esc(ct)}</button>`;
+  }).join('');
+}
+
+let ddIndex = -1;
+
+function renderDropdown() {
+  const q = $('city-search').value.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const list = CITIES.filter(c => !q || norm(c.name).includes(q) || norm(c.country).includes(q));
+  if (!list.length) {
+    $('dropdown').innerHTML = '<div class="dd-empty">Nenhuma cidade encontrada.</div>';
+    return;
+  }
+  let html = '', cont = '';
+  list.forEach((c, i) => {
+    if (c.cont !== cont) { cont = c.cont; html += `<div class="dd-group">${esc(cont)}</div>`; }
+    const sel = state.cities.includes(c.id);
+    html += `<button class="dd-item ${sel ? 'selected' : ''} ${i === ddIndex ? 'active' : ''}" data-city="${c.id}" role="option" aria-selected="${sel}">
+      <span class="check">✓</span><span class="flag">${c.flag}</span>${esc(c.name)}<span class="country">${esc(c.country)}</span></button>`;
+  });
+  $('dropdown').innerHTML = html;
+}
+
+function renderCats() {
+  const html = Object.entries(CATS).map(([k, c]) =>
+    `<button class="cat ${state.cats.includes(k) ? 'on' : ''}" data-cat="${k}" style="--cc:${c.color}"><span class="dot"></span>${c.name}</button>`
+  ).join('');
+  $('catbar').querySelectorAll('.cat').forEach(n => n.remove());
+  $('catbar').insertAdjacentHTML('afterbegin', html);
+}
+
+function renderPeriod() {
+  document.querySelectorAll('[data-mode]').forEach(b => b.classList.toggle('on', b.dataset.mode === state.mode));
+  $('mode-month').hidden = state.mode !== 'month';
+  $('mode-range').hidden = state.mode !== 'range';
+  $('month').value = state.month;
+  $('from').value = state.from;
+  $('to').value = state.to;
+
+  const { start, end, a, b } = getPeriod();
+  const months = (end.getFullYear() - start.getFullYear()) * 12 + end.getMonth() - start.getMonth() + 1;
+  $('period-summary').innerHTML = a === b
+    ? `Mostrando <strong>${cap(fmtMonthYear.format(start))}</strong>`
+    : `Mostrando <strong>${cap(fmtMonthYear.format(start))}</strong> até <strong>${cap(fmtMonthYear.format(end))}</strong> · ${months} meses`;
+}
+
+// ── RENDER: RESULTADOS ─────────────────────────────────────
+function card(item, showCity) {
+  const { ev, idx, s, e, ongoing } = item;
+  const cat = CATS[ev.cat];
+  const city = cityById(ev.city);
+  const date = ongoing ? (ev.when.months ? 'Temporada' : 'Em cartaz') : rangeShort(s, e);
+  const key = ongoing ? `${idx}` : `${idx}|${s.getTime()}`;
+  return `<button class="card" style="--cc:${cat.color}" data-ev="${key}">
+    <div class="card-top"><span class="badge">${cat.name}</span><span class="card-date">${date}</span></div>
+    <div class="card-title">${esc(ev.title)}${ev.price === 'free' ? '<span class="tag-free">GRÁTIS</span>' : ''}</div>
+    <div class="card-venue">📍 ${esc(ev.venue)}</div>
+    ${showCity ? `<div class="card-city">${city.flag} ${esc(city.name)}, ${esc(city.country)}</div>` : ''}
+  </button>`;
+}
+
+function byMonth(items, showCity) {
+  const groups = new Map();
+  items.forEach(it => {
+    const k = ym(it.s.getFullYear(), it.s.getMonth() + 1);
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(it);
+  });
+  const { start } = getPeriod();
+  let html = '';
+  [...groups.keys()].sort().forEach(k => {
+    const [y, m] = k.split('-').map(Number);
+    const d = mk(y, m, 1);
+    const label = d < start ? `Começou em ${fmtMonthYear.format(d)} · ainda acontecendo` : cap(fmtMonthYear.format(d));
+    html += `<div class="month-h">${label}</div><div class="grid">${groups.get(k).map(it => card(it, showCity)).join('')}</div>`;
+  });
+  return html;
+}
+
+function cityHeader(c) {
+  const time = new Intl.DateTimeFormat('pt-BR', { timeZone: c.tz, hour: '2-digit', minute: '2-digit' }).format(new Date());
+  return `<div class="city-head">
+    <div>
+      <div class="city-name"><span class="flag">${c.flag}</span>${esc(c.name)}</div>
+      <div class="city-country">${esc(c.country)} · ${esc(c.cont)}</div>
+      <p class="city-blurb">${esc(c.blurb)}</p>
+    </div>
+    <dl class="city-facts">
+      <dt>Hora local</dt><dd data-tz="${c.tz}">${time}</dd>
+      <dt>Moeda</dt><dd>${esc(c.cur)}</dd>
+      <dt>Idioma</dt><dd>${esc(c.lang)}</dd>
+    </dl>
+    <div class="news">
+      <div class="news-title">Novidades & dicas</div>
+      <ul>${c.news.map(n => `<li>${esc(n)}</li>`).join('')}</ul>
+    </div>
+  </div>`;
+}
+
+let lastResults = [];
+
+function renderResults() {
+  const items = collect();
+  lastResults = items;
+  const dated = items.filter(i => !i.ongoing);
+  const ongoing = items.filter(i => i.ongoing);
+
+  $('count').innerHTML = `<strong>${items.length}</strong> eventos em <strong>${state.cities.length}</strong> ${state.cities.length === 1 ? 'cidade' : 'cidades'}`;
+  document.querySelectorAll('[data-view]').forEach(b => b.classList.toggle('on', b.dataset.view === state.view));
+
+  if (!state.cities.length) {
+    $('results').innerHTML = `<div class="empty"><strong>Escolha pelo menos uma cidade</strong>Use a busca acima ou toque em um continente.</div>`;
+    return;
+  }
+
+  if (state.view === 'timeline') {
+    let html = dated.length ? byMonth(dated, true) : '';
+    if (ongoing.length) html += `<div class="month-h">Em cartaz no período</div><div class="grid">${ongoing.map(it => card(it, true)).join('')}</div>`;
+    $('results').innerHTML = html || emptyMsg();
+    return;
+  }
+
+  $('results').innerHTML = state.cities.map(id => {
+    const c = cityById(id);
+    const d = dated.filter(i => i.ev.city === id);
+    const o = ongoing.filter(i => i.ev.city === id);
+    let body = d.length ? byMonth(d, false) : '';
+    if (o.length) body += `<div class="month-h">Em cartaz no período</div><div class="grid">${o.map(it => card(it, false)).join('')}</div>`;
+    if (!body) body = `<div class="month-h"></div>${emptyMsg(true)}`;
+    return `<section class="city-sec">${cityHeader(c)}${body}</section>`;
+  }).join('');
+}
+
+function emptyMsg(small) {
+  return `<div class="empty"${small ? ' style="padding:24px"' : ''}><strong>Nenhum evento encontrado</strong>Tente ampliar o período ou ativar mais categorias.</div>`;
+}
+
+function renderAll() {
+  renderChips();
+  renderContinents();
+  renderCats();
+  renderPeriod();
+  renderResults();
+  save();
+}
+
+// ── MODAL ──────────────────────────────────────────────────
+function openEvent(key) {
+  const item = lastResults.find(it => (it.ongoing ? `${it.idx}` : `${it.idx}|${it.s.getTime()}`) === key);
+  if (!item) return;
+  const { ev, s, e, ongoing } = item;
+  const cat = CATS[ev.cat];
+  const city = cityById(ev.city);
+  const year = s ? s.getFullYear() : today.getFullYear();
+  const searchQ = encodeURIComponent(`${ev.title} ${city.name} ${ongoing ? '' : year} ingressos`);
+  const mapQ = encodeURIComponent(`${ev.venue}, ${city.name}, ${city.country}`);
+
+  $('modal').style.setProperty('--cc', cat.color);
+  $('modal').innerHTML = `
+    <button class="modal-close" id="modal-close" aria-label="Fechar">✕</button>
+    <span class="badge" style="--cc:${cat.color}">${cat.name}</span>
+    <h2>${esc(ev.title)}</h2>
+    <div class="city-country">${city.flag} ${esc(city.name)}, ${esc(city.country)}</div>
+    <dl class="modal-meta">
+      <dt>Quando</dt><dd>${ongoing ? `Em cartaz · ${monthsLabel(ev.when.months)}` : rangeLong(s, e)}</dd>
+      <dt>Onde</dt><dd>${esc(ev.venue)}</dd>
+      <dt>Preço</dt><dd>${priceLabel(ev.price)}</dd>
+      ${ev.years ? `<dt>Frequência</dt><dd>Somente em anos ${ev.years === 'odd' ? 'ímpares' : 'pares'}</dd>` : ''}
+    </dl>
+    <p class="desc">${esc(ev.desc)}</p>
+    <div class="note">ℹ️ ${ongoing
+      ? 'Programação e horários mudam com frequência — confira as sessões disponíveis no site oficial.'
+      : 'Datas estimadas pelo calendário habitual do evento. Confirme no site oficial antes de comprar ou viajar.'}
+      Preços aproximados, convertidos para referência.</div>
+    <div class="actions">
+      <a class="btn btn-primary" target="_blank" rel="noopener" href="https://www.google.com/search?q=${searchQ}">🎟️ Buscar ingressos</a>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${mapQ}">🗺️ Ver no mapa</a>
+      ${ongoing ? '' : '<button class="btn" id="ics">📅 Adicionar à agenda</button>'}
+    </div>`;
+  $('modal-bg').classList.add('open');
+  $('modal-close').focus();
+  $('modal-close').onclick = closeModal;
+  if (!ongoing) $('ics').onclick = () => downloadIcs(ev, city, s, e);
+}
+
+function closeModal() { $('modal-bg').classList.remove('open'); }
+
+function downloadIcs(ev, city, s, e) {
+  const d = dt => `${dt.getFullYear()}${String(dt.getMonth() + 1).padStart(2, '0')}${String(dt.getDate()).padStart(2, '0')}`;
+  const icsEsc = t => t.replace(/[\\;,]/g, m => '\\' + m);
+  const ics = [
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Agenda Mundo//PT', 'BEGIN:VEVENT',
+    `UID:${d(s)}-${Math.random().toString(36).slice(2)}@agenda-mundo`,
+    `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z`,
+    `DTSTART;VALUE=DATE:${d(s)}`,
+    `DTEND;VALUE=DATE:${d(addDays(e, 1))}`,
+    `SUMMARY:${icsEsc(ev.title)} — ${icsEsc(city.name)}`,
+    `LOCATION:${icsEsc(ev.venue)}\\, ${icsEsc(city.name)}`,
+    `DESCRIPTION:${icsEsc(ev.desc)} (datas estimadas — confirme no site oficial)`,
+    'END:VEVENT', 'END:VCALENDAR',
+  ].join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar' }));
+  a.download = `${ev.title.replace(/[^\wÀ-ſ]+/g, '-').toLowerCase()}.ics`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+// ── EVENTOS DE INTERFACE ───────────────────────────────────
+function toggleCity(id) {
+  state.cities = state.cities.includes(id) ? state.cities.filter(c => c !== id) : [...state.cities, id];
+  renderAll();
+  renderDropdown();
+}
+
+$('city-search').addEventListener('focus', () => { ddIndex = -1; renderDropdown(); $('dropdown').classList.add('open'); });
+$('city-search').addEventListener('input', () => { ddIndex = 0; renderDropdown(); $('dropdown').classList.add('open'); });
+$('city-search').addEventListener('keydown', e => {
+  const items = [...$('dropdown').querySelectorAll('.dd-item')];
+  if (e.key === 'ArrowDown') { ddIndex = Math.min(items.length - 1, ddIndex + 1); renderDropdown(); e.preventDefault(); }
+  else if (e.key === 'ArrowUp') { ddIndex = Math.max(0, ddIndex - 1); renderDropdown(); e.preventDefault(); }
+  else if (e.key === 'Enter' && items[ddIndex]) { toggleCity(items[ddIndex].dataset.city); e.preventDefault(); }
+  else if (e.key === 'Escape') { $('dropdown').classList.remove('open'); $('city-search').blur(); }
+  $('dropdown').querySelector('.active')?.scrollIntoView({ block: 'nearest' });
+});
+
+$('dropdown').addEventListener('mousedown', e => e.preventDefault());
+$('dropdown').addEventListener('click', e => {
+  const b = e.target.closest('[data-city]');
+  if (b) toggleCity(b.dataset.city);
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.picker')) $('dropdown').classList.remove('open');
+});
+
+$('chips').addEventListener('click', e => {
+  const b = e.target.closest('[data-rm]');
+  if (b) toggleCity(b.dataset.rm);
+});
+
+$('continents').addEventListener('click', e => {
+  const b = e.target.closest('[data-cont]');
+  if (!b) return;
+  const ids = CITIES.filter(c => c.cont === b.dataset.cont).map(c => c.id);
+  const allOn = ids.every(id => state.cities.includes(id));
+  state.cities = allOn ? state.cities.filter(id => !ids.includes(id)) : [...new Set([...state.cities, ...ids])];
+  renderAll();
+});
+
+$('btn-all').onclick = () => { state.cities = CITIES.map(c => c.id); renderAll(); };
+$('btn-clear').onclick = () => { state.cities = []; renderAll(); };
+
+document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { state.mode = b.dataset.mode; renderAll(); });
+document.querySelectorAll('[data-view]').forEach(b => b.onclick = () => { state.view = b.dataset.view; renderAll(); });
+
+$('month').addEventListener('change', e => { if (e.target.value) { state.month = e.target.value; renderAll(); } });
+$('from').addEventListener('change', e => { if (e.target.value) { state.from = e.target.value; if (state.to < state.from) state.to = state.from; renderAll(); } });
+$('to').addEventListener('change', e => { if (e.target.value) { state.to = e.target.value; if (state.to < state.from) state.from = state.to; renderAll(); } });
+
+$('period-quick').addEventListener('click', e => {
+  const b = e.target.closest('[data-q]');
+  if (!b) return;
+  const n = Number(b.dataset.q);
+  if (n <= 1) {
+    state.mode = 'month';
+    state.month = shiftYm(thisYm, n);
+  } else {
+    state.mode = 'range';
+    state.from = thisYm;
+    state.to = shiftYm(thisYm, n - 1);
+  }
+  renderAll();
+});
+
+$('catbar').addEventListener('click', e => {
+  const b = e.target.closest('[data-cat]');
+  if (!b) return;
+  const k = b.dataset.cat;
+  state.cats = state.cats.includes(k) ? state.cats.filter(c => c !== k) : [...state.cats, k];
+  renderAll();
+});
+
+$('ev-search').addEventListener('input', e => { evQuery = e.target.value; renderResults(); });
+
+$('results').addEventListener('click', e => {
+  const c = e.target.closest('[data-ev]');
+  if (c) openEvent(c.dataset.ev);
+});
+
+$('modal-bg').addEventListener('click', e => { if (e.target === $('modal-bg')) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// relógios locais das cidades
+setInterval(() => {
+  document.querySelectorAll('[data-tz]').forEach(el => {
+    el.textContent = new Intl.DateTimeFormat('pt-BR', { timeZone: el.dataset.tz, hour: '2-digit', minute: '2-digit' }).format(new Date());
+  });
+}, 30000);
+
+renderAll();
+</script>
+</body>
+</html>
