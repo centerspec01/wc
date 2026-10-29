@@ -229,6 +229,29 @@
   }
 
   /* ── TREINO DE SOMBRA ── */
+  .gaps { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+  .gap-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--dark-3);
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+  .gap-row span { min-width: 0; }
+  .gap-row.loop { border: 1px dashed var(--border-strong); }
+  .gap-row select {
+    flex: none;
+    background: var(--dark-4);
+    color: var(--text);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 6px 8px;
+    font: 600 0.85rem 'Inter', sans-serif;
+  }
+
   .shadow-display {
     text-align: center;
     padding: 18px 8px;
@@ -352,16 +375,11 @@
       <div class="stat"><b id="shTotal">0</b><small>Total geral</small></div>
     </div>
     <div class="goal">
-      <span>Segundos por fundamento</span>
-      <select id="pace">
-        <option value="0.5">0,5 s</option>
-        <option value="1">1 s</option>
-        <option value="2">2 s</option>
-        <option value="3" selected>3 s</option>
-        <option value="4">4 s</option>
-        <option value="6">6 s</option>
-      </select>
+      <span>Intervalo para todas as etapas</span>
+      <select id="pace"></select>
     </div>
+    <div class="label" style="margin:14px 0 8px">Intervalo entre cada etapa</div>
+    <div class="gaps" id="gaps"></div>
     <label class="toggle"><input type="checkbox" id="voice" checked> Falar em voz alta</label>
     <label class="toggle"><input type="checkbox" id="beep" checked> Bipe a cada fundamento</label>
     <div class="row" style="margin-top:0;margin-bottom:10px">
@@ -483,6 +501,36 @@
   let shadowStep = 0;
   let shadowRound = 0;   // séries completas faladas nesta sessão
 
+  // Intervalo (s) depois de cada etapa; o último é do final até o início da próxima série
+  const GAP_KEY = 'treino-tenis-intervalos-v1';
+  const GAP_OPTIONS = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6];
+  const fmtSec = v => String(v).replace('.', ',') + ' s';
+  const optionsHtml = sel => GAP_OPTIONS.map(v => `<option value="${v}" ${v === sel ? 'selected' : ''}>${fmtSec(v)}</option>`).join('');
+  let gaps = (() => { try { return JSON.parse(localStorage.getItem(GAP_KEY)) || {}; } catch (e) { return {}; } })();
+  const saveGaps = () => { try { localStorage.setItem(GAP_KEY, JSON.stringify(gaps)); } catch (e) {} };
+
+  function gapsFor(st) {
+    const n = CUES[st].length;
+    if (!Array.isArray(gaps[st]) || gaps[st].length !== n) gaps[st] = Array(n).fill(1);
+    return gaps[st];
+  }
+
+  function renderGaps() {
+    const list = CUES[stroke];
+    const g = gapsFor(stroke);
+    $('gaps').innerHTML = list.map((c, i) => {
+      const last = i === list.length - 1;
+      const next = last ? list[0] : list[i + 1];
+      const name = x => x.s || x.t;
+      return `<div class="gap-row ${last ? 'loop' : ''}">
+        <span>${name(c)} → ${name(next)}${last ? ' <small style="color:var(--text-muted)">(próxima série)</small>' : ''}</span>
+        <select id="gap-${i}" data-i="${i}" aria-label="Intervalo depois de ${name(c)}">${optionsHtml(g[i])}</select>
+      </div>`;
+    }).join('');
+    const same = g.every(v => v === g[0]);
+    $('pace').innerHTML = (same ? '' : '<option value="" selected>Variado</option>') + optionsHtml(same ? g[0] : null);
+  }
+
   // Total acumulado de séries completas faladas, por golpe
   const SH_KEY = 'treino-tenis-sombra-v1';
   let shadowTotals = (() => {
@@ -589,7 +637,9 @@
     renderCues(shadowStep);
     beep(shadowStep === 0 ? 1175 : 880);
     speak(c.s || c.t);
+    const wait = gapsFor(stroke)[shadowStep] * 1000;
     shadowStep++;
+    shadowTimer = setTimeout(shadowTick, wait);
     // Último fundamento falado = série completa
     if (shadowStep === list.length) {
       shadowRound++;
@@ -601,7 +651,7 @@
 
   function toggleShadow() {
     if (shadowTimer) {
-      clearInterval(shadowTimer);
+      clearTimeout(shadowTimer);
       shadowTimer = null;
       if ('speechSynthesis' in window) speechSynthesis.cancel();
       $('btnShadow').textContent = '▶ Começar sombra';
@@ -615,7 +665,6 @@
     renderShadowCount();
     $('btnShadow').textContent = '■ Parar';
     shadowTick();
-    shadowTimer = setInterval(shadowTick, +$('pace').value * 1000);
   }
 
   // ── Eventos ──
@@ -629,6 +678,7 @@
     if (shadowTimer) toggleShadow();
     renderCues();
     renderShadowCount();
+    renderGaps();
   });
 
   $('cues').addEventListener('click', e => {
@@ -647,17 +697,27 @@
   $('btnShadow').addEventListener('click', toggleShadow);
   $('btnTestSound').addEventListener('click', testSound);
   $('btnResetShadow').addEventListener('click', resetShadowTotals);
+  // Mudanças valem a partir da próxima etapa
   $('pace').addEventListener('change', () => {
-    if (shadowTimer) {
-      clearInterval(shadowTimer);
-      shadowTimer = setInterval(shadowTick, +$('pace').value * 1000);
-    }
+    const v = +$('pace').value;
+    if (!v) return;
+    gaps[stroke] = gapsFor(stroke).map(() => v);
+    saveGaps();
+    renderGaps();
+  });
+  $('gaps').addEventListener('change', e => {
+    const sel = e.target.closest('select');
+    if (!sel) return;
+    gapsFor(stroke)[+sel.dataset.i] = +sel.value;
+    saveGaps();
+    renderGaps();
   });
 
   renderCues();
   renderStats();
   renderHistory();
   renderShadowCount();
+  renderGaps();
 </script>
 </body>
 </html>
