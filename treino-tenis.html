@@ -375,12 +375,14 @@
 <script>
   const CUES = {
     direita: [
-      { t: 'Base correta', d: 'Pés afastados na largura dos ombros, joelhos flexionados, peso na ponta dos pés. Posicione-se de lado para a bola.' },
-      { t: 'Giro do corpo', d: 'Prepare girando ombros e quadril juntos. A força vem do giro, não só do braço.' },
-      { t: 'Batida na frente', d: 'Encontre a bola à frente do corpo, na altura da cintura. Olho na bola até o contato.' },
-      { t: 'Respiração correta', d: 'Inspire na preparação, solte o ar na batida (expire no contato).' },
-      { t: 'Terminação', d: 'Termine o movimento completo: raquete passa por cima do ombro oposto.' },
-      { t: 'Recuperação', d: 'Volte à posição de espera, raquete à frente, pronto para a próxima.' }
+      { t: 'Preparação: “Direita!”', s: 'Direita', d: 'Fale “direita” assim que identificar a bola. Base firme, joelhos flexionados, peso na ponta dos pés.' },
+      { t: 'Giro do tronco + braço esquerdo paralelo', s: 'Gira, braço paralelo', d: 'Gire o tronco de lado com o braço esquerdo paralelo à linha de base.' },
+      { t: 'Apontar o braço esquerdo', s: 'Aponta', d: 'Aponte o braço esquerdo para a bola. Ele mede a distância e mantém o ombro fechado.' },
+      { t: 'Giro de tronco', s: 'Gira', d: 'Mantenha o tronco girado, carregando o movimento para a batida.' },
+      { t: 'Falar “Bounce!”', s: 'Bounce', d: 'Fale “bounce” no instante em que a bola quica. Isso marca o ritmo.' },
+      { t: 'Falar “Bate!”', s: 'Bate', d: 'Fale “bate” no contato, com a bola à frente do corpo. Solte o ar na batida.' },
+      { t: 'Giro do tronco', s: 'Gira', d: 'Gire o tronco para frente. A força vem do giro, não só do braço.' },
+      { t: 'Terminação por cima do ombro', s: 'Termina, cotovelo', d: 'Termine com a raquete por cima do ombro esquerdo e o cotovelo apontando para frente (para a rede).' }
     ],
     esquerda: [
       { t: 'Base correta', d: 'Pés afastados, joelhos flexionados, ombro direito apontando para a bola.' },
@@ -551,7 +553,7 @@
     $('shadowDisplay').innerHTML = `<div class="big">${c.t}</div><div class="small">Repetição ${shadowRound + 1} · ${shadowStep + 1}/${list.length}</div>`;
     renderCues(shadowStep);
     beep(shadowStep === 0 ? 1175 : 880);
-    speak(c.t);
+    speak(c.s || c.t);
     shadowStep++;
   }
 
