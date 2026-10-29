@@ -609,6 +609,24 @@
     background: var(--dark-3);
   }
 
+  .share-link {
+    width: 100%;
+    font-size: 0.8rem;
+    margin-top: 14px;
+  }
+
+  .check-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--text);
+    cursor: pointer;
+  }
+
+  .check-row input { margin-top: 3px; accent-color: var(--accent); }
+
   .modal ol { margin: 12px 0 0 18px; font-size: 0.88rem; line-height: 1.7; color: var(--text); }
   .modal a.inline { color: var(--accent); }
 
@@ -704,6 +722,7 @@
   <div class="live-bar">
     <button class="pill" id="live-toggle">⚡ Eventos ao vivo</button>
     <button class="pill" id="live-config">🔑 Chave Ticketmaster</button>
+    <button class="pill" id="share">🔗 Compartilhar</button>
     <span class="live-status" id="live-status"></span>
   </div>
 
@@ -1324,6 +1343,17 @@ try {
   const saved = JSON.parse(localStorage.getItem('agenda-mundo') || 'null');
   if (saved) state = { ...state, ...saved };
 } catch (e) {}
+let sharedKey = '';
+try {
+  const h = new URLSearchParams(location.hash.slice(1));
+  if (h.has('c')) state.cities = h.get('c').split(',').filter(Boolean);
+  const per = h.get('p');
+  if (h.get('m') === 'month' && /^\d{4}-\d{2}$/.test(per || '')) { state.mode = 'month'; state.month = per; }
+  if (h.get('m') === 'range' && /^\d{4}-\d{2}_\d{4}-\d{2}$/.test(per || '')) { state.mode = 'range'; [state.from, state.to] = per.split('_'); }
+  sharedKey = h.get('k') || '';
+  // remove os parâmetros da barra de endereço (a chave não fica visível)
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+} catch (e) {}
 state.cities = state.cities.filter(id => CITIES.some(c => c.id === id));
 let evQuery = '';
 
@@ -1656,6 +1686,11 @@ const TM_SEG = { 'Music': 'show', 'Arts & Theatre': 'teatro', 'Sports': 'esporte
 const liveCache = new Map(); // `${cidade}|${de}|${até}` -> { status, items, error }
 let liveKey = '';
 try { liveKey = localStorage.getItem('agenda-mundo-tm') || ''; } catch (e) {}
+if (sharedKey) {
+  liveKey = sharedKey;
+  state.live = true;
+  try { localStorage.setItem('agenda-mundo-tm', sharedKey); } catch (e) {}
+}
 
 const liveOn = () => Boolean(liveKey && state.live);
 const isoZ = d => d.toISOString().split('.')[0] + 'Z';
@@ -1792,6 +1827,48 @@ function openLiveConfig() {
   if (liveKey) $('tm-remove').onclick = () => setLiveKey('');
 }
 
+function buildShareLink(withKey) {
+  const h = new URLSearchParams({
+    c: state.cities.join(','),
+    m: state.mode,
+    p: state.mode === 'month' ? state.month : `${state.from}_${state.to}`,
+  });
+  if (withKey && liveKey) h.set('k', liveKey);
+  return `${location.origin}${location.pathname}#${h}`;
+}
+
+function openShare() {
+  const local = location.protocol === 'file:';
+  $('modal').style.setProperty('--cc', 'var(--accent)');
+  $('modal').innerHTML = `
+    <button class="modal-close" id="modal-close" aria-label="Fechar">✕</button>
+    <span class="badge" style="--cc:var(--accent)">Compartilhar</span>
+    <h2>Enviar a agenda para alguém</h2>
+    <p class="desc">Quem abrir o link vê as mesmas cidades e o mesmo período que você escolheu.</p>
+    ${liveKey ? `<label class="check-row"><input type="checkbox" id="share-key" checked>
+      <span>Incluir minha chave do Ticketmaster, para os eventos <strong>AO VIVO</strong> aparecerem automaticamente</span></label>` : ''}
+    <input class="input share-link" id="share-url" readonly>
+    ${local ? `<div class="note">⚠️ Você está abrindo o arquivo direto do computador, então este link só funciona aqui. Para enviar a outras pessoas, use o endereço do site publicado.</div>` : ''}
+    <div class="actions">
+      <button class="btn btn-primary" id="share-copy">📋 Copiar link</button>
+      <a class="btn" id="share-wa" target="_blank" rel="noopener">💬 Enviar no WhatsApp</a>
+    </div>`;
+  const update = () => {
+    const url = buildShareLink($('share-key') ? $('share-key').checked : false);
+    $('share-url').value = url;
+    $('share-wa').href = `https://wa.me/?text=${encodeURIComponent('Olha essa agenda de eventos pelo mundo: ' + url)}`;
+  };
+  update();
+  $('modal-bg').classList.add('open');
+  $('modal-close').onclick = closeModal;
+  if ($('share-key')) $('share-key').onchange = update;
+  $('share-copy').onclick = async () => {
+    try { await navigator.clipboard.writeText($('share-url').value); }
+    catch (e) { $('share-url').select(); document.execCommand('copy'); }
+    $('share-copy').textContent = '✓ Link copiado';
+  };
+}
+
 function setLiveKey(k) {
   liveKey = k;
   try { k ? localStorage.setItem('agenda-mundo-tm', k) : localStorage.removeItem('agenda-mundo-tm'); } catch (e) {}
@@ -1899,6 +1976,7 @@ $('catbar').addEventListener('click', e => {
 });
 
 $('live-config').onclick = openLiveConfig;
+$('share').onclick = openShare;
 $('live-toggle').onclick = () => {
   if (!liveKey) return openLiveConfig();
   state.live = !state.live;
