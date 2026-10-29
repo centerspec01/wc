@@ -346,6 +346,11 @@
       <div class="big">Pronto?</div>
       <div class="small">O app fala cada fundamento em sequência. Faça o movimento completo no ritmo.</div>
     </div>
+    <div class="stats">
+      <div class="stat good"><b id="shNow">0</b><small>Séries agora</small></div>
+      <div class="stat"><b id="shStroke">0</b><small id="shStrokeLabel">Total direita</small></div>
+      <div class="stat"><b id="shTotal">0</b><small>Total geral</small></div>
+    </div>
     <div class="goal">
       <span>Segundos por fundamento</span>
       <select id="pace">
@@ -362,6 +367,7 @@
       <span class="hint" id="soundInfo" style="margin:0;align-self:center"></span>
     </div>
     <button class="btn good" id="btnShadow" style="width:100%">▶ Começar sombra</button>
+    <button class="btn ghost" id="btnResetShadow" style="width:100%;margin-top:10px">Zerar contagem total</button>
   </section>
 
   <section class="card">
@@ -476,7 +482,40 @@
   // ── Treino de sombra ──
   let shadowTimer = null;
   let shadowStep = 0;
-  let shadowRound = 0;
+  let shadowRound = 0;   // séries completas faladas nesta sessão
+
+  // Total acumulado de séries completas faladas, por golpe
+  const SH_KEY = 'treino-tenis-sombra-v1';
+  let shadowTotals = (() => {
+    try { return Object.assign({ direita: 0, esquerda: 0 }, JSON.parse(localStorage.getItem(SH_KEY))); }
+    catch (e) { return { direita: 0, esquerda: 0 }; }
+  })();
+  const saveTotals = () => { try { localStorage.setItem(SH_KEY, JSON.stringify(shadowTotals)); } catch (e) {} };
+
+  function renderShadowCount() {
+    $('shNow').textContent = shadowRound;
+    $('shStroke').textContent = shadowTotals[stroke];
+    $('shStrokeLabel').textContent = stroke === 'direita' ? 'Total direita' : 'Total esquerda';
+    $('shTotal').textContent = shadowTotals.direita + shadowTotals.esquerda;
+  }
+
+  let resetArmed = null;
+  function resetShadowTotals() {
+    const btn = $('btnResetShadow');
+    if (!resetArmed) {
+      btn.textContent = 'Toque de novo para confirmar';
+      resetArmed = setTimeout(() => { resetArmed = null; btn.textContent = 'Zerar contagem total'; }, 3000);
+      return;
+    }
+    clearTimeout(resetArmed);
+    resetArmed = null;
+    btn.textContent = 'Zerar contagem total';
+    shadowTotals = { direita: 0, esquerda: 0 };
+    shadowRound = 0;
+    saveTotals();
+    renderShadowCount();
+    toast('Contagem zerada.');
+  }
 
   // ── Som ──
   const hasSpeech = 'speechSynthesis' in window;
@@ -545,16 +584,20 @@
 
   function shadowTick() {
     const list = CUES[stroke];
-    if (shadowStep === list.length) {
-      shadowRound++;
-      shadowStep = 0;
-    }
+    if (shadowStep === list.length) shadowStep = 0;
     const c = list[shadowStep];
-    $('shadowDisplay').innerHTML = `<div class="big">${c.t}</div><div class="small">Repetição ${shadowRound + 1} · ${shadowStep + 1}/${list.length}</div>`;
+    $('shadowDisplay').innerHTML = `<div class="big">${c.t}</div><div class="small">Série ${shadowRound + 1} · ${shadowStep + 1}/${list.length}</div>`;
     renderCues(shadowStep);
     beep(shadowStep === 0 ? 1175 : 880);
     speak(c.s || c.t);
     shadowStep++;
+    // Último fundamento falado = série completa
+    if (shadowStep === list.length) {
+      shadowRound++;
+      shadowTotals[stroke]++;
+      saveTotals();
+      renderShadowCount();
+    }
   }
 
   function toggleShadow() {
@@ -563,13 +606,14 @@
       shadowTimer = null;
       if ('speechSynthesis' in window) speechSynthesis.cancel();
       $('btnShadow').textContent = '▶ Começar sombra';
-      $('shadowDisplay').innerHTML = `<div class="big">${shadowRound} repetições</div><div class="small">Treino de sombra encerrado.</div>`;
+      $('shadowDisplay').innerHTML = `<div class="big">${shadowRound} ${shadowRound === 1 ? 'série' : 'séries'}</div><div class="small">Treino de sombra encerrado. Total geral: ${shadowTotals.direita + shadowTotals.esquerda}.</div>`;
       renderCues();
       return;
     }
     unlockAudio();
     shadowStep = 0;
     shadowRound = 0;
+    renderShadowCount();
     $('btnShadow').textContent = '■ Parar';
     shadowTick();
     shadowTimer = setInterval(shadowTick, +$('pace').value * 1000);
@@ -585,6 +629,7 @@
     missing.clear();
     if (shadowTimer) toggleShadow();
     renderCues();
+    renderShadowCount();
   });
 
   $('cues').addEventListener('click', e => {
@@ -602,6 +647,7 @@
   $('goal').addEventListener('change', renderStats);
   $('btnShadow').addEventListener('click', toggleShadow);
   $('btnTestSound').addEventListener('click', testSound);
+  $('btnResetShadow').addEventListener('click', resetShadowTotals);
   $('pace').addEventListener('change', () => {
     if (shadowTimer) {
       clearInterval(shadowTimer);
@@ -612,6 +658,7 @@
   renderCues();
   renderStats();
   renderHistory();
+  renderShadowCount();
 </script>
 </body>
 </html>
