@@ -572,6 +572,46 @@
   .btn-primary { background: var(--accent); border-color: var(--accent); color: #0A0C10; }
   .btn:hover { opacity: 0.88; }
 
+  /* ── AO VIVO ── */
+  .live-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .live-bar .pill.on { background: var(--accent); border-color: var(--accent); color: #0A0C10; }
+  .live-status.err { color: var(--c-show); }
+  .live-status.ok { color: var(--c-esporte); }
+
+  .tag-live {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #fff;
+    background: var(--accent-2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .modal-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 12px 0 4px;
+    background: var(--dark-3);
+  }
+
+  .modal ol { margin: 12px 0 0 18px; font-size: 0.88rem; line-height: 1.7; color: var(--text); }
+  .modal a.inline { color: var(--accent); }
+
   footer {
     text-align: center;
     font-size: 0.72rem;
@@ -661,6 +701,12 @@
     <input class="input search-ev" id="ev-search" type="search" placeholder="Filtrar eventos…" aria-label="Filtrar eventos">
   </div>
 
+  <div class="live-bar">
+    <button class="pill" id="live-toggle">⚡ Eventos ao vivo</button>
+    <button class="pill" id="live-config">🔑 Chave Ticketmaster</button>
+    <span class="live-status" id="live-status"></span>
+  </div>
+
   <div class="toolbar">
     <div class="count" id="count"></div>
     <div class="seg" style="margin:0">
@@ -672,7 +718,7 @@
   <main id="results"></main>
 
   <footer>
-    Datas baseadas no calendário típico de cada evento e podem variar de ano para ano.<br>
+    Eventos marcados como AO VIVO vêm da API do Ticketmaster. Os demais são baseados no calendário típico de cada evento e podem variar de ano para ano.<br>
     Confirme sempre no site oficial ou na bilheteria antes de comprar ingressos ou viajar.
   </footer>
 </div>
@@ -711,6 +757,30 @@ const CITIES = [
     blurb: 'Megacidade com uma das maiores concentrações de museus do mundo, lucha libre, Día de Muertos e grandes festivais de música.',
     news: ['O Estádio Azteca sediou a partida de abertura da Copa do Mundo de 2026.',
            'O desfile do Día de Muertos ocupa o Paseo de la Reforma até o Zócalo no início de novembro.'] },
+  { id: 'salvador', name: 'Salvador', country: 'Brasil', flag: '🇧🇷', cont: 'América do Sul', tz: 'America/Bahia', cur: 'Real (BRL)', lang: 'Português',
+    blurb: 'Capital da cultura afro-brasileira: Carnaval de trio elétrico, festas populares na rua, Pelourinho e axé o ano inteiro.',
+    news: ['O Centro Histórico (Pelourinho) é Patrimônio Mundial da UNESCO.',
+           'O verão em Salvador emenda Lavagem do Bonfim, Iemanjá e Carnaval — de janeiro a fevereiro.'] },
+  { id: 'recife', name: 'Recife & Olinda', country: 'Brasil', flag: '🇧🇷', cont: 'América do Sul', tz: 'America/Recife', cur: 'Real (BRL)', lang: 'Português',
+    blurb: 'Frevo, maracatu e o Galo da Madrugada. No Carnaval, Recife Antigo e as ladeiras de Olinda viram uma festa só.',
+    news: ['O frevo é Patrimônio Cultural Imaterial da Humanidade (UNESCO).',
+           'O Paço do Frevo, no Recife Antigo, conta a história do ritmo.'] },
+  { id: 'manaus', name: 'Manaus', country: 'Brasil', flag: '🇧🇷', cont: 'América do Sul', tz: 'America/Manaus', cur: 'Real (BRL)', lang: 'Português',
+    blurb: 'Porta de entrada da Amazônia, com o histórico Teatro Amazonas e acesso ao Festival de Parintins.',
+    news: ['De Manaus partem barcos e voos para Parintins durante o festival dos bois Garantido e Caprichoso.',
+           'O Encontro das Águas (rios Negro e Solimões) fica a poucos minutos de barco do centro.'] },
+  { id: 'toronto', name: 'Toronto', country: 'Canadá', flag: '🇨🇦', cont: 'América do Norte', tz: 'America/Toronto', cur: 'Dólar canadense (CAD)', lang: 'Inglês',
+    blurb: 'Uma das cidades mais multiculturais do mundo, sede do TIFF, de grandes musicais e de um carnaval caribenho famoso.',
+    news: ['O Toronto International Film Festival (TIFF) é uma das principais vitrines para o Oscar.',
+           'O Distillery District recebe um mercado de Natal no fim do ano.'] },
+  { id: 'los-angeles', name: 'Los Angeles', country: 'Estados Unidos', flag: '🇺🇸', cont: 'América do Norte', tz: 'America/Los_Angeles', cur: 'Dólar (USD)', lang: 'Inglês',
+    blurb: 'Capital do entretenimento: Hollywood, Oscar, Hollywood Bowl, grandes arenas e museus como o Getty.',
+    news: ['Los Angeles será sede dos Jogos Olímpicos de 2028.',
+           'O Intuit Dome, nova arena do LA Clippers em Inglewood, foi inaugurado em 2024.'] },
+  { id: 'las-vegas', name: 'Las Vegas', country: 'Estados Unidos', flag: '🇺🇸', cont: 'América do Norte', tz: 'America/Los_Angeles', cur: 'Dólar (USD)', lang: 'Inglês',
+    blurb: 'Residências de grandes artistas, Cirque du Soleil, a esfera Sphere e a Fórmula 1 correndo na Strip à noite.',
+    news: ['O Sphere, inaugurado em 2023, tem a maior tela de LED do mundo, por dentro e por fora.',
+           'O GP de Las Vegas de F1 é disputado à noite, com o circuito passando pela Strip.'] },
   { id: 'nova-york', name: 'Nova York', country: 'Estados Unidos', flag: '🇺🇸', cont: 'América do Norte', tz: 'America/New_York', cur: 'Dólar (USD)', lang: 'Inglês',
     blurb: 'Broadway, museus de classe mundial, US Open e o Réveillon da Times Square. A cidade que nunca dorme tem algo acontecendo todos os dias.',
     news: ['O Perelman Performing Arts Center (PAC NYC), no World Trade Center, abriu em 2023.',
@@ -723,6 +793,14 @@ const CITIES = [
     blurb: 'Em agosto vira a capital mundial das artes cênicas com o Fringe, o maior festival de artes do mundo. No fim do ano, o Hogmanay.',
     news: ['A cidade passou a cobrar taxa turística (Visitor Levy) sobre hospedagens a partir de julho de 2026.',
            'Durante agosto os preços de hospedagem sobem muito: reserve com antecedência.'] },
+  { id: 'dublin', name: 'Dublin', country: 'Irlanda', flag: '🇮🇪', cont: 'Europa', tz: 'Europe/Dublin', cur: 'Euro (EUR)', lang: 'Inglês / Irlandês',
+    blurb: 'Pubs com música ao vivo, literatura de Joyce e o maior St. Patrick’s Day do mundo.',
+    news: ['Temple Bar concentra pubs com música irlandesa tradicional todas as noites.',
+           'O Guinness Storehouse é a atração turística mais visitada da Irlanda.'] },
+  { id: 'amsterda', name: 'Amsterdã', country: 'Holanda', flag: '🇳🇱', cont: 'Europa', tz: 'Europe/Amsterdam', cur: 'Euro (EUR)', lang: 'Holandês',
+    blurb: 'Canais, museus de primeira linha e a capital mundial da música eletrônica durante o Amsterdam Dance Event.',
+    news: ['A cidade limita o número de visitantes em algumas áreas e aumentou a taxa turística — reserve cedo.',
+           'Rijksmuseum, Museu Van Gogh e Stedelijk ficam lado a lado na Museumplein.'] },
   { id: 'paris', name: 'Paris', country: 'França', flag: '🇫🇷', cont: 'Europa', tz: 'Europe/Paris', cur: 'Euro (EUR)', lang: 'Francês',
     blurb: 'Ópera, cabarés, Roland-Garros e alguns dos museus mais visitados do mundo. Em junho, a cidade inteira vira palco na Fête de la Musique.',
     news: ['A Catedral de Notre-Dame foi reaberta em dezembro de 2024, com entrada gratuita.',
@@ -747,6 +825,10 @@ const CITIES = [
     blurb: 'Lar da Oktoberfest, do Bayern de Munique e de uma das óperas mais prestigiadas da Europa.',
     news: ['A Oktoberfest começa em um sábado de setembro e termina no primeiro domingo de outubro.',
            'Hospedagem durante a Oktoberfest costuma esgotar meses antes.'] },
+  { id: 'viena', name: 'Viena', country: 'Áustria', flag: '🇦🇹', cont: 'Europa', tz: 'Europe/Vienna', cur: 'Euro (EUR)', lang: 'Alemão',
+    blurb: 'Capital da música clássica: Ópera Estatal, Filarmônica, bailes de gala e mercados de Natal encantadores.',
+    news: ['A Ópera Estatal vende ingressos em pé (Stehplatz) por poucos euros no dia do espetáculo.',
+           'A temporada de bailes vai de janeiro ao Carnaval, com mais de 400 bailes.'] },
   { id: 'roma', name: 'Roma', country: 'Itália', flag: '🇮🇹', cont: 'Europa', tz: 'Europe/Rome', cur: 'Euro (EUR)', lang: 'Italiano',
     blurb: 'Ópera ao ar livre nas Termas de Caracalla, festas religiosas, Masters de tênis e 2.700 anos de história em cada esquina.',
     news: ['O Jubileu de 2025 trouxe restauros em praças, fontes e igrejas históricas.',
@@ -755,11 +837,30 @@ const CITIES = [
     blurb: 'Kabuki, festivais tradicionais (matsuri), cerejeiras em flor, fogos no rio Sumida e o Tokyo Game Show.',
     news: ['O teamLab Borderless reabriu em 2024 no complexo Azabudai Hills.',
            'A floração das cerejeiras costuma atingir o pico entre o fim de março e o início de abril.'] },
+  { id: 'seul', name: 'Seul', country: 'Coreia do Sul', flag: '🇰🇷', cont: 'Ásia & Oceania', tz: 'Asia/Seoul', cur: 'Won (KRW)', lang: 'Coreano',
+    blurb: 'Capital do K-pop e dos K-dramas, com palácios históricos, mercados noturnos e uma vida noturna intensa.',
+    news: ['Grandes shows de K-pop acontecem em arenas como KSPO Dome e Gocheok Sky Dome.',
+           'Quem visita palácios como Gyeongbokgung usando hanbok entra de graça.'] },
   { id: 'sydney', name: 'Sydney', country: 'Austrália', flag: '🇦🇺', cont: 'Ásia & Oceania', tz: 'Australia/Sydney', cur: 'Dólar australiano (AUD)', lang: 'Inglês',
     blurb: 'Opera House, Vivid Sydney e um dos primeiros Réveillons do mundo, com fogos sobre a Harbour Bridge.',
     news: ['A linha de metrô Sydney Metro City foi inaugurada em 2024, cruzando sob a baía.',
            'As estações são invertidas: dezembro e janeiro são pleno verão.'] },
 ];
+
+const CONT_ORDER = ['América do Sul', 'América do Norte', 'Europa', 'Ásia & Oceania'];
+
+// Nome da cidade e país usados na busca da API do Ticketmaster
+const TM_CITY = {
+  'sao-paulo': ['São Paulo', 'BR'], 'rio': ['Rio de Janeiro', 'BR'], 'salvador': ['Salvador', 'BR'],
+  'recife': ['Recife', 'BR'], 'manaus': ['Manaus', 'BR'], 'buenos-aires': ['Buenos Aires', 'AR'],
+  'cdmx': ['Ciudad de México', 'MX'], 'toronto': ['Toronto', 'CA'], 'los-angeles': ['Los Angeles', 'US'],
+  'las-vegas': ['Las Vegas', 'US'], 'nova-york': ['New York', 'US'], 'londres': ['London', 'GB'],
+  'edimburgo': ['Edinburgh', 'GB'], 'dublin': ['Dublin', 'IE'], 'amsterda': ['Amsterdam', 'NL'],
+  'paris': ['Paris', 'FR'], 'lisboa': ['Lisboa', 'PT'], 'madri': ['Madrid', 'ES'],
+  'barcelona': ['Barcelona', 'ES'], 'berlim': ['Berlin', 'DE'], 'munique': ['München', 'DE'],
+  'viena': ['Wien', 'AT'], 'roma': ['Roma', 'IT'], 'toquio': ['Tokyo', 'JP'],
+  'seul': ['Seoul', 'KR'], 'sydney': ['Sydney', 'AU'],
+};
 
 // ── EVENTOS ────────────────────────────────────────────────
 // Regras de data (repetem todo ano):
@@ -808,6 +909,36 @@ const EVENTS = [
     desc: 'Festival internacional de cinema com mostras competitivas e pré-estreias.' },
   { city: 'rio', cat: 'expo', title: 'Museu do Amanhã', venue: 'Praça Mauá', when: { ongoing: true }, price: '$',
     desc: 'Museu de ciências projetado por Santiago Calatrava, com exposições sobre o futuro do planeta.' },
+
+  // Salvador
+  { city: 'salvador', cat: 'festival', title: 'Carnaval de Salvador', venue: 'Circuitos Barra-Ondina e Campo Grande', when: { easter: -51, len: 6 }, price: '$$',
+    desc: 'Trios elétricos, blocos e camarotes em seis dias de festa — da pipoca (gratuita) aos abadás.' },
+  { city: 'salvador', cat: 'festival', title: 'Festa de Iemanjá', venue: 'Rio Vermelho', when: { m: 2, d: 2 }, price: 'free',
+    desc: 'Oferendas à Rainha do Mar levadas em barcos, com samba e festa no bairro do Rio Vermelho.' },
+  { city: 'salvador', cat: 'festival', title: 'Lavagem do Bonfim', venue: 'Igreja da Conceição da Praia → Colina do Bonfim', when: { fn: y => lavagemBonfim(y) }, price: 'free',
+    desc: 'Cortejo de 8 km com baianas lavando as escadarias da Igreja do Senhor do Bonfim.' },
+  { city: 'salvador', cat: 'festival', title: 'São João', venue: 'Pelourinho e bairros', when: { m: 6, d: 23, d2: 24 }, price: 'free',
+    desc: 'Forró, quadrilhas, licor e fogueira nas festas juninas da Bahia.' },
+  { city: 'salvador', cat: 'show', title: 'Olodum no Pelourinho', venue: 'Pelourinho', when: { ongoing: true }, price: '$',
+    desc: 'Ensaios e apresentações de percussão do Olodum e de outros blocos afro no Centro Histórico.' },
+
+  // Recife & Olinda
+  { city: 'recife', cat: 'festival', title: 'Galo da Madrugada', venue: 'Bairro de São José, Recife', when: { easter: -50 }, price: 'free',
+    desc: 'O maior bloco de carnaval do mundo segundo o Guinness, abrindo o Carnaval do Recife no sábado.' },
+  { city: 'recife', cat: 'festival', title: 'Carnaval de Olinda', venue: 'Sítio Histórico de Olinda', when: { easter: -50, len: 4 }, price: 'free',
+    desc: 'Bonecos gigantes, frevo e maracatu pelas ladeiras do centro histórico.' },
+  { city: 'recife', cat: 'festival', title: 'Carnaval do Recife Antigo', venue: 'Marco Zero', when: { easter: -51, len: 6 }, price: 'free',
+    desc: 'Palcos com frevo, maracatu e grandes shows gratuitos no Marco Zero.' },
+  { city: 'recife', cat: 'expo', title: 'Paço do Frevo', venue: 'Recife Antigo', when: { ongoing: true }, price: '$',
+    desc: 'Espaço dedicado à história e à dança do frevo, com exposições e aulas.' },
+
+  // Manaus
+  { city: 'manaus', cat: 'festival', title: 'Festival Folclórico de Parintins', venue: 'Bumbódromo, Parintins (AM)', when: { fn: y => fridayRun(y, 6, -1, 3) }, price: '$$',
+    desc: 'A disputa dos bois Garantido e Caprichoso em três noites de alegorias gigantes. Acesso de barco ou avião a partir de Manaus.' },
+  { city: 'manaus', cat: 'teatro', title: 'Festival Amazonas de Ópera', venue: 'Teatro Amazonas', when: { m: 4, d: 15, m2: 5, d2: 31 }, price: '$',
+    desc: 'Temporada anual de ópera no teatro histórico construído no ciclo da borracha.' },
+  { city: 'manaus', cat: 'expo', title: 'Teatro Amazonas', venue: 'Largo de São Sebastião', when: { ongoing: true }, price: '$',
+    desc: 'Visitas guiadas ao teatro de 1896, símbolo da era da borracha.' },
 
   // Buenos Aires
   { city: 'buenos-aires', cat: 'festival', title: 'Lollapalooza Argentina', venue: 'Hipódromo de San Isidro', when: { fn: y => fridayRun(y, 3, 2, 3) }, price: '$$$',
@@ -859,6 +990,42 @@ const EVENTS = [
   { city: 'nova-york', cat: 'expo', title: 'The Met e MoMA', venue: 'Upper East Side / Midtown', when: { ongoing: true }, price: '$$',
     desc: 'Exposições permanentes e temporárias em dois dos museus mais importantes do mundo.' },
 
+  // Toronto
+  { city: 'toronto', cat: 'cultura', title: 'TIFF — Festival Internacional de Cinema', venue: 'TIFF Lightbox e cinemas', when: { fn: y => { const s = addDays(nthWeekday(y, 9, 1, 1), 3); return [s, addDays(s, 10)]; } }, price: '$$',
+    desc: 'Um dos festivais de cinema mais importantes do mundo, com estreias e estrelas no tapete vermelho.' },
+  { city: 'toronto', cat: 'festival', title: 'Toronto Caribbean Carnival — Grand Parade', venue: 'Exhibition Place / Lakeshore Blvd', when: { fn: y => { const d = addDays(nthWeekday(y, 8, 1, 1), -2); return [d, d]; } }, price: '$',
+    desc: 'Desfile de fantasias, soca e steelpan — um dos maiores festivais caribenhos da América do Norte.' },
+  { city: 'toronto', cat: 'expo', title: 'Nuit Blanche Toronto', venue: 'Toda a cidade', when: { nth: 1, wd: 6, m: 10 }, price: 'free',
+    desc: 'Noite inteira de instalações de arte contemporânea gratuitas.' },
+  { city: 'toronto', cat: 'cultura', title: 'Distillery Winter Village', venue: 'Distillery District', when: { m: 11, d: 14, m2: 12, d2: 31 }, price: '$',
+    desc: 'Mercado de Natal em ruas de paralelepípedo do antigo bairro industrial.' },
+  { city: 'toronto', cat: 'teatro', title: 'Musicais da Mirvish', venue: 'Princess of Wales e Ed Mirvish Theatre', when: { ongoing: true }, price: '$$$',
+    desc: 'Grandes musicais da Broadway e do West End em turnê.' },
+
+  // Los Angeles
+  { city: 'los-angeles', cat: 'cultura', title: 'Oscar — tapete vermelho', venue: 'Dolby Theatre, Hollywood', when: { fn: y => { let d = nthWeekday(y, 3, 0, 2); if (d.getDate() < 10) d = addDays(d, 7); return [d, d]; } }, price: 'free',
+    desc: 'Cerimônia do Oscar (fechada ao público). Hollywood Blvd fica movimentada com fãs e transmissões.' },
+  { city: 'los-angeles', cat: 'festival', title: 'Rose Parade', venue: 'Colorado Blvd, Pasadena', when: { fn: y => { let d = mk(y, 1, 1); if (d.getDay() === 0) d = mk(y, 1, 2); return [d, d]; } }, price: 'free',
+    desc: 'Desfile de Ano Novo com carros alegóricos cobertos de flores, seguido do Rose Bowl.' },
+  { city: 'los-angeles', cat: 'show', title: 'Temporada do Hollywood Bowl', venue: 'Hollywood Bowl', when: { ongoing: true, months: [6, 7, 8, 9] }, price: '$$',
+    desc: 'Concertos ao ar livre da LA Phil e grandes nomes do pop, jazz e rock.' },
+  { city: 'los-angeles', cat: 'esporte', title: 'LA Dodgers — temporada da MLB', venue: 'Dodger Stadium', when: { ongoing: true, months: [4, 5, 6, 7, 8, 9] }, price: '$$',
+    desc: 'Jogos de beisebol no estádio com vista para as colinas de LA.' },
+  { city: 'los-angeles', cat: 'expo', title: 'Getty Center', venue: 'Brentwood', when: { ongoing: true }, price: 'free',
+    desc: 'Museu com arquitetura de Richard Meier, jardins e acervo de arte europeia. Entrada gratuita (estacionamento pago).' },
+
+  // Las Vegas
+  { city: 'las-vegas', cat: 'esporte', title: 'Fórmula 1 — GP de Las Vegas', venue: 'Las Vegas Strip Circuit', when: { fn: y => { const tg = nthWeekday(y, 11, 4, 4); return [addDays(tg, -7), addDays(tg, -5)]; } }, price: '$$$',
+    desc: 'Corrida noturna de sábado com o circuito passando pela Strip.' },
+  { city: 'las-vegas', cat: 'festival', title: 'EDC Las Vegas', venue: 'Las Vegas Motor Speedway', when: { fn: y => fridayRun(y, 5, 3, 3) }, price: '$$$',
+    desc: 'Electric Daisy Carnival: três noites de música eletrônica, do pôr do sol ao amanhecer.' },
+  { city: 'las-vegas', cat: 'cultura', title: 'CES', venue: 'Las Vegas Convention Center', when: { m: 1, d: 6, d2: 9 }, price: '$$$',
+    desc: 'Maior feira de tecnologia de consumo do mundo (para profissionais do setor).' },
+  { city: 'las-vegas', cat: 'show', title: '“O” — Cirque du Soleil', venue: 'Bellagio', when: { ongoing: true }, price: '$$$',
+    desc: 'Espetáculo aquático do Cirque du Soleil em cartaz desde 1998.' },
+  { city: 'las-vegas', cat: 'show', title: 'Shows no Sphere', venue: 'Sphere, The Venetian Resort', when: { ongoing: true }, price: '$$$',
+    desc: 'Residências de artistas e filmes imersivos na maior tela de LED do mundo.' },
+
   // Londres
   { city: 'londres', cat: 'teatro', title: 'Les Misérables', venue: 'Sondheim Theatre, West End', when: { ongoing: true }, price: '$$$',
     desc: 'O musical em cartaz há mais tempo no West End, desde 1985.' },
@@ -890,6 +1057,30 @@ const EVENTS = [
     desc: 'Música clássica, ópera, teatro e dança com companhias de todo o mundo.' },
   { city: 'edimburgo', cat: 'festival', title: 'Hogmanay', venue: 'Princes Street e Castelo', when: { m: 12, d: 29, m2: 1, d2: 1 }, price: '$$',
     desc: 'Celebração escocesa de Ano Novo com desfile de tochas, street party e fogos.' },
+
+  // Dublin
+  { city: 'dublin', cat: 'festival', title: 'St Patrick’s Festival', venue: 'O’Connell Street e centro', when: { m: 3, d: 15, d2: 17 }, price: 'free',
+    desc: 'Desfile, música e a cidade toda de verde no dia do padroeiro da Irlanda.' },
+  { city: 'dublin', cat: 'cultura', title: 'Bloomsday', venue: 'James Joyce Centre e centro', when: { m: 6, d: 16 }, price: 'free',
+    desc: 'Leitores vestidos de época refazem o trajeto do romance Ulysses, de James Joyce.' },
+  { city: 'dublin', cat: 'teatro', title: 'Dublin Theatre Festival', venue: 'Abbey Theatre, Gaiety e outros', when: { m: 9, d: 24, m2: 10, d2: 11 }, price: '$$',
+    desc: 'Festival de teatro mais antigo da Europa em língua inglesa.' },
+  { city: 'dublin', cat: 'esporte', title: 'Maratona de Dublin', venue: 'Centro de Dublin', when: { nth: -1, wd: 0, m: 10 }, price: 'free',
+    desc: 'Maratona popular pelas ruas georgianas e Phoenix Park.' },
+  { city: 'dublin', cat: 'show', title: 'Música ao vivo nos pubs', venue: 'Temple Bar', when: { ongoing: true }, price: 'free',
+    desc: 'Sessões de música tradicional irlandesa todas as noites.' },
+
+  // Amsterdã
+  { city: 'amsterda', cat: 'festival', title: 'Koningsdag (Dia do Rei)', venue: 'Toda a cidade', when: { fn: y => { let d = mk(y, 4, 27); if (d.getDay() === 0) d = mk(y, 4, 26); return [d, d]; } }, price: 'free',
+    desc: 'A cidade se veste de laranja: festas nos canais, mercado de pulgas e música nas ruas.' },
+  { city: 'amsterda', cat: 'show', title: 'Amsterdam Dance Event (ADE)', venue: 'Clubes e salas da cidade', when: { nth: 3, wd: 3, m: 10, len: 5 }, price: '$$',
+    desc: 'Maior evento de música eletrônica do mundo, com centenas de festas e conferências.' },
+  { city: 'amsterda', cat: 'festival', title: 'Pride Amsterdam — Canal Parade', venue: 'Prinsengracht e Amstel', when: { nth: 1, wd: 6, m: 8 }, price: 'free',
+    desc: 'Desfile do orgulho LGBT+ em barcos pelos canais.' },
+  { city: 'amsterda', cat: 'expo', title: 'Amsterdam Light Festival', venue: 'Canais do centro', when: { m: 11, d: 27, m2: 1, d2: 18 }, price: '$',
+    desc: 'Instalações de luz ao longo dos canais, vistas a pé ou de barco.' },
+  { city: 'amsterda', cat: 'expo', title: 'Rijksmuseum e Museu Van Gogh', venue: 'Museumplein', when: { ongoing: true }, price: '$$',
+    desc: 'Rembrandt, Vermeer e a maior coleção de Van Gogh do mundo.' },
 
   // Paris
   { city: 'paris', cat: 'show', title: 'Fête de la Musique', venue: 'Toda a cidade', when: { m: 6, d: 21 }, price: 'free',
@@ -975,6 +1166,18 @@ const EVENTS = [
   { city: 'munique', cat: 'esporte', title: 'Jogos do Bayern de Munique', venue: 'Allianz Arena', when: { ongoing: true, months: [1,2,3,4,5,8,9,10,11,12] }, price: '$$',
     desc: 'Temporada da Bundesliga e Champions League.' },
 
+  // Viena
+  { city: 'viena', cat: 'show', title: 'Concerto de Ano Novo da Filarmônica', venue: 'Musikverein', when: { m: 1, d: 1 }, price: '$$$',
+    desc: 'Valsas de Strauss transmitidas para o mundo inteiro. Ingressos sorteados com um ano de antecedência.' },
+  { city: 'viena', cat: 'festival', title: 'Wiener Opernball', venue: 'Ópera Estatal de Viena', when: { easter: -52 }, price: '$$$',
+    desc: 'O baile mais famoso da Áustria, na quinta-feira antes da Quarta-feira de Cinzas.' },
+  { city: 'viena', cat: 'show', title: 'Donauinselfest', venue: 'Ilha do Danúbio', when: { fn: y => fridayRun(y, 6, -1, 3) }, price: 'free',
+    desc: 'Maior festival gratuito ao ar livre da Europa, com vários palcos.' },
+  { city: 'viena', cat: 'cultura', title: 'Christkindlmarkt no Rathausplatz', venue: 'Rathausplatz', when: { m: 11, d: 14, m2: 12, d2: 26 }, price: 'free',
+    desc: 'Mercado de Natal em frente à prefeitura, com pista de patinação.' },
+  { city: 'viena', cat: 'teatro', title: 'Temporada da Ópera Estatal', venue: 'Wiener Staatsoper', when: { ongoing: true, months: [1, 2, 3, 4, 5, 6, 9, 10, 11, 12] }, price: '$$',
+    desc: 'Mais de 300 apresentações por temporada; ingressos em pé a preço baixo.' },
+
   // Roma
   { city: 'roma', cat: 'festival', title: 'Natale di Roma', venue: 'Circo Máximo', when: { m: 4, d: 21 }, price: 'free',
     desc: 'Aniversário de fundação da cidade, com desfile de gladiadores e legionários.' },
@@ -1004,6 +1207,16 @@ const EVENTS = [
     desc: 'Grande festival de rock e pop do verão japonês.' },
   { city: 'toquio', cat: 'teatro', title: 'Kabuki', venue: 'Kabuki-za, Ginza', when: { ongoing: true }, price: '$$',
     desc: 'Teatro tradicional japonês, com ingressos por ato (hitomaku-mi) para visitantes.' },
+
+  // Seul
+  { city: 'seul', cat: 'show', title: 'Shows de K-pop', venue: 'KSPO Dome, Gocheok Sky Dome e outras arenas', when: { ongoing: true }, price: '$$',
+    desc: 'Turnês e fan meetings dos grupos de K-pop acontecem ao longo de todo o ano.' },
+  { city: 'seul', cat: 'teatro', title: 'NANTA', venue: 'Teatros em Myeongdong e Hongdae', when: { ongoing: true }, price: '$$',
+    desc: 'Espetáculo de percussão e comédia sem diálogos, ambientado numa cozinha.' },
+  { city: 'seul', cat: 'festival', title: 'Seoul International Fireworks Festival', venue: 'Parque Yeouido Hangang', when: { nth: 1, wd: 6, m: 10 }, price: 'free',
+    desc: 'Equipes de vários países disputam o melhor show de fogos sobre o rio Han.' },
+  { city: 'seul', cat: 'esporte', title: 'Maratona de Seul', venue: 'Gwanghwamun → Estádio Olímpico', when: { nth: 3, wd: 0, m: 3 }, price: 'free',
+    desc: 'Uma das maratonas mais antigas da Ásia.' },
 
   // Sydney
   { city: 'sydney', cat: 'expo', title: 'Vivid Sydney', venue: 'Opera House, Circular Quay e Darling Harbour', when: { m: 5, d: 22, m2: 6, d2: 13 }, price: 'free',
@@ -1045,6 +1258,13 @@ function easter(y) {
 function fridayRun(y, m, n, days) {
   const fri = nthWeekday(y, m, 5, n);
   return [fri, addDays(fri, days - 1)];
+}
+
+// Quinta-feira antes do 2º domingo depois do Dia de Reis (6/jan)
+function lavagemBonfim(y) {
+  const firstSun = nthWeekday(y, 1, 0, 1).getDate() > 6 ? nthWeekday(y, 1, 0, 1) : nthWeekday(y, 1, 0, 2);
+  const d = addDays(firstSun, 4);
+  return [d, d];
 }
 
 function oktoberfest(y) {
@@ -1096,6 +1316,7 @@ const DEFAULT_STATE = {
   to: shiftYm(thisYm, 2),
   cats: Object.keys(CATS),
   view: 'city',
+  live: true,
 };
 
 let state = { ...DEFAULT_STATE };
@@ -1163,7 +1384,7 @@ function collect() {
       const months = ev.when.months;
       for (let d = new Date(start); d <= end; d.setMonth(d.getMonth() + 1)) {
         if (!months || months.includes(d.getMonth() + 1)) {
-          out.push({ ev, idx, ongoing: true });
+          out.push({ ev, key: `${idx}`, ongoing: true });
           return;
         }
       }
@@ -1174,8 +1395,14 @@ function collect() {
       const occ = occurrence(ev, y);
       if (!occ) continue;
       const [s, e] = occ;
-      if (s <= end && e >= start) out.push({ ev, idx, s, e });
+      if (s <= end && e >= start) out.push({ ev, key: `${idx}|${s.getTime()}`, s, e });
     }
+  });
+
+  liveItems().forEach(it => {
+    if (!state.cats.includes(it.ev.cat)) return;
+    if (q && !`${it.ev.title} ${it.ev.venue} ${it.ev.desc}`.toLowerCase().includes(q)) return;
+    out.push(it);
   });
 
   out.sort((a, b) => (a.s || 0) - (b.s || 0));
@@ -1194,7 +1421,7 @@ function renderChips() {
 }
 
 function renderContinents() {
-  const conts = [...new Set(CITIES.map(c => c.cont))];
+  const conts = CONT_ORDER;
   $('continents').innerHTML = conts.map(ct => {
     const ids = CITIES.filter(c => c.cont === ct).map(c => c.id);
     const on = ids.every(id => state.cities.includes(id));
@@ -1207,7 +1434,8 @@ let ddIndex = -1;
 function renderDropdown() {
   const q = $('city-search').value.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
   const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-  const list = CITIES.filter(c => !q || norm(c.name).includes(q) || norm(c.country).includes(q));
+  const list = CITIES.filter(c => !q || norm(c.name).includes(q) || norm(c.country).includes(q))
+    .sort((a, b) => CONT_ORDER.indexOf(a.cont) - CONT_ORDER.indexOf(b.cont));
   if (!list.length) {
     $('dropdown').innerHTML = '<div class="dd-empty">Nenhuma cidade encontrada.</div>';
     return;
@@ -1247,14 +1475,15 @@ function renderPeriod() {
 
 // ── RENDER: RESULTADOS ─────────────────────────────────────
 function card(item, showCity) {
-  const { ev, idx, s, e, ongoing } = item;
+  const { ev, key, s, e, ongoing, live } = item;
   const cat = CATS[ev.cat];
   const city = cityById(ev.city);
-  const date = ongoing ? (ev.when.months ? 'Temporada' : 'Em cartaz') : rangeShort(s, e);
-  const key = ongoing ? `${idx}` : `${idx}|${s.getTime()}`;
-  return `<button class="card" style="--cc:${cat.color}" data-ev="${key}">
+  let date = ongoing ? (ev.when.months ? 'Temporada' : 'Em cartaz') : rangeShort(s, e);
+  if (live && item.sessions > 1) date += ` · ${item.sessions} sessões`;
+  else if (live && item.time) date += ` · ${esc(item.time)}`;
+  return `<button class="card" style="--cc:${cat.color}" data-ev="${esc(key)}">
     <div class="card-top"><span class="badge">${cat.name}</span><span class="card-date">${date}</span></div>
-    <div class="card-title">${esc(ev.title)}${ev.price === 'free' ? '<span class="tag-free">GRÁTIS</span>' : ''}</div>
+    <div class="card-title">${esc(ev.title)}${ev.price === 'free' ? '<span class="tag-free">GRÁTIS</span>' : ''}${live ? '<span class="tag-live">AO VIVO</span>' : ''}</div>
     <div class="card-venue">📍 ${esc(ev.venue)}</div>
     ${showCity ? `<div class="card-city">${city.flag} ${esc(city.name)}, ${esc(city.country)}</div>` : ''}
   </button>`;
@@ -1343,12 +1572,14 @@ function renderAll() {
   renderPeriod();
   renderResults();
   save();
+  loadLive();
 }
 
 // ── MODAL ──────────────────────────────────────────────────
 function openEvent(key) {
-  const item = lastResults.find(it => (it.ongoing ? `${it.idx}` : `${it.idx}|${it.s.getTime()}`) === key);
+  const item = lastResults.find(it => it.key === key);
   if (!item) return;
+  if (item.live) return openLiveEvent(item);
   const { ev, s, e, ongoing } = item;
   const cat = CATS[ev.cat];
   const city = cityById(ev.city);
@@ -1384,7 +1615,192 @@ function openEvent(key) {
   if (!ongoing) $('ics').onclick = () => downloadIcs(ev, city, s, e);
 }
 
+function openLiveEvent(item) {
+  const { ev, s, e } = item;
+  const cat = CATS[ev.cat];
+  const city = cityById(ev.city);
+  const mapQ = encodeURIComponent(`${ev.venue}, ${city.name}, ${city.country}`);
+  let when = rangeLong(s, e);
+  if (item.sessions > 1) when += ` · ${item.sessions} sessões`;
+  else if (item.time) when += ` · ${esc(item.time)}`;
+
+  $('modal').style.setProperty('--cc', cat.color);
+  $('modal').innerHTML = `
+    <button class="modal-close" id="modal-close" aria-label="Fechar">✕</button>
+    <span class="badge" style="--cc:${cat.color}">${cat.name}</span><span class="tag-live">AO VIVO</span>
+    <h2>${esc(ev.title)}</h2>
+    <div class="city-country">${city.flag} ${esc(city.name)}, ${esc(city.country)}</div>
+    ${ev.img ? `<img class="modal-img" src="${esc(ev.img)}" alt="" loading="lazy" onerror="this.remove()">` : ''}
+    <dl class="modal-meta">
+      <dt>Quando</dt><dd>${when}</dd>
+      <dt>Onde</dt><dd>${esc(ev.venue)}</dd>
+      <dt>Preço</dt><dd>${esc(ev.priceText)}</dd>
+    </dl>
+    <p class="desc">${esc(ev.desc)}</p>
+    <div class="note">⚡ Evento real obtido da API do Ticketmaster. Horários e disponibilidade podem mudar.</div>
+    <div class="actions">
+      ${ev.url ? `<a class="btn btn-primary" target="_blank" rel="noopener" href="${esc(ev.url)}">🎟️ Comprar no Ticketmaster</a>` : ''}
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${mapQ}">🗺️ Ver no mapa</a>
+      <button class="btn" id="ics">📅 Adicionar à agenda</button>
+    </div>`;
+  $('modal-bg').classList.add('open');
+  $('modal-close').focus();
+  $('modal-close').onclick = closeModal;
+  $('ics').onclick = () => downloadIcs(ev, city, s, e);
+}
+
 function closeModal() { $('modal-bg').classList.remove('open'); }
+
+// ── EVENTOS AO VIVO (Ticketmaster Discovery API) ───────────
+const TM_SEG = { 'Music': 'show', 'Arts & Theatre': 'teatro', 'Sports': 'esporte', 'Film': 'cultura', 'Miscellaneous': 'cultura' };
+const liveCache = new Map(); // `${cidade}|${de}|${até}` -> { status, items, error }
+let liveKey = '';
+try { liveKey = localStorage.getItem('agenda-mundo-tm') || ''; } catch (e) {}
+
+const liveOn = () => Boolean(liveKey && state.live);
+const isoZ = d => d.toISOString().split('.')[0] + 'Z';
+const parseYmd = t => { const [y, m, d] = t.split('-').map(Number); return mk(y, m, d); };
+const httpsOnly = u => (/^https:\/\//.test(u || '') ? u : '');
+
+function liveItems() {
+  if (!liveOn()) return [];
+  const { a, b } = getPeriod();
+  return state.cities.flatMap(id => liveCache.get(`${id}|${a}|${b}`)?.items || []);
+}
+
+async function fetchCity(cityId, start, end) {
+  const [name, cc] = TM_CITY[cityId];
+  const params = new URLSearchParams({
+    apikey: liveKey, city: name, countryCode: cc,
+    startDateTime: isoZ(start), endDateTime: isoZ(addDays(end, 1)),
+    size: '200', sort: 'date,asc', locale: '*',
+  });
+  const res = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?${params}`);
+  if (res.status === 401) throw new Error('Chave de API inválida');
+  if (res.status === 429) throw new Error('Limite de consultas atingido, tente de novo em instantes');
+  if (!res.ok) throw new Error(`Erro ${res.status} na API`);
+  const data = await res.json();
+
+  // Agrupa várias sessões do mesmo espetáculo no mesmo local
+  const groups = new Map();
+  (data._embedded?.events || []).forEach(x => {
+    const startDate = x.dates?.start?.localDate;
+    if (!startDate) return;
+    const venue = x._embedded?.venues?.[0];
+    const gkey = `${x.name}|${venue?.id || ''}`;
+    const s = parseYmd(startDate);
+    const e = x.dates?.end?.localDate ? parseYmd(x.dates.end.localDate) : s;
+    const g = groups.get(gkey);
+    if (g) {
+      if (s < g.s) g.s = s;
+      if (e > g.e) g.e = e;
+      g.sessions++;
+      return;
+    }
+    const cls = x.classifications?.[0];
+    const genre = [cls?.genre?.name, cls?.subGenre?.name].filter(n => n && n !== 'Undefined').join(' / ');
+    const pr = x.priceRanges?.[0];
+    const imgs = (x.images || []).filter(i => i.ratio === '16_9').sort((p, q) => p.width - q.width);
+    const img = (imgs.find(i => i.width >= 640) || imgs[imgs.length - 1])?.url;
+    groups.set(gkey, {
+      key: `tm|${x.id}`, live: true, s, e: e < s ? s : e, sessions: 1,
+      time: x.dates?.start?.localTime?.slice(0, 5) || '',
+      ev: {
+        city: cityId,
+        cat: TM_SEG[cls?.segment?.name] || 'cultura',
+        title: x.name,
+        venue: venue ? [venue.name, venue.city?.name].filter(Boolean).join(', ') : '—',
+        url: httpsOnly(x.url),
+        img: httpsOnly(img),
+        price: '',
+        priceText: pr ? `${pr.currency} ${Math.round(pr.min)}${pr.max > pr.min ? ' – ' + Math.round(pr.max) : ''}` : 'Consulte no site',
+        desc: [genre, x.info || x.pleaseNote].filter(Boolean).join(' · ') || 'Evento listado no Ticketmaster.',
+      },
+    });
+  });
+  return [...groups.values()];
+}
+
+async function loadLive() {
+  renderLiveStatus();
+  if (!liveOn()) return;
+  const { start, end, a, b } = getPeriod();
+  const todo = state.cities.filter(id => TM_CITY[id] && !liveCache.has(`${id}|${a}|${b}`));
+  for (const id of todo) {
+    const k = `${id}|${a}|${b}`;
+    if (liveCache.has(k)) continue;
+    liveCache.set(k, { status: 'loading' });
+    renderLiveStatus();
+    try {
+      liveCache.set(k, { status: 'ok', items: await fetchCity(id, start, end) });
+    } catch (err) {
+      liveCache.delete(k);
+      liveError = err.message === 'Failed to fetch' ? 'Sem conexão com a API' : err.message;
+      renderLiveStatus();
+      return;
+    }
+    liveError = '';
+    renderResults();
+    await new Promise(r => setTimeout(r, 220)); // respeita o limite de 5 consultas/s
+  }
+  renderLiveStatus();
+}
+
+let liveError = '';
+
+function renderLiveStatus() {
+  $('live-toggle').classList.toggle('on', liveOn());
+  $('live-toggle').textContent = liveOn() ? '⚡ Eventos ao vivo: ligado' : '⚡ Eventos ao vivo: desligado';
+  const el = $('live-status');
+  el.className = 'live-status';
+  if (!liveKey) { el.textContent = 'Adicione sua chave gratuita do Ticketmaster para ver shows e espetáculos reais.'; return; }
+  if (!state.live) { el.textContent = ''; return; }
+  if (liveError) { el.textContent = `⚠️ ${liveError}`; el.classList.add('err'); return; }
+  const { a, b } = getPeriod();
+  const entries = state.cities.filter(id => TM_CITY[id]).map(id => liveCache.get(`${id}|${a}|${b}`));
+  const loading = entries.filter(x => !x || x.status === 'loading').length;
+  const total = entries.reduce((n, x) => n + (x?.items?.length || 0), 0);
+  if (loading) { el.textContent = `Buscando eventos ao vivo… (${entries.length - loading}/${entries.length} cidades)`; return; }
+  el.textContent = `✓ ${total} eventos ao vivo encontrados`;
+  el.classList.add('ok');
+}
+
+function openLiveConfig() {
+  $('modal').style.setProperty('--cc', 'var(--accent)');
+  $('modal').innerHTML = `
+    <button class="modal-close" id="modal-close" aria-label="Fechar">✕</button>
+    <span class="badge" style="--cc:var(--accent)">Eventos ao vivo</span>
+    <h2>Chave da API do Ticketmaster</h2>
+    <p class="desc">Com uma chave gratuita, o app busca shows, peças, jogos e festivais reais à venda no Ticketmaster para as cidades e o período escolhidos.</p>
+    <ol>
+      <li>Crie uma conta em <a class="inline" href="https://developer.ticketmaster.com/" target="_blank" rel="noopener">developer.ticketmaster.com</a>.</li>
+      <li>Abra <strong>My Apps</strong> e copie a <strong>Consumer Key</strong>.</li>
+      <li>Cole abaixo e salve.</li>
+    </ol>
+    <div style="margin-top:16px">
+      <input class="input" id="tm-key" type="text" autocomplete="off" spellcheck="false" placeholder="Consumer Key" value="${esc(liveKey)}">
+    </div>
+    <div class="note">A chave fica salva apenas neste navegador. A cobertura do Ticketmaster é maior nos EUA, Canadá, México, Reino Unido, Irlanda, Europa e Austrália; em outras cidades podem aparecer poucos ou nenhum evento.</div>
+    <div class="actions">
+      <button class="btn btn-primary" id="tm-save">Salvar chave</button>
+      ${liveKey ? '<button class="btn" id="tm-remove">Remover chave</button>' : ''}
+    </div>`;
+  $('modal-bg').classList.add('open');
+  $('tm-key').focus();
+  $('modal-close').onclick = closeModal;
+  $('tm-save').onclick = () => setLiveKey($('tm-key').value.trim());
+  if (liveKey) $('tm-remove').onclick = () => setLiveKey('');
+}
+
+function setLiveKey(k) {
+  liveKey = k;
+  try { k ? localStorage.setItem('agenda-mundo-tm', k) : localStorage.removeItem('agenda-mundo-tm'); } catch (e) {}
+  liveCache.clear();
+  liveError = '';
+  if (k) state.live = true;
+  closeModal();
+  renderAll();
+}
 
 function downloadIcs(ev, city, s, e) {
   const d = dt => `${dt.getFullYear()}${String(dt.getMonth() + 1).padStart(2, '0')}${String(dt.getDate()).padStart(2, '0')}`;
@@ -1481,6 +1897,14 @@ $('catbar').addEventListener('click', e => {
   state.cats = state.cats.includes(k) ? state.cats.filter(c => c !== k) : [...state.cats, k];
   renderAll();
 });
+
+$('live-config').onclick = openLiveConfig;
+$('live-toggle').onclick = () => {
+  if (!liveKey) return openLiveConfig();
+  state.live = !state.live;
+  liveError = '';
+  renderAll();
+};
 
 $('ev-search').addEventListener('input', e => { evQuery = e.target.value; renderResults(); });
 
