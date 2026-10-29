@@ -356,6 +356,11 @@
       </select>
     </div>
     <label class="toggle"><input type="checkbox" id="voice" checked> Falar em voz alta</label>
+    <label class="toggle"><input type="checkbox" id="beep" checked> Bipe a cada fundamento</label>
+    <div class="row" style="margin-top:0;margin-bottom:10px">
+      <button class="btn ghost" id="btnTestSound">🔊 Testar som</button>
+      <span class="hint" id="soundInfo" style="margin:0;align-self:center"></span>
+    </div>
     <button class="btn good" id="btnShadow" style="width:100%">▶ Começar sombra</button>
   </section>
 
@@ -471,13 +476,69 @@
   let shadowStep = 0;
   let shadowRound = 0;
 
+  // ── Som ──
+  const hasSpeech = 'speechSynthesis' in window;
+  let ptVoice = null;
+  let audioCtx = null;
+
+  function pickVoice() {
+    if (!hasSpeech) return;
+    const voices = speechSynthesis.getVoices();
+    ptVoice = voices.find(v => v.lang === 'pt-BR') || voices.find(v => /^pt/i.test(v.lang)) || null;
+  }
+  if (hasSpeech) {
+    pickVoice();
+    speechSynthesis.addEventListener?.('voiceschanged', pickVoice);
+  }
+
+  // Precisa ser chamado dentro de um toque (exigência do iPhone/Chrome)
+  function unlockAudio() {
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (AC && !audioCtx) audioCtx = new AC();
+      if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+    } catch (e) {}
+  }
+
+  function beep(freq = 880, ms = 140) {
+    if (!$('beep').checked || !audioCtx) return;
+    try {
+      const o = audioCtx.createOscillator();
+      const g = audioCtx.createGain();
+      const t = audioCtx.currentTime;
+      o.frequency.value = freq;
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(0.4, t + 0.01);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + ms / 1000);
+      o.connect(g).connect(audioCtx.destination);
+      o.start(t);
+      o.stop(t + ms / 1000 + 0.02);
+    } catch (e) {}
+  }
+
   function speak(text) {
-    if (!$('voice').checked || !('speechSynthesis' in window)) return;
-    speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'pt-BR';
-    u.rate = 1.05;
-    speechSynthesis.speak(u);
+    if (!$('voice').checked || !hasSpeech) return;
+    try {
+      if (speechSynthesis.speaking || speechSynthesis.pending) speechSynthesis.cancel();
+      speechSynthesis.resume();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'pt-BR';
+      if (ptVoice) u.voice = ptVoice;
+      u.rate = 1.05;
+      u.volume = 1;
+      speechSynthesis.speak(u);
+    } catch (e) {}
+  }
+
+  function testSound() {
+    unlockAudio();
+    beep();
+    speak('Som funcionando. Bom treino!');
+    const info = [];
+    if (!hasSpeech) info.push('Este navegador não tem voz; use o bipe.');
+    else if (!ptVoice) info.push('Sem voz em português instalada; pode sair em outra língua.');
+    info.push('No iPhone, desligue o modo silencioso e aumente o volume.');
+    $('soundInfo').textContent = info.join(' ');
   }
 
   function shadowTick() {
@@ -489,6 +550,7 @@
     const c = list[shadowStep];
     $('shadowDisplay').innerHTML = `<div class="big">${c.t}</div><div class="small">Repetição ${shadowRound + 1} · ${shadowStep + 1}/${list.length}</div>`;
     renderCues(shadowStep);
+    beep(shadowStep === 0 ? 1175 : 880);
     speak(c.t);
     shadowStep++;
   }
@@ -503,6 +565,7 @@
       renderCues();
       return;
     }
+    unlockAudio();
     shadowStep = 0;
     shadowRound = 0;
     $('btnShadow').textContent = '■ Parar';
@@ -536,6 +599,7 @@
   $('btnFinish').addEventListener('click', finishSeries);
   $('goal').addEventListener('change', renderStats);
   $('btnShadow').addEventListener('click', toggleShadow);
+  $('btnTestSound').addEventListener('click', testSound);
   $('pace').addEventListener('change', () => {
     if (shadowTimer) {
       clearInterval(shadowTimer);
