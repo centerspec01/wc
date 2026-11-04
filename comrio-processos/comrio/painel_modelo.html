@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Processos Trabalhistas ComRio</title>
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f4f5f7;--surface:#ffffff;--surface-2:#f8f9fb;--border:#e2e5ea;
+  --text:#14171c;--text-2:#4b5361;--muted:#7a8291;
+  --brand:#1f3a5f;--brand-ink:#ffffff;--accent:#2a78d6;
+  --bar:#2a78d6;--bar-track:#eef1f5;
+  --alert:#c9302c;--alert-bg:#fdecea;--new:#0f7a4f;--new-bg:#e3f5ec;
+  --row-hover:#f3f6fa;--shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.08);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#121417;--surface:#1a1d21;--surface-2:#202429;--border:#2e333a;
+    --text:#eef0f3;--text-2:#b9c0ca;--muted:#8a929e;
+    --brand:#16283f;--brand-ink:#eef0f3;--accent:#3987e5;
+    --bar:#3987e5;--bar-track:#262b31;
+    --alert:#ef6b67;--alert-bg:#3a1e1d;--new:#41c58b;--new-bg:#16302a;
+    --row-hover:#22272d;--shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#121417;--surface:#1a1d21;--surface-2:#202429;--border:#2e333a;
+  --text:#eef0f3;--text-2:#b9c0ca;--muted:#8a929e;
+  --brand:#16283f;--brand-ink:#eef0f3;--accent:#3987e5;
+  --bar:#3987e5;--bar-track:#262b31;
+  --alert:#ef6b67;--alert-bg:#3a1e1d;--new:#41c58b;--new-bg:#16302a;
+  --row-hover:#22272d;--shadow:none;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+header{background:var(--brand);color:var(--brand-ink);padding:18px 16px}
+header .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;justify-content:space-between}
+header h1{margin:0;font-size:20px;font-weight:650;letter-spacing:.2px}
+header .sub{opacity:.8;font-size:13px}
+.wrap{max-width:1400px;margin:0 auto}
+main{padding:16px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;box-shadow:var(--shadow)}
+.card .lbl{color:var(--text-2);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.card .num{font-size:26px;font-weight:650;margin-top:4px;font-variant-numeric:tabular-nums}
+.card .det{color:var(--muted);font-size:12px;margin-top:2px}
+.card.alerta .num{color:var(--alert)} .card.novo .num{color:var(--new)}
+.paineis{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-bottom:16px;align-items:start}
+.painel{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;box-shadow:var(--shadow);min-width:0}
+.painel h2{font-size:14px;margin:0 0 10px;font-weight:620}
+.barra{display:grid;grid-template-columns:minmax(90px,38%) 1fr auto;gap:8px;align-items:center;padding:3px 0;cursor:pointer;border-radius:6px}
+.barra:hover{background:var(--row-hover)}
+.barra .nome{color:var(--text-2);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.barra .trilho{display:block;height:10px;background:var(--bar-track);border-radius:4px;overflow:hidden}
+.barra .ench{display:block;height:100%;background:var(--bar);border-radius:0 4px 4px 0;min-width:2px}
+.barra .v{font-variant-numeric:tabular-nums;font-size:13px;color:var(--text);min-width:34px;text-align:right}
+.recentes{list-style:none;margin:0;padding:0;max-height:260px;overflow:auto}
+.recentes li{padding:7px 0;border-bottom:1px solid var(--border);cursor:pointer}
+.recentes li:last-child{border-bottom:0}
+.recentes .t{font-weight:600;font-size:13px;font-variant-numeric:tabular-nums}
+.recentes .s{color:var(--text-2);font-size:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.vazio{color:var(--muted);font-size:13px;padding:6px 0}
+.filtros{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 16px;box-shadow:var(--shadow);margin-bottom:12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px 12px;align-items:end}
+.filtros label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--text-2);min-width:0}
+.filtros .busca{grid-column:1/-1}
+input,select,button{font:inherit;color:var(--text);background:var(--surface-2);border:1px solid var(--border);border-radius:7px;padding:7px 9px;min-width:0;width:100%}
+input:focus,select:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.check{flex-direction:row!important;align-items:center;gap:8px!important;font-size:13px!important;color:var(--text)!important}
+.check input{width:auto}
+.acoes{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:8px}
+.acoes .info{color:var(--text-2);font-size:13px}
+.acoes .bts{display:flex;gap:8px;flex-wrap:wrap}
+button{cursor:pointer;width:auto;background:var(--surface);font-weight:550}
+button.prim{background:var(--accent);color:#fff;border-color:var(--accent)}
+button:hover{filter:brightness(.97)}
+.tabela{background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow);overflow:auto}
+table{border-collapse:collapse;width:100%;min-width:1100px}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top;font-size:13px}
+th{position:sticky;top:0;background:var(--surface-2);color:var(--text-2);font-weight:600;font-size:12px;cursor:pointer;user-select:none;white-space:nowrap}
+th .seta{opacity:.5;margin-left:3px}
+th.ord .seta{opacity:1;color:var(--accent)}
+tbody tr.linha{cursor:pointer} tbody tr.linha:hover{background:var(--row-hover)}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.cnj{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:560}
+.tag{display:inline-block;border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600;white-space:nowrap}
+.tag.alerta{background:var(--alert-bg);color:var(--alert)}
+.tag.novo{background:var(--new-bg);color:var(--new)}
+.tag.fase{background:var(--surface-2);border:1px solid var(--border);color:var(--text-2)}
+tr.detalhe td{background:var(--surface-2);font-size:13px}
+.det-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 18px}
+.det-grid b{display:block;color:var(--text-2);font-size:11px;text-transform:uppercase;letter-spacing:.4px;font-weight:600}
+.mov{white-space:pre-wrap;margin-top:8px;max-height:220px;overflow:auto}
+.pag{display:flex;gap:6px;align-items:center;justify-content:center;padding:12px;flex-wrap:wrap}
+.pag span{color:var(--text-2);font-size:13px}
+footer{color:var(--muted);font-size:12px;text-align:center;padding:18px 16px 28px}
+.lista-cards{display:none}
+@media (max-width:760px){
+  header h1{font-size:17px}
+  .card .num{font-size:22px}
+  .cards{grid-template-columns:1fr 1fr;gap:8px}
+  .card{padding:10px 12px}
+  .card .lbl{font-size:11px}
+  .tabela{display:none}
+  .lista-cards{display:flex;flex-direction:column;gap:10px}
+  .pc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px;box-shadow:var(--shadow)}
+  .pc .topo{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+  .pc .cnj{font-weight:620;font-variant-numeric:tabular-nums;font-size:13px;word-break:break-all}
+  .pc .linha2{color:var(--text-2);font-size:12px;margin-top:4px}
+  .pc .kv{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;margin-top:8px;font-size:12px}
+  .pc .kv b{display:block;color:var(--muted);font-weight:500;font-size:11px}
+  .pc .tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px}
+  .pc details{margin-top:8px;font-size:12px} .pc summary{cursor:pointer;color:var(--accent)}
+  .acoes{flex-direction:column;align-items:stretch}
+  .acoes .bts button{flex:1}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div><h1>Processos Trabalhistas — ComRio</h1>
+  <div class="sub" id="subtitulo"></div></div>
+  <div class="sub" id="geradoEm"></div>
+</div></header>
+<main class="wrap">
+  <section class="cards" id="cards" aria-label="Resumo"></section>
+  <section class="paineis">
+    <div class="painel"><h2>Processos por fase</h2><div id="porFase"></div></div>
+    <div class="painel"><h2>Processos por tribunal</h2><div id="porTribunal"></div></div>
+    <div class="painel"><h2>Movimentados nos últimos 7 dias</h2><ul class="recentes" id="recentes"></ul></div>
+  </section>
+
+  <section class="filtros" aria-label="Filtros">
+    <label class="busca">Buscar (número, reclamante, advogado, vara, assunto, texto da movimentação)
+      <input id="fTexto" type="search" placeholder="Digite para filtrar…"></label>
+    <label>Tribunal <select id="fTribunal"></select></label>
+    <label>Vara / Órgão julgador <select id="fVara"></select></label>
+    <label>Fase <select id="fFase"></select></label>
+    <label>Faixa de valor <select id="fFaixa"></select></label>
+    <label>Período por
+      <select id="fCampoData"><option value="data_distribuicao">Data de distribuição</option>
+      <option value="data_ultima_movimentacao">Última movimentação</option></select></label>
+    <label>De <input id="fDe" type="date"></label>
+    <label>Até <input id="fAte" type="date"></label>
+    <label class="check"><input id="fAlerta" type="checkbox"> <span>Só parados há mais de <span class="diasAlerta"></span> dias</span></label>
+    <label class="check"><input id="fNovos" type="checkbox"> <span>Só com movimentação nova</span></label>
+  </section>
+
+  <div class="acoes">
+    <div class="info" id="info"></div>
+    <div class="bts">
+      <button id="btLimpar">Limpar filtros</button>
+      <button id="btCsv">Exportar CSV</button>
+      <button id="btXlsx" class="prim">Exportar Excel</button>
+    </div>
+  </div>
+
+  <div class="tabela"><table>
+    <thead><tr id="cabecalho"></tr></thead>
+    <tbody id="corpo"></tbody>
+  </table></div>
+  <div class="lista-cards" id="cardsLista"></div>
+  <div class="pag" id="pag"></div>
+</main>
+<footer>Dados: API do Escavador. “Movimentação nova” = registrada pela atualização automática nos últimos 7 dias.
+Alerta = sem movimentação há mais de <span class="diasAlerta"></span> dias (exceto arquivados).</footer>
+
+<script id="dados" type="application/json">__DADOS__</script>
+<script>
+"use strict";
+const META = JSON.parse(document.getElementById("dados").textContent);
+const P = META.processos;
+const HOJE = META.hoje;
+const POR_PAGINA = 50;
+
+const COLS = [
+  {k:"numero_cnj",t:"Número CNJ",cl:"cnj"},
+  {k:"tribunal",t:"Tribunal"},
+  {k:"orgao_julgador",t:"Vara / Órgão"},
+  {k:"comarca",t:"Comarca"},
+  {k:"reclamante",t:"Reclamante"},
+  {k:"polo",t:"Polo"},
+  {k:"fase",t:"Fase"},
+  {k:"valor_causa",t:"Valor da causa",cl:"num",fmt:v=>moeda(v)},
+  {k:"data_distribuicao",t:"Distribuição",cl:"num",fmt:v=>dataBR(v)},
+  {k:"data_ultima_movimentacao",t:"Últ. movimentação",cl:"num",fmt:v=>dataBR(v)},
+  {k:"dias_sem_movimentacao",t:"Dias parado",cl:"num",fmt:v=>v==null?"—":v},
+  {k:"dias_desde_distribuicao",t:"Dias desde distr.",cl:"num",fmt:v=>v==null?"—":v},
+  {k:"faixa_valor",t:"Faixa"},
+];
+const EXPORT = META.colunas_exportacao;
+
+const $ = id => document.getElementById(id);
+const fmtN = new Intl.NumberFormat("pt-BR");
+const fmtM = new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"});
+function moeda(v){return v==null?"—":fmtM.format(v)}
+function moedaCurta(v){
+  if(v>=1e9) return "R$ "+(v/1e9).toLocaleString("pt-BR",{maximumFractionDigits:1})+" bi";
+  if(v>=1e6) return "R$ "+(v/1e6).toLocaleString("pt-BR",{maximumFractionDigits:1})+" mi";
+  return fmtM.format(v);
+}
+function dataBR(s){if(!s)return "—";const [a,m,d]=s.slice(0,10).split("-");return `${d}/${m}/${a}`}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function norm(s){return String(s??"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase()}
+function diasAtras(n){const d=new Date(HOJE+"T12:00:00");d.setDate(d.getDate()-n);return d.toISOString().slice(0,10)}
+
+P.forEach(p=>{p._busca=norm([p.numero_cnj,p.reclamante,p.advogados,p.orgao_julgador,p.comarca,p.assunto,p.classe,p.tribunal,p.texto_ultima_movimentacao].join(" "))});
+
+let estado = {ord:"data_ultima_movimentacao",dir:-1,pag:1,aberto:null};
+
+function opcoes(sel, valores, rotuloTodos){
+  const atual = sel.value;
+  sel.innerHTML = `<option value="">${rotuloTodos}</option>` + valores.map(v=>`<option value="${esc(v)}">${esc(v)}</option>`).join("");
+  if(valores.includes(atual)) sel.value = atual;
+}
+function unicos(campo, lista=P){return [...new Set(lista.map(p=>p[campo]).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"pt-BR",{numeric:true}))}
+
+function iniciar(){
+  $("subtitulo").textContent = `${META.empresa} · CNPJ ${META.cnpj}`;
+  $("geradoEm").textContent = `Atualizado em ${META.gerado_em}`;
+  document.querySelectorAll(".diasAlerta").forEach(e=>e.textContent=META.dias_alerta);
+  opcoes($("fTribunal"), unicos("tribunal"), "Todos");
+  opcoes($("fFase"), unicos("fase"), "Todas");
+  opcoes($("fFaixa"), META.ordem_faixas.filter(f=>P.some(p=>p.faixa_valor===f)), "Todas");
+  atualizarVaras();
+  $("cabecalho").innerHTML = COLS.map(c=>`<th data-k="${c.k}" scope="col">${c.t}<span class="seta"></span></th>`).join("");
+  $("cabecalho").addEventListener("click", e=>{
+    const th = e.target.closest("th"); if(!th) return;
+    const k = th.dataset.k;
+    estado.dir = estado.ord===k ? -estado.dir : (["valor_causa","dias_sem_movimentacao","dias_desde_distribuicao","data_ultima_movimentacao","data_distribuicao"].includes(k)?-1:1);
+    estado.ord = k; estado.pag = 1; render();
+  });
+  ["fTexto","fVara","fFase","fFaixa","fCampoData","fDe","fAte","fAlerta","fNovos"].forEach(id=>$(id).addEventListener("input",()=>{estado.pag=1;render()}));
+  $("fTribunal").addEventListener("input",()=>{atualizarVaras();estado.pag=1;render()});
+  $("btLimpar").onclick = ()=>{document.querySelectorAll(".filtros input,.filtros select").forEach(e=>{if(e.type==="checkbox")e.checked=false;else if(e.id!=="fCampoData")e.value=""});atualizarVaras();estado.pag=1;render()};
+  $("btCsv").onclick = ()=>exportarCSV(filtrar());
+  $("btXlsx").onclick = ()=>exportarXLSX(filtrar());
+  render();
+}
+function atualizarVaras(){
+  const t = $("fTribunal").value;
+  opcoes($("fVara"), unicos("orgao_julgador", t?P.filter(p=>p.tribunal===t):P), "Todas");
+}
+
+function filtrar(){
+  const txt = norm($("fTexto").value).trim().split(/\s+/).filter(Boolean);
+  const tri=$("fTribunal").value, vara=$("fVara").value, fase=$("fFase").value, faixa=$("fFaixa").value;
+  const campo=$("fCampoData").value, de=$("fDe").value, ate=$("fAte").value;
+  const soAlerta=$("fAlerta").checked, soNovos=$("fNovos").checked;
+  const r = P.filter(p=>{
+    if(tri && p.tribunal!==tri) return false;
+    if(vara && p.orgao_julgador!==vara) return false;
+    if(fase && p.fase!==fase) return false;
+    if(faixa && p.faixa_valor!==faixa) return false;
+    if(de && (!p[campo] || p[campo]<de)) return false;
+    if(ate && (!p[campo] || p[campo]>ate)) return false;
+    if(soAlerta && !p.alerta_parado) return false;
+    if(soNovos && !p.movs_novas) return false;
+    for(const t of txt) if(!p._busca.includes(t)) return false;
+    return true;
+  });
+  const k=estado.ord, d=estado.dir;
+  r.sort((a,b)=>{
+    const x=a[k], y=b[k];
+    if(x==null && y==null) return 0; if(x==null) return 1; if(y==null) return -1;
+    return (typeof x==="number" ? x-y : String(x).localeCompare(String(y),"pt-BR",{numeric:true}))*d;
+  });
+  return r;
+}
+
+function barras(el, contagem, campo, max=10){
+  let itens = Object.entries(contagem).sort((a,b)=>b[1]-a[1]);
+  if(itens.length>max){const resto=itens.slice(max-1).reduce((s,i)=>s+i[1],0);itens=itens.slice(0,max-1).concat([["Outros",resto]])}
+  const topo = Math.max(1,...itens.map(i=>i[1]));
+  el.innerHTML = itens.length ? itens.map(([n,v])=>`<div class="barra" data-v="${esc(n)}" title="${esc(n)}: ${fmtN.format(v)} processo(s)">
+    <span class="nome">${esc(n)}</span><span class="trilho"><span class="ench" style="width:${(v/topo*100).toFixed(1)}%"></span></span><span class="v">${fmtN.format(v)}</span></div>`).join("")
+    : `<div class="vazio">Nenhum processo no filtro atual.</div>`;
+  el.onclick = e=>{const b=e.target.closest(".barra"); if(!b||b.dataset.v==="Outros")return;
+    const sel=$(campo); sel.value = sel.value===b.dataset.v ? "" : b.dataset.v;
+    if(campo==="fTribunal") atualizarVaras(); estado.pag=1; render();};
+}
+
+function resumo(lista){
+  const total=lista.length, valor=lista.reduce((s,p)=>s+(p.valor_causa||0),0);
+  const semValor=lista.filter(p=>p.valor_causa==null).length;
+  const alertas=lista.filter(p=>p.alerta_parado).length;
+  const sete=diasAtras(7);
+  const recentes=lista.filter(p=>p.data_ultima_movimentacao && p.data_ultima_movimentacao>=sete);
+  const novos=lista.filter(p=>p.movs_novas).length;
+  const filtrado = total!==P.length ? ` de ${fmtN.format(P.length)}` : "";
+  $("cards").innerHTML = `
+    <div class="card"><div class="lbl">Processos</div><div class="num">${fmtN.format(total)}</div><div class="det">${filtrado?"no filtro"+filtrado:"Justiça do Trabalho"}</div></div>
+    <div class="card"><div class="lbl">Valor total das causas</div><div class="num" title="${fmtM.format(valor)}">${moedaCurta(valor)}</div><div class="det">${semValor?fmtN.format(semValor)+" sem valor informado":"todos com valor"}</div></div>
+    <div class="card alerta"><div class="lbl">Parados &gt; ${META.dias_alerta} dias</div><div class="num">${fmtN.format(alertas)}</div><div class="det">${total?Math.round(alertas/total*100):0}% do total</div></div>
+    <div class="card"><div class="lbl">Movimentados em 7 dias</div><div class="num">${fmtN.format(recentes.length)}</div><div class="det">desde ${dataBR(sete)}</div></div>
+    <div class="card novo"><div class="lbl">Com movimentação nova</div><div class="num">${fmtN.format(novos)}</div><div class="det">detectada pela atualização</div></div>`;
+  const cont=(c)=>lista.reduce((o,p)=>{const v=p[c]||"Não informado";o[v]=(o[v]||0)+1;return o},{});
+  barras($("porFase"), cont("fase"), "fFase");
+  barras($("porTribunal"), cont("tribunal"), "fTribunal");
+  recentes.sort((a,b)=>b.data_ultima_movimentacao.localeCompare(a.data_ultima_movimentacao));
+  $("recentes").innerHTML = recentes.length ? recentes.slice(0,30).map(p=>`<li data-cnj="${esc(p.numero_cnj)}">
+    <div class="t">${dataBR(p.data_ultima_movimentacao)} · ${esc(p.numero_cnj)} ${p.movs_novas?'<span class="tag novo">nova</span>':""}</div>
+    <div class="s">${esc(p.texto_ultima_movimentacao||p.reclamante||"")}</div></li>`).join("")
+    : `<li class="vazio">Nenhuma movimentação nos últimos 7 dias.</li>`;
+  $("recentes").onclick = e=>{const li=e.target.closest("li[data-cnj]"); if(!li)return; $("fTexto").value=li.dataset.cnj; estado.pag=1; estado.aberto=li.dataset.cnj; render(); $("fTexto").scrollIntoView({behavior:"smooth"})};
+}
+
+function tags(p){
+  return `${p.alerta_parado?`<span class="tag alerta" title="Sem movimentação há ${p.dias_sem_movimentacao} dias">⚠ parado</span> `:""}${p.movs_novas?`<span class="tag novo">● ${p.movs_novas} nova${p.movs_novas>1?"s":""}</span>`:""}`;
+}
+function detalhe(p){
+  const campo=(t,v)=>`<div><b>${t}</b>${esc(v||"—")}</div>`;
+  return `<div class="det-grid">${campo("Classe",p.classe)}${campo("Assunto",p.assunto)}${campo("Advogados",p.advogados)}
+    ${campo("Status (Escavador)",[p.status_predito,p.grau].filter(Boolean).join(" · "))}${campo("UF",p.uf)}
+    ${campo("Última atualização no Escavador",dataBR(p.data_ultima_verificacao))}
+    <div><b>Fonte</b>${p.url?`<a href="${esc(p.url)}" target="_blank" rel="noopener">abrir no tribunal</a>`:"—"}</div></div>
+    <div class="mov"><b>Última movimentação (${dataBR(p.data_ultima_movimentacao)}):</b> ${esc(p.texto_ultima_movimentacao||"texto ainda não carregado")}</div>`;
+}
+
+function render(){
+  const lista = filtrar();
+  resumo(lista);
+  const paginas = Math.max(1,Math.ceil(lista.length/POR_PAGINA));
+  estado.pag = Math.min(estado.pag,paginas);
+  const ini=(estado.pag-1)*POR_PAGINA, fatia=lista.slice(ini,ini+POR_PAGINA);
+  $("info").textContent = lista.length ? `Mostrando ${fmtN.format(ini+1)}–${fmtN.format(ini+fatia.length)} de ${fmtN.format(lista.length)} processo(s)` : "Nenhum processo encontrado com esses filtros.";
+  document.querySelectorAll("#cabecalho th").forEach(th=>{const on=th.dataset.k===estado.ord;th.classList.toggle("ord",on);th.querySelector(".seta").textContent=on?(estado.dir>0?"▲":"▼"):"↕";th.setAttribute("aria-sort",on?(estado.dir>0?"ascending":"descending"):"none")});
+  $("corpo").innerHTML = fatia.map(p=>{
+    const tds = COLS.map(c=>{let v=c.fmt?c.fmt(p[c.k]):esc(p[c.k]||"—");
+      if(c.k==="numero_cnj") v=`${esc(p.numero_cnj)}<div>${tags(p)}</div>`;
+      if(c.k==="fase") v=`<span class="tag fase">${esc(p.fase||"—")}</span>`;
+      return `<td class="${c.cl||""}">${v}</td>`}).join("");
+    const aberto = estado.aberto===p.numero_cnj;
+    return `<tr class="linha" data-cnj="${esc(p.numero_cnj)}" aria-expanded="${aberto}">${tds}</tr>${aberto?`<tr class="detalhe"><td colspan="${COLS.length}">${detalhe(p)}</td></tr>`:""}`;
+  }).join("");
+  $("corpo").onclick = e=>{const tr=e.target.closest("tr.linha"); if(!tr||e.target.closest("a"))return; estado.aberto = estado.aberto===tr.dataset.cnj?null:tr.dataset.cnj; render()};
+  $("cardsLista").innerHTML = fatia.map(p=>`<div class="pc">
+    <div class="topo"><div class="cnj">${esc(p.numero_cnj)}</div><span class="tag fase">${esc(p.fase||"—")}</span></div>
+    <div class="linha2">${esc([p.tribunal,p.orgao_julgador,p.comarca].filter(Boolean).join(" · "))}</div>
+    <div class="kv"><div><b>Reclamante</b>${esc(p.reclamante||"—")}</div><div><b>Valor da causa</b>${moeda(p.valor_causa)}</div>
+    <div><b>Distribuição</b>${dataBR(p.data_distribuicao)}</div><div><b>Últ. movimentação</b>${dataBR(p.data_ultima_movimentacao)}${p.dias_sem_movimentacao!=null?` (${p.dias_sem_movimentacao} d)`:""}</div></div>
+    <div class="tags">${tags(p)}</div>
+    <details><summary>Detalhes</summary>${detalhe(p)}</details></div>`).join("");
+  const b=(n,t,dis)=>`<button ${dis?"disabled":""} data-p="${n}">${t}</button>`;
+  $("pag").innerHTML = paginas>1 ? `${b(1,"«",estado.pag===1)}${b(estado.pag-1,"‹ Anterior",estado.pag===1)}<span>Página ${estado.pag} de ${paginas}</span>${b(estado.pag+1,"Próxima ›",estado.pag===paginas)}${b(paginas,"»",estado.pag===paginas)}` : "";
+  $("pag").onclick = e=>{const bt=e.target.closest("button[data-p]"); if(!bt||bt.disabled)return; estado.pag=+bt.dataset.p; render(); window.scrollTo({top:$("cabecalho").getBoundingClientRect().top+scrollY-80,behavior:"smooth"})};
+}
+
+/* ---------- exportação ---------- */
+function valorExport(k,p){
+  const v=p[k];
+  if(k==="alerta_parado") return v?"SIM":"não";
+  if(k.startsWith("data_")) return v?dataBR(v):"";
+  return v==null?"":v;
+}
+function baixar(conteudo,nome,tipo){
+  const url=URL.createObjectURL(new Blob([conteudo],{type:tipo}));
+  const a=Object.assign(document.createElement("a"),{href:url,download:nome});
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);
+}
+function nomeArquivo(ext){return `processos_comrio_${HOJE}.${ext}`}
+function exportarCSV(lista){
+  const q=s=>{s=String(s);return /[;"\n\r]/.test(s)?`"${s.replace(/"/g,'""')}"`:s};
+  const linhas=[EXPORT.map(c=>q(c[1])).join(";")].concat(lista.map(p=>EXPORT.map(([k])=>{let v=valorExport(k,p);if(typeof v==="number"&&!Number.isInteger(v))v=v.toFixed(2).replace(".",",");return q(v)}).join(";")));
+  baixar("﻿"+linhas.join("\r\n"),nomeArquivo("csv"),"text/csv;charset=utf-8");
+}
+/* XLSX mínimo (zip sem compressão) — sem bibliotecas externas */
+const CRC=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
+function crc32(b){let c=0xFFFFFFFF;for(let i=0;i<b.length;i++)c=CRC[(c^b[i])&0xFF]^(c>>>8);return (c^0xFFFFFFFF)>>>0}
+function zip(arquivos){
+  const enc=new TextEncoder(), partes=[], central=[]; let off=0;
+  for(const [nome,txt] of arquivos){
+    const n=enc.encode(nome), d=enc.encode(txt), crc=crc32(d);
+    const h=new DataView(new ArrayBuffer(30));
+    h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint16(6,0x0800,true);h.setUint16(8,0,true);
+    h.setUint32(14,crc,true);h.setUint32(18,d.length,true);h.setUint32(22,d.length,true);h.setUint16(26,n.length,true);
+    partes.push(new Uint8Array(h.buffer),n,d);
+    const c=new DataView(new ArrayBuffer(46));
+    c.setUint32(0,0x02014b50,true);c.setUint16(4,20,true);c.setUint16(6,20,true);c.setUint16(8,0x0800,true);
+    c.setUint32(16,crc,true);c.setUint32(20,d.length,true);c.setUint32(24,d.length,true);c.setUint16(28,n.length,true);c.setUint32(42,off,true);
+    central.push(new Uint8Array(c.buffer),n);
+    off+=30+n.length+d.length;
+  }
+  const tam=central.reduce((s,a)=>s+a.length,0), e=new DataView(new ArrayBuffer(22));
+  e.setUint32(0,0x06054b50,true);e.setUint16(8,arquivos.length,true);e.setUint16(10,arquivos.length,true);e.setUint32(12,tam,true);e.setUint32(16,off,true);
+  return new Blob([...partes,...central,new Uint8Array(e.buffer)],{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});
+}
+function exportarXLSX(lista){
+  const x=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,"");
+  const col=i=>{let s="";i++;while(i>0){const m=(i-1)%26;s=String.fromCharCode(65+m)+s;i=Math.floor((i-1)/26)}return s};
+  const cel=(v,r,c,est)=>{const ref=col(c)+r;
+    if(typeof v==="number") return `<c r="${ref}"${est?` s="${est}"`:""}><v>${v}</v></c>`;
+    return `<c r="${ref}" t="inlineStr"${est?` s="${est}"`:""}><is><t xml:space="preserve">${x(v)}</t></is></c>`};
+  const iValor=EXPORT.findIndex(c=>c[0]==="valor_causa");
+  let rows=`<row r="1">${EXPORT.map((c,i)=>cel(c[1],1,i,1)).join("")}</row>`;
+  lista.forEach((p,j)=>{const r=j+2;rows+=`<row r="${r}">${EXPORT.map(([k],i)=>{const v=valorExport(k,p);return v===""?"":cel(v,r,i,i===iValor?2:0)}).join("")}</row>`});
+  const larg=EXPORT.map(([k])=>({numero_cnj:27,orgao_julgador:34,reclamante:30,advogados:40,texto_ultima_movimentacao:60,assunto:30,classe:26}[k]||15));
+  const sheet=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols>${larg.map((w,i)=>`<col min="${i+1}" max="${i+1}" width="${w}" customWidth="1"/>`).join("")}</cols><sheetData>${rows}</sheetData><autoFilter ref="A1:${col(EXPORT.length-1)}${lista.length+1}"/></worksheet>`;
+  const styles=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><numFmts count="1"><numFmt numFmtId="164" formatCode="&quot;R$&quot; #,##0.00"/></numFmts><fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><color rgb="FFFFFFFF"/><name val="Calibri"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF1F3A5F"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="3"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyFont="1" applyFill="1"/><xf numFmtId="164" fontId="0" fillId="0" borderId="0" xfId="0" applyNumberFormat="1"/></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`;
+  const arquivos=[
+    ["[Content_Types].xml",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>`],
+    ["_rels/.rels",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>`],
+    ["xl/workbook.xml",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="Processos" sheetId="1" r:id="rId1"/></sheets><definedNames><definedName name="_xlnm._FilterDatabase" localSheetId="0" hidden="1">Processos!$A$1:$${col(EXPORT.length-1)}$${lista.length+1}</definedName></definedNames></workbook>`],
+    ["xl/_rels/workbook.xml.rels",`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`],
+    ["xl/styles.xml",styles],
+    ["xl/worksheets/sheet1.xml",sheet],
+  ];
+  baixar(zip(arquivos),nomeArquivo("xlsx"));
+}
+iniciar();
+</script>
+</body>
+</html>
