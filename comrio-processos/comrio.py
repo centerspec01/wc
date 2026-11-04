@@ -48,12 +48,22 @@ def main(argv=None):
     m.add_argument("--sim", action="store_true")
     sub.add_parser("listar-monitoramentos", help="lista monitoramentos de tribunal da conta")
     sub.add_parser("painel", help="gera saida/painel.html a partir do banco local")
+    sub.add_parser("demo", help="gera um painel com dados FICTÍCIOS, sem API e sem gastar créditos")
     e = sub.add_parser("exportar", help="exporta todos os processos do banco")
     e.add_argument("--formato", choices=["xlsx", "csv", "ambos"], default="ambos")
     args = ap.parse_args(argv)
 
-    offline = args.cmd in ("painel", "exportar")
+    offline = args.cmd in ("painel", "exportar", "demo")
     cfg = config.carregar(exigir_token=not offline)
+    if args.cmd == "demo":
+        from comrio import demo
+        cfg.caminho_db = cfg.caminho_db.with_name("demo.db")  # banco separado: não mistura com o real
+        cfg.cnpj = demo.CNPJ_FICTICIO
+        con = db.conectar(cfg.caminho_db)
+        demo.popular(con)
+        destino, n = painel.gerar(con, cfg, cfg.pasta_saida / "painel_demo.html")
+        print(f"Painel de DEMONSTRAÇÃO (dados fictícios) gerado: {destino} ({n} processos)")
+        return
     con = db.conectar(cfg.caminho_db)
 
     if args.cmd == "painel":

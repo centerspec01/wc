@@ -21,6 +21,13 @@ Edite o `.env` e preencha:
 - `ESCAVADOR_API_TOKEN`: o token gerado no painel do Escavador (seção API). O `.env` está no `.gitignore` e o token nunca aparece no código.
 - `COMRIO_CNPJ`: o CNPJ da ComRio.
 
+## Testar sem a API (sem token, sem gastar créditos)
+
+```bash
+python comrio.py demo                       # gera saida/painel_demo.html com 150 processos FICTÍCIOS
+python -m unittest discover -s tests -v     # testes automáticos com API simulada
+```
+
 ## Como rodar (nesta ordem)
 
 ```bash
