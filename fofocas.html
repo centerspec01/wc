@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Brasil Gossips</title>
+<meta name="description" content="As principais fofocas do Brasil, atualizadas com imagem: romances, política, TV & cinema, teen, festas e eventos.">
+<meta name="theme-color" content="#0B0A10">
+<link rel="manifest" href="fofocas.webmanifest">
+<link rel="icon" href="fofocas-icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="fofocas-icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #FF4FA3;
+    --accent-2: #FFB443;
+    --bg: #0B0A10;
+    --bg-2: #14121B;
+    --bg-3: #1D1A26;
+    --bg-4: #272333;
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(255,255,255,0.16);
+    --text: #F1EEF6;
+    --muted: #9A93AB;
+    --dim: #625B73;
+    --radius: 16px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  button, input { font-family: inherit; color: inherit; }
+  .glow {
+    position: fixed; inset: -20% 0 auto 0; height: 600px; pointer-events: none; z-index: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(255,79,163,0.18), transparent 65%);
+  }
+  .container { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+  /* ── HEADER ── */
+  header { padding: calc(20px + env(safe-area-inset-top)) 0 14px; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo {
+    width: 46px; height: 46px; border-radius: 14px; flex: none;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    display: grid; place-items: center; font-size: 24px;
+    box-shadow: 0 8px 28px rgba(255,79,163,0.35);
+  }
+  .brand h1 {
+    font-family: 'Bebas Neue', sans-serif; font-weight: 400;
+    font-size: clamp(2rem, 7vw, 2.8rem); letter-spacing: 0.03em; line-height: 0.9;
+  }
+  .brand h1 span { color: var(--accent); }
+  .brand small { display: block; color: var(--muted); font-size: 0.78rem; margin-top: 4px; }
+  .actions { display: flex; gap: 8px; align-items: center; }
+  .status {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 0.76rem; color: var(--muted);
+    background: var(--bg-2); border: 1px solid var(--border); border-radius: 999px; padding: 8px 12px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #3DDC97; box-shadow: 0 0 0 0 rgba(61,220,151,.6); animation: pulse 2s infinite; }
+  .dot.warn { background: var(--accent-2); }
+  .dot.err { background: #FF5C5C; animation: none; }
+  @keyframes pulse { 70% { box-shadow: 0 0 0 8px rgba(61,220,151,0); } 100% { box-shadow: 0 0 0 0 rgba(61,220,151,0); } }
+  .btn {
+    background: var(--bg-3); border: 1px solid var(--border-strong); border-radius: 999px;
+    padding: 8px 14px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: inline-flex; gap: 6px; align-items: center;
+    transition: background .15s, border-color .15s;
+  }
+  .btn:hover { background: var(--bg-4); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { filter: brightness(1.08); }
+  .btn[hidden] { display: none; }
+  .spin { display: inline-block; }
+  .loading .spin { animation: rot 0.9s linear infinite; }
+  @keyframes rot { to { transform: rotate(360deg); } }
+
+  /* ── TICKER ── */
+  .ticker {
+    margin-top: 16px; display: flex; align-items: center; gap: 12px; overflow: hidden;
+    background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px; padding: 0 0 0 12px; height: 40px;
+  }
+  .ticker b {
+    flex: none; font-size: 0.68rem; letter-spacing: .14em; text-transform: uppercase; color: #fff;
+    background: var(--accent); padding: 4px 8px; border-radius: 6px;
+  }
+  .ticker-track { flex: 1; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+  .ticker-inner { display: inline-flex; gap: 40px; white-space: nowrap; animation: marquee 80s linear infinite; font-size: 0.85rem; color: var(--text); }
+  .ticker-inner a:hover { color: var(--accent); }
+  .ticker:hover .ticker-inner { animation-play-state: paused; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 20; margin: 14px -16px 0; padding: 10px 16px;
+    background: rgba(11,10,16,0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-row { display: flex; gap: 10px; align-items: center; }
+  .tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; flex: 1; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    flex: none; border: 1px solid var(--border); background: var(--bg-2); border-radius: 999px;
+    padding: 8px 14px; font-size: 0.84rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+    display: inline-flex; gap: 6px; align-items: center; transition: all .15s;
+  }
+  .tab:hover { border-color: var(--border-strong); }
+  .tab.active { background: var(--c, var(--accent)); border-color: var(--c, var(--accent)); color: #0B0A10; }
+  .tab .n { font-size: 0.7rem; opacity: .7; font-weight: 700; }
+  .search { position: relative; flex: none; width: 220px; }
+  .search input {
+    width: 100%; background: var(--bg-2); border: 1px solid var(--border); border-radius: 999px;
+    padding: 9px 14px 9px 34px; font-size: 0.85rem; outline: none;
+  }
+  .search input:focus { border-color: var(--accent); }
+  .search::before { content: '🔍'; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); font-size: 0.8rem; opacity: .7; }
+
+  main { padding: 22px 0 60px; }
+
+  /* ── HERO ── */
+  .hero { display: grid; grid-template-columns: 1.6fr 1fr; gap: 16px; }
+  .hero-side { display: grid; grid-template-rows: repeat(4, 1fr); gap: 12px; }
+  .big {
+    position: relative; border-radius: var(--radius); overflow: hidden; min-height: 440px; display: flex; align-items: flex-end;
+    background: var(--bg-3); border: 1px solid var(--border);
+  }
+  .big .img, .card .img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+  .big:hover .img { transform: scale(1.03); }
+  .big::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(8,7,12,0.95) 100%); }
+  .big .body { position: relative; z-index: 1; padding: 24px; }
+  .big h2 { font-size: clamp(1.35rem, 3.2vw, 2rem); line-height: 1.18; font-weight: 800; margin: 10px 0 8px; }
+  .big p { color: #D6D0E0; font-size: 0.95rem; line-height: 1.5; max-width: 640px; }
+
+  .mini {
+    display: grid; grid-template-columns: 112px 1fr; gap: 12px; align-items: center;
+    background: var(--bg-2); border: 1px solid var(--border); border-radius: 14px; padding: 8px; transition: border-color .15s;
+  }
+  .mini:hover { border-color: var(--border-strong); }
+  .mini .thumb { position: relative; width: 112px; height: 84px; border-radius: 10px; overflow: hidden; background: var(--bg-3); }
+  .mini .thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .mini h3 { font-size: 0.88rem; line-height: 1.3; font-weight: 700; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+  /* ── SECTIONS ── */
+  .section { margin-top: 38px; }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+  .sec-head h2 { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 1.9rem; letter-spacing: .03em; display: flex; gap: 10px; align-items: center; }
+  .sec-head h2::before { content: ''; width: 6px; height: 26px; border-radius: 3px; background: var(--c); }
+  .sec-head button { background: none; border: none; color: var(--c); font-weight: 700; font-size: 0.8rem; cursor: pointer; letter-spacing: .04em; }
+  .row { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(250px, 1fr); gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; scrollbar-width: thin; }
+  .row > * { scroll-snap-align: start; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+    display: flex; flex-direction: column; transition: transform .2s, border-color .2s; min-width: 0;
+  }
+  .card:hover { transform: translateY(-3px); border-color: var(--border-strong); }
+  .card:hover .img { transform: scale(1.04); }
+  .card .media { position: relative; aspect-ratio: 16/10; overflow: hidden; background: var(--bg-3); }
+  .card .body { padding: 14px 14px 12px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .card h3 { font-size: 0.98rem; line-height: 1.32; font-weight: 700; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .card p { font-size: 0.83rem; color: var(--muted); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 4px; font-size: 0.66rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+    color: #0B0A10; background: var(--c); padding: 4px 8px; border-radius: 6px; width: fit-content;
+  }
+  .media .chip { position: absolute; left: 10px; top: 10px; z-index: 1; }
+  .meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 0.74rem; color: var(--dim); margin-top: auto; }
+  .meta .src { color: var(--muted); font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .share { background: none; border: none; cursor: pointer; color: var(--muted); font-size: 0.9rem; padding: 2px 4px; border-radius: 6px; flex: none; }
+  .share:hover { color: var(--accent); background: var(--bg-3); }
+  .new { color: var(--accent); font-weight: 800; }
+
+  .ph {
+    position: absolute; inset: 0; display: grid; place-items: center; font-size: 2.6rem;
+    background: radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--c) 45%, transparent), transparent 60%), linear-gradient(135deg, var(--bg-3), var(--bg-4));
+  }
+  .big .ph { font-size: 5rem; }
+
+  .more { display: flex; justify-content: center; margin-top: 24px; }
+  .empty, .error { text-align: center; padding: 60px 16px; color: var(--muted); }
+  .empty .e, .error .e { font-size: 2.6rem; margin-bottom: 10px; }
+  .error .btn { margin-top: 16px; }
+
+  .skel { background: linear-gradient(90deg, var(--bg-2), var(--bg-3), var(--bg-2)); background-size: 200% 100%; animation: sk 1.3s infinite; border-radius: var(--radius); }
+  @keyframes sk { to { background-position: -200% 0; } }
+
+  .toast {
+    position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom)); transform: translate(-50%, 120px);
+    background: var(--text); color: var(--bg); padding: 10px 16px; border-radius: 999px; font-size: 0.85rem; font-weight: 600;
+    transition: transform .25s; z-index: 50; white-space: nowrap;
+  }
+  .toast.show { transform: translate(-50%, 0); }
+
+  footer { color: var(--dim); font-size: 0.75rem; text-align: center; padding: 20px 0 calc(30px + env(safe-area-inset-bottom)); line-height: 1.6; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-side { grid-template-rows: none; }
+    .big { min-height: 360px; }
+    .search { width: 160px; }
+  }
+  @media (max-width: 560px) {
+    .nav-row { flex-direction: column; align-items: stretch; }
+    .search { width: 100%; order: -1; }
+    .status .lbl { display: none; }
+    .big { min-height: 320px; }
+    .big .body { padding: 18px; }
+    .row { grid-auto-columns: 78%; }
+    .grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-inner { animation: none; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="container">
+  <header>
+    <div class="top">
+      <div class="brand">
+        <div class="logo">💋</div>
+        <div>
+          <h1>Brasil <span>Gossips</span></h1>
+          <small>As fofocas do momento, atualizadas o dia todo</small>
+        </div>
+      </div>
+      <div class="actions">
+        <span class="status" id="status"><span class="dot warn" id="dot"></span><span class="lbl" id="statusText">Carregando…</span></span>
+        <button class="btn" id="refresh" title="Atualizar agora"><span class="spin">↻</span></button>
+        <button class="btn primary" id="install" hidden>📲 Instalar app</button>
+      </div>
+    </div>
+    <div class="ticker" id="ticker" hidden>
+      <b>🔥 Agora</b>
+      <div class="ticker-track"><div class="ticker-inner" id="tickerInner"></div></div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-row">
+      <div class="tabs" id="tabs"></div>
+      <label class="search"><input id="q" type="search" placeholder="Buscar famoso, novela…" autocomplete="off"></label>
+    </div>
+  </nav>
+
+  <main id="main"></main>
+
+  <footer>
+    Manchetes e imagens pertencem aos veículos citados — clique para ler a matéria completa na fonte.<br>
+    <span id="foot"></span>
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="fofocas-core.js"></script>
+<script>
+(() => {
+  const Core = window.FofocasCore;
+  const CAT = Object.fromEntries(Core.CATEGORIES.map((c) => [c.id, c]));
+  const DATA_URL = 'data/fofocas.json';
+  const STALE_MIN = 90;          // JSON mais velho que isso → busca ao vivo também
+  const AUTO_REFRESH_MIN = 10;
+  const PAGE = 24;
+  const PROXIES = [
+    (u) => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(u),
+    (u) => 'https://corsproxy.io/?url=' + encodeURIComponent(u),
+    (u) => 'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(u),
+  ];
+
+  const $ = (s) => document.querySelector(s);
+  const state = { items: [], updated: null, view: 'destaques', q: '', limit: PAGE, loading: false, mode: '' };
+  const seenKey = 'bg_seen_v1';
+  let seenBefore = 0;
+  try { seenBefore = +localStorage.getItem(seenKey) || 0; } catch (_) {}
+
+  // ── util ──
+  const esc = (s) => String(s || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  function ago(iso) {
+    if (!iso) return '';
+    const m = Math.round((Date.now() - Date.parse(iso)) / 60000);
+    if (m < 1) return 'agora';
+    if (m < 60) return `há ${m} min`;
+    const h = Math.round(m / 60);
+    if (h < 24) return `há ${h} h`;
+    const d = Math.round(h / 24);
+    return d === 1 ? 'ontem' : `há ${d} dias`;
+  }
+  function toast(msg) {
+    const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+    clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('show'), 2200);
+  }
+  function primary(it, ctx) {
+    if (ctx && ctx !== 'novidades' && it.categories.includes(ctx)) return CAT[ctx];
+    return CAT[it.categories.find((c) => c !== 'novidades') || 'novidades'];
+  }
+  function media(it, cls) {
+    const c = primary(it);
+    const ph = `<div class="ph">${c.emoji}</div>`;
+    if (!it.image) return ph;
+    return `${ph}<img class="${cls}" src="${esc(it.image)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()">`;
+  }
+  function isNew(it) { return it.date && seenBefore && Date.parse(it.date) > seenBefore; }
+
+  // ── render ──
+  function cardHTML(it, ctx) {
+    const c = primary(it, ctx);
+    return `<a class="card" href="${esc(it.link)}" target="_blank" rel="noopener" style="--c:${c.color}">
+      <div class="media">${media(it, 'img')}<span class="chip">${c.emoji} ${esc(c.label)}</span></div>
+      <div class="body">
+        <h3>${esc(it.title)}</h3>
+        ${it.summary ? `<p>${esc(it.summary)}</p>` : ''}
+        <div class="meta"><span class="src">${isNew(it) ? '<span class="new">● NOVO</span> · ' : ''}${esc(it.source)} · ${ago(it.date)}</span>
+        <button class="share" data-share="${esc(it.id)}" title="Compartilhar">↗</button></div>
+      </div></a>`;
+  }
+  function bigHTML(it) {
+    const c = primary(it);
+    return `<a class="big" href="${esc(it.link)}" target="_blank" rel="noopener" style="--c:${c.color}">
+      ${media(it, 'img')}
+      <div class="body"><span class="chip">${c.emoji} ${esc(c.label)}</span>
+      <h2>${esc(it.title)}</h2>${it.summary ? `<p>${esc(it.summary)}</p>` : ''}
+      <div class="meta" style="margin-top:12px"><span class="src">${esc(it.source)} · ${ago(it.date)}</span></div></div></a>`;
+  }
+  function miniHTML(it) {
+    const c = primary(it);
+    return `<a class="mini" href="${esc(it.link)}" target="_blank" rel="noopener" style="--c:${c.color}">
+      <div class="thumb">${media(it, '')}</div>
+      <div><span class="chip">${c.emoji} ${esc(c.label)}</span><h3 style="margin-top:6px">${esc(it.title)}</h3>
+      <div class="meta" style="margin-top:4px"><span class="src">${esc(it.source)} · ${ago(it.date)}</span></div></div></a>`;
+  }
+
+  function filtered(cat) {
+    let list = state.items;
+    if (cat && cat !== 'destaques') list = list.filter((it) => it.categories.includes(cat));
+    if (state.q) {
+      const words = Core.norm(state.q).split(/\s+/).filter(Boolean);
+      list = list.filter((it) => { const t = Core.norm(it.title + ' ' + it.summary + ' ' + it.source); return words.every((w) => t.includes(w)); });
+    }
+    return list;
+  }
+
+  function renderTabs() {
+    const counts = {};
+    for (const it of state.items) for (const c of it.categories) counts[c] = (counts[c] || 0) + 1;
+    const tabs = [{ id: 'destaques', label: 'Destaques', emoji: '🔥', color: '#FF4FA3' }, ...Core.CATEGORIES];
+    $('#tabs').innerHTML = tabs.map((t) => `<button class="tab ${state.view === t.id ? 'active' : ''}" data-view="${t.id}" style="--c:${t.color}">
+      ${t.emoji} ${esc(t.label)}${t.id !== 'destaques' && counts[t.id] ? ` <span class="n">${counts[t.id]}</span>` : ''}</button>`).join('');
+    const act = $('#tabs .active');
+    if (act) { const tb = $('#tabs'); tb.scrollLeft = act.offsetLeft - tb.offsetLeft - (tb.clientWidth - act.offsetWidth) / 2; }
+  }
+
+  function renderTicker() {
+    const top = state.items.slice(0, 12);
+    if (!top.length) { $('#ticker').hidden = true; return; }
+    const html = top.map((it) => `<a href="${esc(it.link)}" target="_blank" rel="noopener">${primary(it).emoji} ${esc(it.title)}</a>`).join('');
+    $('#tickerInner').innerHTML = html + html;
+    $('#ticker').hidden = false;
+  }
+
+  function renderMain() {
+    const main = $('#main');
+    if (!state.items.length) {
+      main.innerHTML = state.loading
+        ? `<div class="hero"><div class="big skel"></div><div class="hero-side">${'<div class="skel" style="min-height:96px"></div>'.repeat(4)}</div></div>
+           <div class="grid" style="margin-top:38px">${'<div class="skel" style="height:300px"></div>'.repeat(6)}</div>`
+        : `<div class="error"><div class="e">📡</div>Não consegui buscar as fofocas agora.<br>Verifique sua conexão e tente de novo.<br><button class="btn primary" data-retry>↻ Tentar de novo</button></div>`;
+      return;
+    }
+
+    if (state.view === 'destaques' && !state.q) {
+      // Prefere matérias com imagem no topo
+      const withImg = state.items.filter((it) => it.image);
+      const pool = (withImg.length >= 5 ? withImg : state.items);
+      const hero = pool.slice(0, 5);
+      const used = new Set(hero.map((it) => it.id));
+      let html = `<div class="hero">${bigHTML(hero[0])}<div class="hero-side">${hero.slice(1).map(miniHTML).join('')}</div></div>`;
+      for (const c of Core.CATEGORIES) {
+        const list = state.items.filter((it) => it.categories.includes(c.id) && (c.id === 'novidades' || !used.has(it.id)))
+          .filter((it) => c.id !== 'novidades' || !used.has(it.id))
+          .sort((a, b) => (!!b.image - !!a.image) || 0)
+          .slice(0, 8)
+          .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+        if (!list.length) continue;
+        html += `<section class="section" style="--c:${c.color}"><div class="sec-head"><h2>${c.emoji} ${esc(c.label)}</h2>
+          <button data-view="${c.id}">Ver tudo →</button></div>
+          <div class="row">${list.map((it) => cardHTML(it, c.id)).join('')}</div></section>`;
+      }
+      main.innerHTML = html;
+      return;
+    }
+
+    const list = filtered(state.view);
+    const c = CAT[state.view];
+    const title = state.q ? `🔍 “${esc(state.q)}”` : `${c.emoji} ${esc(c.label)}`;
+    let html = `<div class="sec-head" style="--c:${c ? c.color : '#FF4FA3'}"><h2>${title}</h2><span style="color:var(--muted);font-size:.8rem">${list.length} fofocas</span></div>`;
+    if (!list.length) {
+      html += `<div class="empty"><div class="e">🤫</div>Nada por aqui ainda. Volte daqui a pouco!</div>`;
+    } else {
+      html += `<div class="grid">${list.slice(0, state.limit).map((it) => cardHTML(it, state.view)).join('')}</div>`;
+      if (list.length > state.limit) html += `<div class="more"><button class="btn" data-more>Carregar mais fofocas</button></div>`;
+    }
+    main.innerHTML = html;
+  }
+
+  function renderStatus() {
+    const dot = $('#dot'), txt = $('#statusText');
+    $('#refresh').classList.toggle('loading', state.loading);
+    if (state.loading && !state.items.length) { dot.className = 'dot warn'; txt.textContent = 'Buscando fofocas…'; return; }
+    if (!state.items.length) { dot.className = 'dot err'; txt.textContent = 'Offline'; return; }
+    const mins = state.updated ? (Date.now() - Date.parse(state.updated)) / 60000 : 999;
+    dot.className = 'dot' + (mins > STALE_MIN ? ' warn' : '');
+    txt.textContent = state.loading ? 'Atualizando…' : `Ao vivo · atualizado ${ago(state.updated)}`;
+    $('#foot').textContent = `${state.items.length} fofocas · ${state.mode}`;
+  }
+
+  function render() { renderTabs(); renderTicker(); renderMain(); renderStatus(); }
+
+  // ── dados ──
+  function withTimeout(p, ms) {
+    return Promise.race([p, new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), ms))]);
+  }
+  async function fetchText(url, ms) {
+    const ctl = new AbortController();
+    const t = setTimeout(() => ctl.abort(), ms);
+    try {
+      const r = await fetch(url, { signal: ctl.signal });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return await r.text();
+    } finally { clearTimeout(t); }
+  }
+  async function loadJSON() {
+    const r = await withTimeout(fetch(DATA_URL + '?t=' + Math.floor(Date.now() / 60000), { cache: 'no-store' }), 10000);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const d = await r.json();
+    if (!d || !Array.isArray(d.items)) throw new Error('formato');
+    return d;
+  }
+  async function loadFeedLive(feed) {
+    for (const p of PROXIES) {
+      try {
+        const xml = await fetchText(p(feed.url), 9000);
+        if (!/<(rss|feed|rdf)\b/i.test(xml)) throw new Error('não é RSS');
+        const items = Core.parseFeed(xml, feed);
+        if (items.length) return items;
+      } catch (_) { /* tenta o próximo proxy */ }
+    }
+    return [];
+  }
+  async function loadLive() {
+    const feeds = Core.FEEDS;
+    const out = [];
+    let i = 0, ok = 0;
+    await Promise.all(Array.from({ length: 6 }, async () => {
+      while (i < feeds.length) {
+        const f = feeds[i++];
+        const items = await loadFeedLive(f);
+        if (items.length) { ok++; out.push(items); }
+      }
+    }));
+    return { items: Core.merge(out), ok };
+  }
+
+  async function refresh(forceLive) {
+    if (state.loading) return;
+    state.loading = true; renderStatus(); if (!state.items.length) renderMain();
+    let base = null;
+    try { base = await loadJSON(); } catch (_) {}
+    if (base && base.items.length) {
+      state.items = base.items; state.updated = base.updated; state.mode = `${base.sources} fontes`;
+      render();
+    }
+    const stale = !base || (Date.now() - Date.parse(base.updated)) / 60000 > STALE_MIN;
+    if (forceLive || stale) {
+      try {
+        const live = await loadLive();
+        if (live.items.length) {
+          state.items = Core.merge([live.items, state.items]).slice(0, 400);
+          state.updated = new Date().toISOString();
+          state.mode = `ao vivo de ${live.ok} fontes`;
+        }
+      } catch (_) {}
+    }
+    state.loading = false;
+    render();
+    if (forceLive) toast(state.items.length ? 'Fofocas atualizadas 💅' : 'Sem conexão com as fontes');
+  }
+
+  // ── eventos ──
+  function setView(v, push = true) {
+    state.view = v; state.limit = PAGE;
+    if (push) history.replaceState(null, '', v === 'destaques' ? location.pathname : '#' + v);
+    render();
+    window.scrollTo({ top: Math.min(window.scrollY, $('nav').offsetTop), behavior: 'smooth' });
+  }
+  document.addEventListener('click', async (e) => {
+    const v = e.target.closest('[data-view]');
+    if (v) { e.preventDefault(); state.q = ''; $('#q').value = ''; setView(v.dataset.view); return; }
+    if (e.target.closest('[data-more]')) { state.limit += PAGE; renderMain(); return; }
+    if (e.target.closest('[data-retry]')) { refresh(true); return; }
+    const s = e.target.closest('[data-share]');
+    if (s) {
+      e.preventDefault(); e.stopPropagation();
+      const it = state.items.find((x) => x.id === s.dataset.share);
+      if (!it) return;
+      const payload = { title: it.title, text: `${it.title} — via Brasil Gossips`, url: it.link };
+      try {
+        if (navigator.share) await navigator.share(payload);
+        else { await navigator.clipboard.writeText(`${it.title}\n${it.link}`); toast('Link copiado!'); }
+      } catch (_) {}
+    }
+  });
+  $('#refresh').addEventListener('click', () => refresh(true));
+  let qt;
+  $('#q').addEventListener('input', (e) => {
+    clearTimeout(qt);
+    qt = setTimeout(() => { state.q = e.target.value.trim(); state.limit = PAGE; renderMain(); }, 200);
+  });
+  window.addEventListener('hashchange', () => {
+    const h = location.hash.slice(1);
+    if (CAT[h] && h !== state.view) setView(h, false);
+  });
+  window.addEventListener('pagehide', () => { try { localStorage.setItem(seenKey, String(Date.now())); } catch (_) {} });
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') { try { localStorage.setItem(seenKey, String(Date.now())); } catch (_) {} }
+    else if (state.updated && (Date.now() - Date.parse(state.updated)) / 60000 > AUTO_REFRESH_MIN) refresh(false);
+  });
+  setInterval(() => { if (document.visibilityState === 'visible') refresh(false); }, AUTO_REFRESH_MIN * 60000);
+  setInterval(renderStatus, 30000);
+
+  // App instalável (PWA)
+  let deferred;
+  window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); deferred = e; $('#install').hidden = false; });
+  $('#install').addEventListener('click', async () => { if (!deferred) return; deferred.prompt(); await deferred.userChoice; deferred = null; $('#install').hidden = true; });
+  if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+    navigator.serviceWorker.register('fofocas-sw.js').catch(() => {});
+  }
+
+  // início
+  const h = location.hash.slice(1);
+  if (CAT[h]) state.view = h;
+  render();
+  refresh(false);
+})();
+</script>
+</body>
+</html>

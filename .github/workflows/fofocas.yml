@@ -1,0 +1,46 @@
+name: Atualizar Brasil Gossips
+
+on:
+  schedule:
+    - cron: '7,37 * * * *'   # a cada 30 minutos
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - fofocas-core.js
+      - scripts/fofocas-update.js
+      - .github/workflows/fofocas.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fofocas
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Buscar fofocas
+        run: node scripts/fofocas-update.js
+
+      - name: Salvar se mudou
+        run: |
+          git config user.name  "brasil-gossips-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/fofocas.json
+          if git diff --cached --quiet; then
+            echo "Sem mudanças."
+          else
+            git commit -m "Brasil Gossips: atualiza fofocas"
+            git pull --rebase origin "${GITHUB_REF_NAME}" || true
+            git push
+          fi
