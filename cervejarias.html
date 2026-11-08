@@ -2,210 +2,321 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ranking Mundial de Cervejas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ranking Mundial da Cerveja</title>
+<meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Ranking das melhores cervejarias e pubs do mundo, com os estilos de cerveja produzidos e servidos em cada lugar e um guia de estilos.">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* Layout: uma "carta de torneiras" — herói com o espectro de cor (SRM) dos estilos em copos,
+     barra de filtros fixa, pódio, lista ranqueada e coluna lateral com países. Escuro como stout por padrão. */
   :root {
-    --bg: #0E0B07;
-    --bg-2: #17130D;
-    --bg-3: #211B12;
-    --bg-4: #2D2518;
-    --border: rgba(255,230,190,0.09);
-    --border-strong: rgba(255,230,190,0.22);
-    --text: #F2EADC;
-    --muted: #A89A82;
-    --dim: #7A6E5B;
-    --accent: #F2A531;
-    --accent-ink: #1A1206;
-    --gold: #F5C542;
-    --silver: #C8CDD6;
-    --bronze: #D08B52;
-    --pub: #5FB3A1;
-    --brew: #F2A531;
-    --fav: #F5539E;
+    --stout: #120C08;      /* fundo */
+    --cask: #1B130C;       /* superfície */
+    --barrel: #2A1D12;     /* superfície 2 */
+    --line: rgba(244,232,208,.11);
+    --line-2: rgba(244,232,208,.24);
+    --foam: #F4E8D0;       /* texto */
+    --malt: #B4A184;       /* texto secundário */
+    --husk: #806F57;       /* texto terciário */
+    --amber: #F0A02B;      /* acento */
+    --amber-ink: #1A0F04;
+    --hop: #A3C76E;        /* pubs */
+    --cherry: #E8566E;     /* favoritos */
+    --glass: rgba(244,232,208,.55);
+    --gold: #F2C94C; --silver: #CFD3DA; --bronze: #D58B52;
+    --f-display: 'Big Shoulders Display', 'Arial Narrow', Impact, sans-serif;
+    --f-body: 'Work Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --f-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+    color-scheme: dark;
   }
   @media (prefers-color-scheme: light) {
     :root:not([data-theme="dark"]) {
-      --bg: #FAF6EF; --bg-2: #FFFFFF; --bg-3: #F2EBDF; --bg-4: #E6DCCB;
-      --border: rgba(40,28,10,0.10); --border-strong: rgba(40,28,10,0.24);
-      --text: #1E170C; --muted: #64573F; --dim: #8A7C64;
-      --accent: #B86E00; --accent-ink: #FFFFFF; --gold: #B7860B; --silver: #6B7280; --bronze: #A0592A;
-      --pub: #1F7F6B; --brew: #B86E00; --fav: #C42A72;
+      --stout: #F6F1E6; --cask: #FFFDF8; --barrel: #ECE3D1;
+      --line: rgba(40,26,10,.12); --line-2: rgba(40,26,10,.26);
+      --foam: #20150B; --malt: #66543D; --husk: #8C7A60;
+      --amber: #A55E06; --amber-ink: #FFFFFF; --hop: #4A7A1E; --cherry: #B3283F;
+      --glass: rgba(40,26,10,.45); --gold: #B07F05; --silver: #6B7280; --bronze: #9C5424;
+      color-scheme: light;
     }
   }
   :root[data-theme="light"] {
-    --bg: #FAF6EF; --bg-2: #FFFFFF; --bg-3: #F2EBDF; --bg-4: #E6DCCB;
-    --border: rgba(40,28,10,0.10); --border-strong: rgba(40,28,10,0.24);
-    --text: #1E170C; --muted: #64573F; --dim: #8A7C64;
-    --accent: #B86E00; --accent-ink: #FFFFFF; --gold: #B7860B; --silver: #6B7280; --bronze: #A0592A;
-    --pub: #1F7F6B; --brew: #B86E00; --fav: #C42A72;
+    --stout: #F6F1E6; --cask: #FFFDF8; --barrel: #ECE3D1;
+    --line: rgba(40,26,10,.12); --line-2: rgba(40,26,10,.26);
+    --foam: #20150B; --malt: #66543D; --husk: #8C7A60;
+    --amber: #A55E06; --amber-ink: #FFFFFF; --hop: #4A7A1E; --cherry: #B3283F;
+    --glass: rgba(40,26,10,.45); --gold: #B07F05; --silver: #6B7280; --bronze: #9C5424;
+    color-scheme: light;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; padding-bottom: 60px; overflow-x: hidden; }
-  a { color: inherit; }
-  button { font: inherit; }
+  * { box-sizing: border-box; }
   [hidden] { display: none !important; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--stout); color: var(--foam); font-family: var(--f-body); font-size: 15px; line-height: 1.5; overflow-x: hidden; }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--stout); }
+  button, input, select { font: inherit; color: inherit; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; border-radius: 4px; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .mono { font-family: var(--f-mono); }
+  .lbl { font-family: var(--f-mono); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--husk); font-weight: 500; }
 
-  header { max-width: 1100px; margin: 0 auto; padding: 40px 16px 16px; text-align: center; position: relative; }
-  .eyebrow { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
-  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.3rem, 7.5vw, 4rem); letter-spacing: .02em; line-height: 1.02; margin-top: 6px; }
-  .subtitle { color: var(--muted); font-size: .95rem; margin: 10px auto 0; max-width: 680px; line-height: 1.5; }
-  #theme { position: absolute; top: 16px; right: 16px; background: var(--bg-3); border: 1px solid var(--border); color: var(--muted); border-radius: 10px; width: 38px; height: 38px; cursor: pointer; font-size: 1rem; }
+  /* ── HERÓI ── */
+  .hero { padding-block: 44px 8px; position: relative; }
+  .hero-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand svg { width: 22px; height: 30px; }
+  #theme { background: var(--cask); border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; cursor: pointer; color: var(--malt); font-family: var(--f-mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
+  #theme:hover { color: var(--foam); border-color: var(--line-2); }
+  h1 { font-family: var(--f-display); font-weight: 900; font-size: clamp(3rem, 10vw, 7.4rem); line-height: .86; letter-spacing: -.01em; text-transform: uppercase; margin: 26px 0 0; text-wrap: balance; }
+  h1 em { font-style: normal; color: var(--amber); }
+  .lede { max-width: 60ch; color: var(--malt); font-size: 1.04rem; margin: 18px 0 0; }
+  .tally { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 20px; font-family: var(--f-mono); font-size: .8rem; color: var(--malt); }
+  .tally b { color: var(--foam); font-weight: 600; font-size: 1rem; margin-right: 4px; }
 
-  main { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+  /* espectro SRM */
+  .spectrum { margin-top: 34px; border-top: 1px solid var(--line); padding-top: 16px; }
+  .spectrum-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .spectrum-head .now { font-family: var(--f-display); font-weight: 800; font-size: 1.3rem; text-transform: uppercase; letter-spacing: .02em; }
+  .spectrum-head .now small { font-family: var(--f-mono); font-weight: 400; font-size: .72rem; color: var(--husk); letter-spacing: .04em; text-transform: none; margin-left: 8px; }
+  .shelf-scroll { overflow-x: auto; overflow-y: hidden; margin-top: 10px; padding-bottom: 6px; scrollbar-width: thin; }
+  .shelf { display: grid; grid-template-columns: repeat(28, minmax(30px, 1fr)); gap: 4px; min-width: 860px; align-items: end; }
+  .g { background: none; border: 0; padding: 6px 0 0; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 6px; border-radius: 8px; position: relative; }
+  .g svg { width: 100%; max-width: 34px; height: auto; overflow: visible; transition: transform .2s; }
+  .g:hover svg { transform: translateY(-3px); }
+  .g .srm { font-family: var(--f-mono); font-size: .6rem; color: var(--husk); font-variant-numeric: tabular-nums; }
+  .g.on .srm { color: var(--amber); font-weight: 600; }
+  .g.on::after { content: ""; position: absolute; left: 20%; right: 20%; bottom: -6px; height: 2px; background: var(--amber); border-radius: 2px; }
+  .g.dim svg { opacity: .35; }
+  .scale { display: flex; justify-content: space-between; min-width: 860px; margin-top: 10px; font-family: var(--f-mono); font-size: .62rem; color: var(--husk); }
+  .scale span:nth-child(2) { flex: 1; margin: 0 10px; align-self: center; height: 6px; border-radius: 3px; background: linear-gradient(90deg, #F8E58A, #F3CC48, #E5A72C, #D4891C, #BE6A16, #A1480F, #7E300C, #4F1A08, #260B04); }
 
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 18px 0; }
-  .stat { background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px; padding: 10px 6px; text-align: center; }
-  .stat b { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; line-height: 1; }
-  .stat span { font-size: .62rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
+  .glass-outline { fill: none; stroke: var(--glass); stroke-width: 1.4; stroke-linejoin: round; }
+  .beer { transform-box: fill-box; transform-origin: 50% 100%; }
+  .foamcap { fill: #FBF5E6; }
+  @keyframes pour { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @keyframes cap { from { opacity: 0; } to { opacity: 1; } }
+  .pouring .beer { animation: pour .9s cubic-bezier(.3,.7,.2,1) both; animation-delay: calc(var(--i) * 28ms); }
+  .pouring .foamcap { animation: cap .3s ease both; animation-delay: calc(var(--i) * 28ms + .75s); }
 
-  .tabs { display: flex; justify-content: center; gap: 8px; margin: 6px 0 4px; flex-wrap: wrap; }
-  .tabs button { font-family: 'Bebas Neue', sans-serif; font-size: 1.45rem; letter-spacing: .04em; padding: 6px 20px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-2); color: var(--muted); cursor: pointer; }
-  .tabs button.active { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+  /* ── BARRA DE FILTROS ── */
+  .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 6; background: color-mix(in srgb, var(--stout) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-block: 1px solid var(--line); margin-top: 26px; }
+  .bar .wrap { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-block: 10px; }
+  .tabs { display: flex; gap: 2px; background: var(--cask); border: 1px solid var(--line); border-radius: 10px; padding: 3px; }
+  .tabs button { background: none; border: 0; padding: 7px 13px; border-radius: 7px; cursor: pointer; font-family: var(--f-display); font-weight: 800; font-size: 1.02rem; letter-spacing: .04em; text-transform: uppercase; color: var(--malt); }
+  .tabs button:hover { color: var(--foam); }
+  .tabs button.active { background: var(--amber); color: var(--amber-ink); }
+  #search { flex: 1 1 180px; min-width: 0; background: var(--cask); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; font-size: .9rem; }
+  #search::placeholder { color: var(--husk); }
+  select { background: var(--cask); border: 1px solid var(--line); border-radius: 10px; padding: 9px 10px; font-size: .84rem; cursor: pointer; max-width: 100%; }
+  #search:focus, select:focus { outline: none; border-color: var(--line-2); }
+  .favbtn { background: var(--cask); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; cursor: pointer; font-size: .84rem; color: var(--malt); white-space: nowrap; }
+  .favbtn.active { color: var(--cherry); border-color: var(--cherry); }
+  .clear { background: none; border: 0; color: var(--amber); font-family: var(--f-mono); font-size: .72rem; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 
-  .controls { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-  #search { flex: 1 1 200px; min-width: 0; background: var(--bg-3); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; color: var(--text); font: inherit; font-size: .88rem; }
-  #search:focus, select:focus { outline: none; border-color: var(--border-strong); }
-  select { background: var(--bg-3); border: 1px solid var(--border); border-radius: 10px; padding: 9px 10px; color: var(--text); font: inherit; font-size: .8rem; font-weight: 600; cursor: pointer; max-width: 100%; }
-  .favbtn { background: var(--bg-3); border: 1px solid var(--border); border-radius: 10px; padding: 9px 12px; color: var(--muted); font-size: .8rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
-  .favbtn.active { color: var(--fav); border-color: var(--fav); }
+  /* ── CONTEÚDO ── */
+  .content { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px; padding-block: 26px 0; align-items: start; }
+  .count { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+  .count h2 { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 1.7rem; text-transform: uppercase; letter-spacing: .01em; line-height: 1; text-wrap: balance; }
+  .count h2 span { color: var(--amber); }
 
-  .stylebar { display: flex; gap: 6px; overflow-x: auto; padding: 12px 0 4px; scrollbar-width: thin; }
-  .chip { flex: 0 0 auto; font-size: .74rem; font-weight: 700; padding: 6px 11px; border-radius: 20px; border: 1px solid var(--border); background: var(--bg-2); color: var(--muted); cursor: pointer; white-space: nowrap; }
-  .chip:hover { border-color: var(--border-strong); color: var(--text); }
-  .chip.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-  .chip i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; vertical-align: 0; }
+  /* pódio */
+  .podium { display: grid; grid-template-columns: 1fr 1.12fr 1fr; gap: 10px; align-items: end; margin-bottom: 18px; }
+  .pod { background: var(--cask); border: 1px solid var(--line); border-radius: 14px; padding: 16px 64px 14px 16px; cursor: pointer; text-align: left; position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 6px; min-width: 0; transition: border-color .15s, transform .15s; }
+  .pod:hover { border-color: var(--line-2); transform: translateY(-2px); }
+  .pod.p1 { order: 2; padding-top: 26px; } .pod.p2 { order: 1; } .pod.p3 { order: 3; }
+  .pod .pos { font-family: var(--f-display); font-weight: 900; font-size: 3.6rem; line-height: .8; }
+  .pod.p1 .pos { color: var(--gold); font-size: 4.6rem; } .pod.p2 .pos { color: var(--silver); } .pod.p3 .pos { color: var(--bronze); }
+  .pod .nm { font-weight: 700; font-size: 1rem; line-height: 1.25; }
+  .pod .ct { font-size: .8rem; color: var(--malt); }
+  .pod .sc { font-family: var(--f-mono); font-size: .78rem; color: var(--husk); }
+  .pod .sc b { color: var(--amber); font-size: 1.05rem; font-weight: 600; }
+  .pod .tint { position: absolute; right: -6px; bottom: -8px; width: 62px; opacity: .9; pointer-events: none; }
 
-  .styleinfo { display: none; margin: 12px 0 0; background: var(--bg-2); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 12px; padding: 14px 16px; }
-  .styleinfo.show { display: block; }
-  .styleinfo h3 { font-size: 1rem; display: flex; align-items: center; gap: 8px; }
-  .styleinfo p { font-size: .84rem; color: var(--muted); line-height: 1.5; margin-top: 6px; }
+  /* lista */
+  .list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+  .row { display: grid; grid-template-columns: 52px minmax(0, 1fr) 76px; gap: 14px; align-items: center; padding: 14px 4px; border-bottom: 1px solid var(--line); cursor: pointer; transition: background .15s; border-radius: 0; }
+  .row:hover { background: color-mix(in srgb, var(--cask) 80%, transparent); }
+  .rk { font-family: var(--f-display); font-weight: 900; font-size: 2.2rem; line-height: 1; color: var(--husk); text-align: center; font-variant-numeric: tabular-nums; }
+  .nm { font-weight: 700; font-size: 1.02rem; line-height: 1.25; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .kind { font-family: var(--f-mono); font-size: .6rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 2px 6px; border-radius: 4px; border: 1px solid; white-space: nowrap; }
+  .k-brew { color: var(--amber); border-color: color-mix(in srgb, var(--amber) 45%, transparent); }
+  .k-pub { color: var(--hop); border-color: color-mix(in srgb, var(--hop) 45%, transparent); }
+  .meta { font-size: .82rem; color: var(--malt); margin-top: 2px; }
+  .meta .mono { color: var(--husk); font-size: .74rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px 6px; margin-top: 8px; }
+  .tag { font-size: .7rem; font-weight: 600; color: var(--malt); display: inline-flex; align-items: center; gap: 5px; padding: 2px 8px 2px 4px; border-radius: 999px; background: var(--cask); border: 1px solid var(--line); }
+  .tag i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; box-shadow: inset 0 0 0 1px rgba(0,0,0,.25); }
+  .tag.hit { color: var(--foam); border-color: var(--amber); }
+  .sig { font-size: .78rem; color: var(--husk); margin-top: 7px; line-height: 1.45; }
+  .tap { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .tap svg { width: 30px; height: 48px; }
+  .tap b { font-family: var(--f-mono); font-weight: 600; font-size: 1rem; color: var(--foam); font-variant-numeric: tabular-nums; }
+  .star { background: none; border: 0; cursor: pointer; color: var(--husk); font-size: 1.05rem; line-height: 1; padding: 2px 6px; }
+  .star.on { color: var(--cherry); }
+  .empty { padding: 50px 0; text-align: center; color: var(--malt); }
 
-  .count-line { font-size: .76rem; color: var(--dim); margin: 12px 0 10px; }
+  /* lateral */
+  aside { display: flex; flex-direction: column; gap: 16px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 78px); }
+  .panel { background: var(--cask); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+  .panel h3 { margin: 6px 0 0; font-family: var(--f-display); font-weight: 800; font-size: 1.35rem; text-transform: uppercase; line-height: 1.05; }
+  .panel p { font-size: .84rem; color: var(--malt); margin: 8px 0 0; }
+  .cbars { display: flex; flex-direction: column; gap: 4px; margin-top: 10px; }
+  .cb { display: grid; grid-template-columns: 112px 1fr 22px; gap: 8px; align-items: center; background: none; border: 0; padding: 3px 0; cursor: pointer; text-align: left; font-size: .8rem; color: var(--malt); border-radius: 4px; }
+  .cb:hover { color: var(--foam); }
+  .cb.on { color: var(--amber); }
+  .cb .t { height: 8px; background: var(--barrel); border-radius: 4px; overflow: hidden; }
+  .cb .t div { height: 100%; background: var(--amber); border-radius: 4px; opacity: .85; }
+  .cb .n { font-family: var(--f-mono); font-size: .72rem; text-align: right; font-variant-numeric: tabular-nums; }
+  .cb .nmc { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin-top: 10px; font-size: .8rem; }
+  .facts dt { font-family: var(--f-mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--husk); padding-top: 2px; }
+  .facts dd { margin: 0; color: var(--foam); }
 
-  .list { display: flex; flex-direction: column; gap: 8px; }
-  .card { display: grid; grid-template-columns: 56px 1fr auto; gap: 14px; align-items: center; background: var(--bg-2); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; cursor: pointer; transition: border-color .15s, transform .15s; text-align: left; color: inherit; width: 100%; }
-  .card:hover { border-color: var(--border-strong); transform: translateY(-1px); }
-  .rank { font-family: 'Bebas Neue', sans-serif; font-size: 2.1rem; line-height: 1; text-align: center; color: var(--dim); font-variant-numeric: tabular-nums; }
-  .rank.r1 { color: var(--gold); } .rank.r2 { color: var(--silver); } .rank.r3 { color: var(--bronze); }
-  .rank small { display: block; font-family: 'Inter', sans-serif; font-size: .56rem; letter-spacing: .1em; font-weight: 800; text-transform: uppercase; color: var(--dim); margin-top: 3px; }
-  .name { font-weight: 800; font-size: 1.02rem; line-height: 1.25; }
-  .meta { font-size: .8rem; color: var(--muted); margin-top: 3px; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
-  .kind { white-space: nowrap; font-size: .6rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 2px 7px; border-radius: 6px; }
-  .k-brew { color: var(--brew); background: color-mix(in srgb, var(--brew) 14%, transparent); }
-  .k-pub { color: var(--pub); background: color-mix(in srgb, var(--pub) 14%, transparent); }
-  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
-  .tag { font-size: .66rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; background: var(--bg-3); color: var(--muted); border: 1px solid var(--border); display: inline-flex; align-items: center; gap: 5px; }
-  .tag i { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
-  .tag.hit { color: var(--text); border-color: var(--accent); }
-  .sig { font-size: .76rem; color: var(--dim); margin-top: 7px; line-height: 1.4; }
-  .sig b { color: var(--muted); font-weight: 700; }
-  .score { text-align: center; min-width: 64px; }
-  .score b { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 1.9rem; line-height: 1; color: var(--accent); }
-  .score span { font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); font-weight: 800; }
-  .bar { height: 4px; border-radius: 3px; background: var(--bg-4); margin-top: 6px; overflow: hidden; }
-  .bar div { height: 100%; background: var(--accent); }
-  .star { background: none; border: 0; color: var(--dim); cursor: pointer; font-size: 1.1rem; margin-top: 6px; line-height: 1; }
-  .star.on { color: var(--fav); }
+  /* medidores de faixa */
+  .meter { display: grid; grid-template-columns: 50px 1fr 72px; gap: 8px; align-items: center; margin-top: 8px; font-family: var(--f-mono); font-size: .66rem; color: var(--husk); }
+  .meter .tr { height: 8px; background: var(--barrel); border-radius: 4px; position: relative; }
+  .meter .rg { position: absolute; top: 0; bottom: 0; border-radius: 4px; background: var(--c, var(--amber)); }
+  .meter .v { text-align: right; color: var(--malt); font-variant-numeric: tabular-nums; }
+  .axis { display: grid; grid-template-columns: 50px 1fr 72px; gap: 8px; font-family: var(--f-mono); font-size: .58rem; color: var(--husk); margin-top: 2px; }
+  .axis span:nth-child(2) { display: flex; justify-content: space-between; }
 
-  .empty { text-align: center; color: var(--muted); padding: 50px 0; display: none; }
+  /* guia de estilos */
+  .fam { margin-top: 8px; }
+  .fam + .fam { margin-top: 30px; }
+  .fam-h { display: flex; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 12px; }
+  .fam-h h2 { margin: 0; font-family: var(--f-display); font-weight: 900; font-size: 2.2rem; text-transform: uppercase; line-height: 1; }
+  .sgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 12px; }
+  .scard { background: var(--cask); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 14px; }
+  .scard svg { width: 58px; height: 92px; }
+  .scard h3 { margin: 0; font-size: 1.04rem; font-weight: 700; line-height: 1.25; }
+  .scard .org { font-family: var(--f-mono); font-size: .68rem; color: var(--husk); margin-top: 3px; }
+  .scard p { font-size: .82rem; color: var(--malt); margin: 8px 0 0; }
+  .scard .foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; font-size: .74rem; color: var(--husk); }
+  .go { background: none; border: 1px solid var(--line-2); border-radius: 8px; padding: 6px 10px; cursor: pointer; font-size: .74rem; font-weight: 600; color: var(--foam); }
+  .go:hover { border-color: var(--amber); color: var(--amber); }
 
-  /* estilos */
-  .sgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
-  .scard { background: var(--bg-2); border: 1px solid var(--border); border-top: 4px solid var(--c); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
-  .scard h3 { font-size: 1.02rem; display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
-  .scard h3 small { font-size: .68rem; color: var(--dim); font-weight: 700; white-space: nowrap; }
-  .scard p { font-size: .82rem; color: var(--muted); line-height: 1.5; }
-  .metric { display: grid; grid-template-columns: 44px 1fr 70px; gap: 8px; align-items: center; font-size: .7rem; color: var(--dim); font-weight: 700; }
-  .metric .track { height: 6px; background: var(--bg-4); border-radius: 4px; position: relative; }
-  .metric .range { position: absolute; top: 0; bottom: 0; border-radius: 4px; background: var(--c); }
-  .metric span:last-child { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
-  .swatch { display: flex; align-items: center; gap: 8px; font-size: .74rem; color: var(--muted); }
-  .swatch i { width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--border-strong); }
-  .scard .go { margin-top: auto; align-self: flex-start; background: var(--bg-3); border: 1px solid var(--border-strong); color: var(--text); border-radius: 8px; padding: 7px 11px; font-size: .74rem; font-weight: 700; cursor: pointer; }
-  .scard .go:hover { background: var(--bg-4); }
+  /* diálogo */
+  dialog { border: 1px solid var(--line-2); border-radius: 18px; background: var(--cask); color: var(--foam); width: min(660px, calc(100vw - 24px)); max-height: calc(100dvh - 32px); padding: 0; margin: auto; overflow: auto; }
+  dialog::backdrop { background: rgba(8,5,2,.66); backdrop-filter: blur(3px); }
+  .dhead { position: relative; padding: 22px 22px 18px; background: linear-gradient(180deg, color-mix(in srgb, var(--beer) 34%, var(--cask)) 0%, var(--cask) 100%); border-bottom: 1px solid var(--line); overflow: hidden; }
+  .dhead .bub { position: absolute; inset: 0; pointer-events: none; opacity: .35; background-image: radial-gradient(circle at 10% 80%, rgba(255,255,255,.5) 0 1.5px, transparent 2px), radial-gradient(circle at 30% 60%, rgba(255,255,255,.5) 0 1px, transparent 1.5px), radial-gradient(circle at 70% 75%, rgba(255,255,255,.5) 0 1.5px, transparent 2px), radial-gradient(circle at 85% 40%, rgba(255,255,255,.5) 0 1px, transparent 1.5px); background-size: 120px 90px; }
+  .dhead h2 { margin: 6px 0 0; font-family: var(--f-display); font-weight: 900; font-size: clamp(2rem, 6vw, 2.8rem); line-height: .92; text-transform: uppercase; padding-right: 40px; text-wrap: balance; position: relative; }
+  .dhead .meta { position: relative; }
+  .x { position: absolute; top: 14px; right: 14px; z-index: 1; width: 34px; height: 34px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--cask); cursor: pointer; color: var(--malt); }
+  .dbody { padding: 6px 22px 22px; }
+  .dbody h4 { font-family: var(--f-mono); font-weight: 500; font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--husk); margin: 18px 0 8px; }
+  .dbody .desc { font-size: .92rem; color: var(--malt); margin: 0; max-width: 62ch; }
+  .srow { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+  .srow svg { width: 34px; height: 54px; }
+  .srow b { font-size: .9rem; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .srow .mono { font-size: .7rem; color: var(--husk); }
+  .srow p { margin: 4px 0 0; font-size: .8rem; color: var(--malt); }
+  .chef { font-family: var(--f-mono); font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: var(--amber-ink); background: var(--amber); padding: 2px 6px; border-radius: 4px; }
+  .dlinks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .dlinks a { text-decoration: none; font-size: .82rem; font-weight: 600; padding: 9px 14px; border-radius: 10px; border: 1px solid var(--line-2); }
+  .dlinks a:hover { border-color: var(--amber); }
+  .dlinks a.main { background: var(--amber); color: var(--amber-ink); border-color: var(--amber); }
 
-  /* modal */
-  dialog { border: 1px solid var(--border-strong); border-radius: 16px; background: var(--bg-2); color: var(--text); width: min(640px, calc(100vw - 24px)); max-height: calc(100vh - 40px); padding: 0; margin: auto; }
-  dialog::backdrop { background: rgba(0,0,0,.6); }
-  .dlg { padding: 20px 20px 18px; }
-  .dlg h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: .02em; line-height: 1.05; padding-right: 36px; }
-  .dlg .close { position: absolute; top: 12px; right: 12px; background: var(--bg-3); border: 1px solid var(--border); color: var(--muted); border-radius: 8px; width: 34px; height: 34px; cursor: pointer; font-size: 1rem; }
-  .dlg .desc { font-size: .88rem; color: var(--muted); line-height: 1.55; margin-top: 10px; }
-  .dlg h4 { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); margin: 16px 0 8px; }
-  .srow { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; padding: 9px 0; border-top: 1px solid var(--border); font-size: .82rem; }
-  .srow b { display: flex; align-items: center; gap: 7px; }
-  .srow b i { width: 9px; height: 9px; border-radius: 50%; }
-  .srow span { color: var(--dim); font-size: .74rem; font-variant-numeric: tabular-nums; }
-  .srow p { grid-column: 1 / -1; color: var(--muted); font-size: .78rem; line-height: 1.45; }
-  .dlinks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-  .dlinks a { text-decoration: none; font-size: .78rem; font-weight: 700; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-strong); }
-  .dlinks a.main { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-  .dlinks a:hover { filter: brightness(1.08); }
+  footer { margin-top: 44px; border-top: 1px solid var(--line); padding-block: 22px 40px; }
+  footer p { max-width: 75ch; font-size: .8rem; color: var(--husk); margin: 0; }
+  footer strong { color: var(--malt); }
 
-  .disclaimer { margin: 30px 0 0; background: var(--bg-2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; padding: 14px 16px; font-size: .8rem; color: var(--muted); line-height: 1.55; }
-  .disclaimer strong { color: var(--text); }
-
-  @media (max-width: 720px) {
-    .stats { grid-template-columns: repeat(2, 1fr); }
-    .card { grid-template-columns: 40px 1fr; gap: 10px; }
-    .rank { font-size: 1.7rem; }
-    .score { grid-column: 2; display: flex; align-items: center; gap: 10px; text-align: left; }
-    .score b { font-size: 1.5rem; }
-    .score .bar { flex: 1; margin: 0; }
-    .star { margin: 0; }
-    .controls select { flex: 1 1 40%; }
-    .sgrid { grid-template-columns: 1fr; }
+  @media (max-width: 920px) {
+    .content { grid-template-columns: minmax(0, 1fr); }
+    aside { position: static; order: -1; }
+    aside .panel.countries { display: none; }
+  }
+  @media (max-width: 620px) {
+    .hero { padding-block: 26px 4px; }
+    .podium { grid-template-columns: 1fr; }
+    .pod.p1, .pod.p2, .pod.p3 { order: 0; padding-top: 16px; }
+    .pod { flex-direction: row; align-items: center; gap: 14px; }
+    .pod .pos, .pod.p1 .pos { font-size: 2.6rem; min-width: 34px; }
+    .pod .tint { width: 54px; }
+    .row { grid-template-columns: 36px minmax(0, 1fr) 46px; gap: 10px; }
+    .rk { font-size: 1.7rem; }
+    .tabs { width: 100%; }
+    .tabs button { flex: 1; padding: 7px 4px; }
+    select { flex: 1 1 40%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pouring .beer, .pouring .foamcap { animation: none; }
+    * { transition: none !important; }
   }
 </style>
-</head>
-<body>
 
-<header>
-  <button id="theme" title="Alternar tema" aria-label="Alternar tema">🌓</button>
-  <div class="eyebrow">Guia mundial da cerveja</div>
-  <h1>Ranking de Cervejarias &amp; Pubs</h1>
-  <p class="subtitle">As cervejarias e os bares de cerveja mais reverenciados do planeta, com os estilos que cada um produz ou serve, e um guia completo dos estilos.</p>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- copo tipo tulipa, 40×64 -->
+    <clipPath id="gclip"><path d="M7 5 C6 14 5 22 7 30 C9 38 13 42 15 46 L15 56 L25 56 L25 46 C27 42 31 38 33 30 C35 22 34 14 33 5 Z"/></clipPath>
+  </defs>
+</svg>
+
+<header class="wrap hero">
+  <div class="hero-top">
+    <div class="brand"><span class="lbl">Guia mundial · edição 2026</span></div>
+    <button id="theme" type="button" aria-label="Alternar tema claro e escuro">Tema</button>
+  </div>
+  <h1>Ranking mundial<br>da <em>cerveja</em></h1>
+  <p class="lede">As cervejarias e os bares de cerveja mais reverenciados do planeta, das abadias trapistas da Bélgica às fazendas de Vermont. Toque num copo para ver quem produz e onde se bebe cada estilo.</p>
+  <div class="tally" id="tally"></div>
+
+  <section class="spectrum" aria-label="Estilos ordenados por cor">
+    <div class="spectrum-head">
+      <div class="now" id="now">Todos os estilos <small>do mais claro ao mais escuro</small></div>
+      <button class="clear" id="clearStyle" type="button" hidden>limpar estilo</button>
+    </div>
+    <div class="shelf-scroll">
+      <div class="shelf pouring" id="shelf"></div>
+      <div class="scale"><span>SRM 2 · palha</span><span></span><span>40+ · preto</span></div>
+    </div>
+  </section>
 </header>
 
-<main>
-  <div class="stats" id="stats"></div>
-
-  <div class="tabs" role="tablist">
-    <button data-tab="all" class="active">Geral</button>
-    <button data-tab="brew">Cervejarias</button>
-    <button data-tab="pub">Pubs</button>
-    <button data-tab="styles">Estilos</button>
+<div class="bar" id="bar">
+  <div class="wrap">
+    <div class="tabs" role="tablist" id="tabs">
+      <button type="button" data-tab="all" class="active">Geral</button>
+      <button type="button" data-tab="brew">Cervejarias</button>
+      <button type="button" data-tab="pub">Pubs</button>
+      <button type="button" data-tab="styles">Estilos</button>
+    </div>
+    <input id="search" type="search" placeholder="Buscar nome, cidade ou cerveja" autocomplete="off" aria-label="Buscar">
+    <select id="region" aria-label="Continente"><option value="">Todos os continentes</option></select>
+    <select id="country" aria-label="País"><option value="">Todos os países</option></select>
+    <button class="favbtn" id="favOnly" type="button">★ Favoritos</button>
   </div>
+</div>
 
-  <div class="controls" id="controls">
-    <input id="search" type="search" placeholder="Buscar nome, cidade, cerveja…" autocomplete="off">
-    <select id="region"><option value="">Todos os continentes</option></select>
-    <select id="country"><option value="">Todos os países</option></select>
-    <button class="favbtn" id="favOnly" title="Mostrar só favoritos">★ Favoritos</button>
+<main class="wrap">
+  <div class="content" id="rankView">
+    <section style="min-width:0">
+      <div class="count"><h2 id="heading">Ranking geral</h2><span class="lbl" id="countLine"></span></div>
+      <div class="podium" id="podium"></div>
+      <div class="list" id="list"></div>
+      <div class="empty" id="empty" hidden>Nenhum lugar com esses filtros. Tente outro estilo ou país.</div>
+    </section>
+    <aside>
+      <div class="panel" id="stylePanel"></div>
+      <div class="panel countries">
+        <div class="lbl">Por país</div>
+        <div class="cbars" id="cbars"></div>
+      </div>
+    </aside>
   </div>
+  <div id="stylesView" hidden></div>
 
-  <div class="stylebar" id="stylebar"></div>
-  <div class="styleinfo" id="styleinfo"></div>
-
-  <div class="count-line" id="countLine"></div>
-  <div class="list" id="list"></div>
-  <div class="sgrid" id="sgrid" hidden></div>
-  <div class="empty" id="empty">Nenhum lugar encontrado com esses filtros.</div>
-
-  <div class="disclaimer">
-    <strong>Sobre a nota:</strong> a pontuação (0–100) é editorial e combina a reputação de cada lugar em rankings públicos de avaliações de cervejeiros (como RateBeer, Untappd e BeerAdvocate), prêmios e relevância histórica. Não é uma nota oficial de nenhuma dessas plataformas. Horários, cardápios e funcionamento mudam: confira antes de ir. Beba com moderação.
-  </div>
+  <footer>
+    <p><strong>Sobre a nota.</strong> A pontuação de 0 a 100 é editorial. Ela combina a reputação de cada lugar em sites de avaliação de cerveja (RateBeer, Untappd, BeerAdvocate), prêmios e importância histórica, e não é a nota oficial de nenhuma dessas plataformas. Faixas de álcool, IBU e cor (SRM) são valores típicos de cada estilo. Horários e cardápios mudam: confira antes de ir. Beba com moderação.</p>
+  </footer>
 </main>
 
-<dialog id="dlg"></dialog>
+<dialog id="dlg" aria-label="Detalhes do lugar"></dialog>
 
 <script>
-/* ───────── ESTILOS ───────── */
-// abv/ibu: faixas típicas · srm: cor (escala SRM aproximada) · c: cor do chip
 const STYLES = {
   pils:      { n: 'Pilsner',               fam: 'Lager',   origin: 'Plzeň, Rep. Tcheca · 1842', abv: [4.2, 5.4], ibu: [25, 45], srm: 3,  glass: 'Tulipa de pilsner / caneca',  d: 'Lager dourada e cristalina, com malte delicado e amargor floral de lúpulo Saaz (tcheca) ou mais seco e herbal (alemã).' },
   helles:    { n: 'Helles / Lager clara',  fam: 'Lager',   origin: 'Munique, Alemanha · 1894',  abv: [4.7, 5.4], ibu: [16, 22], srm: 4,  glass: 'Caneca (Maß)',                d: 'Lager bávara dourada, maltada e macia, com lúpulo discreto. A cerveja das cervejarias e biergartens de Munique.' },
@@ -236,16 +347,6 @@ const STYLES = {
   wild:      { n: 'Wild Ale / Sour de barril', fam: 'Ácida', origin: 'EUA · Bélgica',           abv: [5.0, 10], ibu: [5, 25],   srm: 8,  glass: 'Tulipa / taça',               d: 'Ales fermentadas ou maturadas com Brettanomyces e bactérias láticas em barris de carvalho, muitas vezes com frutas.' },
   catharina: { n: 'Catharina Sour',        fam: 'Ácida',   origin: 'Santa Catarina, Brasil · 2015', abv: [4.0, 5.5], ibu: [2, 8], srm: 4, glass: 'Taça / tulipa',             d: 'Estilo brasileiro reconhecido pelo BJCP: sour de trigo leve, de acidez lática limpa, com frutas frescas (muitas vezes tropicais).' },
 };
-const FAM_COLORS = { 'Lager': '#E8C547', 'Trigo': '#F1E3A0', 'Ale': '#E07A3F', 'Belga': '#B794F6', 'Ácida': '#F5539E' };
-const styleColor = k => FAM_COLORS[STYLES[k].fam];
-function srmHex(srm) {
-  const t = [[2,'#F8E58A'],[4,'#F3CC48'],[6,'#E5A72C'],[9,'#D4891C'],[13,'#BE6A16'],[17,'#A1480F'],[22,'#7E300C'],[30,'#4F1A08'],[40,'#260B04']];
-  for (const [s, c] of t) if (srm <= s) return c;
-  return '#140603';
-}
-
-/* ───────── LUGARES ───────── */
-// t: brew = cervejaria · pub = bar/pub · s: estilos (primeiro = carro-chefe) · y: fundação
 const PLACES = [
   // ── Bélgica
   { id:'westvleteren', t:'brew', n:'Westvleteren (Abadia de Sint-Sixtus)', city:'Vleteren', cc:'BE', y:1838, score:99, s:['quad','dubbel','bpa'], sig:'Westvleteren 12, Westvleteren 8, Blond', d:'Cervejaria trapista dos monges de Sint-Sixtus, que produzem apenas o necessário para manter a abadia. A Westvleteren 12 é frequentemente apontada como a melhor cerveja do mundo e só é vendida na abadia ou no café In De Vrede, em frente.' },
@@ -373,7 +474,34 @@ const COUNTRIES = {
 };
 const flag = cc => String.fromCodePoint(...[...cc].map(c => 127397 + c.charCodeAt(0)));
 
-/* ───────── ESTADO ───────── */
+
+const FAMS = ['Lager', 'Trigo', 'Ale', 'Belga', 'Ácida'];
+const FAM_INFO = {
+  'Lager': 'Fermentação baixa e maturação a frio: limpas, cristalinas e refrescantes.',
+  'Trigo': 'Cervejas com grande proporção de trigo: turvas, leves e aromáticas.',
+  'Ale': 'Fermentação alta, das pale ales lupuladas às stouts torradas.',
+  'Belga': 'Leveduras belgas expressivas, das abadias trapistas às fazendas da Valônia.',
+  'Ácida': 'Fermentação espontânea ou mista, com acidez, frutas e madeira.',
+};
+function srmHex(srm) {
+  const t = [[2,'#F8E58A'],[3,'#F6D861'],[4,'#F3CC48'],[5,'#EDBB37'],[6,'#E5A72C'],[8,'#DA9622'],[10,'#CF821C'],[13,'#BE6A16'],[16,'#A85212'],[18,'#9A4510'],[20,'#87380D'],[22,'#7E300C'],[30,'#4F1A08'],[35,'#3A1306'],[40,'#260B04']];
+  for (const [s, c] of t) if (srm <= s) return c;
+  return '#160603';
+}
+const beerOf = k => srmHex(STYLES[k].srm);
+
+/* copo SVG: fill = 0..1 */
+function glass(color, fill = 1, i = 0, cls = '') {
+  const top = 5, bot = 56, h = (bot - top) * fill, y = bot - h;
+  const foam = fill > 0.05 ? `<rect class="foamcap" x="4" y="${y - 3}" width="32" height="${Math.min(6, h * 0.3 + 2)}" rx="2" style="--i:${i}"/>` : '';
+  return `<svg viewBox="0 0 40 64" class="${cls}" aria-hidden="true">
+    <g clip-path="url(#gclip)"><rect class="beer" x="0" y="${y}" width="40" height="${h}" fill="${color}" style="--i:${i}"/>${foam}</g>
+    <path class="glass-outline" d="M7 5 C6 14 5 22 7 30 C9 38 13 42 15 46 L15 56 M25 56 L25 46 C27 42 31 38 33 30 C35 22 34 14 33 5"/>
+    <path class="glass-outline" d="M11 60 L29 60 M20 56 L20 60"/>
+  </svg>`;
+}
+
+/* ── estado ── */
 const $ = id => document.getElementById(id);
 const state = { tab: 'all', q: '', region: '', country: '', style: '', fav: false };
 let favs = new Set();
@@ -381,161 +509,218 @@ try { favs = new Set(JSON.parse(localStorage.getItem('cerv-favs') || '[]')); } c
 const saveFavs = () => { try { localStorage.setItem('cerv-favs', JSON.stringify([...favs])); } catch (e) {} };
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
 const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const short = n => n.split(' (')[0];
+const BY_SRM = Object.keys(STYLES).sort((a, b) => STYLES[a].srm - STYLES[b].srm || STYLES[a].abv[0] - STYLES[b].abv[0]);
+const TABS = { cervejarias: 'brew', pubs: 'pub', estilos: 'styles' };
 
-/* ───────── INIT ───────── */
 function init() {
-  const nCountries = new Set(PLACES.map(p => p.cc)).size;
-  $('stats').innerHTML = [
-    [PLACES.filter(p => p.t === 'brew').length, 'Cervejarias'],
-    [PLACES.filter(p => p.t === 'pub').length, 'Pubs & bares'],
-    [nCountries, 'Países'],
-    [Object.keys(STYLES).length, 'Estilos'],
-  ].map(([v, l]) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`).join('');
+  const nC = new Set(PLACES.map(p => p.cc)).size;
+  $('tally').innerHTML = [
+    [PLACES.filter(p => p.t === 'brew').length, 'cervejarias'],
+    [PLACES.filter(p => p.t === 'pub').length, 'pubs e bares'],
+    [nC, 'países'], [BY_SRM.length, 'estilos'],
+  ].map(([v, l]) => `<span><b>${v}</b>${l}</span>`).join('');
+
+  $('shelf').innerHTML = BY_SRM.map((k, i) =>
+    `<button class="g" type="button" data-style="${k}" title="${esc(STYLES[k].n)} · SRM ${STYLES[k].srm}" aria-label="${esc(STYLES[k].n)}">${glass(beerOf(k), 0.86, i)}<span class="srm">${STYLES[k].srm}</span></button>`).join('');
+  setTimeout(() => $('shelf').classList.remove('pouring'), 2200);
 
   const regions = [...new Set(Object.values(COUNTRIES).map(c => c[1]))];
   $('region').innerHTML += regions.map(r => `<option>${r}</option>`).join('');
   fillCountries();
 
-  const byFam = {};
-  Object.entries(STYLES).forEach(([k, v]) => (byFam[v.fam] ||= []).push(k));
-  $('stylebar').innerHTML = `<button class="chip active" data-style="">Todos os estilos</button>` +
-    Object.values(byFam).flat().map(k => `<button class="chip" data-style="${k}"><i style="background:${styleColor(k)}"></i>${STYLES[k].n}</button>`).join('');
-
-  document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => setTab(b.dataset.tab));
-  $('stylebar').onclick = e => { const c = e.target.closest('.chip'); if (c) setStyle(c.dataset.style); };
+  $('tabs').onclick = e => { const b = e.target.closest('button'); if (b) setTab(b.dataset.tab); };
+  $('shelf').onclick = e => { const g = e.target.closest('.g'); if (g) setStyle(state.style === g.dataset.style ? '' : g.dataset.style); };
+  $('clearStyle').onclick = () => setStyle('');
   $('search').oninput = e => { state.q = e.target.value; render(); };
   $('region').onchange = e => { state.region = e.target.value; state.country = ''; fillCountries(); render(); };
   $('country').onchange = e => { state.country = e.target.value; render(); };
   $('favOnly').onclick = () => { state.fav = !state.fav; $('favOnly').classList.toggle('active', state.fav); render(); };
   $('theme').onclick = toggleTheme;
-  $('list').onclick = e => {
+  const openFrom = e => {
     const st = e.target.closest('.star');
     if (st) { e.stopPropagation(); toggleFav(st.dataset.id); return; }
-    const c = e.target.closest('.card'); if (c) openPlace(c.dataset.id);
+    const c = e.target.closest('[data-id]'); if (c) openPlace(c.dataset.id);
   };
-  $('list').onkeydown = e => { if (e.key === 'Enter' && e.target.classList.contains('card')) openPlace(e.target.dataset.id); };
-  $('sgrid').onclick = e => { const g = e.target.closest('.go'); if (g) { setTab('all'); setStyle(g.dataset.style); window.scrollTo({ top: $('controls').offsetTop, behavior: 'smooth' }); } };
-  $('dlg').onclick = e => { if (e.target === $('dlg') || e.target.closest('.close')) $('dlg').close(); };
+  $('list').onclick = openFrom; $('podium').onclick = openFrom;
+  $('list').onkeydown = $('podium').onkeydown = e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.dataset.id && !e.target.classList.contains('star')) { e.preventDefault(); openPlace(e.target.dataset.id); } };
+  $('cbars').onclick = e => { const b = e.target.closest('.cb'); if (!b) return; state.country = state.country === b.dataset.cc ? '' : b.dataset.cc; state.region = ''; $('region').value = ''; fillCountries(); render(); };
+  $('stylesView').onclick = e => { const g = e.target.closest('.go'); if (g) { setTab('all'); setStyle(g.dataset.style); $('bar').scrollIntoView({ behavior: 'smooth' }); } };
+  $('stylePanel').onclick = e => { const g = e.target.closest('.go'); if (g) setTab('styles'); };
+  $('dlg').onclick = e => { if (e.target === $('dlg') || e.target.closest('.x')) $('dlg').close(); };
 
-  const h = new URLSearchParams(location.hash.slice(1));
-  if (h.get('tab')) state.tab = h.get('tab');
-  if (h.get('estilo') && STYLES[h.get('estilo')]) state.style = h.get('estilo');
-  setTab(state.tab, true); setStyle(state.style, true);
+  readHash(); addEventListener('hashchange', () => { readHash(); });
+}
+
+function readHash() {
+  const h = location.hash.slice(1);
+  if (TABS[h]) setTab(TABS[h], true);
+  else if (STYLES[h]) { setTab('all', true); setStyle(h, true); }
+  else setTab('all', true);
   render();
+}
+function writeHash() {
+  const rev = { brew: 'cervejarias', pub: 'pubs', styles: 'estilos' };
+  const name = rev[state.tab] || (state.style || '');
+  try { history.replaceState(null, '', name ? '#' + name : location.pathname + location.search); } catch (e) {}
 }
 
 function fillCountries() {
   const list = Object.entries(COUNTRIES).filter(([, v]) => !state.region || v[1] === state.region)
     .filter(([cc]) => PLACES.some(p => p.cc === cc)).sort((a, b) => a[1][0].localeCompare(b[1][0]));
   $('country').innerHTML = `<option value="">Todos os países</option>` + list.map(([cc, v]) => `<option value="${cc}">${flag(cc)} ${v[0]}</option>`).join('');
+  $('country').value = state.country;
 }
 
 function setTab(t, silent) {
   state.tab = t;
-  document.querySelectorAll('.tabs button').forEach(b => b.classList.toggle('active', b.dataset.tab === t));
-  const isStyles = t === 'styles';
-  $('list').hidden = isStyles; $('sgrid').hidden = !isStyles;
-  $('controls').style.display = isStyles ? 'none' : '';
-  $('stylebar').style.display = isStyles ? 'none' : '';
-  $('styleinfo').style.display = isStyles ? 'none' : '';
-  if (!silent) { updateHash(); render(); }
+  $('tabs').querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.tab === t));
+  const st = t === 'styles';
+  $('rankView').hidden = st; $('stylesView').hidden = !st;
+  ['search', 'region', 'country', 'favOnly'].forEach(id => $(id).hidden = st);
+  if (!silent) { writeHash(); render(); }
 }
 
 function setStyle(k, silent) {
   state.style = k || '';
-  document.querySelectorAll('#stylebar .chip').forEach(c => c.classList.toggle('active', c.dataset.style === state.style));
-  const el = $('styleinfo');
-  if (state.style) {
-    const s = STYLES[state.style];
-    el.style.borderLeftColor = styleColor(state.style);
-    el.innerHTML = `<h3><span class="swatch"><i style="background:${srmHex(s.srm)}"></i></span>${s.n} <span class="kind k-brew" style="color:${styleColor(state.style)};background:color-mix(in srgb, ${styleColor(state.style)} 14%, transparent)">${s.fam}</span></h3>
-      <p>${s.d}</p><p><b>Origem:</b> ${s.origin} · <b>Álcool:</b> ${s.abv[0]}–${s.abv[1]}% · <b>IBU:</b> ${s.ibu[0]}–${s.ibu[1]} · <b>Copo:</b> ${s.glass}</p>`;
-    el.classList.add('show');
-    const chip = document.querySelector(`#stylebar .chip[data-style="${state.style}"]`);
-    if (chip) chip.scrollIntoView({ block: 'nearest', inline: 'center' });
-  } else el.classList.remove('show');
-  if (!silent) { updateHash(); render(); }
-}
-
-function updateHash() {
-  const p = new URLSearchParams();
-  if (state.tab !== 'all') p.set('tab', state.tab);
-  if (state.style) p.set('estilo', state.style);
-  history.replaceState(null, '', p.toString() ? '#' + p : location.pathname + location.search);
+  $('shelf').querySelectorAll('.g').forEach(g => { g.classList.toggle('on', g.dataset.style === state.style); g.classList.toggle('dim', !!state.style && g.dataset.style !== state.style); });
+  $('clearStyle').hidden = !state.style;
+  const s = STYLES[state.style];
+  $('now').innerHTML = s ? `${esc(s.n)} <small>SRM ${s.srm} · ${s.abv[0]}–${s.abv[1]}% · IBU ${s.ibu[0]}–${s.ibu[1]}</small>` : 'Todos os estilos <small>do mais claro ao mais escuro</small>';
+  if (state.style) { const g = $('shelf').querySelector(`[data-style="${state.style}"]`); g && g.scrollIntoView({ block: 'nearest', inline: 'center' }); }
+  if (!silent) { if (state.tab === 'styles') setTab('all', true); writeHash(); render(); }
 }
 
 function toggleFav(id) { favs.has(id) ? favs.delete(id) : favs.add(id); saveFavs(); render(); }
-
 function toggleTheme() {
-  const root = document.documentElement;
-  const cur = root.dataset.theme || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-  root.dataset.theme = cur === 'light' ? 'dark' : 'light';
-  try { localStorage.setItem('cerv-theme', root.dataset.theme); } catch (e) {}
+  const r = document.documentElement;
+  const cur = r.dataset.theme || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  r.dataset.theme = cur === 'light' ? 'dark' : 'light';
+  try { localStorage.setItem('cerv-theme', r.dataset.theme); } catch (e) {}
 }
 
-/* ───────── RENDER ───────── */
-function filtered() {
+/* ── render ── */
+function filtered(ignoreCountry) {
   const q = norm(state.q.trim());
   return PLACES.filter(p =>
     (state.tab === 'all' || p.t === state.tab) &&
     (!state.style || p.s.includes(state.style)) &&
-    (!state.country || p.cc === state.country) &&
+    (ignoreCountry || !state.country || p.cc === state.country) &&
     (!state.region || COUNTRIES[p.cc][1] === state.region) &&
     (!state.fav || favs.has(p.id)) &&
     (!q || norm([p.n, p.city, COUNTRIES[p.cc][0], p.sig, ...p.s.map(k => STYLES[k].n)].join(' ')).includes(q))
-  ).sort((a, b) => {
-    // com estilo selecionado, quem tem o estilo como carro-chefe sobe no desempate
-    if (b.score !== a.score) return b.score - a.score;
-    if (state.style) return a.s.indexOf(state.style) - b.s.indexOf(state.style);
-    return a.n.localeCompare(b.n);
-  });
+  ).sort((a, b) => b.score - a.score || (state.style ? a.s.indexOf(state.style) - b.s.indexOf(state.style) : 0) || a.n.localeCompare(b.n));
 }
 
 function render() {
   if (state.tab === 'styles') return renderStyles();
   const items = filtered();
-  const label = { all: 'lugares', brew: 'cervejarias', pub: 'pubs' }[state.tab];
-  $('countLine').textContent = `${items.length} ${label}` + (state.style ? ` com ${STYLES[state.style].n}` : '') + ' · ordenado pela nota';
-  $('empty').style.display = items.length ? 'none' : 'block';
-  $('list').innerHTML = items.map((p, i) => {
-    const r = i + 1;
-    const [cname] = COUNTRIES[p.cc];
-    return `<div class="card" role="button" tabindex="0" data-id="${p.id}">
-      <div class="rank ${r <= 3 ? 'r' + r : ''}">${r}<small>${p.t === 'brew' ? 'cerv.' : 'pub'}</small></div>
-      <div>
-        <div class="name">${esc(p.n)}</div>
-        <div class="meta"><span>${flag(p.cc)} ${esc(p.city)}, ${cname}</span>
-          <span class="kind ${p.t === 'brew' ? 'k-brew' : 'k-pub'}">${p.t === 'brew' ? 'Cervejaria' : 'Pub / bar'}</span>
-          ${p.y ? `<span>desde ${p.y}</span>` : ''}</div>
-        <div class="tags">${p.s.map(k => `<span class="tag ${k === state.style ? 'hit' : ''}"><i style="background:${styleColor(k)}"></i>${STYLES[k].n}</span>`).join('')}</div>
-        <div class="sig"><b>${p.t === 'brew' ? 'Cervejas-ícone:' : 'Destaques:'}</b> ${esc(p.sig)}</div>
+  const what = { all: 'Ranking geral', brew: 'Cervejarias', pub: 'Pubs e bares' }[state.tab];
+  const s = STYLES[state.style];
+  $('heading').innerHTML = s ? `${what} <span>· ${esc(s.n)}</span>` : what;
+  $('countLine').textContent = `${items.length} ${items.length === 1 ? 'lugar' : 'lugares'}` + (state.country ? ` · ${COUNTRIES[state.country][0]}` : '');
+  $('empty').hidden = items.length > 0;
+
+  const pod = items.slice(0, 3), rest = items.slice(3);
+  $('podium').hidden = pod.length < 3;
+  $('podium').innerHTML = pod.length < 3 ? '' : pod.map((p, i) => {
+    const k = state.style || p.s[0];
+    return `<div class="pod p${i + 1}" role="button" tabindex="0" data-id="${p.id}">
+      <span class="pos">${i + 1}</span>
+      <div style="min-width:0;position:relative">
+        <div class="nm">${esc(p.n)}</div>
+        <div class="ct">${flag(p.cc)} ${esc(p.city)}</div>
+        <div class="sc"><b>${p.score}</b> / 100 · <span class="kind ${p.t === 'brew' ? 'k-brew' : 'k-pub'}">${p.t === 'brew' ? 'Cervejaria' : 'Pub'}</span></div>
       </div>
-      <div class="score"><b>${p.score}</b><span>nota</span><div class="bar"><div style="width:${p.score}%"></div></div>
-        <button class="star ${favs.has(p.id) ? 'on' : ''}" data-id="${p.id}" title="Favoritar" aria-label="Favoritar">${favs.has(p.id) ? '★' : '☆'}</button></div>
+      <div class="tint">${glass(beerOf(k), p.score / 100)}</div>
     </div>`;
   }).join('');
+
+  const list = pod.length < 3 ? items : rest;
+  const off = pod.length < 3 ? 0 : 3;
+  $('list').innerHTML = list.map((p, i) => row(p, i + 1 + off)).join('');
+  renderSidePanel();
+  renderCountries();
+}
+
+function row(p, r) {
+  const [cname] = COUNTRIES[p.cc];
+  const k = state.style || p.s[0];
+  return `<div class="row" role="button" tabindex="0" data-id="${p.id}">
+    <div class="rk">${r}</div>
+    <div style="min-width:0">
+      <div class="nm">${esc(p.n)} <span class="kind ${p.t === 'brew' ? 'k-brew' : 'k-pub'}">${p.t === 'brew' ? 'Cervejaria' : 'Pub'}</span></div>
+      <div class="meta">${flag(p.cc)} ${esc(p.city)}, ${cname}${p.y ? ` <span class="mono">· desde ${p.y}</span>` : ''}</div>
+      <div class="tags">${p.s.map(x => `<span class="tag ${x === state.style ? 'hit' : ''}"><i style="background:${beerOf(x)}"></i>${STYLES[x].n}</span>`).join('')}</div>
+      <div class="sig">${p.t === 'brew' ? 'Cervejas-ícone' : 'Destaques'}: ${esc(p.sig)}</div>
+    </div>
+    <div class="tap">${glass(beerOf(k), p.score / 100)}<b>${p.score}</b>
+      <button class="star ${favs.has(p.id) ? 'on' : ''}" type="button" data-id="${p.id}" aria-label="${favs.has(p.id) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}">${favs.has(p.id) ? '★' : '☆'}</button></div>
+  </div>`;
+}
+
+function meters(s, c) {
+  const rg = (v, max) => `left:${v[0] / max * 100}%;width:${Math.max(2, (Math.min(v[1], max) - v[0]) / max * 100)}%`;
+  return `<div style="--c:${c}">
+    <div class="meter"><span>Álcool</span><div class="tr"><div class="rg" style="${rg(s.abv, 14)}"></div></div><span class="v">${s.abv[0]}–${s.abv[1]}%</span></div>
+    <div class="axis"><span></span><span><span>0</span><span>7%</span><span>14%</span></span><span></span></div>
+    <div class="meter"><span>IBU</span><div class="tr"><div class="rg" style="${rg(s.ibu, 100)}"></div></div><span class="v">${s.ibu[0]}–${s.ibu[1]}</span></div>
+    <div class="axis"><span></span><span><span>0</span><span>50</span><span>100</span></span><span></span></div>
+  </div>`;
+}
+
+function renderSidePanel() {
+  const s = STYLES[state.style];
+  if (!s) {
+    const top = [...PLACES].sort((a, b) => b.score - a.score);
+    const famCount = FAMS.map(f => [f, PLACES.filter(p => STYLES[p.s[0]].fam === f).length]);
+    $('stylePanel').innerHTML = `<div class="lbl">Como ler</div>
+      <h3>O copo é a nota</h3>
+      <p>Cada copo da lista enche até a nota do lugar, na cor do estilo carro-chefe. Escolha um estilo nos copos lá em cima para ver o ranking só de quem o produz ou serve.</p>
+      <dl class="facts">${famCount.map(([f, n]) => `<dt>${f}</dt><dd>${n} lugares com carro-chefe</dd>`).join('')}</dl>
+      <div style="margin-top:12px"><button class="go" type="button">Abrir guia de estilos →</button></div>`;
+    return;
+  }
+  const nb = PLACES.filter(p => p.t === 'brew' && p.s.includes(state.style)).length;
+  const np = PLACES.filter(p => p.t === 'pub' && p.s.includes(state.style)).length;
+  $('stylePanel').innerHTML = `<div style="display:grid;grid-template-columns:46px 1fr;gap:12px;align-items:center">
+      <div style="width:46px">${glass(beerOf(state.style), 0.86)}</div>
+      <div><div class="lbl">${s.fam} · SRM ${s.srm}</div><h3>${esc(s.n)}</h3></div></div>
+    <p>${esc(s.d)}</p>
+    ${meters(s, beerOf(state.style))}
+    <dl class="facts"><dt>Origem</dt><dd>${esc(s.origin)}</dd><dt>Copo</dt><dd>${esc(s.glass)}</dd><dt>No guia</dt><dd>${nb} cervejarias · ${np} pubs</dd></dl>`;
+}
+
+function renderCountries() {
+  const base = filtered(true);
+  const counts = {};
+  base.forEach(p => counts[p.cc] = (counts[p.cc] || 0) + 1);
+  const rows = Object.entries(counts).sort((a, b) => b[1] - a[1] || COUNTRIES[a[0]][0].localeCompare(COUNTRIES[b[0]][0]));
+  const max = rows.length ? rows[0][1] : 1;
+  $('cbars').innerHTML = rows.length ? rows.map(([cc, n]) =>
+    `<button class="cb ${state.country === cc ? 'on' : ''}" type="button" data-cc="${cc}"><span class="nmc">${flag(cc)} ${COUNTRIES[cc][0]}</span><span class="t"><div style="width:${n / max * 100}%"></div></span><span class="n">${n}</span></button>`).join('')
+    : '<p>Sem resultados.</p>';
 }
 
 function renderStyles() {
-  $('countLine').textContent = `${Object.keys(STYLES).length} estilos · faixas típicas de álcool e amargor (IBU)`;
-  $('empty').style.display = 'none';
-  const fams = ['Lager', 'Trigo', 'Ale', 'Belga', 'Ácida'];
-  const keys = Object.keys(STYLES).sort((a, b) => fams.indexOf(STYLES[a].fam) - fams.indexOf(STYLES[b].fam));
-  $('sgrid').innerHTML = keys.map(k => {
-    const s = STYLES[k];
-    const nb = PLACES.filter(p => p.t === 'brew' && p.s.includes(k)).length;
-    const np = PLACES.filter(p => p.t === 'pub' && p.s.includes(k)).length;
-    const top = PLACES.filter(p => p.s[0] === k || p.s.includes(k)).sort((a, b) => b.score - a.score).slice(0, 3).map(p => p.n.split(' (')[0]);
-    const rng = (v, max) => `left:${v[0] / max * 100}%;width:${Math.max(2, (v[1] - v[0]) / max * 100)}%`;
-    return `<div class="scard" style="--c:${styleColor(k)}">
-      <h3>${s.n}<small>${s.fam}</small></h3>
-      <div class="swatch"><i style="background:${srmHex(s.srm)}"></i>${s.origin}</div>
-      <p>${s.d}</p>
-      <div class="metric"><span>Álcool</span><div class="track"><div class="range" style="${rng(s.abv, 14)}"></div></div><span>${s.abv[0]}–${s.abv[1]}%</span></div>
-      <div class="metric"><span>IBU</span><div class="track"><div class="range" style="${rng(s.ibu, 100)}"></div></div><span>${s.ibu[0]}–${s.ibu[1]}</span></div>
-      <p style="font-size:.76rem"><b>Copo:</b> ${s.glass}<br><b>Onde:</b> ${nb} cervejarias · ${np} pubs${top.length ? `<br><b>Top:</b> ${top.map(esc).join(', ')}` : ''}</p>
-      <button class="go" data-style="${k}">Ver ranking deste estilo →</button>
-    </div>`;
+  $('stylesView').innerHTML = FAMS.map(f => {
+    const ks = BY_SRM.filter(k => STYLES[k].fam === f);
+    return `<section class="fam"><div class="fam-h"><h2>${f}</h2><span class="lbl">${ks.length} estilos · ${FAM_INFO[f]}</span></div>
+      <div class="sgrid">${ks.map(k => {
+        const s = STYLES[k];
+        const n = PLACES.filter(p => p.s.includes(k)).length;
+        const top = PLACES.filter(p => p.s.includes(k)).sort((a, b) => b.score - a.score).slice(0, 2).map(p => short(p.n));
+        return `<article class="scard">
+          <div>${glass(beerOf(k), 0.88)}<div class="lbl" style="text-align:center;margin-top:4px">SRM ${s.srm}</div></div>
+          <div style="min-width:0">
+            <h3>${esc(s.n)}</h3>
+            <div class="org">${esc(s.origin)} · ${esc(s.glass)}</div>
+            <p>${esc(s.d)}</p>
+            ${meters(s, beerOf(k))}
+            <div class="foot"><span>${n} lugares${top.length ? ' · top: ' + top.map(esc).join(', ') : ''}</span><button class="go" type="button" data-style="${k}">Ver ranking →</button></div>
+          </div>
+        </article>`;
+      }).join('')}</div></section>`;
   }).join('');
 }
 
@@ -543,28 +728,30 @@ function openPlace(id) {
   const p = PLACES.find(x => x.id === id);
   const [cname] = COUNTRIES[p.cc];
   const pos = PLACES.filter(x => x.t === p.t).sort((a, b) => b.score - a.score).findIndex(x => x.id === id) + 1;
-  const mapQ = encodeURIComponent(`${p.n.split(' (')[0]} ${p.city} ${cname}`);
-  $('dlg').innerHTML = `<div class="dlg">
-    <button class="close" aria-label="Fechar">✕</button>
-    <div class="eyebrow">${p.t === 'brew' ? 'Cervejaria' : 'Pub / bar'} · #${pos} no ranking mundial</div>
-    <h2>${esc(p.n)}</h2>
-    <div class="meta">${flag(p.cc)} ${esc(p.city)}, ${cname}${p.y ? ` · desde ${p.y}` : ''} · nota <b style="color:var(--accent)">${p.score}</b></div>
-    <p class="desc">${esc(p.d)}</p>
-    <h4>${p.t === 'brew' ? 'Cervejas-ícone' : 'Destaques da casa'}</h4>
-    <p class="desc" style="margin-top:0">${esc(p.sig)}</p>
-    <h4>${p.t === 'brew' ? 'Estilos produzidos' : 'Estilos servidos'}</h4>
-    ${p.s.map((k, i) => { const s = STYLES[k]; return `<div class="srow"><b><i style="background:${styleColor(k)}"></i>${s.n}${i === 0 ? ' <span class="kind k-brew">carro-chefe</span>' : ''}</b><span>${s.abv[0]}–${s.abv[1]}% · IBU ${s.ibu[0]}–${s.ibu[1]}</span><p>${s.d}</p></div>`; }).join('')}
-    <div class="dlinks">
-      <a class="main" href="https://www.google.com/maps/search/?api=1&query=${mapQ}" target="_blank" rel="noopener">📍 Ver no mapa</a>
-      <a href="https://untappd.com/search?q=${encodeURIComponent(p.n.split(' (')[0])}&type=${p.t === 'brew' ? 'brewery' : 'venues'}" target="_blank" rel="noopener">Untappd</a>
-      <a href="https://www.google.com/search?q=${mapQ}" target="_blank" rel="noopener">Pesquisar</a>
+  const mapQ = encodeURIComponent(`${short(p.n)} ${p.city} ${cname}`);
+  $('dlg').innerHTML = `
+    <div class="dhead" style="--beer:${beerOf(p.s[0])}"><div class="bub"></div>
+      <button class="x" type="button" aria-label="Fechar">✕</button>
+      <div class="lbl" style="position:relative">${p.t === 'brew' ? 'Cervejaria' : 'Pub / bar'} · nº ${pos} entre ${p.t === 'brew' ? 'as cervejarias' : 'os pubs'}</div>
+      <h2>${esc(p.n)}</h2>
+      <div class="meta">${flag(p.cc)} ${esc(p.city)}, ${cname}${p.y ? ` · desde ${p.y}` : ''} · nota <b style="color:var(--amber)">${p.score}</b></div>
     </div>
-  </div>`;
+    <div class="dbody">
+      <h4>Sobre</h4><p class="desc">${esc(p.d)}</p>
+      <h4>${p.t === 'brew' ? 'Cervejas-ícone' : 'Destaques da casa'}</h4><p class="desc">${esc(p.sig)}</p>
+      <h4>${p.t === 'brew' ? 'Estilos produzidos' : 'Estilos servidos'}</h4>
+      ${p.s.map((k, i) => { const s = STYLES[k]; return `<div class="srow">${glass(beerOf(k), 0.86)}<div style="min-width:0"><b>${s.n}${i === 0 ? ' <span class="chef">carro-chefe</span>' : ''}</b><div class="mono">${s.abv[0]}–${s.abv[1]}% · IBU ${s.ibu[0]}–${s.ibu[1]} · SRM ${s.srm}</div><p>${esc(s.d)}</p></div></div>`; }).join('')}
+      <div class="dlinks">
+        <a class="main" href="https://www.google.com/maps/search/?api=1&query=${mapQ}" target="_blank" rel="noopener">Ver no mapa</a>
+        <a href="https://untappd.com/search?q=${encodeURIComponent(short(p.n))}&type=${p.t === 'brew' ? 'brewery' : 'venues'}" target="_blank" rel="noopener">Untappd</a>
+        <a href="https://www.google.com/search?q=${mapQ}" target="_blank" rel="noopener">Pesquisar</a>
+      </div>
+    </div>`;
   $('dlg').showModal();
 }
 
 try { const t = localStorage.getItem('cerv-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
 init();
 </script>
-</body>
+
 </html>
