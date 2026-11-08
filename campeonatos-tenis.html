@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campeonatos de Tênis 2026–2027</title>
+<meta name="description" content="Calendário ATP e WTA 2026 e 2027: Grand Slams, 1000, 500, 250 e Finais, com datas, piso, local e site oficial.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0A0C10;
+    --bg-2: #12141B;
+    --bg-3: #1A1D27;
+    --bg-4: #232734;
+    --border: rgba(255,255,255,0.08);
+    --border-strong: rgba(255,255,255,0.18);
+    --text: #E8EAF0;
+    --muted: #8890A4;
+    --dim: #5E647A;
+    --accent: #C9F31D;
+    --atp: #4C8BF5;
+    --wta: #F5539E;
+    --gs: #F5C542;
+    --m1000: #B794F6;
+    --c500: #34D399;
+    --c250: #94A3B8;
+    --fin: #FB923C;
+    --hard: #4C8BF5;
+    --clay: #E07A3F;
+    --grass: #4CAF50;
+    --amber: #F5C542;
+    --green: #34D399;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #F5F6F8; --bg-2: #FFFFFF; --bg-3: #EEF0F4; --bg-4: #E2E5EC;
+      --border: rgba(10,12,16,0.09); --border-strong: rgba(10,12,16,0.2);
+      --text: #12141B; --muted: #555C70; --dim: #7A8094; --accent: #5E7A00;
+      --gs: #B7860B; --c500: #0E9F6E; --c250: #64748B; --fin: #D9631E; --amber: #B7860B; --green: #0E9F6E;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #F5F6F8; --bg-2: #FFFFFF; --bg-3: #EEF0F4; --bg-4: #E2E5EC;
+    --border: rgba(10,12,16,0.09); --border-strong: rgba(10,12,16,0.2);
+    --text: #12141B; --muted: #555C70; --dim: #7A8094; --accent: #5E7A00;
+    --gs: #B7860B; --c500: #0E9F6E; --c250: #64748B; --fin: #D9631E; --amber: #B7860B; --green: #0E9F6E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; padding-bottom: 60px; overflow-x: hidden; }
+  a { color: inherit; }
+
+  header { max-width: 1100px; margin: 0 auto; padding: 40px 16px 20px; text-align: center; }
+  .eyebrow { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 7vw, 3.8rem); letter-spacing: .02em; line-height: 1.02; margin-top: 6px; }
+  .subtitle { color: var(--muted); font-size: .95rem; margin: 10px auto 0; max-width: 680px; line-height: 1.5; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+  .years { display: flex; justify-content: center; gap: 10px; margin: 18px 0 8px; }
+  .years button { font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; letter-spacing: .04em; padding: 6px 26px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-2); color: var(--muted); cursor: pointer; }
+  .years button.active { color: var(--bg); background: var(--accent); border-color: var(--accent); }
+
+  .stats { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 16px 0; }
+  .stat { background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px; padding: 10px 6px; text-align: center; }
+  .stat b { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 1.7rem; line-height: 1; }
+  .stat span { font-size: .62rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
+
+  .controls { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  #search { flex: 1 1 200px; min-width: 0; background: var(--bg-3); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; color: var(--text); font: inherit; font-size: .88rem; }
+  #search:focus { outline: none; border-color: var(--border-strong); }
+  .seg { display: flex; background: var(--bg-3); border: 1px solid var(--border); border-radius: 10px; padding: 3px; gap: 2px; }
+  .seg button { background: none; border: 0; color: var(--muted); font: inherit; font-size: .78rem; font-weight: 700; padding: 7px 11px; border-radius: 7px; cursor: pointer; white-space: nowrap; }
+  .seg button.active { background: var(--bg-4); color: var(--text); }
+  select { background: var(--bg-3); border: 1px solid var(--border); border-radius: 10px; padding: 9px 10px; color: var(--text); font: inherit; font-size: .8rem; font-weight: 600; cursor: pointer; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: .74rem; color: var(--muted); margin: 14px 0 4px; }
+  .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+  .count-line { font-size: .76rem; color: var(--dim); margin: 6px 0 10px; }
+
+  .month { margin-top: 26px; }
+  .month h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: .05em; color: var(--text); display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 10px; }
+  .month h2 small { font-family: 'Inter', sans-serif; font-size: .72rem; color: var(--dim); font-weight: 600; letter-spacing: 0; }
+
+  .row { display: grid; grid-template-columns: 112px 1fr auto; gap: 14px; align-items: center; background: var(--bg-2); border: 1px solid var(--border); border-left: 4px solid var(--c250); border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; }
+  .row.cat-GS { border-left-color: var(--gs); }
+  .row.cat-1000 { border-left-color: var(--m1000); }
+  .row.cat-500 { border-left-color: var(--c500); }
+  .row.cat-F { border-left-color: var(--fin); }
+  .row.past { opacity: .62; }
+  .row.live { border-color: var(--amber); box-shadow: 0 0 0 1px var(--amber) inset; }
+
+  .dates { font-weight: 800; font-size: .92rem; font-variant-numeric: tabular-nums; }
+  .dates small { display: block; font-weight: 600; font-size: .68rem; color: var(--dim); margin-top: 3px; }
+  .name { font-weight: 700; font-size: 1rem; line-height: 1.25; }
+  .meta { font-size: .8rem; color: var(--muted); margin-top: 3px; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
+  .surf { display: inline-flex; align-items: center; gap: 5px; }
+  .surf i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  .badges { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
+  .badge { font-size: .64rem; font-weight: 800; letter-spacing: .03em; text-transform: uppercase; padding: 3px 8px; border-radius: 6px; border: 1px solid; }
+  .b-ATP { color: var(--atp); border-color: color-mix(in srgb, var(--atp) 45%, transparent); background: color-mix(in srgb, var(--atp) 12%, transparent); }
+  .b-WTA { color: var(--wta); border-color: color-mix(in srgb, var(--wta) 45%, transparent); background: color-mix(in srgb, var(--wta) 12%, transparent); }
+  .pill { font-size: .62rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; padding: 3px 8px; border-radius: 20px; white-space: nowrap; }
+  .p-done { background: color-mix(in srgb, var(--green) 14%, transparent); color: var(--green); }
+  .p-live { background: color-mix(in srgb, var(--amber) 18%, transparent); color: var(--amber); }
+  .p-est { background: var(--bg-4); color: var(--muted); }
+  .note { font-size: .74rem; color: var(--dim); margin-top: 6px; line-height: 1.4; }
+
+  .links { display: flex; flex-direction: column; gap: 6px; align-items: stretch; }
+  .links a { text-decoration: none; font-size: .74rem; font-weight: 700; text-align: center; padding: 7px 11px; border-radius: 8px; border: 1px solid var(--border-strong); white-space: nowrap; }
+  .links a:hover { background: var(--bg-4); }
+  .links a.main { background: var(--accent); color: #0A0C10; border-color: var(--accent); }
+
+  .empty { text-align: center; color: var(--muted); padding: 50px 0; display: none; }
+  .disclaimer { margin: 30px 0 0; background: var(--bg-2); border: 1px solid var(--border); border-left: 3px solid var(--amber); border-radius: 10px; padding: 14px 16px; font-size: .8rem; color: var(--muted); line-height: 1.55; }
+  .disclaimer strong { color: var(--text); }
+
+  @media (max-width: 720px) {
+    .stats { grid-template-columns: repeat(3, 1fr); }
+    .row { grid-template-columns: 1fr; gap: 8px; }
+    .links { flex-direction: row; flex-wrap: wrap; }
+    .links a { flex: 1 1 auto; }
+    .controls select { flex: 1 1 40%; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Circuito ATP &amp; WTA</div>
+  <h1>Campeonatos de Tênis 2026 · 2027</h1>
+  <p class="subtitle">Grand Slams, ATP Masters 1000 e WTA 1000, torneios 500 e 250 e as Finais de fim de ano, com datas, piso, local e link para o site oficial.</p>
+</header>
+
+<main>
+  <div class="years" id="years">
+    <button data-year="2026">2026</button>
+    <button data-year="2027">2027</button>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="controls">
+    <input id="search" type="search" placeholder="Buscar torneio, cidade ou país…" aria-label="Buscar">
+    <div class="seg" id="tourSeg">
+      <button data-tour="all" class="active">Todos</button>
+      <button data-tour="ATP">ATP</button>
+      <button data-tour="WTA">WTA</button>
+    </div>
+    <select id="cat" aria-label="Categoria">
+      <option value="all">Todas as categorias</option>
+      <option value="GS">Grand Slam</option>
+      <option value="1000">1000</option>
+      <option value="500">500</option>
+      <option value="250">250</option>
+      <option value="F">Finais</option>
+    </select>
+    <select id="surface" aria-label="Piso">
+      <option value="all">Todos os pisos</option>
+      <option value="Dura">Quadra dura</option>
+      <option value="Saibro">Saibro</option>
+      <option value="Grama">Grama</option>
+    </select>
+    <select id="when" aria-label="Período">
+      <option value="all">Todo o ano</option>
+      <option value="next">Só os próximos</option>
+    </select>
+  </div>
+
+  <div class="legend">
+    <span><i style="background:var(--gs)"></i>Grand Slam</span>
+    <span><i style="background:var(--m1000)"></i>1000</span>
+    <span><i style="background:var(--c500)"></i>500</span>
+    <span><i style="background:var(--c250)"></i>250</span>
+    <span><i style="background:var(--fin)"></i>Finais</span>
+    <span>·</span>
+    <span><i style="background:var(--hard)"></i>Dura</span>
+    <span><i style="background:var(--clay)"></i>Saibro</span>
+    <span><i style="background:var(--grass)"></i>Grama</span>
+  </div>
+  <div class="count-line" id="countLine"></div>
+
+  <div id="list"></div>
+  <div class="empty" id="empty">Nenhum torneio encontrado com esses filtros.</div>
+
+  <div class="disclaimer">
+    <strong>Sobre as datas.</strong> 2026: calendário oficial ATP/WTA. 2027: Grand Slams, Masters 1000, WTA 1000, ATP Finals (Turim) e WTA Finals (Charlotte, 10–14 nov) seguem os calendários divulgados pela ATP (jan/2026) e pela WTA (out/2026). Quando a data de 2027 aparece com a etiqueta <strong>“prevista”</strong>, ela foi estimada pela mesma semana do calendário de 2026 e ainda precisa ser confirmada no site oficial. Na quadra dura, “coberta” indica torneio indoor. Datas sujeitas a alteração pela ATP, WTA e organizadores.
+  </div>
+</main>
+
+<script>
+const ATP_HUB = 'https://www.atptour.com/en/tournaments';
+const WTA_HUB = 'https://www.wtatennis.com/tournaments';
+
+/*
+  T(nome, cidade, país, piso, coberto, eventos[[tour,cat]], início2026, fim2026, site, opções)
+  opções: { y27: [início, fim] (data confirmada 2027), est26: true (2026 a confirmar),
+            est27: false (2027 confirmado mesmo sem y27), only: 2026|2027, note, note27 }
+  Sem y27, as datas de 2027 são projetadas pela mesma semana de 2026 (+364 dias) e marcadas "prevista".
+*/
+function T(name, city, country, surface, indoor, events, s, e, site, o) {
+  return { name, city, country, surface, indoor, events, s, e, site: site || null, o: o || {} };
+}
+
+const DATA = [
+  // ===== GRAND SLAMS =====
+  T("Australian Open","Melbourne","Austrália","Dura",false,[["ATP","GS"],["WTA","GS"]],"2026-01-18","2026-02-01","https://ausopen.com",{y27:["2027-01-17","2027-01-31"]}),
+  T("Roland-Garros","Paris","França","Saibro",false,[["ATP","GS"],["WTA","GS"]],"2026-05-24","2026-06-07","https://www.rolandgarros.com"),
+  T("Wimbledon","Londres","Reino Unido","Grama",false,[["ATP","GS"],["WTA","GS"]],"2026-06-29","2026-07-12","https://www.wimbledon.com",{y27:["2027-06-28","2027-07-11"]}),
+  T("US Open","Nova York","Estados Unidos","Dura",false,[["ATP","GS"],["WTA","GS"]],"2026-08-31","2026-09-13","https://www.usopen.org"),
+
+  // ===== 1000 combinados =====
+  T("BNP Paribas Open","Indian Wells","Estados Unidos","Dura",false,[["ATP","1000"],["WTA","1000"]],"2026-03-04","2026-03-15","https://www.bnpparibasopen.com",{y27:["2027-03-03","2027-03-14"]}),
+  T("Miami Open","Miami","Estados Unidos","Dura",false,[["ATP","1000"],["WTA","1000"]],"2026-03-17","2026-03-29","https://www.miamiopen.com",{y27:["2027-03-17","2027-03-28"]}),
+  T("Mutua Madrid Open","Madri","Espanha","Saibro",false,[["ATP","1000"],["WTA","1000"]],"2026-04-21","2026-05-03","https://www.mutuamadridopen.com",{y27:["2027-04-21","2027-05-02"]}),
+  T("Internazionali BNL d'Italia","Roma","Itália","Saibro",false,[["ATP","1000"],["WTA","1000"]],"2026-05-05","2026-05-17","https://www.internazionalibnlditalia.com",{y27:["2027-05-05","2027-05-16"]}),
+  T("National Bank Open","Montreal / Toronto","Canadá","Dura",false,[["ATP","1000"],["WTA","1000"]],"2026-08-02","2026-08-13","https://www.nationalbankopen.com",{y27:["2027-08-01","2027-08-12"],note:"2026: masculino em Montreal, feminino em Toronto.",note27:"2027: masculino em Toronto, feminino em Montreal (alternância anual)."}),
+  T("Cincinnati Open","Cincinnati","Estados Unidos","Dura",false,[["ATP","1000"],["WTA","1000"]],"2026-08-11","2026-08-23","https://www.cincinnatiopen.com",{y27:["2027-08-12","2027-08-22"]}),
+
+  // ===== ATP Masters 1000 =====
+  T("Rolex Monte-Carlo Masters","Monte Carlo","Mônaco","Saibro",false,[["ATP","1000"]],"2026-04-05","2026-04-12","https://montecarlotennismasters.com",{y27:["2027-04-04","2027-04-11"]}),
+  T("Rolex Shanghai Masters","Xangai","China","Dura",false,[["ATP","1000"]],"2026-10-07","2026-10-18","https://en.rolexshanghaimasters.com",{y27:["2027-10-06","2027-10-17"]}),
+  T("Rolex Paris Masters","Paris (Nanterre)","França","Dura",true,[["ATP","1000"]],"2026-10-31","2026-11-08","https://www.rolexparismasters.com",{y27:["2027-11-01","2027-11-07"]}),
+
+  // ===== WTA 1000 =====
+  T("Qatar TotalEnergies Open","Doha","Catar","Dura",false,[["WTA","1000"]],"2026-02-08","2026-02-14","https://www.qatartennis.org",{est27:false}),
+  T("Dubai Duty Free Tennis Championships","Dubai","Emirados Árabes Unidos","Dura",false,[["WTA","1000"]],"2026-02-15","2026-02-21","https://www.dubaidutyfreetennischampionships.com",{est27:false}),
+  T("China Open","Pequim","China","Dura",false,[["ATP","500"],["WTA","1000"]],"2026-09-30","2026-10-11",null,{note:"Quadro masculino (ATP 500) termina antes do feminino (WTA 1000)."}),
+  T("Wuhan Open","Wuhan","China","Dura",false,[["WTA","1000"]],"2026-10-12","2026-10-18",null),
+
+  // ===== FINAIS =====
+  T("WTA Finals","Riade","Arábia Saudita","Dura",true,[["WTA","F"]],"2026-11-07","2026-11-14",null,{only:2026}),
+  T("WTA Finals","Charlotte","Estados Unidos","Dura",true,[["WTA","F"]],"2027-11-10","2027-11-14",null,{only:2027,y27:["2027-11-10","2027-11-14"],note27:"Nova sede de 2027 a 2029, no Spectrum Center."}),
+  T("Nitto ATP Finals","Turim","Itália","Dura",true,[["ATP","F"]],"2026-11-15","2026-11-22","https://www.nittoatpfinals.com",{y27:["2027-11-14","2027-11-21"],note27:"Turim confirmada como sede até 2027."}),
+
+  // ===== Combinados 500/250 =====
+  T("Brisbane International","Brisbane","Austrália","Dura",false,[["ATP","250"],["WTA","500"]],"2026-01-04","2026-01-11",null),
+  T("Adelaide International","Adelaide","Austrália","Dura",false,[["ATP","250"],["WTA","500"]],"2026-01-12","2026-01-17",null),
+  T("ASB Classic","Auckland","Nova Zelândia","Dura",false,[["WTA","250"]],"2026-01-05","2026-01-11","https://www.asbclassic.co.nz",{note:"Semana 1: quadro feminino."}),
+  T("ASB Classic","Auckland","Nova Zelândia","Dura",false,[["ATP","250"]],"2026-01-12","2026-01-17","https://www.asbclassic.co.nz",{note:"Semana 2: quadro masculino."}),
+  T("Abierto Mexicano Telcel","Acapulco","México","Dura",false,[["ATP","500"]],"2026-02-23","2026-02-28","https://www.abiertomexicanodetenis.com"),
+  T("Mubadala Citi DC Open","Washington","Estados Unidos","Dura",false,[["ATP","500"],["WTA","500"]],"2026-07-27","2026-08-02","https://www.mubadalacitidcopen.com"),
+  T("Libéma Open","'s-Hertogenbosch","Países Baixos","Grama",false,[["ATP","250"],["WTA","250"]],"2026-06-08","2026-06-14",null),
+  T("Lexus Eastbourne Open","Eastbourne","Reino Unido","Grama",false,[["ATP","250"],["WTA","250"]],"2026-06-22","2026-06-27",null),
+
+  // ===== ATP 500 =====
+  T("ABN AMRO Open","Roterdã","Países Baixos","Dura",true,[["ATP","500"]],"2026-02-09","2026-02-15","https://www.abnamro-open.nl"),
+  T("Dallas Open","Dallas","Estados Unidos","Dura",true,[["ATP","500"]],"2026-02-09","2026-02-15","https://www.dallasopen.com"),
+  T("Rio Open","Rio de Janeiro","Brasil","Saibro",false,[["ATP","500"]],"2026-02-16","2026-02-22","https://www.rioopen.com"),
+  T("Qatar ExxonMobil Open","Doha","Catar","Dura",false,[["ATP","500"]],"2026-02-16","2026-02-21","https://www.qatartennis.org"),
+  T("Dubai Duty Free Tennis Championships (ATP)","Dubai","Emirados Árabes Unidos","Dura",false,[["ATP","500"]],"2026-02-23","2026-02-28","https://www.dubaidutyfreetennischampionships.com"),
+  T("BMW Open","Munique","Alemanha","Saibro",false,[["ATP","500"]],"2026-04-13","2026-04-19",null),
+  T("Barcelona Open Banc Sabadell","Barcelona","Espanha","Saibro",false,[["ATP","500"]],"2026-04-13","2026-04-19","https://www.barcelonaopenbancsabadell.com",{est27:false}),
+  T("Hamburg Open","Hamburgo","Alemanha","Saibro",false,[["ATP","500"]],"2026-05-17","2026-05-23",null),
+  T("Terra Wortmann Open","Halle","Alemanha","Grama",false,[["ATP","500"]],"2026-06-15","2026-06-21",null,{est27:false}),
+  T("HSBC Championships (Queen's)","Londres","Reino Unido","Grama",false,[["ATP","500"]],"2026-06-15","2026-06-21",null),
+  T("Kinoshita Group Japan Open","Tóquio","Japão","Dura",true,[["ATP","500"]],"2026-09-30","2026-10-06","https://www.japanopentennis.com"),
+  T("Erste Bank Open","Viena","Áustria","Dura",true,[["ATP","500"]],"2026-10-26","2026-11-01",null,{est26:true}),
+  T("Swiss Indoors Basel","Basileia","Suíça","Dura",true,[["ATP","500"]],"2026-10-26","2026-11-01","https://www.swissindoorsbasel.ch",{est26:true}),
+
+  // ===== WTA 500 =====
+  T("Mubadala Abu Dhabi Open","Abu Dhabi","Emirados Árabes Unidos","Dura",false,[["WTA","500"]],"2026-02-01","2026-02-07","https://www.mubadalaabudhabiopen.com"),
+  T("Mérida Open Akron","Mérida","México","Dura",false,[["WTA","500"]],"2026-02-23","2026-03-01",null),
+  T("Credit One Charleston Open","Charleston","Estados Unidos","Saibro (verde)",false,[["WTA","500"]],"2026-03-30","2026-04-05",null),
+  T("Upper Austria Ladies Linz","Linz","Áustria","Saibro",true,[["WTA","500"]],"2026-04-06","2026-04-12","https://www.ladieslinz.at"),
+  T("Porsche Tennis Grand Prix","Stuttgart","Alemanha","Saibro",true,[["WTA","500"]],"2026-04-13","2026-04-19","https://www.porsche-tennis.com"),
+  T("Internationaux de Strasbourg","Estrasburgo","França","Saibro",false,[["WTA","500"]],"2026-05-17","2026-05-23","https://www.internationaux-strasbourg.fr"),
+  T("HSBC Championships (Queen's, WTA)","Londres","Reino Unido","Grama",false,[["WTA","500"]],"2026-06-08","2026-06-14",null),
+  T("Berlin Tennis Open","Berlim","Alemanha","Grama",false,[["WTA","500"]],"2026-06-15","2026-06-21","https://www.berlintennisopen.com"),
+  T("Bad Homburg Open","Bad Homburg","Alemanha","Grama",false,[["WTA","500"]],"2026-06-21","2026-06-27",null),
+  T("Abierto GNP Seguros","Monterrey","México","Dura",false,[["WTA","500"]],"2026-08-23","2026-08-29",null),
+  T("Guadalajara Open Akron","Guadalajara","México","Dura",false,[["WTA","500"]],"2026-09-13","2026-09-19",null),
+  T("Korea Open","Seul","Coreia do Sul","Dura",false,[["WTA","500"]],"2026-09-21","2026-09-27",null,{est26:true}),
+  T("Singapore Tennis Open","Singapura","Singapura","Dura",true,[["WTA","500"]],"2026-09-21","2026-09-27",null,{est26:true,y27:["2027-09-20","2027-09-26"],note27:"Abre a gira asiática da WTA em 2027."}),
+  T("Ningbo Open","Ningbo","China","Dura",false,[["WTA","500"]],"2026-10-19","2026-10-25",null),
+  T("Toray Pan Pacific Open","Tóquio","Japão","Dura",false,[["WTA","500"]],"2026-10-26","2026-11-01",null,{y27:["2027-10-25","2027-10-31"]}),
+
+  // ===== ATP 250 =====
+  T("Bank of China Hong Kong Tennis Open","Hong Kong","China (RAE)","Dura",false,[["ATP","250"]],"2026-01-05","2026-01-11","https://www.hkmenstennisopen.com"),
+  T("Open Occitanie","Montpellier","França","Dura",true,[["ATP","250"]],"2026-02-02","2026-02-08","https://www.openoccitanie.com"),
+  T("Córdoba Open","Córdoba","Argentina","Saibro",false,[["ATP","250"]],"2026-02-02","2026-02-08",null,{est26:true}),
+  T("IEB+ Argentina Open","Buenos Aires","Argentina","Saibro",false,[["ATP","250"]],"2026-02-09","2026-02-15",null),
+  T("Delray Beach Open","Delray Beach","Estados Unidos","Dura",false,[["ATP","250"]],"2026-02-16","2026-02-22","https://www.yellowtennisball.com"),
+  T("Chile Open","Santiago","Chile","Saibro",false,[["ATP","250"]],"2026-02-23","2026-03-01",null),
+  T("Grand Prix Hassan II","Marrakech","Marrocos","Saibro",false,[["ATP","250"]],"2026-03-30","2026-04-05",null),
+  T("Țiriac Open","Bucareste","Romênia","Saibro",false,[["ATP","250"]],"2026-03-30","2026-04-05","https://www.tiriacopen.ro"),
+  T("U.S. Men's Clay Court Championship","Houston","Estados Unidos","Saibro",false,[["ATP","250"]],"2026-03-30","2026-04-05",null),
+  T("Gonet Geneva Open","Genebra","Suíça","Saibro",false,[["ATP","250"]],"2026-05-17","2026-05-23",null),
+  T("BOSS Open","Stuttgart","Alemanha","Grama",false,[["ATP","250"]],"2026-06-08","2026-06-14",null),
+  T("Mallorca Championships","Santa Ponsa","Espanha","Grama",false,[["ATP","250"]],"2026-06-21","2026-06-27","https://www.mallorcachampionships.com"),
+  T("Nordea Open","Båstad","Suécia","Saibro",false,[["ATP","250"]],"2026-07-13","2026-07-19",null),
+  T("Croatia Open Umag","Umag","Croácia","Saibro",false,[["ATP","250"]],"2026-07-13","2026-07-18","https://www.croatiaopen.hr"),
+  T("EFG Swiss Open Gstaad","Gstaad","Suíça","Saibro",false,[["ATP","250"]],"2026-07-13","2026-07-19","https://www.swissopengstaad.ch"),
+  T("Generali Open","Kitzbühel","Áustria","Saibro",false,[["ATP","250"]],"2026-07-20","2026-07-25",null),
+  T("Millennium Estoril Open","Estoril / Cascais","Portugal","Saibro",false,[["ATP","250"]],"2026-07-20","2026-07-26",null),
+  T("Mifel Tennis Open","Los Cabos","México","Dura",false,[["ATP","250"]],"2026-07-27","2026-08-01",null),
+  T("Winston-Salem Open","Winston-Salem","Estados Unidos","Dura",false,[["ATP","250"]],"2026-08-23","2026-08-29","https://www.winstonsalemopen.com"),
+  T("Chengdu Open","Chengdu","China","Dura",false,[["ATP","250"]],"2026-09-23","2026-09-29",null),
+  T("Hangzhou Open","Hangzhou","China","Dura",false,[["ATP","250"]],"2026-09-23","2026-09-29",null),
+  T("BNP Paribas Fortis European Open","Bruxelas","Bélgica","Dura",true,[["ATP","250"]],"2026-10-19","2026-10-25","https://www.europeanopen.be",{est26:true,note:"Mudou de Antuérpia para Bruxelas."}),
+  T("Open 13 Provence","Lyon","França","Dura",true,[["ATP","250"]],"2026-10-19","2026-10-25",null,{est26:true,note:"Mudou de Marselha (fevereiro) para Lyon (outubro)."}),
+  T("Almaty Open","Almaty","Cazaquistão","Dura",true,[["ATP","250"]],"2026-10-19","2026-10-25","https://www.almatyopen.kz"),
+  T("Bybit Stockholm Open","Estocolmo","Suécia","Dura",true,[["ATP","250"]],"2026-11-08","2026-11-14","https://www.stockholmopen.se"),
+
+  // ===== WTA 250 =====
+  T("Hobart International","Hobart","Austrália","Dura",false,[["WTA","250"]],"2026-01-11","2026-01-17",null),
+  T("Transylvania Open","Cluj-Napoca","Romênia","Dura",true,[["WTA","250"]],"2026-02-01","2026-02-07","https://www.transylvaniaopen.ro"),
+  T("Ostrava Open","Ostrava","República Tcheca","Dura",true,[["WTA","250"]],"2026-02-01","2026-02-07",null),
+  T("Abierto Mexicano Telcel (WTA)","Acapulco","México","Dura",false,[["WTA","250"]],"2026-02-23","2026-02-28","https://www.abiertomexicanodetenis.com"),
+  T("ATX Open","Austin","Estados Unidos","Dura",false,[["WTA","250"]],"2026-02-23","2026-03-01",null),
+  T("Copa Colsanitas","Bogotá","Colômbia","Saibro",false,[["WTA","250"]],"2026-03-30","2026-04-05",null),
+  T("Open de Rouen","Rouen","França","Saibro",true,[["WTA","250"]],"2026-04-13","2026-04-19",null),
+  T("Grand Prix SAR La Princesse Lalla Meryem","Rabat","Marrocos","Saibro",false,[["WTA","250"]],"2026-05-17","2026-05-23",null),
+  T("Ilkley Open","Ilkley","Reino Unido","Grama",false,[["WTA","250"]],"2026-06-08","2026-06-14",null),
+  T("Rothesay Open Nottingham","Nottingham","Reino Unido","Grama",false,[["WTA","250"]],"2026-06-15","2026-06-21",null),
+  T("Iași Open","Iași","Romênia","Saibro",false,[["WTA","250"]],"2026-07-13","2026-07-19",null),
+  T("Budapest Grand Prix","Budapeste","Hungria","Saibro",false,[["WTA","250"]],"2026-07-13","2026-07-19",null,{est26:true}),
+  T("Hamburg Open (WTA)","Hamburgo","Alemanha","Saibro",false,[["WTA","250"]],"2026-07-20","2026-07-26",null),
+  T("Memphis Classic","Memphis","Estados Unidos","Dura",true,[["WTA","250"]],"2026-07-27","2026-08-02",null),
+  T("SP Open","São Paulo","Brasil","Dura",false,[["WTA","250"]],"2026-09-07","2026-09-13",null,{est26:true}),
+  T("Guangzhou Open","Guangzhou","China","Dura",false,[["WTA","250"]],"2026-10-26","2026-11-01",null,{y27:["2027-10-25","2027-10-31"]}),
+  T("Prudential Hong Kong Tennis Open","Hong Kong","China (RAE)","Dura",false,[["WTA","250"]],"2026-11-02","2026-11-08",null,{y27:["2027-11-01","2027-11-07"]}),
+  T("Chennai Open","Chennai","Índia","Dura",false,[["WTA","250"]],"2026-11-02","2026-11-08",null),
+  T("Philippine Women's Open","Manila","Filipinas","Dura",false,[["WTA","250"]],"2027-11-01","2027-11-07","https://www.wtatennis.com/tournaments/1183/manila/2027",{only:2027,y27:["2027-11-01","2027-11-07"],note27:"Novo WTA 250 em 2027, última etapa antes das WTA Finals."}),
+];
+
+const CAT_LABEL = { GS: 'Grand Slam', '1000': '1000', '500': '500', '250': '250', F: 'Finais' };
+const CAT_RANK = { GS: 0, F: 1, '1000': 2, '500': 3, '250': 4 };
+const MONTHS = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+const MON = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+
+const parse = s => { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); };
+const addDays = (d, n) => new Date(d.getFullYear(), d.getMonth(), d.getDate() + n);
+
+function catLabel(tour, cat) {
+  if (cat === 'GS') return 'Grand Slam';
+  if (cat === 'F') return tour + ' Finals';
+  if (cat === '1000') return tour === 'ATP' ? 'Masters 1000' : 'WTA 1000';
+  return tour + ' ' + cat;
+}
+
+function edition(t, year) {
+  const o = t.o;
+  if (o.only && o.only !== year) return null;
+  let s, e, est;
+  if (year === 2026) {
+    s = parse(t.s); e = parse(t.e); est = !!o.est26;
+  } else if (o.y27) {
+    s = parse(o.y27[0]); e = parse(o.y27[1]); est = false;
+  } else {
+    s = addDays(parse(t.s), 364); e = addDays(parse(t.e), 364);
+    est = o.est27 === false ? false : true;
+  }
+  const note = year === 2027 ? (o.note27 || o.note || null) : (o.note || null);
+  const best = Math.min(...t.events.map(ev => CAT_RANK[ev[1]]));
+  return { ...t, start: s, end: e, est, note, best };
+}
+
+function fmtRange(s, e) {
+  if (s.getMonth() === e.getMonth()) return `${s.getDate()} – ${e.getDate()} ${MON[s.getMonth()]}`;
+  return `${s.getDate()} ${MON[s.getMonth()]} – ${e.getDate()} ${MON[e.getMonth()]}`;
+}
+
+function surfColor(sf) {
+  if (sf.startsWith('Saibro')) return 'var(--clay)';
+  if (sf.startsWith('Grama')) return 'var(--grass)';
+  return 'var(--hard)';
+}
+
+function esc(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+const state = { year: null, tour: 'all', cat: 'all', surface: 'all', when: 'all', q: '' };
+const today = new Date(); today.setHours(0,0,0,0);
+
+function load() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('campeonatos-tenis') || '{}');
+    Object.assign(state, saved);
+  } catch (_) {}
+  if (state.year !== 2026 && state.year !== 2027) state.year = today.getFullYear() >= 2027 || (today.getMonth() === 11) ? 2027 : 2026;
+  state.q = '';
+}
+function save() {
+  try { localStorage.setItem('campeonatos-tenis', JSON.stringify({ year: state.year, tour: state.tour, cat: state.cat, surface: state.surface, when: state.when })); } catch (_) {}
+}
+
+function render() {
+  const all = DATA.map(t => edition(t, state.year)).filter(Boolean);
+
+  // estatísticas do ano (sem filtros)
+  const count = c => all.reduce((n, t) => n + t.events.filter(ev => ev[1] === c).length, 0);
+  document.getElementById('stats').innerHTML = [
+    ['Grand Slams', all.filter(t => t.events.some(e => e[1] === 'GS')).length, 'var(--gs)'],
+    ['1000', count('1000'), 'var(--m1000)'],
+    ['500', count('500'), 'var(--c500)'],
+    ['250', count('250'), 'var(--c250)'],
+    ['Finais', count('F'), 'var(--fin)'],
+    ['Torneios', all.length, 'var(--accent)'],
+  ].map(([l, n, c]) => `<div class="stat"><b style="color:${c}">${n}</b><span>${l}</span></div>`).join('');
+
+  const q = state.q.trim().toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+  const list = all.filter(t => {
+    if (state.tour !== 'all' && !t.events.some(e => e[0] === state.tour)) return false;
+    if (state.cat !== 'all' && !t.events.some(e => e[1] === state.cat && (state.tour === 'all' || e[0] === state.tour))) return false;
+    if (state.surface !== 'all' && !t.surface.startsWith(state.surface)) return false;
+    if (state.when === 'next' && t.end < today) return false;
+    if (q) {
+      const hay = (t.name + ' ' + t.city + ' ' + t.country).toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  }).sort((a, b) => a.start - b.start || a.best - b.best || a.name.localeCompare(b.name));
+
+  const est = list.filter(t => t.est).length;
+  document.getElementById('countLine').textContent =
+    `${list.length} torneio${list.length === 1 ? '' : 's'} em ${state.year}` + (est ? ` · ${est} com data prevista` : '');
+
+  const byMonth = new Map();
+  list.forEach(t => {
+    const m = t.start.getMonth();
+    if (!byMonth.has(m)) byMonth.set(m, []);
+    byMonth.get(m).push(t);
+  });
+
+  let html = '';
+  for (const [m, items] of byMonth) {
+    html += `<section class="month"><h2>${MONTHS[m]} <small>${items.length} torneio${items.length === 1 ? '' : 's'}</small></h2>`;
+    for (const t of items) {
+      const past = t.end < today, live = t.start <= today && t.end >= today;
+      const catClass = Object.keys(CAT_RANK).find(k => CAT_RANK[k] === t.best);
+      const pill = live ? '<span class="pill p-live">Em andamento</span>'
+                 : past ? '<span class="pill p-done">Concluído</span>'
+                 : t.est ? '<span class="pill p-est">Prevista</span>' : '';
+      const badges = t.events.map(([tour, cat]) => `<span class="badge b-${tour}">${esc(catLabel(tour, cat))}</span>`).join('');
+      const tours = [...new Set(t.events.map(e => e[0]))];
+      const tourLinks = tours.map(tr => `<a href="${tr === 'ATP' ? ATP_HUB : WTA_HUB}" target="_blank" rel="noopener">${tr} oficial</a>`).join('');
+      const siteLink = t.site ? `<a class="main" href="${esc(t.site)}" target="_blank" rel="noopener">Site do torneio</a>` : '';
+      const surf = t.surface + (t.indoor ? ' · coberta' : '');
+      html += `<article class="row cat-${catClass}${past ? ' past' : ''}${live ? ' live' : ''}">
+        <div class="dates">${fmtRange(t.start, t.end)}<small>${state.year}</small></div>
+        <div>
+          <div class="name">${esc(t.name)} ${pill}</div>
+          <div class="meta">
+            <span>📍 ${esc(t.city)}, ${esc(t.country)}</span>
+            <span class="surf"><i style="background:${surfColor(t.surface)}"></i>${esc(surf)}</span>
+          </div>
+          <div class="badges">${badges}</div>
+          ${t.note ? `<div class="note">${esc(t.note)}</div>` : ''}
+        </div>
+        <div class="links">${siteLink}${tourLinks}</div>
+      </article>`;
+    }
+    html += '</section>';
+  }
+  document.getElementById('list').innerHTML = html;
+  document.getElementById('empty').style.display = list.length ? 'none' : 'block';
+
+  document.querySelectorAll('#years button').forEach(b => b.classList.toggle('active', +b.dataset.year === state.year));
+  document.querySelectorAll('#tourSeg button').forEach(b => b.classList.toggle('active', b.dataset.tour === state.tour));
+  document.getElementById('cat').value = state.cat;
+  document.getElementById('surface').value = state.surface;
+  document.getElementById('when').value = state.when;
+  save();
+}
+
+load();
+document.getElementById('years').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { state.year = +b.dataset.year; render(); } });
+document.getElementById('tourSeg').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { state.tour = b.dataset.tour; render(); } });
+['cat', 'surface', 'when'].forEach(id => document.getElementById(id).addEventListener('change', e => { state[id] = e.target.value; render(); }));
+document.getElementById('search').addEventListener('input', e => { state.q = e.target.value; render(); });
+render();
+</script>
+</body>
+</html>
