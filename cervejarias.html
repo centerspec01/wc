@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ranking Mundial de Cervejas</title>
+<meta name="description" content="Ranking das melhores cervejarias e pubs do mundo, com os estilos de cerveja produzidos e servidos em cada lugar e um guia de estilos.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0E0B07;
+    --bg-2: #17130D;
+    --bg-3: #211B12;
+    --bg-4: #2D2518;
+    --border: rgba(255,230,190,0.09);
+    --border-strong: rgba(255,230,190,0.22);
+    --text: #F2EADC;
+    --muted: #A89A82;
+    --dim: #7A6E5B;
+    --accent: #F2A531;
+    --accent-ink: #1A1206;
+    --gold: #F5C542;
+    --silver: #C8CDD6;
+    --bronze: #D08B52;
+    --pub: #5FB3A1;
+    --brew: #F2A531;
+    --fav: #F5539E;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #FAF6EF; --bg-2: #FFFFFF; --bg-3: #F2EBDF; --bg-4: #E6DCCB;
+      --border: rgba(40,28,10,0.10); --border-strong: rgba(40,28,10,0.24);
+      --text: #1E170C; --muted: #64573F; --dim: #8A7C64;
+      --accent: #B86E00; --accent-ink: #FFFFFF; --gold: #B7860B; --silver: #6B7280; --bronze: #A0592A;
+      --pub: #1F7F6B; --brew: #B86E00; --fav: #C42A72;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #FAF6EF; --bg-2: #FFFFFF; --bg-3: #F2EBDF; --bg-4: #E6DCCB;
+    --border: rgba(40,28,10,0.10); --border-strong: rgba(40,28,10,0.24);
+    --text: #1E170C; --muted: #64573F; --dim: #8A7C64;
+    --accent: #B86E00; --accent-ink: #FFFFFF; --gold: #B7860B; --silver: #6B7280; --bronze: #A0592A;
+    --pub: #1F7F6B; --brew: #B86E00; --fav: #C42A72;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; padding-bottom: 60px; overflow-x: hidden; }
+  a { color: inherit; }
+  button { font: inherit; }
+  [hidden] { display: none !important; }
+
+  header { max-width: 1100px; margin: 0 auto; padding: 40px 16px 16px; text-align: center; position: relative; }
+  .eyebrow { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.3rem, 7.5vw, 4rem); letter-spacing: .02em; line-height: 1.02; margin-top: 6px; }
+  .subtitle { color: var(--muted); font-size: .95rem; margin: 10px auto 0; max-width: 680px; line-height: 1.5; }
+  #theme { position: absolute; top: 16px; right: 16px; background: var(--bg-3); border: 1px solid var(--border); color: var(--muted); border-radius: 10px; width: 38px; height: 38px; cursor: pointer; font-size: 1rem; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 18px 0; }
+  .stat { background: var(--bg-2); border: 1px solid var(--border); border-radius: 12px; padding: 10px 6px; text-align: center; }
+  .stat b { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; line-height: 1; }
+  .stat span { font-size: .62rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
+
+  .tabs { display: flex; justify-content: center; gap: 8px; margin: 6px 0 4px; flex-wrap: wrap; }
+  .tabs button { font-family: 'Bebas Neue', sans-serif; font-size: 1.45rem; letter-spacing: .04em; padding: 6px 20px; border-radius: 12px; border: 1px solid var(--border); background: var(--bg-2); color: var(--muted); cursor: pointer; }
+  .tabs button.active { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+
+  .controls { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  #search { flex: 1 1 200px; min-width: 0; background: var(--bg-3); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; color: var(--text); font: inherit; font-size: .88rem; }
+  #search:focus, select:focus { outline: none; border-color: var(--border-strong); }
+  select { background: var(--bg-3); border: 1px solid var(--border); border-radius: 10px; padding: 9px 10px; color: var(--text); font: inherit; font-size: .8rem; font-weight: 600; cursor: pointer; max-width: 100%; }
+  .favbtn { background: var(--bg-3); border: 1px solid var(--border); border-radius: 10px; padding: 9px 12px; color: var(--muted); font-size: .8rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .favbtn.active { color: var(--fav); border-color: var(--fav); }
+
+  .stylebar { display: flex; gap: 6px; overflow-x: auto; padding: 12px 0 4px; scrollbar-width: thin; }
+  .chip { flex: 0 0 auto; font-size: .74rem; font-weight: 700; padding: 6px 11px; border-radius: 20px; border: 1px solid var(--border); background: var(--bg-2); color: var(--muted); cursor: pointer; white-space: nowrap; }
+  .chip:hover { border-color: var(--border-strong); color: var(--text); }
+  .chip.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .chip i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; vertical-align: 0; }
+
+  .styleinfo { display: none; margin: 12px 0 0; background: var(--bg-2); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 12px; padding: 14px 16px; }
+  .styleinfo.show { display: block; }
+  .styleinfo h3 { font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+  .styleinfo p { font-size: .84rem; color: var(--muted); line-height: 1.5; margin-top: 6px; }
+
+  .count-line { font-size: .76rem; color: var(--dim); margin: 12px 0 10px; }
+
+  .list { display: flex; flex-direction: column; gap: 8px; }
+  .card { display: grid; grid-template-columns: 56px 1fr auto; gap: 14px; align-items: center; background: var(--bg-2); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; cursor: pointer; transition: border-color .15s, transform .15s; text-align: left; color: inherit; width: 100%; }
+  .card:hover { border-color: var(--border-strong); transform: translateY(-1px); }
+  .rank { font-family: 'Bebas Neue', sans-serif; font-size: 2.1rem; line-height: 1; text-align: center; color: var(--dim); font-variant-numeric: tabular-nums; }
+  .rank.r1 { color: var(--gold); } .rank.r2 { color: var(--silver); } .rank.r3 { color: var(--bronze); }
+  .rank small { display: block; font-family: 'Inter', sans-serif; font-size: .56rem; letter-spacing: .1em; font-weight: 800; text-transform: uppercase; color: var(--dim); margin-top: 3px; }
+  .name { font-weight: 800; font-size: 1.02rem; line-height: 1.25; }
+  .meta { font-size: .8rem; color: var(--muted); margin-top: 3px; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
+  .kind { white-space: nowrap; font-size: .6rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 2px 7px; border-radius: 6px; }
+  .k-brew { color: var(--brew); background: color-mix(in srgb, var(--brew) 14%, transparent); }
+  .k-pub { color: var(--pub); background: color-mix(in srgb, var(--pub) 14%, transparent); }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .tag { font-size: .66rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; background: var(--bg-3); color: var(--muted); border: 1px solid var(--border); display: inline-flex; align-items: center; gap: 5px; }
+  .tag i { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+  .tag.hit { color: var(--text); border-color: var(--accent); }
+  .sig { font-size: .76rem; color: var(--dim); margin-top: 7px; line-height: 1.4; }
+  .sig b { color: var(--muted); font-weight: 700; }
+  .score { text-align: center; min-width: 64px; }
+  .score b { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 1.9rem; line-height: 1; color: var(--accent); }
+  .score span { font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); font-weight: 800; }
+  .bar { height: 4px; border-radius: 3px; background: var(--bg-4); margin-top: 6px; overflow: hidden; }
+  .bar div { height: 100%; background: var(--accent); }
+  .star { background: none; border: 0; color: var(--dim); cursor: pointer; font-size: 1.1rem; margin-top: 6px; line-height: 1; }
+  .star.on { color: var(--fav); }
+
+  .empty { text-align: center; color: var(--muted); padding: 50px 0; display: none; }
+
+  /* estilos */
+  .sgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
+  .scard { background: var(--bg-2); border: 1px solid var(--border); border-top: 4px solid var(--c); border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .scard h3 { font-size: 1.02rem; display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .scard h3 small { font-size: .68rem; color: var(--dim); font-weight: 700; white-space: nowrap; }
+  .scard p { font-size: .82rem; color: var(--muted); line-height: 1.5; }
+  .metric { display: grid; grid-template-columns: 44px 1fr 70px; gap: 8px; align-items: center; font-size: .7rem; color: var(--dim); font-weight: 700; }
+  .metric .track { height: 6px; background: var(--bg-4); border-radius: 4px; position: relative; }
+  .metric .range { position: absolute; top: 0; bottom: 0; border-radius: 4px; background: var(--c); }
+  .metric span:last-child { text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .swatch { display: flex; align-items: center; gap: 8px; font-size: .74rem; color: var(--muted); }
+  .swatch i { width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--border-strong); }
+  .scard .go { margin-top: auto; align-self: flex-start; background: var(--bg-3); border: 1px solid var(--border-strong); color: var(--text); border-radius: 8px; padding: 7px 11px; font-size: .74rem; font-weight: 700; cursor: pointer; }
+  .scard .go:hover { background: var(--bg-4); }
+
+  /* modal */
+  dialog { border: 1px solid var(--border-strong); border-radius: 16px; background: var(--bg-2); color: var(--text); width: min(640px, calc(100vw - 24px)); max-height: calc(100vh - 40px); padding: 0; margin: auto; }
+  dialog::backdrop { background: rgba(0,0,0,.6); }
+  .dlg { padding: 20px 20px 18px; }
+  .dlg h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: .02em; line-height: 1.05; padding-right: 36px; }
+  .dlg .close { position: absolute; top: 12px; right: 12px; background: var(--bg-3); border: 1px solid var(--border); color: var(--muted); border-radius: 8px; width: 34px; height: 34px; cursor: pointer; font-size: 1rem; }
+  .dlg .desc { font-size: .88rem; color: var(--muted); line-height: 1.55; margin-top: 10px; }
+  .dlg h4 { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); margin: 16px 0 8px; }
+  .srow { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; padding: 9px 0; border-top: 1px solid var(--border); font-size: .82rem; }
+  .srow b { display: flex; align-items: center; gap: 7px; }
+  .srow b i { width: 9px; height: 9px; border-radius: 50%; }
+  .srow span { color: var(--dim); font-size: .74rem; font-variant-numeric: tabular-nums; }
+  .srow p { grid-column: 1 / -1; color: var(--muted); font-size: .78rem; line-height: 1.45; }
+  .dlinks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .dlinks a { text-decoration: none; font-size: .78rem; font-weight: 700; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-strong); }
+  .dlinks a.main { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .dlinks a:hover { filter: brightness(1.08); }
+
+  .disclaimer { margin: 30px 0 0; background: var(--bg-2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; padding: 14px 16px; font-size: .8rem; color: var(--muted); line-height: 1.55; }
+  .disclaimer strong { color: var(--text); }
+
+  @media (max-width: 720px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .card { grid-template-columns: 40px 1fr; gap: 10px; }
+    .rank { font-size: 1.7rem; }
+    .score { grid-column: 2; display: flex; align-items: center; gap: 10px; text-align: left; }
+    .score b { font-size: 1.5rem; }
+    .score .bar { flex: 1; margin: 0; }
+    .star { margin: 0; }
+    .controls select { flex: 1 1 40%; }
+    .sgrid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <button id="theme" title="Alternar tema" aria-label="Alternar tema">🌓</button>
+  <div class="eyebrow">Guia mundial da cerveja</div>
+  <h1>Ranking de Cervejarias &amp; Pubs</h1>
+  <p class="subtitle">As cervejarias e os bares de cerveja mais reverenciados do planeta, com os estilos que cada um produz ou serve, e um guia completo dos estilos.</p>
+</header>
+
+<main>
+  <div class="stats" id="stats"></div>
+
+  <div class="tabs" role="tablist">
+    <button data-tab="all" class="active">Geral</button>
+    <button data-tab="brew">Cervejarias</button>
+    <button data-tab="pub">Pubs</button>
+    <button data-tab="styles">Estilos</button>
+  </div>
+
+  <div class="controls" id="controls">
+    <input id="search" type="search" placeholder="Buscar nome, cidade, cerveja…" autocomplete="off">
+    <select id="region"><option value="">Todos os continentes</option></select>
+    <select id="country"><option value="">Todos os países</option></select>
+    <button class="favbtn" id="favOnly" title="Mostrar só favoritos">★ Favoritos</button>
+  </div>
+
+  <div class="stylebar" id="stylebar"></div>
+  <div class="styleinfo" id="styleinfo"></div>
+
+  <div class="count-line" id="countLine"></div>
+  <div class="list" id="list"></div>
+  <div class="sgrid" id="sgrid" hidden></div>
+  <div class="empty" id="empty">Nenhum lugar encontrado com esses filtros.</div>
+
+  <div class="disclaimer">
+    <strong>Sobre a nota:</strong> a pontuação (0–100) é editorial e combina a reputação de cada lugar em rankings públicos de avaliações de cervejeiros (como RateBeer, Untappd e BeerAdvocate), prêmios e relevância histórica. Não é uma nota oficial de nenhuma dessas plataformas. Horários, cardápios e funcionamento mudam: confira antes de ir. Beba com moderação.
+  </div>
+</main>
+
+<dialog id="dlg"></dialog>
+
+<script>
+/* ───────── ESTILOS ───────── */
+// abv/ibu: faixas típicas · srm: cor (escala SRM aproximada) · c: cor do chip
+const STYLES = {
+  pils:      { n: 'Pilsner',               fam: 'Lager',   origin: 'Plzeň, Rep. Tcheca · 1842', abv: [4.2, 5.4], ibu: [25, 45], srm: 3,  glass: 'Tulipa de pilsner / caneca',  d: 'Lager dourada e cristalina, com malte delicado e amargor floral de lúpulo Saaz (tcheca) ou mais seco e herbal (alemã).' },
+  helles:    { n: 'Helles / Lager clara',  fam: 'Lager',   origin: 'Munique, Alemanha · 1894',  abv: [4.7, 5.4], ibu: [16, 22], srm: 4,  glass: 'Caneca (Maß)',                d: 'Lager bávara dourada, maltada e macia, com lúpulo discreto. A cerveja das cervejarias e biergartens de Munique.' },
+  dunkel:    { n: 'Dunkel / Lager escura', fam: 'Lager',   origin: 'Baviera / Boêmia',          abv: [4.5, 5.6], ibu: [16, 28], srm: 20, glass: 'Caneca',                      d: 'Lager escura de malte tostado, notas de pão, caramelo e chocolate leve, sem o amargor de uma stout.' },
+  bock:      { n: 'Bock / Doppelbock',     fam: 'Lager',   origin: 'Einbeck → Munique',         abv: [6.3, 10], ibu: [16, 30],  srm: 18, glass: 'Cálice / caneca',             d: 'Lagers fortes e maltadas; a doppelbock, criada por monges paulinos, tem corpo de “pão líquido”, caramelo e frutas secas.' },
+  rauch:     { n: 'Rauchbier',             fam: 'Lager',   origin: 'Bamberg, Alemanha',         abv: [4.8, 6.0], ibu: [20, 30], srm: 18, glass: 'Caneca',                      d: 'Märzen feita com malte defumado em fogo de faia: aroma intenso de defumado, bacon e madeira.' },
+  weizen:    { n: 'Weissbier / Hefeweizen',fam: 'Trigo',   origin: 'Baviera, Alemanha',         abv: [4.3, 5.6], ibu: [8, 15],  srm: 5,  glass: 'Copo de weizen (alto)',       d: 'Cerveja de trigo turva, com fermento que dá aroma de banana e cravo. Refrescante e de alta carbonatação.' },
+  witbier:   { n: 'Witbier',               fam: 'Trigo',   origin: 'Hoegaarden, Bélgica',       abv: [4.5, 5.5], ibu: [8, 20],  srm: 3,  glass: 'Copo facetado',               d: 'Trigo belga turvo temperado com casca de laranja e coentro. Leve, cítrica e condimentada.' },
+  kolsch:    { n: 'Kölsch',                fam: 'Ale',     origin: 'Colônia, Alemanha',         abv: [4.4, 5.2], ibu: [18, 30], srm: 4,  glass: 'Stange (0,2 L)',              d: 'Ale clara fermentada em alta e maturada a frio: limpa como uma lager, frutada sutil. Só pode levar o nome se feita em Colônia.' },
+  alt:       { n: 'Altbier',               fam: 'Ale',     origin: 'Düsseldorf, Alemanha',      abv: [4.3, 5.5], ibu: [25, 50], srm: 14, glass: 'Becher (copo baixo)',         d: 'Ale acobreada de Düsseldorf, “à moda antiga”: maltada, seca e com amargor firme.' },
+  bitter:    { n: 'Bitter / ESB (cask)',   fam: 'Ale',     origin: 'Inglaterra',                abv: [3.2, 6.2], ibu: [25, 50], srm: 12, glass: 'Pint (nonic)',                d: 'A ale de pub britânico: acobreada, pouca carbonatação, servida da torneira de cask (real ale) em temperatura de adega.' },
+  pale:      { n: 'Pale Ale / APA',        fam: 'Ale',     origin: 'Inglaterra → EUA',          abv: [4.5, 6.2], ibu: [30, 50], srm: 7,  glass: 'Pint / tulipa',               d: 'Ale clara e equilibrada; a versão americana destaca lúpulos cítricos e resinosos (ex.: Cascade).' },
+  ipa:       { n: 'IPA',                   fam: 'Ale',     origin: 'Inglaterra → EUA',          abv: [5.5, 7.5], ibu: [40, 70], srm: 8,  glass: 'Tulipa / copo IPA',           d: 'India Pale Ale: amargor pronunciado e aroma intenso de lúpulo (cítrico, pinho, frutas tropicais).' },
+  neipa:     { n: 'NEIPA / Hazy IPA',      fam: 'Ale',     origin: 'Vermont, EUA · anos 2010',  abv: [6.0, 8.0], ibu: [25, 60], srm: 5,  glass: 'Tulipa / teku',               d: 'IPA turva e suculenta da Nova Inglaterra: amargor macio, corpo sedoso (aveia/trigo) e explosão de frutas tropicais.' },
+  dipa:      { n: 'Double / Imperial IPA', fam: 'Ale',     origin: 'Califórnia, EUA',           abv: [7.5, 10], ibu: [60, 100], srm: 7,  glass: 'Tulipa / snifter',            d: 'IPA mais forte e lupulada, seca e intensa. A Pliny the Elder é a referência histórica do estilo.' },
+  stout:     { n: 'Stout (Irish Dry)',     fam: 'Ale',     origin: 'Dublin, Irlanda',           abv: [4.0, 5.0], ibu: [25, 45], srm: 35, glass: 'Pint (tulipa irlandesa)',     d: 'Preta, seca e torrada, com notas de café e espuma cremosa (muitas vezes servida com nitrogênio).' },
+  porter:    { n: 'Porter / Baltic Porter',fam: 'Ale',     origin: 'Londres · séc. XVIII',      abv: [4.0, 9.5], ibu: [20, 40], srm: 30, glass: 'Pint / snifter',              d: 'Escura e maltada, com chocolate e caramelo; a Baltic Porter é forte e fermentada a frio.' },
+  impstout:  { n: 'Imperial Stout',        fam: 'Ale',     origin: 'Inglaterra → Rússia',       abv: [8.0, 14], ibu: [50, 90],  srm: 40, glass: 'Snifter',                     d: 'Stout forte e densa, de chocolate amargo, café e frutas escuras. Versões envelhecidas em barril de bourbon e “pastry stouts” são as mais disputadas.' },
+  barleywine:{ n: 'Barleywine',            fam: 'Ale',     origin: 'Inglaterra',                abv: [8.0, 12], ibu: [35, 100], srm: 16, glass: 'Snifter',                     d: 'Ale fortíssima, de guarda, com caramelo, toffee e frutas secas, aquecida pelo álcool.' },
+  bpa:       { n: 'Belgian Pale Ale',      fam: 'Belga',   origin: 'Bélgica',                   abv: [4.8, 6.0], ibu: [20, 35], srm: 8,  glass: 'Cálice',                      d: 'Ale acobreada belga, leve e frutada. A Orval acrescenta Brettanomyces, ficando seca e rústica com o tempo.' },
+  goldenstrong:{ n: 'Belgian Golden Strong',fam:'Belga',   origin: 'Bélgica',                   abv: [7.5, 10.5], ibu: [22, 35], srm: 4, glass: 'Tulipa',                      d: 'Dourada, seca, efervescente e enganosamente forte (ex.: Duvel). Pera, especiarias e álcool bem escondido.' },
+  dubbel:    { n: 'Dubbel',                fam: 'Belga',   origin: 'Abadias trapistas',         abv: [6.0, 7.6], ibu: [15, 25], srm: 16, glass: 'Cálice trapista',             d: 'Ale de abadia castanho-escura: passas, ameixa, caramelo e especiarias do fermento belga.' },
+  tripel:    { n: 'Tripel',                fam: 'Belga',   origin: 'Westmalle, Bélgica · 1934', abv: [7.5, 9.5], ibu: [20, 40], srm: 5,  glass: 'Cálice trapista',             d: 'Dourada, forte e seca, com ésteres frutados, pimenta e amargor elegante. Criada em Westmalle.' },
+  quad:      { n: 'Quadrupel / Dark Strong',fam:'Belga',   origin: 'Abadias trapistas',         abv: [8.0, 12], ibu: [20, 35],  srm: 22, glass: 'Cálice trapista',             d: 'A mais forte das ales de abadia: figo, tâmara, açúcar candi escuro e chocolate. Westvleteren 12 e Rochefort 10 são lendas.' },
+  saison:    { n: 'Saison / Farmhouse',    fam: 'Belga',   origin: 'Valônia, Bélgica',          abv: [3.5, 9.5], ibu: [20, 35], srm: 5,  glass: 'Tulipa',                      d: 'Cerveja de fazenda seca, muito carbonatada, apimentada e frutada; versões modernas usam leveduras selvagens.' },
+  lambic:    { n: 'Lambic / Gueuze',       fam: 'Ácida',   origin: 'Pajottenland, Bélgica',     abv: [5.0, 8.0], ibu: [0, 10],  srm: 5,  glass: 'Copo de gueuze',              d: 'Fermentação espontânea com microrganismos do ar, envelhecida anos em barril. A gueuze é o blend de lambics jovens e velhas: ácida, complexa e “funky”.' },
+  fruitsour: { n: 'Kriek / Fruit Lambic',  fam: 'Ácida',   origin: 'Bruxelas, Bélgica',         abv: [4.0, 7.0], ibu: [0, 10],  srm: 10, glass: 'Copo de gueuze / flauta',     d: 'Lambic macerada com frutas inteiras (cereja, framboesa, damasco). Ácida, seca e muito aromática.' },
+  wild:      { n: 'Wild Ale / Sour de barril', fam: 'Ácida', origin: 'EUA · Bélgica',           abv: [5.0, 10], ibu: [5, 25],   srm: 8,  glass: 'Tulipa / taça',               d: 'Ales fermentadas ou maturadas com Brettanomyces e bactérias láticas em barris de carvalho, muitas vezes com frutas.' },
+  catharina: { n: 'Catharina Sour',        fam: 'Ácida',   origin: 'Santa Catarina, Brasil · 2015', abv: [4.0, 5.5], ibu: [2, 8], srm: 4, glass: 'Taça / tulipa',             d: 'Estilo brasileiro reconhecido pelo BJCP: sour de trigo leve, de acidez lática limpa, com frutas frescas (muitas vezes tropicais).' },
+};
+const FAM_COLORS = { 'Lager': '#E8C547', 'Trigo': '#F1E3A0', 'Ale': '#E07A3F', 'Belga': '#B794F6', 'Ácida': '#F5539E' };
+const styleColor = k => FAM_COLORS[STYLES[k].fam];
+function srmHex(srm) {
+  const t = [[2,'#F8E58A'],[4,'#F3CC48'],[6,'#E5A72C'],[9,'#D4891C'],[13,'#BE6A16'],[17,'#A1480F'],[22,'#7E300C'],[30,'#4F1A08'],[40,'#260B04']];
+  for (const [s, c] of t) if (srm <= s) return c;
+  return '#140603';
+}
+
+/* ───────── LUGARES ───────── */
+// t: brew = cervejaria · pub = bar/pub · s: estilos (primeiro = carro-chefe) · y: fundação
+const PLACES = [
+  // ── Bélgica
+  { id:'westvleteren', t:'brew', n:'Westvleteren (Abadia de Sint-Sixtus)', city:'Vleteren', cc:'BE', y:1838, score:99, s:['quad','dubbel','bpa'], sig:'Westvleteren 12, Westvleteren 8, Blond', d:'Cervejaria trapista dos monges de Sint-Sixtus, que produzem apenas o necessário para manter a abadia. A Westvleteren 12 é frequentemente apontada como a melhor cerveja do mundo e só é vendida na abadia ou no café In De Vrede, em frente.' },
+  { id:'cantillon', t:'brew', n:'Cantillon', city:'Bruxelas', cc:'BE', y:1900, score:98, s:['lambic','fruitsour','wild'], sig:'Gueuze 100% Lambic, Kriek, Rosé de Gambrinus, Fou’ Foune', d:'Última cervejaria tradicional de lambic dentro de Bruxelas, ainda com coolship e barris centenários. Funciona também como museu vivo da fermentação espontânea.' },
+  { id:'3fonteinen', t:'brew', n:'3 Fonteinen', city:'Beersel', cc:'BE', y:1887, score:96, s:['lambic','fruitsour'], sig:'Oude Geuze, Oude Kriek, Hommage', d:'Blendery e cervejaria de lambic no Pajottenland, referência em gueuze e krieks envelhecidas, com restaurante e loja próprios.' },
+  { id:'rochefort', t:'brew', n:'Rochefort (Abadia de Saint-Rémy)', city:'Rochefort', cc:'BE', y:1595, score:95, s:['quad','dubbel','tripel'], sig:'Rochefort 10, Rochefort 8, Triple Extra', d:'Trapista das Ardenas cuja Rochefort 10 é uma das quadrupels mais premiadas: escura, licorosa, com figo e chocolate.' },
+  { id:'westmalle', t:'brew', n:'Westmalle', city:'Malle', cc:'BE', y:1836, score:94, s:['tripel','dubbel'], sig:'Westmalle Tripel, Westmalle Dubbel', d:'A abadia trapista que definiu os estilos Dubbel e Tripel. A Tripel, de 1934, é a matriz de todas as tripels.' },
+  { id:'orval', t:'brew', n:'Orval', city:'Villers-devant-Orval', cc:'BE', y:1931, score:93, s:['bpa'], sig:'Orval', d:'Trapista que faz praticamente uma só cerveja: a Orval, seca e lupulada, refermentada com Brettanomyces, que evolui por anos na garrafa.' },
+  { id:'stbernardus', t:'brew', n:'St. Bernardus', city:'Watou', cc:'BE', y:1946, score:93, s:['quad','tripel','witbier','dubbel'], sig:'Abt 12, Tripel, Wit', d:'Cervejaria de abadia (não trapista) que produziu sob licença para Westvleteren até 1992; a Abt 12 é das quadrupels mais celebradas.' },
+  { id:'dupont', t:'brew', n:'Brasserie Dupont', city:'Tourpes', cc:'BE', y:1844, score:92, s:['saison','goldenstrong'], sig:'Saison Dupont, Moinette', d:'Fazenda-cervejaria da Valônia. A Saison Dupont é considerada o padrão mundial do estilo saison.' },
+  { id:'tilquin', t:'brew', n:'Gueuzerie Tilquin', city:'Bierghes', cc:'BE', y:2011, score:91, s:['lambic','fruitsour'], sig:'Oude Gueuze Tilquin à l’Ancienne, Oude Quetsche', d:'Única gueuzerie da Valônia: compra mostos de lambic de várias cervejarias e faz blends e versões com frutas.' },
+  { id:'boon', t:'brew', n:'Brouwerij Boon', city:'Lembeek', cc:'BE', y:1975, score:89, s:['lambic','fruitsour'], sig:'Oude Geuze Boon, Mariage Parfait, Oude Kriek', d:'Frank Boon assumiu a antiga cervejaria em 1975 e ajudou a salvar o lambic tradicional do declínio.' },
+  { id:'duvel', t:'brew', n:'Duvel Moortgat', city:'Breendonk', cc:'BE', y:1871, score:87, s:['goldenstrong','tripel'], sig:'Duvel, Duvel Tripel Hop', d:'Criadora da Duvel (“diabo”), arquétipo das Belgian Golden Strong Ales.' },
+
+  // ── Alemanha / Rep. Tcheca
+  { id:'weihenstephan', t:'brew', n:'Weihenstephaner', city:'Freising', cc:'DE', y:1040, score:92, s:['weizen','helles','bock'], sig:'Hefeweissbier, Vitus, Korbinian', d:'Considerada a cervejaria mais antiga em funcionamento no mundo, ligada à Universidade Técnica de Munique. Referência em hefeweizen.' },
+  { id:'augustiner', t:'brew', n:'Augustiner-Bräu', city:'Munique', cc:'DE', y:1328, score:91, s:['helles','dunkel','bock'], sig:'Lagerbier Hell, Edelstoff, Maximator', d:'A mais antiga cervejaria de Munique ainda independente; a Helles servida de barris de madeira é idolatrada pelos locais.' },
+  { id:'schlenkerla', t:'brew', n:'Aecht Schlenkerla', city:'Bamberg', cc:'DE', y:1405, score:91, s:['rauch','helles','bock'], sig:'Rauchbier Märzen, Urbock', d:'Taverna-cervejaria histórica de Bamberg, guardiã do estilo rauchbier com malte defumado na própria casa. Servida por gravidade de barris de carvalho.' },
+  { id:'schneider', t:'brew', n:'Schneider Weisse', city:'Kelheim', cc:'DE', y:1872, score:90, s:['weizen','bock'], sig:'Tap 7 Original, Tap 6 Aventinus', d:'Família que manteve viva a cerveja de trigo bávara; a Aventinus é a weizenbock clássica.' },
+  { id:'ayinger', t:'brew', n:'Ayinger', city:'Aying', cc:'DE', y:1878, score:89, s:['bock','helles','weizen','dunkel'], sig:'Celebrator Doppelbock, Bräu-Weisse', d:'Cervejaria de vilarejo bávaro cuja Celebrator é uma das doppelbocks mais premiadas do mundo.' },
+  { id:'urquell', t:'brew', n:'Pilsner Urquell', city:'Plzeň', cc:'CZ', y:1842, score:90, s:['pils'], sig:'Pilsner Urquell (inclusive não filtrada, nas adegas)', d:'Onde nasceu a pilsner, em 1842. A visita inclui as adegas históricas com cerveja não filtrada direto do barril de carvalho.' },
+  { id:'budvar', t:'brew', n:'Budějovický Budvar', city:'České Budějovice', cc:'CZ', y:1895, score:86, s:['pils','dunkel'], sig:'Budvar Original, Budvar Dark', d:'Lager tcheca estatal de longa maturação, famosa pela disputa de marca com a Budweiser americana.' },
+
+  // ── Reino Unido / Irlanda
+  { id:'kernel', t:'brew', n:'The Kernel', city:'Londres', cc:'GB', y:2009, score:91, s:['pale','ipa','porter','impstout'], sig:'Pale Ales de lúpulo único, Export India Porter, Imperial Brown Stout', d:'Pioneira do craft londrino sob os arcos ferroviários de Bermondsey, famosa por pale ales que mudam de lúpulo a cada lote.' },
+  { id:'cloudwater', t:'brew', n:'Cloudwater', city:'Manchester', cc:'GB', y:2014, score:90, s:['neipa','dipa','pale'], sig:'DIPAs sazonais, Pale ales', d:'Uma das cervejarias que trouxe o estilo hazy/NEIPA para a Europa, com rodízio constante de receitas sazonais.' },
+  { id:'verdant', t:'brew', n:'Verdant', city:'Falmouth', cc:'GB', y:2014, score:90, s:['neipa','dipa','pale'], sig:'Lightbulb, Putty, Even Sharks Need Water', d:'Cervejaria da Cornualha considerada das melhores do Reino Unido em IPAs turvas.' },
+  { id:'fullers', t:'brew', n:'Fuller’s (Griffin Brewery)', city:'Londres', cc:'GB', y:1845, score:85, s:['bitter','porter','barleywine'], sig:'London Pride, ESB, Vintage Ale', d:'Cervejaria de Chiswick que criou o estilo ESB (Extra Special Bitter). Hoje pertence à Asahi.' },
+  { id:'brewdog', t:'brew', n:'BrewDog', city:'Ellon', cc:'GB', y:2007, score:80, s:['ipa','pale','impstout'], sig:'Punk IPA, Hazy Jane', d:'A escocesa que popularizou o craft no Reino Unido e abriu bares em dezenas de países.' },
+  { id:'guinness', t:'brew', n:'Guinness (St. James’s Gate)', city:'Dublin', cc:'IE', y:1759, score:84, s:['stout','porter'], sig:'Guinness Draught, Foreign Extra Stout', d:'Arthur Guinness assinou um arrendamento de 9.000 anos em 1759. A Guinness Storehouse é a atração mais visitada da Irlanda.' },
+
+  // ── Europa (outros)
+  { id:'kees', t:'brew', n:'Brouwerij Kees', city:'Middelburg', cc:'NL', y:null, score:91, s:['impstout','dipa','barleywine'], sig:'Caramel Fudge Stout, Export Porter 1750', d:'Cervejaria holandesa de Kees Bubberman, muito bem avaliada por imperial stouts e cervejas de barril.' },
+  { id:'demolen', t:'brew', n:'Brouwerij de Molen', city:'Bodegraven', cc:'NL', y:2004, score:89, s:['impstout','barleywine','ipa'], sig:'Hel & Verdoemenis, Rasputin', d:'Começou num moinho de vento do século XVII; organiza o festival Borefts, um dos melhores da Europa.' },
+  { id:'mikkeller', t:'brew', n:'Mikkeller', city:'Copenhague', cc:'DK', y:2006, score:88, s:['ipa','impstout','wild','neipa'], sig:'Beer Geek Breakfast, Spontanbeers', d:'Começou como cervejaria “cigana” (sem fábrica própria) e virou marca global com bares pelo mundo e milhares de rótulos.' },
+  { id:'pohjala', t:'brew', n:'Põhjala', city:'Tallinn', cc:'EE', y:2011, score:90, s:['impstout','porter','ipa'], sig:'Öö (Baltic Porter), Must Kuld, Cellar Series', d:'A cervejaria da Estônia é referência em stouts e porters do Báltico, muitas envelhecidas em barril.' },
+  { id:'omnipollo', t:'brew', n:'Omnipollo', city:'Estocolmo', cc:'SE', y:2011, score:88, s:['impstout','wild','dipa'], sig:'Noa Pecan Mud Cake, Bianca (lassi gose)', d:'Dupla sueca com rótulos de design marcante, pioneira das “pastry stouts” e sours de sobremesa.' },
+
+  // ── EUA / Canadá
+  { id:'russianriver', t:'brew', n:'Russian River Brewing', city:'Santa Rosa, Califórnia', cc:'US', y:1997, score:97, s:['dipa','wild','ipa','goldenstrong'], sig:'Pliny the Elder, Pliny the Younger, Supplication, Consecration', d:'Cervejaria de Vinnie Cilurzo, um dos criadores da Double IPA. O lançamento anual da Pliny the Younger gera filas de horas.' },
+  { id:'treehouse', t:'brew', n:'Tree House Brewing', city:'Charlton, Massachusetts', cc:'US', y:2011, score:97, s:['neipa','dipa','impstout'], sig:'Julius, Haze, King JJJuliusss, Very Hazy', d:'Considerada uma das melhores cervejarias do mundo em NEIPA, com fila constante no taproom em meio a uma fazenda.' },
+  { id:'hillfarmstead', t:'brew', n:'Hill Farmstead', city:'Greensboro Bend, Vermont', cc:'US', y:2010, score:97, s:['saison','pale','ipa','porter','wild'], sig:'Edward, Susan, Anna, Everett', d:'Fazenda familiar no interior de Vermont eleita várias vezes a melhor cervejaria do mundo no RateBeer. As cervejas levam nomes de antepassados.' },
+  { id:'alchemist', t:'brew', n:'The Alchemist', city:'Stowe, Vermont', cc:'US', y:2003, score:95, s:['dipa','neipa','ipa'], sig:'Heady Topper, Focal Banger', d:'Criadora da Heady Topper, DIPA em lata que desencadeou o movimento das IPAs da Nova Inglaterra.' },
+  { id:'trillium', t:'brew', n:'Trillium Brewing', city:'Boston, Massachusetts', cc:'US', y:2013, score:94, s:['neipa','dipa','impstout','wild'], sig:'Congress Street, Fort Point, Pot & Kettle', d:'Cervejaria de Boston de NEIPAs e stouts disputadas, com fermentações mistas da linha “Wild”.' },
+  { id:'toppling', t:'brew', n:'Toppling Goliath', city:'Decorah, Iowa', cc:'US', y:2009, score:94, s:['impstout','ipa','pale','dipa'], sig:'Kentucky Brunch Brand Stout, Pseudo Sue, King Sue', d:'A Kentucky Brunch Brand Stout já liderou o ranking de melhor cerveja do mundo; a Pseudo Sue é uma pale ale de lúpulo único reverenciada.' },
+  { id:'sideproject', t:'brew', n:'Side Project Brewing', city:'St. Louis, Missouri', cc:'US', y:2013, score:94, s:['wild','impstout','saison','barleywine'], sig:'Derivation, Fuzzy, Biere du Pays', d:'Projeto de Cory King focado em cervejas envelhecidas em barril, wild ales com frutas e stouts imperiais.' },
+  { id:'3floyds', t:'brew', n:'3 Floyds', city:'Munster, Indiana', cc:'US', y:1996, score:92, s:['impstout','pale','ipa'], sig:'Dark Lord, Zombie Dust, Gumballhead', d:'Famosa pela Dark Lord, imperial stout lançada uma vez por ano no “Dark Lord Day”, e pela pale ale Zombie Dust.' },
+  { id:'monkish', t:'brew', n:'Monkish Brewing', city:'Torrance, Califórnia', cc:'US', y:2012, score:92, s:['neipa','dipa','tripel','saison'], sig:'Foggier Window, Belgian-inspired ales', d:'Começou com cervejas de inspiração belga e virou referência californiana de IPAs turvas.' },
+  { id:'otherhalf', t:'brew', n:'Other Half Brewing', city:'Brooklyn, Nova York', cc:'US', y:2014, score:92, s:['neipa','dipa','impstout'], sig:'Green City, All Green Everything, DDH series', d:'Nova-iorquina conhecida pelas DDH (dry hop duplo) e lançamentos de latas semanais.' },
+  { id:'founders', t:'brew', n:'Founders Brewing', city:'Grand Rapids, Michigan', cc:'US', y:1997, score:91, s:['impstout','ipa','porter'], sig:'KBS, CBS, Breakfast Stout, All Day IPA', d:'A KBS (Kentucky Breakfast Stout) envelhecida em barril de bourbon ajudou a definir o estilo das stouts de barril.' },
+  { id:'jesterking', t:'brew', n:'Jester King', city:'Austin, Texas', cc:'US', y:2010, score:91, s:['saison','wild','fruitsour'], sig:'Atrial Rubicite, Le Petit Prince', d:'Fazenda-cervejaria no Hill Country do Texas dedicada a ales de fermentação mista e espontânea.' },
+  { id:'allagash', t:'brew', n:'Allagash Brewing', city:'Portland, Maine', cc:'US', y:1995, score:90, s:['witbier','tripel','wild'], sig:'Allagash White, Curieux, Coolship series', d:'Pioneira dos estilos belgas nos EUA; a Allagash White é uma das witbiers mais premiadas e o coolship próprio produz lambics americanas.' },
+  { id:'firestone', t:'brew', n:'Firestone Walker', city:'Paso Robles, Califórnia', cc:'US', y:1996, score:90, s:['ipa','barleywine','impstout','pale'], sig:'Union Jack, Parabola, Sucaba, Pivo Pils', d:'Sistema próprio de fermentação em barris (Firestone Union) e uma linha de barril muito premiada.' },
+  { id:'sierranevada', t:'brew', n:'Sierra Nevada', city:'Chico, Califórnia', cc:'US', y:1980, score:88, s:['pale','ipa','barleywine','porter'], sig:'Pale Ale, Bigfoot, Celebration, Torpedo', d:'Uma das fundadoras do craft americano; a Sierra Nevada Pale Ale com Cascade definiu a APA.' },
+  { id:'bells', t:'brew', n:'Bell’s Brewery', city:'Kalamazoo, Michigan', cc:'US', y:1985, score:88, s:['ipa','impstout','porter'], sig:'Two Hearted Ale, Expedition Stout, Hopslam', d:'A Two Hearted Ale (IPA com Centennial) já foi eleita a melhor cerveja dos EUA pela American Homebrewers Association.' },
+  { id:'stone', t:'brew', n:'Stone Brewing', city:'Escondido, Califórnia', cc:'US', y:1996, score:86, s:['ipa','dipa','impstout'], sig:'Stone IPA, Arrogant Bastard, Xocoveza', d:'Marca da agressividade lupulada da Costa Oeste. Hoje pertence à Sapporo.' },
+  { id:'dieuduciel', t:'brew', n:'Dieu du Ciel!', city:'Montreal', cc:'CA', y:1998, score:91, s:['impstout','witbier','ipa'], sig:'Péché Mortel, Rosée d’Hibiscus', d:'Brewpub de Montreal cuja Péché Mortel (imperial stout com café) é das mais aclamadas do mundo.' },
+  { id:'unibroue', t:'brew', n:'Unibroue', city:'Chambly, Quebec', cc:'CA', y:1990, score:86, s:['tripel','quad','witbier'], sig:'La Fin du Monde, Trois Pistoles, Blanche de Chambly', d:'Canadense especializada em estilos belgas refermentados na garrafa.' },
+
+  // ── Ásia / Oceania
+  { id:'kiuchi', t:'brew', n:'Kiuchi (Hitachino Nest)', city:'Naka, Ibaraki', cc:'JP', y:1823, score:85, s:['witbier','ipa','impstout'], sig:'Hitachino Nest White Ale, Red Rice Ale, Japanese Classic Ale', d:'Destilaria de saquê fundada em 1823 que lançou a linha Hitachino Nest em 1996, com o icônico rótulo da coruja.' },
+  { id:'garageproject', t:'brew', n:'Garage Project', city:'Wellington', cc:'NZ', y:2011, score:89, s:['ipa','neipa','wild','pale'], sig:'Pernicious Weed, Hapi Daze, Wild Workshop', d:'Começou num antigo posto de gasolina e virou a cervejaria mais criativa da Nova Zelândia, explorando lúpulos neozelandeses.' },
+
+  // ── Brasil / América Latina
+  { id:'wals', t:'brew', n:'Wals', city:'Belo Horizonte', cc:'BR', y:null, score:84, s:['quad','dubbel','saison','tripel'], sig:'Wals Quadrupel, Wals Dubbel', d:'Mineira premiada internacionalmente por suas cervejas de inspiração belga. Hoje faz parte da Ambev.' },
+  { id:'bodebrown', t:'brew', n:'Bodebrown', city:'Curitiba', cc:'BR', y:2009, score:86, s:['ipa','dipa','impstout','barleywine'], sig:'Perigosa Imperial IPA, Wee Heavy, Cacau IPA', d:'Cervejaria-escola de Curitiba, uma das pioneiras do movimento craft brasileiro e famosa pelo trem cervejeiro.' },
+  { id:'waybeer', t:'brew', n:'Way Beer', city:'Pinhais, Paraná', cc:'BR', y:null, score:85, s:['catharina','ipa','neipa','impstout'], sig:'Catharina Sours com frutas, Amburana Lager', d:'Paranaense de destaque em sours brasileiras e no uso de madeiras nativas, como amburana.' },
+  { id:'dogma', t:'brew', n:'Dogma', city:'São Paulo', cc:'BR', y:null, score:85, s:['neipa','dipa','impstout'], sig:'Hazy IPAs e stouts sazonais', d:'Paulistana sempre entre as mais bem avaliadas do país no Untappd, com lançamentos frequentes de IPAs turvas.' },
+  { id:'colorado', t:'brew', n:'Cervejaria Colorado', city:'Ribeirão Preto', cc:'BR', y:1995, score:80, s:['ipa','pale','porter','weizen'], sig:'Indica, Appia, Demoiselle', d:'Pioneira em usar ingredientes brasileiros (rapadura, mel, café, mandioca). Pertence à Ambev.' },
+
+  /* ═══════════ PUBS ═══════════ */
+  // ── Bélgica
+  { id:'moeder', t:'pub', n:'Moeder Lambic Fontainas', city:'Bruxelas', cc:'BE', score:95, s:['lambic','fruitsour','saison','quad','ipa'], sig:'Torneiras de lambic e gueuze de Cantillon, 3 Fonteinen, Tilquin', d:'Bar de referência em Bruxelas, com dezenas de torneiras de cervejarias belgas artesanais, lambics raras e uma seleção sempre rotativa.' },
+  { id:'kulminator', t:'pub', n:'Kulminator', city:'Antuérpia', cc:'BE', score:94, s:['quad','tripel','dubbel','lambic','barleywine'], sig:'Carta com garrafas envelhecidas de várias décadas', d:'Bar lendário com cardápio de centenas de cervejas, incluindo safras antigas de trapistas e lambics guardadas na adega.' },
+  { id:'invrede', t:'pub', n:'In De Vrede', city:'Vleteren', cc:'BE', score:93, s:['quad','dubbel','bpa'], sig:'Westvleteren 12, 8 e Blond servidas no copo da abadia', d:'Café oficial da abadia de Sint-Sixtus, em frente ao mosteiro: o único lugar onde a Westvleteren está sempre no cardápio.' },
+  { id:'brugsbeertje', t:'pub', n:'’t Brugs Beertje', city:'Bruges', cc:'BE', score:91, s:['tripel','quad','dubbel','lambic','saison'], sig:'Mais de 300 cervejas belgas', d:'Pub aconchegante no centro de Bruges, desde 1983 uma peregrinação obrigatória para quem quer conhecer cerveja belga.' },
+  { id:'delirium', t:'pub', n:'Delirium Café', city:'Bruxelas', cc:'BE', score:86, s:['goldenstrong','tripel','quad','fruitsour','witbier'], sig:'Delirium Tremens; mais de 2.000 rótulos', d:'Entrou para o Guinness por ter a maior oferta de cervejas do mundo. Turístico e lotado, mas imperdível.' },
+
+  // ── Alemanha / Rep. Tcheca
+  { id:'weltenburg', t:'pub', n:'Klosterschenke Weltenburg', city:'Kelheim', cc:'DE', score:92, s:['dunkel','helles','bock'], sig:'Weltenburger Barock Dunkel, Asam Bock', d:'Biergarten da abadia beneditina de Weltenburg, às margens do Danúbio, servindo cerveja de um dos mosteiros cervejeiros mais antigos do mundo.' },
+  { id:'augkeller', t:'pub', n:'Augustiner-Keller', city:'Munique', cc:'DE', score:90, s:['helles','dunkel','bock'], sig:'Helles servida de barril de madeira (Holzfass)', d:'Biergarten com milhares de lugares sob castanheiras, o favorito dos muniquenses, longe do circuito turístico.' },
+  { id:'hofbrauhaus', t:'pub', n:'Hofbräuhaus München', city:'Munique', cc:'DE', y:1589, score:85, s:['helles','dunkel','weizen','bock'], sig:'HB Original em canecas de 1 litro', d:'A cervejaria-salão mais famosa do mundo, fundada pelo duque da Baviera. Banda de metais, canecas de litro e pretzel.' },
+  { id:'paffgen', t:'pub', n:'Brauhaus Päffgen', city:'Colônia', cc:'DE', y:1883, score:89, s:['kolsch'], sig:'Päffgen Kölsch tirada do barril', d:'Brauhaus tradicional onde o garçom (Köbes) repõe a Stange de Kölsch até você cobrir o copo com o descanso.' },
+  { id:'fuchschen', t:'pub', n:'Brauerei Im Füchschen', city:'Düsseldorf', cc:'DE', y:1848, score:89, s:['alt'], sig:'Füchschen Alt', d:'Uma das quatro cervejarias de Altbier da Altstadt de Düsseldorf, com produção própria nos fundos do bar.' },
+  { id:'ufleku', t:'pub', n:'U Fleků', city:'Praga', cc:'CZ', y:1499, score:87, s:['dunkel'], sig:'Flekovský tmavý ležák 13°', d:'Cervejaria-taverna em funcionamento desde 1499, que serve apenas a própria lager escura.' },
+  { id:'zlatytygr', t:'pub', n:'U Zlatého tygra', city:'Praga', cc:'CZ', score:88, s:['pils'], sig:'Pilsner Urquell do tanque, tirada à moda tcheca', d:'Taverna clássica de Praga frequentada pelo escritor Bohumil Hrabal (e onde ele levou Bill Clinton em 1994). Mesas compartilhadas, só Pilsner Urquell.' },
+  { id:'lokal', t:'pub', n:'Lokál Dlouhááá', city:'Praga', cc:'CZ', y:2009, score:87, s:['pils','dunkel'], sig:'Pilsner Urquell de tanque, servida hladinka, šnyt ou mlíko', d:'Salão moderno de cozinha tcheca e Pilsner Urquell de tanque não pasteurizada. Ótimo para aprender os estilos de tiragem tchecos.' },
+
+  // ── Reino Unido / Irlanda
+  { id:'royaloak', t:'pub', n:'The Royal Oak', city:'Londres', cc:'GB', score:88, s:['bitter','porter','barleywine'], sig:'Harvey’s Sussex Best Bitter em cask', d:'Pub vitoriano em Borough, um dos poucos em Londres com toda a linha de cask ales da Harvey’s.' },
+  { id:'harp', t:'pub', n:'The Harp', city:'Londres', cc:'GB', score:88, s:['bitter','pale','porter','stout'], sig:'Seleção rotativa de real ales em cask', d:'Pub estreito em Covent Garden eleito Pub Nacional do Ano pela CAMRA, conhecido pelas real ales sempre bem tiradas.' },
+  { id:'cheshire', t:'pub', n:'Ye Olde Cheshire Cheese', city:'Londres', cc:'GB', y:1667, score:84, s:['bitter','stout','porter'], sig:'Cervejas Samuel Smith', d:'Reconstruído após o Grande Incêndio de 1666, frequentado por Dickens e Mark Twain. Salas escuras e labirínticas.' },
+  { id:'kelham', t:'pub', n:'Kelham Island Tavern', city:'Sheffield', cc:'GB', score:89, s:['bitter','pale','ipa','porter','stout'], sig:'Mais de uma dezena de cask ales rotativas', d:'Pub de Sheffield duas vezes eleito o Pub Nacional do Ano da CAMRA, numa cidade que é capital da real ale.' },
+  { id:'brazen', t:'pub', n:'The Brazen Head', city:'Dublin', cc:'IE', y:1198, score:86, s:['stout','porter','bitter'], sig:'Guinness tirada nos dois tempos; música irlandesa ao vivo', d:'Reivindica ser o pub mais antigo da Irlanda (local de taverna desde 1198). Música tradicional todas as noites.' },
+  { id:'seans', t:'pub', n:'Sean’s Bar', city:'Athlone', cc:'IE', score:85, s:['stout','porter'], sig:'Guinness', d:'Reconhecido pelo Guinness World Records como o pub mais antigo da Irlanda, com origens atribuídas ao ano de 900.' },
+
+  // ── Europa (outros)
+  { id:'wildeman', t:'pub', n:'In de Wildeman', city:'Amsterdã', cc:'NL', score:90, s:['tripel','quad','dubbel','ipa','impstout'], sig:'18 torneiras e mais de 200 garrafas', d:'Antiga destilaria do século XVII transformada em bar de cerveja, sem música, com foco em holandesas e belgas.' },
+  { id:'arendsnest', t:'pub', n:'Proeflokaal Arendsnest', city:'Amsterdã', cc:'NL', score:89, s:['ipa','impstout','tripel','saison','bock'], sig:'Só cervejas holandesas: 50+ torneiras', d:'Bar à beira do canal Herengracht dedicado exclusivamente às cervejarias da Holanda.' },
+  { id:'gollem', t:'pub', n:'Café Gollem', city:'Amsterdã', cc:'NL', score:86, s:['tripel','quad','dubbel','lambic'], sig:'Seleção de belgas e holandesas', d:'Bar minúsculo e cheio de personalidade, um dos primeiros especializados em cerveja na cidade.' },
+  { id:'mikkellerbar', t:'pub', n:'Mikkeller Bar Viktoriagade', city:'Copenhague', cc:'DK', y:2010, score:89, s:['ipa','neipa','wild','impstout','pale'], sig:'20 torneiras rotativas de Mikkeller e convidadas', d:'O bar original da Mikkeller, em Vesterbro, porão estreito e minimalista que inspirou dezenas de filiais pelo mundo.' },
+  { id:'akkurat', t:'pub', n:'Akkurat', city:'Estocolmo', cc:'SE', score:88, s:['lambic','wild','quad','tripel','ipa'], sig:'Grande carta de lambics e cask ale', d:'Bar de Södermalm famoso pelas belgas, lambics raras e uísques, com cervejaria própria no porão.' },
+  { id:'machesiete', t:'pub', n:'Ma Che Siete Venuti a Fà', city:'Roma', cc:'IT', score:90, s:['ipa','pale','saison','wild','impstout'], sig:'16 torneiras de artesanais italianas e europeias', d:'Pequeno bar em Trastevere considerado o santuário da cerveja artesanal italiana.' },
+  { id:'biercab', t:'pub', n:'BierCaB', city:'Barcelona', cc:'ES', score:88, s:['neipa','ipa','impstout','wild','pale'], sig:'30 torneiras com rodízio constante', d:'Bar e loja no Eixample, referência do craft espanhol com petiscos que harmonizam com cada estilo.' },
+
+  // ── EUA
+  { id:'toronado', t:'pub', n:'Toronado', city:'São Francisco, Califórnia', cc:'US', y:1987, score:92, s:['ipa','dipa','wild','quad','barleywine'], sig:'Pliny the Elder na torneira; Barleywine Festival anual', d:'Bar punk e mal-humorado de Lower Haight, um dos templos da cerveja artesanal americana desde 1987.' },
+  { id:'churchkey', t:'pub', n:'ChurchKey', city:'Washington, D.C.', cc:'US', y:2009, score:91, s:['ipa','neipa','wild','impstout','bitter'], sig:'50 torneiras, 5 casks e 500 garrafas', d:'Bar de Logan Circle com uma das cartas mais amplas dos EUA, organizada por sabor.' },
+  { id:'monks', t:'pub', n:'Monk’s Café', city:'Filadélfia, Pensilvânia', cc:'US', y:1997, score:90, s:['tripel','quad','lambic','fruitsour','saison'], sig:'Belgas raras e mexilhões com fritas', d:'Pioneiro em trazer cerveja belga para os EUA; tem até uma cerveja própria feita na Bélgica.' },
+  { id:'hopleaf', t:'pub', n:'Hopleaf', city:'Chicago, Illinois', cc:'US', y:1992, score:90, s:['tripel','quad','saison','ipa','wild'], sig:'Belgas e cervejas do Meio-Oeste', d:'Bar de Andersonville que une seleção belga impecável e cozinha premiada.' },
+  { id:'blindtiger', t:'pub', n:'Blind Tiger Ale House', city:'Nova York', cc:'US', y:1995, score:88, s:['ipa','neipa','bitter','impstout','pale'], sig:'28 torneiras e casks', d:'Clássico do West Village para beber craft americana, com eventos de lançamento de cervejarias.' },
+
+  // ── Ásia
+  { id:'popeye', t:'pub', n:'Popeye Beer Club', city:'Tóquio', cc:'JP', score:89, s:['ipa','pale','weizen','impstout','pils'], sig:'Cerca de 70 torneiras, foco em cervejarias japonesas', d:'Bar em Ryōgoku, perto da arena de sumô, com uma das maiores ofertas de chope artesanal japonês do país.' },
+
+  // ── Brasil
+  { id:'frango', t:'pub', n:'Frangó', city:'São Paulo', cc:'BR', score:88, s:['tripel','quad','ipa','weizen','impstout'], sig:'Centenas de rótulos e a famosa coxinha com catupiry', d:'Bar no largo da Matriz da Freguesia do Ó, pioneiro em cervejas especiais no Brasil e parada clássica de cervejeiros.' },
+  { id:'eap', t:'pub', n:'Empório Alto dos Pinheiros (EAP)', city:'São Paulo', cc:'BR', score:87, s:['neipa','ipa','catharina','impstout','wild'], sig:'Torneiras rotativas de craft brasileira e importados', d:'Empório e bar paulistano dos mais respeitados do país, com seleção curada de nacionais e importadas.' },
+];
+
+const COUNTRIES = {
+  BE:['Bélgica','Europa'], DE:['Alemanha','Europa'], CZ:['Rep. Tcheca','Europa'], GB:['Reino Unido','Europa'], IE:['Irlanda','Europa'],
+  NL:['Holanda','Europa'], DK:['Dinamarca','Europa'], EE:['Estônia','Europa'], SE:['Suécia','Europa'], IT:['Itália','Europa'], ES:['Espanha','Europa'],
+  US:['EUA','América do Norte'], CA:['Canadá','América do Norte'], JP:['Japão','Ásia e Oceania'], NZ:['Nova Zelândia','Ásia e Oceania'], BR:['Brasil','América do Sul'],
+};
+const flag = cc => String.fromCodePoint(...[...cc].map(c => 127397 + c.charCodeAt(0)));
+
+/* ───────── ESTADO ───────── */
+const $ = id => document.getElementById(id);
+const state = { tab: 'all', q: '', region: '', country: '', style: '', fav: false };
+let favs = new Set();
+try { favs = new Set(JSON.parse(localStorage.getItem('cerv-favs') || '[]')); } catch (e) {}
+const saveFavs = () => { try { localStorage.setItem('cerv-favs', JSON.stringify([...favs])); } catch (e) {} };
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
+/* ───────── INIT ───────── */
+function init() {
+  const nCountries = new Set(PLACES.map(p => p.cc)).size;
+  $('stats').innerHTML = [
+    [PLACES.filter(p => p.t === 'brew').length, 'Cervejarias'],
+    [PLACES.filter(p => p.t === 'pub').length, 'Pubs & bares'],
+    [nCountries, 'Países'],
+    [Object.keys(STYLES).length, 'Estilos'],
+  ].map(([v, l]) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`).join('');
+
+  const regions = [...new Set(Object.values(COUNTRIES).map(c => c[1]))];
+  $('region').innerHTML += regions.map(r => `<option>${r}</option>`).join('');
+  fillCountries();
+
+  const byFam = {};
+  Object.entries(STYLES).forEach(([k, v]) => (byFam[v.fam] ||= []).push(k));
+  $('stylebar').innerHTML = `<button class="chip active" data-style="">Todos os estilos</button>` +
+    Object.values(byFam).flat().map(k => `<button class="chip" data-style="${k}"><i style="background:${styleColor(k)}"></i>${STYLES[k].n}</button>`).join('');
+
+  document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => setTab(b.dataset.tab));
+  $('stylebar').onclick = e => { const c = e.target.closest('.chip'); if (c) setStyle(c.dataset.style); };
+  $('search').oninput = e => { state.q = e.target.value; render(); };
+  $('region').onchange = e => { state.region = e.target.value; state.country = ''; fillCountries(); render(); };
+  $('country').onchange = e => { state.country = e.target.value; render(); };
+  $('favOnly').onclick = () => { state.fav = !state.fav; $('favOnly').classList.toggle('active', state.fav); render(); };
+  $('theme').onclick = toggleTheme;
+  $('list').onclick = e => {
+    const st = e.target.closest('.star');
+    if (st) { e.stopPropagation(); toggleFav(st.dataset.id); return; }
+    const c = e.target.closest('.card'); if (c) openPlace(c.dataset.id);
+  };
+  $('list').onkeydown = e => { if (e.key === 'Enter' && e.target.classList.contains('card')) openPlace(e.target.dataset.id); };
+  $('sgrid').onclick = e => { const g = e.target.closest('.go'); if (g) { setTab('all'); setStyle(g.dataset.style); window.scrollTo({ top: $('controls').offsetTop, behavior: 'smooth' }); } };
+  $('dlg').onclick = e => { if (e.target === $('dlg') || e.target.closest('.close')) $('dlg').close(); };
+
+  const h = new URLSearchParams(location.hash.slice(1));
+  if (h.get('tab')) state.tab = h.get('tab');
+  if (h.get('estilo') && STYLES[h.get('estilo')]) state.style = h.get('estilo');
+  setTab(state.tab, true); setStyle(state.style, true);
+  render();
+}
+
+function fillCountries() {
+  const list = Object.entries(COUNTRIES).filter(([, v]) => !state.region || v[1] === state.region)
+    .filter(([cc]) => PLACES.some(p => p.cc === cc)).sort((a, b) => a[1][0].localeCompare(b[1][0]));
+  $('country').innerHTML = `<option value="">Todos os países</option>` + list.map(([cc, v]) => `<option value="${cc}">${flag(cc)} ${v[0]}</option>`).join('');
+}
+
+function setTab(t, silent) {
+  state.tab = t;
+  document.querySelectorAll('.tabs button').forEach(b => b.classList.toggle('active', b.dataset.tab === t));
+  const isStyles = t === 'styles';
+  $('list').hidden = isStyles; $('sgrid').hidden = !isStyles;
+  $('controls').style.display = isStyles ? 'none' : '';
+  $('stylebar').style.display = isStyles ? 'none' : '';
+  $('styleinfo').style.display = isStyles ? 'none' : '';
+  if (!silent) { updateHash(); render(); }
+}
+
+function setStyle(k, silent) {
+  state.style = k || '';
+  document.querySelectorAll('#stylebar .chip').forEach(c => c.classList.toggle('active', c.dataset.style === state.style));
+  const el = $('styleinfo');
+  if (state.style) {
+    const s = STYLES[state.style];
+    el.style.borderLeftColor = styleColor(state.style);
+    el.innerHTML = `<h3><span class="swatch"><i style="background:${srmHex(s.srm)}"></i></span>${s.n} <span class="kind k-brew" style="color:${styleColor(state.style)};background:color-mix(in srgb, ${styleColor(state.style)} 14%, transparent)">${s.fam}</span></h3>
+      <p>${s.d}</p><p><b>Origem:</b> ${s.origin} · <b>Álcool:</b> ${s.abv[0]}–${s.abv[1]}% · <b>IBU:</b> ${s.ibu[0]}–${s.ibu[1]} · <b>Copo:</b> ${s.glass}</p>`;
+    el.classList.add('show');
+    const chip = document.querySelector(`#stylebar .chip[data-style="${state.style}"]`);
+    if (chip) chip.scrollIntoView({ block: 'nearest', inline: 'center' });
+  } else el.classList.remove('show');
+  if (!silent) { updateHash(); render(); }
+}
+
+function updateHash() {
+  const p = new URLSearchParams();
+  if (state.tab !== 'all') p.set('tab', state.tab);
+  if (state.style) p.set('estilo', state.style);
+  history.replaceState(null, '', p.toString() ? '#' + p : location.pathname + location.search);
+}
+
+function toggleFav(id) { favs.has(id) ? favs.delete(id) : favs.add(id); saveFavs(); render(); }
+
+function toggleTheme() {
+  const root = document.documentElement;
+  const cur = root.dataset.theme || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  root.dataset.theme = cur === 'light' ? 'dark' : 'light';
+  try { localStorage.setItem('cerv-theme', root.dataset.theme); } catch (e) {}
+}
+
+/* ───────── RENDER ───────── */
+function filtered() {
+  const q = norm(state.q.trim());
+  return PLACES.filter(p =>
+    (state.tab === 'all' || p.t === state.tab) &&
+    (!state.style || p.s.includes(state.style)) &&
+    (!state.country || p.cc === state.country) &&
+    (!state.region || COUNTRIES[p.cc][1] === state.region) &&
+    (!state.fav || favs.has(p.id)) &&
+    (!q || norm([p.n, p.city, COUNTRIES[p.cc][0], p.sig, ...p.s.map(k => STYLES[k].n)].join(' ')).includes(q))
+  ).sort((a, b) => {
+    // com estilo selecionado, quem tem o estilo como carro-chefe sobe no desempate
+    if (b.score !== a.score) return b.score - a.score;
+    if (state.style) return a.s.indexOf(state.style) - b.s.indexOf(state.style);
+    return a.n.localeCompare(b.n);
+  });
+}
+
+function render() {
+  if (state.tab === 'styles') return renderStyles();
+  const items = filtered();
+  const label = { all: 'lugares', brew: 'cervejarias', pub: 'pubs' }[state.tab];
+  $('countLine').textContent = `${items.length} ${label}` + (state.style ? ` com ${STYLES[state.style].n}` : '') + ' · ordenado pela nota';
+  $('empty').style.display = items.length ? 'none' : 'block';
+  $('list').innerHTML = items.map((p, i) => {
+    const r = i + 1;
+    const [cname] = COUNTRIES[p.cc];
+    return `<div class="card" role="button" tabindex="0" data-id="${p.id}">
+      <div class="rank ${r <= 3 ? 'r' + r : ''}">${r}<small>${p.t === 'brew' ? 'cerv.' : 'pub'}</small></div>
+      <div>
+        <div class="name">${esc(p.n)}</div>
+        <div class="meta"><span>${flag(p.cc)} ${esc(p.city)}, ${cname}</span>
+          <span class="kind ${p.t === 'brew' ? 'k-brew' : 'k-pub'}">${p.t === 'brew' ? 'Cervejaria' : 'Pub / bar'}</span>
+          ${p.y ? `<span>desde ${p.y}</span>` : ''}</div>
+        <div class="tags">${p.s.map(k => `<span class="tag ${k === state.style ? 'hit' : ''}"><i style="background:${styleColor(k)}"></i>${STYLES[k].n}</span>`).join('')}</div>
+        <div class="sig"><b>${p.t === 'brew' ? 'Cervejas-ícone:' : 'Destaques:'}</b> ${esc(p.sig)}</div>
+      </div>
+      <div class="score"><b>${p.score}</b><span>nota</span><div class="bar"><div style="width:${p.score}%"></div></div>
+        <button class="star ${favs.has(p.id) ? 'on' : ''}" data-id="${p.id}" title="Favoritar" aria-label="Favoritar">${favs.has(p.id) ? '★' : '☆'}</button></div>
+    </div>`;
+  }).join('');
+}
+
+function renderStyles() {
+  $('countLine').textContent = `${Object.keys(STYLES).length} estilos · faixas típicas de álcool e amargor (IBU)`;
+  $('empty').style.display = 'none';
+  const fams = ['Lager', 'Trigo', 'Ale', 'Belga', 'Ácida'];
+  const keys = Object.keys(STYLES).sort((a, b) => fams.indexOf(STYLES[a].fam) - fams.indexOf(STYLES[b].fam));
+  $('sgrid').innerHTML = keys.map(k => {
+    const s = STYLES[k];
+    const nb = PLACES.filter(p => p.t === 'brew' && p.s.includes(k)).length;
+    const np = PLACES.filter(p => p.t === 'pub' && p.s.includes(k)).length;
+    const top = PLACES.filter(p => p.s[0] === k || p.s.includes(k)).sort((a, b) => b.score - a.score).slice(0, 3).map(p => p.n.split(' (')[0]);
+    const rng = (v, max) => `left:${v[0] / max * 100}%;width:${Math.max(2, (v[1] - v[0]) / max * 100)}%`;
+    return `<div class="scard" style="--c:${styleColor(k)}">
+      <h3>${s.n}<small>${s.fam}</small></h3>
+      <div class="swatch"><i style="background:${srmHex(s.srm)}"></i>${s.origin}</div>
+      <p>${s.d}</p>
+      <div class="metric"><span>Álcool</span><div class="track"><div class="range" style="${rng(s.abv, 14)}"></div></div><span>${s.abv[0]}–${s.abv[1]}%</span></div>
+      <div class="metric"><span>IBU</span><div class="track"><div class="range" style="${rng(s.ibu, 100)}"></div></div><span>${s.ibu[0]}–${s.ibu[1]}</span></div>
+      <p style="font-size:.76rem"><b>Copo:</b> ${s.glass}<br><b>Onde:</b> ${nb} cervejarias · ${np} pubs${top.length ? `<br><b>Top:</b> ${top.map(esc).join(', ')}` : ''}</p>
+      <button class="go" data-style="${k}">Ver ranking deste estilo →</button>
+    </div>`;
+  }).join('');
+}
+
+function openPlace(id) {
+  const p = PLACES.find(x => x.id === id);
+  const [cname] = COUNTRIES[p.cc];
+  const pos = PLACES.filter(x => x.t === p.t).sort((a, b) => b.score - a.score).findIndex(x => x.id === id) + 1;
+  const mapQ = encodeURIComponent(`${p.n.split(' (')[0]} ${p.city} ${cname}`);
+  $('dlg').innerHTML = `<div class="dlg">
+    <button class="close" aria-label="Fechar">✕</button>
+    <div class="eyebrow">${p.t === 'brew' ? 'Cervejaria' : 'Pub / bar'} · #${pos} no ranking mundial</div>
+    <h2>${esc(p.n)}</h2>
+    <div class="meta">${flag(p.cc)} ${esc(p.city)}, ${cname}${p.y ? ` · desde ${p.y}` : ''} · nota <b style="color:var(--accent)">${p.score}</b></div>
+    <p class="desc">${esc(p.d)}</p>
+    <h4>${p.t === 'brew' ? 'Cervejas-ícone' : 'Destaques da casa'}</h4>
+    <p class="desc" style="margin-top:0">${esc(p.sig)}</p>
+    <h4>${p.t === 'brew' ? 'Estilos produzidos' : 'Estilos servidos'}</h4>
+    ${p.s.map((k, i) => { const s = STYLES[k]; return `<div class="srow"><b><i style="background:${styleColor(k)}"></i>${s.n}${i === 0 ? ' <span class="kind k-brew">carro-chefe</span>' : ''}</b><span>${s.abv[0]}–${s.abv[1]}% · IBU ${s.ibu[0]}–${s.ibu[1]}</span><p>${s.d}</p></div>`; }).join('')}
+    <div class="dlinks">
+      <a class="main" href="https://www.google.com/maps/search/?api=1&query=${mapQ}" target="_blank" rel="noopener">📍 Ver no mapa</a>
+      <a href="https://untappd.com/search?q=${encodeURIComponent(p.n.split(' (')[0])}&type=${p.t === 'brew' ? 'brewery' : 'venues'}" target="_blank" rel="noopener">Untappd</a>
+      <a href="https://www.google.com/search?q=${mapQ}" target="_blank" rel="noopener">Pesquisar</a>
+    </div>
+  </div>`;
+  $('dlg').showModal();
+}
+
+try { const t = localStorage.getItem('cerv-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+init();
+</script>
+</body>
+</html>
