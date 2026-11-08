@@ -357,11 +357,19 @@
     $('#tabs').innerHTML = tabs.map((t) => `<button class="tab ${state.view === t.id ? 'active' : ''}" data-view="${t.id}" style="--c:${t.color}">
       ${t.emoji} ${esc(t.label)}${t.id !== 'destaques' && counts[t.id] ? ` <span class="n">${counts[t.id]}</span>` : ''}</button>`).join('');
     const act = $('#tabs .active');
-    if (act) { const tb = $('#tabs'); tb.scrollLeft = act.offsetLeft - tb.offsetLeft - (tb.clientWidth - act.offsetWidth) / 2; }
+    if (act && renderTabs.last !== state.view) {
+      renderTabs.last = state.view; const tb = $('#tabs'); tb.scrollLeft = act.offsetLeft - tb.offsetLeft - (tb.clientWidth - act.offsetWidth) / 2;
+    }
+  }
+
+  // Topo da página: fofocas primeiro, notícia política pura depois
+  function gossipFirst(list) {
+    const pol = (it) => primary(it).id === 'politica';
+    return [...list.filter((it) => !pol(it)), ...list.filter(pol)];
   }
 
   function renderTicker() {
-    const top = state.items.slice(0, 12);
+    const top = gossipFirst(state.items).slice(0, 12);
     if (!top.length) { $('#ticker').hidden = true; return; }
     const html = top.map((it) => `<a href="${esc(it.link)}" target="_blank" rel="noopener">${primary(it).emoji} ${esc(it.title)}</a>`).join('');
     $('#tickerInner').innerHTML = html + html;
@@ -380,14 +388,14 @@
 
     if (state.view === 'destaques' && !state.q) {
       // Prefere matérias com imagem no topo
-      const withImg = state.items.filter((it) => it.image);
+      const withImg = gossipFirst(state.items).filter((it) => it.image);
       const pool = (withImg.length >= 5 ? withImg : state.items);
       const hero = pool.slice(0, 5);
       const used = new Set(hero.map((it) => it.id));
       let html = `<div class="hero">${bigHTML(hero[0])}<div class="hero-side">${hero.slice(1).map(miniHTML).join('')}</div></div>`;
       for (const c of Core.CATEGORIES) {
-        const list = state.items.filter((it) => it.categories.includes(c.id) && (c.id === 'novidades' || !used.has(it.id)))
-          .filter((it) => c.id !== 'novidades' || !used.has(it.id))
+        const src = c.id === 'novidades' ? state.items.filter((it) => primary(it).id !== 'politica') : state.items;
+        const list = src.filter((it) => it.categories.includes(c.id) && !used.has(it.id))
           .sort((a, b) => (!!b.image - !!a.image) || 0)
           .slice(0, 8)
           .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
