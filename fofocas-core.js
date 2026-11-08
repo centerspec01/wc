@@ -28,23 +28,19 @@
     { name: 'Contigo',           url: 'https://contigo.com.br/feed',                            cat: 'novidades', max: 15 },
     { name: 'Caras',             url: 'https://caras.com.br/feed',                              cat: 'novidades', max: 15 },
     { name: 'Quem',              url: 'https://revistaquem.globo.com/rss/quem/',                cat: 'novidades', max: 15 },
-    { name: 'O Fuxico',          url: 'https://www.ofuxico.com.br/feed/',                       cat: 'novidades', max: 15 },
-    { name: 'NaTelinha',         url: 'https://natelinha.uol.com.br/rss',                       cat: 'tv',        max: 15 },
     { name: 'Notícias da TV',    url: 'https://noticiasdatv.uol.com.br/feed',                   cat: 'tv',        max: 15 },
-    { name: 'Omelete',           url: 'https://www.omelete.com.br/rss',                         cat: 'tv',        max: 12 },
     { name: 'Capricho',          url: 'https://capricho.abril.com.br/feed/',                    cat: 'teen',      max: 15 },
-    { name: 'Todateen',          url: 'https://todateen.uol.com.br/feed/',                      cat: 'teen',      max: 15 },
-    { name: 'Glamurama',         url: 'https://glamurama.uol.com.br/feed/',                     cat: 'festas',    max: 15 },
     { name: 'Igor Gadelha',      url: 'https://www.metropoles.com/colunas/igor-gadelha/feed',   cat: 'politica',  max: 12 },
     { name: 'Poder360',          url: 'https://www.poder360.com.br/feed/',                      cat: 'politica',  max: 12 },
     { name: 'g1 Política',       url: 'https://g1.globo.com/rss/g1/politica/',                  cat: 'politica',  max: 10 },
     // Reforço via Google Notícias (sem imagem na maioria das vezes)
     { name: 'Google Notícias', url: gnews('fofoca famosos'),                                  cat: 'novidades', max: 10, aggregator: true },
     { name: 'Google Notícias', url: gnews('namoro OR affair OR término famosos'),              cat: 'romances',  max: 10, aggregator: true },
-    { name: 'Google Notícias', url: gnews('bastidores Brasília fofoca política'),              cat: 'politica',  max: 8,  aggregator: true },
+    { name: 'Google Notícias', url: gnews('(Lula OR Bolsonaro OR Janja OR Michelle OR Flávio) polêmica'),              cat: 'politica',  max: 8,  aggregator: true },
     { name: 'Google Notícias', url: gnews('novela OR BBB OR "A Fazenda" OR série estreia'),   cat: 'tv',        max: 10, aggregator: true },
     { name: 'Google Notícias', url: gnews('influenciadora OR tiktoker OR youtuber polêmica'), cat: 'teen',      max: 8,  aggregator: true },
     { name: 'Google Notícias', url: gnews('festa famosos OR aniversário famosos OR premiação'), cat: 'festas',  max: 10, aggregator: true },
+    { name: 'Google Notícias', url: gnews('casamento famosos OR show famosos OR camarote'),   cat: 'festas',    max: 10, aggregator: true },
   ];
 
   // Palavras‑chave por categoria (sem acento, minúsculas). Peso 2 = forte.
@@ -61,7 +57,7 @@
       [' lula', 2], ['bolsonaro', 2], ['presidente', 1], ['senador', 2], ['deputad', 2], ['ministr', 2],
       [' stf ', 2], ['eleic', 2], ['prefeit', 2], ['governador', 2], ['governo', 1], ['politic', 2],
       ['congresso', 2], ['camara', 1], ['planalto', 2], ['brasilia', 1], ['partido', 2], ['candidat', 2],
-      ['moraes', 2], ['michelle', 1], ['janja', 2], ['tarcisio', 2], ['haddad', 2], [' pt ', 1], [' pl ', 1],
+      [' moraes ', 1], ['michelle', 1], ['janja', 2], ['tarcisio', 2], ['haddad', 2], [' pt ', 1], [' pl ', 1],
       [' cpi ', 2], ['impeachment', 3], ['vereador', 2], ['primeira-dama', 2], ['trump', 1],
     ],
     tv: [
@@ -70,7 +66,7 @@
       ['cinema', 2], ['estreia', 2], [' ator ', 1], ['atriz', 1], ['tv globo', 2], ['sbt', 2], [' record ', 1],
       [' band ', 1], ['apresentador', 2], ['apresentadora', 2], ['programa', 1], ['emissora', 2],
       ['oscar', 2], ['trailer', 2], ['bilheteria', 2], ['elenco', 2], ['personagem', 2], ['capitulo', 2],
-      ['streaming', 2], ['eliminad', 2], ['paredao', 2], ['the voice', 2], ['domingao', 2], ['fantastico', 1],
+      ['streaming', 2], [' resumo', 2], [' cena', 2], [' globo ', 2], ['assistir', 2], ['proximo capitulo', 3], ['eliminad', 2], ['paredao', 2], ['the voice', 2], ['domingao', 2], ['fantastico', 1],
     ],
     teen: [
       ['teen', 3], ['influenciador', 2], ['influenciadora', 2], ['influencer', 2], ['tiktok', 2],
@@ -88,6 +84,9 @@
     ],
   };
 
+  // Assuntos que não são fofoca (descartados)
+  const EXCLUDE = /\b(mega-sena|lotof[aá]cil|quina|dupla sena|timemania|loteria|loterias|hor[oó]scopo|previs[aã]o do tempo|fase da lua|jogo do bicho)\b/i;
+
   function norm(s) {
     return String(s || '')
       .toLowerCase()
@@ -95,12 +94,13 @@
   }
 
   function classify(title, summary, feedCat) {
-    const text = (' ' + norm(title) + ' ' + norm(title) + ' ' + norm(summary) + ' ')
-      .replace(/[^a-z0-9+\-]+/g, ' ');
+    const clean = (x) => (' ' + norm(x) + ' ').replace(/[^a-z0-9+\-]+/g, ' ');
+    const tt = clean(title), st = clean(summary);
     const scores = {};
     for (const [cat, words] of Object.entries(RULES)) {
       let sc = 0;
-      for (const [w, p] of words) if (text.includes(w)) sc += p;
+      // Palavra no título vale o dobro; só no resumo vale o peso simples
+      for (const [w, p] of words) sc += tt.includes(w) ? p * 2 : st.includes(w) ? p : 0;
       if (cat === feedCat) sc += 2;
       scores[cat] = sc;
     }
@@ -108,7 +108,8 @@
       .filter(([, s]) => s >= 3)
       .sort((a, b) => b[1] - a[1])
       .map(([c]) => c);
-    if (feedCat && feedCat !== 'novidades' && !cats.includes(feedCat)) cats.push(feedCat);
+    // Categoria da fonte só entra quando nenhuma palavra-chave decidiu
+    if (!cats.length && feedCat && feedCat !== 'novidades') cats.push(feedCat);
     // Toda fofoca também é "novidade"
     cats.push('novidades');
     return [...new Set(cats)];
@@ -193,12 +194,14 @@
     const blocks = xml.match(isAtom ? /<entry\b[\s\S]*?<\/entry>/gi : /<item\b[\s\S]*?<\/item>/gi) || [];
     for (const b of blocks.slice(0, feed.max || 15)) {
       const t = cleanTitle(tag(b, 'title'), feed.aggregator);
-      if (!t.title) continue;
+      if (!t.title || EXCLUDE.test(t.title)) continue;
       let link = isAtom ? (attr(b, 'link', 'href')) : decode(stripTags(tag(b, 'link')));
       if (!link) link = decode(tag(b, 'guid'));
       if (!/^https?:\/\//i.test(link)) continue;
       const rawSummary = tag(b, 'description') || tag(b, 'summary') || tag(b, 'content:encoded') || tag(b, 'content');
       let summary = stripTags(rawSummary);
+      // Rodapé padrão do WordPress ("O post X apareceu primeiro em Y")
+      summary = summary.replace(/\s*(O post|The post)\s[\s\S]*?(apareceu primeiro em|appeared first on)\s[\s\S]*$/i, '').trim();
       if (feed.aggregator) summary = '';
       if (summary.length > 260) summary = summary.slice(0, 257).replace(/\s+\S*$/, '') + '…';
       const dateStr = tag(b, 'pubDate') || tag(b, 'published') || tag(b, 'updated') || tag(b, 'dc:date');
@@ -249,7 +252,7 @@
     return [...byKey.values()].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
   }
 
-  const api = { CATEGORIES, FEEDS, RULES, classify, parseFeed, merge, stripTags, decode, norm, hash };
+  const api = { EXCLUDE, CATEGORIES, FEEDS, RULES, classify, parseFeed, merge, stripTags, decode, norm, hash };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.FofocasCore = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);
