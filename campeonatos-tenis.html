@@ -104,6 +104,13 @@
   .p-done { background: color-mix(in srgb, var(--green) 14%, transparent); color: var(--green); }
   .p-live { background: color-mix(in srgb, var(--amber) 18%, transparent); color: var(--amber); }
   .p-est { background: var(--bg-4); color: var(--muted); }
+  .champs { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 8px; }
+  .champ { font-size: .82rem; font-weight: 700; color: var(--text); display: inline-flex; align-items: center; gap: 5px; }
+  .champ .trophy { font-size: .9rem; }
+  .champ b { font-size: .64rem; font-weight: 800; letter-spacing: .04em; }
+  .champ .ct-ATP { color: var(--atp); }
+  .champ .ct-WTA { color: var(--wta); }
+  .champ.pend { color: var(--amber); font-weight: 600; }
   .note { font-size: .74rem; color: var(--dim); margin-top: 6px; line-height: 1.4; }
 
   .links { display: flex; flex-direction: column; gap: 6px; align-items: stretch; }
@@ -141,7 +148,7 @@
   <div class="stats" id="stats"></div>
 
   <div class="controls">
-    <input id="search" type="search" placeholder="Buscar torneio, cidade ou país…" aria-label="Buscar">
+    <input id="search" type="search" placeholder="Buscar torneio, cidade, país ou campeão…" aria-label="Buscar">
     <div class="seg" id="tourSeg">
       <button data-tour="all" class="active">Todos</button>
       <button data-tour="ATP">ATP</button>
@@ -184,7 +191,7 @@
   <div class="empty" id="empty">Nenhum torneio encontrado com esses filtros.</div>
 
   <div class="disclaimer">
-    <strong>Sobre as datas.</strong> 2026: calendário oficial ATP/WTA. 2027: Grand Slams, Masters 1000, WTA 1000, ATP Finals (Turim) e WTA Finals (Charlotte, 10–14 nov) seguem os calendários divulgados pela ATP (jan/2026) e pela WTA (out/2026). Quando a data de 2027 aparece com a etiqueta <strong>“prevista”</strong>, ela foi estimada pela mesma semana do calendário de 2026 e ainda precisa ser confirmada no site oficial. Na quadra dura, “coberta” indica torneio indoor. Datas sujeitas a alteração pela ATP, WTA e organizadores.
+    <strong>Sobre as datas.</strong> 2026: calendário oficial ATP/WTA, com o campeão ou a campeã de simples (🏆) de cada torneio já disputado, atualizado em 08/11/2026. As WTA Finals 2026 foram transferidas de Riade para Indian Wells (8–15 nov); as ATP Finals seguem em Turim (15–22 nov). 2027: Grand Slams, Masters 1000, WTA 1000, ATP Finals (Turim) e WTA Finals (Charlotte, 10–14 nov) seguem os calendários divulgados pela ATP (jan/2026) e pela WTA (out/2026). Quando a data de 2027 aparece com a etiqueta <strong>“prevista”</strong>, ela foi estimada pela mesma semana do calendário de 2026 e ainda precisa ser confirmada no site oficial. Na quadra dura, “coberta” indica torneio indoor. Datas sujeitas a alteração pela ATP, WTA e organizadores.
   </div>
 </main>
 
@@ -204,123 +211,121 @@ function T(name, city, country, surface, indoor, events, s, e, site, o) {
 
 const DATA = [
   // ===== GRAND SLAMS =====
-  T("Australian Open","Melbourne","Austrália","Dura",false,[["ATP","GS"],["WTA","GS"]],"2026-01-18","2026-02-01","https://ausopen.com",{y27:["2027-01-17","2027-01-31"]}),
-  T("Roland-Garros","Paris","França","Saibro",false,[["ATP","GS"],["WTA","GS"]],"2026-05-24","2026-06-07","https://www.rolandgarros.com"),
-  T("Wimbledon","Londres","Reino Unido","Grama",false,[["ATP","GS"],["WTA","GS"]],"2026-06-29","2026-07-12","https://www.wimbledon.com",{y27:["2027-06-28","2027-07-11"]}),
-  T("US Open","Nova York","Estados Unidos","Dura",false,[["ATP","GS"],["WTA","GS"]],"2026-08-31","2026-09-13","https://www.usopen.org"),
+  T("Australian Open","Melbourne","Austrália","Dura",false,[["ATP","GS"],["WTA","GS"]],"2026-01-18","2026-02-01","https://ausopen.com",{y27:["2027-01-17","2027-01-31"],c26:{ATP:"Carlos Alcaraz",WTA:"Elena Rybakina"}}),
+  T("Roland-Garros","Paris","França","Saibro",false,[["ATP","GS"],["WTA","GS"]],"2026-05-24","2026-06-07","https://www.rolandgarros.com",{c26:{ATP:"Alexander Zverev",WTA:"Mirra Andreeva"}}),
+  T("Wimbledon","Londres","Reino Unido","Grama",false,[["ATP","GS"],["WTA","GS"]],"2026-06-29","2026-07-12","https://www.wimbledon.com",{y27:["2027-06-28","2027-07-11"],c26:{ATP:"Jannik Sinner",WTA:"Linda Nosková"}}),
+  T("US Open","Nova York","Estados Unidos","Dura",false,[["ATP","GS"],["WTA","GS"]],"2026-08-31","2026-09-13","https://www.usopen.org",{c26:{ATP:"Alexander Zverev",WTA:"Elena Rybakina"}}),
 
   // ===== 1000 combinados =====
-  T("BNP Paribas Open","Indian Wells","Estados Unidos","Dura",false,[["ATP","1000"],["WTA","1000"]],"2026-03-04","2026-03-15","https://www.bnpparibasopen.com",{y27:["2027-03-03","2027-03-14"]}),
-  T("Miami Open","Miami","Estados Unidos","Dura",false,[["ATP","1000"],["WTA","1000"]],"2026-03-17","2026-03-29","https://www.miamiopen.com",{y27:["2027-03-17","2027-03-28"]}),
-  T("Mutua Madrid Open","Madri","Espanha","Saibro",false,[["ATP","1000"],["WTA","1000"]],"2026-04-21","2026-05-03","https://www.mutuamadridopen.com",{y27:["2027-04-21","2027-05-02"]}),
-  T("Internazionali BNL d'Italia","Roma","Itália","Saibro",false,[["ATP","1000"],["WTA","1000"]],"2026-05-05","2026-05-17","https://www.internazionalibnlditalia.com",{y27:["2027-05-05","2027-05-16"]}),
-  T("National Bank Open","Montreal / Toronto","Canadá","Dura",false,[["ATP","1000"],["WTA","1000"]],"2026-08-02","2026-08-13","https://www.nationalbankopen.com",{y27:["2027-08-01","2027-08-12"],note:"2026: masculino em Montreal, feminino em Toronto.",note27:"2027: masculino em Toronto, feminino em Montreal (alternância anual)."}),
-  T("Cincinnati Open","Cincinnati","Estados Unidos","Dura",false,[["ATP","1000"],["WTA","1000"]],"2026-08-11","2026-08-23","https://www.cincinnatiopen.com",{y27:["2027-08-12","2027-08-22"]}),
+  T("BNP Paribas Open","Indian Wells","Estados Unidos","Dura",false,[["ATP","1000"],["WTA","1000"]],"2026-03-04","2026-03-15","https://www.bnpparibasopen.com",{y27:["2027-03-03","2027-03-14"],c26:{ATP:"Jannik Sinner",WTA:"Aryna Sabalenka"}}),
+  T("Miami Open","Miami","Estados Unidos","Dura",false,[["ATP","1000"],["WTA","1000"]],"2026-03-17","2026-03-29","https://www.miamiopen.com",{y27:["2027-03-17","2027-03-28"],c26:{ATP:"Jannik Sinner",WTA:"Aryna Sabalenka"}}),
+  T("Mutua Madrid Open","Madri","Espanha","Saibro",false,[["ATP","1000"],["WTA","1000"]],"2026-04-21","2026-05-03","https://www.mutuamadridopen.com",{y27:["2027-04-21","2027-05-02"],c26:{ATP:"Jannik Sinner",WTA:"Marta Kostyuk"}}),
+  T("Internazionali BNL d'Italia","Roma","Itália","Saibro",false,[["ATP","1000"],["WTA","1000"]],"2026-05-05","2026-05-17","https://www.internazionalibnlditalia.com",{y27:["2027-05-05","2027-05-16"],c26:{ATP:"Jannik Sinner",WTA:"Elina Svitolina"}}),
+  T("National Bank Open","Montreal / Toronto","Canadá","Dura",false,[["ATP","1000"],["WTA","1000"]],"2026-08-02","2026-08-13","https://www.nationalbankopen.com",{y27:["2027-08-01","2027-08-12"],note:"2026: masculino em Montreal, feminino em Toronto.",note27:"2027: masculino em Toronto, feminino em Montreal (alternância anual).",c26:{ATP:"Ben Shelton",WTA:"Iga Świątek"}}),
+  T("Cincinnati Open","Cincinnati","Estados Unidos","Dura",false,[["ATP","1000"],["WTA","1000"]],"2026-08-11","2026-08-23","https://www.cincinnatiopen.com",{y27:["2027-08-12","2027-08-22"],c26:{ATP:"Arthur Fils",WTA:"Coco Gauff"}}),
 
   // ===== ATP Masters 1000 =====
-  T("Rolex Monte-Carlo Masters","Monte Carlo","Mônaco","Saibro",false,[["ATP","1000"]],"2026-04-05","2026-04-12","https://montecarlotennismasters.com",{y27:["2027-04-04","2027-04-11"]}),
-  T("Rolex Shanghai Masters","Xangai","China","Dura",false,[["ATP","1000"]],"2026-10-07","2026-10-18","https://en.rolexshanghaimasters.com",{y27:["2027-10-06","2027-10-17"]}),
-  T("Rolex Paris Masters","Paris (Nanterre)","França","Dura",true,[["ATP","1000"]],"2026-10-31","2026-11-08","https://www.rolexparismasters.com",{y27:["2027-11-01","2027-11-07"]}),
+  T("Rolex Monte-Carlo Masters","Monte Carlo","Mônaco","Saibro",false,[["ATP","1000"]],"2026-04-05","2026-04-12","https://montecarlotennismasters.com",{y27:["2027-04-04","2027-04-11"],c26:{ATP:"Jannik Sinner"}}),
+  T("Rolex Shanghai Masters","Xangai","China","Dura",false,[["ATP","1000"]],"2026-10-07","2026-10-18","https://en.rolexshanghaimasters.com",{y27:["2027-10-06","2027-10-17"],c26:{ATP:"Alejandro Davidovich Fokina"}}),
+  T("Rolex Paris Masters","Paris (Nanterre)","França","Dura",true,[["ATP","1000"]],"2026-11-02","2026-11-08","https://www.rolexparismasters.com",{y27:["2027-11-01","2027-11-07"],p26:"Final em 8/11: Carlos Alcaraz × Ben Shelton."}),
 
   // ===== WTA 1000 =====
-  T("Qatar TotalEnergies Open","Doha","Catar","Dura",false,[["WTA","1000"]],"2026-02-08","2026-02-14","https://www.qatartennis.org",{est27:false}),
-  T("Dubai Duty Free Tennis Championships","Dubai","Emirados Árabes Unidos","Dura",false,[["WTA","1000"]],"2026-02-15","2026-02-21","https://www.dubaidutyfreetennischampionships.com",{est27:false}),
-  T("China Open","Pequim","China","Dura",false,[["ATP","500"],["WTA","1000"]],"2026-09-30","2026-10-11",null,{note:"Quadro masculino (ATP 500) termina antes do feminino (WTA 1000)."}),
-  T("Wuhan Open","Wuhan","China","Dura",false,[["WTA","1000"]],"2026-10-12","2026-10-18",null),
+  T("Qatar TotalEnergies Open","Doha","Catar","Dura",false,[["WTA","1000"]],"2026-02-08","2026-02-14","https://www.qatartennis.org",{est27:false,c26:{WTA:"Karolína Muchová"}}),
+  T("Dubai Duty Free Tennis Championships","Dubai","Emirados Árabes Unidos","Dura",false,[["WTA","1000"]],"2026-02-15","2026-02-21","https://www.dubaidutyfreetennischampionships.com",{est27:false,c26:{WTA:"Jessica Pegula"}}),
+  T("China Open","Pequim","China","Dura",false,[["ATP","500"],["WTA","1000"]],"2026-09-30","2026-10-11",null,{note:"Quadro masculino (ATP 500) termina antes do feminino (WTA 1000).",c26:{ATP:"Novak Djokovic",WTA:"Zheng Qinwen"}}),
+  T("Wuhan Open","Wuhan","China","Dura",false,[["WTA","1000"]],"2026-10-12","2026-10-18",null,{c26:{WTA:"Maja Chwalińska"}}),
 
   // ===== FINAIS =====
-  T("WTA Finals","Riade","Arábia Saudita","Dura",true,[["WTA","F"]],"2026-11-07","2026-11-14",null,{only:2026}),
-  T("WTA Finals","Charlotte","Estados Unidos","Dura",true,[["WTA","F"]],"2027-11-10","2027-11-14",null,{only:2027,y27:["2027-11-10","2027-11-14"],note27:"Nova sede de 2027 a 2029, no Spectrum Center."}),
-  T("Nitto ATP Finals","Turim","Itália","Dura",true,[["ATP","F"]],"2026-11-15","2026-11-22","https://www.nittoatpfinals.com",{y27:["2027-11-14","2027-11-21"],note27:"Turim confirmada como sede até 2027."}),
+  T("WTA Finals","Indian Wells","Estados Unidos","Dura",false,[["WTA","F"]],"2026-11-08","2026-11-15","https://www.wtafinals.com",{only:2026,note:"Transferida de Riade (Arábia Saudita) para o Indian Wells Tennis Garden em julho de 2026."}),
+  T("WTA Finals","Charlotte","Estados Unidos","Dura",true,[["WTA","F"]],"2027-11-10","2027-11-14","https://www.wtafinals.com",{only:2027,y27:["2027-11-10","2027-11-14"],note27:"Nova sede de 2027 a 2029, no Spectrum Center."}),
+  T("Nitto ATP Finals","Turim","Itália","Dura",true,[["ATP","F"]],"2026-11-15","2026-11-22","https://www.nittoatpfinals.com",{y27:["2027-11-14","2027-11-21"],note:"Inalpi Arena, Turim.",note27:"Inalpi Arena — Turim confirmada como sede até 2027."}),
 
   // ===== Combinados 500/250 =====
-  T("Brisbane International","Brisbane","Austrália","Dura",false,[["ATP","250"],["WTA","500"]],"2026-01-04","2026-01-11",null),
-  T("Adelaide International","Adelaide","Austrália","Dura",false,[["ATP","250"],["WTA","500"]],"2026-01-12","2026-01-17",null),
-  T("ASB Classic","Auckland","Nova Zelândia","Dura",false,[["WTA","250"]],"2026-01-05","2026-01-11","https://www.asbclassic.co.nz",{note:"Semana 1: quadro feminino."}),
-  T("ASB Classic","Auckland","Nova Zelândia","Dura",false,[["ATP","250"]],"2026-01-12","2026-01-17","https://www.asbclassic.co.nz",{note:"Semana 2: quadro masculino."}),
-  T("Abierto Mexicano Telcel","Acapulco","México","Dura",false,[["ATP","500"]],"2026-02-23","2026-02-28","https://www.abiertomexicanodetenis.com"),
-  T("Mubadala Citi DC Open","Washington","Estados Unidos","Dura",false,[["ATP","500"],["WTA","500"]],"2026-07-27","2026-08-02","https://www.mubadalacitidcopen.com"),
-  T("Libéma Open","'s-Hertogenbosch","Países Baixos","Grama",false,[["ATP","250"],["WTA","250"]],"2026-06-08","2026-06-14",null),
-  T("Lexus Eastbourne Open","Eastbourne","Reino Unido","Grama",false,[["ATP","250"],["WTA","250"]],"2026-06-22","2026-06-27",null),
+  T("Brisbane International","Brisbane","Austrália","Dura",false,[["ATP","250"],["WTA","500"]],"2026-01-04","2026-01-11",null,{c26:{ATP:"Daniil Medvedev",WTA:"Aryna Sabalenka"}}),
+  T("Adelaide International","Adelaide","Austrália","Dura",false,[["ATP","250"],["WTA","500"]],"2026-01-12","2026-01-17",null,{c26:{ATP:"Tomáš Macháč",WTA:"Mirra Andreeva"}}),
+  T("ASB Classic","Auckland","Nova Zelândia","Dura",false,[["WTA","250"]],"2026-01-05","2026-01-11","https://www.asbclassic.co.nz",{note:"Semana 1: quadro feminino.",c26:{WTA:"Elina Svitolina"}}),
+  T("ASB Classic","Auckland","Nova Zelândia","Dura",false,[["ATP","250"]],"2026-01-12","2026-01-17","https://www.asbclassic.co.nz",{note:"Semana 2: quadro masculino.",c26:{ATP:"Jakub Menšík"}}),
+  T("Abierto Mexicano Telcel","Acapulco","México","Dura",false,[["ATP","500"]],"2026-02-23","2026-02-28","https://www.abiertomexicanodetenis.com",{c26:{ATP:"Flavio Cobolli"}}),
+  T("Mubadala Citi DC Open","Washington","Estados Unidos","Dura",false,[["ATP","500"],["WTA","500"]],"2026-07-27","2026-08-02","https://www.mubadalacitidcopen.com",{c26:{ATP:"Taylor Fritz",WTA:"Alexandra Eala"}}),
+  T("Libéma Open","'s-Hertogenbosch","Países Baixos","Grama",false,[["ATP","250"],["WTA","250"]],"2026-06-08","2026-06-14",null,{c26:{ATP:"Kamil Majchrzak",WTA:"Robin Montgomery"}}),
+  T("Lexus Eastbourne Open","Eastbourne","Reino Unido","Grama",false,[["ATP","250"],["WTA","250"]],"2026-06-22","2026-06-27",null,{c26:{ATP:"Zizou Bergs",WTA:"Madison Keys"}}),
 
   // ===== ATP 500 =====
-  T("ABN AMRO Open","Roterdã","Países Baixos","Dura",true,[["ATP","500"]],"2026-02-09","2026-02-15","https://www.abnamro-open.nl"),
-  T("Dallas Open","Dallas","Estados Unidos","Dura",true,[["ATP","500"]],"2026-02-09","2026-02-15","https://www.dallasopen.com"),
-  T("Rio Open","Rio de Janeiro","Brasil","Saibro",false,[["ATP","500"]],"2026-02-16","2026-02-22","https://www.rioopen.com"),
-  T("Qatar ExxonMobil Open","Doha","Catar","Dura",false,[["ATP","500"]],"2026-02-16","2026-02-21","https://www.qatartennis.org"),
-  T("Dubai Duty Free Tennis Championships (ATP)","Dubai","Emirados Árabes Unidos","Dura",false,[["ATP","500"]],"2026-02-23","2026-02-28","https://www.dubaidutyfreetennischampionships.com"),
-  T("BMW Open","Munique","Alemanha","Saibro",false,[["ATP","500"]],"2026-04-13","2026-04-19",null),
-  T("Barcelona Open Banc Sabadell","Barcelona","Espanha","Saibro",false,[["ATP","500"]],"2026-04-13","2026-04-19","https://www.barcelonaopenbancsabadell.com",{est27:false}),
-  T("Hamburg Open","Hamburgo","Alemanha","Saibro",false,[["ATP","500"]],"2026-05-17","2026-05-23",null),
-  T("Terra Wortmann Open","Halle","Alemanha","Grama",false,[["ATP","500"]],"2026-06-15","2026-06-21",null,{est27:false}),
-  T("HSBC Championships (Queen's)","Londres","Reino Unido","Grama",false,[["ATP","500"]],"2026-06-15","2026-06-21",null),
-  T("Kinoshita Group Japan Open","Tóquio","Japão","Dura",true,[["ATP","500"]],"2026-09-30","2026-10-06","https://www.japanopentennis.com"),
-  T("Erste Bank Open","Viena","Áustria","Dura",true,[["ATP","500"]],"2026-10-26","2026-11-01",null,{est26:true}),
-  T("Swiss Indoors Basel","Basileia","Suíça","Dura",true,[["ATP","500"]],"2026-10-26","2026-11-01","https://www.swissindoorsbasel.ch",{est26:true}),
+  T("ABN AMRO Open","Roterdã","Países Baixos","Dura",true,[["ATP","500"]],"2026-02-09","2026-02-15","https://www.abnamro-open.nl",{c26:{ATP:"Alex de Minaur"}}),
+  T("Dallas Open","Dallas","Estados Unidos","Dura",true,[["ATP","500"]],"2026-02-09","2026-02-15","https://www.dallasopen.com",{c26:{ATP:"Ben Shelton"}}),
+  T("Rio Open","Rio de Janeiro","Brasil","Saibro",false,[["ATP","500"]],"2026-02-16","2026-02-22","https://www.rioopen.com",{c26:{ATP:"Tomás Martín Etcheverry"}}),
+  T("Qatar ExxonMobil Open","Doha","Catar","Dura",false,[["ATP","500"]],"2026-02-16","2026-02-21","https://www.qatartennis.org",{c26:{ATP:"Carlos Alcaraz"}}),
+  T("Dubai Duty Free Tennis Championships (ATP)","Dubai","Emirados Árabes Unidos","Dura",false,[["ATP","500"]],"2026-02-23","2026-02-28","https://www.dubaidutyfreetennischampionships.com",{c26:{ATP:"Daniil Medvedev"}}),
+  T("BMW Open","Munique","Alemanha","Saibro",false,[["ATP","500"]],"2026-04-13","2026-04-19",null,{c26:{ATP:"Ben Shelton"}}),
+  T("Barcelona Open Banc Sabadell","Barcelona","Espanha","Saibro",false,[["ATP","500"]],"2026-04-13","2026-04-19","https://www.barcelonaopenbancsabadell.com",{est27:false,c26:{ATP:"Arthur Fils"}}),
+  T("Hamburg Open","Hamburgo","Alemanha","Saibro",false,[["ATP","500"]],"2026-05-17","2026-05-23",null,{c26:{ATP:"Ignacio Buse"}}),
+  T("Terra Wortmann Open","Halle","Alemanha","Grama",false,[["ATP","500"]],"2026-06-15","2026-06-21",null,{est27:false,c26:{ATP:"Frances Tiafoe"}}),
+  T("HSBC Championships (Queen's)","Londres","Reino Unido","Grama",false,[["ATP","500"]],"2026-06-15","2026-06-21",null,{c26:{ATP:"Francisco Cerúndolo"}}),
+  T("Kinoshita Group Japan Open","Tóquio","Japão","Dura",true,[["ATP","500"]],"2026-09-30","2026-10-06","https://www.japanopentennis.com",{c26:{ATP:"Carlos Alcaraz"}}),
+  T("Erste Bank Open","Viena","Áustria","Dura",true,[["ATP","500"]],"2026-10-26","2026-11-01",null,{c26:{ATP:"Carlos Alcaraz"}}),
+  T("Swiss Indoors Basel","Basileia","Suíça","Dura",true,[["ATP","500"]],"2026-10-26","2026-11-01","https://www.swissindoorsbasel.ch",{c26:{ATP:"Valentin Vacherot"}}),
 
   // ===== WTA 500 =====
-  T("Mubadala Abu Dhabi Open","Abu Dhabi","Emirados Árabes Unidos","Dura",false,[["WTA","500"]],"2026-02-01","2026-02-07","https://www.mubadalaabudhabiopen.com"),
-  T("Mérida Open Akron","Mérida","México","Dura",false,[["WTA","500"]],"2026-02-23","2026-03-01",null),
-  T("Credit One Charleston Open","Charleston","Estados Unidos","Saibro (verde)",false,[["WTA","500"]],"2026-03-30","2026-04-05",null),
-  T("Upper Austria Ladies Linz","Linz","Áustria","Saibro",true,[["WTA","500"]],"2026-04-06","2026-04-12","https://www.ladieslinz.at"),
-  T("Porsche Tennis Grand Prix","Stuttgart","Alemanha","Saibro",true,[["WTA","500"]],"2026-04-13","2026-04-19","https://www.porsche-tennis.com"),
-  T("Internationaux de Strasbourg","Estrasburgo","França","Saibro",false,[["WTA","500"]],"2026-05-17","2026-05-23","https://www.internationaux-strasbourg.fr"),
-  T("HSBC Championships (Queen's, WTA)","Londres","Reino Unido","Grama",false,[["WTA","500"]],"2026-06-08","2026-06-14",null),
-  T("Berlin Tennis Open","Berlim","Alemanha","Grama",false,[["WTA","500"]],"2026-06-15","2026-06-21","https://www.berlintennisopen.com"),
-  T("Bad Homburg Open","Bad Homburg","Alemanha","Grama",false,[["WTA","500"]],"2026-06-21","2026-06-27",null),
-  T("Abierto GNP Seguros","Monterrey","México","Dura",false,[["WTA","500"]],"2026-08-23","2026-08-29",null),
-  T("Guadalajara Open Akron","Guadalajara","México","Dura",false,[["WTA","500"]],"2026-09-13","2026-09-19",null),
-  T("Korea Open","Seul","Coreia do Sul","Dura",false,[["WTA","500"]],"2026-09-21","2026-09-27",null,{est26:true}),
-  T("Singapore Tennis Open","Singapura","Singapura","Dura",true,[["WTA","500"]],"2026-09-21","2026-09-27",null,{est26:true,y27:["2027-09-20","2027-09-26"],note27:"Abre a gira asiática da WTA em 2027."}),
-  T("Ningbo Open","Ningbo","China","Dura",false,[["WTA","500"]],"2026-10-19","2026-10-25",null),
-  T("Toray Pan Pacific Open","Tóquio","Japão","Dura",false,[["WTA","500"]],"2026-10-26","2026-11-01",null,{y27:["2027-10-25","2027-10-31"]}),
+  T("Mubadala Abu Dhabi Open","Abu Dhabi","Emirados Árabes Unidos","Dura",false,[["WTA","500"]],"2026-02-01","2026-02-07","https://www.mubadalaabudhabiopen.com",{c26:{WTA:"Sára Bejlek"}}),
+  T("Mérida Open Akron","Mérida","México","Dura",false,[["WTA","500"]],"2026-02-23","2026-03-01",null,{c26:{WTA:"Cristina Bucșa"}}),
+  T("Credit One Charleston Open","Charleston","Estados Unidos","Saibro (verde)",false,[["WTA","500"]],"2026-03-30","2026-04-05",null,{c26:{WTA:"Jessica Pegula"}}),
+  T("Upper Austria Ladies Linz","Linz","Áustria","Saibro",true,[["WTA","500"]],"2026-04-06","2026-04-12","https://www.ladieslinz.at",{c26:{WTA:"Mirra Andreeva"}}),
+  T("Porsche Tennis Grand Prix","Stuttgart","Alemanha","Saibro",true,[["WTA","500"]],"2026-04-13","2026-04-19","https://www.porsche-tennis.com",{c26:{WTA:"Elena Rybakina"}}),
+  T("Internationaux de Strasbourg","Estrasburgo","França","Saibro",false,[["WTA","500"]],"2026-05-17","2026-05-23","https://www.internationaux-strasbourg.fr",{c26:{WTA:"Emma Navarro"}}),
+  T("HSBC Championships (Queen's, WTA)","Londres","Reino Unido","Grama",false,[["WTA","500"]],"2026-06-08","2026-06-14",null,{c26:{WTA:"Donna Vekić"}}),
+  T("Berlin Tennis Open","Berlim","Alemanha","Grama",false,[["WTA","500"]],"2026-06-15","2026-06-21","https://www.berlintennisopen.com",{c26:{WTA:"Linda Nosková"}}),
+  T("Bad Homburg Open","Bad Homburg","Alemanha","Grama",false,[["WTA","500"]],"2026-06-21","2026-06-27",null,{c26:{WTA:"Karolína Muchová"}}),
+  T("Abierto GNP Seguros","Monterrey","México","Dura",false,[["WTA","500"]],"2026-08-23","2026-08-29",null,{c26:{WTA:"Diane Parry"}}),
+  T("Guadalajara Open Akron","Guadalajara","México","Dura",false,[["WTA","500"]],"2026-09-13","2026-09-19",null,{c26:{WTA:"Iva Jovic"}}),
+  T("Korea Open","Seul","Coreia do Sul","Dura",false,[["WTA","250"]],"2026-09-21","2026-09-27",null,{c26:{WTA:"Kimberly Birrell"}}),
+  T("Singapore Tennis Open","Singapura","Singapura","Dura",true,[["WTA","500"]],"2026-09-21","2026-09-27",null,{y27:["2027-09-20","2027-09-26"],note27:"Abre a gira asiática da WTA em 2027.",c26:{WTA:"Leylah Fernandez"}}),
+  T("Ningbo Open","Ningbo","China","Dura",false,[["WTA","500"]],"2026-10-19","2026-10-25",null,{c26:{WTA:"Elena Rybakina"}}),
+  T("Toray Pan Pacific Open","Tóquio","Japão","Dura",false,[["WTA","500"]],"2026-10-26","2026-11-01",null,{y27:["2027-10-25","2027-10-31"],c26:{WTA:"Diana Shnaider"}}),
 
   // ===== ATP 250 =====
-  T("Bank of China Hong Kong Tennis Open","Hong Kong","China (RAE)","Dura",false,[["ATP","250"]],"2026-01-05","2026-01-11","https://www.hkmenstennisopen.com"),
-  T("Open Occitanie","Montpellier","França","Dura",true,[["ATP","250"]],"2026-02-02","2026-02-08","https://www.openoccitanie.com"),
+  T("Bank of China Hong Kong Tennis Open","Hong Kong","China (RAE)","Dura",false,[["ATP","250"]],"2026-01-05","2026-01-11","https://www.hkmenstennisopen.com",{c26:{ATP:"Alexander Bublik"}}),
+  T("Open Occitanie","Montpellier","França","Dura",true,[["ATP","250"]],"2026-02-02","2026-02-08","https://www.openoccitanie.com",{c26:{ATP:"Félix Auger-Aliassime"}}),
   T("Córdoba Open","Córdoba","Argentina","Saibro",false,[["ATP","250"]],"2026-02-02","2026-02-08",null,{est26:true}),
-  T("IEB+ Argentina Open","Buenos Aires","Argentina","Saibro",false,[["ATP","250"]],"2026-02-09","2026-02-15",null),
-  T("Delray Beach Open","Delray Beach","Estados Unidos","Dura",false,[["ATP","250"]],"2026-02-16","2026-02-22","https://www.yellowtennisball.com"),
-  T("Chile Open","Santiago","Chile","Saibro",false,[["ATP","250"]],"2026-02-23","2026-03-01",null),
-  T("Grand Prix Hassan II","Marrakech","Marrocos","Saibro",false,[["ATP","250"]],"2026-03-30","2026-04-05",null),
-  T("Țiriac Open","Bucareste","Romênia","Saibro",false,[["ATP","250"]],"2026-03-30","2026-04-05","https://www.tiriacopen.ro"),
-  T("U.S. Men's Clay Court Championship","Houston","Estados Unidos","Saibro",false,[["ATP","250"]],"2026-03-30","2026-04-05",null),
-  T("Gonet Geneva Open","Genebra","Suíça","Saibro",false,[["ATP","250"]],"2026-05-17","2026-05-23",null),
-  T("BOSS Open","Stuttgart","Alemanha","Grama",false,[["ATP","250"]],"2026-06-08","2026-06-14",null),
-  T("Mallorca Championships","Santa Ponsa","Espanha","Grama",false,[["ATP","250"]],"2026-06-21","2026-06-27","https://www.mallorcachampionships.com"),
-  T("Nordea Open","Båstad","Suécia","Saibro",false,[["ATP","250"]],"2026-07-13","2026-07-19",null),
-  T("Croatia Open Umag","Umag","Croácia","Saibro",false,[["ATP","250"]],"2026-07-13","2026-07-18","https://www.croatiaopen.hr"),
-  T("EFG Swiss Open Gstaad","Gstaad","Suíça","Saibro",false,[["ATP","250"]],"2026-07-13","2026-07-19","https://www.swissopengstaad.ch"),
-  T("Generali Open","Kitzbühel","Áustria","Saibro",false,[["ATP","250"]],"2026-07-20","2026-07-25",null),
-  T("Millennium Estoril Open","Estoril / Cascais","Portugal","Saibro",false,[["ATP","250"]],"2026-07-20","2026-07-26",null),
-  T("Mifel Tennis Open","Los Cabos","México","Dura",false,[["ATP","250"]],"2026-07-27","2026-08-01",null),
-  T("Winston-Salem Open","Winston-Salem","Estados Unidos","Dura",false,[["ATP","250"]],"2026-08-23","2026-08-29","https://www.winstonsalemopen.com"),
-  T("Chengdu Open","Chengdu","China","Dura",false,[["ATP","250"]],"2026-09-23","2026-09-29",null),
-  T("Hangzhou Open","Hangzhou","China","Dura",false,[["ATP","250"]],"2026-09-23","2026-09-29",null),
-  T("BNP Paribas Fortis European Open","Bruxelas","Bélgica","Dura",true,[["ATP","250"]],"2026-10-19","2026-10-25","https://www.europeanopen.be",{est26:true,note:"Mudou de Antuérpia para Bruxelas."}),
-  T("Open 13 Provence","Lyon","França","Dura",true,[["ATP","250"]],"2026-10-19","2026-10-25",null,{est26:true,note:"Mudou de Marselha (fevereiro) para Lyon (outubro)."}),
-  T("Almaty Open","Almaty","Cazaquistão","Dura",true,[["ATP","250"]],"2026-10-19","2026-10-25","https://www.almatyopen.kz"),
+  T("IEB+ Argentina Open","Buenos Aires","Argentina","Saibro",false,[["ATP","250"]],"2026-02-09","2026-02-15",null,{c26:{ATP:"Francisco Cerúndolo"}}),
+  T("Delray Beach Open","Delray Beach","Estados Unidos","Dura",false,[["ATP","250"]],"2026-02-16","2026-02-22","https://www.yellowtennisball.com",{c26:{ATP:"Sebastian Korda"}}),
+  T("Chile Open","Santiago","Chile","Saibro",false,[["ATP","250"]],"2026-02-23","2026-03-01",null,{c26:{ATP:"Luciano Darderi"}}),
+  T("Grand Prix Hassan II","Marrakech","Marrocos","Saibro",false,[["ATP","250"]],"2026-03-30","2026-04-05",null,{c26:{ATP:"Rafael Jódar"}}),
+  T("Țiriac Open","Bucareste","Romênia","Saibro",false,[["ATP","250"]],"2026-03-30","2026-04-05","https://www.tiriacopen.ro",{c26:{ATP:"Mariano Navone"}}),
+  T("U.S. Men's Clay Court Championship","Houston","Estados Unidos","Saibro",false,[["ATP","250"]],"2026-03-30","2026-04-05",null,{c26:{ATP:"Tommy Paul"}}),
+  T("Gonet Geneva Open","Genebra","Suíça","Saibro",false,[["ATP","250"]],"2026-05-17","2026-05-23",null,{c26:{ATP:"Learner Tien"}}),
+  T("BOSS Open","Stuttgart","Alemanha","Grama",false,[["ATP","250"]],"2026-06-08","2026-06-14",null,{c26:{ATP:"Ben Shelton"}}),
+  T("Mallorca Championships","Santa Ponsa","Espanha","Grama",false,[["ATP","250"]],"2026-06-21","2026-06-27","https://www.mallorcachampionships.com",{c26:{ATP:"Alejandro Davidovich Fokina"}}),
+  T("Nordea Open","Båstad","Suécia","Saibro",false,[["ATP","250"]],"2026-07-13","2026-07-19",null,{c26:{ATP:"Andrey Rublev"}}),
+  T("Croatia Open Umag","Umag","Croácia","Saibro",false,[["ATP","250"]],"2026-07-13","2026-07-18","https://www.croatiaopen.hr",{c26:{ATP:"Daniel Mérida"}}),
+  T("EFG Swiss Open Gstaad","Gstaad","Suíça","Saibro",false,[["ATP","250"]],"2026-07-13","2026-07-19","https://www.swissopengstaad.ch",{c26:{ATP:"Stefanos Tsitsipas"}}),
+  T("Generali Open","Kitzbühel","Áustria","Saibro",false,[["ATP","250"]],"2026-07-20","2026-07-25",null,{c26:{ATP:"Quentin Halys"}}),
+  T("Millennium Estoril Open","Estoril / Cascais","Portugal","Saibro",false,[["ATP","250"]],"2026-07-20","2026-07-26",null,{c26:{ATP:"Luca Van Assche"}}),
+  T("Mifel Tennis Open","Los Cabos","México","Dura",false,[["ATP","250"]],"2026-07-27","2026-08-01",null,{c26:{ATP:"Arthur Géa"}}),
+  T("Winston-Salem Open","Winston-Salem","Estados Unidos","Dura",false,[["ATP","250"]],"2026-08-23","2026-08-29","https://www.winstonsalemopen.com",{c26:{ATP:"Ignacio Buse"}}),
+  T("Chengdu Open","Chengdu","China","Dura",false,[["ATP","250"]],"2026-09-23","2026-09-29",null,{c26:{ATP:"Alejandro Davidovich Fokina"}}),
+  T("Hangzhou Open","Hangzhou","China","Dura",false,[["ATP","250"]],"2026-09-23","2026-09-29",null,{c26:{ATP:"Daniil Medvedev"}}),
+  T("BNP Paribas Fortis European Open","Bruxelas","Bélgica","Dura",true,[["ATP","250"]],"2026-10-19","2026-10-25","https://www.europeanopen.be",{note:"Mudou de Antuérpia para Bruxelas.",c26:{ATP:"Tallon Griekspoor"}}),
+  T("Grand Prix Auvergne-Rhône-Alpes","Lyon","França","Dura",true,[["ATP","250"]],"2026-10-19","2026-10-25",null,{c26:{ATP:"Lorenzo Musetti"}}),
+  T("Almaty Open","Almaty","Cazaquistão","Dura",true,[["ATP","250"]],"2026-10-19","2026-10-25","https://www.almatyopen.kz",{c26:{ATP:"Daniil Medvedev"}}),
   T("Bybit Stockholm Open","Estocolmo","Suécia","Dura",true,[["ATP","250"]],"2026-11-08","2026-11-14","https://www.stockholmopen.se"),
 
   // ===== WTA 250 =====
-  T("Hobart International","Hobart","Austrália","Dura",false,[["WTA","250"]],"2026-01-11","2026-01-17",null),
-  T("Transylvania Open","Cluj-Napoca","Romênia","Dura",true,[["WTA","250"]],"2026-02-01","2026-02-07","https://www.transylvaniaopen.ro"),
-  T("Ostrava Open","Ostrava","República Tcheca","Dura",true,[["WTA","250"]],"2026-02-01","2026-02-07",null),
-  T("Abierto Mexicano Telcel (WTA)","Acapulco","México","Dura",false,[["WTA","250"]],"2026-02-23","2026-02-28","https://www.abiertomexicanodetenis.com"),
-  T("ATX Open","Austin","Estados Unidos","Dura",false,[["WTA","250"]],"2026-02-23","2026-03-01",null),
-  T("Copa Colsanitas","Bogotá","Colômbia","Saibro",false,[["WTA","250"]],"2026-03-30","2026-04-05",null),
-  T("Open de Rouen","Rouen","França","Saibro",true,[["WTA","250"]],"2026-04-13","2026-04-19",null),
-  T("Grand Prix SAR La Princesse Lalla Meryem","Rabat","Marrocos","Saibro",false,[["WTA","250"]],"2026-05-17","2026-05-23",null),
-  T("Ilkley Open","Ilkley","Reino Unido","Grama",false,[["WTA","250"]],"2026-06-08","2026-06-14",null),
-  T("Rothesay Open Nottingham","Nottingham","Reino Unido","Grama",false,[["WTA","250"]],"2026-06-15","2026-06-21",null),
-  T("Iași Open","Iași","Romênia","Saibro",false,[["WTA","250"]],"2026-07-13","2026-07-19",null),
-  T("Budapest Grand Prix","Budapeste","Hungria","Saibro",false,[["WTA","250"]],"2026-07-13","2026-07-19",null,{est26:true}),
-  T("Hamburg Open (WTA)","Hamburgo","Alemanha","Saibro",false,[["WTA","250"]],"2026-07-20","2026-07-26",null),
-  T("Memphis Classic","Memphis","Estados Unidos","Dura",true,[["WTA","250"]],"2026-07-27","2026-08-02",null),
-  T("SP Open","São Paulo","Brasil","Dura",false,[["WTA","250"]],"2026-09-07","2026-09-13",null,{est26:true}),
-  T("Guangzhou Open","Guangzhou","China","Dura",false,[["WTA","250"]],"2026-10-26","2026-11-01",null,{y27:["2027-10-25","2027-10-31"]}),
-  T("Prudential Hong Kong Tennis Open","Hong Kong","China (RAE)","Dura",false,[["WTA","250"]],"2026-11-02","2026-11-08",null,{y27:["2027-11-01","2027-11-07"]}),
-  T("Chennai Open","Chennai","Índia","Dura",false,[["WTA","250"]],"2026-11-02","2026-11-08",null),
+  T("Hobart International","Hobart","Austrália","Dura",false,[["WTA","250"]],"2026-01-11","2026-01-17",null,{c26:{WTA:"Elisabetta Cocciaretto"}}),
+  T("Transylvania Open","Cluj-Napoca","Romênia","Dura",true,[["WTA","250"]],"2026-02-01","2026-02-07","https://www.transylvaniaopen.ro",{c26:{WTA:"Sorana Cîrstea"}}),
+  T("Ostrava Open","Ostrava","República Tcheca","Dura",true,[["WTA","250"]],"2026-02-01","2026-02-07",null,{c26:{WTA:"Katie Boulter"}}),
+  T("ATX Open","Austin","Estados Unidos","Dura",false,[["WTA","250"]],"2026-02-23","2026-03-01",null,{c26:{WTA:"Peyton Stearns"}}),
+  T("Copa Colsanitas","Bogotá","Colômbia","Saibro",false,[["WTA","250"]],"2026-03-30","2026-04-05",null,{c26:{WTA:"Marie Bouzková"}}),
+  T("Open de Rouen","Rouen","França","Saibro",true,[["WTA","250"]],"2026-04-13","2026-04-19",null,{c26:{WTA:"Marta Kostyuk"}}),
+  T("Grand Prix SAR La Princesse Lalla Meryem","Rabat","Marrocos","Saibro",false,[["WTA","250"]],"2026-05-17","2026-05-23",null,{c26:{WTA:"Petra Marčinko"}}),
+  T("Ilkley Open","Ilkley","Reino Unido","Grama",false,[["WTA","250"]],"2026-06-08","2026-06-14",null,{c26:{WTA:"Ashlyn Krueger"}}),
+  T("Rothesay Open Nottingham","Nottingham","Reino Unido","Grama",false,[["WTA","250"]],"2026-06-15","2026-06-21",null,{c26:{WTA:"Marie Bouzková"}}),
+  T("Iași Open","Iași","Romênia","Saibro",false,[["WTA","250"]],"2026-07-13","2026-07-19",null,{c26:{WTA:"Mayar Sherif"}}),
+  T("Hamburg Open (WTA)","Hamburgo","Alemanha","Saibro",false,[["WTA","250"]],"2026-07-20","2026-07-26",null,{c26:{WTA:"Tamara Korpatsch"}}),
+  T("Memphis Classic","Memphis","Estados Unidos","Dura",true,[["WTA","250"]],"2026-07-27","2026-08-02",null,{c26:{WTA:"Kristina Liutova"}}),
+  T("SP Open","São Paulo","Brasil","Dura",false,[["WTA","250"]],"2026-09-07","2026-09-13",null,{c26:{WTA:"Kaitlin Quevedo"}}),
+  T("Guangzhou Open","Guangzhou","China","Dura",false,[["WTA","250"]],"2026-10-26","2026-11-01",null,{y27:["2027-10-25","2027-10-31"],c26:{WTA:"Harriet Dart"}}),
+  T("Prudential Hong Kong Tennis Open","Hong Kong","China (RAE)","Dura",false,[["WTA","250"]],"2026-11-02","2026-11-08",null,{y27:["2027-11-01","2027-11-07"],c26:{WTA:"Claire Liu"}}),
+  T("Chennai Open","Chennai","Índia","Dura",false,[["WTA","250"]],"2026-11-02","2026-11-08",null,{p26:"Final em 8/11: Janice Tjen × Magda Linette."}),
   T("Philippine Women's Open","Manila","Filipinas","Dura",false,[["WTA","250"]],"2027-11-01","2027-11-07","https://www.wtatennis.com/tournaments/1183/manila/2027",{only:2027,y27:["2027-11-01","2027-11-07"],note27:"Novo WTA 250 em 2027, última etapa antes das WTA Finals."}),
 ];
 
@@ -367,6 +372,18 @@ function surfColor(sf) {
   return 'var(--hard)';
 }
 
+function champHtml(t) {
+  if (state.year !== 2026) return '';
+  const c = t.o.c26, pend = t.o.p26;
+  if (c) {
+    const multi = Object.keys(c).length > 1;
+    return '<div class="champs">' + Object.entries(c).map(([tour, n]) =>
+      `<span class="champ"><span class="trophy">🏆</span>${multi ? `<b class="ct-${tour}">${tour}</b> ` : ''}${esc(n)}</span>`).join('') + '</div>';
+  }
+  if (pend) return `<div class="champs"><span class="champ pend">⏳ ${esc(pend)}</span></div>`;
+  return '';
+}
+
 function esc(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
 const state = { year: null, tour: 'all', cat: 'all', surface: 'all', when: 'all', q: '' };
@@ -405,7 +422,8 @@ function render() {
     if (state.surface !== 'all' && !t.surface.startsWith(state.surface)) return false;
     if (state.when === 'next' && t.end < today) return false;
     if (q) {
-      const hay = (t.name + ' ' + t.city + ' ' + t.country).toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+      const champs = state.year === 2026 && t.o.c26 ? Object.values(t.o.c26).join(' ') : '';
+      const hay = (t.name + ' ' + t.city + ' ' + t.country + ' ' + champs).toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
       if (!hay.includes(q)) return false;
     }
     return true;
@@ -445,6 +463,7 @@ function render() {
             <span class="surf"><i style="background:${surfColor(t.surface)}"></i>${esc(surf)}</span>
           </div>
           <div class="badges">${badges}</div>
+          ${champHtml(t)}
           ${t.note ? `<div class="note">${esc(t.note)}</div>` : ''}
         </div>
         <div class="links">${siteLink}${tourLinks}</div>
