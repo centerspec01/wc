@@ -114,6 +114,7 @@
   #search:focus, select:focus { outline: none; border-color: var(--line-2); }
   .favbtn { background: var(--cask); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; cursor: pointer; font-size: .84rem; color: var(--malt); white-space: nowrap; }
   .favbtn.active { color: var(--cherry); border-color: var(--cherry); }
+  #indepOnly.active { color: var(--amber); border-color: var(--amber); }
   .clear { background: none; border: 0; color: var(--amber); font-family: var(--f-mono); font-size: .72rem; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
 
   /* ── CONTEÚDO ── */
@@ -143,6 +144,7 @@
   .nm { font-weight: 700; font-size: 1.02rem; line-height: 1.25; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .kind { font-family: var(--f-mono); font-size: .6rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 2px 6px; border-radius: 4px; border: 1px solid; white-space: nowrap; }
   .k-brew { color: var(--amber); border-color: color-mix(in srgb, var(--amber) 45%, transparent); }
+  .k-grp { color: var(--malt); border-color: var(--line-2); border-style: dashed; }
   .k-pub { color: var(--hop); border-color: color-mix(in srgb, var(--hop) 45%, transparent); }
   .meta { font-size: .82rem; color: var(--malt); margin-top: 2px; }
   .meta .mono { color: var(--husk); font-size: .74rem; }
@@ -220,6 +222,18 @@
   .dlinks a:hover { border-color: var(--amber); }
   .dlinks a.main { background: var(--amber); color: var(--amber-ink); border-color: var(--amber); }
 
+  .method { margin-top: 48px; border-top: 1px solid var(--line); padding-block: 28px 0; scroll-margin-top: 80px; }
+  .method h2 { margin: 6px 0 0; font-family: var(--f-display); font-weight: 900; font-size: clamp(2rem, 5vw, 3rem); text-transform: uppercase; line-height: .95; text-wrap: balance; }
+  .mgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 12px; margin-top: 18px; }
+  .mcard { background: var(--cask); border: 1px solid var(--line); border-radius: 14px; padding: 16px; min-width: 0; }
+  .mcard h3 { margin: 0; font-size: 1rem; font-weight: 700; }
+  .mcard p, .mcard li { font-size: .86rem; color: var(--malt); margin: 8px 0 0; max-width: 62ch; }
+  .mcard ul { margin: 6px 0 0; padding-left: 18px; }
+  .mcard b { color: var(--foam); font-weight: 600; }
+  .owners { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; margin-top: 10px; font-size: .84rem; }
+  .owners dt { font-weight: 700; white-space: nowrap; }
+  .owners dd { margin: 0; color: var(--malt); }
+  .mlink { color: var(--amber); font-family: var(--f-mono); font-size: .74rem; text-underline-offset: 3px; }
   footer { margin-top: 44px; border-top: 1px solid var(--line); padding-block: 22px 40px; }
   footer p { max-width: 75ch; font-size: .8rem; color: var(--husk); margin: 0; }
   footer strong { color: var(--malt); }
@@ -239,6 +253,7 @@
     .row { grid-template-columns: 36px minmax(0, 1fr) 46px; gap: 10px; }
     .rk { font-size: 1.7rem; }
     .tabs { width: 100%; }
+    .method { scroll-margin-top: 230px; }
     .tabs button { flex: 1; padding: 7px 4px; }
     select { flex: 1 1 40%; }
   }
@@ -263,6 +278,7 @@
   <h1>Ranking mundial<br>da <em>cerveja</em></h1>
   <p class="lede">As cervejarias e os bares de cerveja mais reverenciados do planeta, das abadias trapistas da Bélgica às fazendas de Vermont. Toque num copo para ver quem produz e onde se bebe cada estilo.</p>
   <div class="tally" id="tally"></div>
+  <p style="margin:12px 0 0"><a class="mlink" href="#metodo">Como montamos o ranking e por que Ambev, Heineken e outras marcas grandes quase não aparecem →</a></p>
 
   <section class="spectrum" aria-label="Estilos ordenados por cor">
     <div class="spectrum-head">
@@ -287,6 +303,7 @@
     <input id="search" type="search" placeholder="Buscar nome, cidade ou cerveja" autocomplete="off" aria-label="Buscar">
     <select id="region" aria-label="Continente"><option value="">Todos os continentes</option></select>
     <select id="country" aria-label="País"><option value="">Todos os países</option></select>
+    <button class="favbtn" id="indepOnly" type="button" title="Esconder lugares que pertencem a grandes grupos">Só independentes</button>
     <button class="favbtn" id="favOnly" type="button">★ Favoritos</button>
   </div>
 </div>
@@ -309,8 +326,39 @@
   </div>
   <div id="stylesView" hidden></div>
 
+  <section class="method" id="metodo">
+    <div class="lbl">Metodologia</div>
+    <h2>Como montamos o ranking</h2>
+    <div class="mgrid">
+      <div class="mcard">
+        <h3>Qual base foi usada</h3>
+        <p>É uma seleção editorial de cerca de 90 lugares. Entraram as cervejarias e os bares mais citados e mais bem avaliados por apreciadores em três fontes:</p>
+        <ul>
+          <li><b>Sites de avaliação de cervejeiros:</b> RateBeer, Untappd e BeerAdvocate.</li>
+          <li><b>Competições internacionais:</b> World Beer Awards, International Beer Challenge, European Beer Star e outras.</li>
+          <li><b>Importância histórica:</b> lugares onde nasceu um estilo, como a pilsner em Plzeň ou a tripel em Westmalle.</li>
+        </ul>
+        <p>A nota de 0 a 100 resume esses três fatores. Ela é editorial: não é a média oficial de nenhum desses sites.</p>
+      </div>
+      <div class="mcard">
+        <h3>Por que a Ambev e as marcas de massa quase não aparecem</h3>
+        <p>O ranking mede <b>qualidade e reputação entre apreciadores</b>, não tamanho nem vendas. Lagers de grande volume, como Brahma, Skol, Antarctica, Budweiser e Heineken, são feitas para agradar ao maior número de pessoas e recebem notas baixas nesses sites. Por isso não entram.</p>
+        <p>Os grandes grupos aparecem por meio de cervejarias que compraram. Elas levam a etiqueta <span class="kind k-grp">grupo</span> na lista, e o botão <b>Só independentes</b> as esconde.</p>
+        <p>Por volume, o maior grupo cervejeiro do mundo é a <b>AB InBev</b>, controladora da Ambev, seguida pela <b>Heineken</b>. Um ranking por volume seria outra lista, com outra base.</p>
+      </div>
+      <div class="mcard">
+        <h3>Grandes grupos presentes na lista</h3>
+        <dl class="owners" id="owners"></dl>
+      </div>
+      <div class="mcard">
+        <h3>Limites</h3>
+        <p>A lista não é exaustiva: ótimas cervejarias regionais podem não estar aqui. Os dados ficam fixos na página (atualizados em novembro de 2026) e não se atualizam sozinhos. Faixas de álcool, IBU e cor (SRM) são valores típicos de cada estilo. Horários e cardápios mudam: confira antes de ir.</p>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p><strong>Sobre a nota.</strong> A pontuação de 0 a 100 é editorial. Ela combina a reputação de cada lugar em sites de avaliação de cerveja (RateBeer, Untappd, BeerAdvocate), prêmios e importância histórica, e não é a nota oficial de nenhuma dessas plataformas. Faixas de álcool, IBU e cor (SRM) são valores típicos de cada estilo. Horários e cardápios mudam: confira antes de ir. Beba com moderação.</p>
+    <p><strong>Ranking Mundial da Cerveja.</strong> Nota editorial; veja a <a class="mlink" href="#metodo">metodologia</a>. Beba com moderação.</p>
   </footer>
 </main>
 
@@ -473,6 +521,14 @@ const COUNTRIES = {
   NL:['Holanda','Europa'], DK:['Dinamarca','Europa'], EE:['Estônia','Europa'], SE:['Suécia','Europa'], IT:['Itália','Europa'], ES:['Espanha','Europa'],
   US:['EUA','América do Norte'], CA:['Canadá','América do Norte'], JP:['Japão','Ásia e Oceania'], NZ:['Nova Zelândia','Ásia e Oceania'], BR:['Brasil','América do Sul'],
 };
+// Lugares da lista que pertencem a grandes grupos cervejeiros
+const OWNER = {
+  wals: 'Ambev (AB InBev)', colorado: 'Ambev (AB InBev)',
+  urquell: 'Asahi', fullers: 'Asahi',
+  stone: 'Sapporo', unibroue: 'Sapporo',
+  guinness: 'Diageo', founders: 'Mahou San Miguel',
+  bells: 'Kirin', firestone: 'Duvel Moortgat',
+};
 const flag = cc => String.fromCodePoint(...[...cc].map(c => 127397 + c.charCodeAt(0)));
 
 
@@ -504,7 +560,7 @@ function glass(color, fill = 1, i = 0, cls = '') {
 
 /* ── estado ── */
 const $ = id => document.getElementById(id);
-const state = { tab: 'all', q: '', region: '', country: '', style: '', fav: false };
+const state = { tab: 'all', q: '', region: '', country: '', style: '', fav: false, indep: false };
 let favs = new Set();
 try { favs = new Set(JSON.parse(localStorage.getItem('cerv-favs') || '[]')); } catch (e) {}
 const saveFavs = () => { try { localStorage.setItem('cerv-favs', JSON.stringify([...favs])); } catch (e) {} };
@@ -536,6 +592,7 @@ function init() {
   $('search').oninput = e => { state.q = e.target.value; render(); };
   $('region').onchange = e => { state.region = e.target.value; state.country = ''; fillCountries(); render(); };
   $('country').onchange = e => { state.country = e.target.value; render(); };
+  $('indepOnly').onclick = () => { state.indep = !state.indep; $('indepOnly').classList.toggle('active', state.indep); render(); };
   $('favOnly').onclick = () => { state.fav = !state.fav; $('favOnly').classList.toggle('active', state.fav); render(); };
   $('theme').onclick = toggleTheme;
   const openFrom = e => {
@@ -549,6 +606,10 @@ function init() {
   $('stylesView').onclick = e => { const g = e.target.closest('.go'); if (g) { setTab('all'); setStyle(g.dataset.style); $('bar').scrollIntoView({ behavior: 'smooth' }); } };
   $('stylePanel').onclick = e => { const g = e.target.closest('.go'); if (g) setTab('styles'); };
   $('dlg').onclick = e => { if (e.target === $('dlg') || e.target.closest('.x')) $('dlg').close(); };
+
+  const byG = {};
+  Object.entries(OWNER).forEach(([id, g]) => (byG[g] ||= []).push(short(PLACES.find(p => p.id === id).n)));
+  $('owners').innerHTML = Object.entries(byG).map(([g, ns]) => `<dt>${esc(g)}</dt><dd>${ns.map(esc).join(', ')}</dd>`).join('');
 
   readHash(); addEventListener('hashchange', () => { readHash(); });
 }
@@ -578,7 +639,7 @@ function setTab(t, silent) {
   $('tabs').querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.tab === t));
   const st = t === 'styles';
   $('rankView').hidden = st; $('stylesView').hidden = !st;
-  ['search', 'region', 'country', 'favOnly'].forEach(id => $(id).hidden = st);
+  ['search', 'region', 'country', 'indepOnly', 'favOnly'].forEach(id => $(id).hidden = st);
   if (!silent) { writeHash(); render(); }
 }
 
@@ -609,6 +670,7 @@ function filtered(ignoreCountry) {
     (ignoreCountry || !state.country || p.cc === state.country) &&
     (!state.region || COUNTRIES[p.cc][1] === state.region) &&
     (!state.fav || favs.has(p.id)) &&
+    (!state.indep || !OWNER[p.id]) &&
     (!q || norm([p.n, p.city, COUNTRIES[p.cc][0], p.sig, ...p.s.map(k => STYLES[k].n)].join(' ')).includes(q))
   ).sort((a, b) => b.score - a.score || (state.style ? a.s.indexOf(state.style) - b.s.indexOf(state.style) : 0) || a.n.localeCompare(b.n));
 }
@@ -650,7 +712,7 @@ function row(p, r) {
   return `<div class="row" role="button" tabindex="0" data-id="${p.id}">
     <div class="rk">${r}</div>
     <div style="min-width:0">
-      <div class="nm">${esc(p.n)} <span class="kind ${p.t === 'brew' ? 'k-brew' : 'k-pub'}">${p.t === 'brew' ? 'Cervejaria' : 'Pub'}</span></div>
+      <div class="nm">${esc(p.n)} <span class="kind ${p.t === 'brew' ? 'k-brew' : 'k-pub'}">${p.t === 'brew' ? 'Cervejaria' : 'Pub'}</span>${OWNER[p.id] ? ` <span class="kind k-grp" title="Pertence a um grande grupo">grupo ${esc(OWNER[p.id])}</span>` : ''}</div>
       <div class="meta">${flag(p.cc)} ${esc(p.city)}, ${cname}${p.y ? ` <span class="mono">· desde ${p.y}</span>` : ''}</div>
       <div class="tags">${p.s.map(x => `<span class="tag ${x === state.style ? 'hit' : ''}"><i style="background:${beerOf(x)}"></i>${STYLES[x].n}</span>`).join('')}</div>
       <div class="sig">${p.t === 'brew' ? 'Cervejas-ícone' : 'Destaques'}: ${esc(p.sig)}</div>
@@ -735,7 +797,7 @@ function openPlace(id) {
       <button class="x" type="button" aria-label="Fechar">✕</button>
       <div class="lbl" style="position:relative">${p.t === 'brew' ? 'Cervejaria' : 'Pub / bar'} · nº ${pos} entre ${p.t === 'brew' ? 'as cervejarias' : 'os pubs'}</div>
       <h2>${esc(p.n)}</h2>
-      <div class="meta">${flag(p.cc)} ${esc(p.city)}, ${cname}${p.y ? ` · desde ${p.y}` : ''} · nota <b style="color:var(--amber)">${p.score}</b></div>
+      <div class="meta">${flag(p.cc)} ${esc(p.city)}, ${cname}${p.y ? ` · desde ${p.y}` : ''} · nota <b style="color:var(--amber)">${p.score}</b>${OWNER[p.id] ? ` · pertence ao grupo ${esc(OWNER[p.id])}` : ''}</div>
     </div>
     <div class="dbody">
       <h4>Sobre</h4><p class="desc">${esc(p.d)}</p>
