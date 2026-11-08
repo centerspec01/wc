@@ -1,0 +1,47 @@
+name: Atualizar World Conflicts
+
+on:
+  schedule:
+    - cron: '23 */6 * * *'   # a cada 6 horas
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - conflitos-core.js
+      - data/conflitos.json
+      - scripts/conflitos-update.js
+      - .github/workflows/conflitos.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: conflitos
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Buscar notícias e líderes
+        run: node scripts/conflitos-update.js
+
+      - name: Salvar se mudou
+        run: |
+          git config user.name  "world-conflicts-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/conflitos-live.json
+          if git diff --cached --quiet; then
+            echo "Sem mudanças."
+          else
+            git commit -m "World Conflicts: atualiza notícias e líderes"
+            git pull --rebase origin "${GITHUB_REF_NAME}" || true
+            git push
+          fi
