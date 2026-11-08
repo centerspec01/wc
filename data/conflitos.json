@@ -1,0 +1,865 @@
+{
+  "atualizado": "2026-06-30",
+  "nota": "Base curada a partir de ONU/OCHA, ACLED, UCDP, CSIS, Crisis Group e imprensa internacional. Números de mortos são estimativas e costumam ser contestados pelas partes. A seção de notícias de cada conflito é atualizada automaticamente.",
+  "conflitos": [
+    {
+      "id": "russia-ucrania",
+      "nome": "Guerra Rússia × Ucrânia",
+      "regiao": "Europa Oriental",
+      "tipo": "Guerra interestatal",
+      "status": "ativo",
+      "intensidade": "alta",
+      "inicio": "2022-02-24",
+      "raizes": "2014-02-27",
+      "paises": ["804", "643"],
+      "pontos": [[48.28, 37.18, "Pokrovsk / Donetsk"], [47.6, 35.6, "Frente de Zaporíjia"], [49.99, 36.23, "Kharkiv"], [50.45, 30.52, "Kiev (ataques aéreos)"]],
+      "resumo": "Maior guerra na Europa desde 1945. A Rússia invadiu a Ucrânia em larga escala e ocupa cerca de 19–20% do território ucraniano (Crimeia e partes de Donetsk, Luhansk, Zaporíjia e Kherson).",
+      "motivo": "Moscou alega 'desnazificar' e 'desmilitarizar' a Ucrânia, impedir a adesão à OTAN e proteger russófonos. Kiev e o Ocidente veem uma guerra de conquista territorial e de negação da soberania ucraniana.",
+      "historia": [
+        ["1991", "Dissolução da URSS: Ucrânia se torna independente com as fronteiras que incluem a Crimeia."],
+        ["1994", "Memorando de Budapeste: Ucrânia entrega arsenal nuclear em troca de garantias de integridade territorial (Rússia, EUA, Reino Unido)."],
+        ["2013–14", "Euromaidan derruba o presidente pró-Rússia Viktor Yanukovych."],
+        ["2014", "Rússia anexa a Crimeia e apoia separatistas no Donbas; ~14 mil mortos até 2021."],
+        ["2015", "Acordos de Minsk II nunca são cumpridos integralmente."],
+        ["fev/2022", "Invasão em larga escala; ofensiva contra Kiev fracassa."],
+        ["2022", "Contraofensivas ucranianas retomam Kharkiv e Kherson; Rússia anexa formalmente quatro regiões."],
+        ["2023–25", "Guerra de atrito, drones em massa e avanço russo lento no Donbas; incursão ucraniana em Kursk (2024)."],
+        ["2025–26", "Negociações mediadas pelos EUA, cúpulas e propostas de plano de paz, sem acordo final sobre território e garantias de segurança."]
+      ],
+      "mortos": {"texto": "≈ 350–450 mil (militares + civis)", "valor": 400000, "fonte": "Estimativas CSIS, Mediazona/BBC, UALosses; ONU confirmou mais de 14 mil civis mortos", "nota": "Somando feridos, as baixas militares passam de 1 milhão."},
+      "deslocados": "≈ 3,7 milhões deslocados internos e 6,9 milhões de refugiados (ACNUR)",
+      "lideres": [
+        {"nome": "Vladimir Putin", "papel": "Presidente da Rússia", "lado": "Rússia"},
+        {"nome": "Valery Gerasimov", "papel": "Chefe do Estado-Maior russo", "lado": "Rússia"},
+        {"nome": "Volodymyr Zelensky", "papel": "Presidente da Ucrânia", "lado": "Ucrânia"},
+        {"nome": "Oleksandr Syrskyi", "papel": "Comandante-em-chefe ucraniano", "lado": "Ucrânia"}
+      ],
+      "lados": [
+        {"nome": "Rússia", "apoios": "Belarus, Coreia do Norte (tropas e munição), Irã (drones); apoio econômico indireto da China"},
+        {"nome": "Ucrânia", "apoios": "UE, Reino Unido, EUA (armas e inteligência), demais países da OTAN"}
+      ],
+      "previsao": {"cenario": "Cessar-fogo negociado próximo da linha de contato é o cenário mais citado por analistas, mas as partes divergem sobre território, neutralidade e garantias. Sem acordo, a guerra de atrito tende a continuar.", "horizonte": "Incerto — 2026/2027", "confianca": "baixa"},
+      "info": ["Linha de frente de ~1.200 km", "Maior uso de drones da história militar", "Usina nuclear de Zaporíjia (a maior da Europa) ocupada pela Rússia", "Impacto global em grãos, energia e fertilizantes"],
+      "busca": "guerra Rússia Ucrânia",
+      "buscaEn": "Russia Ukraine war"
+    },
+    {
+      "id": "israel-gaza",
+      "nome": "Guerra Israel × Hamas (Gaza)",
+      "regiao": "Oriente Médio",
+      "tipo": "Guerra assimétrica / ocupação",
+      "status": "cessar-fogo",
+      "intensidade": "alta",
+      "inicio": "2023-10-07",
+      "raizes": "1948-05-14",
+      "paises": ["376", "275"],
+      "pontos": [[31.42, 34.38, "Faixa de Gaza"], [31.9, 35.2, "Cisjordânia"]],
+      "resumo": "Desencadeada pelo ataque do Hamas a Israel em 7/out/2023 (≈1.200 mortos e 251 reféns). A resposta militar israelense devastou Gaza. Um cessar-fogo baseado no plano de 20 pontos dos EUA vigora desde 10/out/2025, com violações frequentes.",
+      "motivo": "Disputa territorial e nacional israelo-palestina; bloqueio de Gaza desde 2007; recusa do Hamas em reconhecer Israel; ocupação e assentamentos na Cisjordânia; objetivo israelense de destruir o Hamas e recuperar reféns.",
+      "historia": [
+        ["1917", "Declaração Balfour: Reino Unido apoia 'lar nacional judeu' na Palestina."],
+        ["1947–48", "Plano de partilha da ONU; criação de Israel e guerra; ~700 mil palestinos expulsos ou fugidos (Nakba)."],
+        ["1967", "Guerra dos Seis Dias: Israel ocupa Gaza, Cisjordânia e Jerusalém Oriental."],
+        ["1993", "Acordos de Oslo criam a Autoridade Palestina."],
+        ["2005–07", "Israel retira colonos de Gaza; Hamas vence eleições e toma Gaza; bloqueio começa."],
+        ["2008–21", "Várias guerras entre Israel e Hamas."],
+        ["7/out/2023", "Ataque do Hamas ao sul de Israel; início da guerra."],
+        ["2024", "Ofensivas em Rafah; morte de Yahya Sinwar; fome declarada em partes de Gaza (2025)."],
+        ["out/2025", "Cessar-fogo e troca de reféns por prisioneiros; Resolução 2803 do CSNU (nov/2025) cria Força Internacional de Estabilização e um 'Conselho da Paz'."]
+      ],
+      "mortos": {"texto": "≈ 70 mil palestinos + ≈ 2 mil israelenses", "valor": 72000, "fonte": "Ministério da Saúde de Gaza (números considerados plausíveis pela ONU); governo israelense", "nota": "Estudos independentes indicam subnotificação em Gaza."},
+      "deslocados": "≈ 90% dos 2,1 milhões de habitantes de Gaza foram deslocados ao menos uma vez",
+      "lideres": [
+        {"nome": "Benjamin Netanyahu", "papel": "Primeiro-ministro de Israel", "lado": "Israel"},
+        {"nome": "Israel Katz", "papel": "Ministro da Defesa de Israel", "lado": "Israel"},
+        {"nome": "Eyal Zamir", "papel": "Chefe do Estado-Maior das FDI", "lado": "Israel"},
+        {"nome": "Khalil al-Hayya", "papel": "Chefe negociador do Hamas", "lado": "Hamas"},
+        {"nome": "Mahmoud Abbas", "papel": "Presidente da Autoridade Palestina", "lado": "AP (Cisjordânia)"}
+      ],
+      "lados": [
+        {"nome": "Israel", "apoios": "EUA (armas e diplomacia), Alemanha"},
+        {"nome": "Hamas e Jihad Islâmica", "apoios": "Irã ('Eixo da Resistência'); mediação do Catar, Egito e Turquia"}
+      ],
+      "previsao": {"cenario": "Cessar-fogo frágil. A 'fase 2' (desarmamento do Hamas, retirada israelense, força internacional e reconstrução) é o ponto crítico; o risco de retomada dos combates permanece.", "horizonte": "Trégua em vigor; solução política sem prazo", "confianca": "baixa"},
+      "info": ["Gaza: 365 km² e ~2,1 milhões de pessoas", "Reconstrução estimada em mais de US$ 50 bilhões (ONU/UE/Banco Mundial)", "Recorde de jornalistas e trabalhadores humanitários mortos", "Caso de genocídio contra Israel na Corte Internacional de Justiça (aberto pela África do Sul)"],
+      "busca": "Gaza Israel Hamas cessar-fogo",
+      "buscaEn": "Gaza ceasefire Israel Hamas"
+    },
+    {
+      "id": "sudao",
+      "nome": "Guerra Civil do Sudão",
+      "regiao": "África Oriental",
+      "tipo": "Guerra civil",
+      "status": "ativo",
+      "intensidade": "alta",
+      "inicio": "2023-04-15",
+      "raizes": "2019-04-11",
+      "paises": ["729"],
+      "pontos": [[13.63, 25.35, "El Fasher (Darfur)"], [15.5, 32.56, "Cartum"], [13.18, 30.22, "El Obeid (Kordofan)"]],
+      "resumo": "Guerra entre o exército (SAF) e as Forças de Apoio Rápido (RSF), paramilitares nascidos das milícias Janjaweed. Gera a maior crise humanitária e de deslocamento do mundo, com fome declarada.",
+      "motivo": "Disputa de poder entre os dois generais que derrubaram juntos a transição civil em 2021, sobre a integração das RSF ao exército, controle do ouro e da economia. Dimensão étnica forte em Darfur.",
+      "historia": [
+        ["1956", "Independência; décadas de guerras entre norte e sul."],
+        ["2003", "Guerra de Darfur: Janjaweed cometem massacres (≈300 mil mortos)."],
+        ["2011", "Independência do Sudão do Sul."],
+        ["2019", "Revolução popular derruba Omar al-Bashir após 30 anos."],
+        ["2021", "Golpe de Burhan e Hemedti encerra a transição civil."],
+        ["abr/2023", "Combates explodem em Cartum."],
+        ["2024", "Fome declarada no campo de Zamzam; RSF avança em Darfur."],
+        ["mar/2025", "Exército retoma Cartum."],
+        ["out/2025", "RSF toma El Fasher após cerco de 18 meses, com massacres relatados; RSF mantém governo paralelo ('Tasis')."]
+      ],
+      "mortos": {"texto": "≈ 40 mil (mortes diretas registradas) a 150 mil+ (incluindo fome e doença)", "valor": 150000, "fonte": "ACLED; estimativas do ex-enviado dos EUA Tom Perriello e pesquisadores da LSHTM"},
+      "deslocados": "≈ 12–14 milhões de deslocados — a maior crise de deslocamento do planeta",
+      "lideres": [
+        {"nome": "Abdel Fattah al-Burhan", "papel": "Chefe do exército e do Conselho Soberano", "lado": "SAF"},
+        {"nome": "Mohamed Hamdan Dagalo ('Hemedti')", "papel": "Comandante das RSF", "lado": "RSF"}
+      ],
+      "lados": [
+        {"nome": "Forças Armadas (SAF)", "apoios": "Egito, Turquia, Irã, Arábia Saudita (diplomático)"},
+        {"nome": "Forças de Apoio Rápido (RSF)", "apoios": "Emirados Árabes Unidos (acusados pela ONU e pelos EUA), redes na Líbia e no Chade"}
+      ],
+      "previsao": {"cenario": "Tendência de partição de fato: exército no centro/leste e RSF em Darfur e partes do Kordofan. Uma trégua humanitária proposta pelo 'Quad' (EUA, Arábia Saudita, Egito e EAU) é a principal via diplomática.", "horizonte": "Sem fim previsível — conflito prolongado", "confianca": "baixa"},
+      "info": ["Mais de 25 milhões em insegurança alimentar aguda", "EUA classificaram atos das RSF como genocídio (jan/2025)", "Ouro é a principal fonte de financiamento das partes"],
+      "busca": "Sudão guerra RSF",
+      "buscaEn": "Sudan war RSF army"
+    },
+    {
+      "id": "mianmar",
+      "nome": "Guerra Civil de Mianmar",
+      "regiao": "Sudeste Asiático",
+      "tipo": "Guerra civil",
+      "status": "ativo",
+      "intensidade": "alta",
+      "inicio": "2021-02-01",
+      "raizes": "1948-01-04",
+      "paises": ["104"],
+      "pontos": [[21.97, 96.08, "Mandalay / Sagaing"], [20.15, 92.9, "Rakhine"], [23.6, 97.9, "Estado Shan (norte)"]],
+      "resumo": "Após o golpe militar de 2021 contra o governo eleito de Aung San Suu Kyi, a resistência pró-democracia aliou-se a exércitos étnicos que já lutavam havia décadas. A junta perdeu grandes áreas de fronteira.",
+      "motivo": "Rejeição ao regime militar e luta das minorias étnicas (Kachin, Karen, Rakhine, Shan etc.) por autonomia e federalismo.",
+      "historia": [
+        ["1948", "Independência da Birmânia; começam insurgências étnicas."],
+        ["1962", "Golpe de Ne Win: décadas de regime militar."],
+        ["1988", "Levante democrático esmagado; Suu Kyi em prisão domiciliar."],
+        ["2015", "Vitória da NLD de Suu Kyi."],
+        ["2017", "Ofensiva contra os Rohingya: ~740 mil fogem para Bangladesh."],
+        ["fev/2021", "Golpe de Min Aung Hlaing; protestos reprimidos viram luta armada."],
+        ["out/2023", "'Operação 1027' da Aliança das Três Irmandades toma o norte do Shan."],
+        ["2024", "Arakan Army controla quase todo o Rakhine."],
+        ["2025–26", "Terremoto de março/2025; junta realiza eleições contestadas com mediação chinesa nos bastidores."]
+      ],
+      "mortos": {"texto": "≈ 80 mil+ desde o golpe", "valor": 80000, "fonte": "ACLED"},
+      "deslocados": "≈ 3,5 milhões de deslocados internos (ONU)",
+      "lideres": [
+        {"nome": "Min Aung Hlaing", "papel": "Chefe da junta militar", "lado": "Junta (Tatmadaw)"},
+        {"nome": "Duwa Lashi La", "papel": "Presidente interino do Governo de Unidade Nacional (NUG)", "lado": "Resistência"},
+        {"nome": "Twan Mrat Naing", "papel": "Comandante do Arakan Army", "lado": "Exércitos étnicos"},
+        {"nome": "Aung San Suu Kyi", "papel": "Líder eleita, presa desde 2021", "lado": "NLD"}
+      ],
+      "lados": [
+        {"nome": "Junta militar", "apoios": "Rússia (armas), China (diplomacia e pressão sobre grupos de fronteira)"},
+        {"nome": "NUG/PDF e organizações étnicas armadas", "apoios": "Apoio limitado e informal"}
+      ],
+      "previsao": {"cenario": "Impasse prolongado e fragmentação territorial. A China pressiona por cessar-fogos locais; uma vitória militar de qualquer lado é improvável no curto prazo.", "horizonte": "Sem fim previsível", "confianca": "baixa"},
+      "info": ["Mais de 20 mil presos políticos", "Grande produtor mundial de ópio e centro de 'fábricas de golpes' online", "Dezenas de exércitos étnicos com agendas distintas"],
+      "busca": "Mianmar junta guerra civil",
+      "buscaEn": "Myanmar junta civil war"
+    },
+    {
+      "id": "rdc-m23",
+      "nome": "Leste da RD Congo (M23 / AFC)",
+      "regiao": "África Central",
+      "tipo": "Insurgência com envolvimento estrangeiro",
+      "status": "negociacao",
+      "intensidade": "alta",
+      "inicio": "2021-11-07",
+      "raizes": "1994-04-07",
+      "paises": ["180", "646"],
+      "pontos": [[-1.68, 29.22, "Goma"], [-2.5, 28.86, "Bukavu"], [-3.38, 29.14, "Uvira"]],
+      "resumo": "O grupo rebelde M23, apoiado por Ruanda segundo a ONU, tomou Goma e Bukavu em 2025. Há mais de 100 grupos armados no leste congolês, região rica em minerais estratégicos.",
+      "motivo": "Legado do genocídio de Ruanda (milícias hutus refugiadas no Congo), proteção alegada de tutsis congoleses, disputa por coltan, ouro e estanho, e fraqueza do Estado congolês.",
+      "historia": [
+        ["1994", "Genocídio em Ruanda; milhões de refugiados hutus cruzam para o Congo."],
+        ["1996–2003", "Primeira e Segunda Guerras do Congo ('Guerra Mundial Africana'): milhões de mortos."],
+        ["2012", "M23 toma Goma brevemente; derrotado em 2013."],
+        ["2021", "M23 ressurge em Kivu do Norte."],
+        ["jan–fev/2025", "M23/AFC toma Goma e Bukavu."],
+        ["jun/2025", "Acordo de paz RDC–Ruanda assinado em Washington."],
+        ["nov–dez/2025", "Marco de Doha entre Kinshasa e o M23; Acordos de Washington assinados por Tshisekedi e Kagame, mas combates seguem (M23 avança sobre Uvira)."]
+      ],
+      "mortos": {"texto": "Milhares em 2025 (≈ 7 mil só em jan–fev, segundo o governo); guerras do Congo desde 1996: milhões", "valor": 10000, "fonte": "Governo da RDC, ONU; IRC (mortes indiretas nas guerras do Congo)"},
+      "deslocados": "≈ 7 milhões de deslocados internos na RDC",
+      "lideres": [
+        {"nome": "Félix Tshisekedi", "papel": "Presidente da RD Congo", "lado": "RDC"},
+        {"nome": "Paul Kagame", "papel": "Presidente de Ruanda", "lado": "Ruanda"},
+        {"nome": "Corneille Nangaa", "papel": "Líder da Aliança do Rio Congo (AFC)", "lado": "AFC/M23"},
+        {"nome": "Sultani Makenga", "papel": "Comandante militar do M23", "lado": "AFC/M23"}
+      ],
+      "lados": [
+        {"nome": "Governo da RDC", "apoios": "Burundi, milícias Wazalendo, SADC (até 2025)"},
+        {"nome": "AFC/M23", "apoios": "Ruanda (segundo especialistas da ONU)"}
+      ],
+      "previsao": {"cenario": "Acordos de Washington e Doha criam uma via diplomática ligada a investimentos em minerais, mas a implementação é lenta e o M23 mantém administração própria. Risco alto de novos combates.", "horizonte": "Negociação em curso; paz duradoura incerta", "confianca": "baixa"},
+      "info": ["RDC tem ~70% do cobalto mundial", "Missão da ONU (MONUSCO) presente desde 1999", "Surtos de cólera, mpox e ebola agravam a crise"],
+      "busca": "Congo M23 Goma",
+      "buscaEn": "Congo M23 rebels"
+    },
+    {
+      "id": "sahel",
+      "nome": "Insurgência jihadista no Sahel",
+      "regiao": "África Ocidental",
+      "tipo": "Insurgência jihadista",
+      "status": "ativo",
+      "intensidade": "alta",
+      "inicio": "2012-01-17",
+      "raizes": "2012-01-17",
+      "paises": ["466", "854", "562"],
+      "pontos": [[12.64, -8.0, "Bamako (bloqueio de combustível)"], [14.1, -1.63, "Djibo (Burkina Faso)"], [14.2, 1.45, "Tillabéri (Níger)"], [16.27, -0.04, "Gao"]],
+      "resumo": "Grupos ligados à Al-Qaeda (JNIM) e ao Estado Islâmico (EI-Sahel) controlam vastas áreas rurais de Mali, Burkina Faso e Níger, governados por juntas militares que expulsaram tropas francesas e se aproximaram da Rússia.",
+      "motivo": "Fraqueza estatal, marginalização de pastores fulas e tuaregues, disputas por terra e água agravadas pelo clima, efeito do colapso da Líbia (2011) e abusos das forças de segurança.",
+      "historia": [
+        ["2011", "Queda de Kadafi espalha armas e combatentes tuaregues pelo Sahel."],
+        ["2012", "Rebelião tuaregue e jihadista toma o norte do Mali; golpe em Bamako."],
+        ["2013", "Intervenção francesa (Serval, depois Barkhane)."],
+        ["2017", "Fundação do JNIM."],
+        ["2020–23", "Golpes no Mali, Burkina Faso e Níger."],
+        ["2022–24", "Saída das tropas francesas e da missão da ONU no Mali; chegada do Grupo Wagner/Africa Corps."],
+        ["2025", "Aliança dos Estados do Sahel (AES) deixa a CEDEAO; JNIM impõe bloqueio de combustível a Bamako."]
+      ],
+      "mortos": {"texto": "Dezenas de milhares desde 2012 (≈ 10 mil por ano recentemente)", "valor": 70000, "fonte": "ACLED"},
+      "deslocados": "≈ 3 milhões de deslocados internos na região central do Sahel",
+      "lideres": [
+        {"nome": "Assimi Goïta", "papel": "Chefe da junta do Mali", "lado": "AES"},
+        {"nome": "Ibrahim Traoré", "papel": "Chefe da junta de Burkina Faso", "lado": "AES"},
+        {"nome": "Abdourahamane Tiani", "papel": "Chefe da junta do Níger", "lado": "AES"},
+        {"nome": "Iyad Ag Ghaly", "papel": "Líder do JNIM (Al-Qaeda)", "lado": "Jihadistas"}
+      ],
+      "lados": [
+        {"nome": "Juntas da AES", "apoios": "Rússia (Africa Corps), Turquia (drones)"},
+        {"nome": "JNIM e Estado Islâmico no Sahel", "apoios": "Redes jihadistas transnacionais; financiamento por sequestros, garimpo e 'impostos'"}
+      ],
+      "previsao": {"cenario": "Expansão contínua do JNIM em direção ao litoral (Benin, Togo) e pressão crescente sobre capitais. Não há processo de paz em vista.", "horizonte": "Conflito de longo prazo", "confianca": "media"},
+      "info": ["Burkina Faso é um dos países com mais mortes por terrorismo no mundo (Global Terrorism Index)", "Milhares de escolas fechadas", "Região de 'cinturão de golpes'"],
+      "busca": "Sahel jihadistas Mali Burkina",
+      "buscaEn": "Sahel JNIM Mali Burkina Faso"
+    },
+    {
+      "id": "haiti",
+      "nome": "Crise de gangues no Haiti",
+      "regiao": "Caribe",
+      "tipo": "Violência de gangues / colapso estatal",
+      "status": "ativo",
+      "intensidade": "alta",
+      "inicio": "2021-07-07",
+      "raizes": "1804-01-01",
+      "paises": ["332"],
+      "pontos": [[18.54, -72.34, "Porto Príncipe"], [19.1, -72.7, "Artibonite"]],
+      "resumo": "Coalizões de gangues controlam ~90% de Porto Príncipe e avançam sobre o interior. O Estado praticamente colapsou após o assassinato do presidente Jovenel Moïse.",
+      "motivo": "Vácuo de poder, elites que financiaram gangues, pobreza extrema, tráfico de armas dos EUA e falta de eleições desde 2016.",
+      "historia": [
+        ["1804", "Independência após a única revolução de escravizados vitoriosa; dívida imposta pela França."],
+        ["1957–86", "Ditadura Duvalier."],
+        ["2004–17", "Missão de paz da ONU (MINUSTAH), liderada pelo Brasil."],
+        ["2010", "Terremoto mata mais de 200 mil."],
+        ["jul/2021", "Assassinato de Jovenel Moïse."],
+        ["2024", "Coalizão 'Viv Ansanm' força a renúncia do premiê Ariel Henry; chega missão liderada pelo Quênia."],
+        ["set/2025", "ONU aprova Força de Supressão de Gangues (GSF), mais robusta."]
+      ],
+      "mortos": {"texto": "≈ 16–18 mil desde 2022", "valor": 17000, "fonte": "ONU (BINUH/OHCHR)"},
+      "deslocados": "≈ 1,4 milhão de deslocados internos (OIM)",
+      "lideres": [
+        {"nome": "Jimmy 'Barbecue' Chérizier", "papel": "Líder da coalizão Viv Ansanm / G9", "lado": "Gangues"},
+        {"nome": "Alix Didier Fils-Aimé", "papel": "Primeiro-ministro", "lado": "Governo de transição"}
+      ],
+      "lados": [
+        {"nome": "Governo de transição e polícia", "apoios": "Força de Supressão de Gangues (ONU), EUA, Quênia, empresas militares privadas"},
+        {"nome": "Viv Ansanm, Gran Grif e outras gangues", "apoios": "Extorsão, sequestros e armas contrabandeadas"}
+      ],
+      "previsao": {"cenario": "A nova força internacional pode retomar áreas-chave, mas eleições e estabilidade dependem de financiamento e tropas suficientes.", "horizonte": "Médio prazo — 2026/2027", "confianca": "baixa"},
+      "info": ["Metade da população em fome aguda", "Aeroporto de Porto Príncipe fechado por longos períodos", "Gangues usam violência sexual como arma"],
+      "busca": "Haiti gangues",
+      "buscaEn": "Haiti gangs"
+    },
+    {
+      "id": "iemen",
+      "nome": "Guerra do Iêmen e Mar Vermelho",
+      "regiao": "Oriente Médio",
+      "tipo": "Guerra civil internacionalizada",
+      "status": "congelado",
+      "intensidade": "media",
+      "inicio": "2014-09-21",
+      "raizes": "1990-05-22",
+      "paises": ["887", "682"],
+      "pontos": [[15.37, 44.19, "Sanaa"], [14.8, 42.95, "Hodeidah / Mar Vermelho"], [12.8, 45.03, "Áden"], [15.4, 45.3, "Marib"]],
+      "resumo": "Os Houthis (Ansar Allah), apoiados pelo Irã, controlam o norte e a capital. Desde 2023 atacam navios no Mar Vermelho e Israel, o que gerou bombardeios dos EUA, Reino Unido e Israel.",
+      "motivo": "Disputa de poder após a Primavera Árabe, marginalização dos zaiditas do norte, rivalidade Arábia Saudita × Irã, e separatismo no sul.",
+      "historia": [
+        ["1990", "Unificação do Iêmen do Norte e do Sul."],
+        ["2004–10", "Seis guerras entre governo e Houthis."],
+        ["2011–12", "Primavera Árabe derruba Ali Abdullah Saleh."],
+        ["2014", "Houthis tomam Sanaa."],
+        ["2015", "Coalizão liderada pela Arábia Saudita intervém."],
+        ["2022", "Trégua mediada pela ONU reduz fortemente os combates."],
+        ["2023–25", "Ataques Houthis no Mar Vermelho; bombardeios americanos e israelenses; Israel mata o premiê Houthi (ago/2025)."],
+        ["2025–26", "Tensões no sul entre o Conselho de Transição do Sul (separatistas, apoiados pelos EAU) e forças apoiadas pela Arábia Saudita."]
+      ],
+      "mortos": {"texto": "≈ 150 mil mortes diretas; ≈ 377 mil incluindo fome e doenças", "valor": 377000, "fonte": "ONU/PNUD (até 2021), ACLED"},
+      "deslocados": "≈ 4,5 milhões de deslocados internos",
+      "lideres": [
+        {"nome": "Abdul-Malik al-Houthi", "papel": "Líder dos Houthis", "lado": "Houthis"},
+        {"nome": "Rashad al-Alimi", "papel": "Presidente do Conselho de Liderança Presidencial", "lado": "Governo reconhecido"},
+        {"nome": "Aidarus al-Zubaidi", "papel": "Líder do Conselho de Transição do Sul", "lado": "Separatistas do sul"}
+      ],
+      "lados": [
+        {"nome": "Houthis (Ansar Allah)", "apoios": "Irã"},
+        {"nome": "Governo reconhecido e aliados", "apoios": "Arábia Saudita, Emirados Árabes Unidos"}
+      ],
+      "previsao": {"cenario": "Front interno relativamente congelado, com roteiro de paz saudita-houthi travado; o risco regional (Mar Vermelho, Israel) e as disputas no sul podem reacender a guerra.", "horizonte": "Incerto", "confianca": "baixa"},
+      "info": ["Uma das piores crises humanitárias do mundo (~19 milhões precisam de ajuda)", "Ataques no Mar Vermelho desviaram rotas comerciais para o Cabo da Boa Esperança", "Houthis detiveram funcionários da ONU"],
+      "busca": "Iêmen Houthis",
+      "buscaEn": "Yemen Houthis"
+    },
+    {
+      "id": "siria",
+      "nome": "Síria: pós-guerra civil e transição",
+      "regiao": "Oriente Médio",
+      "tipo": "Transição pós-guerra civil",
+      "status": "transicao",
+      "intensidade": "media",
+      "inicio": "2011-03-15",
+      "raizes": "1970-11-13",
+      "paises": ["760"],
+      "pontos": [[33.51, 36.29, "Damasco"], [35.5, 35.9, "Costa (Latakia)"], [32.7, 36.57, "Sweida"], [36.2, 40.3, "Nordeste (SDF)"]],
+      "resumo": "Após 13 anos de guerra civil, Bashar al-Assad caiu em dezembro de 2024 diante de ofensiva do HTS. O governo de Ahmed al-Sharaa busca reconstrução e reconhecimento, mas enfrentou massacres sectários contra alauítas e drusos.",
+      "motivo": "Repressão aos protestos de 2011, ditadura da família Assad, divisões sectárias e intervenção de potências (Rússia, Irã, Turquia, EUA, Israel).",
+      "historia": [
+        ["1970", "Hafez al-Assad toma o poder."],
+        ["1982", "Massacre de Hama."],
+        ["2011", "Protestos da Primavera Árabe reprimidos; início da guerra civil."],
+        ["2014", "Estado Islâmico proclama califado em Raqqa."],
+        ["2015", "Intervenção russa salva Assad."],
+        ["dez/2024", "Queda de Assad; fuga para Moscou."],
+        ["2025", "Massacres na costa (março) e em Sweida (julho); acordo de integração com as SDF curdas; sanções dos EUA suspensas; Israel ocupa zona-tampão no sul."]
+      ],
+      "mortos": {"texto": "≈ 500–620 mil desde 2011", "valor": 600000, "fonte": "Observatório Sírio de Direitos Humanos (SOHR), ONU"},
+      "deslocados": "≈ 13 milhões deslocados no auge; retorno gradual desde 2025",
+      "lideres": [
+        {"nome": "Ahmed al-Sharaa", "papel": "Presidente de transição", "lado": "Governo"},
+        {"nome": "Mazloum Abdi", "papel": "Comandante das SDF", "lado": "Curdos (SDF)"},
+        {"nome": "Hikmat al-Hijri", "papel": "Líder espiritual druso", "lado": "Drusos de Sweida"}
+      ],
+      "lados": [
+        {"nome": "Governo de transição", "apoios": "Turquia, Catar, Arábia Saudita; reaproximação com EUA e UE"},
+        {"nome": "SDF, milícias drusas e remanescentes do regime", "apoios": "EUA (SDF), Israel (drusos)"}
+      ],
+      "previsao": {"cenario": "Estabilização gradual se a integração das SDF e a proteção de minorias avançarem; risco de novos ciclos de violência sectária e de ataques do Estado Islâmico.", "horizonte": "Transição de vários anos", "confianca": "media"},
+      "info": ["Mais de 100 mil desaparecidos na era Assad", "Economia destruída: >90% abaixo da linha da pobreza", "Maior população de refugiados do mundo na última década"],
+      "busca": "Síria al-Sharaa",
+      "buscaEn": "Syria al-Sharaa"
+    },
+    {
+      "id": "somalia",
+      "nome": "Somália × al-Shabaab",
+      "regiao": "Chifre da África",
+      "tipo": "Insurgência jihadista",
+      "status": "ativo",
+      "intensidade": "media",
+      "inicio": "2006-12-20",
+      "raizes": "1991-01-26",
+      "paises": ["706"],
+      "pontos": [[2.05, 45.32, "Mogadíscio"], [2.8, 45.5, "Médio Shabelle"]],
+      "resumo": "O al-Shabaab, filial da Al-Qaeda, controla grande parte do sul e do centro rural e recuperou território em 2025. O governo depende de uma missão da União Africana (AUSSOM) com financiamento incerto.",
+      "motivo": "Colapso do Estado em 1991, rivalidades de clãs, intervenção etíope de 2006 e projeto jihadista de impor a sharia.",
+      "historia": [
+        ["1991", "Queda de Siad Barre; guerra entre clãs."],
+        ["1993", "Batalha de Mogadíscio ('Falcão Negro em Perigo')."],
+        ["2006", "Etiópia derruba a União das Cortes Islâmicas; nasce o al-Shabaab."],
+        ["2007", "Missão da União Africana (AMISOM)."],
+        ["2022", "Ofensiva governamental com milícias de clãs."],
+        ["2025", "Al-Shabaab retoma cidades no Médio Shabelle; AUSSOM substitui a ATMIS."]
+      ],
+      "mortos": {"texto": "Dezenas de milhares desde 2006", "valor": 40000, "fonte": "ACLED, UCDP"},
+      "deslocados": "≈ 3,5 milhões de deslocados internos",
+      "lideres": [
+        {"nome": "Hassan Sheikh Mohamud", "papel": "Presidente da Somália", "lado": "Governo"},
+        {"nome": "Ahmed Diriye (Abu Ubaidah)", "papel": "Emir do al-Shabaab", "lado": "Al-Shabaab"}
+      ],
+      "lados": [
+        {"nome": "Governo federal", "apoios": "União Africana (AUSSOM), EUA (ataques aéreos), Turquia, EAU"},
+        {"nome": "Al-Shabaab", "apoios": "Al-Qaeda; arrecadação de 'impostos' locais"}
+      ],
+      "previsao": {"cenario": "Impasse com risco de deterioração caso a AUSSOM perca financiamento; eleições de 2026 são foco de tensão política.", "horizonte": "Longo prazo", "confianca": "media"},
+      "info": ["Al-Shabaab arrecada mais de US$ 100 milhões/ano", "Secas recorrentes e risco de fome", "Estado Islâmico ativo em Puntland"],
+      "busca": "Somália al-Shabaab",
+      "buscaEn": "Somalia al-Shabaab"
+    },
+    {
+      "id": "etiopia",
+      "nome": "Etiópia: Amhara (Fano) e tensões no Tigré",
+      "regiao": "Chifre da África",
+      "tipo": "Insurgência étnica",
+      "status": "ativo",
+      "intensidade": "media",
+      "inicio": "2023-08-01",
+      "raizes": "2020-11-04",
+      "paises": ["231", "232"],
+      "pontos": [[11.6, 37.39, "Bahir Dar (Amhara)"], [13.5, 39.47, "Mekelle (Tigré)"], [8.0, 37.0, "Oromia"]],
+      "resumo": "Milícias Fano lutam contra o governo federal na região de Amhara. No Tigré, o acordo de Pretória (2022) está desgastado, e há tensão crescente com a Eritreia sobre acesso ao mar.",
+      "motivo": "Disputas étnico-territoriais no federalismo etíope, desarmamento forçado de forças regionais e o desejo do premiê Abiy de obter um porto no Mar Vermelho.",
+      "historia": [
+        ["1991", "Queda do regime Derg; federalismo étnico."],
+        ["2018", "Abiy Ahmed assume; paz com a Eritreia (Nobel da Paz 2019)."],
+        ["2020–22", "Guerra do Tigré, uma das mais letais do século XXI."],
+        ["nov/2022", "Acordo de Pretória."],
+        ["ago/2023", "Estado de emergência em Amhara; insurgência Fano."],
+        ["2025", "Divisões na TPLF e ameaças de guerra com a Eritreia."]
+      ],
+      "mortos": {"texto": "Guerra do Tigré: 300–600 mil; Amhara desde 2023: milhares", "valor": 600000, "fonte": "Estimativas acadêmicas (Universidade de Ghent), ACLED"},
+      "deslocados": "≈ 4 milhões de deslocados internos",
+      "lideres": [
+        {"nome": "Abiy Ahmed", "papel": "Primeiro-ministro da Etiópia", "lado": "Governo federal"},
+        {"nome": "Isaias Afwerki", "papel": "Presidente da Eritreia", "lado": "Eritreia"}
+      ],
+      "lados": [
+        {"nome": "Governo federal", "apoios": "EAU, Turquia (drones)"},
+        {"nome": "Fano e facções do Tigré", "apoios": "Apoio local; acusações de apoio eritreu"}
+      ],
+      "previsao": {"cenario": "Insurgência Fano prolongada; o maior risco é uma guerra interestatal Etiópia–Eritreia.", "horizonte": "Incerto", "confianca": "baixa"},
+      "info": ["Segundo país mais populoso da África (~130 milhões)", "Grande Represa do Renascimento inaugurada em 2025, em disputa com o Egito"],
+      "busca": "Etiópia Amhara Fano Tigré",
+      "buscaEn": "Ethiopia Amhara Fano Tigray"
+    },
+    {
+      "id": "nigeria",
+      "nome": "Nigéria: jihadismo e banditismo",
+      "regiao": "África Ocidental",
+      "tipo": "Insurgência jihadista / banditismo",
+      "status": "ativo",
+      "intensidade": "media",
+      "inicio": "2009-07-26",
+      "raizes": "2002-01-01",
+      "paises": ["566"],
+      "pontos": [[11.83, 13.15, "Maiduguri (Borno)"], [12.1, 6.2, "Zamfara (bandidos)"], [9.5, 8.8, "Cinturão Central"]],
+      "resumo": "Boko Haram e ISWAP atuam no nordeste e em torno do Lago Chade; quadrilhas de 'bandidos' fazem sequestros em massa no noroeste; conflitos entre agricultores e pastores atingem o centro.",
+      "motivo": "Pobreza, desigualdade entre norte e sul, corrupção, abusos militares, disputas por terra e água e ideologia jihadista.",
+      "historia": [
+        ["2002", "Mohammed Yusuf funda o Boko Haram em Maiduguri."],
+        ["2009", "Levante e morte de Yusuf; início da insurgência armada."],
+        ["2014", "Sequestro de 276 meninas em Chibok."],
+        ["2016", "Racha: nasce o ISWAP (Estado Islâmico)."],
+        ["2021", "Morte do líder Abubakar Shekau."],
+        ["2025", "Ressurgimento de ataques no Borno; pressão internacional sobre ataques contra comunidades cristãs."]
+      ],
+      "mortos": {"texto": "≈ 35 mil mortes diretas; ≈ 350 mil com efeitos indiretos no nordeste", "valor": 350000, "fonte": "ONU/PNUD (2021), ACLED"},
+      "deslocados": "≈ 3,5 milhões de deslocados internos",
+      "lideres": [
+        {"nome": "Bola Tinubu", "papel": "Presidente da Nigéria", "lado": "Governo"},
+        {"nome": "Bakura Doro", "papel": "Líder do Boko Haram (JAS)", "lado": "Jihadistas"}
+      ],
+      "lados": [
+        {"nome": "Governo e Força Multinacional do Lago Chade", "apoios": "EUA, Reino Unido"},
+        {"nome": "Boko Haram (JAS), ISWAP e gangues de bandidos", "apoios": "Estado Islâmico (ISWAP)"}
+      ],
+      "previsao": {"cenario": "Violência crônica e multifacetada, sem solução militar à vista.", "horizonte": "Longo prazo", "confianca": "media"},
+      "info": ["País mais populoso da África (~230 milhões)", "Sequestros por resgate viraram indústria", "Lago Chade encolheu cerca de 90% desde 1960"],
+      "busca": "Nigéria Boko Haram ataque",
+      "buscaEn": "Nigeria Boko Haram ISWAP bandits"
+    },
+    {
+      "id": "colombia",
+      "nome": "Conflito armado na Colômbia",
+      "regiao": "América do Sul",
+      "tipo": "Insurgência / crime organizado",
+      "status": "ativo",
+      "intensidade": "media",
+      "inicio": "1964-05-27",
+      "raizes": "1948-04-09",
+      "paises": ["170"],
+      "pontos": [[8.6, -73.1, "Catatumbo"], [2.5, -76.6, "Cauca"], [7.9, -76.6, "Urabá (Clã do Golfo)"]],
+      "resumo": "Após o acordo de paz com as FARC (2016), dissidências, o ELN e o Clã do Golfo disputam rotas de cocaína e mineração ilegal. A crise do Catatumbo (2025) deslocou dezenas de milhares.",
+      "motivo": "Concentração fundiária, exclusão rural, economia da cocaína e ausência do Estado em vastas regiões.",
+      "historia": [
+        ["1948", "Assassinato de Gaitán inicia 'La Violencia'."],
+        ["1964", "Fundação das FARC; ELN surge em 1964–65."],
+        ["anos 1980–90", "Cartéis de Medellín e Cali; paramilitares (AUC)."],
+        ["2016", "Acordo de paz com as FARC; Nobel para Juan Manuel Santos."],
+        ["2022–25", "'Paz total' de Gustavo Petro: negociações múltiplas com resultados limitados."],
+        ["jan/2025", "ELN ataca dissidentes no Catatumbo; estado de comoção interior."]
+      ],
+      "mortos": {"texto": "≈ 450 mil (1985–2018)", "valor": 450000, "fonte": "Comissão da Verdade da Colômbia"},
+      "deslocados": "≈ 8 milhões de vítimas de deslocamento forçado (registro histórico)",
+      "lideres": [
+        {"nome": "Antonio García", "papel": "Comandante do ELN", "lado": "ELN"},
+        {"nome": "Iván Mordisco", "papel": "Líder do Estado-Maior Central (dissidência das FARC)", "lado": "Dissidentes"}
+      ],
+      "lados": [
+        {"nome": "Estado colombiano", "apoios": "EUA (cooperação antidrogas)"},
+        {"nome": "ELN, dissidências das FARC e Clã do Golfo", "apoios": "Narcotráfico, mineração ilegal e extorsão"}
+      ],
+      "previsao": {"cenario": "Violência fragmentada deve persistir; a política de segurança do governo empossado em agosto de 2026 define o rumo.", "horizonte": "Longo prazo", "confianca": "media"},
+      "info": ["Maior produtor mundial de cocaína", "Um dos países mais perigosos para líderes sociais", "JEP (justiça de transição) julga crimes da guerra"],
+      "busca": "Colômbia ELN dissidências",
+      "buscaEn": "Colombia ELN armed groups"
+    },
+    {
+      "id": "mexico",
+      "nome": "México: guerra contra os cartéis",
+      "regiao": "América do Norte",
+      "tipo": "Crime organizado armado",
+      "status": "ativo",
+      "intensidade": "media",
+      "inicio": "2006-12-11",
+      "raizes": "1980-01-01",
+      "paises": ["484"],
+      "pontos": [[24.8, -107.39, "Culiacán (Sinaloa)"], [19.17, -101.9, "Michoacán"], [20.67, -103.35, "Jalisco (CJNG)"]],
+      "resumo": "Cartéis com armamento militar disputam territórios. Desde set/2024, a guerra interna do Cartel de Sinaloa (Chapitos × Mayos) devastou Culiacán. Em 2025 os EUA classificaram cartéis como organizações terroristas.",
+      "motivo": "Lucros do tráfico de drogas (especialmente fentanil) para os EUA, armas contrabandeadas dos EUA, corrupção e impunidade.",
+      "historia": [
+        ["anos 1980", "Cartel de Guadalajara; México vira rota da cocaína colombiana."],
+        ["2006", "Felipe Calderón envia o exército contra os cartéis."],
+        ["2016–19", "Prisão e extradição de 'El Chapo'."],
+        ["2019", "Criação da Guarda Nacional."],
+        ["jul/2024", "Captura de 'El Mayo' Zambada nos EUA desencadeia guerra interna em Sinaloa."],
+        ["2025", "Designação de cartéis como terroristas pelos EUA; extradições em massa."]
+      ],
+      "mortos": {"texto": "≈ 450 mil homicídios desde 2006; mais de 120 mil desaparecidos", "valor": 450000, "fonte": "INEGI, Registro Nacional de Pessoas Desaparecidas", "nota": "Nem todos os homicídios estão ligados aos cartéis."},
+      "deslocados": "Centenas de milhares de deslocados internos",
+      "lideres": [
+        {"nome": "Claudia Sheinbaum", "papel": "Presidente do México", "lado": "Governo"},
+        {"nome": "Omar García Harfuch", "papel": "Secretário de Segurança", "lado": "Governo"},
+        {"nome": "Nemesio Oseguera ('El Mencho')", "papel": "Líder do CJNG", "lado": "Cartéis"}
+      ],
+      "lados": [
+        {"nome": "Estado mexicano", "apoios": "Cooperação e pressão dos EUA"},
+        {"nome": "Cartel de Sinaloa, CJNG e outros", "apoios": "Tráfico de drogas, extorsão, combustível roubado"}
+      ],
+      "previsao": {"cenario": "Queda gradual de homicídios é possível, mas a fragmentação de cartéis e a pressão dos EUA (inclusive ameaça de ação militar) mantêm alta volatilidade.", "horizonte": "Longo prazo", "confianca": "media"},
+      "info": ["Fentanil é a principal causa de overdose nos EUA", "~70% das armas apreendidas vêm dos EUA", "Jornalistas e candidatos são alvos frequentes"],
+      "busca": "México cartel violência Sinaloa",
+      "buscaEn": "Mexico cartel violence"
+    },
+    {
+      "id": "ira-israel",
+      "nome": "Irã × Israel / EUA",
+      "regiao": "Oriente Médio",
+      "tipo": "Confronto interestatal",
+      "status": "tensao",
+      "intensidade": "media",
+      "inicio": "2025-06-13",
+      "raizes": "1979-02-11",
+      "paises": ["364", "376", "840"],
+      "pontos": [[35.7, 51.42, "Teerã"], [33.72, 51.73, "Natanz / Fordow"]],
+      "resumo": "Após anos de guerra nas sombras, Israel atacou instalações nucleares e militares do Irã em junho de 2025 ('Guerra dos 12 Dias'). Os EUA bombardearam Fordow, Natanz e Isfahan. A tensão sobre o programa nuclear segue alta.",
+      "motivo": "Programa nuclear iraniano, rede de aliados armados do Irã ('Eixo da Resistência') e hostilidade ideológica da República Islâmica a Israel e aos EUA.",
+      "historia": [
+        ["1979", "Revolução Islâmica; rompimento com EUA e Israel."],
+        ["1982", "Irã ajuda a criar o Hezbollah."],
+        ["2015", "Acordo nuclear (JCPOA)."],
+        ["2018", "EUA saem do acordo; sanções máximas."],
+        ["abr e out/2024", "Primeiros ataques diretos do Irã contra Israel e respostas israelenses."],
+        ["jun/2025", "Guerra dos 12 Dias; cessar-fogo em 24/jun."],
+        ["set/2025", "Sanções da ONU restabelecidas (snapback) pelo E3."]
+      ],
+      "mortos": {"texto": "Guerra de jun/2025: ≈ 1.100 no Irã e ≈ 30 em Israel", "valor": 1100, "fonte": "Governo iraniano, HRANA, governo israelense"},
+      "deslocados": "—",
+      "lideres": [
+        {"nome": "Masoud Pezeshkian", "papel": "Presidente do Irã", "lado": "Irã"},
+        {"nome": "Benjamin Netanyahu", "papel": "Primeiro-ministro de Israel", "lado": "Israel"},
+        {"nome": "Donald Trump", "papel": "Presidente dos EUA", "lado": "EUA"}
+      ],
+      "lados": [
+        {"nome": "Irã", "apoios": "Rússia e China (diplomático), Houthis, Hezbollah"},
+        {"nome": "Israel e EUA", "apoios": "Reino Unido, França, países do Golfo (defesa antimíssil)"}
+      ],
+      "previsao": {"cenario": "Risco recorrente de nova escalada enquanto o destino do urânio enriquecido iraniano não for resolvido por acordo.", "horizonte": "Tensão de longo prazo", "confianca": "baixa"},
+      "info": ["Estreito de Ormuz: ~20% do petróleo mundial", "Irã tinha ~400 kg de urânio enriquecido a 60% antes dos ataques (AIEA)"],
+      "busca": "Irã Israel nuclear",
+      "buscaEn": "Iran Israel nuclear strikes"
+    },
+    {
+      "id": "libano-hezbollah",
+      "nome": "Israel × Hezbollah (Líbano)",
+      "regiao": "Oriente Médio",
+      "tipo": "Guerra com grupo armado",
+      "status": "cessar-fogo",
+      "intensidade": "baixa",
+      "inicio": "2023-10-08",
+      "raizes": "1982-06-06",
+      "paises": ["422", "376"],
+      "pontos": [[33.27, 35.4, "Sul do Líbano"], [33.85, 35.5, "Dahieh (Beirute)"]],
+      "resumo": "O Hezbollah abriu fogo em apoio ao Hamas; em 2024 Israel matou Hassan Nasrallah e invadiu o sul do Líbano. Cessar-fogo desde 27/nov/2024, mas Israel mantém posições e ataques quase diários.",
+      "motivo": "Hostilidade do Hezbollah a Israel, ocupações passadas do sul do Líbano e papel do Irã.",
+      "historia": [
+        ["1982", "Invasão israelense; nasce o Hezbollah."],
+        ["2000", "Israel deixa o sul do Líbano."],
+        ["2006", "Guerra de 34 dias."],
+        ["2023–24", "Trocas de fogo na fronteira; explosão de pagers; morte de Nasrallah; ofensiva terrestre."],
+        ["nov/2024", "Cessar-fogo mediado por EUA e França."],
+        ["2025", "Governo libanês aprova plano para o exército desarmar o Hezbollah."]
+      ],
+      "mortos": {"texto": "≈ 4.000+ no Líbano e ≈ 130 em Israel", "valor": 4300, "fonte": "Ministério da Saúde do Líbano, governo israelense"},
+      "deslocados": "≈ 1 milhão no auge (Líbano) e ~60 mil no norte de Israel",
+      "lideres": [
+        {"nome": "Naim Qassem", "papel": "Secretário-geral do Hezbollah", "lado": "Hezbollah"},
+        {"nome": "Joseph Aoun", "papel": "Presidente do Líbano", "lado": "Líbano"},
+        {"nome": "Benjamin Netanyahu", "papel": "Primeiro-ministro de Israel", "lado": "Israel"}
+      ],
+      "lados": [
+        {"nome": "Hezbollah", "apoios": "Irã"},
+        {"nome": "Israel", "apoios": "EUA"}
+      ],
+      "previsao": {"cenario": "Cessar-fogo deve se manter de forma precária; o desarmamento do Hezbollah é o ponto decisivo.", "horizonte": "Médio prazo", "confianca": "media"},
+      "info": ["Força da ONU (UNIFIL) no sul do Líbano até 2026–2027", "Líbano em grave crise econômica desde 2019"],
+      "busca": "Líbano Hezbollah Israel",
+      "buscaEn": "Lebanon Hezbollah Israel strikes"
+    },
+    {
+      "id": "paquistao",
+      "nome": "Paquistão: TTP, Baluchistão e fronteira afegã",
+      "regiao": "Sul da Ásia",
+      "tipo": "Insurgência / confronto fronteiriço",
+      "status": "ativo",
+      "intensidade": "media",
+      "inicio": "2007-12-01",
+      "raizes": "1947-08-14",
+      "paises": ["586", "004"],
+      "pontos": [[34.0, 71.5, "Khyber Pakhtunkhwa"], [30.18, 66.99, "Quetta (Baluchistão)"], [34.0, 70.0, "Fronteira afegã"]],
+      "resumo": "O Talibã paquistanês (TTP) intensificou ataques desde a volta do Talibã ao poder em Cabul; separatistas balúchis atacam forças e projetos chineses. Em outubro de 2025 houve choques diretos entre Paquistão e Afeganistão.",
+      "motivo": "Santuários do TTP no Afeganistão, marginalização do Baluchistão rico em recursos, linha Durand nunca reconhecida por Cabul.",
+      "historia": [
+        ["1893", "Linha Durand divide os pashtuns."],
+        ["2007", "Fundação do TTP."],
+        ["2014", "Massacre na escola militar de Peshawar."],
+        ["2021", "Talibã retoma Cabul; TTP se fortalece."],
+        ["mar/2025", "BLA sequestra o trem Jaffar Express."],
+        ["out/2025", "Confrontos de fronteira Paquistão–Afeganistão; trégua mediada por Catar e Turquia."]
+      ],
+      "mortos": {"texto": "Mais de 80 mil desde 2001 (segundo o governo); milhares por ano recentemente", "valor": 80000, "fonte": "Governo do Paquistão, PICSS, ACLED"},
+      "deslocados": "Centenas de milhares; deportação em massa de afegãos",
+      "lideres": [
+        {"nome": "Shehbaz Sharif", "papel": "Primeiro-ministro do Paquistão", "lado": "Paquistão"},
+        {"nome": "Asim Munir", "papel": "Marechal, chefe das Forças Armadas", "lado": "Paquistão"},
+        {"nome": "Noor Wali Mehsud", "papel": "Líder do TTP", "lado": "TTP"},
+        {"nome": "Hibatullah Akhundzada", "papel": "Líder supremo do Talibã", "lado": "Afeganistão"}
+      ],
+      "lados": [
+        {"nome": "Paquistão", "apoios": "China, Arábia Saudita (pacto de defesa de 2025)"},
+        {"nome": "TTP e Exército de Libertação do Baluchistão", "apoios": "Paquistão acusa Talibã afegão e Índia"}
+      ],
+      "previsao": {"cenario": "Violência insurgente deve continuar alta; risco de novas operações transfronteiriças.", "horizonte": "Longo prazo", "confianca": "media"},
+      "info": ["Corredor Econômico China–Paquistão passa pelo Baluchistão", "Potência nuclear"],
+      "busca": "Paquistão TTP Afeganistão ataque",
+      "buscaEn": "Pakistan TTP Afghanistan Balochistan"
+    },
+    {
+      "id": "caxemira",
+      "nome": "Índia × Paquistão (Caxemira)",
+      "regiao": "Sul da Ásia",
+      "tipo": "Disputa territorial entre potências nucleares",
+      "status": "cessar-fogo",
+      "intensidade": "baixa",
+      "inicio": "1947-10-22",
+      "raizes": "1947-08-15",
+      "paises": ["356", "586"],
+      "pontos": [[34.08, 74.8, "Srinagar"], [34.0, 74.3, "Linha de Controle"]],
+      "resumo": "Disputa desde a partição da Índia britânica. Em maio de 2025, após um atentado em Pahalgam, os dois países trocaram ataques com mísseis e drones por quatro dias antes de um cessar-fogo.",
+      "motivo": "Soberania sobre a Caxemira de maioria muçulmana; Índia acusa o Paquistão de apoiar terrorismo; Paquistão denuncia repressão indiana.",
+      "historia": [
+        ["1947", "Partição; primeira guerra pela Caxemira."],
+        ["1965 e 1971", "Novas guerras (1971 cria Bangladesh)."],
+        ["1999", "Guerra de Kargil."],
+        ["2019", "Índia revoga a autonomia da Caxemira (artigo 370)."],
+        ["mai/2025", "Atentado em Pahalgam; 'Operação Sindoor'; cessar-fogo em 10/mai."]
+      ],
+      "mortos": {"texto": "≈ 40–70 mil desde 1989 na insurgência; ≈ 70 nos combates de maio/2025", "valor": 50000, "fonte": "Governo indiano, organizações locais de direitos humanos"},
+      "deslocados": "Pandits caxemires deslocados nos anos 1990",
+      "lideres": [
+        {"nome": "Narendra Modi", "papel": "Primeiro-ministro da Índia", "lado": "Índia"},
+        {"nome": "Shehbaz Sharif", "papel": "Primeiro-ministro do Paquistão", "lado": "Paquistão"},
+        {"nome": "Asim Munir", "papel": "Chefe das Forças Armadas do Paquistão", "lado": "Paquistão"}
+      ],
+      "lados": [
+        {"nome": "Índia", "apoios": "EUA, França, Rússia (armas)"},
+        {"nome": "Paquistão", "apoios": "China, Turquia"}
+      ],
+      "previsao": {"cenario": "Cessar-fogo deve se manter, mas um novo grande atentado pode desencadear outra crise militar rápida.", "horizonte": "Disputa sem solução prevista", "confianca": "media"},
+      "info": ["Tratado das Águas do Indo suspenso pela Índia em 2025", "Ambos têm cerca de 170 ogivas nucleares"],
+      "busca": "Caxemira Índia Paquistão",
+      "buscaEn": "Kashmir India Pakistan"
+    },
+    {
+      "id": "mocambique",
+      "nome": "Moçambique: insurgência em Cabo Delgado",
+      "regiao": "África Austral",
+      "tipo": "Insurgência jihadista",
+      "status": "ativo",
+      "intensidade": "baixa",
+      "inicio": "2017-10-05",
+      "raizes": "2017-10-05",
+      "paises": ["508"],
+      "pontos": [[-11.35, 40.35, "Mocímboa da Praia"], [-12.97, 40.5, "Pemba"]],
+      "resumo": "Insurgentes ligados ao Estado Islâmico atacam o norte de Moçambique, onde há megaprojetos de gás natural. Tropas de Ruanda ajudam a conter o grupo.",
+      "motivo": "Exclusão econômica de jovens do norte, descoberta de rubis e gás sem benefício local, e radicalização religiosa.",
+      "historia": [
+        ["2017", "Primeiro ataque em Mocímboa da Praia."],
+        ["2021", "Ataque a Palma paralisa o projeto de gás da TotalEnergies; Ruanda e SADC enviam tropas."],
+        ["2024–25", "Nova onda de ataques; crise pós-eleitoral agrava instabilidade."]
+      ],
+      "mortos": {"texto": "≈ 6 mil+", "valor": 6000, "fonte": "ACLED / Cabo Ligado"},
+      "deslocados": "Mais de 1 milhão no auge",
+      "lideres": [
+        {"nome": "Daniel Chapo", "papel": "Presidente de Moçambique", "lado": "Governo"}
+      ],
+      "lados": [
+        {"nome": "Governo", "apoios": "Ruanda, UE (treinamento)"},
+        {"nome": "Estado Islâmico – Moçambique", "apoios": "Estado Islâmico"}
+      ],
+      "previsao": {"cenario": "Insurgência de baixa intensidade persistente; a retomada do projeto de gás depende da segurança.", "horizonte": "Longo prazo", "confianca": "media"},
+      "info": ["Projeto de GNL de US$ 20 bilhões", "Ataques a cristãos e decapitações relatados"],
+      "busca": "Cabo Delgado insurgentes",
+      "buscaEn": "Cabo Delgado insurgency Mozambique"
+    },
+    {
+      "id": "camaroes",
+      "nome": "Camarões: crise anglófona",
+      "regiao": "África Central",
+      "tipo": "Insurgência separatista",
+      "status": "ativo",
+      "intensidade": "baixa",
+      "inicio": "2017-10-01",
+      "raizes": "1961-10-01",
+      "paises": ["120"],
+      "pontos": [[5.96, 10.15, "Bamenda"], [4.15, 9.24, "Buea"], [10.6, 14.3, "Extremo Norte (Boko Haram)"]],
+      "resumo": "Separatistas das regiões de língua inglesa lutam pela 'Ambazônia' independente. No extremo norte, o Boko Haram também ataca.",
+      "motivo": "Marginalização da minoria anglófona em país majoritariamente francófono e repressão a protestos de professores e advogados em 2016.",
+      "historia": [
+        ["1961", "Camarões britânico do sul se une ao Camarões francês."],
+        ["1972", "Fim do federalismo."],
+        ["2016", "Protestos anglófonos reprimidos."],
+        ["out/2017", "Separatistas declaram a 'Ambazônia'."],
+        ["2025", "Paul Biya, 92 anos, reeleito em pleito contestado."]
+      ],
+      "mortos": {"texto": "≈ 6 mil+", "valor": 6000, "fonte": "International Crisis Group"},
+      "deslocados": "≈ 600 mil deslocados",
+      "lideres": [
+        {"nome": "Paul Biya", "papel": "Presidente de Camarões", "lado": "Governo"}
+      ],
+      "lados": [
+        {"nome": "Governo", "apoios": "França (histórico)"},
+        {"nome": "Grupos separatistas ambazonianos", "apoios": "Diáspora"}
+      ],
+      "previsao": {"cenario": "Conflito negligenciado e estagnado; a sucessão de Biya pode abrir espaço para negociação ou para mais instabilidade.", "horizonte": "Incerto", "confianca": "baixa"},
+      "info": ["Escolas fechadas por anos nas regiões anglófonas", "Uma das 'crises mais negligenciadas' segundo o NRC"],
+      "busca": "Camarões anglófonos Ambazônia",
+      "buscaEn": "Cameroon Anglophone crisis"
+    },
+    {
+      "id": "sudao-do-sul",
+      "nome": "Sudão do Sul: risco de nova guerra civil",
+      "regiao": "África Oriental",
+      "tipo": "Conflito político-étnico",
+      "status": "tensao",
+      "intensidade": "media",
+      "inicio": "2025-03-04",
+      "raizes": "2013-12-15",
+      "paises": ["728"],
+      "pontos": [[8.6, 33.07, "Nasir (Alto Nilo)"], [4.85, 31.58, "Juba"]],
+      "resumo": "Choques no Alto Nilo em 2025 levaram à prisão do vice-presidente Riek Machar, ameaçando o acordo de paz de 2018 que encerrou a guerra civil.",
+      "motivo": "Rivalidade entre Salva Kiir (dinka) e Riek Machar (nuer), disputa pelo petróleo e atraso perpétuo das eleições.",
+      "historia": [
+        ["2011", "Independência do Sudão."],
+        ["2013–18", "Guerra civil entre Kiir e Machar (≈ 400 mil mortos)."],
+        ["2018", "Acordo de paz revitalizado."],
+        ["mar/2025", "Combates em Nasir; Machar preso e depois julgado por traição."]
+      ],
+      "mortos": {"texto": "Guerra civil 2013–18: ≈ 400 mil; centenas em 2025", "valor": 400000, "fonte": "London School of Hygiene & Tropical Medicine; ONU"},
+      "deslocados": "≈ 2 milhões internos + refugiados vindos do Sudão",
+      "lideres": [
+        {"nome": "Salva Kiir", "papel": "Presidente", "lado": "Governo (SPLM)"},
+        {"nome": "Riek Machar", "papel": "Vice-presidente afastado e preso", "lado": "SPLM-IO"}
+      ],
+      "lados": [
+        {"nome": "Governo de Kiir", "apoios": "Uganda (tropas)"},
+        {"nome": "SPLM-IO e milícias nuer (Exército Branco)", "apoios": "—"}
+      ],
+      "previsao": {"cenario": "Alto risco de retorno à guerra civil; eleições marcadas para dez/2026 são improváveis de ocorrer em condições adequadas.", "horizonte": "Incerto", "confianca": "baixa"},
+      "info": ["Petróleo responde por ~90% das receitas do Estado", "Missão da ONU (UNMISS) com ~18 mil efetivos"],
+      "busca": "Sudão do Sul Machar Kiir",
+      "buscaEn": "South Sudan Machar Kiir"
+    },
+    {
+      "id": "eua-venezuela",
+      "nome": "Crise EUA × Venezuela",
+      "regiao": "América do Sul / Caribe",
+      "tipo": "Intervenção militar / crise política",
+      "status": "tensao",
+      "intensidade": "media",
+      "inicio": "2025-09-02",
+      "raizes": "1999-02-02",
+      "paises": ["862", "840"],
+      "pontos": [[10.49, -66.88, "Caracas"], [12.0, -66.0, "Caribe (ataques a embarcações)"]],
+      "resumo": "A partir de setembro de 2025 os EUA atacaram dezenas de embarcações que acusavam de narcotráfico e concentraram forças no Caribe. Em janeiro de 2026 uma operação militar americana em Caracas capturou Nicolás Maduro, levado a julgamento nos EUA.",
+      "motivo": "Acusações de narcoterrorismo contra o governo chavista, fraude na eleição de 2024, migração em massa e interesses em petróleo.",
+      "historia": [
+        ["1999", "Hugo Chávez assume; 'Revolução Bolivariana'."],
+        ["2013", "Morte de Chávez; Maduro assume."],
+        ["2014–20", "Colapso econômico; ~8 milhões de emigrantes."],
+        ["jul/2024", "Eleição contestada; oposição apresenta atas indicando vitória de Edmundo González."],
+        ["out/2025", "María Corina Machado recebe o Nobel da Paz."],
+        ["set–dez/2025", "Ataques a lanchas no Caribe e no Pacífico; maior mobilização naval americana na região em décadas."],
+        ["jan/2026", "Operação dos EUA captura Maduro; Delcy Rodríguez assume a presidência interina."]
+      ],
+      "mortos": {"texto": "Centenas (ataques a embarcações e operação de jan/2026); números não consolidados", "valor": 300, "fonte": "Pentágono, imprensa internacional"},
+      "deslocados": "≈ 8 milhões de venezuelanos emigraram desde 2014 (R4V)",
+      "lideres": [
+        {"nome": "Donald Trump", "papel": "Presidente dos EUA", "lado": "EUA"},
+        {"nome": "Delcy Rodríguez", "papel": "Presidente interina da Venezuela", "lado": "Governo venezuelano"},
+        {"nome": "María Corina Machado", "papel": "Líder da oposição, Nobel da Paz 2025", "lado": "Oposição"}
+      ],
+      "lados": [
+        {"nome": "EUA", "apoios": "Parte da oposição venezuelana; alguns governos da região"},
+        {"nome": "Governo chavista", "apoios": "Cuba, Rússia, China e Irã (diplomático)"}
+      ],
+      "previsao": {"cenario": "Transição política incerta e negociada sob pressão americana; risco de instabilidade interna e de novas ações militares.", "horizonte": "Curto a médio prazo", "confianca": "baixa"},
+      "info": ["Maiores reservas de petróleo comprovadas do mundo", "Brasil e Colômbia recebem grande parte dos migrantes"],
+      "busca": "Venezuela Estados Unidos",
+      "buscaEn": "Venezuela United States"
+    },
+    {
+      "id": "tailandia-camboja",
+      "nome": "Tailândia × Camboja (fronteira)",
+      "regiao": "Sudeste Asiático",
+      "tipo": "Disputa de fronteira",
+      "status": "cessar-fogo",
+      "intensidade": "baixa",
+      "inicio": "2025-07-24",
+      "raizes": "1907-03-23",
+      "paises": ["764", "116"],
+      "pontos": [[14.38, 103.68, "Templos de Ta Muen / Preah Vihear"]],
+      "resumo": "Confrontos de artilharia e aéreos em julho de 2025 deixaram dezenas de mortos e ~300 mil deslocados. Um acordo de paz foi assinado em Kuala Lumpur (out/2025), mas a trégua tem sido violada.",
+      "motivo": "Fronteira traçada em mapas coloniais franceses; disputa por templos khmer antigos; nacionalismo e política interna dos dois países.",
+      "historia": [
+        ["1907", "Mapa franco-siamês define a fronteira."],
+        ["1962", "Corte Internacional de Justiça dá o templo de Preah Vihear ao Camboja."],
+        ["2008–11", "Confrontos armados na fronteira."],
+        ["mai/2025", "Morte de soldado cambojano reacende a crise."],
+        ["jul/2025", "Cinco dias de combates; cessar-fogo mediado pela Malásia com pressão dos EUA."],
+        ["out/2025", "Acordo de Kuala Lumpur assinado com presença de Trump."]
+      ],
+      "mortos": {"texto": "Dezenas (≈ 40+ em jul/2025)", "valor": 60, "fonte": "Governos da Tailândia e do Camboja"},
+      "deslocados": "≈ 300 mil no auge",
+      "lideres": [
+        {"nome": "Hun Manet", "papel": "Primeiro-ministro do Camboja", "lado": "Camboja"},
+        {"nome": "Hun Sen", "papel": "Presidente do Senado do Camboja", "lado": "Camboja"}
+      ],
+      "lados": [
+        {"nome": "Tailândia", "apoios": "EUA (aliado histórico)"},
+        {"nome": "Camboja", "apoios": "China"}
+      ],
+      "previsao": {"cenario": "Novos incidentes de fronteira são prováveis; uma guerra prolongada é improvável.", "horizonte": "Disputa latente", "confianca": "media"},
+      "info": ["Fronteira de ~800 km", "Templo de Preah Vihear é Patrimônio Mundial da UNESCO"],
+      "busca": "Tailândia Camboja fronteira",
+      "buscaEn": "Thailand Cambodia border"
+    }
+  ]
+}
