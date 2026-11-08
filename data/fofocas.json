@@ -1,8 +1,22 @@
 {
- "updated": "2026-11-08T14:14:23.679Z",
- "sources": 20,
- "count": 182,
+ "updated": "2026-11-08T14:19:39.722Z",
+ "sources": 19,
+ "count": 197,
  "items": [
+  {
+   "id": "aw1ohf",
+   "title": "Otimismo com futuro é maior que em 2022, diz Quaest",
+   "summary": "44% dizem estar otimistas com o Brasil, ante 41% depois da eleição de 2022; outros 48% dizem estar preocupados",
+   "link": "https://www.poder360.com.br/poder-governo/otimismo-com-futuro-e-maior-que-em-2022-diz-quaest/",
+   "image": "https://static.poder360.com.br/uploads/2026/11/futuro-do-brasil.png",
+   "date": "2026-11-08T14:14:44.000Z",
+   "source": "Poder360",
+   "feed": "Poder360",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
   {
    "id": "gh7tss",
    "title": "59% rejeitam críticas de Flávio ao resultado das urnas, diz Quaest",
@@ -20,7 +34,7 @@
   {
    "id": "1bqjo9w",
    "title": "Aos 49 anos, Glória Vanique reflete: ‘Não tenho medo de envelhecer’",
-   "summary": "À frente do Mulheres, na TV Gazeta, ela encontra liberdade no entretenimento O post Aos 49 anos, Glória Vanique reflete: ‘Não tenho medo de envelhecer’ apareceu primeiro em CARAS Brasil .",
+   "summary": "À frente do Mulheres, na TV Gazeta, ela encontra liberdade no entretenimento",
    "link": "https://caras.com.br/personalidades/aos-49-anos-gloria-vanique-reflete-nao-tenho-medo-de-envelhecer.phtml",
    "image": "https://caras.com.br/wp-content/uploads/2026/11/DSC_1666_I-325x228.jpg",
    "date": "2026-11-08T14:00:33.000Z",
@@ -41,6 +55,7 @@
    "feed": "Quem",
    "categories": [
     "tv",
+    "politica",
     "novidades"
    ]
   },
@@ -60,15 +75,16 @@
   },
   {
    "id": "7o0tfr",
-   "title": "Virginia Fonseca chega em hotel de luxo para seguir de helicóptero para o GP Brasil de Fórmula 1",
-   "summary": "Virginia Fonseca recorreu a um helicóptero para chegar ao GP Brasil de Fórmula 1, que acontece na tarde deste domingo (8) no Autódromo de Interlagos. A influenciadora foi a um hotel de luxo a fim de embarcar na aeronave para seguir para o evento. A…",
+   "title": "Virginia Fonseca chega de helicóptero ao GP de Fórmula 1 e chama atenção com look preto e prata",
+   "summary": "Virginia Fonseca, de 27 anos, recorreu a um helicóptero para chegar ao Grande Prêmio de São Paulo de Fórmula 1, na tarde deste domingo (8), no Autódromo de Interlagos. Antes de seguir para o evento, a influenciadora foi até um hotel de luxo, onde embarcou…",
    "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/virginia-chega-em-hotel-de-luxo-para-seguir-de-helicoptero-para-o-gp-brasil-de-formula-1.ghtml",
-   "image": "https://s2-quem.glbimg.com/iSXaKVjOTNlVNhEsrNonjDtpi4I=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/9/g/POAmEhSIigICqq1BpVSQ/virginia-4-.jpg",
+   "image": "https://s2-quem.glbimg.com/sPpnD9EwzQZyl7GGscqaroM--iM=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/U/Q/l4STZZTm2uToHsfEtY1Q/virginia33.gif",
    "date": "2026-11-08T13:50:26.000Z",
    "source": "Quem",
    "feed": "Quem",
    "categories": [
     "teen",
+    "festas",
     "novidades"
    ]
   },
@@ -110,7 +126,7 @@
    "source": "Notícias da TV",
    "feed": "Notícias da TV",
    "categories": [
-    "tv",
+    "teen",
     "novidades"
    ]
   },
@@ -143,6 +159,20 @@
    ]
   },
   {
+   "id": "13hzxh0",
+   "title": "A medida polêmica que deputados e senadores deixaram passar na PEC da Segurança Pública",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQaVotRlRPQWtVeEhSUnU4Y2htVlVMcHk1NnB1QUFWc0xOT0FsWl9maVZ4b3kwSFhBTjIyWDZsaS1qemVOVzdQdjZZS0JxQnFOdW5VRk9nbWRWYkRWR2JQMUMzalpLSkdnZjlUZ3UwMGd2VUZ5OUh2aTNDT2ZZR1VaazdsLVFCdGhTYktEVFg3TkEzUkl2cURvSGZnQW42SEctQzBOdjktdDdCWUh4VVpGTXRobTI5OTZONFdITlI0Zzk?oc=5",
+   "image": "",
+   "date": "2026-11-08T13:19:00.000Z",
+   "source": "VEJA",
+   "feed": "Google Notícias",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
    "id": "umka9n",
    "title": "Susana Vieira leva fora de médico após dar em cima dele no Altas Horas: 'É casado?'",
    "summary": "Susana Vieira levou um fora do pediatra Daniel Becker no Altas Horas, na Globo. A atriz aproveitou a despedida para dar uma investida no médico",
@@ -157,6 +187,20 @@
    ]
   },
   {
+   "id": "1bekoqg",
+   "title": "Entenda como os irmãos Bolsonaro conseguiram cidadania italiana em apenas 58 dias",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOYzdYVW01NW5WRlZmUm9wQWNVSXFCNDRuWExZV3NUeTU4X3ByWC11b1BpWW1kNDk5ekZjT1JUel84a2dacWJpQUdRZXI5ZmdMSXRtelJiQ1RkNWh0cDFXb3pYMFJRMnZWbUdDZHNPSTBORmd6VVVhdi1qMkVTZXVPamt4ZFdjMk1OSWFqeklIWEZFRlBITWhwenpmQ3FsdnFlb2pUUVVuYlNJeUQwVUQ2WnNxd1VUcG9MSDNDcnRRU2tESFNuSG81QXFvcXMyTmpKOHNfWkF6U0x6aEd2MHB5THAwalZ0MlMxeV9yalhieGh5M0loRU91czNKNC1JRUcwVzJtblRBTQ?oc=5",
+   "image": "",
+   "date": "2026-11-08T13:16:00.000Z",
+   "source": "Terra",
+   "feed": "Google Notícias",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
    "id": "17rfcat",
    "title": "Wesley França comenta foto de influenciadora após polêmica de traição",
    "summary": "",
@@ -167,6 +211,7 @@
    "feed": "Google Notícias",
    "categories": [
     "teen",
+    "romances",
     "novidades"
    ]
   },
@@ -185,9 +230,23 @@
    ]
   },
   {
+   "id": "1ahchaw",
+   "title": "Renata de Lélis fala sobre casamento de Jael em “A Ira do Herdeiro” e revela vontade de viver vilã",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPa0UxOXNVbG5BemNDeFlJQ1FZTHd3aWxXemlxbWpuMUxYR01Fd0lqRTlQMEVjeldoZnYySnJJOU9nRE9MdzJkeFdoWkd6SzU3SmpfbXBIOF85YUJjcjE4NUxmTzRMRFhLeldzX2dldnF1YjNaRlJWZmk4VTNkSE9selNLOEJsaEhnekpiU1B1VDhxdEFnczQ1Ylg0ZzBZVTFPUlpyd0xmbHVlYmNkWERJOFFqOGI4QmhYMGxVNS1rajZmNkFhWDFsX1hVcy1ZOTE4T2Mwd09CUQ?oc=5",
+   "image": "",
+   "date": "2026-11-08T13:09:44.000Z",
+   "source": "Mais Novela",
+   "feed": "Google Notícias",
+   "categories": [
+    "romances",
+    "novidades"
+   ]
+  },
+  {
    "id": "1xtt86c",
    "title": "Morto aos 32 anos em acidente no Rio, cantor vetou a família de herança avaliada em R$ 22 milhões",
-   "summary": "Falecido em trágico acidente, artista deixou registrado em testamento como o patrimônio deveria ser administrado após sua partida O post Morto aos 32 anos em acidente no Rio, cantor vetou a família de herança avaliada em R$ 22 milhões apareceu primeiro em…",
+   "summary": "Falecido em trágico acidente, artista deixou registrado em testamento como o patrimônio deveria ser administrado após sua partida",
    "link": "https://caras.com.br/atualidades/morto-aos-32-anos-em-acidente-no-rio-cantor-vetou-a-familia-de-heranca-avaliada-em-r-22-milhoes.phtml",
    "image": "https://caras.com.br/wp-content/uploads/2026/11/oliver-tree-1-406x228.jpg",
    "date": "2026-11-08T13:02:58.000Z",
@@ -240,34 +299,6 @@
    ]
   },
   {
-   "id": "1rvikmv",
-   "title": "Agro brasileiro expande uso de bactérias em controle biológico",
-   "summary": "Potencial de área tratada com produtos à base de Bacillus cresceu 391% e faturamento subiu 252% de 2020 a 2025",
-   "link": "https://www.poder360.com.br/poder-agro/mercado-de-produtos-a-base-de-bacillus-cresce-252-em-5-anos/",
-   "image": "https://static.poder360.com.br/uploads/2026/11/MercadoBacillus-capa-1200x675.jpg",
-   "date": "2026-11-08T12:48:22.000Z",
-   "source": "Poder360",
-   "feed": "Poder360",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "10tgyh9",
-   "title": "Resultado da Mega-Sena 3083: Confira os números sorteados pela Caixa hoje (8)",
-   "summary": "Mega-Sena hoje (8): Prêmio de R$ 60 milhões | Resultado do sorteio do concurso 3083 foi divulgado às 11h (horário de Brasília) deste domingo",
-   "link": "https://noticiasdatv.uol.com.br/noticia/feed/resultado-da-mega-sena-3083-confira-os-numeros-sorteados-pela-caixa-hoje-8-159146",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/artigos_2024/mega-sena-ag-brasil.jpg",
-   "date": "2026-11-08T12:45:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
    "id": "t4bp34",
    "title": "Quaest: 48% aprovam e 44% desaprovam governo Lula na primeira pesquisa após a eleição",
    "summary": "Aprovação do governo Lula Reprodução/Quaest Pesquisa Quaest divulgada neste domingo (8) mostra que 48% dos brasileiros aprovam o governo do presidente Luiz Inácio Lula da Silva, enquanto 44% desaprovam a atual gestão. Este é o primeiro levantamento sobre a…",
@@ -306,20 +337,6 @@
    "feed": "Quem",
    "categories": [
     "festas",
-    "novidades"
-   ]
-  },
-  {
-   "id": "13picjb",
-   "title": "Unicamp cria plataforma para planejar descarbonização até 2050",
-   "summary": "Ferramenta desenvolvida em parceria com a Universidade Princeton calcula rotas de menor custo para o país atingir a neutralidade de carbono",
-   "link": "https://www.poder360.com.br/poder-sustentavel/unicamp-cria-plataforma-para-planejar-descarbonizacao-ate-2050/",
-   "image": "https://static.poder360.com.br/uploads/2019/08/poluição.jpg",
-   "date": "2026-11-08T12:16:41.000Z",
-   "source": "Poder360",
-   "feed": "Poder360",
-   "categories": [
-    "politica",
     "novidades"
    ]
   },
@@ -375,6 +392,7 @@
    "feed": "Notícias da TV",
    "categories": [
     "tv",
+    "romances",
     "novidades"
    ]
   },
@@ -421,6 +439,20 @@
    ]
   },
   {
+   "id": "thw00a",
+   "title": "Bruna Marquezine e Shawn Mendes se jogam na pista de dança em casamento no México",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOQWJ3Y0JYdnNKT2JLa3FoRGVId0R6Qkt3OFNmQVdfU2NVZ0dMM3FrMlhvTHhhVE5TZHZldi0yUnNJM1c1NFAydjIxMGN6RmV0R0dwdnNoOW5fdkVwanYxYVdQdmktX2NneWEtUEcxTExkclp4bGZsSEc5UVdCbzQyazZxVHVobnNNRzBtUVI3SFFfbTdmdEEwZjBxejhQUW5tRDIzVUs4N0NLZEN0a3NZa0ZIRW9jTjFQeDhTUjJHRklvUWtMOXByNWlxcEFBdXBhV0tIaFNhZWc1R29qUGVocFBxUGjSAeQBQVVfeXFMTkFid2NCWHZzSk9iS2txaERlSHdEekJLdzhTZkFXX1NjVWdHTDNxazJYb0x4YVROU2R2ZXYtMlJzSTNXNTRQMnYyMTBjekZldEdHcHZzaDluX3ZFcGp2MWFXUHZpLV9jZ3lhLVBHMUxMZHJaeGxmbEhHOVFXQm80Mms2cVR1aG5zTUcwbVFSN0hRX203ZnRBMGYwcXo4UFFubUQyM1VLODdDS2RDdGtzWWtGSEVvY04xUHg4U1IyR0ZJb1FrTDlwcjVpcXBBQXVwYVdLSGhTYWVnNUdvalBlaHBQcVBo?oc=5",
+   "image": "",
+   "date": "2026-11-08T11:54:00.000Z",
+   "source": "Gshow",
+   "feed": "Google Notícias",
+   "categories": [
+    "romances",
+    "novidades"
+   ]
+  },
+  {
    "id": "uudn2i",
    "title": "Mari Menezes e Melody dividem palco no Teleton e movimentam a web",
    "summary": "Mari Menezes, de 21 anos, e Melody, de 19, protagonizaram um encontro que não passou despercebido durante o Teleton, na noite do último sábado (7). As duas estiveram no mesmo palco e viraram assunto nas redes sociais. A repercussão ganhou força após Mari…",
@@ -457,8 +489,8 @@
    "source": "Notícias da TV",
    "feed": "Notícias da TV",
    "categories": [
-    "romances",
     "tv",
+    "romances",
     "novidades"
    ]
   },
@@ -507,7 +539,7 @@
   {
    "id": "197bjwb",
    "title": "Can Yaman faz 37 anos: cada fase, um novo artista; cada encontro, uma nova história",
-   "summary": "Entre personagens, idiomas e novos projetos, o aniversário do ator também revela a memória afetiva de fãs que acompanham sua carreira em diferentes países O post Can Yaman faz 37 anos: cada fase, um novo artista; cada encontro, uma nova história apareceu…",
+   "summary": "Entre personagens, idiomas e novos projetos, o aniversário do ator também revela a memória afetiva de fãs que acompanham sua carreira em diferentes países",
    "link": "https://caras.com.br/tv/can-yaman-faz-37-anos-cada-fase-um-novo-artista-cada-encontro-uma-nova-historia.phtml",
    "image": "https://caras.com.br/wp-content/uploads/2026/11/can-yaman-3-406x228.jpg",
    "date": "2026-11-08T11:02:16.000Z",
@@ -588,7 +620,7 @@
   {
    "id": "1y0jtaf",
    "title": "Aos 71 anos, Marina Lima transformou apartamento no Rio em refúgio com decoração conceitual e varanda cercada por plantas",
-   "summary": "Marina Lima abriu as portas de seu apartamento na TV e mostrou ambientes amplos, objetos de personalidade e uma decoração sofisticada O post Aos 71 anos, Marina Lima transformou apartamento no Rio em refúgio com decoração conceitual e varanda cercada por…",
+   "summary": "Marina Lima abriu as portas de seu apartamento na TV e mostrou ambientes amplos, objetos de personalidade e uma decoração sofisticada",
    "link": "https://caras.com.br/casa-dos-famosos/aos-71-anos-marina-lima-transformou-apartamento-no-rio-em-refugio-com-decoracao-conceitual-e-varanda-cercada-por-plantas.phtml",
    "image": "https://caras.com.br/wp-content/uploads/2026/11/marina-lima--406x228.jpg",
    "date": "2026-11-08T10:04:58.000Z",
@@ -622,6 +654,7 @@
    "source": "Quem",
    "feed": "Quem",
    "categories": [
+    "tv",
     "novidades"
    ]
   },
@@ -662,7 +695,7 @@
    "source": "Capricho",
    "feed": "Capricho",
    "categories": [
-    "teen",
+    "tv",
     "novidades"
    ]
   },
@@ -677,7 +710,6 @@
    "feed": "Capricho",
    "categories": [
     "romances",
-    "teen",
     "novidades"
    ]
   },
@@ -691,7 +723,7 @@
    "source": "Capricho",
    "feed": "Capricho",
    "categories": [
-    "teen",
+    "tv",
     "novidades"
    ]
   },
@@ -706,21 +738,6 @@
    "feed": "Capricho",
    "categories": [
     "tv",
-    "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "a7oa84",
-   "title": "Qual a fase da Lua neste domingo (08/11/2026)? Veja o calendário",
-   "summary": "O nosso satélite se despede da fase Minguante neste domingão — e a atmosfera da Terra tem tudo a ver com o brilho que chega aos seus olhos!",
-   "link": "https://capricho.abril.com.br/comportamento/qual-a-fase-da-lua-neste-domingo-08-11-2026-veja-o-calendario/",
-   "image": "https://capricho.abril.com.br/wp-content/uploads/2022/06/GettyImages-1315228893.jpg",
-   "date": "2026-11-08T09:00:04.000Z",
-   "source": "Capricho",
-   "feed": "Capricho",
-   "categories": [
-    "teen",
     "novidades"
    ]
   },
@@ -748,8 +765,8 @@
    "source": "Capricho",
    "feed": "Capricho",
    "categories": [
+    "tv",
     "romances",
-    "teen",
     "novidades"
    ]
   },
@@ -812,7 +829,7 @@
   {
    "id": "18suirz",
    "title": "Aos 48 anos, Dudu Azevedo transforma refúgio de 450 m² em mansão com horta e pomar",
-   "summary": "Dudu Azevedo chama a atenção com detalhes de seu refúgio de 450 m² na Gávea, que reúne horta, pomar e um espaço dedicado à música O post Aos 48 anos, Dudu Azevedo transforma refúgio de 450 m² em mansão com horta e pomar apareceu primeiro em CARAS Brasil .",
+   "summary": "Dudu Azevedo chama a atenção com detalhes de seu refúgio de 450 m² na Gávea, que reúne horta, pomar e um espaço dedicado à música",
    "link": "https://caras.com.br/casa-dos-famosos/aos-48-anos-dudu-azevedo-transforma-refugio-de-450-m%c2%b2-em-mansao-com-horta-e-pomar.phtml",
    "image": "https://caras.com.br/wp-content/uploads/2026/11/Casa-Dudu-Azevedo-406x228.jpg",
    "date": "2026-11-08T05:19:10.000Z",
@@ -825,7 +842,7 @@
   {
    "id": "1hbqzkv",
    "title": "Casado há mais de quatro décadas, Geraldo Alckmin mantém união discreta com Lu Alckmin",
-   "summary": "Conheça a história de companheirismo entre o vice-presidente e a ex-primeira-dama paulista, que atuou em projetos sociais no estado O post Casado há mais de quatro décadas, Geraldo Alckmin mantém união discreta com Lu Alckmin apareceu primeiro em CARAS…",
+   "summary": "Conheça a história de companheirismo entre o vice-presidente e a ex-primeira-dama paulista, que atuou em projetos sociais no estado",
    "link": "https://caras.com.br/atualidades/casado-ha-mais-de-quatro-decadas-geraldo-alckmin-mantem-uniao-discreta-com-lu-alckmin.phtml",
    "image": "https://caras.com.br/wp-content/uploads/2026/11/Geraldo-Alckmin-e-Lu-Alckmin-406x228.jpg",
    "date": "2026-11-08T05:01:58.000Z",
@@ -880,7 +897,7 @@
   {
    "id": "enffk2",
    "title": "Aos 40 anos, atriz e mãe de 2 filhos faz revelação sobre condição confundida com depressão",
-   "summary": "Famosa mãe de dois filhos chama atenção ao compartilhar uma descoberta envolvendo sua saúde e sintomas que podem ser confundidos com depressão O post Aos 40 anos, atriz e mãe de 2 filhos faz revelação sobre condição confundida com depressão apareceu…",
+   "summary": "Famosa mãe de dois filhos chama atenção ao compartilhar uma descoberta envolvendo sua saúde e sintomas que podem ser confundidos com depressão",
    "link": "https://caras.com.br/atualidades/aos-40-anos-atriz-e-mae-de-2-filhos-faz-revelacao-sobre-condicao-confundida-com-depressao.phtml",
    "image": "https://caras.com.br/wp-content/uploads/2026/11/Thaila-Ayala-e-filhos-406x228.jpg",
    "date": "2026-11-08T04:58:55.000Z",
@@ -893,7 +910,7 @@
   {
    "id": "561ivz",
    "title": "Dudu Azevedo prioriza contato com a natureza e infância longe de telas para o filho",
-   "summary": "Ator aposta em rotina ao ar livre e convivência com animais no desenvolvimento do herdeiro no Rio de Janeiro O post Dudu Azevedo prioriza contato com a natureza e infância longe de telas para o filho apareceu primeiro em CARAS Brasil .",
+   "summary": "Ator aposta em rotina ao ar livre e convivência com animais no desenvolvimento do herdeiro no Rio de Janeiro",
    "link": "https://caras.com.br/atualidades/dudu-azevedo-prioriza-contato-com-a-natureza-e-infancia-longe-de-telas-para-o-filho.phtml",
    "image": "https://caras.com.br/wp-content/uploads/2026/11/Dudu-Azevedo-e-filho-406x228.jpg",
    "date": "2026-11-08T04:56:23.000Z",
@@ -906,7 +923,7 @@
   {
    "id": "1f8v5yk",
    "title": "Aos 35 anos, Luan Santana mobiliza R$ 750 mil em campanha pela preservação do Pantanal",
-   "summary": "Cantor sertanejo reforça sua ligação com o Pantanal e relembra iniciativa que arrecadou mais de R$ 750 mil para proteger o bioma O post Aos 35 anos, Luan Santana mobiliza R$ 750 mil em campanha pela preservação do Pantanal apareceu primeiro em CARAS Brasil .",
+   "summary": "Cantor sertanejo reforça sua ligação com o Pantanal e relembra iniciativa que arrecadou mais de R$ 750 mil para proteger o bioma",
    "link": "https://caras.com.br/atualidades/aos-35-anos-luan-santana-mobiliza-r-750-mil-em-campanha-pela-preservacao-do-pantanal.phtml",
    "image": "https://caras.com.br/wp-content/uploads/2026/11/Luan-Santana-406x228.jpg",
    "date": "2026-11-08T04:52:53.000Z",
@@ -919,7 +936,7 @@
   {
    "id": "1q66pcq",
    "title": "O jardim deslumbrante na fazenda luxuosa de Bruno Gagliasso",
-   "summary": "Detalhes do paisagismo impressionante que cerca a propriedade rural do ator no interior do Rio de Janeiro; árvores nativas dominam o projeto O post O jardim deslumbrante na fazenda luxuosa de Bruno Gagliasso apareceu primeiro em CARAS Brasil .",
+   "summary": "Detalhes do paisagismo impressionante que cerca a propriedade rural do ator no interior do Rio de Janeiro; árvores nativas dominam o projeto",
    "link": "https://caras.com.br/casa-dos-famosos/o-jardim-deslumbrante-na-fazenda-luxuosa-de-bruno-gagliasso.phtml",
    "image": "https://caras.com.br/wp-content/uploads/2026/09/rancho-africa-giovanna-ewbank-bruno-gagliasso-406x228.jpg",
    "date": "2026-11-08T04:48:38.000Z",
@@ -996,13 +1013,14 @@
    "source": "Quem",
    "feed": "Quem",
    "categories": [
+    "romances",
     "novidades"
    ]
   },
   {
    "id": "14dddka",
    "title": "Justiça do RJ toma decisão sobre prisão de lutador que agrediu vizinhas em condomínio Justiça do RJ toma decisão sobre prisão de lutador que agrediu vizinhas em condomínio",
-   "summary": "Lutador de jiu-jítsu invadiu apartamentos e agrediu vizinhas em condomínio na Tijuca O post Justiça do RJ toma decisão sobre prisão de lutador que agrediu vizinhas em condomínio apareceu primeiro em Hugo Gloss .",
+   "summary": "Lutador de jiu-jítsu invadiu apartamentos e agrediu vizinhas em condomínio na Tijuca",
    "link": "https://hugogloss.uol.com.br/brasil/justica-rj-lutador/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/WhatsApp-Image-2026-11-06-at-12.00.53-617x347.jpeg",
    "date": "2026-11-08T01:30:10.000Z",
@@ -1022,6 +1040,7 @@
    "source": "Quem",
    "feed": "Quem",
    "categories": [
+    "tv",
     "novidades"
    ]
   },
@@ -1049,8 +1068,8 @@
    "source": "Quem",
    "feed": "Quem",
    "categories": [
-    "romances",
     "teen",
+    "romances",
     "novidades"
    ]
   },
@@ -1092,7 +1111,6 @@
    "feed": "Notícias da TV",
    "categories": [
     "romances",
-    "tv",
     "novidades"
    ]
   },
@@ -1127,13 +1145,14 @@
   {
    "id": "1qomn17",
    "title": "Richarlison ironiza disputa judicial envolvendo família de Neymar por mansão de R$ 95 milhões; veja Richarlison brinca com ida de Flávio Bolsonaro aos EUA, e Neymar rebate jogador: “Lê o contrato” (Foto: Lucas Figueiredo; CBF/ Getty)",
-   "summary": "Richarlison reagiu ao processo de Neymar Pai e a compra do imóvel, localizado em SP O post Richarlison ironiza disputa judicial envolvendo família de Neymar por mansão de R$ 95 milhões; veja apareceu primeiro em Hugo Gloss .",
+   "summary": "Richarlison reagiu ao processo de Neymar Pai e a compra do imóvel, localizado em SP",
    "link": "https://hugogloss.uol.com.br/famosos/richarlison-ironiza-neymar/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/WhatsApp-Image-2026-11-07-at-19.29.20-526x499.jpeg",
    "date": "2026-11-07T23:43:53.000Z",
    "source": "Hugo Gloss",
    "feed": "Hugo Gloss",
    "categories": [
+    "politica",
     "novidades"
    ]
   },
@@ -1154,13 +1173,14 @@
   {
    "id": "1283fvn",
    "title": "Quem Ama Cuida: Cena de sexo de Felipe e Mau Mau é gravada na Globo; saiba como será Quem Ama Cuida: Cena de sexo de Felipe e Mau Mau é gravada na Globo; saiba como será",
-   "summary": "Felipe e Mau Mau terão a primeira noite juntos na novela O post Quem Ama Cuida: Cena de sexo de Felipe e Mau Mau é gravada na Globo; saiba como será apareceu primeiro em Hugo Gloss .",
+   "summary": "Felipe e Mau Mau terão a primeira noite juntos na novela",
    "link": "https://hugogloss.uol.com.br/tv/novelas/mau-mau-felipe/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/HV5DnWTWMAAAs6W-617x412.jpg",
    "date": "2026-11-07T22:39:20.000Z",
    "source": "Hugo Gloss",
    "feed": "Hugo Gloss",
    "categories": [
+    "tv",
     "novidades"
    ]
   },
@@ -1195,13 +1215,14 @@
   {
    "id": "13ttqvz",
    "title": "Vídeo: Novas imagens mostram lutador tirando a roupa e ficando nu após agredir vizinhas em prédio no RJ Vídeo: Novas imagens mostram lutador tirando a roupa e ficando nu após agredir vizinhas em prédio no RJ",
-   "summary": "Lutador Lucas Portela Fontana Gomes aparece tirando o short e ficando completamente nu próximo à portaria do condomínio O post Vídeo: Novas imagens mostram lutador tirando a roupa e ficando nu após agredir vizinhas em prédio no RJ apareceu primeiro em Hugo…",
+   "summary": "Lutador Lucas Portela Fontana Gomes aparece tirando o short e ficando completamente nu próximo à portaria do condomínio",
    "link": "https://hugogloss.uol.com.br/brasil/lutador-video-nu/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/WhatsApp-Image-2026-11-06-at-12.01.15-617x347.jpeg",
    "date": "2026-11-07T21:51:40.000Z",
    "source": "Hugo Gloss",
    "feed": "Hugo Gloss",
    "categories": [
+    "romances",
     "novidades"
    ]
   },
@@ -1236,7 +1257,7 @@
   {
    "id": "se7di9",
    "title": "Alanis Morissette faz revelação sobre sua orientação sexual em podcast e surpreende apresentadoras; assista Alanis Morissette faz revelação sobre sua orientação sexual em podcast e surpreende apresentadoras; assista",
-   "summary": "Alanis Morissette se declarou pansexual durante entrevista O post Alanis Morissette faz revelação sobre sua orientação sexual em podcast e surpreende apresentadoras; assista apareceu primeiro em Hugo Gloss .",
+   "summary": "Alanis Morissette se declarou pansexual durante entrevista",
    "link": "https://hugogloss.uol.com.br/famosos/alanis-morissette/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/09/SnapInsta.to_498603026_18500239066041680_3964025275076277976_n-374x499.jpg",
    "date": "2026-11-07T21:27:19.000Z",
@@ -1250,7 +1271,7 @@
   {
    "id": "8ob5c9",
    "title": "Fabi Justus causa polêmica com vestido: ‘Não é conservadora? Decepção’",
-   "summary": "Filha de Roberto Justus, influenciadora Fabi Justus usa look polêmico e divide opiniões nas redes sociais O post Fabi Justus causa polêmica com vestido: ‘Não é conservadora? Decepção’ apareceu primeiro em Contigo! .",
+   "summary": "Filha de Roberto Justus, influenciadora Fabi Justus usa look polêmico e divide opiniões nas redes sociais",
    "link": "https://contigo.com.br/noticias/famosos/fabi-justus-causa-polemica-com-vestido-nao-e-conservadora-decepcao.phtml",
    "image": "https://contigo.com.br/wp-content/uploads/2026/11/SaveClip.App_884823114_186437478-406x228.jpg",
    "date": "2026-11-07T21:20:54.000Z",
@@ -1262,30 +1283,58 @@
    ]
   },
   {
+   "id": "rj5sx8",
+   "title": "Klara e o Sol: entenda polêmica do novo filme de Taika Waititi com Jenna Ortega",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPZmJldXduWS15bGVGRjZfRWdiUHdMUUlidXpEVk1jS1hCdDhQUFJKck5NWHdtcEtFLUZVMFpsRHNRUG8yc2V6T1hjLW9IYkZyb1ltUlBKZFJNdEhkZk1YUHFoU19SMzlhNmV0LTdCa3hDRTduLUQ3cGhsQThlRHd3eDJRc2pYWDgwcWhYeDQtOEloTFctYkk1RmFiYmZfV05naXcyaDVNN3llRDFzcC1yZTNLbnoydE1KTDJIbk5NXzIySUhGMTFZbEFFa25xWlV0UEE?oc=5",
+   "image": "",
+   "date": "2026-11-07T21:00:09.000Z",
+   "source": "Estadão",
+   "feed": "Google Notícias",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
    "id": "1qxdvl8",
    "title": "Andressa Urach surge aos prantos e faz cobrança a Lula: ‘Eu te defendi’",
-   "summary": "Influenciadora Andressa Urach surge aos prantos em vídeo nas redes sociais e faz cobrança ao presidente Lula O post Andressa Urach surge aos prantos e faz cobrança a Lula: ‘Eu te defendi’ apareceu primeiro em Contigo! .",
+   "summary": "Influenciadora Andressa Urach surge aos prantos em vídeo nas redes sociais e faz cobrança ao presidente Lula",
    "link": "https://contigo.com.br/noticias/famosos/andressa-urach-surge-aos-prantos-e-faz-cobranca-a-lula-eu-te-defendi.phtml",
    "image": "https://contigo.com.br/wp-content/uploads/2025/10/Andressa-Urach-1-406x228.jpg",
    "date": "2026-11-07T20:50:24.000Z",
    "source": "Contigo",
    "feed": "Contigo",
    "categories": [
-    "teen",
     "politica",
+    "teen",
     "novidades"
    ]
   },
   {
    "id": "1cis9qh",
    "title": "Ator de ‘Vale Tudo’ morreu após luta contra doença grave",
-   "summary": "Relembre! Ator morreu aos 74 anos, após luta contra doença grave em decorrência de complicações de um quadro grave de enfisema pulmonar O post Ator de ‘Vale Tudo’ morreu após luta contra doença grave apareceu primeiro em Contigo! .",
+   "summary": "Relembre! Ator morreu aos 74 anos, após luta contra doença grave em decorrência de complicações de um quadro grave de enfisema pulmonar",
    "link": "https://contigo.com.br/noticias/famosos/ator-de-vale-tudo-morreu-apos-luta-contra-doenca-grave.phtml",
    "image": "https://contigo.com.br/wp-content/uploads/2025/08/Odete-Debora-Bloch-Afonso-Humberto-Carrao-Heleninha-Paolla-Oliveira-e-Leonardo-Guilherme-Magon-de-Vale-Tudo-406x228.jpg",
    "date": "2026-11-07T20:28:41.000Z",
    "source": "Contigo",
    "feed": "Contigo",
    "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "wce1c3",
+   "title": "Richarlison provoca após polêmica envolvendo mansão do pai de Neymar",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxORE5zcF9QdDNRVG1wbUJ4YjJmbGpsT1JRd1k4V3g1N2p6YWprdzdUODdFM1J3bFZCYmVNTnh5VkI4MkM1clhNenp1TUlQbC1UUktsVnlJWk5LRTNDajdmZHR6SU5GYW5KTUhXV1RzOVZBUU0yNGRIdjItN1J5bXNLN2QybnlVU0FTZVVOaUxCa2plR0N2U1F6WmZaX0swZ1U5TzI3NlZPeDBsbUXSAbMBQVVfeXFMTTlnb0hPS2x3OHBjeDJha2NNcjlrYkhQSlh1Z2xPTzhCX01uVmk0U18xYUNYM01xUjdmOUFlUmxTdU5iSkw5RWNyNHcxb09rdHFaMFlPQnA1Zmg3Z2RuQ2M5eGdFTU1hOXBSLVk2ckpYeEJ4UmdIYTlhT3ZLVWQ2TDlGRE9LaHoteTFWdkMyLUxVVl8yMHVtQ0VqNXV0UFEtZ2RwYklGNkhvdlNPQk5JeFAzVVE?oc=5",
+   "image": "",
+   "date": "2026-11-07T20:25:02.000Z",
+   "source": "A TARDE",
+   "feed": "Google Notícias",
+   "categories": [
+    "politica",
     "novidades"
    ]
   },
@@ -1299,20 +1348,21 @@
    "source": "Capricho",
    "feed": "Capricho",
    "categories": [
-    "teen",
+    "festas",
     "novidades"
    ]
   },
   {
    "id": "1tojl8j",
    "title": "Fim da união: Xuxa surpreendeu ao anunciar fim do relacionamento",
-   "summary": "Relembre! Apresentadora e cantora Xuxa Meneghel surpreendeu os fãs ao anunciar fim do relacionamento O post Fim da união: Xuxa surpreendeu ao anunciar fim do relacionamento apareceu primeiro em Contigo! .",
+   "summary": "Relembre! Apresentadora e cantora Xuxa Meneghel surpreendeu os fãs ao anunciar fim do relacionamento",
    "link": "https://contigo.com.br/noticias/famosos/fim-da-uniao-xuxa-surpreendeu-ao-anunciar-fim-do-relacionamento.phtml",
    "image": "https://contigo.com.br/wp-content/uploads/2025/12/xuxa-meneghel-406x228.jpg",
    "date": "2026-11-07T20:19:25.000Z",
    "source": "Contigo",
    "feed": "Contigo",
    "categories": [
+    "romances",
     "tv",
     "novidades"
    ]
@@ -1334,7 +1384,7 @@
   {
    "id": "1xdgzzb",
    "title": "Carlos visita o pai e entrega declaração de Jair Bolsonaro: ‘Morrendo’",
-   "summary": "Vereador Carlos Bolsonaro visita o pai, Jair Bolsonaro, e expõe declaração do ex-presidente O post Carlos visita o pai e entrega declaração de Jair Bolsonaro: ‘Morrendo’ apareceu primeiro em Contigo! .",
+   "summary": "Vereador Carlos Bolsonaro visita o pai, Jair Bolsonaro, e expõe declaração do ex-presidente",
    "link": "https://contigo.com.br/noticias/famosos/carlos-visita-o-pai-e-entrega-declaracao-de-jair-bolsonaro-morrendo.phtml",
    "image": "https://contigo.com.br/wp-content/uploads/2025/11/carlos-bolsonaro-406x228.jpg",
    "date": "2026-11-07T20:09:48.000Z",
@@ -1348,7 +1398,7 @@
   {
    "id": "15a8rxu",
    "title": "Mulher espancada por lutador no RJ se pronuncia, revela ameaça dele e possível motivação para ataque; assista Mulher espancada por lutador no RJ se pronuncia, revela ameaça dele e possível motivação para ataque; assista",
-   "summary": "Lutador de jiu-jítsu invadiu apartamentos e agrediu vizinhas em condomínio na Tijuca O post Mulher espancada por lutador no RJ se pronuncia, revela ameaça dele e possível motivação para ataque; assista apareceu primeiro em Hugo Gloss .",
+   "summary": "Lutador de jiu-jítsu invadiu apartamentos e agrediu vizinhas em condomínio na Tijuca",
    "link": "https://hugogloss.uol.com.br/brasil/mulher-espancada-lutador/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/WhatsApp-Image-2026-11-06-at-12.00.53-617x347.jpeg",
    "date": "2026-11-07T19:58:48.000Z",
@@ -1375,7 +1425,7 @@
   {
    "id": "1i617ho",
    "title": "Vidente choca a web ao fazer alerta para Flávio Bolsonaro",
-   "summary": "Vidente faz revelação e alerta gravíssimo para o senador Flávio Bolsonaro; previsão viraliza nas redes sociais O post Vidente choca a web ao fazer alerta para Flávio Bolsonaro apareceu primeiro em Contigo! .",
+   "summary": "Vidente faz revelação e alerta gravíssimo para o senador Flávio Bolsonaro; previsão viraliza nas redes sociais",
    "link": "https://contigo.com.br/noticias/famosos/vidente-choca-a-web-ao-fazer-alerta-para-flavio-bolsonaro.phtml",
    "image": "https://contigo.com.br/wp-content/uploads/2026/10/photo-1-4-406x228.jpg",
    "date": "2026-11-07T19:12:40.000Z",
@@ -1389,13 +1439,14 @@
   {
    "id": "xd9wgj",
    "title": "Priscilla Monroy causa com alfinetada após Alberto Cowboy se pronunciar sobre separação dos dois; veja Priscilla Monroy causa com alfinetada após Alberto Cowboy se pronunciar sobre separação dos dois; veja",
-   "summary": "Priscilla Monroy reagiu ao comunicado do ex e ironizou detalhe O post Priscilla Monroy causa com alfinetada após Alberto Cowboy se pronunciar sobre separação dos dois; veja apareceu primeiro em Hugo Gloss .",
+   "summary": "Priscilla Monroy reagiu ao comunicado do ex e ironizou detalhe",
    "link": "https://hugogloss.uol.com.br/famosos/priscilla-monroy-alberto-cowboy/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/Priscilla-Monroy-440x499.jpg",
    "date": "2026-11-07T19:10:03.000Z",
    "source": "Hugo Gloss",
    "feed": "Hugo Gloss",
    "categories": [
+    "romances",
     "novidades"
    ]
   },
@@ -1424,7 +1475,6 @@
    "feed": "Capricho",
    "categories": [
     "tv",
-    "teen",
     "novidades"
    ]
   },
@@ -1494,14 +1544,14 @@
    "source": "g1 Pop & Arte",
    "feed": "g1 Pop & Arte",
    "categories": [
-    "tv",
+    "festas",
     "novidades"
    ]
   },
   {
    "id": "7ns8jc",
    "title": "Comportamento de Luiz Carlos, do ‘Raça Negra’ causa polêmica: ‘Ele tá bêbado?’",
-   "summary": "Cantor Luiz Carlos, vocalista do grupo Raça Negra, participa do 'Teleton' e comportamento divide opiniões nas redes sociais O post Comportamento de Luiz Carlos, do ‘Raça Negra’ causa polêmica: ‘Ele tá bêbado?’ apareceu primeiro em Contigo! .",
+   "summary": "Cantor Luiz Carlos, vocalista do grupo Raça Negra, participa do 'Teleton' e comportamento divide opiniões nas redes sociais",
    "link": "https://contigo.com.br/noticias/famosos/comportamento-de-luiz-carlos-do-raca-negra-causa-polemica-ele-ta-bebado.phtml",
    "image": "https://contigo.com.br/wp-content/uploads/2026/11/photo-3-1-406x228.jpg",
    "date": "2026-11-07T17:13:09.000Z",
@@ -1528,7 +1578,7 @@
   {
    "id": "1t4lxpk",
    "title": "Lutador que agrediu vizinhas no Rio surpreende com depoimento à polícia Lutador que agrediu vizinhas no Rio surpreende com depoimento à polícia",
-   "summary": "Lutador está preso temporariamente por 30 dias; uma das vítimas, de 81 anos, segue internada com traumatismo craniano O post Lutador que agrediu vizinhas no Rio surpreende com depoimento à polícia apareceu primeiro em Hugo Gloss .",
+   "summary": "Lutador está preso temporariamente por 30 dias; uma das vítimas, de 81 anos, segue internada com traumatismo craniano",
    "link": "https://hugogloss.uol.com.br/brasil/lutador-depoimento/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/WhatsApp-Image-2026-11-06-at-12.00.53-617x347.jpeg",
    "date": "2026-11-07T16:46:26.000Z",
@@ -1541,7 +1591,7 @@
   {
    "id": "1f0vzv0",
    "title": "João Brasio anuncia doação de R$ 150 mil da Elytron CyberSecurity à AACD",
-   "summary": "Empresário participou da 29ª campanha Teleton e relacionou a atuação da empresa ao cuidado com as pessoas e à solidariedade O post João Brasio anuncia doação de R$ 150 mil da Elytron CyberSecurity à AACD apareceu primeiro em Contigo! .",
+   "summary": "Empresário participou da 29ª campanha Teleton e relacionou a atuação da empresa ao cuidado com as pessoas e à solidariedade",
    "link": "https://contigo.com.br/noticias/famosos/marido-de-cela-joao-brasio-anuncia-doacao-de-r-150-mil-da-elytron-cybersecurity-a-aacd.phtml",
    "image": "https://contigo.com.br/wp-content/uploads/2026/11/346dd7cb-2f5d-4e04-8fbe-eeb58244c243-342x228.jpeg",
    "date": "2026-11-07T16:42:30.000Z",
@@ -1568,7 +1618,7 @@
   {
    "id": "7f2v4k",
    "title": "Desmascarou? Flávio Bolsonaro expõe Alexandre de Moraes e faz grave acusação: ‘Maldade’",
-   "summary": "Após fuga para os EUA, senador Flávio Bolsonaro expõe ministro do STF Alexandre de Moraes e faz grave acusação O post Desmascarou? Flávio Bolsonaro expõe Alexandre de Moraes e faz grave acusação: ‘Maldade’ apareceu primeiro em Contigo! .",
+   "summary": "Após fuga para os EUA, senador Flávio Bolsonaro expõe ministro do STF Alexandre de Moraes e faz grave acusação",
    "link": "https://contigo.com.br/noticias/famosos/desmascarou-flavio-bolsonaro-expoe-alexandre-de-moraes-e-faz-grave-acusacao-maldade.phtml",
    "image": "https://contigo.com.br/wp-content/uploads/2026/11/891879198_1004862218581347_70705-406x228.jpg",
    "date": "2026-11-07T16:16:08.000Z",
@@ -1582,13 +1632,14 @@
   {
    "id": "1yxb24b",
    "title": "‘A Fazenda 18’: Ana Bruna perde o controle e expõe peão: ‘Foi racista e assediou meninas’",
-   "summary": "Ana Bruna abre o jogo com Lucas Bissoli e expõe atitudes de peão em 'A Fazenda 18' O post ‘A Fazenda 18’: Ana Bruna perde o controle e expõe peão: ‘Foi racista e assediou meninas’ apareceu primeiro em Contigo! .",
+   "summary": "Ana Bruna abre o jogo com Lucas Bissoli e expõe atitudes de peão em 'A Fazenda 18'",
    "link": "https://contigo.com.br/noticias/a-fazenda/a-fazenda-18-ana-bruna-perde-o-controle-e-expoe-peao-foi-racista-e-assediou-meninas.phtml",
    "image": "https://contigo.com.br/wp-content/uploads/2026/11/a-fazenda-2026-ana-bruna-volta-a-406x228.jpg",
    "date": "2026-11-07T16:10:24.000Z",
    "source": "Contigo",
    "feed": "Contigo",
    "categories": [
+    "tv",
     "novidades"
    ]
   },
@@ -1631,6 +1682,20 @@
    "feed": "Metrópoles Entret.",
    "categories": [
     "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "rgvm1w",
+   "title": "Chris Rock e mais 10 famosos que admitiram vício em pornografia",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPSl9kRGVUZ05uNGFNM20wOUlIU255dExpeWc4WFpCOUY2U3ZxYlhPOTdiMFM3Q0pjU1hRdm0zVDJwVll0cjFUUlhUbjNOcV85X1FHc1hRNEhxcEZlUmpHYVRqREdsblBMNmdmZVQwbTlzYTVMUkF0VGlTUnViOFhvaTVfU3JnM2M2bnFybnJBT0tWQzZSN0s1ejRwQ0pOcTdNVXNsLUdxWXR0d21Ca05yUGVOal82cG1uMlpIVFdtQk82RlZobDZLLThSOGJyVEc3cE5xMDFraHZPUll1dkVVY1Vaa9IB4wFBVV95cUxPSl9kRGVUZ05uNGFNM20wOUlIU255dExpeWc4WFpCOUY2U3ZxYlhPOTdiMFM3Q0pjU1hRdm0zVDJwVll0cjFUUlhUbjNOcV85X1FHc1hRNEhxcEZlUmpHYVRqREdsblBMNmdmZVQwbTlzYTVMUkF0VGlTUnViOFhvaTVfU3JnM2M2bnFybnJBT0tWQzZSN0s1ejRwQ0pOcTdNVXNsLUdxWXR0d21Ca05yUGVOal82cG1uMlpIVFdtQk82RlZobDZLLThSOGJyVEc3cE5xMDFraHZPUll1dkVVY1Vaaw?oc=5",
+   "image": "",
+   "date": "2026-11-07T14:00:00.000Z",
+   "source": "Portal UAI",
+   "feed": "Google Notícias",
+   "categories": [
+    "festas",
     "novidades"
    ]
   },
@@ -1686,6 +1751,7 @@
    "source": "Portal & TV Gurupi",
    "feed": "Google Notícias",
    "categories": [
+    "romances",
     "novidades"
    ]
   },
@@ -1700,6 +1766,20 @@
    "feed": "g1 Política",
    "categories": [
     "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "g6l66n",
+   "title": "De acordo de Juliette com marido a luto de Ana Maria Braga: a semana dos famosos",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNcEhtX09xWncwX25neFB6MUhaMndYS3otQTB4aFNqZ3ZOdzM2Smc3ZUVVaHR5ZmRXMm9Zek5BTDV2ck1kamhqejNKR1VMZm84M1M2UU91aDFjdlZMM2U2MF9KbjhzdUJJa29JaG01SHdPN1lKU2swZnZiZURfaW16SUtXTFlOUGNoUnF1X002dXFMbDZxUVdlb20xSURsTUhzNTM5V3lDRmdiTVBJVDNrYmUzQjhPand1UlpGT2JhZzAtMXRZSU93cEt6X3JxamxybldwNtIB2gFBVV95cUxNaXNDZm9MWWJEUE9MSVRZS2EyYWR5WFZ3S1VlekxmT3ZvUTB1c0lSZ3VrYXJDOHZLRFE4TnJJUldJN0k1MHNfaGw4Z1F4VnhRcURZZzQ0ZUZ1eFZzdTlIVkR5SFBZcGcwNGkzQzM3TXlNR0FfNWhLZ3MwQVV5WUdIX3VoUkJBZDZWaTVqRlF5X0ZGVlkzR2EtTTE1ZXVfQ20xRW5TZU1iNWlDTGZJRUZBZW8wYm4zWVdNZENNSEpiMUo4ZVUwQUVaTnBKQnUwX3oxNnN3azh4UnNoQQ?oc=5",
+   "image": "",
+   "date": "2026-11-07T11:00:00.000Z",
+   "source": "NaTelinha",
+   "feed": "Google Notícias",
+   "categories": [
+    "festas",
     "novidades"
    ]
   },
@@ -1748,7 +1828,7 @@
   {
    "id": "lmugk7",
    "title": "Pocah dá resposta afiada após internauta afirmar que ela está “estagnada” na carreira Pocah rebate críticas sobre carreira e dispara contra internautas: “Deixa eu fazer meu trabalho em paz” (Foto: Marcio Amaro - Divulgação Multishow)",
-   "summary": "Pocah respondeu a comentários que apontavam estagnação em sua trajetória musical O post Pocah dá resposta afiada após internauta afirmar que ela está “estagnada” na carreira apareceu primeiro em Hugo Gloss .",
+   "summary": "Pocah respondeu a comentários que apontavam estagnação em sua trajetória musical",
    "link": "https://hugogloss.uol.com.br/famosos/pocah-criticas/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2023/10/HEAD-HG-1-13-617x347.png",
    "date": "2026-11-07T03:26:40.000Z",
@@ -1816,7 +1896,7 @@
   {
    "id": "1ciio3z",
    "title": "Causa da morte de Matthew Wright, produtor de Ellen DeGeneres, é revelada Causa da morte de Matthew Wright, produtor de Ellen DeGeneres, é revelada (Foto: Divulgação/ Warner Bros.)",
-   "summary": "Matthew morreu aos 52 anos, após 16 anos de trabalho no programa da apresentadora O post Causa da morte de Matthew Wright, produtor de Ellen DeGeneres, é revelada apareceu primeiro em Hugo Gloss .",
+   "summary": "Matthew morreu aos 52 anos, após 16 anos de trabalho no programa da apresentadora",
    "link": "https://hugogloss.uol.com.br/famosos/causa-morte-matthew-wright/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/SnapInsta.to_625647496_18256377334291269_8634326233712648100_n-499x499.jpg",
    "date": "2026-11-07T02:26:57.000Z",
@@ -1830,13 +1910,16 @@
   {
    "id": "1x9nwuc",
    "title": "Stephen Curry reage após cena de beijo da esposa, Ayesha Curry, em filme viralizar nas redes; veja (Foto: Reprodução/ Instagram)",
-   "summary": "Ayesha Curry, esposa de Stephen Curry, protagonizou uma cena romântica com Matthew Daddario em seu novo filme de Natal O post Stephen Curry reage após cena de beijo da esposa, Ayesha Curry, em filme viralizar nas redes; veja apareceu primeiro em Hugo Gloss .",
+   "summary": "Ayesha Curry, esposa de Stephen Curry, protagonizou uma cena romântica com Matthew Daddario em seu novo filme de Natal",
    "link": "https://hugogloss.uol.com.br/famosos/stephen-curry-ayesha-curry-beijo/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/comentario-ayesha-617x122.png",
    "date": "2026-11-07T02:11:50.000Z",
    "source": "Hugo Gloss",
    "feed": "Hugo Gloss",
    "categories": [
+    "tv",
+    "romances",
+    "teen",
     "novidades"
    ]
   },
@@ -1854,9 +1937,23 @@
    ]
   },
   {
+   "id": "krjy8v",
+   "title": "Famosos se comovem com a morte de Nilton Travesso",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQT0gta3d0OTl2dV9HYTlFdGRybG5BeG1zejVtbEZBTjJCQ0JzZWwxM1k4eFl3czlRSkZFS3RSaVBOUk1BVjI4MVc2OThhYjlscmdmOEhPRGhzZ09ScFZDUmloSGJhcGdFTjM5djBXQmhNQWVBRzZwQ1hDeF9JZGI0VnZ6Mi1iSGtCUm5JQ3JPVVVIblFZUjM4aGxHaw?oc=5",
+   "image": "",
+   "date": "2026-11-07T01:40:16.000Z",
+   "source": "Observatório dos Famosos",
+   "feed": "Google Notícias",
+   "categories": [
+    "festas",
+    "novidades"
+   ]
+  },
+  {
    "id": "4noffv",
    "title": "Danielle Winits tem reação inusitada após pergunta sobre sexualidade do ex-marido Jônatas Faro; assista Globo/ Ju Coutinho; Reprodução/Instagram",
-   "summary": "Danielle Winits foi abordada durante evento no Rio de Janeiro e surpreendeu com sua resposta O post Danielle Winits tem reação inusitada após pergunta sobre sexualidade do ex-marido Jônatas Faro; assista apareceu primeiro em Hugo Gloss .",
+   "summary": "Danielle Winits foi abordada durante evento no Rio de Janeiro e surpreendeu com sua resposta",
    "link": "https://hugogloss.uol.com.br/famosos/danielle-winits-reage-jonatas-faro/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/danielle-winits-jonatas-faro.jpg",
    "date": "2026-11-07T01:06:22.000Z",
@@ -1864,13 +1961,28 @@
    "feed": "Hugo Gloss",
    "categories": [
     "romances",
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1ngc5ok",
+   "title": "Lula autoriza discussão de reforma do Judiciário e das regras do STF",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNdXcyajlybFdyNUtrYUhrUXlwNmNkblhIUjVlekRTcDVicmF2ZEJDNmVlTzJOemdpV3FTdEtsR3pTdk0tQjMwdldsNXFzM2VhMG9SX3dUUU1QRWZXN0dsRXdwSG1ERi02RWlycHhpMXRqWGgwT2Y3dXBTODZYdEgzZFNFc1ZNLXNscjVrQlZUUUpMbmxldmRnQjJaQkplWjlQWkdWTzY5RW1ZanRoN0lGLW9NWnNydG5iVi1ubmdQaHBFTTZvUmhjbEtB?oc=5",
+   "image": "",
+   "date": "2026-11-07T01:02:43.000Z",
+   "source": "Tribuna da Internet",
+   "feed": "Google Notícias",
+   "categories": [
+    "politica",
     "novidades"
    ]
   },
   {
    "id": "1ovhnt8",
    "title": "Governo toma decisão sobre imóveis de Willer Tomaz em Angra dos Reis, incluindo ilha disputada por Richarlison Governo toma decisão sobre imóveis de Willer Tomaz em Angra dos Reis, incluindo ilha disputada por Richarlison",
-   "summary": "Willer Tomaz é investigado pelo STF ao lado de Flávio Bolsonaro por suspeita de lavagem de dinheiro O post Governo toma decisão sobre imóveis de Willer Tomaz em Angra dos Reis, incluindo ilha disputada por Richarlison apareceu primeiro em Hugo Gloss .",
+   "summary": "Willer Tomaz é investigado pelo STF ao lado de Flávio Bolsonaro por suspeita de lavagem de dinheiro",
    "link": "https://hugogloss.uol.com.br/brasil/willer-tomaz-richarlison/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/10/17907234266abc4562d7470_1790723426_3x2_xl-617x411.jpg",
    "date": "2026-11-07T01:01:26.000Z",
@@ -1884,12 +1996,26 @@
   {
    "id": "1ht0pnu",
    "title": "Halle Berry: Fonte revela postura do noivo, Van Hunt, diante da batalha judicial da atriz com o ex-marido Getty",
-   "summary": "Halle Berry e Olivier Martinez foram casados entre 2013 e 2015 e hoje se enfrentam na Justiça O post Halle Berry: Fonte revela postura do noivo, Van Hunt, diante da batalha judicial da atriz com o ex-marido apareceu primeiro em Hugo Gloss .",
+   "summary": "Halle Berry e Olivier Martinez foram casados entre 2013 e 2015 e hoje se enfrentam na Justiça",
    "link": "https://hugogloss.uol.com.br/famosos/halle-berry-novo-ex-marido/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/10/halle-instagram-374x499.jpg",
    "date": "2026-11-07T00:55:26.000Z",
    "source": "Hugo Gloss",
    "feed": "Hugo Gloss",
+   "categories": [
+    "romances",
+    "novidades"
+   ]
+  },
+  {
+   "id": "wmgw2j",
+   "title": "Fábio Porchat revela planos para casamento com a noiva e entrega detalhes da cerimônia",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMihwJBVV95cUxPMmRFRjlVWWU4aWJoWEJFd1ltUTVneWdxOG9jSFYxQW5aYm9qVlZ1QjBZOVFLRl9Dc1lpM0VQMi1zcWlwM1BMR1A0WGNHc21BZkJKai1nS2dNcjZRQWNFN3J5azRlUHZFWF9RSUxDd1hYRlhONEItdHZIN3BUVVFmXzBBYnFSekZPQi11NjRENlAzdXIwc0wzNm1CRmNTV1YzMHdQS2JqREpEaVROX093S3l2TFNkdnJJSUhrOFBKRXNYMnY0THpKUmNzak9zQWloU1ZMZWFwR3YtMzJpNzlVQVVBNF9nSEx3Sk9zYkdoZGxhaVVvUkE3SG95NndRbjRNQXAwZC1wSdIBhwJBVV95cUxPMmRFRjlVWWU4aWJoWEJFd1ltUTVneWdxOG9jSFYxQW5aYm9qVlZ1QjBZOVFLRl9Dc1lpM0VQMi1zcWlwM1BMR1A0WGNHc21BZkJKai1nS2dNcjZRQWNFN3J5azRlUHZFWF9RSUxDd1hYRlhONEItdHZIN3BUVVFmXzBBYnFSekZPQi11NjRENlAzdXIwc0wzNm1CRmNTV1YzMHdQS2JqREpEaVROX093S3l2TFNkdnJJSUhrOFBKRXNYMnY0THpKUmNzak9zQWloU1ZMZWFwR3YtMzJpNzlVQVVBNF9nSEx3Sk9zYkdoZGxhaVVvUkE3SG95NndRbjRNQXAwZC1wSQ?oc=5",
+   "image": "",
+   "date": "2026-11-07T00:39:41.000Z",
+   "source": "Terra",
+   "feed": "Google Notícias",
    "categories": [
     "romances",
     "novidades"
@@ -1910,15 +2036,30 @@
    ]
   },
   {
+   "id": "1nfm1nu",
+   "title": "O que significam as decisões do TSE sobre investigações contra Lula e Flávio",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOTVRocHRaekZPLTZHUWw0WFNGQ1JkcFUxdHJKcURDS09ZY2hNTzNzNTFlTVp4ejFUbW11dUFPNUhxQzVVVWNnb1JfSFNPWFItLW1rTTA0Zm0xUS0xdzIyUzNxdHgya1dLOFhZQzB6V21JSzFFcmFDX1FMZFNFN1Yyb1dmNno1RWRwaW9EZ21rNTdhbUF2LTFXS2N4dUJiYTJ1QWFPT0IzM19ob1NoNG14cHF3?oc=5",
+   "image": "",
+   "date": "2026-11-07T00:18:00.000Z",
+   "source": "VEJA",
+   "feed": "Google Notícias",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
    "id": "aeqlqq",
    "title": "Mulher compra apartamento em leilão em MG e faz descoberta chocante ao entrar no imóvel: “Fiquei muito abalada” (Foto: Reprodução/ Redes sociais)",
-   "summary": "Kalina Poliana adquiriu o apartamento em Patos de Minas (MG) O post Mulher compra apartamento em leilão em MG e faz descoberta chocante ao entrar no imóvel: “Fiquei muito abalada” apareceu primeiro em Hugo Gloss .",
+   "summary": "Kalina Poliana adquiriu o apartamento em Patos de Minas (MG)",
    "link": "https://hugogloss.uol.com.br/buzz/apartamento-leilao-descoberta/",
    "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/porta-e-macaneta-617x411.jpg",
    "date": "2026-11-07T00:16:37.000Z",
    "source": "Hugo Gloss",
    "feed": "Hugo Gloss",
    "categories": [
+    "festas",
     "novidades"
    ]
   },
@@ -1953,6 +2094,34 @@
    ]
   },
   {
+   "id": "mlxgz1",
+   "title": "Caso Arboleda: Candidato à presidência do São Paulo fala sobre polêmica",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNajc0eTNYZ2l0eGFKRWJIUl9DRW1sRG56ZzBLODY2a1BvVUI4R0ZBSW9rRnBoZXVwZUFRNGU3TTBhdm94SkNTWWlHM3J5d3pmU29ocWJvUU9kb3kyODQwYjB0VGFlNEFxZzFWOFc3dWZLRFZkSVFWalNVVnNyWmUzUGJTMmprUnNJcFcyTXBOaTBlVHRHdThCNFQxOW1WSHRNM3p2TUIzQjNxSXN0SFoyNVI0ZFlkNHFmRVV6VGpXWGs?oc=5",
+   "image": "",
+   "date": "2026-11-06T22:25:14.000Z",
+   "source": "band.com.br",
+   "feed": "Google Notícias",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1v1fw1i",
+   "title": "Noiva de Luan Pereira revela que gravidez não foi planejada e adianta planos de casamento: 'Desejo de casar grávida'",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMirAJBVV95cUxQZ3h4YkVoVEZlMzJidHEtYUh3OWcxclJkbUtWekxMYkoyeG56ajJ1bWR0R05pTzdQa3BxSmdlMTdoZUNsbFNYSVliZUVrR2N4T2Z6Rm13QXU3N2NORlNSTVRkam56cER3bXNBend5b2I3SEhPRWh4OUtmRmcxeEJXdEh5akFFSWxJM0llR1dvWkhtXzk4Q1lDdWZQUnFhZDdXRXl0dnJ3LWl0VTVSdUxsNmdTa0tDOXhJRXVIUGtzQ1owYzlERERPeVYxVmFiTmZMeDNxZW84SXZzN3BTLVdtRzhVQU42RUc2YjFsOHlydHpDeDFlYWdaSjRJak43TTVHaXMyUndUazRVS3V2REFIM1RJcGhQdEctNkxNV3hoRmtPampSRFJhVDc1V2_SAawCQVVfeXFMUGd4eGJFaFRGZTMyYnRxLWFIdzlnMXJSZG1LVnpMTGJKMnhuemoydW1kdEdOaU83UGtwcUpnZTE3aGVDbGxTWElZYmVFa0djeE9mekZtd0F1NzdjTkZTUk1UZGpuenBEd21zQXp3eW9iN0hIT0VoeDlLZkZnMXhCV3RIeWpBRUlsSTNJZUdXb1pIbV85OENZQ3VmUFJxYWQ3V0V5dHZydy1pdFU1UnVMbDZnU2tLQzl4SUV1SFBrc0NaMGM5RERET3lWMVZhYk5mTHgzcWVvOEl2czdwUy1XbUc4VUFONkVHNmIxbDh5cnR6Q3gxZWFnWko0SWpON001R2lzMlJ3VGs0VUt1dkRBSDNUSXBoUHRHLTZMTVd4aEZrT2pqUkRSYVQ3NVdv?oc=5",
+   "image": "",
+   "date": "2026-11-06T21:42:57.000Z",
+   "source": "Globo",
+   "feed": "Google Notícias",
+   "categories": [
+    "romances",
+    "novidades"
+   ]
+  },
+  {
    "id": "1bqemgm",
    "title": "Richarlison, o 'pai do bebê', revela que será pai de menina; filha se chamará Aurora",
    "summary": "Richarlison com seu filho e sua esposa Reprodução Instagram O jogador Richarlison, conhecido nas redes sociais como \"pai do bebê\", e sua mulher, Amanda Araújo, serão pais de uma menina. O anúncio do sexo da criança foi feito nesta sexta-feira (6). O…",
@@ -1977,6 +2146,20 @@
    "feed": "g1 Pop & Arte",
    "categories": [
     "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "17phwve",
+   "title": "Alberto Cowboy quebra silêncio e se pronuncia sobre fim do casamento com Priscila Monroy: 'Sou grato'",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMilwJBVV95cUxNZm1CV2dldUhyRjg1VFJvaWJkSF9UQzFVMnNrblZpZjYyVTJoa3I0OVZNZWkxczRxN3Z2UEtNQ3J1b1pwcEJCQTlNY0tHM3IzSmRWYmVZbTUtMnZ5M0ZEakJtaWIzbEx5ZVVuc1lzSERaV3ZUUDZ4RlE5by1Ia3FHVjhfVUZTMTBnWVhoXzJLQUk5T2JlaFljWTlrcE0tZ3lrZ05Dbjg5MS1IaW9Rbm1tUlB5ZTVXYUxfRHBWY3Bsa1F2bTk5aTNpNFJ6RWZfWEtMRkxwN0hZSWxqNENoRkFEQ2tjdjlVOFJIMFNBZjgzVnYwei1wWWpYWl9fblZ1MUJXbTRfVEpqdDRCdl9JVU9iaUt3YlFsOEnSAZcCQVVfeXFMTWZtQldnZXVIckY4NVRSb2liZEhfVEMxVTJza25WaWY2MlUyaGtyNDlWTWVpMXM0cTd2dlBLTUNydW9acHBCQkE5TWNLRzNyM0pkVmJlWW01LTJ2eTNGRGpCbWliM2xMeWVVbnNZc0hEWld2VFA2eEZROW8tSGtxR1Y4X1VGUzEwZ1lYaF8yS0FJOU9iZWhZY1k5a3BNLWd5a2dOQ244OTEtSGlvUW5tbVJQeWU1V2FMX0RwVmNwbGtRdm05OWkzaTRSekVmX1hLTEZMcDdIWUlsajRDaEZBRENrY3Y5VThSSDBTQWY4M1Z2MHotcFlqWFpfX25WdTFCV200X1RKanQ0QnZfSVVPYmlLd2JRbDhJ?oc=5",
+   "image": "",
+   "date": "2026-11-06T20:56:06.000Z",
+   "source": "Terra",
+   "feed": "Google Notícias",
+   "categories": [
+    "romances",
     "novidades"
    ]
   },
@@ -2010,6 +2193,20 @@
    ]
   },
   {
+   "id": "1193xso",
+   "title": "Casamento com contrato: o acordo de Juliette e Kaique Cerveny",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNRzEyLVpwRXdGUV9lal9UdEYzdVNrMUJ2UVVueDM0NDlfNmVza00xTE9HS2s3aEdDLVUtWlJrQVFscXdoR1pMQlJFR0t3cmdrNkFEaDFZaUIyTWhFVEh1cTlzRFFRemRtLVM5T0dWZ2dGOW83SUlkNlNKM09WaFBUVWNKQmIzWHJ6blRRa2xLOXpNM2QzZmV4S3J0UzNxbTBibXhCY1gtakFDR3JLM3lJTWd2d1A?oc=5",
+   "image": "",
+   "date": "2026-11-06T19:58:41.000Z",
+   "source": "SRzd",
+   "feed": "Google Notícias",
+   "categories": [
+    "romances",
+    "novidades"
+   ]
+  },
+  {
    "id": "x1vd5n",
    "title": "Influenciadora veste a filha com fato de treino e diz que parece uma \"pobrezinha\": polémica obriga-a a pedir desculpa",
    "summary": "",
@@ -2034,6 +2231,21 @@
    "feed": "Metrópoles Entret.",
    "categories": [
     "tv",
+    "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "16328ac",
+   "title": "Alberto Cowboy quebra o silêncio sobre fim do casamento: ‘Verdade’",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOMWlORkNzR1dPUEN4QkNTM01rUWdPUkxUZVg2MjhGWVptbV8tSnpUZ2U5aktxN3R1Vkd2OG9SNEtnWG5DczFZdDU1RGJyRkFOenVSaUJNdUszSy1CbTdwTTdZeVUyUGlMbGtCQzlBQmxDNE1RVzRNTGYzTGZTbllXeVA5X21RckxURTVxVmhXaExDTXV6dmFCamVrODhwcS1tcWVSbG51SkhPOFk?oc=5",
+   "image": "",
+   "date": "2026-11-06T19:54:30.000Z",
+   "source": "Mais Novela",
+   "feed": "Google Notícias",
+   "categories": [
+    "romances",
     "novidades"
    ]
   },
@@ -2075,6 +2287,7 @@
    "source": "Metrópoles Entret.",
    "feed": "Metrópoles Entret.",
    "categories": [
+    "tv",
     "novidades"
    ]
   },
@@ -2143,6 +2356,7 @@
    "source": "Band",
    "feed": "Google Notícias",
    "categories": [
+    "romances",
     "novidades"
    ]
   },
@@ -2241,6 +2455,7 @@
    "feed": "Google Notícias",
    "categories": [
     "festas",
+    "teen",
     "novidades"
    ]
   },
@@ -2298,7 +2513,6 @@
    "categories": [
     "festas",
     "teen",
-    "tv",
     "novidades"
    ]
   },
@@ -2317,6 +2531,20 @@
    ]
   },
   {
+   "id": "oeuoau",
+   "title": "DURIGAN PREVÊ DISCUSSÃO SOBRE AGENDA FISCAL COM LULA APÓS VIAGEM INTERNACIONAL",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNWDhIQW1SV1JJaUxSY29hYjVKQUF2OVNfNEpxQ3hPMU84WE96OU5TREUtUkJkNlg3azVwek1wLUJlQnl4dlNmTk1Sbl9sUEpObWhSMzdIR1d5MF9NRlNvVEVCYlZMWnM2VEFmTUE4MTJReHphTlRIQ1RDWDVleVc4X1pPa21tR0JFRDQyZm9yVE9mQnVpbS1Cd29LaXI2NEcxQk85eGhOM2dMNjlaTkRzWkpuZGxqMm9oSXpHeVg3SGdtMTlrUjBQVWtmZW1zRExq?oc=5",
+   "image": "",
+   "date": "2026-11-06T15:05:10.000Z",
+   "source": "Bahia Econômica",
+   "feed": "Google Notícias",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
    "id": "1cadix0",
    "title": "Leandro & Leonardo: saiba como será o filme sobre a dupla sertaneja",
    "summary": "Primeiras imagens da cinebiografia da dupla foram reveladas nessa quinta-feira (5/11)",
@@ -2326,6 +2554,7 @@
    "source": "Metrópoles Entret.",
    "feed": "Metrópoles Entret.",
    "categories": [
+    "tv",
     "novidades"
    ]
   },
@@ -2367,6 +2596,7 @@
    "source": "Metrópoles Entret.",
    "feed": "Metrópoles Entret.",
    "categories": [
+    "tv",
     "novidades"
    ]
   },
