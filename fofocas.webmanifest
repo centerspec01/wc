@@ -1,0 +1,14 @@
+{
+  "name": "Brasil Gossips",
+  "short_name": "Gossips",
+  "description": "As principais fofocas do Brasil, atualizadas com imagem.",
+  "start_url": "fofocas.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0B0A10",
+  "theme_color": "#0B0A10",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "fofocas-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
