@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T22:19:28.232Z",
+ "updated": "2026-11-09T06:56:30.141Z",
  "fontes": {
   "noticias": "Google Notícias / GDELT",
   "lideres": "Wikidata (P35 chefe de Estado, P6 chefe de governo)"
@@ -8,16 +8,28 @@
  "noticias": {
   "russia-ucrania": [
    {
+    "titulo": "Trump admite reunião trilateral com Putin e Xi Jinping na China para discutir guerras no Irão e na Ucrânia",
+    "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxQNnVxWTFpb3NjUUVuWjd5dE1DMFA0VncxYlNMX2VZY3llVUEwRGppVlViNzVWeUpxYU9Femd5VmxzMTdyREp0TGI3UUFEdGszM0dNd1lmTXV0NEZ3S2s3V3c4aUFYcmhKOFdDYmJGcVdmaWZPT1RrUW8zRF9NS1pLcEx4WThVaTMyUTQzNzE1Z2oydmh5LWxJcUxFQW9URGtQYlc4MWNXUk9ZQlpEMDFWV09hUnNERXY3WEU3cTZfZmUwT2FmcG9xS3ZLMGhQVTJIQXk2NHdjdG5LcWxYSDVlZmJWWWFLTUU1ZE82QnV5aF9EaWtuTzB0X1Jna0lOMzN4Zjh5NS14NlY1aFVSSGVkOWFn?oc=5",
+    "fonte": "CNN Portugal",
+    "data": "2026-11-09T06:00:25.000Z"
+   },
+   {
+    "titulo": "Trump diz não querer escalar guerra com o Irã",
+    "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9lcVYySHdrTXNSRy1YaVJTN28wVk9GQU52RkVLRFNmeEtOektqQjVmYng5X1VWR1ZubGNLNWhncjBwSHROWlBsV1BPWFBPTGhjWHlES1hrZlk4ODZSZExXQ2VQQjlPQQ?oc=5",
+    "fonte": "ES Brasil",
+    "data": "2026-11-09T03:00:58.000Z"
+   },
+   {
     "titulo": "O governo de Donald Trump sinalizou ao Kremlin que irá ampliar as concessões a Vladimir Putin em troca de uma negociação que possa colocar fim à Guerra da Ucrânia, iniciada pelo russo em fevereiro de 2022. Nos recados que chegaram ao Kremlin apó",
     "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBGYno3cE1CUnhrQWdtSklDRjhKYnhIbW1sdnB0NkZOdHhnWDAzV2VhNkx6QlNUSTZHaHFkdVRBdHdZZ3JhSWU3NXczNUpYX3JCTmc?oc=5",
     "fonte": "Instagram",
-    "data": "2026-11-08T20:05:20.000Z"
+    "data": "2026-11-09T02:10:36.000Z"
    },
    {
-    "titulo": "Hackers invadem sistema de estatísticas russo e revelam quase 400 mil militares mortos na guerra na Ucrânia",
-    "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQYVFFWVducVRneWhhVi0yWXhLV2VyaE13N2tTdndiYkR0NlBQdnBsV05TY2pWYkZEZUM1dzZseWZheDF2ZUg4Z3V6VUVvRkx3MllxRGxKcXk4S3Qya2U2Rm95OFQzdUx0RlVQb2tNVEpleDVURzdvMU9KU0lJcFFMR0JyV0F4TVJxeXJKYTBkZ0FIWEhEcXZmUkRaYzhYLVlOUGZZQ1p5RmxoU3dKYkFWeWd2ZFBwdDJnN1VabjQ4MkdsYzBSdUdzaUpUNl9zUGRFNEVSLXNEb2JxMUVOZUlvN3pfRi1ZNExRcHNOU3FTVkhkM2lwQnpxamQwWHZVeUFITVpXLThoNHFlbVNQSTZXag?oc=5",
-    "fonte": "CNN Portugal",
-    "data": "2026-11-08T19:09:33.000Z"
+    "titulo": "Rússia diz ter atingido armazéns de uso militar e siderúrgicas na Ucrânia",
+    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOLXJHQWc0VzRoTlpNZTB4RmpSWjBvOGZTejE0YXBxak9XTTg0R1lsTGgzdnRDV0ZIZnR0Rm9aNDVhc1JSOGtGMHpPMDlXSlhHWEhJZm1LRXZMakUzOGlZY01QQVA1cElyOWVpQ185bXFncmhfMmhxWmJZTmZXWUxPenRoR2xYYkpaZHpCbGY3b3pWNUI1VWUxU0oxbWJMSXhFdmxuWDdlVzNpUVZuS2I4eVd4aVduSkhu?oc=5",
+    "fonte": "CNN Brasil",
+    "data": "2026-11-08T21:28:55.000Z"
    },
    {
     "titulo": "Trump avalia ampliar concessões à Rússia para encerrar guerra na Ucrânia",
@@ -26,34 +38,22 @@
     "data": "2026-11-08T18:45:00.000Z"
    },
    {
+    "titulo": "Trump sinaliza ceder mais a Putin por fim da Guerra da Ucrânia",
+    "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQenRianB5QzhwQW12SndReUlqZW9GM3FzRU45ZlVONklmZmozOVNiaVdEemRTTVFoR2tSUk44U0ZxdkhFRHR1aDZfRWhVN3cyYXlHT1N2NHlEOE5DVVZCVkllWmdub0pHTW9temVhVEpsUTFTa01YaXUxYVJ4ZnJ5TmExN3VxVjUwWXdFZTB4cnhmZXhESjYwRnN1NVJfTnhyRWVmZU5idlFBbkFQOHBZ?oc=5",
+    "fonte": "Jornal de Brasília",
+    "data": "2026-11-08T17:46:38.000Z"
+   },
+   {
     "titulo": "Rússia e Ucrânia terão negociações nos Emirados com mediação dos EUA",
     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOZi1JMkNweGJBWV9wV29zRkJSQ1QxWTlyOEltUEdBS0VwcTFhYlRMQS1ESm5uMnNxQWlBNFVEdFFfU2ZpM0RwWDVITVRtczloZG1hWUtfNGNrZWxOMDZkSnRqT0FYQ3d5WHUtZURtUm5GN0ozaUg5VjVFenp5RGplWg?oc=5",
     "fonte": "IstoÉ",
     "data": "2026-11-08T17:31:26.000Z"
    },
    {
-    "titulo": "Trump sinaliza ceder mais a Putin por fim da Guerra da Ucrânia",
-    "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTlB2ZnNDQ2UtTEtZcHptOENRazd6RWl5NHFyUGR3U19zbkFweXBkU3pNT2RWdy14dXFId243TmRtQlFUNW9MczdkdEREVnp3U0lzQ2ZoRVpkbW1xZmZXVndQTXVlcFJseUNONnd5b1VlVTZmcHFGVGxJZ09CUjZtOEVQTEFqdTFlOVRJa2h0LW0xakJOUHM3SEFDeE84bGxXalVCM19ST0RSSUJHR21ka2xn?oc=5",
-    "fonte": "Folha de S.Paulo",
-    "data": "2026-11-08T17:24:00.000Z"
-   },
-   {
-    "titulo": "Rússia busca ampliar influência na África em meio à guerra na Ucrânia",
-    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNMHh1NzBwbGJuNzhCY2lLU1VrazgzaXAtWDRPSEd0NXFPNDJzTWRPSmNlZTZrMVM1UE55bS1YT3BPbWItNkNwRjNrVlM2ZWl5MWQxNUc4N2VmT0lGbl9pdG1BQ3BTcXFnTnFuNG9GNEZCa3lWZlM1X1VWVS1Tb2NnaE9XRkpkNWk4Zkc0YWwwNlR2QUJkRm1kaFRlU1l0UzdVdjhv?oc=5",
-    "fonte": "Vero Notícias",
-    "data": "2026-11-08T15:45:00.000Z"
-   },
-   {
-    "titulo": "Guerra na Ucrânia: «A Rússia importa tudo aquilo que necessita»",
-    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOclV3WFRkbFBidzZnaVIxbGpXaDhoMVlnZXMycGF0WUQyV0cwZ2ttaXpNam1QLUhIMWlDVWVZY3F6UXRKRnlZVlhEODR2ZGt4bWhGQjFtc1ZSSkwtM3YyRXhBeVBXdzgtZzJmNVM1RmI5ek5xd0xjcG5aNHQ4cUV6dlZOaTU2ZUFSdWVjSkY0SmhORlFsN3l4NHJDWXFheHBFeFE?oc=5",
-    "fonte": "Now Canal",
-    "data": "2026-11-08T15:39:00.000Z"
-   },
-   {
-    "titulo": "Ataque russo deixa mais de 600 mil pessoas sem energia na Ucrânia",
-    "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRmxGZ2MxYTVqTXdIU0FjWk1ob25Vbnhwa0hjSHRDcGdrcUhNay03VEtJVE92SU4xVDBvWS1QeWZFWXRzMWx2XzdPOEx5bEhfLVlNY1JCZ2ZmZ05lbHJTelZDRFBtd0hXaGFFVEk5VlA1TkthQ1l6ZHlKLXd5eUVhMktQSmh4Z2FGRnVzTkh4Vl9lR2lNRUxqYzhLQkp5cHNONkY0aXQ2UlpyNzRjSWxB?oc=5",
-    "fonte": "Jornal Opção",
-    "data": "2026-11-08T14:41:00.000Z"
+    "titulo": "O impasse na Ucrânia e os devaneios da Otan",
+    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNUkJEeVg4R0liWjhFcjlNdGxNZ1NlZm1LYzllRVk5X3JqenBhQjVNZUN4RldkLVhwUlJVM0VfUkUtUThFNlR0cUVlb0VZZ2ZQZDEycE1WTmZjWk5zdWwyOFJ5bXVTMWk1ZVl0c0ZoRHkxT0ZlN1JQYk5lNEg0aWZ0cVQySWhSc0xpcVYxbGpVaGVHQQ?oc=5",
+    "fonte": "Outras Palavras",
+    "data": "2026-11-08T15:53:00.000Z"
    }
   ],
   "israel-gaza": [
@@ -62,6 +62,12 @@
     "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPeVhfaFJNcEVFUXJEZ1VBZGVYVE5ZNVBTazhQOVpJWjZNSGt4bXBZSzQwdC1lVXJRX3FRU0dDa2luTU1uMWxPUTNHSkc2ZUVjMllHeHFUOERfdlRrV0prVW9WRjQyX2NpekNpNHR1MnhmcndUZzh5elp4VFNVZHRzYnF4S1FDeUp3RDhHRGZmZXFNaTFBdDFQUWsyZlNiLU12NnJlSDVKMEJ1RTZpbk03ckhPaVU?oc=5",
     "fonte": "Jornal de Brasília",
     "data": "2026-11-05T17:08:15.000Z"
+   },
+   {
+    "titulo": "Milícias palestinas contra o Hamas",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5qMGducEtjZGFicVVvQmYzbGw2bEh4SVlkVWRPdWtvSE9YV0pCTEZDQ3dmbVQ4NmdiekMxcDRVZW94TUYzQWl5c0ZHV3NTb05Jam8tZ1d1NUUwZUdzTWpEQ1d6eUVNUnVLNmdUNExFY3k?oc=5",
+    "fonte": "Diplomatique",
+    "data": "2026-11-03T19:03:12.000Z"
    },
    {
     "titulo": "Israel mata quatro palestinos em Gaza e ultrapassa 1,5 mil mortos desde trégua",
@@ -101,6 +107,12 @@
    }
   ],
   "sudao": [
+   {
+    "titulo": "Sudão detém Haroun, ex-líder do partido no poder, procurado pelo TPI",
+    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRlBQdm5xcTZYNFFUemxDRkZSQmxGTHJPUi1CeWhxZEV4VlNtM0VSTVUzS3d3QzR2bHRpSVQ4R0lqb3d4d3ZodUhWdFBUZjhwa0tmV3A2LWlhdWdkeHA1V0xHdklUQXBCQURoT1BfV3RNRFRHZ2trVXZSRXFCV19nQlpyNnhhVmI3MWFONXpSeEczb1ZzbkdmNHBWbmhMUnBsZ09qNWdLVQ?oc=5",
+    "fonte": "Público",
+    "data": "2026-11-08T16:40:57.000Z"
+   },
    {
     "titulo": "A ONU adverte que milhões de deslocados no Sudão podem perder seu abrigo devido à falta de fundos",
     "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNTjAyOEMydEhMdXFEeGRmanJMRjE0ZFdIT1lveGtWSEZNVmtORFVKRzVBbU55TVdIcld4UnFQMTE3RFZQb0l6ZUhvQ2FxbmhneHJ2c0N4ZEdCc24zQzJ1c1lLS01pdGVLVy1qOHY5QzcyOHkwd1FTZjByUFRHUnJaaWpjZldnd29mdDJlZW9kRWthTUZ4Y1I5Y0V6czU0cDJLLWdrOTZ1RzlndzI2UlhzVU90Y2F5b09OdTF5UFJzUkJ6T3NZMTBBaDVqQno0VjFZdFIwNERjMTY2cjR00gHcAUFVX3lxTE1OMDI4QzJ0SEx1cUR4ZGZqckxGMTRkV0hPWW94a1ZIRk1Wa05EVUpHNUFtTnlNV0hyV3hScVAxMTdEVlBvSXplSG9DYXFuaGd4cnZzQ3hkR0JzbjNDMnVzWUtLTWl0ZUtXLWo4djlDNzI4eTB3UVNmMHJQVEdSclppamNmV2d3b2Z0MmVlb2RFa2FNRnhjUjljRXpzNTRwMkstZ2s5NnVHOWd3MjZSWHNVT3RjYXlvT051MXlQUnNSQnpPc1kxMEFoNWpCejRWMVl0UjA0RGMxNjZyNHQ?oc=5",
@@ -370,42 +382,42 @@
     "data": "2026-11-06T22:02:00.000Z"
    },
    {
-    "titulo": "Explosão de caminhão-bomba mata jovem e fere duas idosas na Colômbia",
-    "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQNkxmZTI0VDJnZzVoYjB2bDItRGIwdWJzYUczb0swX2tZbDdHUUtrZHVNZUplZVlvNDVPTFZEbkFJaXlLY1RKQndGNFp0Zm5IV0ZuOXdoYjFQdVR6SDBZdEFNZXNRa245dnpsNWJqX3U5dWVOODFnOTZWdzdXeVM3MmN2N0JNckRmendYaS1Vd2FKbG5KTHYyWlZTNFRKemdGdE1wbUN4d1JXdkhybUMw0gGzAUFVX3lxTE5xaGtUNXBsaUZCa3hTeS1qb0xYcXlJZWtZVXFBUFdHN0RuclZPeWFOYmNXYWpnUEh2LVpwbHJBMUhIeTZLR3g5T0lmTWg0TnNXVVNMSHBNbVByeWdVVVc3c0NaczNjcXI5a21WM01qRlpyMEdvWHA2dU13MUg3Qk9BRmRkN1ZhRXM3MmcwTUZqNzMtMWhONlFCc1IwaTAzZ05PczVoYll4Zm8xT25nR3lwR2dV?oc=5",
-    "fonte": "BOL",
-    "data": "2026-11-04T21:03:12.000Z"
-   },
-   {
     "titulo": "Após colocar blindados nas ruas de cidade com mais de 800 mil habitantes, Colômbia lança operação com 1.200 militares e policiais perto da Venezuela e prepara reforços navais para vigiar rios da fronteira",
     "link": "https://news.google.com/rss/articles/CBMitwJBVV95cUxQa0d0eWhzVS1Xa2dkdl9RTnNaQl9wNFFXM0dTSlZzRUJycGxkOTlsZG9iLVFSOFZmVjU3MHVBU3JqZzlIajQxbGcxMk5CVkhjYmJkZE1RTy1oU3VNdFVWSFUyamtnNG9weFJSU2cxVVc2RDFRcnYtTXFuZHVobDVVTEpxeC1zazVEYzhsOWRJYktFUEpGN3FBN3duZml3LVp0ZjFNVTVFTWphUENpcldKXzZlTzhtbDNrYnZ1ZWZ5M2stYU1LZS1MQldGWHZjYzU2QW9GWVlvb2V0QVpSQVJCY3hBNW5zcjlqVjd0RXhLaHJKLS1tRVp0OFVFdXRuTFp4RDYwUFMzU0tqNlFkQWN4dDk3eTBSdVVCbVYxTWlhaWUxRGV6LWhISGE3cnNmZ1NNejFJU2tCaw?oc=5",
     "fonte": "Revista Sociedade Militar",
     "data": "2026-11-04T12:36:00.000Z"
    },
    {
-    "titulo": "Por que o bombardeio na Venezuela acende alerta na fronteira do Brasil",
-    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxONkQwQnAxdEsxQkRBclBVZTlUWmtmQ1lEVEw3T0NoZWVkSWEtVkw1MnY1MklfempKNC1vUzNIY3MwLVppMFZTV0kwY1ZtbTQzS3JpNEtQTGxlcGVzWGtvN21sRlJYN3hES2pTa2dyZEJUbXJvXzBMNmJGU09zWEJsSlBaM1JXX0Y1S2ZNS1RzWlBMczBoTmNOaWk3TjJtMHpVcVZHeHgxaW9WeC1lVkdIM0IwWkQtMm54VE1OVmhjbXZsOTg?oc=5",
-    "fonte": "TV Sim Brasil",
-    "data": "2026-11-02T01:33:00.000Z"
+    "titulo": "Governo da Colômbia manda militarizar cidade de mais de 800 mil habitantes na fronteira com a Venezuela após atentado a bomba e assassinato de político, coloca blindados nas ruas e provoca alerta no país vizinho",
+    "link": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxQYVY0Vlh2b3pDQWVzaUNUc0RsdnlzLTJlLUZQZ2g0SFVJNkZoN2N3VXc2WXd0NXUzR2YxWWVFWG85UlV5NWMwcnlNNVEzVUtvVTFfTmNFMzhvLTN5c0VkN1JuS3Q3RUVKTURkWE1hLXZkZGxibnU5Q3NOZHBmbk9oS2kzX014enhwWGgtTHFiX3ZZV3VFWHNRalZWaFNfZXQybXlMVEJ6Qm1BWUxQSXdZbWUtVmlhZWYtVVRteTZQQUkwLVQxSFlua19JWkhrNEFDckd5MVhEY3JFMjdkQkFoVHNXVnpLYm9KX0txd0ZMdGh6OUVmeTZFMkFSc2pPZ2tFb0xTbS1BTi1DYnpzU0xYaEtqcTBrR3Y3ZzRlUGNvM0tXWXRfZEk1UHNn?oc=5",
+    "fonte": "Revista Sociedade Militar",
+    "data": "2026-11-02T20:19:00.000Z"
+   },
+   {
+    "titulo": "Com Exército nas ruas, Colômbia passa por processo de militarização; entenda",
+    "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNN3FfekQtbTdzdUlWUWxDWXRob2dCV0RaVEtab1h3YXNXMnBxdWV5cDJRbHR4LXZSOUpxNmVjWng0QnMtMDcxQkRnRFRsemU4ODlKUTlSZ2FMcUZhakh2eEhjeDFSU2p2eHNOX2l3X3RZVU53NzVhR3BZMWM3akdvMW9zNmJUQTdxazZGS2Mzc3dDMDRaLVBId1pCRlJjMzVN?oc=5",
+    "fonte": "D24AM",
+    "data": "2026-11-02T14:34:14.000Z"
    }
   ],
   "mexico": [
    {
-    "titulo": "Deputado da oposição e 3 policiais morrem após ataque armado na Guatemala",
-    "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNN0lBOC15NEsxNWJ0WFpiMDZHUEg5ZWdfOWZDcXdRa0FHUXNVTkh4Y2ZkWl9wWEN3ejVVUE0wMzg4N19fZG5KNU9EM0x6QmFDOEk2NGh2YzkwVHlBVHFhVlFhcmJBNzVHVXcwa3hvNDdHckhjTDFXclBhTE83b2ljOFFlY0RTTDdVTG5jOUVMWFFCallJZkRoNTIycWFCZ2tPa2ZpcUhtMUozVzVfaWdSZjl4VXkyekpXZ2c1MmRZSGVJNG5nVkhLMWJnTjJkTUxJaXhzTmVn0gHWAUFVX3lxTE03SUE4LXk0SzE1YnRYWmIwNkdQSDllZ185ZkNxd1FrQUdRc1VOSHhjZmRaX3BYQ3d6NVVQTTAzODg3X19kbko1T0QzTHpCYUM4STY0aHZjOTBUeUFUcWFWUWFyYkE3NUdVdzBreG80N0dySGNMMVdyUGFMTzdvaWM4UWVjRFNMN1VMbmM5RUxYUUJqWUlmRGg1MjJxYUJna09rZmlxSG0xSjNXNV9pZ1JmOXhVeTJ6SldnZzUyZFlIZUk0bmdWSEsxYmdOMmRNTElpeHNOZWc?oc=5",
-    "fonte": "G1",
-    "data": "2026-11-07T16:45:56.000Z"
+    "titulo": "México anuncia detenção de líder de um grande cartel de tráfico de droga",
+    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQOWhSd0R6RFYzc0tQazljc0x2RFJsdFM4aURUT0kwRHZjM1N0NmdEcWt2M3Z2SlhZTl9IV2oxdEgwcGd5ZFMzeEtzOHk1OW9UYVFQVFVDZmYza2ZVa25ZOEFZMmRzM0V2cFpXVnAwaDZvSk90b1FhZkZLdmVNSkR2elBrLUM2YjZXVVltSGxnOFlLWThrbXEySkc4UXJzUWlCaGRUTk9nV21zQdIBqgFBVV95cUxQOWhSd0R6RFYzc0tQazljc0x2RFJsdFM4aURUT0kwRHZjM1N0NmdEcWt2M3Z2SlhZTl9IV2oxdEgwcGd5ZFMzeEtzOHk1OW9UYVFQVFVDZmYza2ZVa25ZOEFZMmRzM0V2cFpXVnAwaDZvSk90b1FhZkZLdmVNSkR2elBrLUM2YjZXVVltSGxnOFlLWThrbXEySkc4UXJzUWlCaGRUTk9nV21zQQ?oc=5",
+    "fonte": "Correio da Manhã",
+    "data": "2026-11-09T04:27:00.000Z"
+   },
+   {
+    "titulo": "México detém outro importante chefe do Cartel Jalisco Nova Geração",
+    "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTzg0QTNpaGI0OEp5ZVJZd2QwUVF3N0Y5M1NOaWFiWTVJVm1uMkdPNVp5bU9UM1owdE9nUXotLUVEWTh3NVBYd0ZRRUduYi1BdVlxcTRhenFEQWJROW1xOEx1allVazFLOTVEcWtYWkNicFMtOXRJYmxVVzJzTEI4M1BlSU5TMkxNZm92eDVvMHBrdEhROXdnYW43UWJKWnZpSGo0Mjd5X3d5bXBycV81TElmOWhBdm5mMzlNcXh30gG-AUFVX3lxTFBPODRBM2loYjQ4SnllUll3ZDBRUXc3RjkzU05pYWJZNUlWbW4yR081WnltT1QzWjB0T2dRei0tRURZOHc1UFh3RlFFR25iLUF1WXFxNGF6cURBYlE5bXE4THVqWVVrMUs5NURxa1haQ2JwUy05dElibFVXMnNMQjgzUGVJTlMyTE1mb3Z4NW8wcGt0SFE5d2dhbjdRYkpadmlIajQyN3lfd3ltcHJxXzVMSWY5aEF2bmYzOU1xeHc?oc=5",
+    "fonte": "BOL",
+    "data": "2026-11-09T01:02:19.000Z"
    },
    {
     "titulo": "Guerra entre facções coloca influenciadores na mira do crime no México",
     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPOThQQnJ1RkE2dTYySlJRVHRMVUJLTWd2WV9mMlhTeWxtWTF0S3dkVXk5S3lrdmlzNWxVV21BeWppSTdmakhrT1hCYXhwT3M3VzRubnVmN2hONEtxMVhjbzJ1Yk9KT21IYjQ2TFczOXFISzhHVXFtY2NkaksyUzNfTjJkWWZPU0Zmc2VOcXJZdlN1T3hKUGR0WkR6QllCNzRmbGlxWTFCMkRnM0dlT280TXdUZGdqWWZJb21nNDE0QW1BdVdNcEpLTQ?oc=5",
     "fonte": "Gazeta do Povo",
     "data": "2026-11-07T08:16:39.000Z"
-   },
-   {
-    "titulo": "Ryan Wedding snowboard é preso no México por chefia da cocaína",
-    "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQQ2QxZGFtNC1JNDJtd1RndjR3cGdHbExtdkpMT3ZKYUNMVHF0S1Eyb0phcEluWm8zYTVXdXQwcWxrVlBCLTRBWUlSLWFZdkpkYWUxSDJfX2s1ajFGdmhVdWxtd0ltNzRsRGQwY1N3bW42TWs4MXZrbUc4RjZWY3RuTjRDT2EyM2NhYTd6Vw?oc=5",
-    "fonte": "ncnews.com.br",
-    "data": "2026-11-06T21:37:48.000Z"
    },
    {
     "titulo": "Missionário de 79 anos está desaparecido há sete meses no México",
@@ -422,10 +434,22 @@
   ],
   "ira-israel": [
    {
-    "titulo": "EUA oferecem US$ 20 milhões por informações sobre programa nuclear do Irã",
-    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPLW1GNWpkZV85RDFuVHE1ZFBfTWgtYkZkN3NuYndvVnFnOVVVb1FaNGE5MzJBbGhUc2N6YlYyU01wSlBnTEFJSW1HZzRSSUJOU2plYkRsMC1wSnRzRW11U0E4N24wT1pRYmxMWHBoTGVQSWY3NTdkRkRJdWRfNG1oM2Myc2xueTkxdDlDU2pfN1lmQ0pQU2dBNUpNcVhicklyQ1U3SUFCMXF2XzEyUTk3SVAxZGI2Y0E?oc=5",
-    "fonte": "CNN Brasil",
-    "data": "2026-11-07T13:56:49.000Z"
+    "titulo": "Israel ameaça o Irã mais uma vez.",
+    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5NRzBMZjRTQUpycGN1aGt2ZmhtU21seDRxUmUzRHFTR2ptLUg4Z1BHLXA3dVczRkVPbkNQdTFWVnAyVi1LY3V4WDhQMm9Td2ljSk1abnh4bU9FczkwTnMteTloMWpYQUctejNYMA?oc=5",
+    "fonte": "Vietnam.vn",
+    "data": "2026-11-09T03:55:10.000Z"
+   },
+   {
+    "titulo": "Trump diz que está ‘em pleno vigor’ nova operação que amplia bloqueio ao Irã",
+    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxORnh4MzNXeWhuQnN1REdsVFkzSVotb3p3S0pZMkZvanRYMXJScGVDXzhaRzM4ejhhMTU0ckIydWwyYU9selZWOXd4YlpseUs4bXFaM0NlREc4UnU4MmJyWk9KV0VrZTd3WU1adFI5Rm1YOWwydHdkQTd2NlNoVkVjZEpHaTlGM05nWHFYVTF2eFF0cVExVUh0UUFJSlZ5TTQtM1RpSnRSLWVMZFhpNC1lWmE1ZV9rRjlCSUsxMWFGNlh4ek5Gd3otOA?oc=5",
+    "fonte": "Opera Mundi",
+    "data": "2026-11-08T23:42:13.000Z"
+   },
+   {
+    "titulo": "Irã envia proposta nuclear aos EUA por mediação do Qatar",
+    "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQdjVSOTBjMDY0WkR0SXhneS1aR0FvMFVDRWQzbjJIbTBUeDhTU0pCaEIyMWhQMlQ1cUVnczZxOXdLcWQwRmNzZWRXd1FNZzV4MGZnNXNoSVo0OUIya21YTU1qdUlhenNYTENEcHdrMWlTbG5ENGQtOC1qb0V5QW5kTEdaLWJoWjZJM2tWeGNNZlhZS1QzRU5mR3NXanp1bEZl0gGgAUFVX3lxTFB2NVI5MGMwNjRaRHRJeGd5LVpHQW8wVUNFZDNuMkhtMFR4OFNTSkJoQjIxaFAyVDVxRWdzNnE5d0txZDBGY3NlZFd3UU1nNXgwZmc1c2hJWjQ5QjJrbVhNTWp1SWF6c1hMQ0Rwd2sxaVNsbkQ0ZC04LWpvRXlBbmRMR1otYmhaNkkza1Z4Y01mWFlLVDNFTmZHc1dqenVsRmU?oc=5",
+    "fonte": "O Cafezinho",
+    "data": "2026-11-07T21:26:00.000Z"
    },
    {
     "titulo": "Após Trump falar em 'destruir o resto do Irã', EUA oferecem US$ 20 milhões por informações sobre o programa nuclear iraniano",
@@ -452,22 +476,10 @@
     "data": "2026-11-07T03:57:07.000Z"
    },
    {
-    "titulo": "Estados Unidos oferecem recompensa de US$ 20 milhões por informações sobre programa nuclear do Irã",
-    "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOQ3pOZ3JLdU81dUVhMi01SHQzN1JVaUNualVVOTVvbnJFWTVwRmtheWtTUnMtblZXb3E5XzFZZ24xQ3pyT3AtUjJxTElYSU5sbkhtcnlvVFlpc1RvTkxNaDhNLVVjaThEeDhHODU5U09iUVR5Um9EZnlobVpKMG9yczcyemNodHdSbFNGNmpVS1RmUEMyaG1Lb3c2R0N4MW5kRVdJdlNwLU9vaTNNYkRyelp3SUxjaGFFY1lNYnYzcERoTDZ5amJxNnMyNldGbWh5ckE?oc=5",
-    "fonte": "Portal VV8",
-    "data": "2026-11-07T01:06:26.000Z"
-   },
-   {
-    "titulo": "EUA oferece US$ 20 milhões por informações sobre programa nuclear do Irã",
-    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNNDdkeG40QmdWYjhEbFJRVTZTQVVMUlRmZzkwVmZPZGtEbGFUNTExNGtieUVGbHhtSHFMS2NWNDJUX1BjengxclRHVHotSnNLOV9DdmlGSlgxY3RqTWtFcGpVWFREanJocFNPZXlraG1tajk5LVdSWGFzXzk5TkJmT19vNHQwTmVNQUNsU2FlSF9zdEJlTEhvaElkY2Q2S0NHdDh2Yi1BMA?oc=5",
-    "fonte": "Metrópoles",
-    "data": "2026-11-07T00:54:00.000Z"
-   },
-   {
-    "titulo": "O que sabemos sobre o possível acordo de paz entre os EUA e o Irã",
-    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQb3QwOFZDeUNUM0RGTnpCWVZ2YUE1SlkyWGVVOEdjQUh2ckhFM0ZFcm1veUhhb1N6M2NLempfeHlMU2JSck05dklaejZJVHVyZVJYVlZHZ20xTVFfRGdURzVqUG1HN2NZZE00TGNweTQyWFExb3VLNWI3cG1Ub2tMU1FTLWdDNFAwZWREWmRqakc2WEZkMnlQVGV0by01ZU1aR0U0SDQ0djNsMmdySXc?oc=5",
-    "fonte": "CNN Brasil",
-    "data": "2026-11-06T21:36:39.000Z"
+    "titulo": "EUA oferecem US$ 20 milhões por informações sobre programa nuclear do Irã",
+    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQdm5HNXh6TjFZZFVuejZxLXExZ1g2XzJianZGSGNOVkM3YV9KdFF0R1FjQ2F3amM1TVB0YVgtX2xDZll3Y3hma2QxZDBEZGF6T2FNLTVnd041N3NKMHhoTEJXRWMzcWpfTTQ4X19hSl9rclFBa3BhaVBsWVdNR20wRTJXYWZtM2JIRnJWenRjMjI3X200dkJzMVFoTEdlY1cyR01ITWM3NEVaUQ?oc=5",
+    "fonte": "PAIPEE -",
+    "data": "2026-11-07T03:17:47.000Z"
    }
   ],
   "libano-hezbollah": [
@@ -484,10 +496,10 @@
     "data": "2026-11-06T07:50:22.000Z"
    },
    {
-    "titulo": "PODCAST #295 :: FREQUÊNCIA EXPLOSIVA",
-    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9nTXFlcGktUTZteFV1MUdnaTI5NkxLVkdadnNTVXdzb05pT1JTWjNzYWV1eVd5enBCZmpzQ3RNWlkxRTN1czVlbjVnbTNCbkM1U25XZDZZeWZDRWg5NUJySld2X1U4c2VmQkFLZA?oc=5",
-    "fonte": "Papo de Cinema",
-    "data": "2026-11-05T10:31:27.000Z"
+    "titulo": "464 militares chineses da força de manutenção da paz no Líbano recebem medalhas da ONU",
+    "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOOUpoNTFkSWI5OHhUYUQ4TjhuMExoaXB1bXdvaXRYVU1xeXd2RW9MejE3cHh3NDhCUWs1RWxQdHNKUmI5OUhMdXJTOUFON2o4VTlaSGJfbWFRZHNpZ2Z4bWY3dnhOUUk2WEtXLV9Ta1pFV2xiX3ZwT3o3LXpkdEpsZkk3MGg4czBw?oc=5",
+    "fonte": "新华网",
+    "data": "2026-11-06T05:27:04.000Z"
    },
    {
     "titulo": "Ataque israelense deixa um morto no sul do Líbano",
@@ -574,6 +586,12 @@
     "data": "2026-11-06T07:42:09.000Z"
    },
    {
+    "titulo": "Moçambique/Ataques: Ucrânia reafirma disponibilidade para apoiar no combate ao terrorismo",
+    "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQRC16bUttLWVxZzZxQ2NpTVp0R0ZKTHZWaVdoeEpmeks1MEdjaHV0S01RQVRSSFFRQVhYU1d2dm5aYjVPNjUxY3JkVkJ6Y2lfdHQ5Tm11Mld4bFFTMkt0c2wwcU9NaWxyRDlKNHlZMlFxdnFYRThhdEptMVg0dndIbWVMS2l6dzBNbUVrZ01OMm1PMTI2Y3lQVk92Y05oRFViU3JmRHJPQ3NZYXdIV1pjb1pTc3RrdkFzVUI2Q2FjZWMzSjBsS2RpNFRuUXQ2VlRuUThtOERR?oc=5",
+    "fonte": "Portal Impala",
+    "data": "2026-11-04T19:58:52.000Z"
+   },
+   {
     "titulo": "Moçambique: Ataques provocam nova vaga de deslocados",
     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOc0lIeTI1dEZSM3o3c2J6cDdQS1ZjR1V0eGZDd3pvbTBJbS1UbTV2VGVFb3JsWTM3TDlidFEwZmZmYXZQdFYyUUFXM2ZpUFZUVTJiSDVjVlVCS2FDdlRpeUlzZEZodlBBMFJXeE9acjJMbXhuRjI4cHlBZE9mTGR1dmY4cjlmdXR6eUVNLWxIaXU1OXBGdFpoctIBmAFBVV95cUxQaHhtMzFzUS1BcUNvUHJvS2h4US1BU19WYlBDN3NUbGs2bU05SmVJb3NsSHZ2VDZ6NzBjZ2hpVGVuRHBKY0trU1VHclNSUDhvdXdxdUlDMXk5dEtsU254MC01a3BEQzhMekRjbnZWTmtTNWRnaHRwSVoyWnVsem5iSXJ5b3FncVdEa2JwaDExQVQ4ZWpsX05Gcw?oc=5",
     "fonte": "DW.com",
@@ -587,9 +605,9 @@
    },
    {
     "titulo": "Cabo Delgado: Insurgentes protagonizaram 154 ataques nos últimos cinco meses",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQOGg5bi1TQVUteFZObkNZNUJDSzB1ZVlHSVNpZHp5bUp3Y1ZjOG45NkJuYXpCNzZxN3dMN2RhYUloWkpoeS1yNVlldXFuMmhZTjl3NS1xQk0wc3BoUVRVV1JsVHRvTmNfNUh3dDZRcWMxUkh6NUJBd3Rld3Qzd1RkTVhhd2FFbzZ4bkI0d0xZUjREYTVKRWJtWW9lMXpKQQ?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQWXBuX0VSNGFNdDBqUUs1dmF4VjdpYk1vUDdYaVRpOEViem0yYVQzTkdFMTZWRmRTSURXMFF6eEJGQ3gwdmh4WTA1QU1YU0J2Y0l2dUVWMnozSng1TkNKZFA2Tk50M1VWMmxqVXc2VUpJdUxoekN2aXgxYjlMQXlSZkJJSHRJZFJhZjI5Vmg2UVFXOUs5a3d0RU0xb0VQcFpSS1E?oc=5",
     "fonte": "MZNews",
-    "data": "2026-11-02T06:39:43.000Z"
+    "data": "2026-11-02T12:43:32.000Z"
    }
   ],
   "sudao-do-sul": [
@@ -608,8 +626,26 @@
   ],
   "eua-venezuela": [
    {
+    "titulo": "Tensões globais se intensificam com disputas entre EUA, México e Venezuela e novos alertas sanitários",
+    "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOcF9vc0dNUjFUNlVIMlBjY3VPdXNUVDk1cHBsOUJOLVRhZmhPamxMUFZIZlFRMEt6bEVudXhvX2Uwb0xoUXA4cGZRNV9HUTJNMHI3SkYyUmtrQmFrTXA1MjlHaHpUNU96NFE2U250RHRNM3VydjhnMDU1bzFrSHVraFdadnl6aUhPVHY4eXFLRFVkRlJYYUpsT1VGVHVFUlR4bzR5Zmpzek1SZjdRQmRQUTJJOXY3U2FueU5tVUs3b21kbXZfQWRxZktiNXlFVFE?oc=5",
+    "fonte": "Diário da Guanabara",
+    "data": "2026-11-09T04:56:34.000Z"
+   },
+   {
+    "titulo": "Maduro passa a ler Bíblia e Alcorão na prisão e perde peso nos Estados Unidos",
+    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOY3BFajdXQ3B0Y0FiVUY4TjNyX2xCbGFwb1NQZEc3VG40Nzd3OUZ4MVdvWXB0U01ad1VjcVY3cGU4QUQ4WnZYVGJTVUpsU0drcTN2elNhQlpFakZNWHJPTl9GajBoVDBvQmpuLW15aHcyWmJwWm1kZ2xBQ0l1aTFpbTczQ19nUGI4aXlPWkd0QnE1c2VZak9kdmlHeVF2RkxPVFFhdDFEUWQ3QTVPcFp3R1hyMzZJR2R6QThFaDJsaDFLSHc?oc=5",
+    "fonte": "Aliados Brasil",
+    "data": "2026-11-09T04:42:00.000Z"
+   },
+   {
+    "titulo": "Maduro perde peso e reclama da comida em prisão nos EUA",
+    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNYnVfOGZpNllmRVFKZFFMcHQ0MFJjb01CNWRWM1FQVnhkR2FYanFlMDRpUVJzZnJleW00QWNLR1VSZXRUUlJxUFc2M09YaDF6UUkyaTl6UDNCRUU5TVRMYXUzTU1POXktOU9NQUtJVTRReXN6Qm81VGlta2dzMUU0X05EbU1GYkR3TUxrWmFMRm0?oc=5",
+    "fonte": "Revista Oeste",
+    "data": "2026-11-09T02:17:59.000Z"
+   },
+   {
     "titulo": "Onda democrata nos EUA desafia apostas ligadas a Trump na América Latina",
-    "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNVWhaYlVyRjhrMHJIWjVhOV9VbXliN2tfTXFnRG82OFgtT0wxbG1hMHg4QV8tME80Tk5leExjWmpzejFNcy1TMF95VXE4SHhhanJpbS1FanRiQjYwOGlBNU9UQXVjQkxoSm9aOHQ4RDdwclBUNmpuR0s3eVJUbnVjWk13RXdVYXRRVldySGczS3ZiZmxPaFhUd2Vab3hZbU9WM0xNMWEzQm1zS3VKd1p0ZWdQamZqeG45MnZtdy1CN0dCbTd5eC1ZVVJFLXhCbFRtN0JZVGtUM0bSAdgBQVVfeXFMTVVoWmJVckY4azBySFo1YTlfVW15YjdrX01xZ0RvNjhYLU9MMWxtYTB4OEFfLTBPNE5OZXhMY1pqc3oxTXMtUzBfeVVxOEh4YWpyaW0tRWp0YkI2MDhpQTVPVEF1Y0JMaEpvWjh0OEQ3cHJQVDZqbkdLN3lSVG51Y1pNd0V3VWF0UVZXckhnM0t2YmZsT2hYVHdlWm94WW1PVjNMTTFhM0Jtc0t1SndadGVnUGpmanhuOTJ2bXctQjdHQm03eXgtWVVSRS14QmxUbTdCWVRrVDNG?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOVU5uWXlsUzNBUzRfR1JNVGxzemZ0QTVDYm1qckwtQTltZUpuYVN0TkhaeVdCakxVazNrbUR1VGVHWnMyS0pZYTRqNXQ1RWdkdERUeVdjcGx5cTlhaVlQTlRCajlFckcwdFRhVFl0VEpBZXRpVnU3QWJrLVExQVVuLVdCTEtZV3JmaGxGWGxyUEdHa083ZE5MSklCMEZtMURMellSUHVXSFREXzhCQXN6cExDLVRMT0UxTVNIYjc2S1JuWnltMGlMekFB0gHYAUFVX3lxTE1VaFpiVXJGOGswckhaNWE5X1VteWI3a19NcWdEbzY4WC1PTDFsbWEweDhBXy0wTzROTmV4TGNaanN6MU1zLVMwX3lVcThIeGFqcmltLUVqdGJCNjA4aUE1T1RBdWNCTGhKb1o4dDhEN3ByUFQ2am5HSzd5UlRudWNaTXdFd1VhdFFWV3JIZzNLdmJmbE9oWFR3ZVpveFltT1YzTE0xYTNCbXNLdUp3WnRlZ1BqZmp4bjkydm13LUI3R0JtN3l4LVlVUkUteEJsVG03QllUa1QzRg?oc=5",
     "fonte": "Valor Econômico",
     "data": "2026-11-08T17:05:06.000Z"
    },
@@ -632,31 +668,19 @@
     "data": "2026-11-07T17:04:58.000Z"
    },
    {
-    "titulo": "Análise: Crise na Venezuela pode fortalecer permanência de Delcy no poder",
-    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNcWY3a09SbXctS2FLZ1A3SlNBNlp4UEE3MzFqUFZacFRGN0xGUS15aWpDYUl6eFUwN2lJem5SUnhKZFBtZW9SVW9BNFNzZzlham1nQlFtX1FQZC1YeHlLZjh4X3VaUnJsQW40MDNtVlVTTGZmWHI1TUh2SV85SW53UWhtV3RBMGRFc01JX09zdmZFSHdsTVQtbG4zQ2oxXzNPM25JVnNCTGxkeVRnTVF4ZTJoWHpfN2s?oc=5",
-    "fonte": "CNN Brasil",
-    "data": "2026-11-07T14:46:55.000Z"
-   },
-   {
-    "titulo": "Estados Unidos — Venezuelano é preso perto da Casa Branca após ameaçar matar Trump",
-    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQTjJKQXVSUFFvWWhGTFhlTENnUE9mZXZjR1RtWEZud0tCdjBibkY4Z1V1WTh2NnExamF3Y01XQTFIckV3ZmFYanNnY1o4SXREMm9fM2wyZXVRbnUxTHdCcjZoTVd4V2tkenlIODhqc3NJTXVnRndzUjZkSWtoTm51aXpWZG1oSHYzYmVlQXkyOUNXVW11ZlVVVTQ1UzV5T052MlFjR3VMNTA0VHAyOUtWdTBmNFFYWEFNTVdR?oc=5",
-    "fonte": "Prensa Mercosur",
-    "data": "2026-11-07T13:00:07.000Z"
-   },
-   {
     "titulo": "Marco Rubio assume controle financeiro e operacional da Venezuela após captura de Maduro",
     "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNOUJFSkh6bWM5aDBmRlgtN25jYTg4dkJNVGExdjhsRlA4X2F1aXFxdGM4Mmo1NHhaNDYzUW5BdmRFNkxrVzBsY0VwNmkyTjlWWHNwd1hIamdzallrSE55dHZreTJrUHIzSThGQjc4Qk9NUmF2QkVwSnp5a0Rpb3ZXaDhzanVlZXBISzRVS280dFVVV0F3cnNvZHE0bkFVaUhRVFpCS05YM2tQLV95UWJ3Y2k1UWtoQU5QSkpvdHExRQ?oc=5",
     "fonte": "Times Brasil | CNBC",
     "data": "2026-11-07T08:00:08.000Z"
-   },
-   {
-    "titulo": "Delcy Rodríguez reinaugura a Plaza Washington em Caracas em um novo aceno aos Estados Unidos",
-    "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOdEt0M1AwLTQwamVjVDJTQXlia2IxQnZhYUJfaVdRdFV1d1JsdFk0RjBnUjhMWlhRVHBsVWhKZkgxc2tNb0owelpyT3ZHWDlxQjNOVmJJaS1rTnlvTllnbVRwY3UtNElsSGhtMkVBdUo2Smp5VS0wWWtka0JVM1pDejh1ckM5R3N5NWM1alVWU1d1YmRHTWplcGR2N2JRWkVDNWlnZ2t6cHFqb2lNOGlCZ3pyY2pXWG56c1NyWDRWb3ZRUXBNMFZRVjVjbDdtS0p40gHWAUFVX3lxTE9objc3clBNd1RSVVhRaGdKRXJZNnptS0RRZTBPSlFEUjFrMlJnSFgyUGhqNXJaMDV2ZWlCeWZYVFE1VDJWM1AzdDd0X0ZDOEhYazN2UjB3WVVMR240QU9mdkdSMzZoVGZIM0E3QXYwOWxfUWtOT0RlVXMwMUVzUUswMUxGRVRvWV91Ukg2WWtQamR5elhWUXQzRjZ0NG9BNlQzOUVNWVBCYzdaTFhvNl9hdmNRT2pRTDNUZ003SVNZUDJxWURzUjN2QjhuRTBzX2FnUnBmaGc?oc=5",
-    "fonte": "Demócrata",
-    "data": "2026-11-07T03:28:31.000Z"
    }
   ],
   "tailandia-camboja": [
+   {
+    "titulo": "Camboja e Tailândia iniciarão negociações de cessar-fogo na Malásia com apoio dos EUA, diz secretário Marco Rubio",
+    "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPVklDV3ZDQXZjRHB3M1JTbzlidDhYeC1WanJUdUFuUGszdHNGdWN6RlUzUS1YY3BxcGRKU0RkdHpqVTN5NDBMVVp5QWJ5WUktdmx0dGJtY1N5aDJKdm45MEJuX0xFVVBfaXB5X1RBS0JpLXpValVoNFNVZFo1NVRZWFJVQ29NbzRWMDdNbGYwbnl4MDNJakFjNmtJellCYWtCZEdpXzlFcFZGSlVNUWtNbDJRX1ctSm5ya0E0akMyZ01La1laZWNsUVEzdlBIcnc0bEdsZ08xZ1RsdGJsZkp3?oc=5",
+    "fonte": "Diário da Guanabara",
+    "data": "2026-11-08T23:49:02.000Z"
+   },
    {
     "titulo": "Tailândia suspende 49 projetos de data centers em meio a restrições de energia e água",
     "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOSXV2S010dVVia0otaVA1MVcyb0QwWDVoZUszVHZwdHExY3NlV1ZlejNzc2FFOTY5ZXZsSTJuME5Dc25XdURqUms2UEFzNUMxdDdIY3pTS0JPTHdzYklTYWdadG56T2V0bmU0V01RTHBMTk11aGVxaks4QkFwUUttLWlVdzdVcXJZanZGaVBfZVBRbThzU0t5TTZ2c2Z3WGFOQmlWLVJHeXRPYU4wUjdyb2dLd1h6NThVRnR5WXlqNzFOOEZZU3BmbTllLURCMUVkazliLVkwTTAzdUpBRjA3eXpqR2hzVzFaQTdOTjdHXzVSNnc?oc=5",
@@ -668,6 +692,12 @@
     "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNS1VKM3ltSDJrNnh3SzhaVUNKNjdsdXVKRzNTMTA4Q2swcmExTllVTmJGQS1kOWtUeGYzM0tIOGtveEU2SXY5ckhQZHhxa0dOS1FBaGZWTG1tNFFXUWY2dXRqOXpzZ2dBdXlIWVd1dWhHV3RLYXRJX2hWLUpkMDQ2YlVkX2FqLTFNd1gtOGhrakFVLXFORFByanUyS2EyNV9BWnJGS2xPY2xPX3dfQTE1ZU9CV0F2U196amt1anhEcUI?oc=5",
     "fonte": "Revista Sociedade Militar",
     "data": "2026-11-06T10:48:00.000Z"
+   },
+   {
+    "titulo": "Tanques T-54 - Parte 4: Defendendo a fronteira sudoeste, cumprindo obrigações internacionais",
+    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxONUpVdEF1d3ROV1BCNEw2UU9sRW5CSzJnVDZRVmpsYzZhN3MzRjZZWHNsc3ZUZHlXTDE3WVEtRkZpZFQ2RVBQVF9CS2xWTmZOcFhkN3Z4UWNlbWFJLXFkWlY2SmVST29qLXRkN25zbU5jT2hnaUxOREhYeXhlS3ppMWV0cEhaWllpNlhPQjZUQkZlYTQ?oc=5",
+    "fonte": "Vietnam.vn",
+    "data": "2026-11-04T00:28:59.000Z"
    }
   ]
  },
