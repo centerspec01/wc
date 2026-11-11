@@ -1,15 +1,55 @@
 {
- "updated": "2026-11-11T07:43:41.580Z",
+ "updated": "2026-11-11T16:06:27.962Z",
  "sources": 19,
- "count": 206,
+ "count": 203,
  "items": [
   {
-   "id": "coig1a",
-   "title": "Justiça manda dar à OAS R$ 2,4 mi do leilão de tríplex de Guarujá",
-   "summary": "Nova decisão reconheceu a propriedade do grupo da empreiteira sobre o apartamento atribuído a Lula",
-   "link": "https://www.poder360.com.br/poder-justica/justica-manda-dar-a-oas-r-24-mi-do-leilao-de-triplex-de-guaruja/",
-   "image": "https://static.poder360.com.br/uploads/2022/04/triplex-no-guaruja-.jpeg",
-   "date": "2026-11-11T07:02:18.000Z",
+   "id": "pmx61o",
+   "title": "Lewis Hamilton visita ponto de travessia entre a Faixa de Gaza e o Egito",
+   "summary": "Depois de corrida da F1 no Brasil, Lewis Hamilton viaja para conhecer os esforços de ajuda humanitária para a Faixa de Gaza",
+   "link": "https://caras.com.br/esporte/lewis-hamilton-visita-ponto-de-travessia-entre-a-faixa-de-gaza-e-o-egito.phtml",
+   "image": "https://caras.com.br/wp-content/uploads/2026/11/lewis-hamilton-GettyImages-2304436292.jpg-copy-406x228.jpg",
+   "date": "2026-11-11T16:05:47.000Z",
+   "source": "Caras",
+   "feed": "Caras",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "1igwvla",
+   "title": "Ministério da Justiça derruba Instagram de ex-BBB por divulgação ilegal de bet",
+   "summary": "Participante do BBB 26, Paulo Augusto teve seu perfil no Instagram suspenso no Brasil após divulgar casa de aposta ilegal; bets estão proibidas",
+   "link": "https://noticiasdatv.uol.com.br/noticia/celebridades/ministerio-da-justica-derruba-instagram-de-ex-bbb-por-divulgacao-ilegal-de-bet-159308",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/paulo-augusto-ex-bbb-instagram.jpg",
+   "date": "2026-11-11T16:04:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "8tit8v",
+   "title": "Quem são as 2 filhas de Marrone? Aos 22 e 15 anos, herdeiras do cantor chamam atenção pela beleza",
+   "summary": "Discreto quando o assunto é a vida pessoal, Marrone surpreendeu os seguidores ao compartilhar um registro especial ao lado das duas filhas",
+   "link": "https://caras.com.br/atualidades/quem-sao-as-2-filhas-de-marrone-aos-22-e-15-anos-herdeiras-do-cantor-chamam-atencao-pela-beleza.phtml",
+   "image": "https://caras.com.br/wp-content/uploads/2026/11/m-406x228.jpg",
+   "date": "2026-11-11T16:02:40.000Z",
+   "source": "Caras",
+   "feed": "Caras",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "16dbch",
+   "title": "Ao vivo: STF define aplicação do piso salarial aos docentes públicos",
+   "summary": "Supremo avalia a constitucionalidade de decisão que concedeu a equiparação do salário-base do professor da educação básica em SP",
+   "link": "https://www.poder360.com.br/poder-justica/ao-vivo-stf-define-aplicacao-do-piso-salarial-aos-docentes-publicos/",
+   "image": "https://i.ytimg.com/vi/44QUB58ebHs/hqdefault.jpg",
+   "date": "2026-11-11T16:00:26.000Z",
    "source": "Poder360",
    "feed": "Poder360",
    "categories": [
@@ -18,12 +58,26 @@
    ]
   },
   {
-   "id": "znjht2",
-   "title": "TSE multa Meta em R$ 7,5 mi por descumprir decisão nas eleições",
-   "summary": "Corte entendeu que foram prestadas informações incompletas",
-   "link": "https://www.poder360.com.br/poder-eleicoes-2026/tse-multa-meta-em-r-75-mi-por-descumprir-decisao-nas-eleicoes/",
-   "image": "https://agenciabrasil.ebc.com.br/ebc.png?id=1708341&o=node",
-   "date": "2026-11-11T06:50:13.000Z",
+   "id": "1e56rxl",
+   "title": "A Fazenda 18: enquete revela empate entre dois peões na 8ª Roça do programa",
+   "summary": "Erthal, Fran, Murilo e Tina estão na berlinda. Vote na enquete do Metrópoles e escolha quem deve permanecer no reality",
+   "link": "https://www.metropoles.com/entretenimento/a-fazenda-18-enquete-revela-empate-entre-dois-peoes-na-8a-roca-do-programa",
+   "image": "https://images.metroimg.com/2026/11/daniel-erthal-fran-almeida-murilo-dias-e-tina-calamba-estao-na-oitava-roca-de-a-fazenda-18.jpg",
+   "date": "2026-11-11T15:59:12.000Z",
+   "source": "Metrópoles Entret.",
+   "feed": "Metrópoles Entret.",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1030o92",
+   "title": "Depois de cobrança, Lula se reunirá com indígenas na COP31",
+   "summary": "Encontro será nesta 5ª feira (12.nov), na Turquia, 1 ano após os protestos que interromperam as negociações da COP30, em Belém",
+   "link": "https://www.poder360.com.br/poder-governo/depois-de-cobranca-lula-se-reunira-com-indigenas-na-cop31/",
+   "image": "https://static.poder360.com.br/uploads/2025/11/protestos-indigenas-cop30-14.nov3_.jpg",
+   "date": "2026-11-11T15:57:45.000Z",
    "source": "Poder360",
    "feed": "Poder360",
    "categories": [
@@ -32,15 +86,1514 @@
    ]
   },
   {
-   "id": "c37tpg",
-   "title": "Ex-doméstica processa Kylie Jenner após ser mordida por cachorro e trancada em armário",
-   "summary": "Kylie Jenner, de 29 anos de idade, está sendo processada por uma ex-empregada doméstica que acusa a modelo e empresária de omissão de cautela na guarda de seu cachorro, que teria mordido a ex-funcionária. Além disso, Dinora Carolina Cabria Amaya acusa…",
-   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/ex-domestica-processa-kylie-jenner-apos-ser-mordida-por-cachorro-e-trancada-em-armario.ghtml",
-   "image": "https://s2-quem.glbimg.com/viFNsuQfujqzADcW1jEsCyO5_JY=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/c/n/tBfTbUS3WJAH6INjUS9w/kj.jpg",
-   "date": "2026-11-11T06:18:35.000Z",
+   "id": "mrk8e",
+   "title": "Reforma tributária: governo adia para março emissão de notas fiscais do Simples Nacional, exceto de prestação de serviço",
+   "summary": "O secretário da Receita Federal, Robinson Barreirinhas, informou nesta quarta-feira (11) que as empresas do Simples Nacional não precisarão mais emitir a nota fiscal eletrônica (NF-e) e a nota fiscal de consumidor eletrônica (NFC-e) até fevereiro de 2027.…",
+   "link": "https://g1.globo.com/economia/noticia/2026/11/11/reforma-tributaria-governo-adia-para-marco-emissao-de-notas-fiscais-do-simples-nacional-exceto-de-prestacao-de-servico.ghtml",
+   "image": "None",
+   "date": "2026-11-11T15:55:45.000Z",
+   "source": "g1 Política",
+   "feed": "g1 Política",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "va1n7m",
+   "title": "Julia Garner atualiza futuro de cinebiografia de Madonna: ‘Muda a cada hora’",
+   "summary": "Atriz escolhida para interpretar a rainha do pop revelou que o longa ainda é incerto e declarou sua admiração pela cantora",
+   "link": "https://caras.com.br/atualidades/julia-garner-atualiza-futuro-de-cinebiografia-de-madonna-muda-a-cada-hora.phtml",
+   "image": "https://caras.com.br/wp-content/uploads/2026/11/Julia-Garner-406x228.jpg",
+   "date": "2026-11-11T15:50:36.000Z",
+   "source": "Caras",
+   "feed": "Caras",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "lw8kkl",
+   "title": "Samara Felippo surpreende ao atender pedido inusitado da filha de 17 anos",
+   "summary": "Atriz aceitou convite da primogênita, Alícia, para eternizar a relação entre as duas com desenhos que se complementam",
+   "link": "https://contigo.com.br/noticias/famosos/samara-felippo-surpreende-ao-atender-pedido-inusitado-da-filha-de-17-anos.phtml",
+   "image": "https://contigo.com.br/wp-content/uploads/2026/11/Contigo-8-406x228.jpg",
+   "date": "2026-11-11T15:50:18.000Z",
+   "source": "Contigo",
+   "feed": "Contigo",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "gi5o2i",
+   "title": "Ibram quer potássio e fosfato como prioridade no Conselho de Minerais",
+   "summary": "Minérios foram classificados na 1ª reunião do colegiado como de \"prioridade média\" no acesso a mecanismos de fomento",
+   "link": "https://www.poder360.com.br/poder-infra/ibram-quer-potassio-e-fosfato-como-prioridade-no-conselho-de-minerais/",
+   "image": "https://static.poder360.com.br/uploads/2026/11/minerais-lista.png",
+   "date": "2026-11-11T15:49:29.000Z",
+   "source": "Poder360",
+   "feed": "Poder360",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "tnvb9z",
+   "title": "Tereza Cristina cobra regulamentação de programa de fertilizantes",
+   "summary": "Senadora do PP afirma que o Plano Nacional está parado no Executivo e defende a centralização da política na Casa Civil",
+   "link": "https://www.poder360.com.br/poder-congresso/tereza-cristina-cobra-regulamentacao-de-programa-de-fertilizantes/",
+   "image": "https://i.ytimg.com/vi/yArafjuhsdw/hqdefault.jpg",
+   "date": "2026-11-11T15:49:14.000Z",
+   "source": "Poder360",
+   "feed": "Poder360",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "2ss594",
+   "title": "Web esculacha mãe de Virginia após comparação com Alessandra Negrini: ‘Tem que nascer de novo’",
+   "summary": "Mãe de Virginia Fonseca, Margareth Serrão virou alvo de deboche na web ao se comparar com a atriz Alessandra Negrini; veja fotos",
+   "link": "https://contigo.com.br/noticias/famosos/web-esculacha-mae-de-virginia-apos-comparacao-com-alessandra-negrini-tem-que-nascer-de-novo.phtml",
+   "image": "https://contigo.com.br/wp-content/uploads/2026/10/margareth-serrao-406x228.png",
+   "date": "2026-11-11T15:48:51.000Z",
+   "source": "Contigo",
+   "feed": "Contigo",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "ssjots",
+   "title": "Aos 80 anos, ator administra fazenda de 6 mil acres com cavalos e campos de polo no Texas",
+   "summary": "Em propriedade histórica no interior do estado, astro de Hollywood encontrou privacidade em uma casa de 1856, cercada por animais e longe da rotina dos estúdios",
+   "link": "https://caras.com.br/casa-dos-famosos/aos-80-anos-ator-administra-fazenda-de-6-mil-acres-com-cavalos-e-campos-de-polo-no-texas.phtml",
+   "image": "https://caras.com.br/wp-content/uploads/2026/11/tommy-lee-jones-GettyImages-2299176949-copy-406x228.jpg",
+   "date": "2026-11-11T15:48:42.000Z",
+   "source": "Caras",
+   "feed": "Caras",
+   "categories": [
+    "tv",
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "uar9cv",
+   "title": "Fernando Henrique Cardoso: Justiça toma decisão sobre homem que expôs ex-presidente em vídeos Fernando henrique Cardoso",
+   "summary": "Fernando Henrique Cardoso foi filmado em situação de vulnerabilidade",
+   "link": "https://hugogloss.uol.com.br/brasil/fernando-henrique-cardoso-justica/",
+   "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/WhatsApp-Image-2026-11-09-at-12.49.15-617x410.jpeg",
+   "date": "2026-11-11T15:41:19.000Z",
+   "source": "Hugo Gloss",
+   "feed": "Hugo Gloss",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "1i8xell",
+   "title": "Boulos comemora decisão sobre tríplex de Lula e manda recado: ‘Antes tarde do que nunca’",
+   "summary": "Político reagiu à decisão da Justiça Federal que reconheceu a OAS como proprietária registral do imóvel e determinou a devolução de R$ 2,42 milhões à empreiteira",
+   "link": "https://contigo.com.br/noticias/famosos/boulos-comemora-decisao-sobre-triplex-de-lula-e-manda-recado-antes-tarde-do-que-nunca.phtml",
+   "image": "https://contigo.com.br/wp-content/uploads/2026/11/Contigo-7-2-406x228.jpg",
+   "date": "2026-11-11T15:40:35.000Z",
+   "source": "Contigo",
+   "feed": "Contigo",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1wgj085",
+   "title": "Reforma tributária: sem benefícios aprovados pelo Congresso, imposto do governo cairia de 11,3% para 8,5% em 2027, estima Receita",
+   "summary": "O secretário da Receita Federal, Robinson Barreirinhas, informou nesta quarta-feira (11) que, sem os benefícios concedidos pelo Congresso Nacional a produtos e setores da sociedade, a alíquota estimada do futuro imposto sobre consumo do governo federal…",
+   "link": "https://g1.globo.com/economia/noticia/2026/11/11/reforma-tributaria-sem-beneficios-aprovados-pelo-congresso-imposto-do-governo-cairia-de-113percent-para-85percent-estima-receita-federal.ghtml",
+   "image": "https://s2-g1.glbimg.com/UO7B0Zi3bBbdtCX0J7PtpyJfYGg=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/1/w/2wHS34TgmbTXd1v3AnrQ/infografico-sobre-beneficios-da-reforma-tributaria-1-.png",
+   "date": "2026-11-11T15:36:12.000Z",
+   "source": "g1 Política",
+   "feed": "g1 Política",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "18bw3uk",
+   "title": "Ex-BBB e influencers têm perfis derrubados nas redes por divulgação ilegal de bets; veja quem Ex-BBB e influencers têm perfis derrubados nas redes por divulgação ilegal de bets; saiba quem (Foto: Unsplash)",
+   "summary": "Medida foi tomada após uma determinação do Ministério da Justiça e Segurança Pública (MJSP) contra as bets",
+   "link": "https://hugogloss.uol.com.br/brasil/bbb-influencers-bets/",
+   "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/HEAD-HG-3-5-617x347.jpg",
+   "date": "2026-11-11T15:35:28.000Z",
+   "source": "Hugo Gloss",
+   "feed": "Hugo Gloss",
+   "categories": [
+    "tv",
+    "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "xnhxqh",
+   "title": "Última temporada de Emily em Paris ganha data de estreia na Netflix",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQQjNnVkN1Q2NudF83WE03T1gtcldjbm5uemtqRWlVV1RLbnFOOTh0MnhYX1NSaDJKWE1aejdnQzVPR3JSaF9NUldvX2s5OGlDMU1oSlBidEE3dkx0ZmoxMldrbFpteWRKOHdyQVhEcnB2TzRHa2laS050NmRKbmw3dlRHb2I1T3N0OG4wa3hzV3Nld1A4b1V0VFZMX043TDI2QUNNaTJ0VUlXcDFDZHh3bQ?oc=5",
+   "image": "",
+   "date": "2026-11-11T15:35:00.000Z",
+   "source": "UOL",
+   "feed": "Google Notícias",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "2frkm3",
+   "title": "Aos 32 anos, influenciadora cultiva cerejeira em mansão de 780 m² integrada à natureza",
+   "summary": "Dona de marca milionária de maquiagem, Niina Secrets transformou mansão no interior com áreas verdes preservadas em refúgio da família",
+   "link": "https://caras.com.br/casa-dos-famosos/aos-32-anos-influenciadora-cultiva-cerejeira-em-mansao-de-780-m%c2%b2-integrada-a-natureza.phtml",
+   "image": "https://caras.com.br/wp-content/uploads/2026/11/casa-de-niina-secrets-406x228.jpg",
+   "date": "2026-11-11T15:32:53.000Z",
+   "source": "Caras",
+   "feed": "Caras",
+   "categories": [
+    "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "u6hndr",
+   "title": "URGENTE: Ameaças de bomba esvaziam mais de 300 escolas em 4 países",
+   "summary": "Após e-mails anônimos serem enviados para secretarias escolares, 4 países tomam atitude e evacuam escolas por medo de bomba",
+   "link": "https://contigo.com.br/noticias/famosos/urgente-ameacas-de-bomba-esvaziam-mais-de-300-escolas-em-4-paises.phtml",
+   "image": "https://contigo.com.br/wp-content/uploads/2026/11/Escolas-sao-evacuadas-por-risco-de-bomba-406x228.jpg",
+   "date": "2026-11-11T15:32:11.000Z",
+   "source": "Contigo",
+   "feed": "Contigo",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "kei079",
+   "title": "Estreia no caminho do Vila: Fortaleza repatria treinador que marcou época no clube",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNTDFvdHpOY1BZeHpuU3RpZDZVcGthVVluUks1ZnRrQ2hNLUNqVkZUZUVKN0kya2VQQlMzLVA5YzYxUTJDcjZhS1FyeGVqMndzTHJ4b0VpV0NpUGN2aVV5aVlkQ0t5NGhwZGhOT3ItQnpJZXBOSFl4dl9JTVBwU2czYjN1elZYUWw2Q1hqd0gzREtrR3pmWDNWY25aZ2UwZ2c?oc=5",
+   "image": "",
+   "date": "2026-11-11T15:30:24.000Z",
+   "source": "Esporte Goiano",
+   "feed": "Google Notícias",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1bj9127",
+   "title": "Avenida Brasil iguala o seu maior ibope com descoberta de Tufão sobre Carminha",
+   "summary": "Audiência das novelas na terça-feira (10): Avenida Brasil bate recorde e levanta Vale a Pena Ver de Novo; Quem Ama Cuida decepciona",
+   "link": "https://noticiasdatv.uol.com.br/noticia/audiencias/avenida-brasil-iguala-o-seu-maior-ibope-com-descoberta-de-tufao-sobre-carminha-159306",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/vs-avenidabrasil-valeapenaverdenovocaptulode10112026globoplay-1-35.jpg",
+   "date": "2026-11-11T15:27:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1cnv0pz",
+   "title": "Gestão Motta foi fraca em pautas e produtividade, diz Nikolas",
+   "summary": "Deputado critica tentativa de excluir o PL dos principais cargos da Câmara e questiona concentração de poder",
+   "link": "https://www.poder360.com.br/poder-congresso/gestao-de-hugo-motta-foi-fraca-em-pautas-e-produtividade-diz-nikolas/",
+   "image": "https://static.poder360.com.br/uploads/2026/08/deputado-Nikolas-Ferreira-abr-2026-848x477-1.png",
+   "date": "2026-11-11T15:25:17.000Z",
+   "source": "Poder360",
+   "feed": "Poder360",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "16clkyr",
+   "title": "Líderes discursam na sessão de alto nível da COP31; acompanhe ao vivo",
+   "summary": "Líderes discursam na sessão de alto nível da COP31; acompanhe ao vivo Lula foi anunciado no momento previsto para seu discurso, mas não falou. Mais cedo, discursou na abertura e, rouco, pediu ao ministro do Meio Ambiente que lesse outra fala.",
+   "link": "https://g1.globo.com/politica/ao-vivo/lula-cop-31-na-turquia.ghtml",
+   "image": "https://s2-g1.glbimg.com/eAeQXpfE_RPhWELXS6sUtTZDV3Q=/smart/filters:strip_icc()/s2-g1.glbimg.com/0DF8JvbZYk2dFXopn_3FZQ5R65w%3D/1280x0/filters%3Aformat%28jpeg%29/https%3A//thumbor.globoi.com/unsafe/fit-in/1280x720/s04.video.glbimg.com/deo/vi/55/20/992055",
+   "date": "2026-11-11T15:25:14.000Z",
+   "source": "g1 Política",
+   "feed": "g1 Política",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1s35oum",
+   "title": "Protagonista de novela da Globo morreu aos 54 anos e deixou o Brasil em choque",
+   "summary": "Ator morreu aos 54 anos após se afogar no rio São Francisco, em 2016, durante uma pausa nas gravações da novela da Globo",
+   "link": "https://contigo.com.br/noticias/famosos/protagonista-de-novela-da-globo-morreu-aos-54-anos-e-deixou-o-brasil-em-choque.phtml",
+   "image": "https://contigo.com.br/wp-content/uploads/2026/08/Contigo-10-406x228.jpg",
+   "date": "2026-11-11T15:23:54.000Z",
+   "source": "Contigo",
+   "feed": "Contigo",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "15r713p",
+   "title": "Karoline Lima é vista de mãos dadas em Salvador, dias após fim de noivado com Léo Pereira",
+   "summary": "Karoline Lima, de 30 anos, foi vista de mãos dadas com um rapaz nesta quarta-feira (11), em Salvador, na Bahia. A foto foi enviada por uma seguidora ao perfil Daily do Garotinho, que identificou o acompanhante como o empresário Felipe Aranda. Na imagem, o…",
+   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/karoline-lima-e-flagrada-de-maos-dadas.ghtml",
+   "image": "https://s2-quem.glbimg.com/RDj0LUjJyz80zWyaf4AduPfJJqc=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/J/j/YFHqGBTBiaNhzQFDrdsg/quem.png",
+   "date": "2026-11-11T15:22:20.000Z",
    "source": "Quem",
    "feed": "Quem",
    "categories": [
+    "romances",
+    "novidades"
+   ]
+  },
+  {
+   "id": "17r8wli",
+   "title": "Às vésperas dos 54 anos, Reynaldo Gianecchini faz revelação sobre sexualidade",
+   "summary": "Reynaldo Gianecchini, que faz aniversário nesta quinta-feira (12), fala sobre descobertas pessoais e a decisão de não se prender a rótulos",
+   "link": "https://caras.com.br/personalidades/as-vesperas-dos-54-anos-reynaldo-gianecchini-faz-revelacao-sobre-sexualidade.phtml",
+   "image": "https://caras.com.br/wp-content/uploads/2026/11/reynaldo-gianecchini-406x228.jpg",
+   "date": "2026-11-11T15:21:12.000Z",
+   "source": "Caras",
+   "feed": "Caras",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "6ua3q6",
+   "title": "Setor produtivo pede prorrogação dos testes da reforma tributária",
+   "summary": "75 entidades assinam carta que fala sobre falhas e defende cobrança dos novos tributos em 2028 e não em 2027",
+   "link": "https://www.poder360.com.br/poder-economia/setor-produtivo-pede-prorrogacao-dos-testes-da-reforma-tributaria/",
+   "image": "https://static.poder360.com.br/uploads/2026/10/moedas-dinheiro-real-1-1200x675.jpg",
+   "date": "2026-11-11T15:21:09.000Z",
+   "source": "Poder360",
+   "feed": "Poder360",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "ww7m8v",
+   "title": "Governo autoriza exportação de energia para Argentina e Uruguai",
+   "summary": "Medida permite que duas empresas comercializem energia elétrica com os países vizinhos, desde que não prejudiquem o abastecimento brasileiro",
+   "link": "https://www.poder360.com.br/poder-energia/governo-autoriza-exportacao-de-energia-para-argentina-e-uruguai/",
+   "image": "https://static.poder360.com.br/uploads/2023/10/termonorte-1.jpg",
+   "date": "2026-11-11T15:17:49.000Z",
+   "source": "Poder360",
+   "feed": "Poder360",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1ipkm3r",
+   "title": "Influenciador diz se arrepender de divulgar vídeos de FHC",
+   "summary": "Wesley Oliveira depôs à polícia e teve celulares apreendidos; Justiça vetou imagens da intimidade do ex-presidente",
+   "link": "https://www.poder360.com.br/poder-gente/influenciador-diz-se-arrepender-de-divulgar-videos-de-fhc/",
+   "image": "https://static.poder360.com.br/uploads/2026/11/wesley-Oliveira-1.png",
+   "date": "2026-11-11T15:16:21.000Z",
+   "source": "Poder360",
+   "feed": "Poder360",
+   "categories": [
+    "teen",
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1la95xb",
+   "title": "Governo vai propor adiamento da cobrança da CBS para fevereiro",
+   "summary": "Receita Federal afirma que proposta será enviada ao Congresso; no programa atual, cobrança entra em vigor em janeiro. Setor produtivo pede adiamento para 2028",
+   "link": "https://www.poder360.com.br/poder-economia/governo-vai-propor-adiamento-da-cobranca-da-cbs-para-fevereiro/",
+   "image": "https://i.ytimg.com/vi/Y-nwSUiw06Y/hqdefault.jpg",
+   "date": "2026-11-11T15:11:14.000Z",
+   "source": "Poder360",
+   "feed": "Poder360",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "o7maz0",
+   "title": "Relatório da PF deve identificar indício de crime e não fazer juízo sobre relação de ministros com Vorcaro, indica Fachin a auxiliares",
+   "summary": "O presidente do Supremo Tribunal Federal (STF), Edson Fachin, afirmou a auxiliares que espera que a Polícia Federal envie um relatório com avaliação técnica sobre as menções a ministros da Corte e fatos relacionados a eles encontrados no celular do…",
+   "link": "https://g1.globo.com/politica/noticia/2026/11/11/relatorio-da-pf-deve-identificar-indicio-de-crime-e-nao-fazer-juizo-sobre-relacao-de-ministros-com-vorcaro-indica-fachin-a-auxiliares.ghtml",
+   "image": "https://s2-g1.glbimg.com/N1Fw1tfeTqEXfFPjByZGLKYqMu8=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/N/0/BcVeo4RwazJfZ1nRMgUA/fotojet-7-.jpg",
+   "date": "2026-11-11T15:10:59.000Z",
+   "source": "g1 Política",
+   "feed": "g1 Política",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1i556ap",
+   "title": "Governo firma acordo com PF para combater fraudes no Bolsa Família",
+   "summary": "Parceria prevê compartilhamento de dados, investigações de golpes contra beneficiários e combate à obtenção irregular de benefícios sociais",
+   "link": "https://www.poder360.com.br/poder-governo/governo-firma-acordo-com-pf-para-combater-fraudes-no-bolsa-familia/",
+   "image": "https://static.poder360.com.br/uploads/2025/02/BolsaFamilia-CartaoBolsaFamilia-30Jul2021-214-scaled.jpg",
+   "date": "2026-11-11T15:10:17.000Z",
+   "source": "Poder360",
+   "feed": "Poder360",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "19fomnq",
+   "title": "Rayza Nicácio deixa moda e beleza após 14 anos para se dedicar à carreira gospel",
+   "summary": "Rayza Nicácio, de 34 anos, está \"oficialmente fora do mercado de moda e beleza\" após 14 anos de carreira na internet. A influenciadora fez o anúncio em seu Instagram, nesta quarta-feira (11). Ela informou aos seus mais de 1,2 milhão que o motivo é a…",
+   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/rayza-nicacio-deixa-moda-e-beleza-apos-14-anos-para-se-dedicar-a-carreira-gospel.ghtml",
+   "image": "https://s2-quem.glbimg.com/1JPo-UF_8UR_sbtmfcCUIL2DS10=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/B/X/9MN7N1SDqBUP5qxn1duw/whatsapp-image-2026-11-11-at-12.07.45.jpeg",
+   "date": "2026-11-11T15:09:21.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1l3wgka",
+   "title": "Longe dos holofotes: O que fazem e quais são os planos profissionais dos filhos de Luciano Huck e Angélica",
+   "summary": "Enquanto Luciano Huck e Angélica mantêm alta visibilidade na TV, os herdeiros do casal escolheram profissões discretas e longe dos holofotes",
+   "link": "https://caras.com.br/atualidades/longe-dos-holofotes-o-que-fazem-e-quais-sao-os-planos-profissionais-dos-filhos-de-luciano-huck-e-angelica.phtml",
+   "image": "https://caras.com.br/wp-content/uploads/2026/11/filhos-de-angelica-e-luciano-huck-406x228.jpg",
+   "date": "2026-11-11T15:07:05.000Z",
+   "source": "Caras",
+   "feed": "Caras",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "10s3a3m",
+   "title": "Jornalista da Record é casada com ex-padre e revela como eles se conheceram",
+   "summary": "Mariana Godoy é casada há mais de 20 anos com ex-padre que deixou a Igreja por amor",
+   "link": "https://contigo.com.br/noticias/famosos/jornalista-da-record-e-casada-com-ex-padre-e-revela-como-eles-se-conheceram.phtml",
+   "image": "https://contigo.com.br/wp-content/uploads/2026/11/Mariana-Godoy-revela-historia-de-amor-com-ex-padre-romance-comecou-de-forma-inesperada-406x228.png",
+   "date": "2026-11-11T15:03:37.000Z",
+   "source": "Contigo",
+   "feed": "Contigo",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "bmp0iu",
+   "title": "Samara Felippo e filha mais velha fazem tattoos juntas: 'Significado poderoso'",
+   "summary": "Samara Felippo, de 48 anos, fez uma tatuagem em parceria com a filha mais velha, Alícia, de 17. De acordo com a atriz, a adolescente foi quem a convidou para que fizessem os desenhos juntas. Embora as tattoos não sejam iguais, elas têm conexão. Mãe e filha…",
+   "link": "https://revistaquem.globo.com/noticias/filhos-dos-famosos/noticia/2026/11/samara-felippo-e-filha-mais-velha-fazem-tattoos-juntas-significado-poderoso.ghtml",
+   "image": "https://s2-quem.glbimg.com/2kD9cClZxJmiOLr8vwYJGCSdBRE=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/9/4/GsgSjNTnO7EHmAaBrNcw/samara-alicia.jpg",
+   "date": "2026-11-11T15:01:00.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "vnzg0k",
+   "title": "Condenado, Ademir vai para a cadeia e faz a alegria de Adriana em Quem Ama Cuida",
+   "summary": "Ademir (Dan Stulbach) terá de voltar para a cadeia em Quem Ama Cuida. A Justiça manterá a condenação do advogado por assédio sexual",
+   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/condenado-ademir-vai-para-a-cadeia-e-faz-a-alegria-de-adriana-em-quem-ama-cuida-159275",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/globo-quem-ama-cuida-ademir.jpg",
+   "date": "2026-11-11T15:00:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "74m52v",
+   "title": "Sabrina Parlatore fala sobre o desafio da menopausa após o câncer de mama: 'Resto da vida'",
+   "summary": "Sabrina Parlatore, de 51 anos, abriu o coração ao falar sobre os impactos da menopausa depois de enfrentar um câncer de mama, em maio de 2015. A apresentadora contou que começou a apresentar sintomas da transição hormonal durante o tratamento oncológico,…",
+   "link": "https://revistaquem.globo.com/saude/noticia/2026/11/sabrina-parlatore-fala-sobre-o-desafio-da-menopausa-apos-o-cancer-de-mama-resto-da-vida.ghtml",
+   "image": "https://s2-quem.glbimg.com/8jbBde16ATO6OwbSMDWy6OxRg7s=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/B/4/bYH48tSlKORBRo68pwhw/sabrina2.gif",
+   "date": "2026-11-11T14:58:26.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1r2u6p7",
+   "title": "Tati Machado exibe barrigão à espera de Rafael e abre álbum dos dias de licença",
+   "summary": "Tati Machado, de 35 anos, está aproveitando os últimos momentos da gestação antes da chegada do filho Rafael. Após entrar em licença-maternidade, a apresentadora compartilhou uma sequência de fotos nas redes sociais em que aparece exibindo o barrigão e…",
+   "link": "https://revistaquem.globo.com/noticias/filhos-dos-famosos/noticia/2026/11/tati-machado-mostra-barrigao.ghtml",
+   "image": "https://s2-quem.glbimg.com/P7C0K7cSPrBa-q8HE-9Ukdu6FXQ=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/O/7/DQ6q25Tvy01C86NegnhA/capa-1400-x-950-5-.png",
+   "date": "2026-11-11T14:54:11.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "h3n32e",
+   "title": "A desconfiança do Centrão sobre o apoio de Efraim a Marinho",
+   "summary": "Lideranças do Centrão não estão convencidas de que o senador Efraim Filho irá realmente apoiar eleição de Rogério Marinho ao Senado",
+   "link": "https://www.metropoles.com/colunas/igor-gadelha/a-desconfianca-do-centrao-sobre-o-apoio-de-efraim-a-marinho",
+   "image": "https://images.metroimg.com/2026/02/o-senador-rogerio-marinho-conversa-com-a-imprensa-apos-visitar-o-ex-presidente-jair-bolsonaro-na-papudinha-metropoles-208-scaled.jpg",
+   "date": "2026-11-11T14:54:05.000Z",
+   "source": "Igor Gadelha",
+   "feed": "Igor Gadelha",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1ao7fvh",
+   "title": "Fora da ‘A Fazenda’ após desistir, ex de Mara Maravilha abre o jogo e assume",
+   "summary": "Gabriel Torres! Fora da 'A Fazenda' após desistir, ex de Mara Maravilha abre o jogo e assume o que aconteceu com ele; veja",
+   "link": "https://contigo.com.br/noticias/a-fazenda/fora-da-a-fazenda-apos-desistir-ex-de-mara-maravilha-abre-o-jogo-e-assume.phtml",
+   "image": "https://contigo.com.br/wp-content/uploads/2026/09/Mara-Maravilha-e-Gabriel-Torres-em-A-Fazenda-18-406x228.jpg",
+   "date": "2026-11-11T14:49:10.000Z",
+   "source": "Contigo",
+   "feed": "Contigo",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1qr7yah",
+   "title": "Senado aprova convites para ouvir diretor da PF e ministro da Justiça sobre troca de delegados",
+   "summary": "A Comissão de Segurança Pública (CSP) do Senado aprovou nesta quarta-feira (11) dois requerimentos para convidar o diretor-geral da Polícia Federal (PF), Andrei Rodrigues, e o ministro da Justiça e Segurança Pública, Wellington Lima e Silva, a prestar…",
+   "link": "https://g1.globo.com/politica/noticia/2026/11/11/senado-aprova-convites-para-ouvir-diretor-da-pf-e-ministro-da-justica-sobre-troca-de-delegados.ghtml",
+   "image": "https://s2-g1.glbimg.com/BmYhv1AEDftRFdKe671xGlWKxqk=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/b/q/Yt603OTmm7RANkQD1plw/whatsapp-image-2026-11-11-at-11.41.50.jpeg",
+   "date": "2026-11-11T14:46:29.000Z",
+   "source": "g1 Política",
+   "feed": "g1 Política",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1hzdgow",
+   "title": "Assistente do ‘Domingão’, Letticia Munniz vive romance com cantora; veja quem",
+   "summary": "Apresentadora e modelo, Letticia Munniz estaria vivendo um namoro com cantora baiana; saiba detalhes",
+   "link": "https://contigo.com.br/noticias/famosos/assistente-do-domingao-letticia-munniz-vive-romance-com-cantora-veja-quem.phtml",
+   "image": "https://contigo.com.br/wp-content/uploads/2026/11/Letticia-Munniz-406x228.jpg",
+   "date": "2026-11-11T14:42:21.000Z",
+   "source": "Contigo",
+   "feed": "Contigo",
+   "categories": [
+    "tv",
+    "romances",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1uu53pt",
+   "title": "Influenciadores que divulgavam bets têm contas derrubadas no Instagram após pedido do governo",
+   "summary": "Influenciadores têm contas derrubadas após pedido do governo sobre bets Reprodução Influenciadores que divulgavam plataformas de apostas ilegais tiveram as contas derrubadas do Instagram nesta quarta-feira (11) após um pedido do governo à Meta, dona da…",
+   "link": "https://g1.globo.com/tecnologia/noticia/2026/11/11/influenciadores-que-divulgavam-bets-tem-contas-derrubadas-no-instagram-apos-pedido-do-governo.ghtml",
+   "image": "https://s2-g1.glbimg.com/G3Mgu0EQrja6wjNWhxRLVKkX1Js=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/H/U/1h8BscR7SHLUIJACOEBQ/fotojet-12-.jpg",
+   "date": "2026-11-11T14:40:07.000Z",
+   "source": "g1 Política",
+   "feed": "g1 Política",
+   "categories": [
+    "teen",
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1tbt1nd",
+   "title": "Musa dos anos 90, Nubia Oliiver conta que é adepta de bate-papo picante: 'Meu forte é o sexting'",
+   "summary": "Nubia Oliiver, de 52 anos, está atualmente dedica à produção de conteúdo adulto. A modelo, musa dos anos 90 e 2000, conta que a interação com seus assinantes vai além da publicação de fotos e vídeos. Ela afirma que a troca de mensagens é um dos pontos…",
+   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/musa-dos-anos-90-nubia-oliiver-conta-que-e-adepta-de-bate-papo-picante-meu-forte-e-o-sexting.ghtml",
+   "image": "https://s2-quem.glbimg.com/jMV1nXs-uuyq1_OPHtGULYIknn8=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/I/3/J2fxjzSJeaB24gdqdq1A/whatsapp-image-2026-11-11-at-11.17.48.jpeg",
+   "date": "2026-11-11T14:35:59.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "zqgp0l",
+   "title": "Jamie Campbell Bower celebra participação na série \"O Senhor dos Anéis\"",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQVUdpcEFVRXJoUnFZRGVSdWxFR1Rzd0hHWEIxWUYzQWxQQ19lM3lLX0RGYUJmZERFVzZHbG1VUnN3RE0zNDBvZmExT3MwbTZ1SDBKaGhQVkktOS1DUzFtZEswS25kdjgwWk9WNmg2dmZuTjlBd1ladEl2MjNTdWV4VXMzS010M2JVRmVuWFlldzRpMFJLWVpQblRRQmwyQ21iSHZvMzB0c1hEZ2FHVW91ekRWNERkY1ctRU9XTXYxVzJlcmUxLTBSS3BpWG95amo4dk4xRTdfTkxyQW82MFFMdlJDVQ?oc=5",
+   "image": "",
+   "date": "2026-11-11T14:33:37.000Z",
+   "source": "Terra",
+   "feed": "Google Notícias",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "8ebvgj",
+   "title": "Morto aos 37 anos, cantor João Paulo deixou fazenda com criação de gado e cavalos para a única filha",
+   "summary": "Refúgio herdado pela filha mantém viva a memória do cantor sertanejo, unindo a paixão pelas origens e os cuidados com os animais",
+   "link": "https://caras.com.br/casa-dos-famosos/morto-aos-37-anos-cantor-joao-paulo-deixou-fazenda-com-criacao-de-gado-e-cavalos-para-a-unica-filha.phtml",
+   "image": "https://caras.com.br/wp-content/uploads/2026/11/fazenda-joao-paulo-2-406x228.jpg",
+   "date": "2026-11-11T14:32:24.000Z",
+   "source": "Caras",
+   "feed": "Caras",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "1i0btft",
+   "title": "Angélica chocou ao anunciar término com apresentador famoso após anos de relacionamento",
+   "summary": "Apresentadores começaram a namorar em 1989, quando Angélica tinha 15 anos, e encerraram o relacionamento em 1996, antes de subir ao altar",
+   "link": "https://contigo.com.br/noticias/famosos/angelica-chocou-ao-anunciar-termino-com-apresentador-famoso-apos-anos-de-relacionamento.phtml",
+   "image": "https://contigo.com.br/wp-content/uploads/2026/08/Angelica-lamenta-a-morte-de-membro-da-familia-Buraco-enorme-406x228.png",
+   "date": "2026-11-11T14:30:31.000Z",
+   "source": "Contigo",
+   "feed": "Contigo",
+   "categories": [
+    "romances",
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "oig1hg",
+   "title": "Adolescente mantida em cativeiro por 521 dias é resgatada nos EUA e polícia surpreende ao revelar como ela pediu ajuda Adolescente desaparecida por 521 dias é encontrada nos EUA e polícia surpreende ao revelar como (Foto: Gabinete do Xerife do Condado de Rich / Facebook)",
+   "summary": "Adolescente, identificada como Kylie Arellano, foi mantida em cativeiro dos 15 aos 17 anos, no estado do Oregon",
+   "link": "https://hugogloss.uol.com.br/mundo/adolescente-desaparecida-eua/",
+   "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/WhatsApp-Image-2026-11-11-at-11.01.14-378x499.jpeg",
+   "date": "2026-11-11T14:30:01.000Z",
+   "source": "Hugo Gloss",
+   "feed": "Hugo Gloss",
+   "categories": [
+    "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "13aryf1",
+   "title": "Piloto apontado como affair de Virginia ganha 215 mil seguidores e passa a acompanhá-la nas redes sociais",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxQMk96THp4VjNBb1VpN0gyTGVtN3JVTFUtbmNGWDFLbzhrVlplRHU3Qnd2TUZTY1UzNWM0ZnUyQjJDUXQzR1ZSX2JpMzkzbjh1RjVTUmdQZ05hRXNVbFVuYktCZG5aVVR4YkVoX1d3ZEdFd1d4enBqRFZWNGM4cVlMeWxCU0xKZndWb3MxNnN3X3dIU3JrVlNMZk9PVVFJQWQ0WGtudHlRRmU3Sk0zS1NDbGFSYV81MlVDcFRBa1A4UkdRaC16aXhHcjVGMDJjMjFzakRhWlNtLXpqYmZDM2QzQTBnVFNDSXQ5RkVxS0JRMlJLNGdPcXNoOFBVcjFGVlnSAf8BQVVfeXFMUDJPekx6eFYzQW9VaTdIMkxlbTdyVUxVLW5jRlgxS284a1ZaZUR1N0J3dk1GU2NVMzVjNGZ1MkIyQ1F0M0dWUl9iaTM5M244dUY1U1JnUGdOYUVzVWxVbmJLQmRuWlVUeGJFaF9Xd2RHRXdXeHpwakRWVjRjOHFZTHlsQlNMSmZ3Vm9zMTZzd193SFNya1ZTTGZPT1VRSUFkNFhrbnR5UUZlN0pNM0tTQ2xhUmFfNTJVQ3BUQWtQOFJHUWgteml4R3I1RjAyYzIxc2pEYVpTbS16amJmQzNkM0EwZ1RTQ0l0OUZFcUtCUTJSSzRnT3FzaDhQVXIxRlZZ?oc=5",
+   "image": "",
+   "date": "2026-11-11T14:29:07.000Z",
+   "source": "Extra online",
+   "feed": "Google Notícias",
+   "categories": [
+    "romances",
+    "novidades"
+   ]
+  },
+  {
+   "id": "6c9ao4",
+   "title": "‘Quem Ama Cuida’: Globo descarta cena de sexo entre Mau Mau e Felipe e revolta atores e público",
+   "summary": "Globo substitui cena íntima de Mau Mau e Felipe em Quem Ama Cuida após críticas",
+   "link": "https://contigo.com.br/noticias/novelas/quem-ama-cuida-globo-descarta-cena-de-sexo-entre-mau-mau-e-felipe-e-revolta-atores-e-publico.phtml",
+   "image": "https://contigo.com.br/wp-content/uploads/2026/11/Quem-Ama-Cuida-Cena-de-sexo-de-Mau-Mau-e-Felipe-e-descartada-pela-Globo-e-revolta-os-atores-406x228.png",
+   "date": "2026-11-11T14:26:29.000Z",
+   "source": "Contigo",
+   "feed": "Contigo",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1m3jd36",
+   "title": "Maya Massafera rebate Apoline após ser desconvidada de casamento",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxON3RqQVlXNkU4UDJGbXdELWNYUmd1NkRqTWJ1VjN1eUFMZ2d3Um1zSmQ1Z2dTd0R3QlRZT2d6Snk4dE1KM18yaTNIUVd0MjNRTDI2aDVBVkRQa3BDUlY0WmdjRUQzWDBFa1o3dHNPR3JVSm5nZEdZUHRlTnAzalJyTVB5WFRVamFBWGJnSnBrNlRCa24yWGM0UThES09ETnpEMmhHVUdzQ2JzZXVFN2N0clpXZ0hWVmNOdUVHRmtYOWJUOHk1UFdfS3YxM2ZEcXQ1cGc?oc=5",
+   "image": "",
+   "date": "2026-11-11T14:19:00.000Z",
+   "source": "SBT",
+   "feed": "Google Notícias",
+   "categories": [
+    "romances",
+    "festas",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1t1lgj0",
+   "title": "Aos 86 anos, Alexandre Garcia já revelou detalhe curioso de sua casa em Brasília; veja",
+   "summary": "Residência do comunicador na capital federal conta com espaço para leitura, escritório de trabalho e ambiente planejado para descanso",
+   "link": "https://caras.com.br/casa-dos-famosos/aos-86-anos-alexandre-garcia-ja-revelou-detalhe-curioso-de-sua-casa-em-brasilia-veja.phtml",
+   "image": "https://caras.com.br/wp-content/uploads/2026/11/alexandre-garcia-casa-406x228.jpg",
+   "date": "2026-11-11T14:16:54.000Z",
+   "source": "Caras",
+   "feed": "Caras",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "13npzow",
+   "title": "Justiça faz busca e apreensão e intima tiktoker que filmou FHC debilitado",
+   "summary": "Justiça intimou Wesley Oliveira a depor após filmar Fernando Henrique Cardoso (FHC) doente; mulher do ex-presidente também vai prestar depoimento",
+   "link": "https://noticiasdatv.uol.com.br/noticia/celebridades/justica-faz-busca-e-apreensao-e-intima-tiktoker-que-filmou-fhc-debilitado-159305",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/wesley-oliveira-reproducao-instagram-fernando-henrique-cardoso-roda-viva-reproducao-tv-cultura.jpg",
+   "date": "2026-11-11T14:14:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "vvl99y",
+   "title": "Ministério da Justiça pede à PF esclarecimentos sobre afastamento de delegados",
+   "summary": "O Ministério da Justiça informou nesta terça-feira (11) que enviou um ofício à direção-geral da Polícia Federal em que pede esclarecimentos sobre o afastamento de dois delegados da coordenadoria-geral de repressão à corrupção, crimes financeiros e lavagem…",
+   "link": "https://g1.globo.com/politica/noticia/2026/11/11/ministerio-da-justica-pede-a-pf-esclarecimentos-sobre-afastamento-de-delegados.ghtml",
+   "image": "https://s2-g1.glbimg.com/0Hj-LWK_p5ImKOUFsyMO091KCr0=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/T/2/enezAxS2S25BQkohdPvg/feminicidio-3-.png",
+   "date": "2026-11-11T14:04:17.000Z",
+   "source": "g1 Política",
+   "feed": "g1 Política",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "jhchzf",
+   "title": "Quem é a esposa de Craque Neto? Aos 60 anos, apresentador conheceu companheira na Band há mais de uma década",
+   "summary": "Fora da TV, Craque Neto conta com a companhia da esposa, Sandra Nicolau, com quem mantém um relacionamento discreto há mais de uma década",
+   "link": "https://caras.com.br/atualidades/quem-e-a-esposa-de-craque-neto-aos-60-anos-apresentador-conheceu-companheira-na-band-ha-mais-de-uma-decada.phtml",
+   "image": "https://caras.com.br/wp-content/uploads/2025/07/craque-neto-esposa.jpg",
+   "date": "2026-11-11T14:02:51.000Z",
+   "source": "Caras",
+   "feed": "Caras",
+   "categories": [
+    "tv",
+    "romances",
+    "novidades"
+   ]
+  },
+  {
+   "id": "a3b8z5",
+   "title": "Tuca Andrada compra briga com João Gomes após zombar da roupa do cantor",
+   "summary": "João Gomes se revoltou com Tuca Andrade após o ator criticar seu figurino. O cantor usa nos shows um chapéu em homenagem à sua regionalidade",
+   "link": "https://noticiasdatv.uol.com.br/noticia/celebridades/tuca-andrada-compra-briga-com-joao-gomes-apos-zombar-da-roupa-do-cantor-159303",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/joao-gomes-figurino-show-foto-instagram.jpg",
+   "date": "2026-11-11T14:02:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "s2s1pj",
+   "title": "Sindicato dos Artistas reage a protesto de atores contra escala de 12 horas",
+   "summary": "Presidente do SATED-RJ divulgou nota sobre o assunto após repercussão virtual sobre a jornada de trabalho",
+   "link": "https://www.metropoles.com/entretenimento/sindicato-dos-artistas-reage-a-protesto-de-atores-contra-escala-de-12-horas",
+   "image": "https://images.metroimg.com/2026/11/presidente-do-sindicato-dos-atores-defende-atores-em-protesto-pelo-fim-da-jornada-de-12h.jpg",
+   "date": "2026-11-11T14:01:32.000Z",
+   "source": "Metrópoles Entret.",
+   "feed": "Metrópoles Entret.",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "1gfrgbm",
+   "title": "Gabriela Loran abre álbum de viagem a Salvador e ganha elogios: 'Perfeita demais'; fotos",
+   "summary": "Gabriela Loran, de 33 anos, compartilhou nesta quarta-feira (11) em suas redes sociais registros da recente viagem que fez à Bahia. Nos cliques, a atriz aparece curtindo a Praia do Porto da Barra, o evento Afropunk Brasil 2026 e também pontos turísticos da…",
+   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/gabriela-loran-posa-de-biquini.ghtml",
+   "image": "https://s2-quem.glbimg.com/cNVCe8OdVjGuOPDOIhjZzTUlDn0=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/U/u/d3GpKKRmucf0aNheXUSA/befunky-collage-2026-11-11t112106.085.jpg",
+   "date": "2026-11-11T13:48:25.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "j2omgl",
+   "title": "Cíntia Chagas diz que teme pela própria segurança após audiência de ex-marido acusado de violência doméstica",
+   "summary": "Cíntia Chagas afirmou que ainda teme pela própria integridade física após prestar depoimento no processo em que seu ex-marido, Lucas Bove, responde por violência doméstica. A influenciadora falou sobre o assunto na última terça-feira (10) depois de…",
+   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/cintia-chagas-diz-que-teme-pela-propria-seguranca-apos-audiencia-de-ex-acusado-de-violencia-domestica.ghtml",
+   "image": "https://s2-quem.glbimg.com/aB9RT7U9B_zL9tsQHziNMWbra6M=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/Z/W/z3N8mETrA0IZWzHPjv6Q/cintia2.gif",
+   "date": "2026-11-11T13:46:03.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "romances",
+    "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "9z0w1y",
+   "title": "Portal 11/11: Em dia importante para virada, aprenda ritual e mantra para pedir prosperidade e o que deseja portal 11/11",
+   "summary": "Energia do Portal 11/11 potencializa intuição, inspiração, sensibilidade espiritual e expansão da consciência",
+   "link": "https://hugogloss.uol.com.br/buzz/comportamento/signo/portal-11-11/",
+   "image": "https://media.hugogloss.uol.com.br/uploads/2026/02/HEAD-HG-1-2-617x347.png",
+   "date": "2026-11-11T13:44:43.000Z",
+   "source": "Hugo Gloss",
+   "feed": "Hugo Gloss",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "hncf5q",
+   "title": "'A Dona do Pedaço': veja visual atual dos atores da próxima novela do 'Vale a Pena Ver de Novo'",
+   "summary": "A Dona do Pedaço será a próxima novela do Vale a Pena Ver de Novo, ocupando a grade vespertina da TV Globo a partir de 23 de novembro. Exibida originalmente em 2019, a trama de Walcyr Carrasco traz a história de Maria da Paz (Juliana Paes), uma mulher…",
+   "link": "https://revistaquem.globo.com/entretenimento/tv-e-novelas/noticia/2026/11/a-dona-do-pedaco-veja-atual-visual-dos-atores-da-proxima-novela-do-vale-a-pena-ver-de-novo.ghtml",
+   "image": "https://s2-quem.glbimg.com/ZpaYf28p0rGpIKrxepWSpygJ8H4=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/T/1/y2TAaARpaYlZeEcipx0A/whatsapp-image-2026-11-11-at-09.37.59.jpeg",
+   "date": "2026-11-11T13:42:47.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1qnzr2w",
+   "title": "A quem pertence o tríplex do Guarujá? Justiça revela proprietário após polêmica com Lula",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNRWVJQl9SU1JnRkVaUm5tQ2hIT2hLdkxERTdzem11QlpWQ2p1M29FbGJIS2MyQ3VrT0hZWkZmVE5kdlZpQjJ3WWFkMUo0TUIyQ2tFd3NIaER2OFZrcmtsempiOHd3OUE2eWZPOTRGX0tRWUlIMWkwdkh6bkJvNHNuREx0UVI1cDVwQWY5ZDFSQWhtY19DR25JNXlTaXZNTEtCbFpuT3RYRGFyVXhLVnBNUVFwUVFWTnNaemNJOTlubDJHNDhfM3NYME56TQ?oc=5",
+   "image": "",
+   "date": "2026-11-11T13:33:48.000Z",
+   "source": "Mais Novela",
+   "feed": "Google Notícias",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1ng75w3",
+   "title": "Poliana Rocha mostra espaço escolhido para festa de 50 anos",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1seDVxcTBYZXlTUTltdUU2Tzh6OVUwMkRpMWRsODhzU1Q0MUUtR2JwaHJxb1ZoS1BBSEktdngxWGVZUFBLQy12c2EtajNRX1BXX2N4NW9HSHNhYTA0c3pvdnJLaDQ2UXBTYzRQczdUc2M4SXBvdi13ZQ?oc=5",
+   "image": "",
+   "date": "2026-11-11T13:33:19.000Z",
+   "source": "Portal iG",
+   "feed": "Google Notícias",
+   "categories": [
+    "festas",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1fsedil",
+   "title": "Rafa Brites dá escapadinha do marido e dos filhos para renovar o bronzeado no Ceará; fotos",
+   "summary": "Que vidão! Rafa Brites, de 40 anos, aproveitou a quarta-feira (11) na beira de uma piscina. A apresentadora está fazendo a viagem em família, mas curtiu um momento sozinha no Ohana Resort, que faz parte do Complexo Beach Park, em Aquiraz, no Ceará. Usando…",
+   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/rafa-brites-renova-o-bronzeado.ghtml",
+   "image": "https://s2-quem.glbimg.com/K1MzzaSHIfO3UTi3I4Am0yjrkGU=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/p/i/MN1Ae9TJurP68o66oEPg/befunky-collage-2026-11-11t104215.254.jpg",
+   "date": "2026-11-11T13:22:07.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "ck88qa",
+   "title": "Crise na PF pode adiar para 2027 análise sobre envolvimento de ministros do STF com Vorcaro",
+   "summary": "Crise na PF pode adiar decisão do STF sobre o Banco Master A crise na Polícia Federal em meio às investigações sobre o escândalo do Banco Master pode cair como uma luva para uma ala do Supremo Tribunal Federal (STF). Isso porque a divisão na PF vai acabar…",
+   "link": "https://g1.globo.com/politica/blog/valdo-cruz/post/2026/11/11/crise-na-pf-pode-adiar-para-2027-analise-sobre-envolvimento-de-ministros-do-stf-com-vorcaro.ghtml",
+   "image": "https://s2-g1.glbimg.com/3TILUewXa7jvcAaL7edXTZ49xi4=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/F/x/9V1VSBTaGDGCgPe22llg/54931850346-d62e6d0628-o-1-.jpg",
+   "date": "2026-11-11T13:19:30.000Z",
+   "source": "g1 Política",
+   "feed": "g1 Política",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "v73cso",
+   "title": "Influenciadora se pronuncia sobre suposto affair com Léo Pereira",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNM3dRT1JSWWVUUktldUxhaVRqcFNnU1V4UVFWLVJaZUE4aGl2TGs4WnBVVmtxeVluT2NoWDRYNUFOa0tfYWsyNFRuZ3NPb1lxRkJCOF90aUlKZEwwWDduVkxPdlFXOFRwd1dGNmE1WFFxV0MxNEdkZElRalNSVm9BU21nTEJTOGRhdVZnaUtmc255dlN2MlF5Mmx0a2lfcGxsUXVucThvNVdDQ3loWGtYRFlwWkRhRFNZR3d1dkYzV2VwMjRSS2x1RC1maVlkR09nN2tkb2lIUVB0anNMLU85NFpPR3nSAeQBQVVfeXFMTjU5Snl4MW1OaWgyQTlCbzg3SV9waE1NTUFZSWxQZmFFdG4zM3RYbFNjbFpZMTNNMDlEWlZ6X2RYVXdaZWw0bjhPZkJkaEJDNUJuUDZPRHJCa1ZWRWlkS1dvemZzTjliX0gtYnNMcFlBU0V3aTNDQ1E2cWtJckUxQmc3M2pxMDladzNBZy1wZmVCelNRS0d3NGctSXptRUtqSE82T0E3SzN5Sk9ZWjhLZm5pV3VoODNVNnpfSnhsUlRabjR2Uy1pWEJkVTExLU5ZdnNuZEdJc2F1Mno5SkJmWGJtTDhO?oc=5",
+   "image": "",
+   "date": "2026-11-11T13:19:00.000Z",
+   "source": "Portal UAI",
+   "feed": "Google Notícias",
+   "categories": [
+    "teen",
+    "romances",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1el9jd9",
+   "title": "Vivian Amorim processa Record por danos morais e calúnia e pede R$ 60 mil",
+   "summary": "A influenciadora processou a emissora após uma enquete com insinuações sobre o relacionamento vivido por ela",
+   "link": "https://www.metropoles.com/entretenimento/vivian-amorim-processa-record-por-danos-morais-e-calunia-e-pede-r-60-mil",
+   "image": "https://images.metroimg.com/2026/07/vivian-amorim.jpg",
+   "date": "2026-11-11T13:14:58.000Z",
+   "source": "Metrópoles Entret.",
+   "feed": "Metrópoles Entret.",
+   "categories": [
+    "romances",
+    "tv",
+    "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "qbdba5",
+   "title": "Gracyanne Barbosa tem contas bloqueadas por dívidas de Belo; entenda",
+   "summary": "A disputa financeira entre Gracyanne Barbosa e Belo voltou à tona. Separada do cantor desde 2024, a musa fitness revelou que continua enfrentando bloqueios judiciais em suas contas bancárias por pendências financeiras que atribui ao ex-marido. Segundo ela,…",
+   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/gracyanne-barbosa-tem-contas-bloqueadas-por-dividas-de-belo-entenda.ghtml",
+   "image": "https://s2-quem.glbimg.com/2QiY7E0ueeu4pb3DN6aDiiSQ8h4=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2025/N/0/buvQRtTAO8EDGB3Wcljg/quem-2-.png",
+   "date": "2026-11-11T13:12:28.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "romances",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1yzsc3h",
+   "title": "Reforma tributária: governo vai propor que pagamento da CBS comece em fevereiro, diz secretário da Receita Federal",
+   "summary": "O secretário da Receita Federal, Robinson Barreirinhas, confirmou nesta quarta-feira (11) o início da vigência da Contribuição sobre Bens e Serviços (CBS) em janeiro de 2027, mas acrescentou que vai propor ao Congresso Nacional que seu pagamento seja…",
+   "link": "https://g1.globo.com/economia/noticia/2026/11/11/reforma-tributaria-receita-confirma-inicio-da-cbs-em-janeiro-de-2027-e-diz-que-contribuinte-que-agir-de-boa-fe-nao-sera-multado.ghtml",
+   "image": "https://s2-g1.glbimg.com/W68jzXgjmgSeKzhGJWtSmHN0Kwc=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/N/D/JvdE8hR7WsLBz7BwjYPg/designer-13-.png",
+   "date": "2026-11-11T13:11:46.000Z",
+   "source": "g1 Política",
+   "feed": "g1 Política",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "faeo89",
+   "title": "Estreia na berlinda! Veja como se formou a oitava Roça de A Fazenda 18",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQOUtERjlmSk9PUm05aWF4VFEyNW1xa2FxUERURzBOaS1GYVhvelFOazhjTmR4OFRLOF9yanRGekpVa0ZkSEN0aTN5SEItN3dNRFVlLWk5NUZodUhabEc4bzBXU0N6ay1HVkRLY0NuWmN0NXhZcl9tbWtIdzlDSnhMTWNZY0otYUJ6eUh2emFMdDg0MWNESVplUzRMcWdLcDNPZml2NlRudFh2MlZvc01GMVJ1QUVvOWhRQ2JJNW9sMzJPUlZGQ202U3FhVkhaR1U?oc=5",
+   "image": "",
+   "date": "2026-11-11T13:11:10.000Z",
+   "source": "R7",
+   "feed": "Google Notícias",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "mfijlq",
+   "title": "Viih Tube e Eliezer celebram 2 anos do filho Ravi com surpresa de super-heróis",
+   "summary": "Eliezer e Viih Tube prepararam uma surpresa especial para celebrar os dois anos do filho caçula, Ravi, nesta quarta-feira (11). O casal organizou uma recepção temática durante o café da manhã, com a presença de personagens fantasiados e um bolo especial…",
+   "link": "https://revistaquem.globo.com/noticias/filhos-dos-famosos/noticia/2026/11/eliezer-e-viih-tube-fazem-surpresa-de-aniversario-para-o-filho-cacula.ghtml",
+   "image": "https://s2-quem.glbimg.com/MITGh8jKvx31wsVx8xlybbhhl3U=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/N/D/IE5f7QSkWL1JZkGzUoGA/capa-1400-x-950-4-.png",
+   "date": "2026-11-11T13:07:58.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "c3h640",
+   "title": "Craque Neto encerra o Apito Final após três anos e se despede ao vivo na Band",
+   "summary": "Craque Neto se despediu do Apito Final, programa que comandava semanalmente na Band; apresentador, no entanto, segue em outros projetos da emissora",
+   "link": "https://noticiasdatv.uol.com.br/noticia/televisao/craque-neto-encerra-o-apito-final-apos-tres-anos-e-se-despede-ao-vivo-na-band-159302",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/craque-neto-apito-final-reproducao-band-1.jpg",
+   "date": "2026-11-11T13:07:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "u94li2",
+   "title": "Lá Na Minha Terra: Globo altera fala de personagem após novela ser detonada na web; veja antes e depois Lá Na Minha Terra: Globo altera fala de personagem após novela ser detonada na web; assista (Reprodução/TV Globo)",
+   "summary": "Nova novela das 18h da TV Globo, \"Lá Na Minha Terra\" se tornou alvo de críticas",
+   "link": "https://hugogloss.uol.com.br/tv/novelas/la-na-minha-terra-globo/",
+   "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/la-na-minha-terra-tem-cenas-gravadas-na-chapada-diamantina-ba-3cbb03b41c92-617x411.jpg",
+   "date": "2026-11-11T13:02:33.000Z",
+   "source": "Hugo Gloss",
+   "feed": "Hugo Gloss",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "rpqsj8",
+   "title": "Apoline desconvida Maya Massafera de casamento e apresentadora rebate: 'Tenho pavor de polêmica'",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPMTVMLWY5R251WXFPWGk1UFctQi1kNWg4MXNIRlZYaUJLTEd2YUNiODZpVnZJemhua2lnMGhEanlLdndXWEowRTZaRHZadDAyRGh2RkcwWDNISkk4STRjb2phekd6TDB5LUNqS1l6TmNrM0FuV1JrUTY3cWFrZjBFRi1zc2l6MW1VMlNXQnhVeVNJWVM1WVFVLUQzQ1diNnMweENWcExDOU5aUmNRUmFQbGctR1l4V3dMcDFqd1ZxVWpRVF9uUXFaU09R0gHQAUFVX3lxTE1xb1F6bmhxYlNFVTFMdjI1M056b0otbjVuRlpMbUl1eV9HT1NJeVZ0MW04eVczb1BhZDN4ZGFXME9ydTVGT0RpMUlIUENneGQ1VElkRjl0RVNnZjF6Vks3a3hZdHd3TlZPX2R1Q1N0WkxaTVY5cnllN3I5TVV0QTMyMmtPVVJ1MTEwdGpZd2RVT3VnRXNQS244WE1KLWlvMXhzeUwtU0V6Q2hSYzZhTkREdlNKYWwwSnpOQmpQSDYtckZuNlBqTlVzd1pENmN4WGM?oc=5",
+   "image": "",
+   "date": "2026-11-11T13:01:00.000Z",
+   "source": "RedeTV!",
+   "feed": "Google Notícias",
+   "categories": [
+    "tv",
+    "romances",
+    "novidades"
+   ]
+  },
+  {
+   "id": "15c1kkz",
+   "title": "Vocês combinam? O que a Sinastria mostra sobre você e quem você gosta",
+   "summary": "Sabia que a Lua, Vênus, Mercúrio e Marte mostram mais sobre o casal do que o signo solar? Na Sinastria, a Astrologia compara dois Mapas Astrais.",
+   "link": "https://capricho.abril.com.br/comportamento/horoscopo-voces-combinam-o-que-a-sinastria-mostra-sobre-voce-e-quem-voce-gosta/",
+   "image": "https://capricho.abril.com.br/wp-content/uploads/2022/06/GettyImages-1321588558.jpg",
+   "date": "2026-11-11T13:00:01.000Z",
+   "source": "Capricho",
+   "feed": "Capricho",
+   "categories": [
+    "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1wp524c",
+   "title": "Rouco, Lula pede para ministro do Meio Ambiente ler 2º discurso na COP31",
+   "summary": "Rouco, Lula pede para ministro do Meio Ambiente ler 2º discurso na COP31 Com rouquidão, o presidente Luiz Inácio Lula da Silva (PT) pediu nesta quarta-feira (11) que o ministro do Meio Ambiente e Mudança do Clima, João Paulo Capobianco, lesse em seu lugar…",
+   "link": "https://g1.globo.com/politica/noticia/2026/11/11/rouco-lula-pede-para-ministro-do-meio-ambiente-ler-discurso-na-cop31.ghtml",
+   "image": "https://s2-g1.glbimg.com/TDrcjn8pv2pTbexUqATbZsq1WRI=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/o/j/CGWbsZQDWoPcs6FtjyPQ/55646965695-b7dc0aed0e-k.jpg",
+   "date": "2026-11-11T12:56:56.000Z",
+   "source": "g1 Política",
+   "feed": "g1 Política",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "jbs96q",
+   "title": "Rita Cadillac dá detalhes íntimos de affair com Pelé: 'Rolou sexo'",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxOYWZ6cm1FY2NYWnNtTHlqbGJtRkJWMGUyTC1vTFNBZGtNYVhScUxQN1p2eHBwNm9oZTN4bk9ET2NrMndnaHIwb1FTOUFTUHNaSEltLVFhcExtNEFHRXFpRjVoWmlUbm93akNOOS02Ql9KZ3Iyall1eUNLYTQ5bHV6S19zQURKYjQtMWF3NDYzNkl4TVUyMUFCNDNPSnNQSVJ2eGRBQzU3OHJ2NTc2bXppV1RveTF3YkhTdWdkTDZrNzZtbFUwZDlDWEpsREpyV0N0cE9vZExyXzlkaGozM2diWVNLd9IB4wFBVV95cUxQSWhwRU1BV3NMUDRhc3FIandzeTc2U29vMHFDRzJSS0I1S0RDMkp5M2xhQmZoVmZhcDA2X2szX1dMYXRsNEE1al96dms1V2hwc0xaWDJEUkRWcnllQlo0Y2pwVkZFSl9TRXh3U2NYVlEwSmhTaVVNOVZ6U2VyV2hORjBCTzFvbUFTYWdVMlg3djRLaWRjaURJdDZqUVR5YnNNRWlhbGxEbThWcnkwQ19zWTZTcGlGWDBTZmQyUlZ4OXktUElxTHZ6a3hjLV96eVZJTXk0ZmVnbWVsNzRsM041NWY3OA?oc=5",
+   "image": "",
+   "date": "2026-11-11T12:42:00.000Z",
+   "source": "Portal UAI",
+   "feed": "Google Notícias",
+   "categories": [
+    "romances",
+    "novidades"
+   ]
+  },
+  {
+   "id": "10it2v8",
+   "title": "Fortaleza anuncia novo técnico para reta final da Série B; estreia será contra o Vila Nova",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNcnhHVXZHODI1SmhST0twWlpRNEprajIyRDRSMG45NTlYWlI3YTE0dVF3Ylc3ZUpET1ZReWFQY2NrLTRnYUV2Um1pUXpiQmV4WWl6NEVyZlRsSlVMblBSVllBRkRhUTV0emtsV1RNWkJsYy0wUUFiT20tNjNJclJhRHo0UmpYVzBsOFYyd2s5UXdNUnhUd2hSaWZBcFJ2ZmJtNlBieGgwU1FvcmNQSkpzanF3VkEwYTd3dEIzV29hd2swRFYz?oc=5",
+   "image": "",
+   "date": "2026-11-11T12:38:01.000Z",
+   "source": "Diário de Goiás",
+   "feed": "Google Notícias",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "3cv4hf",
+   "title": "Maya Massafera critica noiva que a desconvidou de casamento: 'Tenho pavor'",
+   "summary": "O que aconteceu com Maya Massafera e Apoline? Entenda por que a influenciadora desconvidou a amiga para ser madrinha de seu casamento",
+   "link": "https://noticiasdatv.uol.com.br/noticia/celebridades/maya-massafera-critica-noiva-que-a-desconvidou-de-casamento-tenho-pavor-159301",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/maya-massafera-briga-apoline-foto-youtube.jpg",
+   "date": "2026-11-11T12:31:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "romances",
+    "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "wyp75r",
+   "title": "Quem Ama Cuida: Jornalista surpreende com revelação sobre 1ª vez de Mau Mau e Felipe após críticas dos fãs quem ama cuida mau mau",
+   "summary": "Sequência íntima de Mau Mau e Felipe gerou uma série de críticas à Globo",
+   "link": "https://hugogloss.uol.com.br/tv/novelas/mau-mau-felipe-critica-sexo/",
+   "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/Captura-de-Tela-2026-11-10-as-22.31.23-617x147.png",
+   "date": "2026-11-11T12:22:18.000Z",
+   "source": "Hugo Gloss",
+   "feed": "Hugo Gloss",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "juq43t",
+   "title": "George Israel amplia a parceria com Frejat ao lançar os inéditos singles 'Dos pés à cabeça' e 'Nos teus olhos'",
+   "summary": "George Israel (à esquerda) e Roberto Frejat em estúdio na gravação da música 'Dos pés à cabeça' Divulgação ♫ NOTÍCIA ♬ Iniciada em 1983 com a composição de “Amor amor”, música apresentada um ano depois na trilha sonora do filme “Bete Balanço” (1984), a…",
+   "link": "https://g1.globo.com/pop-arte/musica/blog/mauro-ferreira/post/2026/11/11/george-israel-amplia-a-parceria-com-frejat-ao-lancar-os-ineditos-singles-dos-pes-a-cabeca-e-nos-teus-olhos.ghtml",
+   "image": "https://s2-g1.glbimg.com/IEkYdAqnRgt6LHa0qc_m9ElXFVM=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/m/F/AbAYTtQXi8xvIn0Ar2Tw/georgefrejat.jpg",
+   "date": "2026-11-11T12:13:50.000Z",
+   "source": "g1 Pop & Arte",
+   "feed": "g1 Pop & Arte",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1tolztk",
+   "title": "Nattan se fantasia de Virginia Fonseca e reproduz vídeo viral com seu hit",
+   "summary": "Nattan está de olho na repercussão de seu hit Aproveita Que Eu Tô Brigado, em parceria com Zé Vaqueiro, a partir de um vídeo em que um menino canta para Virginia Fonseca. O artista compartilhou um conteúdo em seu Instagram, na terça-feira (10), em que se…",
+   "link": "https://revistaquem.globo.com/noticias/trend/noticia/2026/11/nattan-se-fantasia-de-virginia-e-reproduz-video-viral-com-seu-hit.ghtml",
+   "image": "https://s2-quem.glbimg.com/NBUiTn6ndkkaL_RWLoO9OaREGw8=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/b/G/rXLCttQjShZdcRlBpohQ/whatsapp-image-2026-11-11-at-09.09.02.jpeg",
+   "date": "2026-11-11T12:11:05.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1xqsa1x",
+   "title": "Série de comédia cristã estreia no Prime Video",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQUWk4OXhRN2t5Yi14Ylh6SFYzR2Y4RzdwX3gtaURpTzJhdHh2UExGMTYzbjBBTnVaTHBrOUZ4ZDQ3WXM3bzg4NENzNVBVTld1OTRSeTdXd2dxenhUTU5QZzN5VU5fZi11YU9JNXZibTNRQjFSUEs4LTZiM3I3WEhtQ29QNDV2bFhBTkFpZzFod0ZydmZGcFdB?oc=5",
+   "image": "",
+   "date": "2026-11-11T12:05:24.000Z",
+   "source": "Rádio 93 FM",
+   "feed": "Google Notícias",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "17asmon",
+   "title": "Fantasma? Carminha congela ao ver Max vivo em Avenida Brasil: 'Tendo um treco'",
+   "summary": "Uma das cenas mais icônicas de Avenida Brasil está prestes a ir ao ar no Vale a Pena Ver de Novo. Carminha (Adriana Esteves) dará um grito de pavor",
+   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/fantasma-carminha-congela-ao-ver-max-vivo-em-avenida-brasil-tendo-um-treco-159197",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/carminha-grita-ao-ver-max-em-avenida-brasil.jpg",
+   "date": "2026-11-11T12:02:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "wfs2ki",
+   "title": "TikTok Awards 2026: veja todos os indicados e saiba como votar",
+   "summary": "Premiação terá Ana Paula Renault entre os apresentadores e shows de Marina Sena, Lauana Prado e nomes do funk",
+   "link": "https://capricho.abril.com.br/entretenimento/tiktok-awards-2026-veja-todos-os-indicados-e-saiba-como-votar/",
+   "image": "https://capricho.abril.com.br/wp-content/uploads/2026/01/thumb-4.jpg",
+   "date": "2026-11-11T12:00:57.000Z",
+   "source": "Capricho",
+   "feed": "Capricho",
+   "categories": [
+    "teen",
+    "festas",
+    "novidades"
+   ]
+  },
+  {
+   "id": "193sp2g",
+   "title": "Elenco foi pego de surpresa com repercussão negativa de Lá na Minha Terra",
+   "summary": "Críticas à maneira como o Nordeste é retratado por Lá na Minha Terra pegaram o elenco de surpresa; esperava-se reclamação, mas não tanto",
+   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/elenco-foi-pego-de-surpresa-com-repercussao-negativa-de-la-na-minha-terra-159265",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/vs-lnaminhaterracaptulode09112026globoplay-31-00.jpg",
+   "date": "2026-11-11T12:00:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1hbq6u0",
+   "title": "VisionQuest: entenda o final e a cena pós-créditos da série",
+   "summary": "O oitavo e último episódio da série da Marvel foi lançado nesta terça-feira (10/11) e prepara o terreno para o novo filme dos Vingadores",
+   "link": "https://www.metropoles.com/entretenimento/visionquest-entenda-o-final-e-a-cena-pos-creditos-da-serie",
+   "image": "https://images.metroimg.com/2026/11/visionquest.jpg",
+   "date": "2026-11-11T11:50:08.000Z",
+   "source": "Metrópoles Entret.",
+   "feed": "Metrópoles Entret.",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "10wmaoi",
+   "title": "Oswaldo Montenegro caminha de mãos dadas com cantora pelas ruas do Rio; conheça",
+   "summary": "Oswaldo Montenegro, de 70 anos, foi visto na manhã desta quarta-feira (11) caminhando de mãos dadas com Luiza Lara, de 40, ex-participante do The Voice Brasil, pelas ruas do Leblon, na Zona Sul do Rio de Janeiro. Nos cliques, o veterano cantor aparece com…",
+   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/oswaldo-montemegro-caminha-acompanhado-no-rio.ghtml",
+   "image": "https://s2-quem.glbimg.com/lWSCa5Fo18B3j4wB0cDkIfF5VwY=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/A/Z/0c3jBlSlyrs9EAKU66EQ/befunky-collage-2026-11-11t093749.369.jpg",
+   "date": "2026-11-11T11:47:07.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "1baof89",
+   "title": "Em Por Você, Peixe escancara preconceito e coloca Ítalo contra a parede: 'Você é gay?'",
+   "summary": "Ítalo (Fabrício Assis) dançará balé na frente de seus familiares e conseguirá uma vaga na escola de dança de Por Você, mas enfrentará preconceito",
+   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/em-por-voce-peixe-escancara-preconceito-e-coloca-italo-contra-a-parede-voce-e-gay-159300",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/peixe-italo-por-voce-1111.jpg",
+   "date": "2026-11-11T11:43:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "6xnbet",
+   "title": "Homenageada, Isabel Teixeira deixa gravações de Quem Ama Cuida aos prantos",
+   "summary": "Pilar na novela Quem Ama Cuida, Isabel Teixeira ganhou uma surpresa de aniversário logo após as gravações nos estúdios da Globo",
+   "link": "https://noticiasdatv.uol.com.br/noticia/celebridades/homenageada-isabel-teixeira-deixa-gravacoes-de-quem-ama-cuida-aos-prantos-159298",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/isabel-teixeira-aniversario-pilar-foto-tvglobo.png",
+   "date": "2026-11-11T11:40:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "8132h6",
+   "title": "Após impasse de agenda, Jaffar Bambirra acerta papel em novela das 22h da Globo",
+   "summary": "Jaffar Bambirra entrou para o elenco de Romance em SP, próxima novela das 22h da Globo que será protagonizada por Marina Ruy Barbosa",
+   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/apos-impasse-de-agenda-jaffar-bambirra-acerta-papel-em-novela-das-22h-da-globo-159299",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/jaffar-bambirra-melhores-do-ano-divulgacao-tv-globo-1.jpg",
+   "date": "2026-11-11T11:30:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1jp6xo2",
+   "title": "Marciele curte festa com nova cunhã do Garantido, com quem disputou a Casa de Vidro do BBB 26",
+   "summary": "A rivalidade entre as cunhãs-porangas dos bois Caprichoso e Garantido, mais uma vez, se limita ao Bumbódromo. Marciele Albuquerque e a nova representante do item 9, Liviah Christina, curtiram juntas uma festa de uma marca, nesta semana. Nos vídeos…",
+   "link": "https://revistaquem.globo.com/eventos/festa/festival-de-parintins/noticia/2026/11/marciele-curte-festa-com-nova-cunha-do-garantido-com-quem-disputou-a-casa-de-vidro-do-bbb-26.ghtml",
+   "image": "https://s2-quem.glbimg.com/OwKkbl-44gql6Ds0kw7ueEOFn7w=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/d/H/cr2PxLQnOFzz754TL58A/australian-outback-sunset-twitter-post-2026-11-11t081252.928.jpg",
+   "date": "2026-11-11T11:24:25.000Z",
+   "source": "Quem",
+   "feed": "Quem",
+   "categories": [
+    "tv",
+    "festas",
+    "novidades"
+   ]
+  },
+  {
+   "id": "9za1in",
+   "title": "Discussão sobre clima deu lugar a armas e tarifas, diz Lula",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxONW5SeTBOVXFZR2JCd1VnSUt2d1A2UVlpZ1MteFZsZl9PdW0xc1h5dmp2ZUxyUHNpV1pCcEh6OHR0R01BemYtb0FlcEZ4ZDBYakxXQm5TY2J6RWJnSWxWQzFjazZQX1FoNVFWMUE4b09raVFQeXNGMzg4a2dUTllGcEtWNW1aU2puRzZSMU1GR3FwVjNKRDFNY1ZKUW5jaE4yREdFSw?oc=5",
+   "image": "",
+   "date": "2026-11-11T11:12:11.000Z",
+   "source": "SBT News",
+   "feed": "Google Notícias",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "10j9s50",
+   "title": "Enquete A Fazenda 18: Parcial atualizada indica rejeição de peões barraqueiros",
+   "summary": "Enquete A Fazenda 18 aponta quem tem mais chance de ser eliminado na roça entre Franciele Almeida, Daniel Erthal, Murilo Dias e Tina Calamba",
+   "link": "https://noticiasdatv.uol.com.br/noticia/a-fazenda/enquete-a-fazenda-18-parcial-atualizada-indica-rejeicao-de-peoes-barraqueiros-159297",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/fran-erthal-tina-murilo-a-fazenda-18-reproducao-record.jpg",
+   "date": "2026-11-11T11:07:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1tt7y0m",
+   "title": "Stacy Keach, ator de 'O Legado Bourne' e 'Prison Break', morre aos 85 anos",
+   "summary": "Ator Stacy Keach em painel da NBCUniversal, em janeiro de 2016 Richard Shotwell/Invision/AP O ator americano Stacy Keach, conhecido por seus papéis em \"Prison Break\", \"Mike Hammer\" e \"O Legado Bourne\", morreu na terça-feira (10). Ele tinha 85 anos. Keach…",
+   "link": "https://g1.globo.com/pop-arte/cinema/noticia/2026/11/11/stacy-keach-ator-de-o-legado-bourne-e-prison-break-morre-aos-85-anos.ghtml",
+   "image": "https://s2-g1.glbimg.com/GqvSLWktNzvLZ25df8ueMCETKq0=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/r/s/zuDAyyRIyUkRPlisyRUQ/ap26315029434290.jpg",
+   "date": "2026-11-11T11:02:17.000Z",
+   "source": "g1 Pop & Arte",
+   "feed": "g1 Pop & Arte",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "16xlcby",
+   "title": "Pilar é despejada por Adriana e vai morar onde menos queria em Quem Ama Cuida",
+   "summary": "O pior pesadelo de Pilar (Isabel Teixeira) virará realidade em Quem Ama Cuida. A vilã será obrigada a sair do apartamento de Arthur (Antonio Fagundes)",
+   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/pilar-e-despejada-por-adriana-e-vai-morar-onde-menos-queria-em-quem-ama-cuida-159296",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/isabel-teixeira-pilar-qac-repro-tvglobo.jpg",
+   "date": "2026-11-11T11:00:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "11srmce",
+   "title": "Ator que vive Mau Mau rebate crítica sobre atuação em Quem Ama Cuida",
+   "summary": "O ator João Victor Gonçalves, o Mau Mau de Quem Ama Cuida, respondeu o comentário de uma internauta no X",
+   "link": "https://www.metropoles.com/entretenimento/ator-que-vive-mau-mau-rebate-critica-sobre-atuacao-em-quem-ama-cuida",
+   "image": "https://images.metroimg.com/2026/07/joao-victor-goncalves-interpreta-mau-mau-na-novela-quem-ama-cuida.jpg",
+   "date": "2026-11-11T10:53:47.000Z",
+   "source": "Metrópoles Entret.",
+   "feed": "Metrópoles Entret.",
+   "categories": [
+    "novidades"
+   ]
+  },
+  {
+   "id": "1ojqjau",
+   "title": "Cantora do Katseye faz show sentada após concussão e levanta debate sobre rotina exaustiva",
+   "summary": "Megan, do Katseye, se apresenta sentada após concussão Reprodução/X A apresentação do girlgroup Katseye em Austin, nos Estados Unidos, chamou a atenção na noite desta terça-feira (10). Durante o show, Megan teve de se apresentar sentada e de óculos…",
+   "link": "https://g1.globo.com/pop-arte/musica/noticia/2026/11/11/cantora-do-katseye-faz-show-sentada-apos-concussao-e-levanta-debate-sobre-rotina-exaustiva.ghtml",
+   "image": "https://s2-g1.glbimg.com/FaTrXQTqhnndTPP62njhiOoZ_gQ=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/z/t/utz9MIRzq4ytldJHPRJA/captura-de-tela-2026-11-11-073746.png",
+   "date": "2026-11-11T10:50:48.000Z",
+   "source": "g1 Pop & Arte",
+   "feed": "g1 Pop & Arte",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1bshvn6",
+   "title": "Pós-roça caótico em A Fazenda 18: Ariela e Fran trocam ofensas e deboches",
+   "summary": "Ariela Carasso e Franciele Almeida tiveram uma nova briga em A Fazenda 18 logo depois da formação da roça, com xingamentos, ofensas e deboches",
+   "link": "https://noticiasdatv.uol.com.br/noticia/a-fazenda/pos-roca-caotico-em-a-fazenda-18-ariela-e-fran-trocam-ofensas-e-deboches-159294",
+   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/ariela-carasso-franciele-almeida-a-fazenda-18-1111-reproducao-recordplus.jpg",
+   "date": "2026-11-11T10:35:00.000Z",
+   "source": "Notícias da TV",
+   "feed": "Notícias da TV",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "8jxpra",
+   "title": "De paixão por criança a detalhe sobre cidade com quase 560 mil pessoas: os pontos em comum entre Virginia e César Ramos; aos 37 anos, piloto da Stock Car é apontado como novo affair da influencer",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxOX1QxZVNuYXlZYUFtTnI0aFNUeDdvU0RQNkFhZGw3RlFSWHVXblhsOTVJbWJ6eXBKWUdfRTQ1eFdMR3MyVnU1NWZPMTZGQzFmMTJOU0tBTldrdFduZ3BBVXByWG5WTXhLZTdCRlZYaGZkSmt3NWxNeWIxQ2d6Rk4yS2RfcmNxZkl0dFVOdUQzbGFTX0k5R2h2Zk4yNkIwbV9wcEs0clk4Q2R5YzdWcjZaZnB5N3dYbGtMS1N3QWR4WV9UTUFGLWlpU1RLTHFOTm55NGdLQjQwUlZrdUlxekVFOGR4NVlUbjJJUEIzbGNDaWZWR1FsMXkxQXAtclA4YnNzUlBrZjRsWWZaTTVYekM3Si1iVkQyS2luNkpEZHFB0gGjAkFVX3lxTE5XT0tLTTZ2RVZNWFZyakNaekJQdHhBTjVWSGhKY3lMdlZ3ZmQyRnFlVjZ5bzAwTzVualF2STJ6a3VyQTBvRzNRUXRPOUQtbVRsTzlhVVlOYnRfZ2dvUnpBWnBaTWJiNzkxN3g1cEJfMDhmcGdmRU9IQlV0UjczdmkxY2dYRnlCeUo2bW9haVNqV2F4UFN3dG1laWFNYWE4S1hsOFZJeVRWQUxRakF4bUVJaE5qM2tEZkhmanBLMEtuSDFGNG16NE53Ymg4dGJibmZ5RFdJb2QtWXpfSjVPbFViZUgwbzBtdE1OdHNZVjZMUTQzX21pQnprMXVKY3NiaERSM3JMNnh1QXBkRmJLelBkdTRuQlZ1YmFUcWlBMjhNU0hrcw?oc=5",
+   "image": "",
+   "date": "2026-11-11T10:17:00.000Z",
+   "source": "Purepeople",
+   "feed": "Google Notícias",
+   "categories": [
+    "romances",
+    "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "r6de6h",
+   "title": "Como partido de Renan Santos votará na eleição à presidência da Câmara",
+   "summary": "Com apenas Kim Kataguiri como deputado, Missão, sigla de Renan Santos, já sabe como deverá se posicionar na eleição interna da Câmara",
+   "link": "https://www.metropoles.com/colunas/igor-gadelha/como-partido-de-renan-santos-votara-na-eleicao-a-presidencia-da-camara",
+   "image": "https://images.metroimg.com/2026/09/candidato-a-presidencia-pelo-partido-missao-renan-santos-em-agenda-em-brasilia-metropoles-2-scaled.jpg",
+   "date": "2026-11-11T10:00:45.000Z",
+   "source": "Igor Gadelha",
+   "feed": "Igor Gadelha",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "12s8kni",
+   "title": "Em discussão na Câmara, redução da maioridade penal já foi proposta 57 vezes",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTlRnMERveDBPM0hlZjdxU1dYSjJKZjd6WFZyN21sQ3oyM290ZFlrcGNLZ3R6Vy1DT3hBdWUyaHNwUXdnWGtHT2FoeEFjblBtQXBic3UyN2YzS05veWZ4NGhzeWNodk9jZ19JZDFLWFBXLWh6U2gtaU5ZdjlnZDdWdWh3SG1Va3ZHTDlHanBRdTE5Si1aN3VkbU1hWGhRMGdxZDJDejNXY0lOMlNCaXpReXBIUGbSAboBQVVfeXFMUGxqbXU4UVlSLVFyR3dlRFlRNWhueGFwM0xSRjJxd0MtdG00aTNwX2NKQ1NNQ1VjVWZyb0hCNmxsSXNjalhLQ3NEaFZ0RkEzeWllNXYxdnBBWHRQNURoYTd6LWMzc1pXMDRiRDdDaFVJZlJiVGYzaVZqYTBpcW1nZXZmcXpRYzRiT3JyUTJNTktXZ1pxc1gtZkcyNmdfXy1RUTdBTDVocGl5NUc3OTlyajRMaU5qYU5xRnVB?oc=5",
+   "image": "",
+   "date": "2026-11-11T10:00:00.000Z",
+   "source": "InfoMoney",
+   "feed": "Google Notícias",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "uqrfk7",
+   "title": "Quem saiu do MasterChef Profissionais? Veja quem foi o 6º eliminado",
+   "summary": "Mais um cozinheiro deixou o MasterChef Profissionais, programa culinário da Band, no episódio dessa terça-feira (10/11)",
+   "link": "https://www.metropoles.com/entretenimento/quem-saiu-do-masterchef-profissionais-veja-quem-foi-o-6o-eliminado",
+   "image": "https://images.metroimg.com/2026/11/55621394406-e09cda47b8-k.jpg",
+   "date": "2026-11-11T09:59:01.000Z",
+   "source": "Metrópoles Entret.",
+   "feed": "Metrópoles Entret.",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1eazqza",
+   "title": "Quem Ama Cuida: veja a cena de sexo entre Mau Mau e Felipe que irritou web",
+   "summary": "A esperada cena de sexo entre Mau Mau (João Victor Gonçalves) e Felipe (Pietro Antonelli) gerou revolta em internautas nessa terça-feira (10",
+   "link": "https://www.metropoles.com/entretenimento/quem-ama-cuida-veja-a-cena-de-sexo-entre-mau-mau-e-felipe-que-irritou-web",
+   "image": "https://images.metroimg.com/2026/11/quem-ama-cuida-felipe-mau-mau.jpg",
+   "date": "2026-11-11T09:51:21.000Z",
+   "source": "Metrópoles Entret.",
+   "feed": "Metrópoles Entret.",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1540wxe",
+   "title": "'It's Florida, Man': 3ª temporada da série de COMÉDIA da HBO ganha trailer e data de estreia!",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxON09ScmNDQzdfaXhleWt4MDB1S2E0RUEtMk5kdEVWRjhtOFR6bVliUGtFcE9wS0E2WWNBTWNTLVdJT3FFSTM2R3l2b2h0VkVtZzFHQnd5UnRjLUR2X3Bjd3gyQkdFRnVWY3VyNmltcjJoc2wxZlAzbFdzeWtNdVRRTk1ZSk9RYThYYXZoWlk2dldfV3FQOEpLVFBQaWUxWHJ1V1hSZDBYSTloWUpsWDBEVGttSEdkT19oTUE?oc=5",
+   "image": "",
+   "date": "2026-11-11T09:24:19.000Z",
+   "source": "CinePOP Cinema",
+   "feed": "Google Notícias",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "13d9llb",
+   "title": "Resumo de ‘Quem Ama Cuida’: capítulo de quarta-feira (11/11/2026)",
+   "summary": "Elenice enfrenta Tom após descobrir sua traição, enquanto Ademir faz uma ameaça cruel a Dora para separá-la de André.",
+   "link": "https://capricho.abril.com.br/entretenimento/resumo-de-quem-ama-cuida-capitulo-de-quarta-feira-11-11-2026/",
+   "image": "https://capricho.abril.com.br/wp-content/uploads/2026/10/Captura-de-Tela-2026-10-09-as-19.50.01.png",
+   "date": "2026-11-11T09:00:48.000Z",
+   "source": "Capricho",
+   "feed": "Capricho",
+   "categories": [
+    "tv",
+    "romances",
+    "novidades"
+   ]
+  },
+  {
+   "id": "o7r3xc",
+   "title": "Sessão da Tarde hoje: Qual filme a Globo exibe nesta quarta-feira (11/11/2026)",
+   "summary": "Protagonizado por Ben Stiller e Eddie Murphy, a comédia de ação promete agitar as tardes da TV Globo com um plano de vingança mirabolante.",
+   "link": "https://capricho.abril.com.br/entretenimento/sessao-da-tarde-hoje-qual-filme-a-globo-exibe-nesta-quarta-feira-11-11-2026/",
+   "image": "https://capricho.abril.com.br/wp-content/uploads/2026/11/Roubo-nas-alturas-2.png",
+   "date": "2026-11-11T09:00:43.000Z",
+   "source": "Capricho",
+   "feed": "Capricho",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "ezvh3o",
+   "title": "Look do dia: Rihanna aposta em trench coat oversized e tênis retrô",
+   "summary": "Rihanna transforma passeio de compras em aula de street style com trench coat oversized, camisa social e tênis retrô. Veja como copiar!",
+   "link": "https://capricho.abril.com.br/moda/look-do-dia-rihanna-aposta-em-trench-coat-oversized-e-tenis-retro/",
+   "image": "https://capricho.abril.com.br/wp-content/uploads/2025/12/rihanna-look-gotham-awards.jpg",
+   "date": "2026-11-11T09:00:42.000Z",
+   "source": "Capricho",
+   "feed": "Capricho",
+   "categories": [
+    "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1w4ituh",
+   "title": "Resumo de ‘Por Você’: capítulo de quarta-feira (11/11/2026)",
+   "summary": "Zé escapa de um incêndio e suspeita de tentativa de assassinato, enquanto Junqueira tenta destruir provas comprometedoras.",
+   "link": "https://capricho.abril.com.br/entretenimento/resumo-de-por-voce-capitulo-de-quarta-feira-11-11-2026/",
+   "image": "https://capricho.abril.com.br/wp-content/uploads/2026/10/Captura-de-Tela-2026-10-23-as-17.14.17.png",
+   "date": "2026-11-11T09:00:32.000Z",
+   "source": "Capricho",
+   "feed": "Capricho",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1xp3cbw",
+   "title": "Resumo de ‘Lá na Minha Terra’: capítulo de quarta (11/11/2026)",
+   "summary": "Damaso perde a paciência e parte para cima de Raimundo, enquanto Lina retorna para casa e surpreende os dois em plena confusão.",
+   "link": "https://capricho.abril.com.br/entretenimento/resumo-de-la-na-minha-terra-capitulo-de-quarta-11-11-2026/",
+   "image": "https://capricho.abril.com.br/wp-content/uploads/2026/11/Copia-de-THUMB-MATERIAS-3-1.png",
+   "date": "2026-11-11T09:00:10.000Z",
+   "source": "Capricho",
+   "feed": "Capricho",
+   "categories": [
+    "tv",
+    "novidades"
+   ]
+  },
+  {
+   "id": "1tmffsw",
+   "title": "Petistas apostam que Tarcísio lançará \"supersecretária\" à Prefeitura de SP",
+   "summary": "Para petistas, Tarcísio trabalha para lançar \"supersecretária\" Natália Resende como candidata à sucessão do atual prefeito de SP em 2028",
+   "link": "https://www.metropoles.com/colunas/igor-gadelha/petistas-apostam-que-tarcisio-lancara-supersecretaria-a-prefeitura-de-sp",
+   "image": "https://images.metroimg.com/2025/07/23155341/Design-sem-nome-1-304.jpg",
+   "date": "2026-11-11T08:00:34.000Z",
+   "source": "Igor Gadelha",
+   "feed": "Igor Gadelha",
+   "categories": [
+    "politica",
+    "novidades"
+   ]
+  },
+  {
+   "id": "13guwv",
+   "title": "Esposa de Leonardo, Poliana Rocha prepara festão de 50 anos: veja fotos do local luxuoso",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxONjUyLXdyUkRTMmJDeTRIX2xWd19TMVpqSjYyQjRiOEgyN1p3eC1wXzF1R2pZUVhVcDQ2dFduUHlhZ0s2bVVMaVJyZFJVeElVb0pPVENxWDIxRkVSLWRDdGxTNGVaNzNNSTljVzFvRU9ra1pCVVJZWU9qX0hjRlFZLTJya01INnloNUZyOFZlVXN6a3UwNUpsM2lxRmpfRHBVeHhDNnZrUzNENHIwcHBnX3gycThQamUzVFVKNFhzeXpfcGJYcVJhc1NOWGFzbHdISm10bEVFd2FMNWlH0gHrAUFVX3lxTFA3c2l6dlhfYWtPdUtDMUgyQ2M2QkFvcjYzU254NWljakFhMmQ2aDg2Rlp5VjhyTV9RdExyakh4OHRRNmVjQVRDcmJPSXRUaUFvODc5Y2FmNTBFZ2Q4LWFCeXBWcTRYTlpWSVJwTS1pcnROOUtSajRJTDNlcmZpWnBmVi1LeGt5dGsycndfTUxyR0VoVENucDlRVmg0bzh6OGlhSG02dFgzOGt4ZW84dW1SeTEzdHlDMEhZYS1VT2xvX3ZYb0dDdEF2Q0YzcTVHYmtDb1V2Q1dHQ0VtczFJc1Z2dGdvT1d2VUJocHc?oc=5",
+   "image": "",
+   "date": "2026-11-11T07:00:00.000Z",
+   "source": "Gshow",
+   "feed": "Google Notícias",
+   "categories": [
+    "festas",
     "novidades"
    ]
   },
@@ -55,20 +1608,6 @@
    "feed": "g1 Pop & Arte",
    "categories": [
     "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1mhcmc2",
-   "title": "Sensitiva afirma que Lula não finaliza mandato e choca ao revelar quem vai assumir: ‘Na cabeça’",
-   "summary": "CHOCANTE! Sensitiva diz que Lula não finaliza o quarto mandato na presidência",
-   "link": "https://contigo.com.br/noticias/famosos/sensitiva-afirma-que-lula-nao-finaliza-mandato-e-choca-ao-revelar-quem-vai-assumir-na-cabeca.phtml",
-   "image": "https://contigo.com.br/wp-content/uploads/2026/11/Lula-1-406x228.jpg",
-   "date": "2026-11-11T05:11:47.000Z",
-   "source": "Contigo",
-   "feed": "Contigo",
-   "categories": [
-    "politica",
     "novidades"
    ]
   },
@@ -102,248 +1641,17 @@
    ]
   },
   {
-   "id": "ir08kx",
-   "title": "Ruivinha de Marte diz que é virgem e que cogita abrir conta no OnlyFans",
-   "summary": "A influenciadora Ruivinha de Marte, de 29 anos de idade, deixou sua legião de fãs empolgada ao responder a perguntas de internautas no direct do seu Instagram, nessa terça-feira (10). Com quase nove milhões de seguidores, ela costuma fazer sucesso com…",
-   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/ruivinha-de-marte-diz-que-e-virgem-e-que-cogita-abrir-conta-no-onlyfans.ghtml",
-   "image": "https://s2-quem.glbimg.com/LOFmwqpzT-H-R7Mcx9MoWtCFvWc=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/G/G/LcdXDaQCOChH7QBgFAQg/ruivinha.jpg",
-   "date": "2026-11-11T04:47:15.000Z",
-   "source": "Quem",
-   "feed": "Quem",
+   "id": "1frsjjm",
+   "title": "Maya Massafera rebate acusações de Apoline após ser desconvidada de casamento",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOWnpzRW11bzRSUFdKTFEtakNJRjVzRGZDc3lFMWJpSkxsSnV4WWJMeHNTT1JoVW9vNEZFQWw5WGJXYk0xcnZaLWZaLUE0VlVPUm9DRTVIaVE0dzNUVFdxeTczZXN0TGN2S19FQmJQSWdKSW1BQ0ctdDMtNExnNTk3QzV6U2tNd3dHZ0dwVEtpWGI0UkU0SjVRb3ZFbVBwUkRGdGJPaThWVVl5NW9pYVI3a9IBtgFBVV95cUxPQm9OVFZsSDdrLUZyTEpQQkJaM2R6OW0tcEM4R05ZTXZld0J6VjMwYkp0U3J6eXJPcXJYTmR0OFlEV0JabDBvdFhBeEFNYWYtSDZPdVdtbjlwN3VTeVBWQlFUczdjMU1VdmZ6ODZ1V3h6X29DdkYxc3JRT0lKVjhfUGNmN0lmOUs5WWpLa0F3SnEySkkyUmFUMHIyaGFBbGFBRWZnWS1mcWd0bUM3Z0N1Y2dHMTVsZw?oc=5",
+   "image": "",
+   "date": "2026-11-11T03:53:54.000Z",
+   "source": "Portal Leo Dias",
+   "feed": "Google Notícias",
    "categories": [
-    "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1x028z5",
-   "title": "‘A Fazenda 18’: Murilo, Daniel, Fran e Tina estão na Roça; saiba quem não faz a Prova do Fazendeiro",
-   "summary": "Murilo, Daniel, Fran e Tina estão na Roça de A Fazenda 18",
-   "link": "https://contigo.com.br/noticias/a-fazenda/a-fazenda-18-murilo-daniel-fran-e-tina-estao-na-roca-saiba-quem-nao-faz-a-prova-do-fazendeiro.phtml",
-   "image": "https://contigo.com.br/wp-content/uploads/2026/11/Murilo-Daniel-Fran-e-Tina-em-A-Fazenda-18-406x228.jpg",
-   "date": "2026-11-11T04:25:53.000Z",
-   "source": "Contigo",
-   "feed": "Contigo",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1mrmkkh",
-   "title": "Aos 52 anos, ator transforma ilha de 42 hectares em refúgio ecológico de luxo",
-   "summary": "Artista lidera projeto em ilha de Belize e aposta na preservação ambiental. Saiba o que aconteceu com o refúgio planejado pelo ator",
-   "link": "https://caras.com.br/casa-dos-famosos/aos-52-anos-ator-transforma-ilha-de-42-hectares-em-refugio-ecologico-de-luxo.phtml",
-   "image": "https://caras.com.br/wp-content/uploads/2026/11/Leonardo-DiCaprio-Sony-Pictures-Divulgacao-406x228.jpg",
-   "date": "2026-11-11T04:24:19.000Z",
-   "source": "Caras",
-   "feed": "Caras",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "1krocdq",
-   "title": "O que é ‘push gift’? Entenda a tradição adotada por Franciny Ehlke",
-   "summary": "Hábito após o nascimento dos bebês ganha força entre celebridades; conheça a origem do gesto e itens mais escolhidos",
-   "link": "https://caras.com.br/atualidades/o-que-e-push-gift-entenda-a-tradicao-adotada-por-franciny-ehlke.phtml",
-   "image": "https://caras.com.br/wp-content/uploads/2026/11/Franciny-Ehlke-406x228.jpg",
-   "date": "2026-11-11T04:19:20.000Z",
-   "source": "Caras",
-   "feed": "Caras",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "1v8cusy",
-   "title": "MC Livinho começou a trabalhar aos 8 anos; hoje, aos 32, vive outra realidade",
-   "summary": "Antes da fama, MC Livinho vendia produtos nas ruas para ajudar em casa. Aos 32 anos, cantor relembra detalhe surpreendente da infância",
-   "link": "https://caras.com.br/atualidades/mc-livinho-comecou-a-trabalhar-aos-8-anos-hoje-aos-32-vive-outra-realidade.phtml",
-   "image": "https://caras.com.br/wp-content/uploads/2026/11/MC-Livinho-406x228.jpg",
-   "date": "2026-11-11T04:17:29.000Z",
-   "source": "Caras",
-   "feed": "Caras",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "i8iou5",
-   "title": "Aos 41 anos, apresentadora revela hábito que começou aos 6 e mudou sua relação com o dinheiro",
-   "summary": "Aos 41 anos, apresentadora surpreende ao revelar como começou a cuidar do próprio dinheiro ainda na infância e qual escolha não abre mão",
-   "link": "https://caras.com.br/atualidades/aos-41-anos-apresentadora-revela-habito-que-comecou-aos-6-e-mudou-sua-relacao-com-o-dinheiro.phtml",
-   "image": "https://caras.com.br/wp-content/uploads/2026/11/Talitha-Morete-406x228.jpg",
-   "date": "2026-11-11T04:02:28.000Z",
-   "source": "Caras",
-   "feed": "Caras",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1jj2vh9",
-   "title": "Virginia Fonseca e Margareth Serrão: a parceria entre mãe e filha que conquistou a TV",
-   "summary": "Parceria entre mãe e filha foi do cotidiano em família ao sucesso nas telas; conheça a trajetória profissional que marcou a televisão e a internet",
-   "link": "https://caras.com.br/atualidades/virginia-fonseca-e-margareth-serrao-a-parceria-entre-mae-e-filha-que-conquistou-a-tv.phtml",
-   "image": "https://caras.com.br/wp-content/uploads/2026/11/Virginia-Fonseca-com-a-mae-406x228.jpg",
-   "date": "2026-11-11T03:49:10.000Z",
-   "source": "Caras",
-   "feed": "Caras",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "1wxqbkj",
-   "title": "‘Lá na Minha Terra’ leva nota zero de jornalista da Globo: ‘Parecem saídos do século passado’",
-   "summary": "Jornalista da Globo deu nota zero para Lá na Minha Terra por motivo específico",
-   "link": "https://contigo.com.br/noticias/novelas/la-na-minha-terra-leva-nota-zero-de-jornalista-da-globo-parecem-saidos-do-seculo-passado.phtml",
-   "image": "https://contigo.com.br/wp-content/uploads/2026/11/La-Na-Minha-Terra-Nova-novela-da-Globo-e-cancelada-na-web-antes-mesmo-da-estreia-406x228.png",
-   "date": "2026-11-11T03:48:31.000Z",
-   "source": "Contigo",
-   "feed": "Contigo",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "awac7o",
-   "title": "Morre o ator Stacy Keach, de 'Will & Grace', 'Prison Break' e 'Mike Hammer'",
-   "summary": "O ator Stacy Keach morreu aos 85 anos de idade, de acordo com a imprensa internacional. Famoso por conciliar, com muito sucesso, trabalhos no teatro, no cinema e na TV, geralmente com personagens durões, como o protagonista da série de TV Mike Hammer, que…",
-   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/morre-o-ator-stacy-keach-de-prison-break-mike-hammer-e-nebraska.ghtml",
-   "image": "https://s2-quem.glbimg.com/6WcwbLmP1l3xoi7Tsh1Yrqi-qko=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/u/F/bWtEDxTRyvK4W2GDn6Qw/stacy.jpg",
-   "date": "2026-11-11T03:48:26.000Z",
-   "source": "Quem",
-   "feed": "Quem",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "176lkfb",
-   "title": "Alexandre Garcia completa 86 anos após casamento aos 79: união foi celebrada em 24 horas",
-   "summary": "Aos 86 anos, Alexandre Garcia relembra uma fase especial: o jornalista se casou com Magda Pereira em Brasília, um dia após completar 79 anos",
-   "link": "https://caras.com.br/atualidades/alexandre-garcia-completa-86-anos-apos-casamento-aos-79-uniao-foi-celebrada-em-24-horas.phtml",
-   "image": "https://caras.com.br/wp-content/uploads/2026/11/Alexandre-Garcia-406x228.jpg",
-   "date": "2026-11-11T03:46:10.000Z",
-   "source": "Caras",
-   "feed": "Caras",
-   "categories": [
+    "festas",
     "romances",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1um3w40",
-   "title": "O fim do inquérito das fake news e o STF ainda sob tensão - O Assunto #1843",
-   "summary": "Em março de 2019, o ministro Dias Toffoli, então presidente do Supremo Tribunal Federal, decidiu abrir por iniciativa própria – uma prática incomum na Corte – um inquérito para investigar ataques ao STF e a seus integrantes. Toffoli designou como relator o…",
-   "link": "https://g1.globo.com/podcast/o-assunto/noticia/2026/11/11/o-fim-do-inquerito-das-fake-news-e-o-stf-ainda-sob-tensao-o-assunto-1843.ghtml",
-   "image": "https://s2-g1.glbimg.com/snDPW_Tr794WnmTtcljodghu7No=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/X/t/fZnF6YRiSXNlNKJoFNqA/55604367895-d76076632c-k-1-.jpg",
-   "date": "2026-11-11T03:30:00.000Z",
-   "source": "g1 Política",
-   "feed": "g1 Política",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "49ix6l",
-   "title": "Vídeo mostra reação inusitada de Richarlison ao descobrir segunda gravidez da esposa; assista",
-   "summary": "GOSTOU? Richarlison teve reação chocante ao saber da gravidez da esposa",
-   "link": "https://contigo.com.br/noticias/famosos/video-mostra-reacao-inusitada-de-richarlison-ao-descobrir-segunda-gravidez-da-esposa-assista.phtml",
-   "image": "https://contigo.com.br/wp-content/uploads/2026/11/Richarlison-406x228.jpg",
-   "date": "2026-11-11T03:01:37.000Z",
-   "source": "Contigo",
-   "feed": "Contigo",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "1lxpf3w",
-   "title": "Ex-Miss Bumbum, Kerolay Chaves mostra roupas largas que usa para receber técnicos em casa: 'Espanta macho'",
-   "summary": "Kerolay Chaves, de 25 anos, mostrou nas redes sociais as roupas largas que costuma usar para receber prestadores de serviço em seu apartamento, no Rio de Janeiro. A influenciadora e ex-Miss Bumbum contou que tem o hábito de trocar de roupa antes da chegada…",
-   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/ex-miss-bumbum-kerolay-chaves-mostra-roupas-largas-que-usa-para-receber-tecnicos-em-casa-espanta-macho.ghtml",
-   "image": "https://s2-quem.glbimg.com/xSwIfNPOaxrnCXO5S8Xz4ul8ZAs=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/x/j/77b2lCQeenoIpRyIYXuQ/fotojet-2026-11-10t214839.015.jpg",
-   "date": "2026-11-11T03:00:01.000Z",
-   "source": "Quem",
-   "feed": "Quem",
-   "categories": [
-    "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "t5mwj0",
-   "title": "Perto do Miss Universo, Marcella Kozinski fala de pressão estética: 'Beleza não cabe mais em um padrão'",
-   "summary": "Marcella Kozinski, de 26 anos de idade, eleita Miss Universo Brasil 2026 e que está a duas semanas de disputar a coroa de Miss Universo, aproveitou um dos momentos mais importantes de sua carreira para falar sobre um assunto que vai muito além das…",
-   "link": "https://revistaquem.globo.com/entrevistas/noticia/2026/11/perto-do-miss-universo-marcella-kozinski-fala-de-pressao-estetica-beleza-nao-cabe-mais-em-um-padrao.ghtml",
-   "image": "https://s2-quem.glbimg.com/TTDuPQOaf2CMGzTnsfwoK8oPjs4=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/i/T/qsBi6LR3iIqZRu0AMW5A/miss.jpg",
-   "date": "2026-11-11T03:00:00.000Z",
-   "source": "Quem",
-   "feed": "Quem",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "1y5sbwl",
-   "title": "Grazi Massafera diz ser adepta de brinquedos sexuais: ‘Dá colágeno e alegria’",
-   "summary": "Grazi Massafera, de 44 anos, revelou ser adepta de brinquedos sexuais. A atriz falou sobre prazer, sexo e relacionamentos em um papo no podcast 40 Perguntas, apresentado por Giovanna Ewbank e lançado na terça-feira (10). Ao ser questionada se amor e sexo…",
-   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/grazi-massafera-diz-ser-adepta-de-brinquedos-sexuais-da-colageno-e-alegria.ghtml",
-   "image": "https://s2-quem.glbimg.com/5h653_Irbiqt4fq35ynqfJkbeIg=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/7/U/YDxlEoQfO4nx0COoVssw/befunky-collage-2026-09-09t114941.844.jpg",
-   "date": "2026-11-11T03:00:00.000Z",
-   "source": "Quem",
-   "feed": "Quem",
-   "categories": [
-    "romances",
-    "novidades"
-   ]
-  },
-  {
-   "id": "9xz65p",
-   "title": "Pressão para adiar implementação da reforma tributária cresce, mas deputados descartam mudança no calendário",
-   "summary": "Entidades empresariais e representantes do setor tributário têm pressionado o governo e o Congresso Nacional a adiar para 2028 o início da implementação da reforma tributária sobre o consumo, prevista para 1º de janeiro de 2027. Nesta terça-feira (10),…",
-   "link": "https://g1.globo.com/politica/noticia/2026/11/11/pressao-para-adiar-implementacao-da-reforma-tributaria-cresce-mas-deputados-descartam-mudanca-no-calendario.ghtml",
-   "image": "https://s2-g1.glbimg.com/r-8GpWiTLKp4jET64aIa-UMX1Y8=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/d/k/5R7racSwChmuner9uQ8A/globo-canal-5-20231220-1859-frame-130794.jpeg",
-   "date": "2026-11-11T03:00:00.000Z",
-   "source": "g1 Política",
-   "feed": "g1 Política",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "17onwyi",
-   "title": "Lula 4: Casa Civil pede a ministérios relatórios com prioridades e projetos em andamento",
-   "summary": "A Casa Civil da Presidência da República pediu aos 38 ministérios do governo do presidente Luiz Inácio Lula da Silva (PT) relatórios com informações sobre as principais políticas públicas, programas, projetos em andamento e prioridades de cada pasta.…",
-   "link": "https://g1.globo.com/politica/noticia/2026/11/11/lula-4-casa-civil-pede-a-ministerios-relatorios-com-prioridades-e-projetos-em-andamento.ghtml",
-   "image": "https://s2-g1.glbimg.com/4JoXVqpFL3L67wYQjjWVSj8sDzg=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2024/b/d/uA8V51RgS6bu5HRLj3JQ/22799212374-54436b5914-k.jpg",
-   "date": "2026-11-11T03:00:00.000Z",
-   "source": "g1 Política",
-   "feed": "g1 Política",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1exkush",
-   "title": "Governo articula medida de ajuste nas contas que muda cálculo dos pisos da saúde e da educação; entenda",
-   "summary": "Presidente da República, Luiz Inácio Lula da Silva, durante Reunião Extraordinária do Conselho Nacional de Política Energética (CNPE), no Ministério de Minas e Energia, Brasília - DF.Foto: Ricardo Stuckert Ricardo Stuckert O governo do presidente Luiz…",
-   "link": "https://g1.globo.com/economia/noticia/2026/11/11/governo-articula-medida-de-ajuste-nas-contas-que-muda-calculo-dos-pisos-da-saude-e-da-educacao-entenda.ghtml",
-   "image": "https://s2-g1.glbimg.com/bN7LgrCVm49aNkZXwBySwrEE91I=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/E/p/iMC9ctQlqq6SkXVYRBxg/55636960030-d229c48702-o.jpg",
-   "date": "2026-11-11T03:00:00.000Z",
-   "source": "g1 Política",
-   "feed": "g1 Política",
-   "categories": [
-    "politica",
     "novidades"
    ]
   },
@@ -362,48 +1670,6 @@
    ]
   },
   {
-   "id": "135ngx3",
-   "title": "Enquete A Fazenda 18: Daniel, Fran, Murilo e Tina estão na roça; vote",
-   "summary": "Daniel Erthal, Fran Almeida, Murilo Dias e Tina Calamba estão na oitava roça de A Fazenda 18. Os roceiros foram definidos na noite desta terça (10)",
-   "link": "https://noticiasdatv.uol.com.br/noticia/a-fazenda/enquete-a-fazenda-18-daniel-fran-murilo-e-tina-estao-na-roca-vote-159289",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/daniel-fran-murilo-tina-record.jpg",
-   "date": "2026-11-11T02:54:07.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1ci93vv",
-   "title": "Senado abre licitação de R$ 6 milhões com 95 iPhones 18 Pro",
-   "summary": "Pregão inclui 425 celulares corporativos em regime de comodato para senadores e diretores da Casa por 4 anos",
-   "link": "https://www.poder360.com.br/poder-congresso/senado-abre-licitacao-de-r-6-milhoes-com-95-iphones-18-pro/",
-   "image": "https://static.poder360.com.br/uploads/2026/09/plenario-senado01-set-2026-1200x675.jpg",
-   "date": "2026-11-11T02:54:06.000Z",
-   "source": "Poder360",
-   "feed": "Poder360",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1cs93pf",
-   "title": "Kendall Jenner e Jacob Elordi aparecem agarradinhos em passeio",
-   "summary": "A modelo e empresária Kendall Jenner, de 31 anos de idade, e o namorado, o ator Jacob Elordi, de 29 anos, apareceram mais uma vez em um momento de romance durante um passeio a dois. O casal apareceu agarradinho, na tarde desta terça-feira (10), pelas ruas…",
-   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/kendall-jenner-e-jacob-elordi-aparecem-agarradinhos-em-passeio.ghtml",
-   "image": "https://s2-quem.glbimg.com/5jGpcm_uFyJS7pZmTZVCFdIGdYk=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/e/B/fpak2LReCHOeuUGloY6w/abre2.jpg",
-   "date": "2026-11-11T02:45:28.000Z",
-   "source": "Quem",
-   "feed": "Quem",
-   "categories": [
-    "romances",
-    "novidades"
-   ]
-  },
-  {
    "id": "8t57it",
    "title": "Quem Ama Cuida: cena de sexo de Mau Mau e Felipe decepciona e revolta web",
    "summary": "Público de Quem Ama Cuida criticou a forma como a direção da novela abordou a 1ª cena íntima de Mau Mau e Felipe na novela",
@@ -418,47 +1684,6 @@
    ]
   },
   {
-   "id": "1khsbo3",
-   "title": "Grazi Massafera revela pergunta chocante feita por diretor: ‘Dei na lata dele’",
-   "summary": "QUE ABSURDO! Grazi Massafera revelou situação tensa que viveu com diretor",
-   "link": "https://contigo.com.br/noticias/famosos/grazi-massafera-revela-pergunta-chocante-feita-por-diretor-dei-na-lata-dele.phtml",
-   "image": "https://contigo.com.br/wp-content/uploads/2026/11/Grazi-Massafera--406x228.jpg",
-   "date": "2026-11-11T02:30:30.000Z",
-   "source": "Contigo",
-   "feed": "Contigo",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "12o4emv",
-   "title": "Aos 45 anos e esperando 2º filho, Sabrina Sato decidiu seguir escolhas diferentes na gravidez e detalhou planos",
-   "summary": "Apresentadora espera o primeiro filho com Nicolas Prattes e também mantém parceria com Duda Nagle na criação de Zoe, de 7 anos",
-   "link": "https://caras.com.br/atualidades/sabrina-sato-seguir-escolhas-diferentes-gravidez-planos.phtml",
-   "image": "https://caras.com.br/wp-content/uploads/2026/10/sabrina-sato-2-406x228.jpg",
-   "date": "2026-11-11T02:27:37.000Z",
-   "source": "Caras",
-   "feed": "Caras",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1v6nhkd",
-   "title": "Estudantes convocam novos protestos na França após greve geral",
-   "summary": "Mobilização em Paris ocorre após negociações fracassadas com o governo; nova paralisação está marcada para 17 de novembro",
-   "link": "https://www.poder360.com.br/poder-internacional/estudantes-convocam-novos-protestos-na-franca-apos-greve-geral/",
-   "image": "https://i.ytimg.com/vi/fr3eOpy-CZM/hqdefault.jpg",
-   "date": "2026-11-11T02:26:25.000Z",
-   "source": "Poder360",
-   "feed": "Poder360",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
    "id": "146kb5g",
    "title": "Johnny Depp aceita redução milionária de cachê para voltar a grandes produções de Hollywood; saiba o valor (Foto: Getty)",
    "summary": "Johnny Depp protagoniza “Ebenezer e os Fantasmas do Natal”, após anos afastado das grandes produções hollywoodianas",
@@ -467,73 +1692,6 @@
    "date": "2026-11-11T02:23:01.000Z",
    "source": "Hugo Gloss",
    "feed": "Hugo Gloss",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "1k33kct",
-   "title": "Aos 33 anos, Bruna Linzmeyer transforma apartamento de 90 m² em refúgio na cidade",
-   "summary": "Atriz Bruna Linzmeyer transforma primeiro imóvel em refúgio cheio de personalidade, com decoração criativa e escolhas que valorizam elementos naturais",
-   "link": "https://caras.com.br/casa-dos-famosos/aos-33-anos-bruna-linzmeyer-transforma-apartamento-de-90-m%c2%b2-em-refugio-na-cidade.phtml",
-   "image": "https://caras.com.br/wp-content/uploads/2026/11/Bruna-Linzmeyer-406x228.jpg",
-   "date": "2026-11-11T02:22:57.000Z",
-   "source": "Caras",
-   "feed": "Caras",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "13u1jcl",
-   "title": "Amanda Araújo entrega reação inusitada de Richarlison ao descobrir que será pai pela 2ª vez; vídeo",
-   "summary": "Tem notícias que merecem uma comemoração à altura, e Richarlison, de 29 anos, levou isso ao pé da letra! Amanda Araújo, de 23, compartilhou nesta terça-feira (10) um vídeo da reação inusitada do jogador ao descobrir que seria pai pela segunda vez. Tomado…",
-   "link": "https://revistaquem.globo.com/noticias/filhos-dos-famosos/noticia/2026/11/amanda-araujo-entrega-reacao-inusitada-de-richarlison-ao-descobrir-que-sera-pai-pela-2a-vez-video.ghtml",
-   "image": "https://s2-quem.glbimg.com/ttTsiZZbTf4gC6I6JXaSgNDzeC4=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/P/Z/FzTKn1TuA4bVwWpVnFcQ/design-sem-nome-50-.jpg",
-   "date": "2026-11-11T02:14:52.000Z",
-   "source": "Quem",
-   "feed": "Quem",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "1oj44jv",
-   "title": "Mendonça assume caso que investiga vazamento de dados de ministros",
-   "summary": "Operação Exfil começou em dezembro de 2025 e apura esquema que vazou informações de Moraes, Toffoli e outras autoridades",
-   "link": "https://www.poder360.com.br/poder-justica/mendonca-assume-caso-que-investiga-vazamento-de-dados-de-ministros/",
-   "image": "https://static.poder360.com.br/uploads/2026/10/STF-Vorcaro-FelipeCancadoVorcaro-HenriqueVorcaro-AndreMendonca-GilmarMendes-7-1-1200x675.jpg",
-   "date": "2026-11-11T02:14:08.000Z",
-   "source": "Poder360",
-   "feed": "Poder360",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1xv2pcm",
-   "title": "Como Gracyanne Barbosa transformou sua rotina de treinos em negócio milionário",
-   "summary": "Modelo e influenciadora monetiza presença digital com presenças VIPs, publiposts de suplementação e licenciamento de produtos esportivos",
-   "link": "https://caras.com.br/atualidades/gracyanne-barbosa-rotina-treinos-negocio-milionario.phtml",
-   "image": "https://caras.com.br/wp-content/uploads/legacy/2019/04/15/gracyanne-barbosa-no-pole-dance-847358.jpg",
-   "date": "2026-11-11T02:13:02.000Z",
-   "source": "Caras",
-   "feed": "Caras",
-   "categories": [
-    "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "ikqwvy",
-   "title": "Vitória Strada e Daniel Rocha se reencontram no Ceará em jantar",
-   "summary": "Vitória Strada e Daniel Rocha se reencontram no Ceará, nesta terça-feira (10). A atriz - que estava em São Paulo a trabalho - desembarcou em Aquiraz nesta tarde e jantou com o ator no Alma Cearense, restaurante do Ohana Beach Park Resorts, com um cardápio…",
-   "link": "https://revistaquem.globo.com/viagem/noticia/2026/11/vitoria-strada-e-daniel-rocha-se-reencontram-no-ceara-em-jantar.ghtml",
-   "image": "https://s2-quem.glbimg.com/zLDIs-OT2w5Z-E38F1BiW92sWiU=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/e/Z/8Znhs5QjGzWMVXkf8EIw/daniel-rocha-e-vitoria-strada-4-.jpg",
-   "date": "2026-11-11T02:08:20.000Z",
-   "source": "Quem",
-   "feed": "Quem",
    "categories": [
     "novidades"
    ]
@@ -553,44 +1711,16 @@
    ]
   },
   {
-   "id": "3w3a5j",
-   "title": "‘Quem Ama Cuida’: É isso? Cena da primeira vez de Mau Mau e Felipe causa revolta na web: ‘Ridículo’",
-   "summary": "CENSURA? Primeira vez de Mau Mau e Felipe em Quem Ama Cuida é detonada na web",
-   "link": "https://contigo.com.br/noticias/novelas/quem-ama-cuida-e-isso-cena-da-primeira-vez-de-mau-mau-e-felipe-causa-revolta-na-web-ridiculo.phtml",
-   "image": "https://contigo.com.br/wp-content/uploads/2026/11/Mau-Mau-Joao-Victor-Goncalves-e-Felipe-Pietro-Antonelli-de-Quem-Ama-Cuida-1-1-406x228.jpg",
-   "date": "2026-11-11T02:03:01.000Z",
-   "source": "Contigo",
-   "feed": "Contigo",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1hbmqsa",
-   "title": "Virginia Fonseca: como a influenciadora construiu sua fortuna e se tornou uma referência nos negócios",
-   "summary": "Virginia Fonseca combinou estratégia empreendedora, marcas de cosméticos e forte presença nas redes sociais para construir sua fortuna",
-   "link": "https://caras.com.br/atualidades/virginia-fonseca-como-a-influenciadora-construiu-sua-fortuna-e-se-tornou-uma-referencia-nos-negocios.phtml",
-   "image": "https://caras.com.br/wp-content/uploads/2026/11/virginia-fonseca--406x228.jpg",
-   "date": "2026-11-11T02:02:44.000Z",
-   "source": "Caras",
-   "feed": "Caras",
-   "categories": [
-    "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1tlt4om",
-   "title": "Pré-estreia da nova temporada de 'Arcanjo Renegado' reúne famosos",
+   "id": "17nt7zu",
+   "title": "Ivete Sangalo é vista com suposto affair ao deixar hotel no Rio e rumores ganham força",
    "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNazRmMUhJTlJpUHFRUm5HY05YQnpQaDNaaFlIWElqWWFWMnFUYVJVSVI2WE1nQm9jYk9pT2tzZEF5c2RUbzdwSnNqRjVaLWpKTS05VldIMVVMRDc3dXRpYjQ2VU55QXdacUFnZ0xDTTBEcGVkQUlQT050UEdGYWxxOTNLbng2RlFGMmV0dmlTbkxCWXYxYzFjN1NQSkRwZjlQaTl2VXBBa3pGWXJ6aVNtbFNfU2lhZnlERXhrckNNWFJoeWJWWGQ4MNIBzgFBVV95cUxQYWxmUlBycDRzcXlkUHNwaUNXV3FmSk5hVzVubjR6YVlzWm83YWw5elZOU3VCVjg5QURqSWlGWkR2eGxfMnZhUkg0OFJ1aU42UVo4bmtMakZIVGREMkhZZDRwR2tVNXJuTU1rcUpEbkc1ZmUxeTJRdVNaQkszN0FIS3MwMm9EXy1MbkxGWkQybnlxaThySjllUXo0b0M1Wkc3MVpLNHA1dWZVanFVTHNFM05PSy1TSHZqVVRxZUxUMWRQMXpSdUU0RERDZDhlUQ?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQVDRhd3g0WjBXdXFYVnd2bWlXemlLbTlLNm1ZTlQzOHk5ZmIyTFRtOTZnZTVhaGREaTh5R3puaDd6NEdkOEtQWFZwaXZOV1RkVUJvajI4T2ZqZE1ya1VEOXM0dFhWb0d3d3N3VG9pYlFvaDkyWmFwX3RVQVp0ajdYOUNaSjlNQlZqZE0zM1liVUNtRDNncFlob1FJU0hfOXZfckk3SmlRMnlPckdXSEFuTDBEOXZTYWpJSUxoTWxrZUUyRzho?oc=5",
    "image": "",
-   "date": "2026-11-11T02:00:14.000Z",
-   "source": "O Dia",
+   "date": "2026-11-11T02:01:52.000Z",
+   "source": "Clube FM Brasil",
    "feed": "Google Notícias",
    "categories": [
-    "tv",
+    "romances",
     "novidades"
    ]
   },
@@ -609,61 +1739,6 @@
    ]
   },
   {
-   "id": "1cwf90k",
-   "title": "Flamengo vende tour pelo Ninho do Urubu por R$ 2.000",
-   "summary": "Clube carioca também oferece, por R$ 2.300, experiência em que crianças entram em campo com os jogadores no Maracanã",
-   "link": "https://www.poder360.com.br/poder-sportsmkt/flamengo-vende-tour-pelo-ninho-do-urubu-por-r-2-000/",
-   "image": "https://static.poder360.com.br/uploads/2026/09/clube-de-regatas-do-flamengo-1200x675.jpg",
-   "date": "2026-11-11T01:42:55.000Z",
-   "source": "Poder360",
-   "feed": "Poder360",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1irgrxm",
-   "title": "Lá na Minha Terra estreia sob críticas ao retrato do Nordeste; veja o que disse Dira Paes",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPV081Rk1NT1hWWkoxbTZKYmdTX2M0WFRocXdZVXlCaHNCMjVESVFpTlpDLVZWc0lseDVESjlMVktiaE9GTUVoZXM5WUFCWlJmZm91OHd4T0V1b2hENE1RemZGajZuckhrZU9QOEM2X1JBdHE3Z1VQaV9oSlp3QnZIT001Yw?oc=5",
-   "image": "",
-   "date": "2026-11-11T01:42:42.000Z",
-   "source": "Hora Brasil",
-   "feed": "Google Notícias",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "11g3nig",
-   "title": "Quem Ama Cuida apaga a luz em primeira vez de Mau Mau e Felipe e revolta público",
-   "summary": "Os fãs de Quem Ama Cuida ficaram decepcionados com a cena da primeira noite de sexo de Mau Mau (João Victor Gonçalves) e Felipe (Pietro Antonelli)",
-   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/quem-ama-cuida-apaga-a-luz-em-primeira-vez-de-mau-mau-e-felipe-e-revolta-publico-159291",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/joaovictorgoncalves-pietroantonelli-tvglobo-quemamacuida.jpg",
-   "date": "2026-11-11T01:41:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "8e5k4h",
-   "title": "Adriana Bombom e mais musas da Grande Rio brilham em ensaio; vídeos",
-   "summary": "A Grande Rio realizou, na noite desta terça-feira (10), mais um ensaio pro Carnaval 2027. A escola de samba do Rio de Janeiro, que tem Anitta como rainha de bateria, tem nomes como Adriana Bombom, Alane Dias, Brunna Gonçalves, Jaquelline Grohalski, Mariana…",
-   "link": "https://revistaquem.globo.com/eventos/carnaval/noticia/2026/11/musas-da-grande-rio-brilham-em-1o-ensaio-de-rua-pro-carnaval-2027.ghtml",
-   "image": "https://s2-quem.glbimg.com/3s_wWz_0FJ2apEMcnfz_gljdoFY=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/C/5/eFT8H3QJiTYBnRiAIM5A/abre2.jpg",
-   "date": "2026-11-11T01:39:47.000Z",
-   "source": "Quem",
-   "feed": "Quem",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
    "id": "1u2zfd7",
    "title": "Quem Ama Cuida: Cena da 1ª vez de Mau Mau e Felipe gera revolta na web: “Preconceito velado”; veja reações Quem Ama Cuida: Saiba quando será exibida 1ª cena de sexo entre Mau Mau e Felipe (Foto: Beatriz Damy/Globo)",
    "summary": "Sequência íntima de Mau Mau e Felipe gerou uma série de críticas à Globo",
@@ -673,146 +1748,6 @@
    "source": "Hugo Gloss",
    "feed": "Hugo Gloss",
    "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "4ikf1p",
-   "title": "Morre Stacy Keach, vencedor do Globo de Ouro e personificação do policial durão",
-   "summary": "Stacy Keach, famoso por seu papel em Mike Hammer, morreu após uma luta contra doença cardíaca, deixando um legado na TV e no cinema",
-   "link": "https://noticiasdatv.uol.com.br/noticia/celebridades/morre-stacy-keach-vencedor-do-globo-de-ouro-e-personificacao-do-policial-durao-159290",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/fox-prison-break-stacy-keach-wentworth-miller.jpg",
-   "date": "2026-11-11T01:37:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "7lx9n9",
-   "title": "Isabel Teixeira chora nos bastidores de ‘Quem Ama Cuida’: ‘Tô falando sério’",
-   "summary": "EMOCIONADA! Isabel Teixeira é gravada aos prantos nos bastidores de Quem Ama Cuida",
-   "link": "https://contigo.com.br/noticias/famosos/isabel-teixeira-chora-nos-bastidores-de-quem-ama-cuida-to-falando-serio.phtml",
-   "image": "https://contigo.com.br/wp-content/uploads/2026/11/Isabel-Teixeira-a-Pilar-de-Quem-Ama-Cuida-406x228.jpg",
-   "date": "2026-11-11T01:35:17.000Z",
-   "source": "Contigo",
-   "feed": "Contigo",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "1ecwor5",
-   "title": "Internautas cobram PF por documento falso compartilhado por Nikolas",
-   "summary": "Arquivo atribuía à corporação a conclusão de que não havia indícios de crimes nas conversas entre o deputado e Daniel Vorcaro",
-   "link": "https://www.poder360.com.br/poder-congresso/internautas-cobram-pf-por-documento-falso-compartilhado-por-nikolas/",
-   "image": "https://static.poder360.com.br/uploads/2026/11/publicacao-nikolas-1.png",
-   "date": "2026-11-11T01:12:51.000Z",
-   "source": "Poder360",
-   "feed": "Poder360",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "xdtlwi",
-   "title": "Rachel Sheherazade solta o verbo contra novela da Rede Globo",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNbVhSeTNnLXh4SmdSMHN3RG5SUmxVak9kc05zbklyTks0eE9wMzRIZ1hxSU5vYXp3LV9Ia3ZXVjNKMU80TVVVLW1xUHZQSWF5ODg4cWZteUl6MlJuQVdJenk4WWRLSGRNLVFSb0p3OGpTc2VXQWc4cFZ4OFZ5VXhFdjdsMENnc1FkSzRmR3FFcGRDV01CMGtxQ2Yxei1WWHVLZWFoSUtmWkIybTlobVM3cGEwTk9idUpJTnZtbkhhbUNJM0FEMTl4TzN1SVY0N3ljV3UxLWZXZw?oc=5",
-   "image": "",
-   "date": "2026-11-11T01:01:00.000Z",
-   "source": "Terra",
-   "feed": "Google Notícias",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "jnjaz4",
-   "title": "Ator que interpreta Bolsonaro em ‘Dark Horse’ acusa governo Lula de censura e revelação sobre filme vem à tona",
-   "summary": "Jim Caviezel afirmou que o governo brasileiro estaria tentando impedir a estreia de “Dark Horse”, mas empresa responsável pelo lançamento negou qualquer proibição e esclareceu situação da produção",
-   "link": "https://contigo.com.br/noticias/famosos/ator-que-interpreta-bolsonaro-em-dark-horse-acusa-governo-lula-de-censura-e-revelacao-sobre-filme-vem-a-tona.phtml",
-   "image": "https://contigo.com.br/wp-content/uploads/2026/11/WhatsApp-Image-2026-11-10-at-17.23.59-406x228.jpg",
-   "date": "2026-11-11T01:00:04.000Z",
-   "source": "Contigo",
-   "feed": "Contigo",
-   "categories": [
-    "politica",
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "j9siht",
-   "title": "Socorro Acioli fala sobre sucesso de livros em encontro com famosos: 'A estratégia foi justamente não ter tido nenhuma'",
-   "summary": "Socorro Acioli participou na noite desta terça-feira (10) de um bate-papo - seguido de jantar - no Alma Cearense, restaurante do Ohana Beach Park Resorts, em Aquiraz, no Ceará. A escritora cearense, que ultrapassou a marca de 1 milhão de livros vendidos no…",
-   "link": "https://revistaquem.globo.com/entretenimento/livros/noticia/2026/11/socorro-acioli-celebra-sucessos-de-obras-e-comenta-adaptacoes-de-historias-para-cinema-e-carnaval.ghtml",
-   "image": "https://s2-quem.glbimg.com/bNngqitMcLMBDRI6KnrMtJZk5lo=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/p/I/RR0h7lSByp5QrjdmkXhQ/stories-instagram-32-.png",
-   "date": "2026-11-11T00:50:19.000Z",
-   "source": "Quem",
-   "feed": "Quem",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "cn97t7",
-   "title": "Sensitiva faz previsão assustadora sobre Daniel Vorcaro na prisão e revela possível desfecho trágico",
-   "summary": "Vidente surpreendeu ao afirmar que o ex-controlador do Banco Master pode não sair com vida da cadeia e levantou especulações sobre o futuro do empresário",
-   "link": "https://contigo.com.br/noticias/famosos/sensitiva-faz-previsao-assustadora-sobre-daniel-vorcaro-na-prisao-e-revela-possivel-desfecho-tragico.phtml",
-   "image": "https://contigo.com.br/wp-content/uploads/2026/09/Daniel-Vorcaro-era-chamado-de-irmao-por-politicos-veja-mensagens-encontradas-pela-PF-406x228.png",
-   "date": "2026-11-11T00:50:17.000Z",
-   "source": "Contigo",
-   "feed": "Contigo",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "1lbd12p",
-   "title": "Humorista chama Nikolas de “porteiro de banheiro” na Câmara",
-   "summary": "Durante o Prêmio Paulo Gustavo, humorista criticou vídeo do deputado sobre a pandemia e a atuação de Jair Bolsonaro durante o período",
-   "link": "https://www.poder360.com.br/poder-congresso/humorista-chama-nikolas-de-porteiro-de-banheiro-na-camara/",
-   "image": "https://i.ytimg.com/vi/rXwqsgKjoYU/hqdefault.jpg",
-   "date": "2026-11-11T00:48:23.000Z",
-   "source": "Poder360",
-   "feed": "Poder360",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "obmbvj",
-   "title": "Prefeitura do Recife alfineta ‘Lá na Minha Terra’ com postagem: ‘O que não falta’",
-   "summary": "AFRONTOSOS! Prefeitura surpreendeu com publicação que alfineta a novela Lá na Minha Terra",
-   "link": "https://contigo.com.br/noticias/novelas/prefeitura-do-recife-alfineta-la-na-minha-terra-com-postagem-o-que-nao-falta.phtml",
-   "image": "https://contigo.com.br/wp-content/uploads/2026/11/Rosenda-Dira-Paes-de-La-na-Minha-Terra-406x228.jpg",
-   "date": "2026-11-11T00:46:19.000Z",
-   "source": "Contigo",
-   "feed": "Contigo",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1jc7dza",
-   "title": "Eleita a influenciadora 60+ mais bonita do mundo, Ivy Mena disputa Oscar do conteúdo adulto: 'Meu marido foi o primeiro assinante'",
-   "summary": "Ivy Mena, influenciadora e criadora de conteúdo adulto com mais de 60 anos, está entre as indicadas à categoria Criadora do Ano no Creator Awards, conhecido como o “Oscar” do conteúdo adulto. A gaúcha disputa o troféu com nomes como MC Mirella, Bella…",
-   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/eleita-a-influenciadora-60-mais-bonita-do-mundo-pela-playboy-ivy-mena-disputa-premio-com-famosas-meu-marido-foi-o-primeiro-assinante.ghtml",
-   "image": "https://s2-quem.glbimg.com/pFq5kIeVLPq0Q-gJ3giulSLjNQY=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/z/0/XbtkZGSXumBYBUnwBCLQ/whatsapp-image-2026-11-10-at-16.47.42.jpeg",
-   "date": "2026-11-11T00:41:29.000Z",
-   "source": "Quem",
-   "feed": "Quem",
-   "categories": [
-    "teen",
-    "romances",
     "tv",
     "novidades"
    ]
@@ -831,77 +1766,6 @@
    ]
   },
   {
-   "id": "e7ewai",
-   "title": "Coaf terá acordo de cooperação técnica com grupo da USP",
-   "summary": "Geld (Grupo de Estudos de Lavagem de Dinheiro) vai colaborar com o Conselho de Controle de Atividades Financeiras para aprofundar pesquisas sobre lavagem de dinheiro",
-   "link": "https://www.poder360.com.br/poder-seguranca-publica/coaf-tera-acordo-de-cooperacao-tecnica-com-grupo-da-usp/",
-   "image": "https://static.poder360.com.br/uploads/2026/11/parceria-coaf-geld-usp-1200x675.jpg",
-   "date": "2026-11-11T00:35:21.000Z",
-   "source": "Poder360",
-   "feed": "Poder360",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "14ogsyk",
-   "title": "Uma fonte revelou os bastidores do desentendimento entre Ana Castela e Jon Vlogs em uma festa em São Paulo. Nesta segunda-feira (9), ao portal @leodias, o contato listou supostas atitudes da boiadeira que teriam sido o estopim e a reação do youtuber à",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE44eUlVdnNQZE4tVDM4RlhxT25LRTBQbXloSW1LT0x5Zmd6OUMyTU12RTlWZ1pLM1dLOE5uRXVxMlhlNGxQMEZyMUszZHBrZ0tqY0E?oc=5",
-   "image": "",
-   "date": "2026-11-11T00:34:59.000Z",
-   "source": "Instagram",
-   "feed": "Google Notícias",
-   "categories": [
-    "teen",
-    "festas",
-    "novidades"
-   ]
-  },
-  {
-   "id": "s6br9l",
-   "title": "Não cabe a Andrei reformular relatórios, diz associação de delegados",
-   "summary": "ADPF criticou a troca no comando das investigações do caso Master e disse que episódio abre precedente “preocupante”",
-   "link": "https://www.poder360.com.br/poder-justica/nao-cabe-a-andrei-reformular-relatorios-diz-associacao-de-delegados/",
-   "image": "https://static.poder360.com.br/uploads/2026/09/andrei-rodrigues-1200x675.jpg",
-   "date": "2026-11-11T00:34:13.000Z",
-   "source": "Poder360",
-   "feed": "Poder360",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "jo2j30",
-   "title": "Brunna Gonçalves usa microssaia em ensaio da Grande Rio e brinca: 'Cuidado para não pisar'",
-   "summary": "Brunna Gonçalves, de 34 anos, escolheu um look curtíssimo para o ensaio da Grande Rio nesta terça-feira (10). A dançarina e influenciadora apareceu nos stories do Instagram pronta para cair no samba na quadra da escola de Duque de Caxias, usando um…",
-   "link": "https://revistaquem.globo.com/eventos/carnaval/noticia/2026/11/brunna-goncalves-elege-minissaia-para-ensaio-da-grande-rio-e-brinca-cuidado-para-nao-pisar.ghtml",
-   "image": "https://s2-quem.glbimg.com/bpH5aTth-8dMOO3FoKVAPUnlxSA=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/O/A/1446QAQs6Dqnf2g6G2cg/stories-instagram-33-.png",
-   "date": "2026-11-11T00:33:59.000Z",
-   "source": "Quem",
-   "feed": "Quem",
-   "categories": [
-    "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1dvuwj5",
-   "title": "Diná comete sua última atrocidade contra Adriana em Quem Ama Cuida; saiba qual",
-   "summary": "Em Quem Ama Cuida, Diná (Rosi Campos) humilhará Mau Mau (João Victor Gonçalves) e despertará a fúria de Adriana (Leticia Colin). Confira resumo",
-   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/dina-comete-sua-ultima-atrocidade-contra-adriana-em-quem-ama-cuida-saiba-qual-159233",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/globo-quem-ama-cuida-dina-cena-novela.jpg",
-   "date": "2026-11-11T00:30:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
    "id": "yyhodk",
    "title": "Fim da união: Angélica surpreendeu ao anunciar fim do relacionamento",
    "summary": "",
@@ -911,21 +1775,6 @@
    "source": "contigo.com.br",
    "feed": "Google Notícias",
    "categories": [
-    "romances",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1a0xv5h",
-   "title": "Alane Dias lança filme e recebe Fran Gil e Flor Gil em première",
-   "summary": "A atriz, bailarina e ex-BBB Alane Dias, de 27 anos de idade, lançou, na noite desta terça-feira (10), o longa Verão da Lata, que reuniu convidados no Cinemark Shopping Eldorado, em São Paulo, e contou com a presença do namorado, Francisco Gil, de 31 anos,…",
-   "link": "https://revistaquem.globo.com/noticias/noticia/2026/11/alane-dias-lanca-filme-e-recebe-fran-gil-e-flor-gil-em-premiere.ghtml",
-   "image": "https://s2-quem.glbimg.com/qCn0_HDdIebw32SOa9zHg9jIbIo=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/C/e/s5P2VXSEiGiN2zvYxP7w/abre.jpg",
-   "date": "2026-11-11T00:24:09.000Z",
-   "source": "Quem",
-   "feed": "Quem",
-   "categories": [
-    "tv",
     "romances",
     "novidades"
    ]
@@ -945,49 +1794,6 @@
    ]
   },
   {
-   "id": "1dvdv8t",
-   "title": "Danilo Mesquita defende Lá na Minha Terra: 'É ficção, uma cidade que não existe'",
-   "summary": "Danilo Mesquita vive Raimundo em Lá na Minha Terra. Novela já sofria críticas antes mesmo da estreia por repetir antiquada representação de sertão",
-   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/danilo-mesquita-defende-la-na-minha-terra-e-ficcao-uma-cidade-que-nao-existe-159288",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/padrao-danilo-mesquita.jpg",
-   "date": "2026-11-11T00:15:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "hrp8zw",
-   "title": "Hugh Jackman mostra shape em praia com a namorada e seu personal trainer",
-   "summary": "O eterno Wolverine dos cinemas, Hugh Jackman, de 58 anos de idade, aproveitou um dia de praia com a namorada, a atriz Sutton Foster, e o homem responsável pelo astro manter o shape para seus trabalhos na franquia X-Men, da Marvel: o personal trainer e…",
-   "link": "https://revistaquem.globo.com/noticias/famosos-na-praia/noticia/2026/11/hugh-jackman-mostra-shape-em-praia-com-a-namorada-e-seu-personal-trainer.ghtml",
-   "image": "https://s2-quem.glbimg.com/ehpaIxpygW0aTQHddRSqVNJSuG8=/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2026/5/i/jvtZICTk6iAx9DML3igw/hugh.jpg",
-   "date": "2026-11-11T00:11:35.000Z",
-   "source": "Quem",
-   "feed": "Quem",
-   "categories": [
-    "romances",
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1rx8tbe",
-   "title": "Resumo de Quem Ama Cuida: Próximo capítulo da novela, quarta, 11 de novembro",
-   "summary": "Resumo do próximo capítulo de Quem Ama Cuida, novela das nove | Ademir (Dan Stulbach) dirá que colocará sobrinho na cadeia e ameaçará ex-mulher",
-   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/resumo-de-quem-ama-cuida-proximo-capitulo-da-novela-quarta-11-de-novembro-159104",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/artigos_2024/globo-quem-ama-cuida-ademir-123.jpeg",
-   "date": "2026-11-11T00:10:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
    "id": "16moeb8",
    "title": "Ex-BBB revela namoro que teve com Antonio Fagundes",
    "summary": "",
@@ -999,20 +1805,6 @@
    "categories": [
     "romances",
     "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "qvgn45",
-   "title": "TSE decide multar Meta em R$ 7,5 milhões por descumprir decisão durante as eleições",
-   "summary": "O Tribunal Superior Eleitoral (TSE) decidiu nesta terça-feira (10), por unanimidade, multar em R$ 7,5 milhões a empresa Meta (dona do Facebook, WhatsApp e Instagram) por descumprimento de decisões da Corte durante as eleições. Os ministros seguiram o voto…",
-   "link": "https://g1.globo.com/politica/noticia/2026/11/10/tse-meta-descumprir-decisao-sobre-eleicoes.ghtml",
-   "image": "https://s2-g1.glbimg.com/kWIA2Trvpzr2zchgwHiBt4YzdTQ=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/j/E/ZzxdB0QI2vUdC0A2qHpQ/globo-canal-4-20261103-2000-frame-110428.jpeg",
-   "date": "2026-11-11T00:01:13.000Z",
-   "source": "g1 Política",
-   "feed": "g1 Política",
-   "categories": [
-    "politica",
     "novidades"
    ]
   },
@@ -1031,20 +1823,6 @@
    ]
   },
   {
-   "id": "1tl5xen",
-   "title": "Resumo de Iludida: Próximo capítulo da novela turca, quarta, 11 de novembro",
-   "summary": "Resumo do próximo capítulo de Iludida, novela turca da Record | Jornalistas farão plantão na frente da casa de Asya (Cansu Dere)",
-   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/resumo-de-iludida-proximo-capitulo-da-novela-turca-quarta-11-de-novembro-159054",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/artigos_2024/cansu-dere-novela-iludida-repro-record.jpg",
-   "date": "2026-11-10T23:50:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
    "id": "60kpmk",
    "title": "Como se fosse a primeira vez: cinema holandês testa hipnose para 'apagar' filmes da memória",
    "summary": "Cena da exibição do Filme \"Divertidamente\" durante o Festival de Cinema Acessível Kids Foto: Gontof Comunicação/ Divulgação Rede de cinemas na Holanda coloca em prática plano para hipnotizar espectadores. O objetivo: tentar fazê-los esquecer…",
@@ -1055,34 +1833,6 @@
    "feed": "g1 Pop & Arte",
    "categories": [
     "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "8neklu",
-   "title": "Tiktoker que gravou FHC doente em casa não se arrepende: 'Faria de novo'",
-   "summary": "Wesley Oliveira concedeu sua primeira entrevista após virar alvo de críticas por gravar o ex-presidente Fernando Henrique Cardoso",
-   "link": "https://noticiasdatv.uol.com.br/noticia/celebridades/tiktoker-que-gravou-fhc-doente-em-casa-nao-se-arrepende-faria-de-novo-159287",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/wesley-oliveira-youtube.jpg",
-   "date": "2026-11-10T23:37:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "pcc5px",
-   "title": "Escala 6x1: Dino sinaliza que decisão em ação que questiona transição da nova jornada de trabalho sai até sexta",
-   "summary": "Ministro Flávio Dino, do Supremo Tribunal Federal (STF), em sessão plenária do 21 de outubro de 2026. Gustavo Moreno/STF O ministro do Supremo Tribunal Federal (STF), Flávio Dino, afirmou nesta terça-feira (10) que publicará até sexta-feira (13) uma…",
-   "link": "https://g1.globo.com/politica/noticia/2026/11/10/escala-6x1-dino-sinaliza-que-decisao-em-acao-que-questiona-transicao-da-nova-jornada-de-trabalho-sai-ate-sexta.ghtml",
-   "image": "https://s2-g1.glbimg.com/KC4qwCvEErqZUoEVcZLM72Ls3Ps=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/w/u/79yCu2RACqJOM0RUeJBA/ministro-do-stf-flavio-dino.jpg",
-   "date": "2026-11-10T23:21:39.000Z",
-   "source": "g1 Política",
-   "feed": "g1 Política",
-   "categories": [
-    "politica",
     "novidades"
    ]
   },
@@ -1127,20 +1877,6 @@
    ]
   },
   {
-   "id": "wwtu9g",
-   "title": "Associação critica afastamento de delegados que elaboraram relatórios sobre ministros do STF e cobra autonomia da PF",
-   "summary": "A Associação Nacional dos Delegados de Polícia Federal (ADPF) criticou o afastamento de dois delegados de funções de chefia na área de combate à corrupção da Polícia Federal e afirmou que o episódio pode representar uma ameaça à autonomia dos responsáveis…",
-   "link": "https://g1.globo.com/politica/noticia/2026/11/10/associacao-critica-afastamento-de-delegados-que-elaboraram-relatorios-sobre-ministros-do-stf-e-cobra-autonomia-da-pf.ghtml",
-   "image": "https://s2-g1.glbimg.com/Nio80kZDGtxyGX5ESTjm_RdWSsI=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/m/L/fBqFu1Qzy0te0w4PwSaQ/52830107256-f3a8e5c381-k.jpg",
-   "date": "2026-11-10T23:02:15.000Z",
-   "source": "g1 Política",
-   "feed": "g1 Política",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
    "id": "1q4cv94",
    "title": "Larissa Manoela faz retrospectiva dos cabelos que já teve e revela seu preferido",
    "summary": "Em vídeo publicado nas redes sociais, artista falou sobre diferentes fases capilares e destacou quais visuais conquistaram seu coração",
@@ -1166,20 +1902,6 @@
    "categories": [
     "teen",
     "romances",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1pz017v",
-   "title": "Globo esconde cena de Lá na Minha Terra com falas xenofóbicas das redes sociais",
-   "summary": "Lá na Minha Terra, nova novela das seis da Globo, sofreu acusações de xenofobia e de reforçar estereótipos atrasados sobre a região Nordeste",
-   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/globo-esconde-cena-de-la-na-minha-terra-com-falas-xenofobicas-das-redes-sociais-159286",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/padrao-ismalia.jpg",
-   "date": "2026-11-10T22:52:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
     "novidades"
    ]
   },
@@ -1213,48 +1935,6 @@
    ]
   },
   {
-   "id": "spxsh5",
-   "title": "Rita Cadillac abre o jogo sobre antigo romance com Pelé e faz confissão íntima: ‘Rolou..’",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOTkJQQWlNSzZ4eGFYU1lrRF9pZ1VHdnduWHNnNzI5bzRGX3dMS1o2ajVsRzFfVlNBWTFLUHBMNk5FQ2xDZzFJbVJ2Z2dVMUtLcmdEYXI5Q1I5YVdxRDFha2F0SFJxbE5zWkpEMUQwUV9na1REdU9lMGRFNWEyTEktUVJRTGJDUEY0YTUwTk9WYWstUFFLVzY3WDZPR2hUUnVjVGU5TjJEeG52WEdmT3ZibnE2cWJkOTJpZXRtRFBueVVsbVJqUDlZ?oc=5",
-   "image": "",
-   "date": "2026-11-10T22:43:11.000Z",
-   "source": "Mais Novela",
-   "feed": "Google Notícias",
-   "categories": [
-    "romances",
-    "novidades"
-   ]
-  },
-  {
-   "id": "11zs1va",
-   "title": "Zé morre em Por Você? Bandido volta das cinzas para assombrar dois personagens",
-   "summary": "Zé (Ângelo Antônio) escapará da morte mais uma vez em Por Você. Veja resumo de como ele sobreviverá a incêndio na novela das sete",
-   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/ze-morre-em-por-voce-bandido-volta-das-cinzas-para-assombrar-dois-personagens-158947",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/ze-angelo-antonio-por-voce-0511.jpg",
-   "date": "2026-11-10T22:40:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "9s18be",
-   "title": "Lula pediu foto de cantora nua durante prisão, relata agente da PF",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOb1hFY3J0ZFF3MGM0UFdhOGYyMmJoYXhIdGUxUnFmRDQ5bWc3R0l3Tk4xQmtNNFkzMVFuODREaEk1WUlFTFNZREVMdnBocTV0SVNPRG5zV01zenhNWktCUkJNd0lQZW5GeXNlc0ttdlVNTy1UWHNOUTBVNUFyVHBRa216a2loeVhXanlLMkQ2RUFUOGtyY21OUGo4VmxaRm5xRWh5eGUxbFFKVjBGWmQxVnJ3?oc=5",
-   "image": "",
-   "date": "2026-11-10T22:37:33.000Z",
-   "source": "Jornal Correio",
-   "feed": "Google Notícias",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
    "id": "akq69u",
    "title": "‘Pulo de pessoa em pessoa’: Liz Macedo fala sobre dificuldade de ficar solteira",
    "summary": "Em vídeo publicado no Tiktok, influenciadora falou sobre sua vida amorosa e alertou os seguidores sobre a importância de valorizar a própria companhia.",
@@ -1269,35 +1949,6 @@
    ]
   },
   {
-   "id": "2zvk0z",
-   "title": "Arcanjo Renegado: confira looks da festa de lançamento da série do Globoplay",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQd19BeDZaa09SQTRlM0dxTW9pVVZmM29hQ0pPYkx2Rkw4T2ptWEViY2ZiOUhoeVFfNE1jNE0xZzVSQ3NDRXdLaXVDZ2hyZmltMnlFQUZSTmNjLUswTlNuWEtCS2NyNUtrQVRaSG0xM01EWnZzM0h0LW5xeWRNTkdZV2RjX1FqMXZHbVVGaGJ2UzFsVHBmMHZDWEJrc2lETjIzeUhOTUFYTzdCNWNxWm5jTUdmVHpaS002a0ZlTDNNeEbSAc8BQVVfeXFMTlVGc1NkY0NPQ0E3cmZlaWtTTmhiZHIwaVhwcmhTWG5Tbko5RHBNUVlPR0NMbjNfOXJKUmxjV3RHNWNWZ1E5dWMxSks1U2g5UjlsR1RQbDFkVkdscTFuNENCVDRmZTl6NEJ1MktfVkN0Q0FJT0s2U3FyRzh5dTJ1emFLNERicE4tdnRsbWMwUFFzREFKcGF4R0ViN09ORVpSSHZFSlBldzlsYWZ3d21GY1RqRnVNZmRRSnBObHdtXzhDcTJ2T3RMNERrTnB0Z1Fz?oc=5",
-   "image": "",
-   "date": "2026-11-10T22:28:05.000Z",
-   "source": "Gshow",
-   "feed": "Google Notícias",
-   "categories": [
-    "tv",
-    "festas",
-    "novidades"
-   ]
-  },
-  {
-   "id": "uj7yav",
-   "title": "Erthal ameaça cobrar Bissoli por acusação feita em A Fazenda: 'Vou tirar dinheiro dele'",
-   "summary": "Daniel Erthal prometeu 'tirar dinheiro' de Lucas Bissoli fora de A Fazenda. A ameaça foi feita pelo ator após o médico acusá-lo de importunar mulheres",
-   "link": "https://noticiasdatv.uol.com.br/noticia/a-fazenda/erthal-ameaca-cobrar-bissoli-por-acusacao-feita-em-a-fazenda-vou-tirar-dinheiro-dele-159285",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/erthal-bissoli-afazenda-record.jpg",
-   "date": "2026-11-10T22:23:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
    "id": "re33i0",
    "title": "Escalado como Severo Snape em 'Harry Potter', ator aponta racismo em críticas: 'Existe uma antipatia'",
    "summary": "O ator Paapa Essiedu Dimitrios Kambouris/AFP O ator Paapa Essiedu, escalado para interpretar o professor Severo Snape na série \"Harry Potter\", disse que existe uma \"antipatia\" contra a sua escolha para o papel motivada por uma questão racial. Destaque nas…",
@@ -1308,89 +1959,6 @@
    "feed": "g1 Pop & Arte",
    "categories": [
     "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1lmyq17",
-   "title": "Resumo de Por Você: Próximo capítulo da novela, quarta, 11 de novembro",
-   "summary": "Resumo do próximo capítulo de Por Você, novela das sete | Zé (Ângelo Antônio) concluirá que foi alvo de uma tentativa de homicídio",
-   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/resumo-de-por-voce-proximo-capitulo-da-novela-quarta-11-de-novembro-159105",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/ze-angelo-antonio-por-voce-0411.jpg",
-   "date": "2026-11-10T22:20:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1ujqrbb",
-   "title": "Sabrina Sato revela motivo delicado que a levou a recorrer à fertilização in vitro: “Uma verdadeira batalha” Sabrina Sato revela por que recorreu à fertilização in vitro após perdas gestacionais (Foto: Globo / Bob Paulino)",
-   "summary": "Em entrevista à Vogue, Sabrina relembrou os desafios para engravidar novamente",
-   "link": "https://hugogloss.uol.com.br/famosos/sabrina-sato-fertilizacao/",
-   "image": "https://media.hugogloss.uol.com.br/uploads/2026/07/SaveVid.Net_731022484_18624943654010421_7551638083369852374_n.jpg-374x499.jpeg",
-   "date": "2026-11-10T22:13:09.000Z",
-   "source": "Hugo Gloss",
-   "feed": "Hugo Gloss",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1dh8fpy",
-   "title": "Tallulah Willis, filha de Bruce Willis, detona fonte que expôs estado de saúde do ator: “Fique longe da minha família” Tallulah Willis, filha de Bruce Willis, detona fonte que expôs estado de saúde do ator: “Fique longe da minha família”",
-   "summary": "Tallulah Willis reagiu a uma reportagem que descreveu o declínio cognitivo do pai, Bruce Willis",
-   "link": "https://hugogloss.uol.com.br/famosos/bruce-willis-tallulah-willis/",
-   "image": "https://media.hugogloss.uol.com.br/uploads/2025/06/Tallulah-Willis-617x347.jpg",
-   "date": "2026-11-10T22:11:31.000Z",
-   "source": "Hugo Gloss",
-   "feed": "Hugo Gloss",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "1hh6ij3",
-   "title": "Romance inusitado: Rita Cadillac dá detalhes íntimos sobre seu antigo affair com Pelé: 'Rolou'",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxQZTRvZ2ZqNktkWHAzQS1pbWIxcUt2enhrU1Rha1JSZWV6R0ZkQXR0MFN0eVFyMF9JdUMyYVI0NFhjVUFVRkd6eTZteFMzTVk2OGN1aTlYWWlMVy10TzNuZXptUlVZNEJrODJzN2lRc3VfNS1GMU9ZbXkzWXFmbjgxaHhyNXR3WTJyalZKTTFSbzVpdWZ6Wkxwd0Z4bWthaVZ5c0dCMDA0V1ZucXRYZ3dRZ01aYXNLN0dobHlSUzB1UmNhQUVjRFBCZkVuRnozaVdzaXBiWEtIenk2Yk9tYWxEck5oczE2OVcxMGcwR01RcmJRVjFmbnBBT1pJQzR5V2pnenpEREZxenVWZzRh0gGMAkFVX3lxTFBlNG9nZmo2S2RYcDNBLWltYjFxS3Z6eGtTVGFrUlJlZXpHRmRBdHQwU3R5UXIwX0l1QzJhUjQ0WGNVQVVGR3p5Nm14UzNNWTY4Y3VpOVhZaUxXLXRPM25lem1SVVk0Qms4MnM3aVFzdV81LUYxT1lteTNZcWZuODFoeHI1dHdZMnJqVkpNMVJvNWl1ZnpaTHB3Rnhta2FpVnlzR0IwMDRXVm5xdFhnd1FnTVphc0s3R2hseVJTMHVSY2FBRWNEUEJmRW5GejNpV3NpcGJYS0h6eTZiT21hbERyTmhzMTY5VzEwZzBHTVFyYlFWMWZucEFPWklDNHlXamd6ekRERnF6dVZnNGE?oc=5",
-   "image": "",
-   "date": "2026-11-10T22:06:08.000Z",
-   "source": "Terra",
-   "feed": "Google Notícias",
-   "categories": [
-    "romances",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1wul939",
-   "title": "Governo acerta com Congresso projeto de ajuste fiscal que pode chegar a R$ 80 bi em 2027",
-   "summary": "Governo prevê ajuste fiscal de 0,5% do PIB em 2027 O governo articula com o Senado a apresentação ainda nesta semana de um projeto de lei complementar (PLP) de ajuste fiscal de meio ponto do Produto Interno Bruto (PIB) para o ano de 2027, equivalente a uma…",
-   "link": "https://g1.globo.com/economia/blog/ana-flor/post/2026/11/10/governa-acerta-com-congresso-projeto-de-ajuste-fiscal-de-05percent-do-pib-para-2027.ghtml",
-   "image": "https://s2-g1.glbimg.com/RHcqH3bCxdHy7eSSIXZALylMYIs=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/i/B/nFOcrFRYOky4b2lCstyA/rbs-noticias-limpo-rbsn-2210.sub.01-frame-8267.png",
-   "date": "2026-11-10T22:03:53.000Z",
-   "source": "g1 Política",
-   "feed": "g1 Política",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "yvuipc",
-   "title": "Grazi Massafera revela o que mais a conquista em um relacionamento: “Me dá prazer”; assista (Foto: Divulgação/Vertical)",
-   "summary": "Em conversa com Giovanna Ewbank na estreia de “40 Perguntas”, Grazi Massafera também falou sobre independência financeira e mudanças na carreira",
-   "link": "https://hugogloss.uol.com.br/famosos/grazi-massafera/",
-   "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/Copia-de-IMG_4428-374x499.jpg",
-   "date": "2026-11-10T22:02:30.000Z",
-   "source": "Hugo Gloss",
-   "feed": "Hugo Gloss",
-   "categories": [
-    "romances",
     "novidades"
    ]
   },
@@ -1437,90 +2005,6 @@
    ]
   },
   {
-   "id": "17vaolb",
-   "title": "Santiago Peña: Polícia abre cofre escondido em mansão do ex-presidente do Paraguai e revela descoberta; assista Santiago Peña (Foto: Reprodução/Redes Sociais)",
-   "summary": "Cofre foi encontrado em operação da polícia na casa de veraneio do ex-presidente do Paraguai, Santiago Peña",
-   "link": "https://hugogloss.uol.com.br/mundo/santiago-pena-cofre/",
-   "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/Presidente-Paraguai-1-617x324.jpeg",
-   "date": "2026-11-10T21:44:49.000Z",
-   "source": "Hugo Gloss",
-   "feed": "Hugo Gloss",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
-   "id": "1kh86h2",
-   "title": "Pilotos e perfil da Stock Car brincam após exposed de affair entre César Ramos e Virginia: “WePinko”; veja Pilotos e perfil do Stock Car brincam após exposed de beijo de César Ramos e Virginia: 'WePinko'; veja (Reprodução/Instagram)",
-   "summary": "César Ramos e Virginia teriam ficado em uma festa após o Grande Prêmio de São Paulo, da Fórmula 1, no domingo (8)",
-   "link": "https://hugogloss.uol.com.br/famosos/cesar-ramos-beijo-virginia/",
-   "image": "https://media.hugogloss.uol.com.br/uploads/2026/11/WhatsApp-Image-2026-11-10-at-16.27.25.jpeg",
-   "date": "2026-11-10T21:34:53.000Z",
-   "source": "Hugo Gloss",
-   "feed": "Hugo Gloss",
-   "categories": [
-    "romances",
-    "teen",
-    "festas",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1pns3ke",
-   "title": "No Dia da Consciência Negra, série AYÔ estreia com acesso gratuito no Globoplay com história sobre amor, identidade e protagonismo negro",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOWXVXcXF1bEc4V3RGd250cXlwYVJOVGQtdDBWUHJTT3NlVWZiekNSel9LdG5GTVZOVEhYazJyMURpTUdHX2haZ1NibnhHRk5BT0RDNDVyTmJKV0hLRHp0M0RHMVBUWGRMR1hYVDN5d3J0NHBoOFQwbm1JRUl1S3NHRHJrZGJNSjNMNTlGdkpodFAxTG9vd0k4U3NrTDd0bU4xb1lUVW5hU3NBLTlwTWxQNE1XNXZmMVNFcWZYZWRIZzZZMDNTaUlTakc5bXBfQzQ5Rll0TFpUalVIY2o2a0ppRnp1NEt0cW5jSjZObnJfVURTWElSMWpTNw?oc=5",
-   "image": "",
-   "date": "2026-11-10T21:33:31.000Z",
-   "source": "Blog do Amarildo",
-   "feed": "Google Notícias",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1awnzuw",
-   "title": "Quem é Arianne Botelho? Lina de Lá na Minha Terra já fez true crime e série bíblica",
-   "summary": "Arianne Botelho está estreando com um papel de grande destaque numa novela em Lá na Minha Terra, mas já tem 11 anos de carreira no audiovisual",
-   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/quem-e-arianne-botelho-lina-de-la-na-minha-terra-ja-fez-true-crime-e-serie-biblica-159274",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/bio/la-na-minha-terra-arianne-botelho-lina-beatriz-damy-tv-globo.jpg",
-   "date": "2026-11-10T21:30:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1w850v3",
-   "title": "Relator atende agronegócio, e MP que renegocia dívidas rurais é aprovada na Câmara",
-   "summary": "Depois de uma longa negociação, a Câmara dos Deputados aprovou nesta terça-feira (10) a Medida Provisória (MP) que renegocia as dívidas rurais. O líder do Governo na Câmara, Paulo Pimenta (PT-RS), aceitou pedidos do setor do agronegócio e apresentou um…",
-   "link": "https://g1.globo.com/politica/noticia/2026/11/10/relator-atende-agronegocio-e-mp-que-renegocia-dividas-rurais-e-aprovada-na-camara.ghtml",
-   "image": "https://s2-g1.glbimg.com/yTrF_L5p97z0uLtr0OD0qhlaaRE=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/w/V/XmaJdcSjWildTctvcGbQ/renato-araujo-camara-dos-deputados.jpeg",
-   "date": "2026-11-10T21:24:04.000Z",
-   "source": "g1 Política",
-   "feed": "g1 Política",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "lwog86",
-   "title": "Christina Applegate revela teoria surpreendente sobre possível causa de sintomas após descobrir erro em diagnóstico de esclerose múltipla Christina Applegate revela teoria surpreendente sobre possível causa de sintomas após descobrir erro em diagnóstico de esclerose múltipla",
-   "summary": "Christina Applegate foi diagnosticada erroneamente coma a doença há seis anos e agora investiga outras condições",
-   "link": "https://hugogloss.uol.com.br/famosos/christina-applegate-diagnostico-2/",
-   "image": "https://media.hugogloss.uol.com.br/uploads/2021/08/christina-applegate-617x347.jpg",
-   "date": "2026-11-10T21:17:39.000Z",
-   "source": "Hugo Gloss",
-   "feed": "Hugo Gloss",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
    "id": "ukwfok",
    "title": "Primeira imagem de Victor Medeiros como Roberto Carlos é divulgada. Compare",
    "summary": "Com estreia prevista para 2027, o longa vai retratar a trajetória de Roberto Carlos, da infância ao sucesso nacional",
@@ -1563,35 +2047,6 @@
    ]
   },
   {
-   "id": "1xohyt",
-   "title": "“Nunca vi coisa mais baixa”: Celso Portiolli denuncia boicote ao Teleton por motivos políticos",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOdE9rS3E3M2xLNHo3LTlWS200MUxrQkNuLVVIYnF3UzRaOUN5Ynk2WDR0dmp6c2JlaDRCUEN3aklySWpSd25Db1ZlRjVCOEk1QzFjVlhlaTJjY1ZKMUZmaGdCdkpuM1FTVnk2X2NCMHZXRzRPbGU2dHF2b1llZzM2dFdNdC0ycjYwWXhKLS01NnhaSGxCLVJQM3FnYXB6NDJTOWxpTVJTV0hRMURl?oc=5",
-   "image": "",
-   "date": "2026-11-10T21:06:19.000Z",
-   "source": "Brasil Paralelo",
-   "feed": "Google Notícias",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "cnre5z",
-   "title": "Crise sem fim: Até Prefeitura do Recife debocha da Globo por Lá na Minha Terra",
-   "summary": "Prefeitura do Recife ironiza estreia de Lá na Minha Terra, novela das seis da Globo criticada por retratar o Nordeste de forma estereotipada",
-   "link": "https://noticiasdatv.uol.com.br/noticia/novelas/crise-sem-fim-ate-prefeitura-de-recife-debocha-da-globo-por-la-na-minha-terra-159280",
-   "image": "https://noticiasdatv.uol.com.br/media/uploads/2026/11/mateus-solano-la-na-minha-terra-globo.jpg",
-   "date": "2026-11-10T20:55:00.000Z",
-   "source": "Notícias da TV",
-   "feed": "Notícias da TV",
-   "categories": [
-    "tv",
-    "politica",
-    "novidades"
-   ]
-  },
-  {
    "id": "n4rccx",
    "title": "Flávio Dino cobra discussão sobre limites tecnológicos nas eleições",
    "summary": "",
@@ -1616,20 +2071,6 @@
    "feed": "Metrópoles Entret.",
    "categories": [
     "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1r8k036",
-   "title": "Senado prevê gasto de R$ 6 milhões com 95 iPhones 18 Pro e 330 outros celulares para parlamentares e servidores",
-   "summary": "Plenário do Senado Federal Jonas Pereira/Agência Senado O Senado prevê gastar pouco mais de R$ 6 milhões em um contrato de serviços de telefonia que inclui o fornecimento de 95 iPhones 18 Pro, o mais recente da Apple, e 330 smartphones de outros modelos. A…",
-   "link": "https://g1.globo.com/politica/noticia/2026/11/10/senado-preve-gasto-de-r-6-milhoes-com-95-iphones-18-pro-e-330-outros-celulares-para-parlamentares-e-servidores.ghtml",
-   "image": "https://s2-g1.glbimg.com/DeetuR1aGGydu1zpfBHH0uOdu2M=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/k/o/kOX7juSmuLNsluiXbL8Q/img-1621.jpg",
-   "date": "2026-11-10T20:33:29.000Z",
-   "source": "g1 Política",
-   "feed": "g1 Política",
-   "categories": [
-    "politica",
     "novidades"
    ]
   },
@@ -1775,48 +2216,6 @@
    ]
   },
   {
-   "id": "e51r6j",
-   "title": "Teste: Você confia demais no que é dito nas redes sociais?",
-   "summary": "Descubra se você está realmente atento ou cai em fake news facilmente",
-   "link": "https://capricho.abril.com.br/comportamento/teste-voce-confia-demais-no-que-e-dito-nas-redes-sociais/",
-   "image": "https://capricho.abril.com.br/wp-content/uploads/2025/08/eca-virtual-o-que-muda.jpg",
-   "date": "2026-11-10T19:15:21.000Z",
-   "source": "Capricho",
-   "feed": "Capricho",
-   "categories": [
-    "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1h5aldi",
-   "title": "Marina Sena aposta no minimalismo em apresentação no Tiny Desk",
-   "summary": "Cantora revisita faixas de ‘De Primeira’ e ‘Coisas Naturais’ e divide os vocais de ‘Doçura’ com Luislo, do trio Çantamarta",
-   "link": "https://capricho.abril.com.br/entretenimento/marina-sena-aposta-no-minimalismo-em-apresentacao-no-tiny-desk/",
-   "image": "https://capricho.abril.com.br/wp-content/uploads/2026/11/THUMB-4.jpg",
-   "date": "2026-11-10T19:13:50.000Z",
-   "source": "Capricho",
-   "feed": "Capricho",
-   "categories": [
-    "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1l42gkc",
-   "title": "11 pedidos para você fazer durante o Portal de 11/11, que acontece nesta semana",
-   "summary": "Portal fecha o ano dos começos. E hora de você pedir coragem, intuição e parceria. Entenda aqui",
-   "link": "https://capricho.abril.com.br/comportamento/11-pedidos-para-voce-fazer-durante-o-portal-de-11-11-que-acontece-nesta-semana/",
-   "image": "https://capricho.abril.com.br/wp-content/uploads/2019/11/portal.jpg",
-   "date": "2026-11-10T19:00:20.000Z",
-   "source": "Capricho",
-   "feed": "Capricho",
-   "categories": [
-    "teen",
-    "novidades"
-   ]
-  },
-  {
    "id": "6nqv55",
    "title": "Influenciadora se divorcia após 14 dias de casamento por pedido inusitado",
    "summary": "",
@@ -1842,21 +2241,6 @@
    "feed": "g1 Pop & Arte",
    "categories": [
     "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "nt5ask",
-   "title": "Em clima de festa, Dira Paes e elenco acompanham estreia da novela ‘Lá na Minha Terra’ - Portal IN",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNQkYyc01CU3NfcVA5Z0xUMl9DU0p2MWJ1SDR3S1l4S1BkUTFlM2hCaUg5STNKU3FSMzFXaE1aNlJlOHpBOHhtUjNsRWZrSXRjX21VSmZ0TFEwbVIyLXBEWlIweWtWSXB0MGhrTGIzalhBQlBRcVFtVXRPcnE3MkFsVzQ5QWFCSXdVcURqaGRfUUpwd1hwcjRTRFhIaVptV1BBRFJ4enpYdXZPMzdHZ1RaekswVXk1NkdCSkFvdkhKYw?oc=5",
-   "image": "",
-   "date": "2026-11-10T18:42:00.000Z",
-   "source": "Pompeu Vasconcelos",
-   "feed": "Google Notícias",
-   "categories": [
-    "tv",
-    "festas",
     "novidades"
    ]
   },
@@ -1889,19 +2273,6 @@
    ]
   },
   {
-   "id": "7zefaf",
-   "title": "IFB abre inscrições para curso gratuito de produção audiovisual no DF",
-   "summary": "O Instituto Federal de Brasília (IFB) promove o curso superior gratuito de tecnologia em produção audiovisual. Inscrições estão abertas",
-   "link": "https://www.metropoles.com/entretenimento/cultura/ifb-abre-inscricoes-para-curso-gratuito-de-producao-audiovisual-no-df",
-   "image": "https://images.metroimg.com/2026/11/predio-do-IFB-no-Recanto-das-Emas-2.jpeg",
-   "date": "2026-11-10T18:03:33.000Z",
-   "source": "Metrópoles Entret.",
-   "feed": "Metrópoles Entret.",
-   "categories": [
-    "novidades"
-   ]
-  },
-  {
    "id": "p6fgnv",
    "title": "BK’ expande primeiro álbum, 'Castelos & ruínas', com remixes que festejam os dez anos do disco de estreia do rapper",
    "summary": "BK’ lança em 17 de novembro um álbum de remixes produzidos a partir das faixas do disco 'Castelos & ruínas', lançado pelo rapper há dez anos Rafael Leal / g1 ♫ NOTÍCIA ♬ Contratado pela Interscope Records, em movimento pioneiro da gravadora norte-americana…",
@@ -1912,48 +2283,6 @@
    "feed": "g1 Pop & Arte",
    "categories": [
     "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "18knvzn",
-   "title": "‘A Bola Preta’ é destaque do MixBrasil 2026; confira programação completa",
-   "summary": "Festival reúne 138 filmes de 30 países, além de séries, teatro, games e outras atrações LGBTQIA+ em São Paulo",
-   "link": "https://capricho.abril.com.br/entretenimento/a-bola-preta-e-destaque-do-mixbrasil-2026-confira-programacao-completa/",
-   "image": "https://capricho.abril.com.br/wp-content/uploads/2026/11/abolapreta.jpg",
-   "date": "2026-11-10T18:00:59.000Z",
-   "source": "Capricho",
-   "feed": "Capricho",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1p6ija1",
-   "title": "King Richard: conheça a história real que inspirou o filme de Will Smith",
-   "summary": "A Sessão da Tarde desta terça-feira (10/11) exibe o filme King Richard: Criando Campeãs, protagonizado pelo ator Will Smith",
-   "link": "https://www.metropoles.com/entretenimento/king-richard-conheca-o-homem-real-que-inspirou-filme-de-will-smith",
-   "image": "https://images.metroimg.com/2026/11/king-richard-02.jpg",
-   "date": "2026-11-10T18:00:45.000Z",
-   "source": "Metrópoles Entret.",
-   "feed": "Metrópoles Entret.",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "g4snmo",
-   "title": "Michelle diz que comentário sobre Damares e bispo foi brincadeira",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQeUtpeDdJdUtENVJxTjY2R21BcGg1WHlRbFlsczEyQXM0T1lITUdUXzZ2YW5kdUFuOFpWS0h4VlNjM242NlQtS19JY2J2NS00N01HT1BHY1ZDcHJYUFNjZkpnR19EZkg5WHFlVldyX3A0ZjBlVnB4NGlLaTB5Q0FNRkJpOS10QVJYWkxDNThNOU14OVIyZUZlM1I3M1E1ejE2MC1z?oc=5",
-   "image": "",
-   "date": "2026-11-10T17:40:09.000Z",
-   "source": "Diário do Centro do Mundo",
-   "feed": "Google Notícias",
-   "categories": [
-    "politica",
     "novidades"
    ]
   },
@@ -1986,30 +2315,16 @@
    ]
   },
   {
-   "id": "sn2a4x",
-   "title": "Maisa usa jaqueta puffer vermelha da Louis Vuitton para curtir o GP de São Paulo",
-   "summary": "Artista marcou presença em Interlagos com uma produção confortável, combinando a peça com jeans e óculos no mesmo tom",
-   "link": "https://capricho.abril.com.br/moda/maisa-usa-jaqueta-puffer-vermelha-da-louis-vuitton-para-curtir-o-gp-de-sao-paulo/",
-   "image": "https://capricho.abril.com.br/wp-content/uploads/2026/11/maisa-gp-formula-1-sao-paulo.jpg",
-   "date": "2026-11-10T17:10:11.000Z",
-   "source": "Capricho",
-   "feed": "Capricho",
+   "id": "qoqrbc",
+   "title": "Ed Westwick, de Gossip Girl, reúne famosos em São Paulo durante lançamento de marca de perfumes árabe - Portal IN",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPb1l1alVTOWd2RzN4VXdrYkZOT2RxdUV1aGdDcFB6THB2NEMtMS1NNnNLQkFYTjFkM05IRkFOdXlwRDBfc2tDaldtaEdNa1lfSDdGazlGbDdUaWp5dkp3cWplS0d1elM3V0RLV2lzRjZwVDdaUURvaWszZC1rei1GNEstLTRPN0FQbVd5eWo2c2V5YWU3SnBJV09hZnhia1Uxd2oxaHVuNmJILUNyUnZ3RlJuRnBHbXVEeXdWM1ZFNHlHY1k4aG1qUGtKTXc5UQ?oc=5",
+   "image": "",
+   "date": "2026-11-10T16:14:00.000Z",
+   "source": "Pompeu Vasconcelos",
+   "feed": "Google Notícias",
    "categories": [
-    "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "igleir",
-   "title": "Hayley Williams critica Bolsonaro e defende pessoas trans em show no Rio",
-   "summary": "Na estreia de sua turnê solo no Brasil, a vocalista do Paramore também parabenizou o público pelo resultado das eleições brasileiras",
-   "link": "https://capricho.abril.com.br/entretenimento/hayley-williams-critica-bolsonaro-e-defende-pessoas-trans-em-show-no-rio/",
-   "image": "https://capricho.abril.com.br/wp-content/uploads/2026/11/THUMB-3.jpg",
-   "date": "2026-11-10T16:10:23.000Z",
-   "source": "Capricho",
-   "feed": "Capricho",
-   "categories": [
-    "politica",
+    "festas",
     "novidades"
    ]
   },
@@ -2021,34 +2336,6 @@
    "image": "",
    "date": "2026-11-10T16:10:09.000Z",
    "source": "Mais Novela",
-   "feed": "Google Notícias",
-   "categories": [
-    "romances",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1624lir",
-   "title": "Aline Dahlen revela por que terminou namoro com Antonio Fagundes",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQZ2p2ZkNkUGJkUW1xXy1RNld5Z1UwOUtyMjdJejdfUjFYY2l6V2VGbWdadF9hVGFKN2lUaHBIbDdhR0NoeXlMc0lnUERZRHduY2kwUGNRWkk3STd2UmNyci1SUFBFRlZsbUJOS0J1RXpwNlVudUhKYXNMblFGZ21yTGRTcTgyQklXRXJFaHBDV1VUanVKdEhQV0RyOXBSdVlZQTFpWmxnTXdrT0dSTkQwR0JHRjlNZXVPZG01Vlh2dXIyeDE3Y09mX3B30gHPAUFVX3lxTE4xQnV1Y20yMUZiMHlyVldnUDhXTkRmYmtFZG5zOV9heExSSGpRMFYwdDd0Z3B0c25VWW1PQS1DcjVNMWVvYkJPc0h6RTAwRHdiYnVzZU9HSDJqNkxYUF85djhtcEJHeWJZeFZtdVBhOGdBeWVLZWpDcGU5V2gwdldqREJ3WFl3TWJsZDFSRUJfTzk3VHlEazJ2SnlmdEFZU0pEcjR1UUppVFlkdnUwQVpoUVJ6ek10dWNnMVBIM2ZWQVV2cjg1Tjg4MlVlcUtjcw?oc=5",
-   "image": "",
-   "date": "2026-11-10T16:06:34.000Z",
-   "source": "O Dia",
-   "feed": "Google Notícias",
-   "categories": [
-    "romances",
-    "novidades"
-   ]
-  },
-  {
-   "id": "mkybjj",
-   "title": "Adeus, Colapinto? Em meio a rumor de affair com argentino, Virgínia tem 'ficada' com outro piloto revelada: 'Dançando juntos e se beijaram'",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNY1Y1LW9PVWpMVkpSX3VpNFZRUlZnTXEwUEZoV2xIbWxlXzJfMEJXLXROV0trTEMtdDkzUFpuNEp3eG44Q3hiR0JqbXhuWDdYSV9TLTNQZnNMSWppS285YkhnZFZSLWI5dldsMHBUUngzRzVBMktkSERVR2VWY293eVRNVnFqeGJHWmhqcVJXUG82ZXNoRGV1Z044cS1xVnFkWXA4X01EMnNOQk5zbXJMcU14RFNsZmxIZjFULXRZVGpDR3pzb0VlS0pjU2c1T0dJOHVDRU85REgwV21XWGR1cEt4NWRNcjJEZVVHb1ZsaTNOeHdWRnNfOWo2eXloR2UtSVNDQ3pvQncwT3fSAZACQVVfeXFMT09xV00waXJGX05lbmRySXRoRU1GZWpnSG9DQ3lJTkNIWExSTWt0T1NhbXpvQVdVZEpONEhqUmQ5MnRCWnBrOFhSUUlyS3IzTV9lSnI0R1U2SzczM3JDRWdMTTJiQUpDS0FzT1RxWllaZUYxQk1FbG9sdHlKcHZLSmluVnVKS3dNd2NvaVlGVERjQ0REUzQ1ZkRQMzlHZ3FVeVpRQnI5M3JFUmU1b1ZZNWItYkVya0RpdGQ2emk0eGIxc3R5X09PVVozMUNQWEN3eUpIQW0tWW5wLXVWSDlFWnZ4LXdOakg0N2RtWktQZ1BucmNtVTJ6dUJHeFp6NHBlcW1ud01YY0g3Skd4aWs3cVM?oc=5",
-   "image": "",
-   "date": "2026-11-10T16:03:00.000Z",
-   "source": "Purepeople",
    "feed": "Google Notícias",
    "categories": [
     "romances",
@@ -2111,15 +2398,16 @@
    ]
   },
   {
-   "id": "my14p8",
-   "title": "Suno é processada por treinar IA com músicas de Elvis Presley e Eminem",
-   "summary": "A plataforma está sendo processada por suposto uso indevido das obras de Elvis Presley e Eminem para treinar gerador de música baseado em IA",
-   "link": "https://www.metropoles.com/entretenimento/elvis-presley-e-eminem-obras-ia",
-   "image": "https://images.metroimg.com/2026/11/donos-dos-direitos-de-elvis-presley-e-eminem-processam-plataforma-de-ia.jpg",
-   "date": "2026-11-10T15:03:13.000Z",
-   "source": "Metrópoles Entret.",
-   "feed": "Metrópoles Entret.",
+   "id": "u7x93g",
+   "title": "Quem é Bella Falconi, influencer alvo do MPT",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE11dFVSQ29EZDM0QWxTRWItYmtBWHVKSGYxTUY5d25lRWI2eDNLdXVfM2JUOGZOUWx6MnZTVHJZZi1IeTZqa3BQU2t2ZnlXNy00ZkVyMEUzamVjcEFCejIyNjRaZ3hXNGNTZUE?oc=5",
+   "image": "",
+   "date": "2026-11-10T15:00:00.000Z",
+   "source": "MidiaNews",
+   "feed": "Google Notícias",
    "categories": [
+    "teen",
     "novidades"
    ]
   },
@@ -2139,20 +2427,6 @@
    ]
   },
   {
-   "id": "1j3nvwd",
-   "title": "Quando estreia a 6ª temporada de ‘The Chosen’, série bíblica do Prime Video?",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxObkM1LXBvRG1wN18tSFRhcWVFeDZzZ044U0QzZGt4bXdCcEh6ZW1lZTdZZ3o1Y3ViWXZ5MzdWMWxpd2xrZUFKeC03VGRMd2dTRmFSLURxSlF2RmRJTHpRbTlvbFdUSkxJVzdNcW5QamZIVjFac2U2cGR4MWc1YngtVTd5QXMzS3RtT0FpZ2hLeHE1NkZydTZQT091RWxkay1zRk9CYWZqcw?oc=5",
-   "image": "",
-   "date": "2026-11-10T14:40:06.000Z",
-   "source": "Rolling Stone Brasil",
-   "feed": "Google Notícias",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
    "id": "fx2rgj",
    "title": "Maya Massafera se pronuncia após polêmica com influenciadora que irá se casar",
    "summary": "",
@@ -2163,34 +2437,6 @@
    "feed": "Google Notícias",
    "categories": [
     "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "uxmo0p",
-   "title": "Nova temporada da série Reis estreia nesta terça (10) na tela da RECORD",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQbDJRU0dUM1Y4UEgyaEV5XzlRYTkyZE01QVNOd1lYWjJLcm8tU0lOeVRSMmgyUFlSNkItU0xsZzdrY1o4WWkxZVRWUU1UMmhDelhjVGlSUnFKMU5SS2xRdklYV2RYQnVodFRuS3JJSFVIZVFuWFFYU2ROSFJuY185bUJPU29oUmNaaUdCZjVrajhPWVRSSnRxUjNka19hZERuckRoVlh1LWhzVEtoQ25acVhKN2xSd3pFcXBB?oc=5",
-   "image": "",
-   "date": "2026-11-10T14:32:49.000Z",
-   "source": "R7",
-   "feed": "Google Notícias",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1log543",
-   "title": "Quem é César Ramos, suposto affair de Virginia curtido por Bruna Biancardi",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQbk10MEtQdDZsWHBHRUppT2o2WVNldUxBRzlmOVh4LUhaNl9vZURYcUVzaGhxbmd6YmFORE5zeDJUWWdWZHFDLWhfNWlpWS1sVkg0MzNicEpMbC1DR0o2ZlBWSlR2NkJhQjZKY1hVWW0xaVc0RG5Gcl9jMWk0TF9IVVhYbWp6dUduMl9SeE5hUmlxSEMyYXUxdDFxSkVMZ2xlel9uVHZOWUtRendJREsxc3VZZ2lZTUVpbjNhb21relNrQTg?oc=5",
-   "image": "",
-   "date": "2026-11-10T14:32:00.000Z",
-   "source": "Band",
-   "feed": "Google Notícias",
-   "categories": [
-    "romances",
     "novidades"
    ]
   },
@@ -2237,20 +2483,6 @@
    ]
   },
   {
-   "id": "w2ire3",
-   "title": "O que cabe na palma da sua mão",
-   "summary": "Em uma sexta-feira de outubro, em Curitiba, foi esse gesto que sua neta de 9 anos usou para pedir ajuda.",
-   "link": "https://capricho.abril.com.br/coluna/renata-greco/o-que-cabe-na-palma-da-sua-mao/",
-   "image": "https://capricho.abril.com.br/wp-content/uploads/2026/11/sinal-mao.png",
-   "date": "2026-11-10T13:39:36.000Z",
-   "source": "Capricho",
-   "feed": "Capricho",
-   "categories": [
-    "teen",
-    "novidades"
-   ]
-  },
-  {
    "id": "9nwm3c",
    "title": "Gracyanne Barbosa revela acordo secreto com Belo após separação e surpreende com declaração",
    "summary": "",
@@ -2279,16 +2511,15 @@
    ]
   },
   {
-   "id": "15dpw7x",
-   "title": "O primeiro dia do Enem não é o último episódio da sua história",
-   "summary": "Se você não foi tão bem no primeiro dia do Enem 2026, é hora de canalizar sua Elphaba interior e desafiar a gravidade. CAPRICHO te explica por quê.",
-   "link": "https://capricho.abril.com.br/sociedade/o-primeiro-dia-do-enem-nao-e-o-ultimo-episodio-da-sua-historia/",
-   "image": "https://capricho.abril.com.br/wp-content/uploads/2026/11/enem-2026.webp",
-   "date": "2026-11-10T13:05:12.000Z",
-   "source": "Capricho",
-   "feed": "Capricho",
+   "id": "8qoa7w",
+   "title": "Web vai à loucura ao descobrir quem Virgínia beijou escondido na Fórmula 1: 'Finalmente'",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxNYXk0Z3A3ODg5WGNLcjNKUzJXV1FzeDhXV0NwNkpVUENNWlZQQTB5dWdBUDh1a05xYW9CQ19ITWh4QmVXQjkyU1hkZFJyRlg1SHNtdi02cVRGaTZuRngteFc2ekg1ejhWVjRBQ0JBd0k3emJTY2JfamtxSmdBcEF3ZmVqcm13SlQzdlhvNGloLU5IUVVha0w1ZlRHdXVLV0tiTGxPNmJKVkpUdWtkZlZ2MEl6ZVFGeUxUYjVvTXBrRDdualMwVHhvRGNRVXpidjQwbUtOaDI3aGExSHFud09WdlcxWndZS3dmNnFFNG4weUVLaFI0U0VrN1BLOGRwXzEwZWxnenF30gGGAkFVX3lxTE1heTRncDc4ODlYY0tyM0pTMldXUXN4OFdXQ3A2SlVQQ01aVlBBMHl1Z0FQOHVrTnFhb0JDX0hNaHhCZVdCOTJTWGRkUnJGWDVIc212LTZxVEZpNm5GeC14VzZ6SDV6OFZWNEFDQkF3STd6YlNjYl9qa3FKZ0FwQXdmZWpybXdKVDN2WG80aWgtTkhRVWFrTDVmVEd1dUtXS2JMbE82YkpWSlR1a2RmVnYwSXplUUZ5TFRiNW9NcGtEN25qUzBUeG9EY1FVemJ2NDBtS05oMjdoYTFIcW53T1Z2VzFad1lLd2Y2cUU0bjB5RUtoUjRTRWs3UEs4ZHBfMTBlbGd6cXc?oc=5",
+   "image": "",
+   "date": "2026-11-10T12:41:09.000Z",
+   "source": "Terra",
+   "feed": "Google Notícias",
    "categories": [
-    "teen",
     "novidades"
    ]
   },
@@ -2317,19 +2548,6 @@
    "feed": "Google Notícias",
    "categories": [
     "romances",
-    "novidades"
-   ]
-  },
-  {
-   "id": "xtov3z",
-   "title": "M. John Harrison é o vencedor do Booker Prize com livro pós-apocalíptico",
-   "summary": "Aos 81 anos, o britânico se tornou o escritor mais velho a vencer o Booker Prize com a obra The End of Everything",
-   "link": "https://www.metropoles.com/entretenimento/m-john-harrison-e-o-vencedor-do-booker-prize-com-livro-pos-apocaliptico",
-   "image": "https://images.metroimg.com/2026/11/gettyimages-2303947078.jpg",
-   "date": "2026-11-10T11:46:10.000Z",
-   "source": "Metrópoles Entret.",
-   "feed": "Metrópoles Entret.",
-   "categories": [
     "novidades"
    ]
   },
@@ -2417,34 +2635,6 @@
    ]
   },
   {
-   "id": "1fb7oh3",
-   "title": "Enem 2026: veja os famosos, artistas, filme e obras que apareceram na prova",
-   "summary": "O primeiro dia do Enem reuniu referências à música, ao cinema, às artes plásticas, à literatura e a outros campos da cultura",
-   "link": "https://www.metropoles.com/entretenimento/enem-2026-veja-os-famosos-artistas-filme-e-obras-que-apareceram-na-prova",
-   "image": "https://images.metroimg.com/2026/11/milton-nascimento-chico-buarque-e-charles-chaplin-foram-alguns-dos-nomes-que-apareceram-nas-questoes-do-enem-2026.jpg",
-   "date": "2026-11-10T07:00:31.000Z",
-   "source": "Metrópoles Entret.",
-   "feed": "Metrópoles Entret.",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1o64cov",
-   "title": "Lula leu mais de 15 livros na prisão, revela agente da PF. Veja quais",
-   "summary": "Livro de Jorge Chastalo Filho, carcereiro de Lula, revela os títulos lidos pelo presidente da República durante os 580 dias de prisão",
-   "link": "https://www.metropoles.com/entretenimento/lula-leu-mais-de-10-livros-durante-prisao-revela-agente-da-pf-veja-lista",
-   "image": "https://images.metroimg.com/2026/10/presidente-luiz-inacio-lula-da-silva-eleicao-2026-metropoles-19-scaled.jpg",
-   "date": "2026-11-10T07:00:00.000Z",
-   "source": "Metrópoles Entret.",
-   "feed": "Metrópoles Entret.",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
    "id": "1dz86ml",
    "title": "Lula sonda aliados da Bahia sobre indicações para PF e Justiça",
    "summary": "Coluna apurou que Lula perguntou ao governador da Bahia, Jerônimo Rodrigues, sobre nome de delegado baiano para comandar a PF",
@@ -2455,21 +2645,6 @@
    "feed": "Igor Gadelha",
    "categories": [
     "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "vzau50",
-   "title": "Vestido de noiva de Anitta? Renda branca, véu e aplicações douradas: cantora aposta em look boho romântico com toque místico para show intimista em São Paulo; veja +45 fotos",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMinwJBVV95cUxOSHpBd0FtdXc2NnByRG53R3VmNFVVTlFMejIwSGRSYlZqcUh1MFJYOVBDN2hvSHJUZDlCR093MWtycGtNS2hpWmlCUERnYTFYTUpxdThPTnFLRUJsSUdIS0pteGtXSDJfZmpwYm1HQWlCbGZNZ3NoWUJwTFRBUVpLRFFMcGFMMEZNMkEwT1NLaGpLcU5zYlJ3VzJxMFlnM05rZGtPaU1EUXFCajBaaUh1Q0Y3VGVJTnBlVVQ5SnhxT3FTMXRGR1NDVjk5UFlidEQxTGJJVDJoZDZSTmtlemJJTjBLUEs3Tkk1RHBGREc0dmIxVnc2VmlDYTMtd0puLW11blpfSmtJYnh4Q19rdEZqQXp5Rm5zVm1LQ2lQcGtaVdIBpAJBVV95cUxOZjRDbGFmQ1hhOXZUNXJoTWwtTk5sN1ItaF9CeVdueHBVcnVfTGZ0NExYYVVHeTVSb0FvLUZZMVgta2NCREZ2RVQzRklnTW5TOUYwZVN4UFkxR2g2OVlmLWhjeFFmRG1wQmlwSU9OVVhOSEZzZGRGMDRZa3NkTE5KYlNIUUFQMTF6YWRHZzVBMll5MlFFTlVQdXJtaEdWRkVJaFhTanZfMlgyeml5UGpINEg4VTVJS1pyeEliemV6VDh3bzNuZXZGUGg4bkhndG1wYVJwNW10ZENSNVNqMTI4Z1JyaUFzWFVKSWg4bXZ3eGQtc0FRR3NyeXlGZUlJanpJbG4tTFEwSmJxWkhVUDZSUEJaQTBpX0dGakQ5WVlkb1AtTm1R?oc=5",
-   "image": "",
-   "date": "2026-11-10T02:45:00.000Z",
-   "source": "Purepeople",
-   "feed": "Google Notícias",
-   "categories": [
-    "festas",
-    "romances",
     "novidades"
    ]
   },
@@ -2488,20 +2663,6 @@
    ]
   },
   {
-   "id": "1g7bszc",
-   "title": "Anitta reúne famosos em pocket show exclusivo em São Paulo",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSThzLV9aTE9JN200N1Jhd2E2M1M1TXdyMmtDbm43T1VDUTFpQ3F4QVhHRjM2Yk9jcWg3eEFrNDlsYVZQZ2FRZU1uQ0RBa2FFaGlUelBSVThPSi1qMnRRNVZPWXoydnZpZE80Zm9VQWR4YmozUV9mU21UWEIxZ3NfdjFGNExNUktJem16dDMybmVlNFQ0ejF4MXN2Q015aVZaelpkZE02QURRV3pKWlU1bTZ4TUh6Ry1rZkhBZmdkRkRNMlpKajNkT9IByAFBVV95cUxPSThzLV9aTE9JN200N1Jhd2E2M1M1TXdyMmtDbm43T1VDUTFpQ3F4QVhHRjM2Yk9jcWg3eEFrNDlsYVZQZ2FRZU1uQ0RBa2FFaGlUelBSVThPSi1qMnRRNVZPWXoydnZpZE80Zm9VQWR4YmozUV9mU21UWEIxZ3NfdjFGNExNUktJem16dDMybmVlNFQ0ejF4MXN2Q015aVZaelpkZE02QURRV3pKWlU1bTZ4TUh6Ry1rZkhBZmdkRkRNMlpKajNkTw?oc=5",
-   "image": "",
-   "date": "2026-11-10T01:18:35.000Z",
-   "source": "Globo",
-   "feed": "Google Notícias",
-   "categories": [
-    "festas",
-    "novidades"
-   ]
-  },
-  {
    "id": "7pg31w",
    "title": "Famosos prestigiam evento com Ed Westwick, de 'Gossip Girl'; veja",
    "summary": "",
@@ -2512,20 +2673,6 @@
    "feed": "Google Notícias",
    "categories": [
     "festas",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1bo0ewd",
-   "title": "Quem é o \"Rodrigo Hilbert\" da PF, autor de livro polêmico sobre Lula",
-   "summary": "Agente da Polícia Federal lançou livro com relatos sobre os 580 dias em que Lula esteve preso na Superintendência da PF em Curitiba",
-   "link": "https://www.metropoles.com/entretenimento/quem-e-o-rodrigo-hilbert-da-pf-autor-de-livro-polemico-sobre-lula",
-   "image": "https://images.metroimg.com/2026/11/apos-atuar-na-custodia-de-lula-jorge-chastalo-filho-trabalhou-como-representante-diplomatico-da-policia-federal-em-lima-no-peru.jpg",
-   "date": "2026-11-09T23:45:48.000Z",
-   "source": "Metrópoles Entret.",
-   "feed": "Metrópoles Entret.",
-   "categories": [
-    "politica",
     "novidades"
    ]
   },
@@ -2572,27 +2719,12 @@
    ]
   },
   {
-   "id": "10lha55",
-   "title": "SBT toma atitude para tentar colocar ponto final na polêmica entre Virginia e Silvia Abravanel, diz colunista",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE51RDRpWFRvMldvMUs3R1hsV0dWMlJacDhJc3ZIZHhwOXBVckVsYy1OdEZ3YTBuQUgtUE5QMWF6VlJoX3BMbkd5dER6OFc2Wm9fN3pGZWtqeVdhYnFtN1kyU0lLa2RjNWxU0gFuQVVfeXFMUEpjRWcycjRTbUx5NmFkUThSYjNEZ0FGOVlUTEI3RVV6Skx1VUNBdlppWDloTlFTaFk0bkthRnpZcGZ6bG43VWVYbEc3ZGRZM0RWQzZ6RjcwMkI1WkFDaFA4cHZ6eTlyb1NJeEUycnc?oc=5",
-   "image": "",
-   "date": "2026-11-09T21:19:58.000Z",
-   "source": "Hugo Gloss",
-   "feed": "Google Notícias",
-   "categories": [
-    "tv",
-    "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "l6xqz7",
+   "id": "1ltt8zd",
    "title": "Separação de bens e presentes de alto valor: casos de famosos reacendem debate sobre proteção patrimonial...",
    "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNVy03aU1XdEhjdnJGT0Q5SEpCenR4aFJIZHNSR2dkMzRWV0JaSzFSVkp6cE5jMVdxdkZpUlNfQ3IzTG1qbHEtdnlhWVQxWlFhc3NlS3l1NjVVMl9NdjRJMnFHQV9pTjdBNGJRS3F4TmNuY0o4VTcwQjcxMEdwUnBZQ09SVHBkck1zN1VIX2YycU9aVmlQaDRXNmZLVlhfTXdJWjlLQzVFTHdzWlUxZjdvR2liVXpUbWZfM0JhZmpEc082X1dodC1DUENpSUozVDhwODJ6ZnFWejRwVzRtVHZ1c1NZckxxSVI1UzBCU0J3Y1FBaExrX3Q3VWNn0gH6AUFVX3lxTE1XLTdpTVd0SGN2ckZPRDlISkJ6dHhoUkhkc1JHZ2QzNFZXQlpLMVJWSnpwTmMxV3F2RmlSU19DcjNMbWpscS12eWFZVDFaUWFzc2VLeXU2NVUyX012NEkycUdBX2lON0E0YlFLcXhOY25jSjhVNzBCNzEwR3BScFlDT1JUcGRyTXM3VUhfZjJxT1pWaVBoNFc2ZktWWF9Nd0laOUtDNUVMd3NaVTFmN29HaWJVelRtZl8zQmFmakRzTzZfV2h0LUNQQ2lJSjNUOHA4MnpmcVZ6NHBXNG1UdnVzU1lyTHFJUjVTMEJTQndjUUFoTGtfdDdVY2c?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNcWFZZGs4eUdhVkREZDhYQ29oaWI4dDUtclNiQ3Q2RFZnRFdPZUNFaW94MTBhaE9YQW03Ty1uVFRSNldxX2t4SG03YWk1WGlzaEpwZWRQZjJwNE5ZT1BGNmgzLTdjTUpNLURQdk5LTHZEYmhKRGdnczRZNXFOR05Hb2JfblU5ZndZakhEUF9EYjBQU3MyOHpMa2hLOU1mTmZETlM3cXc5MTdxMEh6RFhXMUg1YWtjdVJwOHlQOEVrSzE0c1JqdmxHWU56dTlyREVkOUZOcGlvMGJOQk92eHBFeXFLdFhPaXFNTmJSYWNETnJHNU5l0gH6AUFVX3lxTE1XLTdpTVd0SGN2ckZPRDlISkJ6dHhoUkhkc1JHZ2QzNFZXQlpLMVJWSnpwTmMxV3F2RmlSU19DcjNMbWpscS12eWFZVDFaUWFzc2VLeXU2NVUyX012NEkycUdBX2lON0E0YlFLcXhOY25jSjhVNzBCNzEwR3BScFlDT1JUcGRyTXM3VUhfZjJxT1pWaVBoNFc2ZktWWF9Nd0laOUtDNUVMd3NaVTFmN29HaWJVelRtZl8zQmFmakRzTzZfV2h0LUNQQ2lJSjNUOHA4MnpmcVZ6NHBXNG1UdnVzU1lyTHFJUjVTMEJTQndjUUFoTGtfdDdVY2c?oc=5",
    "image": "",
-   "date": "2026-11-09T20:59:18.000Z",
+   "date": "2026-11-09T21:11:09.000Z",
    "source": "SEGS Portal Nacional",
    "feed": "Google Notícias",
    "categories": [
@@ -2615,20 +2747,6 @@
    ]
   },
   {
-   "id": "15hx47z",
-   "title": "Casamento de Ana Hickmann e Edu Guedes terá mais de 14 mil unidades de flores",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPeHRja3VTU0ZlRzdaanAzS0xFcGM0SGkxWDR0ak1sc3hKQ3BOM3pKc24xSXBVZ2tVcDlONHlral9HVmF2NE5MY1p3ZEV0T2ctSFhxYmItUE1oWDRzUXZNd0puV29LOHpMcjdFMktKSHVlSW1YeF9oaFZPai0zLVhuRmlhRmM5WEdjU0FYNlpLa0I1dFF5YlpwWldHdGcxSXI3MzJjd1ZyUjVlYW04czVWdUZlZ0dZb2FwS290bmJYc3R6MzF0RUpIcUZYOHdXSnR0?oc=5",
-   "image": "",
-   "date": "2026-11-09T20:06:00.000Z",
-   "source": "Gshow",
-   "feed": "Google Notícias",
-   "categories": [
-    "romances",
-    "novidades"
-   ]
-  },
-  {
    "id": "1hs6i5i",
    "title": "Apontado com pivô: Influenciador se pronuncia sobre desentendimento entre Jon Vlogs e Ana Castela: 'Fofoca'",
    "summary": "",
@@ -2643,17 +2761,16 @@
    ]
   },
   {
-   "id": "y0cmng",
-   "title": "Influenciadora Virginia Fonseca vira nome proibido no SBT após cancelar participação no Teleton",
+   "id": "cb75hw",
+   "title": "Novo amor? Léo Pereira choca ao surgir em local inesperado após término com Karoline",
    "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPMFJyckI2T1c1bFYwWVU4dGZZazJQZGczWC11MTMxem96N092OTJFMU5MenptVkozNlpXME1tTndyZmNtT1YtT015SWpmcEtpMzBKWHM4c0t6ZkJ2eUNkNzdOaVliVDJBZmczV2VoWTJiTmQ4Y1c4M3pWMEstdWRFejJLOUdiem1GamxHYnppSFBsX2FxRGh6cnhBMzVMcW5EOVdwb3RhazlhRnpVSHJ4R3RheHRabGxXVDhaX0JHRWNZcnZiRVdFVWg2aDhEbGZ5WDQ1ci01Z1ZuSEprSXExS0lhMjJfUzNNNDROQzlFNVdnN0U?oc=5",
+   "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNczJvZ2FvTFZMV1E1U2hXRGJHeGh1VkJ1cnFqLUNUX0ZZT01IeUt4eVdNdHhXc3I5d0kxTE1iWm5seTNFZ05TTXNROGtWY21UcllqdG9ZX01wY2l1VkpVeWE0LVVIbHFyNzBiNzZOaEExb3Bva1VQN0xqNkg1ZXZLWjJLZkU5NWFERGRSelpkd1lvN2tKZHdhRlhBMzhPUjAxOHBITXI3cXNwV05YOFQwV0E5TDZkQTdSUXZZa0dYZGp4R3ZTTGc?oc=5",
    "image": "",
-   "date": "2026-11-09T19:22:00.000Z",
-   "source": "Tribuna Hoje",
+   "date": "2026-11-09T19:27:22.000Z",
+   "source": "Mais Novela",
    "feed": "Google Notícias",
    "categories": [
-    "teen",
-    "tv",
+    "romances",
     "novidades"
    ]
   },
@@ -2672,20 +2789,6 @@
    ]
   },
   {
-   "id": "m0am0r",
-   "title": "Paul McCartney entra para lista de músicos bilionários da Forbes com fortuna de R$ 7 bilhões",
-   "summary": "Paul McCartney se apresenta em São Paulo, em 2024 Marcos Hermes/Divulgação Paul McCartney se tornou o terceiro músico a entrar na categoria de bilionários, segundo a revista Forbes. De acordo com a publicação, o ex-Beatle tem uma fortuna de US$ 1,4 bilhão…",
-   "link": "https://g1.globo.com/pop-arte/noticia/2026/11/09/paul-mccartney-entra-para-lista-de-musicos-bilionarios-da-forbes-com-fortuna-de-r-7-bilhoes.ghtml",
-   "image": "https://s2-g1.glbimg.com/_nTieOVMcf-euJfC_Ggfp4BelX4=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2024/Y/y/twIVpFS6AiUwlUzadmdg/paul-mccartney-sp-2024.jpg",
-   "date": "2026-11-09T18:51:41.000Z",
-   "source": "g1 Pop & Arte",
-   "feed": "g1 Pop & Arte",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
    "id": "1dhx38y",
    "title": "Virginia reposta vídeo com imitações de look polêmico no GP de São Paulo",
    "summary": "",
@@ -2696,6 +2799,20 @@
    "feed": "Google Notícias",
    "categories": [
     "teen",
+    "novidades"
+   ]
+  },
+  {
+   "id": "8sv4ii",
+   "title": "Ex-BBB Alane Dias estreia em ‘Lá na minha terra’ e vive personagem sensual em filme",
+   "summary": "",
+   "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNNHladVgzU1FaNjllZFJZdlJuMG54b19HMTVzWHp4TmZ5T2UtaXlXTHkyTVdZV1dYZWdZaDFZQUZhNWNOMVVQYWJrcmo1Q2V6R1Fad1ZrWmNZdEJxUkxTRE8zVmpiRFVYclNkNU1UWHltOE1pTW9RcTBXVWNVMGhWaUFTQnRxel9kdTcyUmVtZmhHc0lFemJyYXB4dm1Sdlc3N3YtRGp0cnVBQ2tjSkhjMEN0Rmk4MV9IcUwyNHRoeFVYODhwQURXbS1Gb0pONVVqVU91MdIB4wFBVV95cUxPRnY4blhwVlYyUDdYSXNaYXQ5RnJFcUl4dUszV3JNem1kU2ZSdDJHRTNRSURaTkRjSkhkbmktelk0ZHc4NXUyWE1OWEhiVVJENTJwdkVYSGtXa2lkSzRWT2FRUUFBMmtuVTN1RWpXMHNWSVd4R19XTWVvUUJfNC1yWG04TVZnUVhOdC0tMVJoclRRT2RVbERlY2dXcDNsU1k5Y1RYNXpHUkVkTWlFT1FPYldfdUh0U0VUUkN5UzZrNTRYZXRBdkxXYWFvaTQ0Tms5emtEUjZINUQxSXBjNTBMRGFYbw?oc=5",
+   "image": "",
+   "date": "2026-11-09T18:07:07.000Z",
+   "source": "Extra online",
+   "feed": "Google Notícias",
+   "categories": [
+    "tv",
     "novidades"
    ]
   },
@@ -2723,161 +2840,6 @@
    "feed": "Google Notícias",
    "categories": [
     "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "16cr4bz",
-   "title": "Direção da PF manda refazer relatórios sobre ministros do STF e Vorcaro",
-   "summary": "Cúpula da PF mandou refazer relatórios sobre relação de ministros do STF com Daniel Vorcaro após versões produzidas extrapolarem limites",
-   "link": "https://www.metropoles.com/colunas/igor-gadelha/pf-manda-area-tecnica-refazer-relatorios-sobre-ministros-do-stf-e-vorcaro",
-   "image": "https://images.metroimg.com/523dbbc2-policia-federal-apura-compra-de-votos-suspeita-em-juazeiro-do-norte-ceara.jpg",
-   "date": "2026-11-09T16:07:45.000Z",
-   "source": "Igor Gadelha",
-   "feed": "Igor Gadelha",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1tck359",
-   "title": "After da F1 reúne famosos e 'briga' entre Ana Castela e Jon Vlogs",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNQ2pZcjg1MzRiYzkxVzVucE5kbW0tTDBSS05IbU9jTkRTZ0R5MWRpdVdIWjBrbmhZbmdyTXdfbXFmQ0dxYzJuRW5TZUg4dXVuUTBCbkVjUUpnQndCSVRxM3dEZV85ZFphR2stUXNNbWhLMmpWWkVlS003VXFDQWlpRklDdUEtVGxxZnVVVjFBWkhfZDJERUtrOExzNDNFZ1hpMTZKVmJWQlVielNhVFc4TTJUZGlkQnJtTExKSGVSQXMtZXp2VTJLaWdBZG_SAcwBQVVfeXFMTUNqWXI4NTM0YmM5MVc1bnBOZG1tLUwwUktOSG1PY05EU2dEeTFkaXVXSFowa25oWW5nck13X21xZkNHcWMybkVuU2VIOHV1blEwQm5FY1FKZ0J3QklUcTN3RGVfOWRaYUdrLVFzTW1oSzJqVlpFZUtNN1VxQ0FpaUZJQ3VBLVRscWZ1VVYxQVpIX2QyREVLazhMczQzRWdYaTE2SlZiVkJVYnpTYVRXOE0yVGRpZEJybUxMSkhlUkFzLWV6dlUyS2lnQWRv?oc=5",
-   "image": "",
-   "date": "2026-11-09T15:09:00.000Z",
-   "source": "iG Gente",
-   "feed": "Google Notícias",
-   "categories": [
-    "festas",
-    "novidades"
-   ]
-  },
-  {
-   "id": "ej5vn9",
-   "title": "Iza lança o terceiro álbum de estúdio, 'Zaza', em 20 de novembro",
-   "summary": "Iza agenda o lançamento do terceiro álbum, 'Zaza', para o Dia da Consciência Negra, 20 de novembro Reprodução / X Iza ♫ NOTÍCIA ♬ O terceiro álbum de estúdio de Iza se chama “Zaza” e tem lançamento programado para as 21h de 20 de novembro, Dia da…",
-   "link": "https://g1.globo.com/pop-arte/musica/blog/mauro-ferreira/post/2026/11/09/iza-lanca-o-terceiro-album-de-estudio-zaza-em-20-de-novembro.ghtml",
-   "image": "https://s2-g1.glbimg.com/dYV_fyN19jNmplduZwwRSSQo5FE=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/B/7/OnIeSJRY2nbW2ZwJmtwA/izax.jpg",
-   "date": "2026-11-09T14:46:08.000Z",
-   "source": "g1 Pop & Arte",
-   "feed": "g1 Pop & Arte",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "mwaada",
-   "title": "Russell Brand é condenado a 10 anos e meio de prisão por estupro e agressão sexual",
-   "summary": "Russell Brand chega a tribunal para julgamento em 3 de novembro de 2026 REUTERS/Jack Taylor/File Photo/File Photo O comediante Russell Brand, que já foi um dos apresentadores mais conhecidos da Grã-Bretanha e uma estrela de Hollywood, foi condenado nesta…",
-   "link": "https://g1.globo.com/pop-arte/noticia/2026/11/09/russell-brand-e-condenado-a-10-anos-e-meio-de-prisao-por-estupro-e-agressao-sexual.ghtml",
-   "image": "https://s2-g1.glbimg.com/K5VHtb_DIrGLC1oka-fIl_ZQU8M=/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/i/8/y1KIzTQYy0QlpwjU29KQ/2026-11-08t101658z-343604057-rc29goa3623m-rtrmadp-3-britain-court-brand-nandy.jpg",
-   "date": "2026-11-09T14:35:37.000Z",
-   "source": "g1 Pop & Arte",
-   "feed": "g1 Pop & Arte",
-   "categories": [
-    "tv",
-    "novidades"
-   ]
-  },
-  {
-   "id": "872sqj",
-   "title": "Após polêmica com Silvia Abravanel, Virginia Fonseca doa R$ 1 milhão à AACD",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPcEhOSVNieFZZSE9xMUc0VmN3OVZKV1lqSHV4SW9uN1BwRXZqRjJnX1I0ZmZudjNhWkNKbDAzeGI1ZWg3SkF5VzBxa2dyUVNQWGlUWU5QUmJ3ZmhmWHlxR24tbFBnRC1EUFc1c2lfZXhELVJSV05kdGZBaFdTczlBelFWbjRhcnRmUEdGdi1mQ3pzSjJoRl9SQTFEdkJLWkhXTUNzSDB2dw?oc=5",
-   "image": "",
-   "date": "2026-11-09T14:12:14.000Z",
-   "source": "Portal Making Of",
-   "feed": "Google Notícias",
-   "categories": [
-    "teen",
-    "novidades"
-   ]
-  },
-  {
-   "id": "sjzkvr",
-   "title": "Mirando a reeleição, Motta e Alcolumbre decidem não viajar com Lula",
-   "summary": "Apesar do convite de Lula, Hugo Motta e Davi Alcolumbre decidem ficar em Brasília para articular as eleições ao comando do Congresso",
-   "link": "https://www.metropoles.com/colunas/igor-gadelha/mirando-a-reeleicao-motta-e-alcolumbre-decidem-nao-viajar-com-lula",
-   "image": "https://images.metroimg.com/2026/10/alcolumbre-motta-eleicoes-2026-2-turno.jpg",
-   "date": "2026-11-09T12:52:12.000Z",
-   "source": "Igor Gadelha",
-   "feed": "Igor Gadelha",
-   "categories": [
-    "politica",
-    "novidades"
-   ]
-  },
-  {
-   "id": "d082ms",
-   "title": "Álvaro Xaro expõe convidados após destruição em festa e promete cobrança",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPdS1naVpIOE5Rc1IwaFRIUkpjbi1GUkRJS05UM2lIRHhDbm1BcjRDN2I3Z3pidkFTNGJmLVJwbWpzYkZCSVZCaWxNRnJtcmpYNFpBbXdlVlVYZXdNSU9iZE1NekJfZlhBeGVETXhVUXFfVW8wVmNOc3Mwb0duZWZsblVKRUhFX3JWQlJGbVNzUDdkd3dtVDVoMnpBQWs0a1BNRXlibHF3R1hkLVFLZTRHS1hjcXNLMUhlWGJFNFVYc3FUZDQzaG90OXVvYXFWMVFBTENPQXdUcHE1U2stUlRsc2g4U2dlNlV5RHBzS1lhd9IB7wFBVV95cUxPclowcVlDQThVOXVQVE5MMFFYQWVfYjBXWElyM0RTV3VnR0RCSWQ3MHlMUTFLalZPOFRRMGJRVmhjUkZCc1Q1X1o0aE5DcHRsbEtvYnNKdlBpYm9Hanh0UFgtR2xuUGo0RnZ3QWpHVVhuMUVCU3AyNkRrQ05NOXZ2djVqSUN1eEptQWFwVmNsYXJNWFlvelVWaGVCbnNHRkpWMjl5R0t0TFFOVk1FUFRwMER5YXAxVkVqNjdKeEhxTjVhNDZvVXhOeE5vdG1XcmllaDZ0bElkanRzbVM5MWlRdFY5b0lJc1NDX0wwTS1iSQ?oc=5",
-   "image": "",
-   "date": "2026-11-09T12:05:00.000Z",
-   "source": "Portal UAI",
-   "feed": "Google Notícias",
-   "categories": [
-    "festas",
-    "novidades"
-   ]
-  },
-  {
-   "id": "l525xb",
-   "title": "Wesley França comenta foto de influenciadora após polêmica de traição",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPRmpVTS1GdThCX0pNT21ucUVaa3puN1B5R2ZxU1RlckY3SGJWSjBiNkZsaDlqWHJlVFhpRnR4NzFzaDByM3pRQW95ZnVFYWVuaUdDWlI0amVoNFpBMHZaUXQ1dmg0enVZSl95LXVKazNZY1R4bGlWM2l3SWhiV2hlQXJRNW1kSXpxY3lvZWRnbDNFbzZBUGk1SDFFczA2anp2YTQ3Zk9JbkV6SHA0c1hocQ?oc=5",
-   "image": "",
-   "date": "2026-11-09T11:52:00.000Z",
-   "source": "Clube FM 104.7",
-   "feed": "Google Notícias",
-   "categories": [
-    "teen",
-    "romances",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1u08n3",
-   "title": "Léo Pereira curte after do GP de São Paulo após término com Karoline Lima",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQM0l0aWJ4dXRTYjUwU081MWlHSVNCX1duM2QwTUhqX0ZwZTVpWEhuUHFWYVJaN29TdG1BbkI2ajhxXzU3SjZIQmloZzg3VG9td0loeUk4WkxvUGI1TVI0dmxHalN3clBmcHk2d3p5eENQVFVFZnBQLUc3SzlSak9IOVVXZ3FXM29GZ3pJaFVEVEpJWlFlRFd0V1RxUFg2T05uN2tfOXpzZlloZlZUZGg2encyVHE4UHdLVlVwRmE4WlAySzlGdTV1M0lzZ9IB2gFBVV95cUxQVkMzSjFKYko3bklJeUN4dmFkQzNVQUs4ZVdfcG1HRWZNaHVWVWFqSFZzQWlpWFBybHcyRXhCclBUbjRud2c2UnlkTWQxRW1LX3Y2RmEzcmFCbG9wX01xOTdySWY0anpsTXdPQzNkZWdWYTdoTXhxcjZnbmNOZFdvUjh6TXlhSGdzYmZ1T0xadVNjUVRCWEJyMVFUMUZIQklUOEs4c20zTVBvTWpUSUNCUE9pakJIYW0wb0xVUmYtbXRabGk1TVcyOHF6a3Z6UG5HZWVFdlBKcHZGQQ?oc=5",
-   "image": "",
-   "date": "2026-11-09T11:41:49.000Z",
-   "source": "Gshow",
-   "feed": "Google Notícias",
-   "categories": [
-    "romances",
-    "novidades"
-   ]
-  },
-  {
-   "id": "zznaz",
-   "title": "Ana Castela, Jon Vlogs e outros famosos se reúnem em after da Fórmula 1",
-   "summary": "",
-   "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQV1FoYUJQbGg1OTJKdVEwV25tUFRsaHlhaXhSZDRyUmR4Qk9MbkdyblRMVjlrYkoxMlJqczFOZFd3ZEFobjNLVHM4U2NKYWhBLVhGMUl0WHhSLWc2cGtEaEVMMGtJV1ZVZjhtelB1bXlEUU1MQ1llcUJ0aHdOWHlxNy1zbkxWYWZGVFJJZkIzR3FQOWpwWXBaOUVYZldpTlg4MHVwdmJjLURkUGEzZmlKUkpFaVljZVlFUTJxUmlHSldBeURzQU5mWjlpT3Y5RWUyTm1aODdDTGdYdElKb0pfTlNnTHFKY1pINS1tddIB7AFBVV95cUxQSEpDbVNzc3lrTV9FNEpjNnljeHlER2luWGU3Njh3WTZmRGlMY3MxZnp0UldGN3RlTUh0VVdUUkVlcmdMVU54Ung2Umt0ajJsTks1cDloODdjNXRGbHJoeVpSRVRJSzB5NjR3NzlfQjg1V01DNEc0eXdrMGlzVVhzZk5nTWFCdEJrSktVZGJrWDJPZU03YnI5WTdTTkNvbHkxOTNuUDFoX251ODQyVTV3RXREd3pCMlBULUNUZk8tSEdVUmxPMjQzcWFNcUtLYVVzTnVVckJPRUNaZ2I2am55QmlQX0l0aVhJaEswOQ?oc=5",
-   "image": "",
-   "date": "2026-11-09T10:13:00.000Z",
-   "source": "Portal UAI",
-   "feed": "Google Notícias",
-   "categories": [
-    "festas",
-    "novidades"
-   ]
-  },
-  {
-   "id": "1su9a2",
-   "title": "Lula avalia entregar articulação política do governo a um nome do Centrão",
-   "summary": "Segundo lideranças do PT, Lula já admite, nos bastidores, nomear alguém do Centrão para o ministério que cuida da articulação política",
-   "link": "https://www.metropoles.com/colunas/igor-gadelha/lula-avalia-entregar-articulacao-politica-do-governo-a-um-nome-do-centrao",
-   "image": "https://images.metroimg.com/2026/11/presidente-lula-participa-da-cerimonia-da-sancao-do-projeto-de-lei-que-institui-o-exame-nacional-de-avaliacao-da-formacao-medica-enamed-metropoles-5-scaled.jpg",
-   "date": "2026-11-09T08:00:51.000Z",
-   "source": "Igor Gadelha",
-   "feed": "Igor Gadelha",
-   "categories": [
-    "politica",
     "novidades"
    ]
   }
