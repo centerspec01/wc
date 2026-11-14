@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T18:20:54.859Z",
+ "updated": "2026-11-14T22:38:13.091Z",
  "fontes": {
   "noticias": "Google Notícias / GDELT",
   "lideres": "Wikidata (P35 chefe de Estado, P6 chefe de governo)"
@@ -7,6 +7,12 @@
  "lideresAtualizado": null,
  "noticias": {
   "russia-ucrania": [
+   {
+    "titulo": "GUERRA DA UCRÂNIA | Negociadores dos Estados Unidos levantaram a possibilidade de a Ucrânia se retirar da região de Donbass em troca de uma eventual adesão à Otan, afirmou o presidente Volodimir Zelenski após rodada de negociações de paz co",
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9TZUNWMTg4Q1lVTjNCWE52STNrbmlORHo5QTlfOVJxRmpPRmZYaXFkdENkMmNQa0xudF9kQTNRZVFVTHNKUnBNNkdxZDZqVkFxbEE?oc=5",
+    "fonte": "Instagram",
+    "data": "2026-11-14T19:00:22.000Z"
+   },
    {
     "titulo": "Governo dos EUA propõe que Ucrânia ceda território em troca de adesão à Otan, diz Zelensky",
     "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNTnhGRmdGbF8tNjk2ZFdvRXFFaUc0UWpkRVE0WUxtTFczYzhkNklOOXlwTW5KZlI3d3U4ZFVTMVY5ZlV5WXhXY2xDYlBsSVR4R1VnVktrM2czb1d1NE1iTklwSEhBNEdoR2ItY0xzQXg0RHppZEx1ZkkzT05fX0tKeFlPSEZYMm1JOTNtc0p5NlRXTWZ6WXRkc2gxTzNfQXpQVTlFUFh3NzFFTDNzRXZWNTlDS0FfUTBRTk91c0IzT3pZTkR3TnVXTl9aQQ?oc=5",
@@ -20,10 +26,22 @@
     "data": "2026-11-14T17:23:53.000Z"
    },
    {
+    "titulo": "Pela 1ª vez, EUA propõem que Ucrânia ceda território à Rússia em troca de adesão à Otan",
+    "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOU3Ffak5GZWVUSGJwR0ZpaDdyOFdINEE2MXNGQzlmZmJQQlFSei05SHlSWkZmSUlUUHdkTU9zVHQ3b09JN0ZzTEw1WlRadHJ6cmpHMVYxc3Q2Qk16M0tNVkNKN0pvZ0tJZ1F4S08xVzFqRFNxeWZHZXMwUlR1OGhkNW8wLUo3MEhLMGVqa2liQ3BYRFNEd0lGdGQtZlVXbEROVmNmNHhqYXhMRktXS0VjZzVQYmVNeHlIWk1fTVZNbDFSYXprTFowMks4RFpjQTBjQ0ZlaUpsaWwtUTE4Wm9mdHlacHVYN0hkaVBEdFh4anpPdWduM28w?oc=5",
+    "fonte": "RFI",
+    "data": "2026-11-14T15:50:13.000Z"
+   },
+   {
     "titulo": "EUA cogitam adesão da Ucrânia à Otan em troca de Donbas",
     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNYkhSY3lJblZxenlBeTIwcGhuR0o5LUZKdkV0eWFCR1FlcmZsNWt4OF9xMEVNOXFsbXJvLUZhVU8zWnZqcGlEMzZ1YksyVXpCUWZlc3l5R0l4RmVKWFFEaWY5VTBWU3A0S05oWjZzWEFockhGZ3BmYXFnTkhqNXhIbTRLUENoTDRVd2UtMzJLMkZsaVhzS0pDWWkyNDlTZk1X?oc=5",
     "fonte": "CNN Brasil",
     "data": "2026-11-14T15:36:31.000Z"
+   },
+   {
+    "titulo": "Ataques russos deixam infraestruturas energéticas da Ucrânia cada vez mais vulneráveis",
+    "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNQ01ReGNCRGdoYnF5SFNXU0ZDclk5OEFSelB2LS1rWG9GaHpRb3o4dzdSem9TVGhBOFlRaVZnX0R6U2NQYlcxTWRUNlp2RFFoTWZvQnN0V0F1TWo5NTAwQXZaajhXckFOOVQ0am1MNUU1WVozakRyMzhyUWh1cndwVlhvVmpNcGlHRHM4TW5xV0VrWXhQYkJNcHBkZFV5NGlDRktIcmNDMUI3b1NFNXdfeW9HY25YQlFqUmNTWC1ZRVJMRW5ybkFkMDMza0ZZMlN4SUxLbW9Nc09xQ3RlS1hKVlNneFpSMUFrV0VWR1BkQjdpWWpTSWJaWWZGVQ?oc=5",
+    "fonte": "SIC Notícias",
+    "data": "2026-11-14T14:28:35.000Z"
    },
    {
     "titulo": "EUA propõem que Ucrânia perca território para Rússia em troca de entrada na Otan, diz Zelenski",
@@ -32,28 +50,10 @@
     "data": "2026-11-14T14:21:00.000Z"
    },
    {
-    "titulo": "EUA propõem que Ucrânia ceda território à Rússia em troca de entrada na Otan, diz Zelensky",
-    "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPeXlIclZFT3h2ZW1GdkpibWhQOF9JNkxodDYyQktXdUtIZnVDUEtiT1VDT1R3a0ktWDRtMzNTeURMVXQ3ZFJNRVpqX1FPeE9oRFF0RG84Q0hKaTRxQS00SkUwdVZaVFZoRHJJZ19LaWRHSW5nU0N6YXhJcmx4bC1ZTlpDUDNsVG5LYnZtNmk5WU5uT1ZsckdCeUR4TUpZRXE5VTQ5RDNNTnZ0eVEwZ1RQRW9YZlpWRkREQkZ0cQ?oc=5",
-    "fonte": "avozdocampo",
-    "data": "2026-11-14T12:32:02.000Z"
-   },
-   {
-    "titulo": "Estados Unidos propõem Ucrânia ceder território à Rússia em troca de adesão à NATO",
-    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQNFFFTURDMHJEYkFiOGVsZEo5eEhhWG5KMlFPYUJBQnhiWEtZQVhSN2RUa0FoVWdRUG55Y2txWGxyenRicGd6SlJ2T0I1X2ZDbzVLYVZRWXJpVWMyOHhTZGY4dXRPM1gtR0swNW5TSU9DRGVzX25DMF9ZOWxqT0JwZ3JuV21ybkVHQnlrUVZrXzJzNWlGaEQ1N0kxNEhhUWlrOEFfZDltOVRlbmV2QzY1YVlYdlJrQU9r?oc=5",
-    "fonte": "Euronews",
-    "data": "2026-11-14T12:22:43.000Z"
-   },
-   {
-    "titulo": "EUA propôs à Ucrânia cedência de territórios à Rússia em troca de adesão à NATO",
-    "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQZG5yWmJaUENGZ1VNTUFMVnlyUGdiVlpGTGZBWU9SM29oTWFoZjRNdG1mbHNIOE50UXhVZEE0Z3BqaHNQTjhXZUNCT0FKNlVyMWRrdWhMWFI1bGJ5LVlwalMtaXhRY2lYbXV0YkU4WHdnSDJIbVNIQnZBVGd0MW1mdXdGQWhRd1pkeHhKVWxiX1BRa3F4YVZ6ajdvcTNQUnNGeG8zZ2ZSUmFsenRnbnd5RDc4RnN6bE96TEtUekE0V2l0R2VmZElYMW9ReGw0MEZiZ29XblJ4UjVqQjZsLXU4STdFUG1Sa3hzOUE?oc=5",
-    "fonte": "SIC Notícias",
-    "data": "2026-11-14T11:34:55.000Z"
-   },
-   {
-    "titulo": "Como a guerra está levando a Ucrânia a um colapso demográfico",
-    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOFhiX3JQaU5EY0VvckU0LWNlRDd4UERVX1Jhd0FqUFpRRTZUcV9QRDk2RkllMERydFZUOTVhQ0xKWVJ6RUttbjI2c3FZb25CZk45bGNMakp1NFJmR1BOY3l5emRhUnJ4U0JfSzhreC1tb1Q3dVFaWHFuTWJEOVhUTVJaNlczVkVvN2doejhKOU9DWTk1cVpOR3VISU1PM0YtTlFDVFNrZlpld9IBrwFBVV95cUxNOHdVOGxBOHN0ZEVPeVctcnJ3VlR6aEpVUXJnLTBjcmRMOERhVG1IY01CUmpFVGYxQ3piLWV0UDhEZEQ3Y2xtU29oTmpVbEZYWWhQZE4zdmNqc3N1MVlyWFlYVVhWUmEzN2hmSGFTNWxHWDQtdDFnRnoxZTI2MXZja24yZjhsVUZYTUR6OFh0ZURCNDByTlZNOE5WcUFTTDRaVkVkb3lFUjdrdWZQMkVV?oc=5",
-    "fonte": "Estadão",
-    "data": "2026-11-14T08:30:00.000Z"
+    "titulo": "EUA propõem que Ucrânia ceda territórios à Rússia em troca de adesão à Otan",
+    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOYXVZYUxlTEFBMi1jWER2TlRaUm05TWVFTjNvaC04X0paUGdrOXdRV3hTVnlLWlAxekxSczNLTWpuR21ETW9FMEQzN3pNOW1FbWUzN0VGY0lrUTY5UmdoaDhoT1FsWU9WVjNtU1h3aUJWRm40N1htTjlkaDA1OHlwUi1VMlZwTEJTWlJFN3VIaXRZeXE1VzA1a0lrcWFLaHQweTZWR2k1R0d1Ni10?oc=5",
+    "fonte": "Metrópoles",
+    "data": "2026-11-14T13:07:00.000Z"
    }
   ],
   "israel-gaza": [
@@ -136,6 +136,12 @@
     "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPcHNBeHUwWXF2ZXpzYm1HZzVLUjNsZkhNNE9lM2s3RVJ3dlpDTHc3SUJLbXVTa2pkZVdOQlBFeWdWSVk5Nk11NXowQV9jZnlwbnhhS1d0ck96SDNGVGRfejBLYi1ubGJRNjVUSmJNcmcxR2YwMjQwcjliRnZwaHNyemMxOHlWbDF0dVZEM2FhdnVnbURVTW5zUDZWUXhGV2l4M2NxTDNRLVZYcVhQRy13MVdDVXRjT00?oc=5",
     "fonte": "A Referência",
     "data": "2026-11-10T21:32:13.000Z"
+   },
+   {
+    "titulo": "Sudão detém Haroun, ex-líder do partido no poder, procurado pelo TPI",
+    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRlBQdm5xcTZYNFFUemxDRkZSQmxGTHJPUi1CeWhxZEV4VlNtM0VSTVUzS3d3QzR2bHRpSVQ4R0lqb3d4d3ZodUhWdFBUZjhwa0tmV3A2LWlhdWdkeHA1V0xHdklUQXBCQURoT1BfV3RNRFRHZ2trVXZSRXFCV19nQlpyNnhhVmI3MWFONXpSeEczb1ZzbkdmNHBWbmhMUnBsZ09qNWdLVQ?oc=5",
+    "fonte": "Público",
+    "data": "2026-11-08T16:40:57.000Z"
    }
   ],
   "mianmar": [
@@ -160,12 +166,6 @@
     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSFd5ZGVsWExIQmNKOE1ob3lIM3ZIOXpuRlp5RVBVVVlRanhwSl84eUMtcWNYUXhBZ0FTRWtUcFVZUXFkaXZlbDc2TnBJUVlUWTI5NHg5ZXhOU3c1X2dhejJBTkhpYXVwcnpmMzJGUHNhbENDTm5YVzNrMHFYUlFLNW5GcDZsWl9PbWc?oc=5",
     "fonte": "Africa Defense Forum",
     "data": "2026-11-10T18:07:40.000Z"
-   },
-   {
-    "titulo": "A África como tabuleiro de uma nova disputa imperial",
-    "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPNDJMZmg4a3MybWJ4a2RYUkpDVWROZ0ZoWjNKYmVmdUZUNERwd2hJMTBVSng0V0piTy1MVGs4bk9jLUZRWnhST2xNVHVnUENHT1BIZnVJVkY4VTFVWEJhRlExVUVYby1oX2YybVpGUDljN3ViUmxYM2dfSlo2R2g1YTJZNDN1TWdIVk5ubFh1cVZrYXNacHNiUFZkeWxhSjA?oc=5",
-    "fonte": "Tribuna Feirense",
-    "data": "2026-11-10T09:14:00.000Z"
    }
   ],
   "haiti": [
@@ -197,7 +197,7 @@
     "titulo": "Bukele enfrenta gangues no Haiti; por que o Brasil ainda não consegue derrotar suas facções?",
     "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNQjFtTVAtRERBQzdERTAzRTZWbkpOeTV2S1RMNFlhYjZLY0dXYUh5Q0RybHdXb2RGbW8wZzMtRnVGNXJVanJDQ0ZMZkVNMmlJUzFHS01yY2xYb1pCM1VrbmVVVFBMcGpjYkN6X3BYUEFBNnNQR20xUVBqQUJaVWpBX1ZIWWxxcFZfOGVIZTRzaGxsSHRSRGh3Zmxpa2hCSy1SLW51RVlPdzNKaW11eUl4QXk1NFV4b1BMUkxxVGl0UmpNeDdIN1h3OEdB?oc=5",
     "fonte": "Power Mix",
-    "data": "2026-11-14T12:57:00.000Z"
+    "data": "2026-11-14T13:00:00.000Z"
    },
    {
     "titulo": "Por que El Salvador tem soldados no Haiti?",
@@ -310,12 +310,6 @@
     "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNXzJjTmdoYV95VEdvQ2hOMlNLR3RZSmlnVldfS3pfSnVTOUswaXFuYWlxWDUzWlItZmdUQTZGc1ZrT1F0NXBoUnNTVE9YV0V4R3Joc3RzYWlES1pLaUFWdnlqc29tY3p0WlBIVUs2NGlGSGNRZTljZlEtUFZKbHkzUjFGaC1iSFVVTEtaM0dEZnJrYXhSblRvcjJ5Ql9QazRya0JjVmlRc01TTlpLZ1dSd3RoNlJlTHJCWk5YS3ZUX0JjWG4ydXduMXRQTTFIa054Si00?oc=5",
     "fonte": "Diário da Guanabara",
     "data": "2026-11-07T23:19:16.000Z"
-   },
-   {
-    "titulo": "Síria pode enviar mais de 10 mil soldados contra houthis no Iêmen, mas Damasco nega",
-    "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNMHdXN2NSNUZWb3NSRFBTb1dJZmJfWTBIOU5wdFFOc0oxdXNkRTlWN3VtSHB0SDRFaHJHdzRnMTZIcHZ2RXBoWFFVckNrQ244TTFnNEdPdzVOUUVQMUVtdlNaTk42NWtvRGlSa1NRbTZ4MTQyNWl2azJXQ0xPM1d0c2FJZ2ZTeGl5OGVpNA?oc=5",
-    "fonte": "Times Brasil | CNBC",
-    "data": "2026-11-07T19:14:00.000Z"
    }
   ],
   "somalia": [
@@ -327,15 +321,9 @@
    },
    {
     "titulo": "Sete mortos em um ataque atribuído à Al Shabaab em uma zona fronteiriça do Quênia com a Somália",
-    "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPY3lTcGtBdHU2STc0UHNFMzVheXVwbktaYjA0X3RqWUZLS0RLeEJQWmwtRWJVdnVCZUcwWm0yZER5bGxQOHdwRzhZUHBtWU1YZlBHeHBQcENLdEpCd3h6N0ltYUNSdW9MSWF5MVdsWlAyMEtwNHhnRnhSWGRleE1ZZEgzdzU3eWIxa2p5UWc2YlpxMjhGNEpMaHJjU29KQ1FQcF9qNEFTeW43YU9iUlcyMV93QlJJTlpjOVE4bjBJeEZTXzhJSFlWaUlvcW1oU3p2RGZvcm1RSTU4d9IB2gFBVV95cUxPY3lTcGtBdHU2STc0UHNFMzVheXVwbktaYjA0X3RqWUZLS0RLeEJQWmwtRWJVdnVCZUcwWm0yZER5bGxQOHdwRzhZUHBtWU1YZlBHeHBQcENLdEpCd3h6N0ltYUNSdW9MSWF5MVdsWlAyMEtwNHhnRnhSWGRleE1ZZEgzdzU3eWIxa2p5UWc2YlpxMjhGNEpMaHJjU29KQ1FQcF9qNEFTeW43YU9iUlcyMV93QlJJTlpjOVE4bjBJeEZTXzhJSFlWaUlvcW1oU3p2RGZvcm1RSTU4dw?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOM2hhZ2pxZGJKWG9IRmxSbUQtblhPbmZ1ZW0xVnpJT2JCWXZIS2dkRVFsb25vNTVFU2U0WGxaZTlCdUVXbTMtZFRHMjdOYUpGVUtXYThoWmhzWUNia0h6c2VwZTNHNlhOald6RG1NMHE1WjhxaGdJamM4Z1otS1pHdmFHamdqRk11SjU2U2JOOVRtMDdIUlRKWDJCNW1pYk1iZE00XzdZTjBhZ3Zmd3ozOGFKWjItZXNfZ0Vyc2x0RE9xV0pXa1BTaW5UQ0VhMVVOMlhEetIB2gFBVV95cUxPY3lTcGtBdHU2STc0UHNFMzVheXVwbktaYjA0X3RqWUZLS0RLeEJQWmwtRWJVdnVCZUcwWm0yZER5bGxQOHdwRzhZUHBtWU1YZlBHeHBQcENLdEpCd3h6N0ltYUNSdW9MSWF5MVdsWlAyMEtwNHhnRnhSWGRleE1ZZEgzdzU3eWIxa2p5UWc2YlpxMjhGNEpMaHJjU29KQ1FQcF9qNEFTeW43YU9iUlcyMV93QlJJTlpjOVE4bjBJeEZTXzhJSFlWaUlvcW1oU3p2RGZvcm1RSTU4dw?oc=5",
     "fonte": "Demócrata",
     "data": "2026-11-10T14:02:13.000Z"
-   },
-   {
-    "titulo": "\"Nunca vi um banho de sangue como aquele\". Aqui, os piratas estão mesmo de volta",
-    "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNQW5QYV9oNXVHdFNpWlRGc3ZTTUE5Sk5SUUdfWVJfTGl3aXNMTEdCWWpiWV9FY2VSazc2aV8yaTBhV1cxVzhhOGtBQjNvUTBWSUxnV1Z3cDhIbGd4TTNxM2dFUjRZdlFkS015TEthY2tRaC1oYkIxN2xzNWJHcGc0SnFody1oMjlVemc4S2FNM0lWemc1Qk11NUlZVEhWVmdxa2o0UHZRaC1xcXRhOXRfb1BiT1N5eW9sNnV6ZW5vTHZQa255NlBrX0RFSGpRaXdBUGt6VDk0LTdHWFl3NWluaTA3dHdIdXR6?oc=5",
-    "fonte": "CNN Portugal",
-    "data": "2026-11-07T21:00:00.000Z"
    }
   ],
   "etiopia": [
@@ -460,12 +448,6 @@
     "data": "2026-11-12T04:01:17.000Z"
    },
    {
-    "titulo": "México prende 14 suspeitos de integrar cartel de Sinaloa, na fronteira com a Guatemala",
-    "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOTG1ZZUQ2SVJtTm9sS1k1blN6dGR1em9yMXFsWjgydkExenFGbGNKNlBzeEZDaWhISVROWUxacGlpaHo5N2FxaFpIWHNEMUNPWUJaNUdkWl9zSERIdUFUOFhqeS1FQ0c2eTNfVEpLdUNhcjZvanVaMkl5RXRENEhBNU55b0VLUGJRTHZvUW5SdGwxTHJVbkRiczB2Tk90c2hIRi1HelpNRk1VdFR2WU9kNFp1cDhZX0VvNHhtU1hNMmh2cnlYV3dQRmVVOFd2TW5MTFBWSjgyeTFnckFaTFE?oc=5",
-    "fonte": "Tribuna do Sertão",
-    "data": "2026-11-12T02:32:00.000Z"
-   },
-   {
     "titulo": "México captura 15 membros do violento cartel de Sinaloa",
     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOWm4yS1E2ZkRZZ29rUjQzZW9CWFNxdk1TOHkyWXBwWGZnbk11NWhSdjJXU0xJbFNpcnk3TXF3NWJNc3pVT0N4aHExWVZhNFJmOEUxb1pWc2hSaFJNMHlsT2VDYUZrTDlCZXB4TVBObmN4eFVqVzlJV09UNG5LWXlWMVJtYUZPeW1aNDhfYWpXaWZsNHE3ZVFWM3lrMXczYzltWU80cFFB?oc=5",
     "fonte": "Jornal de Brasília",
@@ -510,12 +492,6 @@
     "data": "2026-11-13T16:09:06.000Z"
    },
    {
-    "titulo": "AIEA PERDE RASTREAMENTO DE URÂNIO ENRIQUECIDO DO IRÃ E ALERTA PARA RISCO NUCLEAR",
-    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPckM3Ql9IdWJtQTlXM3prdkdhOVE3U1dPRjBWaHB6Vmw3MEhnTmx3QXNCSnNRZXY1ZmNOb2pHSU9FNXZUOTh5MFl1cGp5RDd6cS1fMVZJTWp5OWV0R2Z0dG9ub3V4SkxBRUxwclpIVnJKZHNyeWJCbkpIanEtZkl5V1hoWVpkNWtaV0dYNjhQWkRTWHRNNUE5ZVB1SUVkU3l6LVZkSVRILXJGeV9EMlBlQzF0a3hEOVpo?oc=5",
-    "fonte": "Diário 360 Notícias",
-    "data": "2026-11-13T15:05:00.000Z"
-   },
-   {
     "titulo": "Israel está se preparando para um ataque relâmpago, mas suas preocupações em relação ao Irã mudaram.",
     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNRzNFLTBfZGgwUnhlMDFtTVFGRFYxOU0wRl94YXZ0NWM1dEo1UFVwQ0FfQnJYUzFwcmdVQ2lOcGRnNVA5T04tSGNoWFR1VnB6eUxsM2RZY19VbmpQdTk5Nl9ZM2w1Z29FZFJlY0w0MUR4Tm16OG5ZNWg3eTA5aVd4RG5EMmFzd2ExWGdNUWVfOA?oc=5",
     "fonte": "Vietnam.vn",
@@ -528,12 +504,6 @@
     "data": "2026-11-13T14:20:58.000Z"
    },
    {
-    "titulo": "Reconhecer direito do Irã a programa nuclear foi ‘golaço de Lula’, diz especialista",
-    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQZlVTaS1UZC01VEVxV1FtbnYyazhmekJNNENDWVF2Ym5GUmlBdG8yMjBncHBXVk5odlE2ZHdTWmVqQlp5RThjSTlUYmE4UlJMQWpjc2Q2QmZCZGptZHdNUUFVUkdHQ1hqaG5iRFVCUVMyY1pJVlU1OU1kV25VRlZHYkZHVGlaUDU2T3NqSkZEcjYxd1hwbnhVVS1qV3ZBNjFDM09EZDFoLVlMQ3hhNlFFUEFyb1RIVkRKMmZVWm44eHQyRms?oc=5",
-    "fonte": "Opera Mundi",
-    "data": "2026-11-13T12:02:42.000Z"
-   },
-   {
     "titulo": "Trump sugere que poderia derrotar Irã em 3 dias ao destruir infraestrutura",
     "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPcF9od2RQNjREWV96V29GUTRmV2tWNkpMRkE4ZDhzUnlZMDllM01DNzNvUXQycU9qYnExNU5iekpydFFQdThFbFBXVHFDZ25meGtxUWtuc0JlT05oSFRJX3RzbU1ieFZpOV9VbE5oVy1QWUFmaVJ3T1Q3VUhlR3EzQ2lTajNDWnlKR3ZFNEg2UnJLU1RUOFhNSDhONmlkZXNIb05VdHNSNVRZbE9CamRHT0VtMEFpUDlRWnc?oc=5",
     "fonte": "CNN Brasil",
@@ -544,21 +514,21 @@
     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPWFhtTl95b1R2RWdyNjlndnVBV0VaS2U4VF9qOThjeFMzU2lsdWdweW01UlBoM1hNLWJESEl6SmFyQWFKNEZjU3g1WTJha3dZeW80am5LQzZYVjl0VkZxZ0hoRktMX3c1Z241cjFlQ2FNS3JWblQ0QlQwWFQ4aUp1bVdZczcyYk1vTDFFWHZLRTFPUExkSlktTXpXTmJaLVQwZXdfdWxvQVJYSEk?oc=5",
     "fonte": "Hora do Povo",
     "data": "2026-11-12T20:00:03.000Z"
+   },
+   {
+    "titulo": "Reconhecer o direito do Irã manter seu programa nuclear foi ‘golaço de Lula’, diz analista geopolítico",
+    "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPeEIyVmtCaGx6Q1czYTRjS29qWklYNnRVSVdYd243eUlwdlVOREZGOE9XOFFkNWVEWDdzb1gyUlV3Skl0TGdqYmFYZDlxNlFPazk0M2F1SEtaR2JaUGliVmtKVXp4N0taSjhvNy1DVS1qTkFaNXQ3bzFOYjRjU1dRM0kzY013ZEpjYUExcjZIVDR0ZmxIa3g4UlJiQ0FpTDRDSm1PNTRrLUZmd2Fva0dyMlZkWU1jdVc0cTBkNmZpZk9xeXhWckhPZ3hXeVpFWjBhTVYtMVdGel8zVjg?oc=5",
+    "fonte": "Brasil de Fato",
+    "data": "2026-11-12T20:00:00.000Z"
+   },
+   {
+    "titulo": "Irã ameaça atacar bases militares dos EUA se país voltar a sofrer nova ofensiva norte-americana",
+    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQUHlRUkVCZXQzU0RRNlEtemRlSHRXb2c4OW5VOHczZmJiS3Y0NnhTczh3WDNBSVZxREhwWlpSZkZaRjNRMnVxZk05NXgxVFpFUndfVHBjRDhvS0VRSlB0TGNFcThfQWNUcjhOeTJ6cTBKSm5vN2R5WDg0cFdPZ0dwUzM5SUdUS3RnejhZdzlqMUZuX2FfRVZXQTAtUVVPZm0tVi10azFSRVA3c0dkNWVXRjZKOEtZM28?oc=5",
+    "fonte": "AJN1",
+    "data": "2026-11-12T19:50:30.000Z"
    }
   ],
   "libano-hezbollah": [
-   {
-    "titulo": "Exército libanês apreende armas e munições em bastião do Hezbollah",
-    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPSUI1VjAwa0V1MlVSZllEaENJVTlCRHc1SlZLQ2Vzc1N4bnVoZkF1b2ItZHVsS1hPUkxkU1M5cmRyWC1QbVdEX1RrRG1hbTd1aTI5WXBtM2k3c2xIWExpQ3NiOTR5THFzYmdTa3VXWTZDVjhqQmZjN0lUR0ZROFpMMUR5Nld4MjRNeXJjdjl4OUViS0d0dW9OT24xZkFuMm1OVXhzT0dMQ2NqVWpZS0piakhJTQ?oc=5",
-    "fonte": "Notícias ao Minuto",
-    "data": "2026-11-13T18:14:00.000Z"
-   },
-   {
-    "titulo": "Como está a esquecida guerra no Líbano",
-    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNUkFPZ18wV1hHQzB6WDNzWHBvT1V6Vk1PVk52UVFPRGc0MlhPdWh2WXdJUFdTMnBpSHUwYWNjbTFUQW1UV2xtYTctc09IcWstR1g1SENEWU5PY1N6UF9nRXdLclBYTDlHbE9TQlhlTWdXVWdTTGk2eGU5cnUxaGNXaVJPRzRRVnd3UEszdENxbGZTWVpINHQwYVNkM2pETDVZYnfSAbABQVVfeXFMTmdkN3FnSE5nWmhIMlVNVWRGY25jbEdyeWY1d052dnM2WHAtNzZWMy1PT09uVG03eWp0dDNadG15QlhOYXAwcUJyS2UyUHZBakstOTBYZlI0S1Y1Ymo2eUQxMW5TT1A5OWczRFdWYWJBNzY2MW5MSVBRaXFJR2JpRnZUd2lRbS1vM3ZLNFZUZWF5ODlHd0FoU3BybDRFd1Q1R0xDSmkxUXJ3Z3BPNWhSVHQ?oc=5",
-    "fonte": "O GLOBO",
-    "data": "2026-11-13T13:17:19.000Z"
-   },
    {
     "titulo": "Líder do Hezbollah no Líbano vê \"oportunidade\" na derrota eleitoral de Trump",
     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQOF9zVG12ZFhaQU5ydUwwaDVDS1EtUjNPQTQ4UTNPdlJFMmFiRVJhaGxjTzZ5LTFMclBVNmE3UHNZUGpEU0NpMTc4U3hPWlBuc1NqUmRDdFcwOFNVNV9xTmpVTUIwVTAwbmF3TENOOXR2TEM4M1laaVY3MkVQLWVnQ1JiZm9KLUt5c1htQ2pyOERONkRjTFpYRFpxc1djdHlwMTJiUm5uS0NhS0FWR3NFcU40OUlNU3dfdHBOeGx5VXdFQnh0aHhzaNIByAFBVV95cUxQOF9zVG12ZFhaQU5ydUwwaDVDS1EtUjNPQTQ4UTNPdlJFMmFiRVJhaGxjTzZ5LTFMclBVNmE3UHNZUGpEU0NpMTc4U3hPWlBuc1NqUmRDdFcwOFNVNV9xTmpVTUIwVTAwbmF3TENOOXR2TEM4M1laaVY3MkVQLWVnQ1JiZm9KLUt5c1htQ2pyOERONkRjTFpYRFpxc1djdHlwMTJiUm5uS0NhS0FWR3NFcU40OUlNU3dfdHBOeGx5VXdFQnh0aHhzaA?oc=5",
@@ -570,6 +540,12 @@
     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPWjBvSVc3bjd6b0JUVDdaa0RNLVk5cmNGQU5FaHhrdUJRQjlxM0Jtb0c0bjBCUWV2YlpteDhUcmVYTzZNYWtSVVViNUw5ZjVDU3BPaUE2RF9oSVZEaVAwb19YMllLQzUzcFAzeUN3b3B5dTZuckk0czk5VElrZUtld01wMUREbjRPRHVKTXdhUE02LVJMTzVvWHAyYUFwQlQ4V1NmWmxUTWszVExKOTA2TkNMTXYzTWw0VXlXNjBWUWxvaWhCUlYyUtIBzgFBVV95cUxPR3lDdGVlVDdiWmtnSnlzX28zRlp2VmhteERWYzM1TklfRWc2dXBicWJIdHJwemJiSi1Kc045aGdqNWN5UmFJaHljSUxqbUpQejY4b0N3RFdGU3RlNEkxRDkxY1NwMmxpTzhENjNKMDlWNE10Z3g0eFFNMGxRMTI1bHVOdkhXbEZDdWdMeTNBREZxaDNYYXRSLXpCTFVURVpsa3ozQm8tdElVNjZLOUluS2xSenJSUlJST0ZtR1FCR2NrZWk0emQ0Rmw0NE5lQQ?oc=5",
     "fonte": "Correio Braziliense",
     "data": "2026-11-10T22:30:00.000Z"
+   },
+   {
+    "titulo": "Notícias de Israel e do mundo judaico em espanhol",
+    "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNWmhLWllkd3J2dU5iRE1TbzRkMFppVkF6YmpERWlDemxvVDBsaUZlUXBPcXpfVUJ0WDlOUEJ5TVB2NUlaSlFXYW1BU2FFWURaeS1ncF9USTlHbF9hSW0zRDlpamtkdFhOVUFmQjRwYlAyTkFIUjhDVzZmYUtfX0p4YUppUDNHbFJ5WGliSVF0bnBxVUw5c1hzcXRlMUNUVzVFT09QNURsRlBGdWU5dFpMYnVkUmFfU1RYeHFJaGowdU56OG01MGFCNDNBcDFTdlJxNU5jLUJDbnhxbjhzbkE?oc=5",
+    "fonte": "Aurora Israel",
+    "data": "2026-11-10T12:23:11.000Z"
    },
    {
     "titulo": "Guerra no Líbano aproxima o agro brasileiro das forças armadas",
@@ -702,6 +678,12 @@
   ],
   "eua-venezuela": [
    {
+    "titulo": "Italiano é libertado na Venezuela após quase dois anos e meio preso",
+    "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOLWpZY0NPNlFyQnpYQXdYb2xPcldHdTlWaXVBajhnTmJEWFlwVmo0emJVeEJhbWw2RHdqcU5seDh6WGtpM2VvdXNVU1BYT25sVmx2bjg4dTZmYW1jUDZsZE13UDl5UGRNUVI3Qk1LUTdfbzZXLXVNbnFXeWxfUXdiSHo0U3BicWlQRmlYZ0xLdDNxYWtOWXdYN0lJTy1sUEVtNDVlbWw5bTN0NHdiUGExZjRwRHN4SkRmQUxVbGkxYkNYVEU3VkpSUGQxV0ZFQjlRNUFCdndUOHc3V2VROVlmcld2ODg1QzVM?oc=5",
+    "fonte": "Terra",
+    "data": "2026-11-14T21:07:00.000Z"
+   },
+   {
     "titulo": "Tesouro dos EUA avalia empréstimo para Venezuela quitar dívida com BID",
     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPeFZHbFdPWTliX2lfVUpOcXNVMkhwZjZFU2tHbjBESlVoQjU1ZUVfZ2JwWHdsdkJkMFM0cURrUW4yWkQydVlBczlDU2RyTGNJNkZlLWVxQUdONUhkckJhNmpHTDhTdDgtdm1JMUcxcXpqX1hPSlF4T3FDY1lBRjVhLTlmMU5NZ2paR3Z3V3VaRW9iOTY2Z0RPTXptenJVNTN5WTlNYmVTeTBVQ2Y1LVhTbw?oc=5",
     "fonte": "Jornal Diário do Povo",
@@ -742,12 +724,6 @@
     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPVjZybm5ZT0ZXWnh6QkFEWVpOZUtGaTZXWUFhU19JaHQ1Sl9waDdxTFFHaWZYc0FxekJ6YUE4UFpXZHdqdWZCblE4LVljeHhSbzRNdE1wUzVqalhNR3VFRVE1cl9DRDJGWXd2eThIbWUtbzhTUm00Z3BlcWF4UFFieV9wOURsbG9FRTk5VQ?oc=5",
     "fonte": "Vietnam.vn",
     "data": "2026-11-13T05:08:45.000Z"
-   },
-   {
-    "titulo": "EUA repassam US$ 12,1 bilhões à Venezuela por recursos naturais",
-    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOeEFrSjRUYnNJRXc3Q1hrNlJNVDl3MWdFN0h1NGhlbE50aUhvUUREdEhaRmtSZlBmbDJIaFVzYjROMEZ1akozbVllNm1JUldBbklpT1NDT0VuZEtGUGVjazlqd0tWV0pBOF9Cb0JnQjZLeEt5dGhac0NJLTJuclJ6UXVYNnB4cFNKQk1Gb0JzcUdfUDlfdm15aQ?oc=5",
-    "fonte": "Vero Notícias",
-    "data": "2026-11-13T02:15:00.000Z"
    }
   ],
   "tailandia-camboja": [
