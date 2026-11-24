@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T10:08:51.915Z",
+ "updated": "2026-11-24T22:39:31.086Z",
  "fontes": {
   "noticias": "Google Notícias / GDELT",
   "lideres": "Wikidata (P35 chefe de Estado, P6 chefe de governo)"
@@ -8,55 +8,85 @@
  "noticias": {
   "russia-ucrania": [
    {
-    "titulo": "O que se sabe sobre o navio de guerra russo Merkury, avaliado em R$ 1 bilhão e atingido por drones ucranianos",
-    "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPZzRNakRnQlNOTVZoblJoU0tXTjY0X19NYkpMRHZ5bFAxemhOZlptRDl3Zi1YUlc2c2ZmRFJRVVl2ZEQ3SlgtRGxaMHpDYmxlRnFKY0lObS1oR2t4TlQwR201bnJFSk9CaHJFY2hQYzBTbU5BQ2stNzgtOWFMLU53NGk3V3JMS2ZZdmhFeXEzd1kteEpwOWN3OG9lZDVZYXJQWkNSRDFaRklFNTFGQkJ6emMxdHhpM21kc2J1S040WmFzdGpIYWNkdW9JSmpWTDhVRzdYTy0xSjdoRFBzb2I3YzFZUFhaMWRTeWRKaW4wcnnSAf8BQVVfeXFMUG9IVlRveVZKSzliUTh1cmROWkxSYUNkbkw3YTlweHFqcEM0SHhlSThYbkFrUU1fMHpYRm8xV0Q0OVJGUy1iOUw4REh4aEI4ZDNRWFJTUXc3dThTUDlsVGJuVmNyUTJSTE8zTFlNVW9fTlRhYUhHNHpnTXhmdVNaWGR5bW9wSzB1Y3pTVWhMRHVxcDBLY3ZwNWRXUm1wMEZoNjNaZE9wSU80dTc5ZlFQNDRTMlhHNmZFT1dKSUJlYWNEdWU0N1ZOUWxqZ0duSW9uN05qYnhyM0RTUl93THVwOThvUjlYdmJ0VVJ4RDdza3B3SWhHTlNETGlaQnRva25J?oc=5",
-    "fonte": "G1",
-    "data": "2026-11-24T08:00:00.000Z"
-   },
-   {
-    "titulo": "Ataque russo mata 2 pessoas e deixa 22 feridos na Ucrânia, diz autoridade",
-    "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbFJIOTZxTTdCUWx1SFRCOFNoQ1dfS0JJV3RDdm9PY1NOaGZYajE5ZTVkMnJzcXJKaEdSbGtWMlFLUTV1RVNnQlpYVFZRVEhST1k4MW5sNkdmOGs3Q041eFpBNEYxSnExbUJzZk9UWlBIS3ZQSnNTV1liZHFZUVM2aGpjY1VWZDZQRkJrWlhxXzEzcnJkR0FOa3pzOHZWbUttSTNuRTJ3Y0E?oc=5",
-    "fonte": "CNN Brasil",
-    "data": "2026-11-24T06:47:09.000Z"
-   },
-   {
-    "titulo": "Kremlin diz que Ucrânia deve enfrentar 'consequências dolorosas' após ataques contra navios russos",
-    "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQcHBtNnFpQ2lYOGJzem9kMDQ4N0hxUjlPNHJjdkR1QU15cDFzMXJhai1Zb2ZmWlF5MlhKX0FDOC03OVpYMDUzSHFaWUpicE9kelluOUMwM1dEZEZSeUNGWnl0aURDa3E2UXFnZk1lTTBKWEZBVmx4b2x6ZXF1cl9FMG10eUR0TDdIX2JGTTR3a1V2dDd2V3pMUXpacTN4Yk1KMVR6Q2V2OUR3LWNfM1ViMVEzaUpEY3poRmhuSndWQmo5aFN1eEpNQjBWWTBPdXFFa21nRHhjcmFrUTFxWEE?oc=5",
-    "fonte": "Opera Mundi",
-    "data": "2026-11-24T06:30:47.000Z"
-   },
-   {
-    "titulo": "Guerra entre Ucrânia e Rússia está se espalhando pela Europa e há duas razões pelas quais ela vai piorar",
-    "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNVFo5WE5iZEJvQUtLWXkwQVhNMzZjWmlpb1lKQ2FlR2FZSVhZd1BDbk11djRQU09zUGl6d0RvQzNEN0d3N2VmXzN1WDhfenMtY0lKOEU1UGx1NzY2LXV0MUdoTlBnazQtMnVBLVB5SmYxRU1KN0Jia1lYb05Sb1NPQWpwQ3diVS1lV2huQXBYMFBIQy05QUZFVXp0d2tvQnJ6YlpRV2IyVnV4MER2X0pwei1BT0hkZXNoWldZS0pqemlWOVBxc1p4NFgxTVIxUkpZX1hzdzd4d0sxeTYzWnFDbFVHM1A3YWc?oc=5",
-    "fonte": "R7",
-    "data": "2026-11-24T05:00:01.000Z"
-   },
-   {
-    "titulo": "Da Alemanha à costa da África: os sinais de que a guerra na Ucrânia está se expandindo no mundo",
-    "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNYXRNeUdYMHVlUkQ2UnR1cWx5M1NWQk1pTko5VmQ5RDdjZkdaS09RWjROaWlsX3N6QlZlYms3cE10cW5tRDNrZGNjb3ZheW9IenJlNkNRVUEtZ3RzWEtEblBibm5fU1RXaHhnSXNDZVprbGhSSzlDTVBPbnozcG4tLWFjQnNvRVlZY1E0RFVBV1ZxNy1zNkd1QjNBbkN5cmtRUVc4NW1XRDlSRGNGU2VLblhyR1ltdUh3WnV5blprRU1nbThmampDX2NOTEhyODNYZkVLUDFpMVJJelJRTTJr0gHuAUFVX3lxTE1HWkREeEpPb21oRHJ6VmgwTThCYXhjLWxuR2kyV0w5emQyTGZQZzdXbUdWTkF6em0ydnZRM1hOTUJ4cFItdUZIV21Va1RsYWcxVVNFazkwRlNjOHprYnJ1WG1xS0VJNkxpekZTZEhLSHZaNlphOHFFVzNxemVaRXpHZ0Z1NmlWZlZSWUFTejJSNmNPSGhzT3NqRmdOQUxTa1BpMHU0emxKOUtPVk9DUmNEUXBUaU05eVI4b201MlFUYUtSQkRpTURHZk9RMmFFTG10UHZvZW40OXVGb0V1LTVqYzdjUThKeGlPcUpmMmc?oc=5",
-    "fonte": "G1",
-    "data": "2026-11-24T03:00:00.000Z"
-   },
-   {
-    "titulo": "Ucrânia afunda navio de guerra russo de R$ 1 bilhão na Líbia",
-    "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTlo3eURwckxPRHR0NEVoUkI1V3AwMGtYRGpvbUZXUnpTVGxTUGtRaTVHc1VsT0pBcUYzQldWYzhhRmFlSkgzYlJQeGdfZGctV2JfWHcyTk5qQ2NsRjk3alFKODU3MlpEeXZYYkZLSGtEaXMtV2pwc0pqRnFHRlJRTVZGRFhrTzZ2R2pXMXpwOHFXTjFfb3FvUXJwbmFMR1psWk1MdjhrdGw5ZnozVnFJWk9sSmpydnNxZFlLb29QOXZGQQ?oc=5",
-    "fonte": "Jornal do Comércio",
-    "data": "2026-11-24T00:44:32.000Z"
-   },
-   {
-    "titulo": "Ataque da Ucrânia a um navio de guerra russo na Líbia demonstra o alcance dos drones navais de Kiev",
-    "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPVHJkUmVfcGRCMFpYR0FhUEZXa3ZFeGFOTlRWZk9fLVQ5OUlpQUYyM0E2QVViUHF5WEtOTlE0WGUtLWlHcjlhRW1JSnA2RVppX2JQdGlmM3B3LTJpeDNXWWQzTTI3eXNYYmY5d01uM1k1T3pOOURpTngwOEtFRHRmN2NVTjVDQlRSRTNFUGZwZm10SnJDUWFSd04xOVFRcVkzM3gxdG1lNkdVbERJN2cxQnZfNHZxajNMWHRrd2MtZmpjUXZmdmtFS3FDbXI5Zi01YlViN2VMYlHSAd4BQVVfeXFMTzdzYUpIdUxFbWpoYXFBdlp5RXNUZjVvcVpXYUxqcVBhR0lSRG9sbWt2ckpXN2VidEZiejc2N2x6YzhVQ00tOGZzYmhEYl9TTXN5ZGZzUXB0OE5pemQ0MUZILUVWU09BNkNVckRnd3BnWE10OFZsV2pJRElGMmZMa2RIQlY1Q2otNmxuLWpRZFRrdVA5M19GaEszYzhxb1RPQThleUlEZVZrQzFUamJEQm1uVGFIV211RTU0bEN0YWljU3phUUhnTy1lb3RqYVlLZkRocGhuU1IxUnhpZkF3?oc=5",
+    "titulo": "Líbia nega ter feito acordo com a Ucrânia para ataques a navios russos",
+    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPOHVjNGZCNlpxcF9Gb0hrajl6TF9mUENmZGpaOFJmUFN5SGUwdUswRjljWUlYTm96TnJqOHZKUElXQUg0WmsxN1Yxcjl0bURVdm9MWmNialRVRTllT2ZDMHhEVWFoMUlfMjhRaERtTXNKcWxoWXU1T0VWbzRfb2JPaWVWbldFa0xaTktBay1lQXl5T0ZBYnNJQVhUQ0RNQdIBowFBVV95cUxNcDVJbTZFTGVrb2xyTFBYYnU3VVd3VW53Rm5hUk16TFkwZHZubi1rVlRNdjgxMHl0a0lnMHpDRGliWjFaX3EydldPVDY1SlZuVDRaemRiWjg2aDkySlk0R1NrOGZyRzBQZXZ5V0dlaC1FbVdZdHRYUXBKcThpa3Q1dVRrVHpKSUNBREItWDhxc1B4Vk5ZZ1BuUnNkQlBaTGQzUDdF?oc=5",
     "fonte": "Estadão",
-    "data": "2026-11-23T23:00:00.000Z"
+    "data": "2026-11-24T19:42:00.000Z"
    },
    {
-    "titulo": "Ataque ucraniano afunda navio de guerra russo em porto líbio",
-    "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPc1RSdjJwZjZWZXJrdHMyWV9OMjhBc3JMS25YbjJLd0hzVGg4VkhwRnRPVnlDd2NPQVFBOFJvZllhODdWaDZFbTJVWU5Ud1J4WkpyZGhsdjNZdFhOZDFabVNDcnczTTVDZ0VoeEdEbFJ3MGR1cHRtZzlvLW1WS29XTmdsSERvaGp1enFxbVRmOFRTckZkRHJNSGJoOE1QR2dTSC1aYjRpSFV0a3JoM2liZ2NMTGp5OTY2ZnZ0RTdNc0dnX3FtUFh2bEQ4a1Y3ZjRWdzlLTzF6VGhMLUk?oc=5",
-    "fonte": "Agência Brasil",
-    "data": "2026-11-23T21:50:00.000Z"
+    "titulo": "Rússia tem mais de 1.000 suicídios de militares desde 2022, diz jornal",
+    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQLUhuNGJNZEc2MllLNVBtYVNuaFJjcTB5UFlEMXRjMWtDRHBUM2R4RkVyRjB0QlJKMEJuektfeGViRzhEb09JdjNzeVZXbHk3dmZlLVpWT3BtQkduaU1uTWtza2JkVm1xSUxUVlAyTld2NlpQMzhVZ0gzLVNDODNUU3drbWdYcGpQenJBVTBISlRaaWtmMDVDbDNRSXAxbmFicng1SERIV0lrRlFyakZZLTl5M0plSWpVUnc?oc=5",
+    "fonte": "Poder360",
+    "data": "2026-11-24T18:30:19.000Z"
+   },
+   {
+    "titulo": "Conheça o navio de guerra russo Merkury, avaliado em R$ 1 bi e atingido pela Ucrânia",
+    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMVpYM0xKWXZRNVFmN0ZEMDJXbUh4b3hMMWZBVHEwck0zQXFVbjNUV3lqT1F4UDlaQU55QV9ldi1UVjkzVkJMRUFFMHV3UHp3cDVOdndBUllTLVJSNld3S2d2MFJFWWE3ZFh2VlVFYnJaZkJuNWNrb00xQmdVNm5WWXhFakEyRFp0MlJYNkxpcUtLN0l3cVU1X2FqbElWTDAzTlRYOUVpNlRJTFNmMThPeng1RWNOZw?oc=5",
+    "fonte": "VEJA",
+    "data": "2026-11-24T18:28:40.000Z"
+   },
+   {
+    "titulo": "Estimativa aponta mais de 720 mil soldados russos mortos na guerra da Ucrânia",
+    "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPU09nZUFBU2hBS0dfc3ZNWnU0ZUtTSmtUM2owZkJEYmRBU1ZIdUZVb3JCcnVBN0d4Zjk4MXo0ZTgyZnF3WHFQN3V5TzVqWXVYcE9uQUxEMFBlcU4tLXVNSTRQX01aenJJQ3lJY19mZFpTR3hYdzM3b3ltZTFYX205WUdSeDFDRVpVZW1pcGE3eXRqSFRiUl9iSTRaakdXMXdCWWxhTTJzZldqSjYzYWgxRU1iMDJEVGtzNDF1QnJtblQ?oc=5",
+    "fonte": "Jornal Gazeta de Varginha",
+    "data": "2026-11-24T17:59:05.000Z"
+   },
+   {
+    "titulo": "Dados vazados apontam mais de mais de mil suicídios na tropa russa durante guerra na Ucrânia",
+    "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQSFpoMGdaUVZiSkYzejRpWUowU1N4ejZLRlI0bWs2NFk4N2ZQOFBlM1VqanoyN0l4LVRsaXpVbnNDMDdTODJ2eWV4TmJjZVhVRFhQeWlnRGs3RWhVVUNOS0VMMndwNGNQMzk3MUFWNm9rMGF1cWJ0bUtRcl9SSjA4ZzFBNkUzQTY1a2RUcVhWcVMtYV9KRHBXcTBreFFNT21VS19JQjM0bjZLbEoxbkgyN3Vqa1lqSllUYkpmRXVKX0dWUmc4Z3oxcTBidXBsWGd2Y1lSNNIB1AFBVV95cUxOeXZQYzFlUkhyU2Z5Szl5MUdTWjY0M0tFaW5kV1JFLURqLTRBeE5WMDlmaFZuVzdNMm42MHU1X29OYTRYQ1F1QlRTeV9xSk1NRXhBSkNZMmI5T3RqRWN4RmlybzJZdmpMZGpQSDlQU0taZ3VCbXlBazJWbUY3a0x0RW95M3lzMkg2M1M5SUVkandFWXc5dkhYeHdZXzllMXA4bHFHWUdHR1Z3WVg3VTV3TWRYVTJEVzN2Z0JJV2pYVDJwcDlmUlFhM2duSFRZVnJhUl9VVA?oc=5",
+    "fonte": "DW.com",
+    "data": "2026-11-24T17:45:33.000Z"
+   },
+   {
+    "titulo": "Um a cada quatro minutos: 720 mil soldados russos foram mortos desde o início da guerra na Ucrânia, mostram novos dados",
+    "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQN1E0d1paSkNwOTlGUklOVlBmOG9FRHhBWTFjVk1NMzh5bEQ0M2p4c0NMLUVON1ZtdmpFQnEtNFRaR0hOMjlrLUlHOGlHM3RCV2tVOHRTTkN3djU2OUtJQzMtdmEyT2x4QmFLWXM3bi1oUkhGYmtIblFRUEc0dTdiWWM4ZVJub09SVzBjczRLSm1XQnFwUHY0LUd3SDEzUjdnWXBkc0dDOWM2X3U5ODVlOFV2b29mTmhUS255Mi1XUkJFZDVvYVhtVUQtVGV3WU84Q2lYWGtqTHk5UVlSai1PU1JhLWVKYWhleHpPcWNUZ0std0tIRGV4Rw?oc=5",
+    "fonte": "R7",
+    "data": "2026-11-24T17:39:16.000Z"
+   },
+   {
+    "titulo": "Reino Unido alerta empresas que fornecem apoio à Ucrânia sobre risco de sabotagem russa",
+    "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQT2N4Q3duRjJFN2RBX0FDdDVoSlhHamJiOWEtaFhZUGc2bGxLaGJqaFdmQzhENm00QnJ3MWFKdEEtaks0WEdqMzJBdEdQRmFUSy1EbHk4cHg5dXBsQUpDZXRmc1NjdmR2Qk9lQ2VMTXlOMWR5NzNxcDVnU3lxam5YRHBoanRwRVZmdS1PeWRzU1ItdElibU4xOFRiS3FVWGlFdV9Oa3pkeWw5eTlST2FHcGdleEVIRTNWOFBJV3hIY3pBVlQ5bDVreVVUUHZaZE9meTViR2ZEa0U0eGc?oc=5",
+    "fonte": "Gazeta Digital",
+    "data": "2026-11-24T17:02:00.000Z"
+   },
+   {
+    "titulo": "Líbia acusa Ucrânia de ato de guerra após ataque a navio russo em Benghazi",
+    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQ1dudG15V1RzOGtzbWFaaXBrdUo0cXBBM0J3Njd2ZUU1cEFpQlRWNUNaeUpDWFd0cXJyTHd2ZE93Wlpobzc5TGI1aDdRdlpTeUZSdW9WOTRZQnU4Xy1EZ05PeDZvenpTaEh2blNKUThpb01UdjIwdS0wLWZJd3czZVVlWXZQR01kUlNackJvT1ctSzhiZW5IS3p1WXpJV0RhYUZmelF3a0E5MzZHUWxZM3dOOVgzNW96NUE?oc=5",
+    "fonte": "Brasil de Fato",
+    "data": "2026-11-24T15:45:00.000Z"
    }
   ],
   "israel-gaza": [
+   {
+    "titulo": "Bombardeios israelenses em Gaza matam sete pessoas, incluindo chefe de segurança do Hamas",
+    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQNHVmTU1GTkM2SDE2MjVrZDJxY003UFRmcnF0eXFLdkgxT2ZKeE1rT1llRVViUWw5Z2FoSzY3WUd1dndlLUFEaXFwX2ZSbzd3SDBzQ2htTTJPSlJnTnJtd0t5UmlJVzJhZ3BFX0hEZUxGa3A3dUVnLXdpU1A5LXkyV3lYSUpreUJBX1RiOU1Vc3d6cmVZb1Ria1ptMk5FU2FPMnFKRC1kamY0ZjJidFAtYzE3cU1jV2hUckpKaFZ3NkRpYl9oWEE?oc=5",
+    "fonte": "CartaCapital",
+    "data": "2026-11-24T17:05:00.000Z"
+   },
+   {
+    "titulo": "Israel elimina chefe da segurança interna do Hamas em ataque aéreo em Gaza",
+    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNEE0ZVpEVGRZNjVuUURYUkp6TENCRWcybGllSFRRZnhFaHgxZDFaX3c4ZjhLRkpZcFJNdjVVV3FUNEZJc2dyZHlxM081SkNfS0VFU0xwS0VvMGJDSGJyTGJ0d0I3eW1ta3l6YXpzdGtGSFV4Szk0Y1p0N0FoSDVGTDJoYmt1d0hwWF8yNTlRQkhHV24tUDh4aGQzb1NmMlNka0Y0X3pmVlhvb3NnSnl4dEM5Yw?oc=5",
+    "fonte": "Gazeta do Povo",
+    "data": "2026-11-24T15:28:00.000Z"
+   },
+   {
+    "titulo": "Hamas afirma que Israel matou seu chefe de segurança interna em Gaza",
+    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNV3ZWQmZ2bEFHY0I4c2pqQzF1V0FEdC1aY1lLRE1IV0QwTXU1Z1ZjZUFPRTdxOXpMWi1odjA0Ri10dktrSEdPZ0JPTTU2Q3pLY2ktTWFVUTdCMnpTUTRFekFLRi1aU0pEVzZWMDhaVXJUZGhTZ241dXJybjFvVEFmWFJFRTZfTkRWSU0teWFLcGdneXBNQ3RRS2pJSDRiUC13N3dnQnJ0YzdLOGtNRnNlaS1KX2Q5Z9IBtgFBVV95cUxNV3ZWQmZ2bEFHY0I4c2pqQzF1V0FEdC1aY1lLRE1IV0QwTXU1Z1ZjZUFPRTdxOXpMWi1odjA0Ri10dktrSEdPZ0JPTTU2Q3pLY2ktTWFVUTdCMnpTUTRFekFLRi1aU0pEVzZWMDhaVXJUZGhTZ241dXJybjFvVEFmWFJFRTZfTkRWSU0teWFLcGdneXBNQ3RRS2pJSDRiUC13N3dnQnJ0YzdLOGtNRnNlaS1KX2Q5Zw?oc=5",
+    "fonte": "Folha PE",
+    "data": "2026-11-24T13:29:53.000Z"
+   },
+   {
+    "titulo": "Ataques aéreos israelenses em Gaza matam autoridade de segurança do Hamas e outras seis pessoas",
+    "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxPbng5MDFPd3paaGhRV1ZPeWRNUFhNVElfMnVJUUtFY1pyNGc3YUhrM20ycmtpdENscVc1UVJvN3NaMk5DZkEtU21EWnhnT3NCZWpYZGYxZ3FiR2tQTjhfNDBSZXlheF9TeFZKQjVrZHNXd3NYRERjS0MwVlZfX1NOVjFCellzMjJjOU5DSVlMMXNJaTR6SzhKTFExUHJUYXZTRGJhclJLS2FjTi10WHB1T2xLR3YyRzU2Q0VGcXZna0xSQUt6TWt5TzMwNVJYb05JVmlWckZTRkpaNzRVdk16TGFTYlVoRmRzOGpMV19BYXRGQzhBSjhyLUEtOTJITkFVaUNnOG95UGwxQ3RQbmc?oc=5",
+    "fonte": "Terra",
+    "data": "2026-11-24T12:05:00.000Z"
+   },
+   {
+    "titulo": "Defesa Civil de Gaza diz que ataques israelenses deixaram seis mortos",
+    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTElYRDR0dTRIZ3UybWViOUpKdlNEemljMFlRTWlhS29MY0U2RXVILVZvVC1JaFBrZ0ZzanBaVm1XRzdfcFQ1YjVIOWYwSDJIcXdtYXoycEJwVF8tTE9LLVJENHV2Y2VYN1VrUDZQSFdCN08yOXV4Y3N2ZWFMRm5fWS11aEVXY0Exc3R1QkRhVEZIOGdCa0dHV2lDVy1qdVZJVmpuMENtUUhFMFc3cjdRY3VJRdIBtwFBVV95cUxNY3dvVmRDa3hTcUxjY3dHcXo3WEpUdE90RF9uSVJ6d2c5bmUwRmVCNE9Ca3pLUVNqeElCRU1wQzRpek12b0Z2UUduMlI3UGtFaEQ2bTBTb0dCSTlGUjdLNEVySGVmM2l2NGJtWTN3anl1TmhYZEFrNlJCMld0MFYxeEZPZTk3c29tN3doZ1FpUGdmanFka1RFbUNIeTVQWWRJUjZNUnJfS2s4TVNiRWJjaFdMa0w3NXc?oc=5",
+    "fonte": "Folha PE",
+    "data": "2026-11-24T11:43:00.000Z"
+   },
    {
     "titulo": "Israel realiza maior ofensiva terrestre em Gaza desde o cessar-fogo",
     "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPZmFFN2RrOFpwZGVLT2RSRW03QnpZbTNnd3A5OThsc0d3a195OUloSEM5cTdtMHBwLWVtTVZRUTBiNzlqd0NaQTJsZGt1bmpodXQxaVplUFo2cVl6aGFZVWx4TUphbHN3aGpWNVFlWWx1Q0VZb0RRblpFX25XSTkyWXM0dzk5ZWtjQ3RxSU05TTVyem5lU3pibHNmNjBabUk2alNRcVRUYmY5dw?oc=5",
@@ -74,44 +104,26 @@
     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPbXB3dFU5dGRSX3pGVW5ja3JVMGlKelh2RXZNUU9Wc1FoTU9fdVJ0anZaYzJVeWIzMTN6LWVIN2xNTjUwUnhtV3pYYUMxWHItVG9KNVFYRmJpdlBRNGUtSS00OFhTbkQ2WlRiZUo5dW1DQkFFQVBPMDJ0WlM3TXBBc3NaX1ViU0c4bkxyUjNOckpoX0VLcjI1QVNuVjBZa25ZUWplWlRXNGJoWWFjbDJfQ2NobkxaYlVUTENyOWRTajhZNkU?oc=5",
     "fonte": "Folha de S.Paulo",
     "data": "2026-11-19T17:26:00.000Z"
-   },
-   {
-    "titulo": "Mais de um ano depois: Israel entra por terra no centro de Gaza, em pleno cessar-fogo",
-    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE42eTQ3Vmx3cWhTbXZhcUxueEdRSjdtYVZBcU5XWkwxaVBqRlNQdU1aaG9ISHlRWXR0V19RQUFZMmQ4ZXBHSlR4S0dLRmc4S2F6cHRDT1pIamVSby1TS2xtVzNJUWxmQ25IY2x1RWdkNGkzeFE?oc=5",
-    "fonte": "ZAP Notícias",
-    "data": "2026-11-19T11:31:51.000Z"
-   },
-   {
-    "titulo": "Israel inicia operação terrestre em Gaza; acordo de cessar-fogo corre o risco de ruir.",
-    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObF9qQ3FXYmxtejRRYjhxbW8zSU0zSEptWDF4NF9UeTV3M0RRM3RYM0hCdmlnWnRNWTdVcFlyU2t4YUhMbnJqdTN1NUNsRXM2OFBxNkJvZFdfUzFfakcweXJ6WEFQT2VRZW10LXdFeEpBV0xpRlJKcXdYSllBVnNPYzM1Ym5qNEZFckkxVFA1WWJPdTd5SFcwSWpVTTVvd1o4a2Nsd0Q3UVRYZ2xYX3c?oc=5",
-    "fonte": "Vietnam.vn",
-    "data": "2026-11-19T06:16:56.000Z"
-   },
-   {
-    "titulo": "Faixa de Gaza: Israel lança inesperadamente operação militar ao longo da 'Linha Dourada'.",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPb1JYekZnZmtMWDF4VlJZS2tHc1I4blc0Y2RJT1JxcWNHSE9TRFAwNEN2aDBJZHFFcUFtQVh2RGwxcnBpaDJnanExVkdoQ1F6R1dBLW9PSHFFVUNRMWtNSzRKV05PN2wxLW5nNDFWYzAtS1V0Vk96Tk41eXFJVnNGU3FlT0hKeUI5SnJyZ0xucnFzWWM0X1BBRHVFcTU1Zw?oc=5",
-    "fonte": "Vietnam.vn",
-    "data": "2026-11-19T05:46:54.000Z"
-   },
-   {
-    "titulo": "Forças Armadas israelenses iniciam nova ofensiva em Gaza",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOTUNMVWpOUmhKVDhTTk9JS0JhVUZ1eF9zS0UtYWQ5ZUc2N0R1cGNzM0V2MHA1SUNrbEVnX0c4Q1hSM2hIYjJvNjlXaUpfVnQzbldUaXBNVW5jckFkSWw2ZG5FdXF2MW1pQlY3aUhBN1dfU3R5cFRmYUVxS1hWcUNoWWs4VUtHUDlhcnppZ3QyT2hka3l4eThhekhfNC1vZw?oc=5",
-    "fonte": "SBT News",
-    "data": "2026-11-18T21:58:00.000Z"
-   },
-   {
-    "titulo": "Israel lança operação terrestre no centro de Gaza",
-    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQellhV1lFTWhaRG5FV0NvVnY3Z2FrNUFWS0I1UUdCLVpoMXU4V1FDZ1pfWjhXbFczQkQzS1JzLXpoWFAtRlR4NS1MbWVRQ2NtUXkwZ3NLWUdrUEJocXd5QUJVZG1vZGdGblJodHJ5bVNyMjN5OXAwMzZYdzd2Qnp3dkJIb0tXczlhTDBFaGF6ZUcxbk16NDhDMlZ2X3JPaldrX0pZ0gGyAUFVX3lxTE5OTU9McGtBY1A3aHZSeFRJLWJuWFF0eE5xMUpPdUo1TXJMdGtRZzl1OFRHaXZxRGRXUGluUEU1c1FTbHBCWGdjRURNc19tQnVuN2d0RXZLN0wzNkhVQ3Y3WXJQdHZ1bVpwTjZka296ZU5DbkZMX1E1eXJNS0gwcXY4U2QtWWdjaGhYUkxQZW11RTJWcjc4M05ENUFqSktHLThjQlh2UmVobkJOam9nUlFRekE?oc=5",
-    "fonte": "Valor Econômico",
-    "data": "2026-11-18T19:43:33.000Z"
    }
   ],
   "sudao": [
+   {
+    "titulo": "Mineração Ilegal de Ouro Prospera e Perpetua Conflitos",
+    "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZlBKVGxGbl96Uk1zVVhBMThvZDdWdVRBLUZnckxVRDFDZ0pLZk9vS0dvZnFYRXFNOXN0SzhoRGgzSGxOMmZTYk1YanY3cEMzLWllX3A0UUd6Q3RBQndyMDVVb01yaHdHcGd6aUN1XzEyX1ptb2hiSVhqdXM2dGV3aUpReWk0ZXZuTXR6SHkwc0sxcGh3Qk1NXzZR?oc=5",
+    "fonte": "Africa Defense Forum",
+    "data": "2026-11-24T15:58:08.000Z"
+   },
    {
     "titulo": "Quatro mortos em um ataque com drones atribuído às RSF que danifica um edifício da ONU em Cartum",
     "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxONUVUY1g1TGRnQ0FQdGdLUGZ1N0ozeE9MT0tBenVWS3RpdlhqY3ZDZW5GeVRZQmxEYTA2TE1OWHRna0hmYVlEeHNnZkpGWmRhbjJibGJMQzJBaXBzdkRSVWRSLVIyR0tQZ2Z4RndVTWVMd2pHTmlNSHZoYng0WUpyR0ZwZUltSE0zd3pHS1llS2VqYXNublNuanRMQkQtQ1pLd2xlSnZJVTVCT0tLbHhEeGFqODdUNTFQWmF1Mm1YNnE3V19VaUhGaGR3ZzNjMWlEOHVsVWhlTFNublnSAdsBQVVfeXFMTjVFVGNYNUxkZ0NBUHRnS1BmdTdKM3hPTE9LQXp1Vkt0aXZYamN2Q2VuRnlUWUJsRGEwNkxNTlh0Z2tIZmFZRHhzZ2ZKRlpkYW4yYmxiTEMyQWlwc3ZEUlVkUi1SMkdLUGdmeEZ3VU1lTHdqR05pTUh2aGJ4NFlKckdGcGVJbUhNM3d6R0tZZUtlamFzbm5Tbmp0TEJELUNaS3dsZUp2SVU1Qk9LS2x4RHhhajg3VDUxUFphdTJtWDZxN1dfVWlIRmhkd2czYzFpRDh1bFVoZUxTbm5Z?oc=5",
     "fonte": "Demócrata",
     "data": "2026-11-23T12:08:50.000Z"
+   },
+   {
+    "titulo": "Sudão: Ataque com drone abala a capital Cartum.",
+    "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNZ0xmRklkM3RSamxoM3Itb0w3NTVheVdCYlZIeGhHS2RicFYxTGFVc3lCMTY2YklUVjZ1TUxXcTRxWnh2WURwZm41M1ZfMzA5NFJzX3E0SmY5OE5JQjJGSjdfTlNzUTZWZmVrUnVhZzhhNk1aRXYtcERMeUEtc293TnRIbUNZbE9s?oc=5",
+    "fonte": "Vietnam.vn",
+    "data": "2026-11-23T09:35:55.000Z"
    },
    {
     "titulo": "Ataque com drones na capital do Sudão atinge bairros residenciais e edifício da ONU",
@@ -136,12 +148,6 @@
     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPbkNURFJGSXNxT1JHUlRYRlAxY0laOVdBUmJyUThjUURSeDdocURBVDcycjk4LTdqUDRZbHBEZl9PVHc1ZFJZUzNxanhLVWhqNEQ3RGstNDZIQnYtWXFKQ3VOc2VOM1ZPcUxQSGY5bGxRLWRMa0E3TUtjeEtNUmNsOGFGdEtLcy1WMXpJbTh2aGNqQ3JDT01WaU1rcm0?oc=5",
     "fonte": "Amnistia Internacional Portugal",
     "data": "2026-11-18T16:10:39.000Z"
-   },
-   {
-    "titulo": "Relatórios: Exército Sudanês Utilizou Armas Químicas",
-    "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTDBaRERlS1gwT3BjdGN1enlxVmNQRlRlN1ZQdWZUS3lwSnVDZ1UtdlZydnl0ME1ZX05obWJYTEFSTnJkUGwyR1Zvc2FjTmZkcTBBZFFKZThmM2QzOW5IYWFqbFNZRkthX19pYms4OEZJNTRVQ3hMZUpLWW1SMGJsd1BHSHloMzY2bnpvYVFKajRVN1VGeUE?oc=5",
-    "fonte": "Africa Defense Forum",
-    "data": "2026-11-17T17:43:09.000Z"
    }
   ],
   "mianmar": [
@@ -150,12 +156,6 @@
     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOZFNVakd3LWQ2RjNyRmlFcl8wdjhIaVYxdnV4LXdCLXZUdG5KYnV1azh1N3I1SWVQYUdySGVsTXV5T29Ob2I3OEg1UC1RMV9hVG5ELVkxLVVPMUFsNGtaZm1pZ29EWEJFdFpxcHoweVc4WDFoVEJVdzBSZXNHcmgyQXFLM0JqSVd4THFQS2lQOG1rOUdYVUFKXzNzbjRuRk95UUtmYTgtbW4tWHZzMTBNb0hpZDdDT2JsWFdyZ1BfM0lhcFdvSm1jaHhMc0Q?oc=5",
     "fonte": "A Referência",
     "data": "2026-11-19T16:06:39.000Z"
-   },
-   {
-    "titulo": "White Tiger Column: bootcamp em Mianmar expõe jovens sem preparo",
-    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOQWVWWVFCNXZVU01ZaGd1bTFsSWhaYnVvcmNrYUs1bXNrM1FYdEpMdGhUdEdvVWpIbm5XeGxBX0FLa0Rscml2ZHVVMFRPNXJ5UlU5LVlVNGtmRm4yVHRFcEo5RVZaMWtnZDFsOVZzcVM4clk3SW45YUttZ0dVSEg0c040cDlicUFjYWdSclpEUHJlazBBMUNZ?oc=5",
-    "fonte": "diariodamidia.com.br",
-    "data": "2026-11-19T15:15:44.000Z"
    },
    {
     "titulo": "Tribunal da ONU conclui que Mianmar cometeu genocídio contra minoria muçulmana; 10 mil foram assassinados",
@@ -182,12 +182,6 @@
     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRHN0aW9BQ1BDWmhyN3NhN1EyZU9xZEl6TnpiQk8wTEJXdkIzbVktZFhyMkFMa3VaaEdYclRmZ0lpYXJZYWVfYWN1elFUb1BoakdUVTIxajN6VlY2N1hhajNwcW5TZ184VXFPa3EzWXJ4Vkg1YjhEZnBlUS14SmwyQ05wbnJrZ05DQ2ViWk1sY0tsc1g1bDdrem96UUQ4Yk5nMGhrSzBnbm1CVnVjXzdSLU9qLXV6Zw?oc=5",
     "fonte": "Notícias ao Minuto",
     "data": "2026-11-22T19:32:00.000Z"
-   },
-   {
-    "titulo": "Cidade de Goma: Igreja mantém missão pastoral em meio à guerra na República Democrática do Congo",
-    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQSGZZR1h3TWNxWW9JRWNDWjAxbTV3WWh0RjFfTTFTLWxqcTUzWDFZWXBWRFQ3SDBuc3hSbzdTdWxVV0MtTU15c0ZiN0IyTEdhYlFrcFhpOVhiSFFtMUNSV2N2ZG9mUXRGYXk4WUpXTkdXaTJXQ18xSVAwMlBOMUhxd1N0QzF6NnZVbU5mejh3VS1CN1RWbVQ5dmp0OTNnNWMydWlvYU9HWFhMWElUbUN6N2hzR2xFaVZHMkNv?oc=5",
-    "fonte": "Fundação Pontifícia ACN",
-    "data": "2026-11-17T19:38:09.000Z"
    }
   ],
   "sahel": [
@@ -210,12 +204,6 @@
     "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNQ2RVY09QUl8zWU9OMU54ci1VbVBxRklibEMzWVN5TVFNLUdncEdDcmZKcHFtbXE4RnI5TE5SaGowMzJudDlZWVhRMzNKcGhFY1FkeDRIc01RMXVibE1xTHhnLWpwU1FDRjM1OUk4TElJUGN2M3JYOFV0d3QwaWd3dEtvTjBfVnh4LWYzUEdtZ29yRWp4ZHlRWHhGN1ZVdzFObl9nMTVTdjFZb2FqWTVnem9JYk9mRzNWTWJGdlVsVFJTWkdqbWVCZE9BSWhCSzh1UTUwc0ZIS0tPZw?oc=5",
     "fonte": "Folha de S.Paulo",
     "data": "2026-11-24T02:00:00.000Z"
-   },
-   {
-    "titulo": "El Salvador intensifica envio de tropas ao Haiti em resposta ao desaparecimento de militares e cresce tensão em meio a operação contra gangues.",
-    "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxNSXVNaHIzLTdDY3dmNWVrWUlfQ3FzX0FPSEFYMGNQN3NZYnZvY2puWnI2Wmg1d3hzeUY5dUZ3eG9yc1VteG9hei13cWtpZjVYbXZHenJWRnE0OWxidzRBeG9FdTBLc184RVZIcURwdmhKRHloaTI2eW9EMy1DUk9tWWFFbjUxamEydGNJYUIwY2xIbFdKWS1aUU5FQjdRUHNQanZsS2JtaV9vUlU4OGJxU2l4X1RKWjBKLTZtUGFUaGhudTA1T0txZGk5eU5IUjJIM0x1TThSbEhVbTlfRnJFWEdmbVVKWmhJZ1g2QnpWaUl6Y0lIRGVKajlxcDZQbDBzUFdn?oc=5",
-    "fonte": "Repórter Maceió",
-    "data": "2026-11-24T00:33:00.000Z"
    },
    {
     "titulo": "El Salvador no Haiti: como evolui o envio militar impulsionado pelo presidente Bukele?",
@@ -246,9 +234,51 @@
     "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNNnVNMmdqWi14SVVlOXVXcWVCd3l2TlZYS21wTnpDVktpbkM3X0VsVkQtZ0g5S0N3aGw0dEFZQUYwZy1pUlNONXZDcWZnZ3QwbWVXbHJwV2l4SHFvczhiMnNSSFVnVEVIUFlHMmhnQVJjOF83WVVKd1NNVnpwWHZQejBnWjNoUmgzV01kYjdRZEszYnRQVnY4OVNITXZaM2dQZHJoQ2VCSlZXNkdmUlR1eWdoSktNRkZJYmVWUWE1dG9pSUU1QVVqanRNMHl3NkE3cGdn0gHiAUFVX3lxTFBEeTlKSkJWX0hoQnpfX1ktOWY5Tkx2Z3NCOUlHMjNPWDRvVzZJQ0VWUWxVblVwM05WcUhKY1BwcmlSdl9STkVkUlA4d0laTEMtSE9nQ25QdTdxc0QyVmlWYW8xdE1sVUstR19DdTlsd2RSbS1uYUhJMldOalI0NHhTZEFJaE5EMndXSFgtZGpaZWdwTE85RzdxbHVhOHFWcFZPbHZacm9LTWFCTU1xZGdOZFJSeGczWVg4V2JRMW4zV2RPejN2c2RFdEpBYXB4MEJpbFA2ZWgyQnlpQ1VOUVRrS1E?oc=5",
     "fonte": "G1",
     "data": "2026-11-23T13:00:18.000Z"
+   },
+   {
+    "titulo": "Prisões no Haiti: governo anuncia plano inspirado em Bukele",
+    "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5wcjhZTEFNVHA0MU10RzU5UjUzZncwekJrWGdRenNEaUt2Nzh4bmpLejBlaUtVcFdxYjZwZHBMeTY5N0ZZSlhsQ3ZWLWRKNTBmdnlMWVNwX3g5WEp6LXNvbXpDS0xBMDBhQnVEQkZISURGQQ?oc=5",
+    "fonte": "40graus.com.br",
+    "data": "2026-11-23T10:17:35.000Z"
    }
   ],
   "iemen": [
+   {
+    "titulo": "Em Aden, no Iêmen, forças governamentais divididas se preparam para ataque dos houthis Por Reuters",
+    "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNMTM4WTRSbVRlaTZrSER1OGtWMnlvUzc1ek5FNmdVVjRlLWU2cGhxSXNCbnNIMGVaZnJxTEJIcjRheHNnN1hXWXA4UnBuSTNSQkt6YnFFRWJOTDRLWEFFY3c1eUZSenRhMDRWQ1p5dUpaNUpJMXE3cXpSRkl1Zkxab3FTSjBSLUVzS1MtNmFCazVnak93Q3Q2UzJtZjBNUkxHeHhJckd6YUdETlFvRUVieXJwWWQ0YzlOWC1mNThGTERUT3UweElmMjlSYV8?oc=5",
+    "fonte": "Investing.com Brasil - Finanças, Câmbio e Investimentos",
+    "data": "2026-11-24T18:28:00.000Z"
+   },
+   {
+    "titulo": "Ataque a torre comercial na Arábia Saudita deixa 11 pessoas feridas",
+    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOQ3lZRlBkTHJ0dEJpZWItZHhzT0FIMW5VdUVXcVR1OERZTmdUSC01SHR4cHhHT3RweGRIY29Ud1RLY3dYaDJWaWNock1HdXVCem03VEZnaEpBVF9udWVvS3V6cndlX2NsQkp4bDhwcDdVNE1zQTA0R245Z0IxZ0N6MW1ldXh6cnJ1NWZLTFpRQl9oY1RvaXRsbkZ6dlVXM2pVa0dDRHJOZmxpUQ?oc=5",
+    "fonte": "Portal VV8",
+    "data": "2026-11-24T17:01:39.000Z"
+   },
+   {
+    "titulo": "Arranha-céu mais alto de Riad volta a ser atacado",
+    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1JZmNoRlBxM0x6aWZGUGY1MVQ3NjJ2T21ONFF6T2F6ZXM3VERmNlhyRmNHamg2dlhWZTVCclpxMENYejBVVlVZOEdrWWhmWjg0QzZvUnlaTllZYzhUcWN6OXV0T1NXSm1sUC1BVVVfZ19ZLVpYVE94UzY1OWFPUQ?oc=5",
+    "fonte": "Jornal Correio do Brasil",
+    "data": "2026-11-24T16:05:54.000Z"
+   },
+   {
+    "titulo": "Na Arábia Saudita, torre de centro financeiro é alvo de ataque após ameaças dos Houthis",
+    "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQN19GaTZxcmRMZmxudzY2d0ZyYi1qa3F2c2VfckpKYnBtV3hxd1JwUmoyTmtCMFVNSFptcTUtQTFoeXFFQ0pNbmFSRnNVMlhVWlhwcy1yem1UVWRpRllkRWQ4SzhYMWlOX2xETjNrLWU5WHItaGtFTjBrdThvaGNwSW1pMEhNLWZQd0I3R3p1RU1oLUV0SWY2b2p2NlFCekFxejFrN0J4OWRNOUpaNGNMdkRFazI3S1FPTVItT0I3ZHR4WjlpbVVCM2tKR2hUSFRlbzA3N2YtZ29ETGhkVGJ3?oc=5",
+    "fonte": "Tribuna do Sertão",
+    "data": "2026-11-24T15:33:00.000Z"
+   },
+   {
+    "titulo": "Forças armadas do Iêmen afirmam que houthis estão a 60 km de Áden e \"prontos para atacar\"",
+    "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxONFU2MG5UbFhJOWNjRFN2T1ZKdnVabHN0ZUhCTWtkMlpnTjBxMTZkVmxSUmFyWEd2OEJwT0VoXzlwaUEzTXd1aV92STRBS2ZtdENzeVdTRzR0RGVlMFN0MEctM1N6bmdVeXdoNFF2dGtQVmltRm5CZEV1ejRYbS0xdDlIdUZpWTlxQmRFN1JjOHVuRDY1UUVScE9YZjB5U2tLN21oTTl5Rnd3N0oxdjA5RjlBd3R2TWpqeHZTcGEtVk9VejFkQVY0QUVZaDUtcVc1?oc=5",
+    "fonte": "Jornal de Brasília",
+    "data": "2026-11-24T15:14:11.000Z"
+   },
+   {
+    "titulo": "Torre comercial na Arábia Saudita é alvo de ataque e 11 ficam feridos",
+    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMnFXSWRsa0JWa3U1bzkyWlQ0NTFkN3NVYklOVVFpTHJ0RUVHbWFrWkdzODVLUTctemdOZ193LXpKTHl1X2N6d0hRbHpxTTNwWXFPTkluSUhRWVpyeElZVnZQU2o3aE4tUFJNb2V0ZWctWWJmSjQxU0FUWjJiY3d4UU0xcWl0RDRLR2hCZDRxREEwSzJRRzBhdkZlU0NPbEQ1ZVNORGg0S2NaWVBiU3lTQVlPMFp2UmhpaGc?oc=5",
+    "fonte": "Diário da Amazônia",
+    "data": "2026-11-24T12:50:57.000Z"
+   },
    {
     "titulo": "Bombardeios sauditas no Sudoeste do Iêmen deixam 25 mortos ou desaparecidos, afirmam Houthis",
     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPRzdweVFYcWVBMEdaOTBDaUozMjEyQTVlVWNlUlNpdDF6bFZubXNuYm1aaS1COUJ3RlNiNUVoblBYcDB4Uzd4Mmg1bDdyYk5TWkgtakF2YThacEJGaGNLaTZ3MVFtMXBuVjcyTWdEOW5IUzNJUFE3U3Z6NF9NQ25kVERwbmpTUm9XU21MNVZKZjhMQzBGWUF4a19RUmxLa1FXSnNTd3Jpa3dZTDZjQVltNmdINW9QdEVic3dHWmQ3STRVNXBa?oc=5",
@@ -256,49 +286,31 @@
     "data": "2026-11-24T02:35:26.000Z"
    },
    {
-    "titulo": "Sauditas bombardeiam o Iêmen 81 vezes em 24h e houthis contra-atacam refinaria de petróleo",
-    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPbFJDLU11T1dxWDdUSUNRQ2ZsTThLeGZFRkp6TGthTTNVQTB3VnpOcE1hVEFpUmpfWFA1NVFvYXdBenRtdjZaTDlFTDN3N3lhZ2hVLUpLSERsSmQzRFF0ZTllOEUyVVdvOTFpZC0wUzFQZnRvOXlMZzZUQ2NyUnBIMVVFWnpfRWVxNkhUbzNJa1lyZzdYaHc1V2JRc29DRldtbFZnOTZzTEVLU3I3d3diMUR0b0R4cWJsRm9KdFJ2bVh1RHJLdFdZeVRR?oc=5",
-    "fonte": "bra1.com.br",
-    "data": "2026-11-23T11:23:00.000Z"
-   },
-   {
-    "titulo": "Iêmen: Exército lança mais de 600 ataques contra posições dos Houthis.",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOZVFFMjkxYWt1RkdIaGF0ajRJeU91T29VVFpDOU9rWlg2TjJydEtrZGFtSGJfZ2RhRjdRUklpaVFwY0t6cDRNanpXX3JNanQySXY0dE54MEU0R0k2cmtfZkhld0oxNUFueE15eFQ1b3dic2dQbEt3THFGVjFpbVlKbjU5di13OWpEWW5RUHRhYmF0Q1pzZnRhb216Z0tPQQ?oc=5",
-    "fonte": "Vietnam.vn",
-    "data": "2026-11-23T10:26:58.000Z"
-   },
-   {
-    "titulo": "Houthis denunciam 81 ataques aéreos da Arábia Saudita no Iêmen",
-    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPaGxBb3dHS0VsSWlvMXdRbGo0eGVqQkVZVENPRHlMcU0zUkJRX0EyT04wTEhBVmRjZVdCQlE5bWpCdUNkMlphNjZoeWZNT2c2RnY5ckVMVU4zQk5PYk5qSmdqRlF4TzBkZkJyR01vYmxrSktLQlFVTmU1NmxRdEFEaWU5X0VZek96UEpJYUxzU3UzSEtfa2x6OFBhOURkLUp5azRtSURlOHJaUQ?oc=5",
-    "fonte": "CNN Brasil",
-    "data": "2026-11-23T10:26:49.000Z"
-   },
-   {
-    "titulo": "Imprensa vinculada aos houthis afirma que ataque saudita deixou quatro mortos no Iêmen",
-    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNT09mRE5UakVmQjVONEgxZkpwOW9FMkhZaG9MYnF3cl9iVmhmRFlwZURDZ1dpdUpVSlhmYXhTckZhMUZGbWxLZXhySzJzRnd0aHZOU0NRRng3WmNKcG9BVV9vNVpFYlVRUXRCb0pqM0ZxR2Q3MDcwYi1rckltRmNxeXF0VXRVYVBKYmNzSnhZaVRhdG0yMlc5UHVKM0xMTHpuSWx1TnFxcEYtRVRoWS01SktOQjgtU0x40gG4AUFVX3lxTE1PT2ZETlRqRWZCNU40SDFmSnA5b0UySFlob0xicXdyX2JWaGZEWXBlRENnV2l1SlVKWGZheFNyRmExRkZtbEtleHJLMnNGd3Rodk5TQ1FGeDdaY0pwb0FVX281WkViVVFRdEJvSmozRnFHZDcwNzBiLWtySW1GY3F5cXRVdFVhUEpiY3NKeFlpVGF0bTIyVzlQdUozTExMem5JbHVOcXFwRi1FVGhZLTVKS05COC1TTHg?oc=5",
-    "fonte": "Folha PE",
-    "data": "2026-11-23T10:20:07.000Z"
-   },
-   {
-    "titulo": "As tropas iemenitas lançaram um ataque massivo contra alvos houthis.",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNVWlVcVl2RmxFV2VJM3FGSTlUM0x1ejNnMF9mV2laTEpNOVVxYjZ5Mi1OVXI2Y0hGOTVKTkFnM3hna2pXN1dNbDFONVQ0NmdLRk12MzNwTDlIZlBQNzM3M0Q3cHZSWEozMmtfaFhVMkE1WmpDWGJ5aTFXTzJlazFETXpmRDA?oc=5",
-    "fonte": "Vietnam.vn",
-    "data": "2026-11-23T06:27:02.000Z"
-   },
-   {
-    "titulo": "Refinaria na Arábia Saudita é alvo de ataque reivindicado pelos rebeldes houthis do Iêmen",
-    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE4yVThEU3dKUDFDUjk2QTZpc0RFeHJPTTlFSnVnQW5oZzJ2MUhwMlJYa2hsLXZpV29VbzdLWFRDWmVPNkl1NkJMZFJyX2hRSUdpUkZVU0VqOEhLaG8tcnVSNGlJTC1nSU9vWHUyZlpuRVZxZEFTNkE?oc=5",
-    "fonte": "Imprensa 24h",
-    "data": "2026-11-22T18:23:21.000Z"
-   },
-   {
-    "titulo": "Rebeldes do Iêmen dizem ter atingido refinaria gigante da Arábia Saudita",
-    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPOTJiOWtVX0dsTjJweXhEc1RsbWk0ZjVwTmIyem9WRDNvdWM2SlRENWVTck5sRFM5R1Rsc0lLWGxzWWR6ZXFOVENsc3B4S0JLNFdnSDk5VWpNSFExVzIxWkhSSnJaMFhfRXNETVhfMGc1bTF0Um54cHpZc0dZX3VhOS0xTzlQRWEzRXE5c1RXNW9xREp5czBNWE92OHZjV2dWSllBdmFxTk9Lcjc30gGyAUFVX3lxTE4wdVpsLThMbWRHN0FkeU5zVjBUUW9rbXNrN3dqMzZXOURBbGhiSWpaejJCdnJNcHZEOE81N2dUdkdsVkV5YTFhdk9FYTRoQ0pfdkRPUFV0QWo1a01LR2Q2RGw0X1RWTkNmeXhDa05JRVRWejQ4cVk5ajkzQ1JHN01mN2c0d1pmOGJFS2hWVDQ1R0FESTkzU3BZcnUwcHg1VHJWcVZocDJMRVlPazZhMV93UlE?oc=5",
-    "fonte": "InfoMoney",
-    "data": "2026-11-22T18:18:46.000Z"
+    "titulo": "Houthis relatam dezenas de mortos ou desaparecidos em ataques sauditas",
+    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNd0xtOEdiU2l5OGV0U2FrN3JvdE82VDBTV25Zd1pYamh2Uk9Gc28zS1dBQzJ0eDItV2UybjBxdXdRekhDZ0RUSnlwVDJJOGU4WlRxUXRzUUZDa19GaW5ubW5vcDN3Wmo0aTZ4R3RxbWtsZ29td1B3ZURZZzFPVDlRTTZPeFRpV3VIRTVzMm9iX1VBMW9tclRFTEhZZ1NTWHc0c1RCZXVZbEtOTGNNR3NueHZGc9IBuAFBVV95cUxNbVM5SjRteXJJUkhOR3loRUxaSWMxeUpITi10WEYzSFhjUkdJTVBsa1hKeHB5emtWNkFWUzJqUTRpMmFRQklGMldCMmxqMlZidmN1ZVU4N3J0VVhVckYwT0pJb3luaWJJUnl5emJMaEF1UWJmcGpnWF8tZ1o5R3BVSGRUOFMtR05ncS0teUU4LTE4ek5fRTlsaUJYNUN4eU1nZ3hQWFVLQ3lKemE2OWV2NVlRcVQ1YTJm?oc=5",
+    "fonte": "BOL",
+    "data": "2026-11-24T02:21:30.000Z"
    }
   ],
   "siria": [
+   {
+    "titulo": "Ministro israelita acusa militares libaneses de colaborarem com Hezbollah",
+    "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOVEdYVWEzcXh3aEQtNk1HdjFDcWZWSHU0a1dsdnNzVVJZTGtPUExZbGpjTXFhbWdrQldHd0xFUWdkdnp2ck1zd245bGdmVHFoZ0Yydk13U3k1NHhDWEtrS3JObG9oUW5HVGk1alNzT0cyeUNybTk1Szd6SWxNenlrMHJOQVhJeGprQXRKVlF0ZnZqNU1yUkpEQkpyRmZQRHVrUlJnS3c3U2RuWHRndHZ6TmpNb3ZndTZTQnI3T1NhUmlLbm9UbENQOVJQQWJIc1U?oc=5",
+    "fonte": "Notícias ao Minuto",
+    "data": "2026-11-24T21:14:00.000Z"
+   },
+   {
+    "titulo": "EUA discutem treinar o exército de ex-líder da Al-Qaeda",
+    "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOXzI2U2xpNDhfTGl2ek5pckQwZ0I0QTRlX3VETzBQalVSTHk2bHhlbkZRMVFJUmZJdTU1QlNHOTFkRkw1bFZrSFVhMGg5OG14WU5HRlJOcDBDUXdURV80RWVoZ0NiZm90NTFROFQxZ0U0UEZubkdhVzgteHgzdFRMMWpzT3NXOHFaUGVITGZtQUVnWUs4T3ZoaDVPazJrMzQ?oc=5",
+    "fonte": "Brasil Paralelo",
+    "data": "2026-11-24T20:46:12.000Z"
+   },
+   {
+    "titulo": "Análise: EUA e Síria estão em ‘lua de mel’, mas é preciso aguardar próximos capítulos",
+    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPMC1hM2xlSnZsVGFYbk52dV9qMzBOY1FxNzRxR0c2eXdGTXpkNy1nM2kycThTN2s4UzF6dUp3WVlLUWVUR1g0akVrUXRjQnhlMEpJSGdER1pmcHQ2bEJRS195SFBBcmFTUWVXQ0FxUmdocTRnU2gyM0ZFaDd6MkstRjdZZjN5QndraW1nTmtOY01XN19Gc3l4clZhLU1DZHd0eVVLT2RYWDNsQ1NZV0lmN3p2UDdOOUVfWmNOVGNSdF9nanljeUJKcg?oc=5",
+    "fonte": "R7",
+    "data": "2026-11-24T20:18:31.000Z"
+   },
    {
     "titulo": "O arcebispo sírio-católico de Homs denuncia que o Governo de al-Sharaa reforça o Alcorão nas escolas",
     "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOMFZJaV9ZcWRnM3FFVzk2SWgwazJpZi1OdXJYaEg5OHVlUkxVSWYzMVhLX3hjTGNndjRxeVd1eENxaGZ5eFZsaXlWS1RyWW50RHVnUklkUDVvT2F4bEx6dEJzQnJKdW9wME5SNnI5Zmh2d0lZdi1TaUhYTkIyRGlQdXBua3R0TVpRSGJSREkzNjltVkRXb2pPRTR1RnJIY1Jzdmx5WHlKM28yOXBfcjd2M21LRldhd0JyRUNUaVl4UEVXbFVnelZBb0FsaloxRllnOWxVVTFHZw?oc=5",
@@ -307,6 +319,18 @@
    }
   ],
   "somalia": [
+   {
+    "titulo": "Colaboração Entre al-Shabaab e Houthis Ameaça Comércio Global",
+    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSTdwSFpMVnlzUGZVckEzLTlBbERGY1RPQVlfTXR3bGJKZUczZmhoNDJtU2xFeFRyU1BNRl9XT1RlUHlFN25nYVZXVVNYV1AzN0QxUXdPSGNOVFR5cWluSEluVWhLTlRoVVA2OUpTQnRNZzhYUmlDX196N1hkTTdWOHgzQkd0ZmNSVjlTZFYxVjluSTAzUVdmelJvTTItTU5zRkI0?oc=5",
+    "fonte": "Africa Defense Forum",
+    "data": "2026-11-24T16:24:04.000Z"
+   },
+   {
+    "titulo": "Somália introduz mudanças em seu Governo e substitui o ministro da Defesa",
+    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOTVZVVkZEX0Q5TFFNOHlrNnRPMUV0dnd2SEZTU1IyVjRpdlBzSlpQSEh6SFh2Nm8zZlM1dTJzOFJGVk9qbGZpYXhIbG41RHJoekJ2RGx5dGdZSFJ2bC1tTEs4UUJpZGFyemZ0cG96SXBDQWZOd2xXM3VPTEdDZTdPWk9iaGgtRDlVZTFtVkdrX0NFNDIwRWUxMG5KRnpoX0tPS2czdTNkZ2tuZWV4Z0p6LTFsWjlxUjjSAbwBQVVfeXFMTlNEWlBOQ0lHOWZvS1F0SjltVmV0RDduMTVQaDNZVV9hSVJJT01iQjA4RzFHbzM2aHRwRkh5QldsYzZ0LXlCLVFCT0NfV1NHakZ4NF9yOEFIWWdtOEpweUx6VVN2V1A5ZDRKN0Vaa1lGTXM5NmNsWGoybGE5Sjg3amJlcWcwNFdtVUt3RDFzOUR2VWRiNHZ0TmR1OFYzU1pjVXMyV09rUFJDNGxZR0lKOEZsZ3FfT0ZUNU9GZjU?oc=5",
+    "fonte": "Demócrata",
+    "data": "2026-11-24T13:21:16.000Z"
+   },
    {
     "titulo": "Os Estados Unidos executam novos ataques aéreos no sul da Somália para “degradar as capacidades” da Al Shabaab",
     "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNLWJLZnNpUGRuQk83QVpjR2JtNlh6UDRxUlNCZHh3eWk0Zml0MkFSZWhNdVRBeWxHM3JwX2xsejllTFhJbVJxUFlSLVpnTHIwMVd0RWdSTnhxQThURE82akd6aDJTVXJKbXlyTDZjb0hIYndRdmx4YWs2TjEtNkdkREJGWVhMZldtNEZxTXdrRzBfU1R4dFJGRGlGdUlWYmZhZjQybGNMTnVGenkyNGY0OU5Wc3NvaUxjZk5vTWN0MTNqdjhXRF9aaUlQa1llMERReVB5cHJncFlFaTFfbldUTHBjRkdnd9IB6wFBVV95cUxPQjBoVDE1Uy1WaktEdzR0Nk9hQ3V6cTI1U1Baa2pkdTBlU3BMVjlEVVpXekxkS21WcDJRTE5PQnF3OHRDQ1RRT2ZqMG9pZWR5WFdONHh1UTRZZ20ydmxWWkFKVTJnaGtoOEJmMWhpM1BkZ1RZN19mc0dZLVc1VzBlcmJiR21maWE5LXpJaG52SFRQZmtxQTJuTVo1NWliSGptWVo0S3ZtdkJzQ0dYSmFoRlRwNmM0TUVaMjU4S2hnNHRLamFUZlMxRFBqd3JsN0xXdXVienlhNHFva0VGZzU3ejJlak9MQnRuWWU0?oc=5",
@@ -380,6 +404,12 @@
   ],
   "colombia": [
    {
+    "titulo": "Dez anos do acordo de paz na Colômbia: balanço entre um Estado transbordado e o retorno da violência",
+    "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQSC1TZXBScXduYU9oeDBYSHdWZlc0ZTdCMlJsWFdBN1FiUGhQR3c3ek1lZWNQckI5T0tXN1drTWNWVV8tanFCcm52Ym4tWTZEbzlUMnpxX0dQeE5OTUg3dHREYjZrZzllOU5RS3BLV19RZEFGbklkVFdScV9BM1NGbXFDWUJ0N0gxRUFyZWtlMUxpNVo2V1NmVS1vOEFxUDZRZFVGUk5KMlVSWjIwM3BzRHRIODV3c3cyMVdHMDVsS3BONUVjV3VSN2dZbHdTWWstcHpXMnFxNlhZSUJseFdV0gHfAUFVX3lxTFBILVNlcFJxd25hT2h4MFhId1ZmVzRlN0IyUmxYV0E3UWJQaFBHdzd6TWVlY1ByQjlPS1c3V2tNY1ZVXy1qcUJybnZibi1ZNkRvOVQyenFfR1B4Tk5NSDd0dERiNmtnOWU5TlFLcEtXX1FkQUZuSWRUV1JxX0EzU0ZtcUNZQnQ3SDFFQXJla2UxTGk1WjZXU2ZVLW84QXFQNlFkVUZSTkoyVVJaMjAzcHNEdEg4NXdzdzIxV0cwNWxLcE41RWNXdVI3Z1lsd1NZay1welcycXE2WFlJQmx4V1U?oc=5",
+    "fonte": "Demócrata",
+    "data": "2026-11-24T07:35:04.000Z"
+   },
+   {
     "titulo": "Bombardeio militar na Colômbia deixa cinco mortos em operação contra dissidentes das FARC",
     "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQckFwd0k3bGx1MzNLeUhmZVh3Rm1LVzd0VEE1ak8tLVA3eDBQQXYzX1lKZjcxa0xneXNmUWR2OVU0Ymw2bE0td2dzQVN6b000MmxsUDlnOC1KVW90cWxPVWo4TXJzWl9xaXQ4R1YyZXFobG5GQlN6dklfMWJRSnE4aHpueUp6OVdORTJOTDBRaTNPZTcyZ2w0T25QUVc0dVdvc0JLV2JfaUNzVE45UmF3WVIyNFJWZVR4RHpmb1FIY3dWQ3FtcDZ1OURBZw?oc=5",
     "fonte": "Brasil 247",
@@ -430,10 +460,10 @@
     "data": "2026-11-22T00:31:30.000Z"
    },
    {
-    "titulo": "México prende um chefes do tráfico mais procurados do país",
-    "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOYTV2d04yeV96V1BsSUFpbmtodmwxeWdXRWNhbGpHaEUtQlE3ZGpzMXRDUzA3eEt3RGFxeWRQZkZwbXlMNDVvOUxPZ2o3ak9Jbm5xOVZTVHBHeGtJa200bmpuMEtwdG44Um9lZlRGOE01SzRvNFN3cUM2d1F3N3l5WkE5R2w4RGZUcFhHSDNOdFhxaWlhRFJoNlV2QlZTdFJl?oc=5",
-    "fonte": "SBT News",
-    "data": "2026-11-21T21:24:00.000Z"
+    "titulo": "México captura ‘El Chapo Isidro’, um dos mais procurados",
+    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNeUt1UDhZZXBNT1VRU1pGbzlyQ0NiQU5JWFZCM1RZZmhyRnJ0SUpXS1VnWW82QmEwRmNxOU9fVlZTbGNpOWF2ZUZDWnh6cGY4eDFGRXVTemhXcjY1R1FuejNGcUowRzNKNmJSQzZmM3VrTG9BR0lIZ1F6VFdpUjk3Z3poSlZEUTBhMTk2Q1RJU01sdw?oc=5",
+    "fonte": "Radio Shiga",
+    "data": "2026-11-21T22:25:38.000Z"
    },
    {
     "titulo": "Como El Chapo Isidro ascendeu de pequeno traficante a magnata do narcotráfico no México",
@@ -448,24 +478,54 @@
     "data": "2026-11-21T20:38:22.000Z"
    },
    {
+    "titulo": "Estadão",
+    "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPMmVJeWxoYXZKb3FsY2FneUFyZFJuYXlXaVdyWUZ3WU1ZLWdqaHY5S3F1NFhfd0hfYTdrdmYyMFdydUtTOUlrRk9LSVRuV2kxc3RIaFZQMmpPYlFxSGxRM2tnbE1zT3ExQ2hfMmg2RGFyd2EzZDFHc2VLVGp1OVdwUjJtSmxlRFFmbmhxZzA3Zk1CcUdXTWVVczdlQ3dEZVhVcEN1cmdhT3Ayb0FJLUVkakpPLWd0bFJSaU1qLVBTRDZnNWFDaElIUEFOSENTYXh1MkNvWWpDX0pvUQ?oc=5",
+    "fonte": "Estadão",
+    "data": "2026-11-21T20:38:08.000Z"
+   },
+   {
     "titulo": "Captura de líder de cartel no México desencadeia onda de violência no estado de Sinaloa",
     "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMVpUUGR2Y05TY2NLOENHbV9sSVozc2t6Q0JpNmFLcFpWUHhBOTUycHpRbmpQZ2JNUHZCamlTUUV2MGR4anZ0WGFuQmNUVnJUSEhaLTIxQ0F5YjdldjhVMlZlMVVDTi1oTDZ1SUJsV3ppMFo3ekhmVjA5WnpMY2szRGVqQnduQy04c2JOX1hBLUdEMXFrUkZ1YjdFNFpQeGxsMjRjNWJVTldkeGx5NEExOWJMamNJaUsySjNidVBRd1RWMmhTSFcxZNIBzgFBVV95cUxNVWdEd19vdXpCUkJKdU4zZm1JQ1lGdEJoaDlHdFhFeUQxcHVxQVF2RUtYbkMySWo4eUNkYm9wdS1qUnlrMlNzbW9wSHd2TFp1cDNfbXVmYTV4VjJGVmt6c0djeERGMVYzVXBnYTA5bWpIa2RSbjZXSThGbHdSbDY3dGl2ZGtIM053R0RZSzA0SVpiNkFFTDgyNW54dnlNaXdrdklPOEtheFJSanpISHVyS3JTTE9hUURGSThrZXFONElCSDRDQjRGOXIteGRiZw?oc=5",
     "fonte": "Estadão",
     "data": "2026-11-21T20:33:00.000Z"
-   },
-   {
-    "titulo": "Após captura em Sinaloa, Chapo Isidro é levado à capital do México",
-    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQT0s5eWkwTTNHM0RsZy0wXzBfWndkbWxoVEhiTUNZb05sRlhJR1czdC11Q3B2aTN3N0xTMV9TVVhTVjdaY0FsaTd4SThQaW5rUEVHS21BRGxPc2d6aHkxU2VCRHBrRHBMZk9Tbi1CcE91WVRtWGVpMWFONWU1NlZESGxXM3BOVXdSWU1FUWQxemxSdXZwNGI1RlhLZ3lPYVdQNnVBSW5hLW50WnU2ZHlWMzVlQlVlY1JoWkhxVWpTOWYxSG44dVdkSkNhT3dBNU8wMXZfbUUtdw?oc=5",
-    "fonte": "UOL Notícias",
-    "data": "2026-11-21T18:50:54.000Z"
    }
   ],
   "ira-israel": [
+   {
+    "titulo": "Israel acusa Irã de desenvolver armas químicas",
+    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQWmZGU0VZRjdIbDkyREI4QUVKMjlYbUFjNWtPeTI1R19fRUx4cmswRVcyeFdBYUQwemN6bHYyc0ZZSTduMVRrWWpsUTFXcFFZdzlUeE84dkFGWnV5WFE2ODc3dHhxb3Q4aUFDVTNVRFkwTGh3OHlsZllzeHhBamU5WDN3cjN4MmFJeXNSU2pLX3Fial8zdFpiQmd0ZjVSODRUbU5XN3pXNFlEbzNmWkE?oc=5",
+    "fonte": "Correio do Povo",
+    "data": "2026-11-24T20:46:17.000Z"
+   },
+   {
+    "titulo": "Irã afirma que China e Rússia se opõem a uma mudança em sua doutrina nuclear",
+    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWkd2U1ZPMFJHUTh5Q3FhUU1XSUJ4VnI4M3gtdUN1eWF5MlBnUFVvYUNwaXBaek0xeDhiRTV3WFo1ZXhrZzNMOVNEUVRkMTNrVG1PU3ZnUThQQ1JxazlYNUZ1R1FuWGM5WDJnelJscVY3S0xnQ00xZ1J1ZzFURnFUdlFHYWFTYWR4VVN5azRBbEY0WWMtWVA1ejMxTnpjX1Y0TGVmQmozdFFGeUVWOEE?oc=5",
+    "fonte": "VEJA",
+    "data": "2026-11-24T03:49:44.000Z"
+   },
    {
     "titulo": "Gadi Eisenkot diz que o Irã não é uma ameaça imediata que precise de ação militar",
     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOV9NQmZGVlY0Vm5mY3hsWFJKcElmZDk3dElBeXJFam10RzZYLXZKSlU1cEFxZUxkYUpjeDI3VFI2S0Uwb0lvV1lxMm1udm1odkZSeTRJckpyMXhsU1M4cHljUlEtSW04N1J0RFhReGJjUVcxVkNnb216RXE5eUg2MEVxUjhCMjREUWdEVmYtZGdHbmdBZngyVWlaYkNCa3loQ0RoYXRWbF9qeGZqWFo3U0tnazFhdXJGVXJ3NzJUT0xERmNu?oc=5",
     "fonte": "Segunda Base",
     "data": "2026-11-23T21:46:30.000Z"
+   },
+   {
+    "titulo": "Eisenkot reduz o tom sobre o Irã e não a considera uma ameaça imediata para Israel",
+    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPbGxCcFJ1NGRZTVB2YVEtd09MeHF0OHowTzN4WWlKRDJKWU9uQXhpYVhGU2ZDdDdkTDZrYVVNYUNZRnZ2Q0VVWnFzMnlHVjFwamdLQVNjMERfVkxoSlZkaEF2dHdZWVBHYzNXbktHenRaNWd5X2ltSFNfamg4dXA3am1DSmNiUzhnSm83bEI4T1JYMTZYY3hCSWpCVTFmc3MzNUpuLUdUbmRXMExGY0hFek85RGlkYTFlYmFpUmpibWJOclZSeHdDeNIByAFBVV95cUxPbGxCcFJ1NGRZTVB2YVEtd09MeHF0OHowTzN4WWlKRDJKWU9uQXhpYVhGU2ZDdDdkTDZrYVVNYUNZRnZ2Q0VVWnFzMnlHVjFwamdLQVNjMERfVkxoSlZkaEF2dHdZWVBHYzNXbktHenRaNWd5X2ltSFNfamg4dXA3am1DSmNiUzhnSm83bEI4T1JYMTZYY3hCSWpCVTFmc3MzNUpuLUdUbmRXMExGY0hFek85RGlkYTFlYmFpUmpibWJOclZSeHdDeA?oc=5",
+    "fonte": "Demócrata",
+    "data": "2026-11-23T16:45:04.000Z"
+   },
+   {
+    "titulo": "Piloto de bombardeiro B-2 dos EUA revela detalhes do ataque surpresa ao Irã.",
+    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNY3RYbjZ2TkgtRTU4bmVRVnpIbkdjZXlYZHE4TWwwTUtUcWY3cXFMekpZR19ZVkRpdE5PNHpwek9ZQWRjcHRqMUhGNnpZeTFLMmxQWmh1XzhTeHZuY0xUbEI3cFVyZzBvUkFlYnRFaDExNE9mbjI4X2RzVEV1dV9hZ08wcHJJZE40TXE5dVduSjVoclE?oc=5",
+    "fonte": "Vietnam.vn",
+    "data": "2026-11-23T16:20:02.000Z"
+   },
+   {
+    "titulo": "Irã promete reagir a bloqueio naval dos EUA: ‘não recuaremos’",
+    "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQRU83WHJGcktXZ3NKRUFJejBCdDFGTzl6WkZUak5XZDVIWHkwUVE5ZEdwUXdVTDdiQXBoaVpmRGVObmV4TDFhWFVLNlBTN3Z6alZ3OEZUWVhQcDF6WmZvcmFxbUEwZ1FxekZGRlpLLXc5SjZ0S21DYTdxQVU4VDd1ekRNWk11SzRYUi11Wm5TVkQwdnZzUWhCZXVzTEdqS0IxZTFmMUZBa1JrSjFUbWxDYzFndVNxTFRWTE1pbE1GZWp3UE1PbjV2eDZLMC1JX1V0VGRPUW9pOE92Tlk?oc=5",
+    "fonte": "Opera Mundi",
+    "data": "2026-11-23T11:16:13.000Z"
    },
    {
     "titulo": "Trump ameaça retomar ataques ao Irã em 2027",
@@ -475,53 +535,29 @@
    },
    {
     "titulo": "Notícias de Israel e do mundo judaico em espanhol",
-    "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNeWdlSFRSb05nUGRaeVlPQjV2WkwzblBXTGVKZlFCNE5BbEdqRzdNaFBWeDg1SDN1WmJMQ2FhMmo5aXYwZ1d1ZFNweXpicTJPQnJ0aGRMX1V0WTk3b0RBZHZnZWtCalFZRUZMM3lIWlluYkhBVWlHZ1JHOHlHdUNDek1aUkJIU3p6N05TMU5fQ3Y1TVZFejRkTG9uMjRlOVpYV0Q3OTY4ZEJTTXk4dmNzd1R3?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZVNEeVZIVzZIQWIzSXBIRDJPUHJUdzg1RnVDTGJNRW16TTZ0ell4anV5eVAwaGlHQ0Y1a2lKbXpJTWxWOVQxRUJRb2F6V2hhbFV3c01LOFYwY1dnQUxwN2xQZV9KV3FEYVhhYVQ3RFRTMG8wdVNGS2RsTDJDRXd3M1JVUUlYSU43b3Jv?oc=5",
     "fonte": "Aurora Israel",
     "data": "2026-11-22T18:26:07.000Z"
-   },
-   {
-    "titulo": "O Irã está considerando mudar sua doutrina nuclear em meio ao conflito com os EUA.",
-    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNcGptaE04RU5oUmZUV0dqcTJmbWhMOG9QbWhZUVVVd3FyQ29wbVQ4R2d6ZWZ5QUp1Wm5KVk5Bam94RlRGamlKMnN0NF92RVl6TS0wWUhPVG45QjNqNFNCcWVabzZRQlRTSzUyYXp6M0xrZlB6OFBUSUNJMDFDWXBzMFg3STlQSmdvY2hUUFFrSUd6WkE?oc=5",
-    "fonte": "Vietnam.vn",
-    "data": "2026-11-22T11:09:42.000Z"
-   },
-   {
-    "titulo": "General do Irã ameaça chefe da agência nuclear da ONU: \"Terá o que merece\"",
-    "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcUZ0YUZxVFBPZ19rVnowVURmaUlDZDNJd2lURW9FMnhwN3dEOC1fYm5iVjNoa0YwTEptNEVPWm9RZ2hFWXYyZDFmWVUtM3l1b3BYSUFkXzExWE9NaWZQRnZnb2VYNWtmNXZCcnM5cE5HS3FoSnVKNWRwMGM1c0U4UGdoWXhnbW4zNFZ1RDM2a25sczFkS0ExWUtsZGFTMW5hUE94YzI2ODZwTmd3UF9z?oc=5",
-    "fonte": "Gazeta do Povo",
-    "data": "2026-11-22T00:40:00.000Z"
-   },
-   {
-    "titulo": "Trump defende acordo nuclear permanente com o Irã",
-    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPVjY2U1gwY2VnTlRvOGkzdG41TFdFUW9DQ0wzb0xjNllmdXpxN0FGZVN1Y3RjZWlKUzVxSktVeTVKS0hleERabkpKSFNQXzdhaTZxclBob0pxYTB4Y2tHOGQ5ZHFkUHIzQWl6SlZrUDlHSjBGczRuY1hXblJoOGN6Y1dLSXdER3ROYnJr?oc=5",
-    "fonte": "Diário da Guanabara",
-    "data": "2026-11-21T18:47:44.000Z"
-   },
-   {
-    "titulo": "Petroleiros são atingidos em meio à pressão por ataques ao Irã",
-    "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQT0hjeGdrcjVEUFowMnc5R0NKZDloU0JZVTdrTVlWc1AwT3RYd0drYTlrREtyYl9HMFJxV1JFYmd0UFRRMFNiU0ZLTFFTZUI0QmhreGZvVUIzczY2QnZRbmlVclZzbHdYNExEZjR1S21pSG9tMl9KRjQtLVFvU3g0bk5FYm03YklibFB0blhybm9Ba2ZMTnB5N2dIZTd6TkY4MkpWZ05vczA5cm5vQzdFWlNYTWPSAbgBQVVfeXFMTzFPRTNsQkllcFRoY1FhNjdSam1FTFlsaXVmQUhfbW1KQ2hiRWJiSnE2dmtfUS1MSnhtZEhVeWNTUWpBNDZEaEV0Nl9RT2tKX0ZnZlhzS0hPQmgtNDgtNFQybnJOU3dlRFFVNm1kVV9pYU9oZm9WY3hCTF83cFNxSkxpMnFOa1pNb1JxT0g4S2FlQ3IxMW5iYnM1aUZCNFc3WmNnYXZZYjFVazh2SnlzMXlDVWFVYkFCRw?oc=5",
-    "fonte": "BOL",
-    "data": "2026-11-21T18:11:42.000Z"
-   },
-   {
-    "titulo": "Irã afirma que China e Rússia se opõem a uma mudança em sua doutrina nuclear",
-    "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNUHJ2NDFINHR0ZXoxd1lEWDFtMUFRZ3Y1TERDU0wtclFkN202cFU4NXhkY1ZnOWJhVVA4ZlJBNDctZXR0cWY2aElxY1M2YmJDVUM2dG1QM3BWS3dtT0x5REdoSTRhLWNfUXdTd0Zab0xVbTBYRUpyd0hld0w5OVNmb1dzZm5NOWpPR0FSR0R2NXNuZTMxOEdxdzUwQXBfNUxJaF80N09PWng3bkJEVkY5ZUFDQ0UtekRBMy1Sa2Y3eVVVck5JV0x1a1JEY9IBywFBVV95cUxNUHJ2NDFINHR0ZXoxd1lEWDFtMUFRZ3Y1TERDU0wtclFkN202cFU4NXhkY1ZnOWJhVVA4ZlJBNDctZXR0cWY2aElxY1M2YmJDVUM2dG1QM3BWS3dtT0x5REdoSTRhLWNfUXdTd0Zab0xVbTBYRUpyd0hld0w5OVNmb1dzZm5NOWpPR0FSR0R2NXNuZTMxOEdxdzUwQXBfNUxJaF80N09PWng3bkJEVkY5ZUFDQ0UtekRBMy1Sa2Y3eVVVck5JV0x1a1JEYw?oc=5",
-    "fonte": "BOL",
-    "data": "2026-11-21T12:10:37.000Z"
    }
   ],
   "libano-hezbollah": [
+   {
+    "titulo": "Ministro israelita acusa militares libaneses de colaborarem com Hezbollah",
+    "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOVEdYVWEzcXh3aEQtNk1HdjFDcWZWSHU0a1dsdnNzVVJZTGtPUExZbGpjTXFhbWdrQldHd0xFUWdkdnp2ck1zd245bGdmVHFoZ0Yydk13U3k1NHhDWEtrS3JObG9oUW5HVGk1alNzT0cyeUNybTk1Szd6SWxNenlrMHJOQVhJeGprQXRKVlF0ZnZqNU1yUkpEQkpyRmZQRHVrUlJnS3c3U2RuWHRndHZ6TmpNb3ZndTZTQnI3T1NhUmlLbm9UbENQOVJQQWJIc1U?oc=5",
+    "fonte": "Notícias ao Minuto",
+    "data": "2026-11-24T21:14:00.000Z"
+   },
+   {
+    "titulo": "Israel comete cerca de 160 violações do espaço aéreo e águas libanesas em 5 dias, registra ONU",
+    "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPajkweGhxZjJsdnZDTlF0WTYxbVM0S3VQeExpODhTZnlBcmVNNnBYUzBNeVNneWZVYVFzcHJRd19sNENsLU5hbU8yNzVOZzdVMGdMQTk1SHRKM0dCUTFKaTJIVHY5STRiX2N1NXgtTURMa2RUc2pWRXFfR3VjRi1aeEtpSXgxSGduM192QTFLTGpzeWxsY1g1R1JsY2dtdTl5MkZtbVVBbnZ5ZC1qaTJtOWt3MHdzcGpDMm1oTTd6RFpMamVKTWRyTlY4SHp4dDZXbDBCTk9ieWNBQTR2OWN0bmFkUmZRUmRs?oc=5",
+    "fonte": "Tribuna do Sertão",
+    "data": "2026-11-24T19:48:00.000Z"
+   },
    {
     "titulo": "Indignação no Líbano após visita de um oficial das FDI a uma escola cristã; primeiro-ministro libanês acusa Israel de tentar “branquear a ocupação”",
     "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOODNYaWtVT3pFbVU5VFRqMW9uUlVGYU1rTDNLQ0hCTVBzRkQ1S2ljejZGVnhHNm4zWWp2YkhzaW04NWtTV0l1dk5BakJWMkNuY25wOWdHZVRwMmVOWVVwTXNRbDNaSVBMMGRZMU80aG9JcVQ5VkhnYmt4WVVLYVVOdHRoSEI5dlJDdHh2R3NENVpoVlZNc3RZdFJaajFTUkRudS15UlpCanZNUkZ3RGFfM2R0UkpERGxoVk9seFZuLVRiUG55WHBjOWpFZFBVek5GeTZCRE1mY1pKN1FtN2pZdzlaVkZYV0VMZnZEVW1NT19rMHBXV0VzcFFQRGlOWnhtWk5Z?oc=5",
     "fonte": "All Israel News",
     "data": "2026-11-23T19:33:01.000Z"
-   },
-   {
-    "titulo": "Notícias de Israel e do mundo judaico em espanhol",
-    "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQZzNGblZZV0Z2bThqMDVKWmtiVnNUamZSNWtOZjk4S253Z2h3ajU5eW1ObGVPMkRrVVpWdU96cjhHbzZPck1GWFZ4bUJHQ2F3Y2FybFBaTThHWklfR1NRNHlLTTA4LXVBTk1SVmwwVzBhUFJzME4zODFSSktoYVVlUGxBQlVfMnFYa0NKSl9RcENraHZYcXU4RmotU0VrV1l0Tm5WRkVXb3hnQTFxNzNhZVJjS0RxdG11SHJUdFNwNXFqNzhUb3RUdzIwSEFCV3JmOXdmSWFzeFhGSkE?oc=5",
-    "fonte": "Aurora Israel",
-    "data": "2026-11-23T12:06:28.000Z"
    },
    {
     "titulo": "Padre Najib, padre no sul do Líbano: \"Minha única luta é a da paz\"",
@@ -542,10 +578,10 @@
     "data": "2026-11-18T19:10:00.000Z"
    },
    {
-    "titulo": "Israel manterá zonas de segurança sem prazo, diz ministro da Defesa",
-    "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQUU5oNjZDdGctTDhaTHpoTXdxLWJISXd1aDlWQmkwVEVBOHRvWTUxeC1BMm4yWlNQb011WVFwZEpENmJoM0dudW9KUXItT3lIT1M0XzEwcGlaRWIwTmhGMS1vQXdPREdHX3E4TXk1VXZHUkpHcXMzNHIwZFJxSTJNSEQwRFlvQkxJQ3MwaVhGT3otOUZsQW44TlJpaENPN05yS2tkT2RUZFd4bVFYRE5ySFF30gG3AUFVX3lxTFB1cWVtUExVLWJhYmdycHBYblpyV3BNRS1yOEQyaXNPTWJfZmF5ZjdsMDR0MU5wRTJTNmxvaUk4S05RMG5yUUJuMTgyLUtrb0dOUzliTnB4YmlzQjRIWFZQZGM5U2U2RVBPTkNFSGo2ZnM5MFFXSktMamZrTW5EOE5WNHlzaUhXTkh3elh4VFRYQUVfTW5pdkMwcnM4TjR4bG5hUmJ5RUEtdFJCUm1GWnFMN3hzcUV5VQ?oc=5",
-    "fonte": "Estadão",
-    "data": "2026-11-18T15:10:02.000Z"
+    "titulo": "Notícias de Israel e do mundo judaico em espanhol",
+    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOSTJSZEVRei1VbnBYRjhWclR0NGtFMzNwa3c5LVNhOFdwV3hSR29OWVdndDBDNnJvRmg1QlBocGEwaDFtOUI5Mkl5QWVzRXdsQzh3YXFqang4VkM0VTZqMnoySU9acHdxOHJMRTlEblI3ZXdmcDNKNUtLUmFtWjJCZEEtV3BjdXd0M0daQWVzX1RqcmhKQi15eTIyZHlGMW44VlFneExycE5PSE5RS3R4c1pmWEFOb0VF?oc=5",
+    "fonte": "Aurora Israel",
+    "data": "2026-11-18T09:07:55.000Z"
    }
   ],
   "paquistao": [
@@ -566,33 +602,27 @@
   ],
   "mocambique": [
    {
-    "titulo": "Moçambique/Ataques: UE prolonga missão militar de assistência até final de 2028 com 17,17 ME",
-    "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQWVlMc2FCcll1dERRbWpqN1BtQXpiZmk1QWxGSzNQdzRCNFlyWGNuRFhXeDAxU29qZDVRZGxXM1JxVlhtM2ZiUTl1V3V2RERnZm56X2lCYm44UlpLb2VUYktmNldoWjZkeTlvZERNZjBBNDk2UllHdlJKZDZoZHFsMFZqVlNuZFlOQlV6SkpVazRPMnBVSm0tTTZ3M2U4RVNsMWZCV1Vxdk04SjAxMUUwT0ZPQk9Fd0E5S1c1bWRtOU1OS0RhaVFZ?oc=5",
-    "fonte": "Correio da Manhã Canadá",
-    "data": "2026-11-24T09:41:49.000Z"
+    "titulo": "Cabo Delgado: Circulação de insurgentes provoca pânico e fuga de camponeses em Namanhumbir",
+    "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQN3h2NWJQdDdKNzhPZFRyT2JoTnBKOVZhVERIZTVFNjZGVElsYTkyM290MnFmNnhRbWYyTlhXS0s5aE5sMWtWQzJlakhrNldrM1BsU0ZfMUVTakF3Q3FoVWk1WU1Rb2xFWEtaRVE0UnpFVHNkMGlnT3U4TjNVTE83S3Y2ZER0ZExEZkFjU2RrQWhNRVA0dXZXRndBRDVpNzliZGpZVUpoU3FmM3NTY2xnRg?oc=5",
+    "fonte": "MZNews",
+    "data": "2026-11-24T12:40:32.000Z"
    },
    {
-    "titulo": "Terrorismo: circulação de insurgentes provoca pânico e fuga de camponeses em Namanhumbir",
-    "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPWlBDV19GTnVkSzNoWmFBcU1Wekw3NWx5bnFaSzl2M0dFNm9PR0tDVExWZ24xTlIxTHdxWDNTMWkwZGU1dTlsU090Ty1oM3ZndTZJbEtHQWxKTnJsTV9nMjcyUHBMV1IzOEd4WW5ZYjRxREI1OWFWSWpwVDEwa1dFMkx2azdiQnNOVXMyaTBNZXdOcVVWY1VwRDRRQ0tVc1ZaR2ZxUy1ZNkhHdWJ6ckMxSjB5cTlHY1MzNjBUaWdqeEYwZw?oc=5",
-    "fonte": "Carta de Moçambique",
-    "data": "2026-11-24T08:39:46.000Z"
+    "titulo": "Cabo Delgado: UE prolonga missão militar de assistência",
+    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPQWptYnJmUGQwWVhqaWNQcHRTM1pLTTBtNDlRNGxDLVJzb0Y2aG82alBCYkl2b1hHajhfQXZsRXM0M1dzdmpwaVVWSWJKZjJTNVlydVhTblhFdFlhSDZuOTJtdUlLdmlJRldROW9sVlphVmZwbnV0TkNFVG5lRE1EeFhUdERIMHBUNVR2cnFsRk9aVEsxbXNONFM1c25zbWM1eTJv0gGjAUFVX3lxTE1oWkF4b21TUktGUU1oUjVFbnVqYkg2aldueUVNYmZTT1hTR29LVmtYWnl3cTVvQ0tLSEpMNnc5WV9nUEJydnlYaHBJLXFCWGNqa0xRb2xfLTlMMVFvc3NLV0pydHZYRkg5SENzc2F5S3RBWE5lRDZPd1pMUjl3OWJ1Y2NHeEZzZXJ4c2xOVlpQaURpLVY2aVlZay1LREJJSlJNUnM?oc=5",
+    "fonte": "DW.com",
+    "data": "2026-11-24T12:10:48.000Z"
    },
    {
     "titulo": "Moçambique: População de Namanhumbiri sente-se ameaçada com movimentações de insurgentes nas machambas",
-    "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNNlhQRUw5WHBlV1Roa3lhOGFkZlNYQjZIbmZfWjREVWdMMkFpcnAxaUhhOWJsdzIyek5mNWtpU1MxeXlqM3o4QlY1MmxhdEt4VU9OV3d4RVVyLWw2VHU2bUlsZER2SUFyQ0huTUU1VG10SkJZczNZWmhBclpOTEZxQjA1dW9udDItNV9aYzJidDR3SjRDOWVMWnZrSEtPUmw4dUNMQkE2R3MwdzFENHN2YUtsYXV1eXVkcHhMTURpcDRPY2ZmUkNCQUpYOVg0Zm5JSXNUeGFjc2RFUDJKYjB5U3I2SmZLX2_SAewBQVVfeXFMUHhxNFZqd3lHNThlcUlKN3NacnNuTmwxV0dIYU9aS2dIUk9SLVB2N0xSUEpudjNpMXF0M1ZrdF9iVnNkcVBDLVpjUEtCbXdTQVFLaUpMZFdQUWdKbjA3MEdXMmp3YVRvVl9hSWJjRk03SmhiZUlsemtfbE9NNEFEcXdoTUUtRjlZS3o5Z2RQdmdGQVJVaWM2ZERKU2tZZUw4REl1MTJKa1d1TWlVUzh1WVNkeldKS2JMc2V2YnU1UlZXVm9IcjhLQ3lNVDhrRXFGd0hOVjhpVEV4aDNWem5lUURoOVg5UEJXS0o4MHI?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQeHE0Vmp3eUc1OGVxSUo3c1pyc25ObDFXR0hhT1pLZ0hST1ItUHY3TFJQSm52M2kxcXQzVmt0X2JWc2RxUEMtWmNQS0Jtd1NBUUtpSkxkV1BRZ0puMDcwR1cyandhVG9WX2FJYmNGTTdKaGJlSWx6a19sT000QURxd2hNRS1GOVlLejlnZFB2Z0ZBUlVpYzZkREpTa1llTDhESXUxMkprV3VNaVVTOHVZU2R6V0pLYkxzZXZidTVSVldWb0hyOEtDeU1UOGtFcUZ3SE5WOGlURXhoM1Z6bmVRRGg5WDlQQldLSjgwctIB7AFBVV95cUxQeHE0Vmp3eUc1OGVxSUo3c1pyc25ObDFXR0hhT1pLZ0hST1ItUHY3TFJQSm52M2kxcXQzVmt0X2JWc2RxUEMtWmNQS0Jtd1NBUUtpSkxkV1BRZ0puMDcwR1cyandhVG9WX2FJYmNGTTdKaGJlSWx6a19sT000QURxd2hNRS1GOVlLejlnZFB2Z0ZBUlVpYzZkREpTa1llTDhESXUxMkprV3VNaVVTOHVZU2R6V0pLYkxzZXZidTVSVldWb0hyOEtDeU1UOGtFcUZ3SE5WOGlURXhoM1Z6bmVRRGg5WDlQQldLSjgwcg?oc=5",
     "fonte": "E-Global",
-    "data": "2026-11-23T10:32:14.000Z"
+    "data": "2026-11-23T10:28:19.000Z"
    },
    {
-    "titulo": "Força Local repele terroristas e trava avanço sobre Mueda",
-    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9DUlRSTzUxUDR2WVd4ZTBCajQySTRSMEVRMzNDd0RpNExKekNJX0hUQXhVS2lFRmMxbHBTVzBFTGljdTBGZGUycjVJNjRpQTFmNDJBWDRPSnM2QQ?oc=5",
-    "fonte": "Integrity Magazine",
-    "data": "2026-11-21T14:38:52.000Z"
-   },
-   {
-    "titulo": "Quem fica com o gás de Cabo Delgado?",
-    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPUTVMWWVXUnZVN21GRHdNLVk5MmxYRkxTemxBc2lqaDBES2ZaTXRtdklNZmFGeUtYOWZOU3hHOGVSelRxeWRsVjNZM3M0dmhpWjB3TjVOUzZEYlVXajV6S1k3Vi04cTFnb1NfRzd4Q3p5cjRSNi1oRC15MTNmVXRiT19Gd2swMTBIbHBlS2FJRGM0N0RJRUZvSzl0TQ?oc=5",
-    "fonte": "Tribuna do Sertão",
+    "titulo": "Investimentos em gás de Cabo Delgado atraem atenção internacional",
+    "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNbzBZY0tpZEhaNzF2WjVjem12UTNteTVNc2JuSldlNGNqRFJ4VkFLV3hkSS1TMHA2NWpNWDh5SHo0WkhFdHdiWXFxTndQa3QxMGlVMWpjcnZPVnBUZFV3RnM3QkZ1UzEyYXRDZDlremFBZklQWkhFU0JmbDZoR0JCNjZJSXV5Q0pkdm1BREZCQnFfT1daaFY4eVlTYndkd3ktZF9VZ0tXcTVJalROWEwxQlc2aHFKcG5rT0FJaUdSeVdQVlR6?oc=5",
+    "fonte": "Tribuna do Agreste",
     "data": "2026-11-20T21:00:00.000Z"
    },
    {
@@ -614,56 +644,62 @@
     "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNT0dDaHRXTG9TWElhdDAxVWFiX2FqYkR1ZzJLMlpwdG9GRm9RZG1Nd3JYQlk2dXM5TUhGZ2d3MzlJOXg1bzJSV0xnbEFldXh6cUZIalJmbkNfc2FKa3lMUEtwWnNVZHI3ZUtvR05fSVZQdHdURkQzSm5hXzVucU9MdDBVcmFDRnl3d0xJN2VRSVAtNVdxMVNfVWVwSnZma2YyYkdpYTI4ZHlEWmxaWGdaakVrbER4SzNHSzJRLXFnQdIBzgFBVV95cUxOWWlDb2ZEOGViWXJvSmI5d1dlZmJlLUk3cDBkR2YtS2pRNWVoNWpQX0FLXzBDaER0YWNxRVAxaFF5eERBb2dHMi1YZGZ1MmF6UkFYNVhIOHJkZGdaVEhxSHB2Y1FzUmoxOGRwN3U5YjFWNmI2eVFfaUE4VVdpNWUtdWo5V3dTd2dDVEl2SThBVEZ2WHVwYlJHUHFtT2lrN2tLWS1yOElpdjVVeUZ1SmlMcjJ4MjduLXZObDZXTFJfZzR3RV9TVGhRRGhzaHZkZw?oc=5",
     "fonte": "G1",
     "data": "2026-11-23T03:30:00.000Z"
+   },
+   {
+    "titulo": "VÍDEOS: Cortes do Assunto",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbmVJOFZLbkJIVnpLV3oyWWRYWGp4SHZYSXozcllnbE1lWnFsUDE4WHM0VW5fMHZTTXhWUk9zVmppd0RYcHFnUEdKNFpMRk1oSEwzMUpxdnVzaWFhdG0xQWljZjlZZE1zQ2lub0dfNXR0eDZjOGR3MDFraHplM1BkS09sRWc?oc=5",
+    "fonte": "G1",
+    "data": "2026-11-21T15:29:00.000Z"
    }
   ],
   "eua-venezuela": [
    {
-    "titulo": "Índia se torna segundo maior importador de petróleo venezuelano após acordo com EUA",
-    "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOWHRJQlh5OFpWMjFJWGdYSDBhdGNtRHd6VDEyVmoxYk96djVmNWdNbGlSNXpIWnNldWVrc0tBWnEzMlA3SjdDZG9tdGZxdTNvVUEyaWZhMHlHMGRjSHZNYS14TTkwUWhpYXRHemhDUG5tNEl6amtNT1dhbjY3aVNNenFJQkltSHBuaHZwWGZOV3BfWHdRUDM3enJQUG93bU1YeUdjV3hMT0E5a0w1S0NBaDhYTGFkZ3lrMmxxYmhkVkRnTzFpSXVGbjM4Y3ZJRTNY0gHfAUFVX3lxTE5OeXFoUkVkS0ZwNkZldWtJRGZSTlpwYnNXQ01ubzd5X2lzZVVScGJ3bDhaa0o4eHVHb0pzV3dlWHYwMkJRVlZ3UktiY3NWUHl0N2NKS1QxQzFzZVB6aFQ4V0IyVGhpOGJZOXhDcnFERXA2ekxyYlJLU29nUFdUNzhSMXRXVHRxdndKZVJsUFRWc3BGR0V3UDlmUjhrcG1ibm9RMFAyRnhhcGZnejNyQTlVMVM5X0pzYWpvRm91cjl3ZmZTZk5iQ0RCUDhSR0hrZ1JKWTVxa0wzajZaOUxwQ2s?oc=5",
+    "titulo": "Senado dos EUA investiga papel de JD Vance em contrato de petróleo da Venezuela",
+    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQemNGQnUtQ2VCSDU4cTFsWFM5aG1VeTZvS3pRVWJrZ3hNQkpKRTJ0c2VPTXNqU2ttang4ZzBBRG9EZGxheUZoQ3NmeWdmWElNUE82QldzQjh0NHhRNUZyOFYwVklpX095azlkN1hoTE5FRmdoU054SVhEZXBLeHJHMGVpSEhvR1l2VW5XcTVqd2M4Qm1zUDFsSThtMHhycWpUVG1oQ0NsQUFiM1ZycDkyc0xyTThJQdIBuwFBVV95cUxNMkFPaFJRUmxIVGM5elAteFdmSW5Hbk1IODJSYXJsQ2JqcVFFMG9kemhSNzNsY1FFWkc1czQ3Y3Z6T1c3ZHhzTlUxMUtGSWNvVVRkV1AtVmtCb3lvZTBDRU9sdE0xN09GTkh4WTllZ2gxNmxvWWxhZHQxY1VlZXBNU3JGSmtiTExPMUc0YkV2aW5uTTJCZWk1b1JQeWZNMS02UERXU2Y5TjRWcUNYRzU5MDZPY2c1SzEtVDFF?oc=5",
+    "fonte": "InfoMoney",
+    "data": "2026-11-24T22:09:05.000Z"
+   },
+   {
+    "titulo": "Venezuela divulga plano econômico e estima dívida em US$ 237,5 bilhões",
+    "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQQXJkNC1pUi1md050QnlweHVqUjdaQ0JsNHMxX016Zkp2Y2NDdTZUbHY5anc4MGUtSnotQ3gyR3FIb2VJRlFIV0Y4RGR0WTVReDc5cVFlTnRxVEIwSmk4ZTcwSHQ5S1VRSDJ1MTk0SWl6emZQRlpnbHFJUlB5SGlHZjVXMWx5dWZKMjBQdXBjQ1ZyVGRuQnNxS01CdkZOUXh0ZTRrcDJYOXh1aXVMZkNqRUZOVUE1bnZRTDMxMA?oc=5",
+    "fonte": "Folha de S.Paulo",
+    "data": "2026-11-24T21:55:00.000Z"
+   },
+   {
+    "titulo": "Venezuela, cobiçada pelo imperialismo dos EUA, anuncia plano macroeconômico",
+    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOMFFKLU1PekVYQ3Y5NzkxSmhiSDVjdVVEejBuNmIxSWtUZkN1SkcyaE9nbmcwMFlENDN1ZWdkdkVMSDhKUnFUSUI2ZHZtZGs4LXhTcTFHWkFfUkFHYW0xUmQ4bU8xUWg2YXM4S0RKTk5vbnF0SHRwRklvdzB3MDEwcVBXTkJwMGZ1UnY0N3hXWEduS1ZTazdsZ0NxeGxzZjN3V2tyNHNSZnEtZnYzRlpMSmxNS2VZQQ?oc=5",
+    "fonte": "Brasil 247",
+    "data": "2026-11-24T20:07:33.000Z"
+   },
+   {
+    "titulo": "Venezuela revela dívida de US$ 237 bi e prepara renegociação histórica",
+    "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPSjVIbWhTQ2dfeW1Za0NuZTRteGV4Z210bW90MWZSY05EMWd3bGNMc0tORjlQSU9JVmRGWFRRU0tLam9LMmE3TDJNRDhsaC1lN3dlYnQ4SHpLLUg5UFdyTjNvSkV3WXZWQm5CTzJqVUtrd0haaTdTYVBIVFRJMlpIb2hMd2lQZ1NHT21tcEtmMU50ZTZQSkx1WlBxSlIxci1pQW9YZ25PUjI?oc=5",
+    "fonte": "VEJA",
+    "data": "2026-11-24T19:24:07.000Z"
+   },
+   {
+    "titulo": "Venezuela declara dívida de US$ 237,5 bilhões e abre caminho para reestruturação histórica",
+    "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQMktWU1lSdXhDUk1jeXAtTHBJN2VDQ1gwaEtKaEEyM09uNjhfTHpLTFd6eDFGTjBTQkRYRmMyT1o0M2VKR05fUHNycGtrNnZsX1RHQklFb01pQXpsbTROTVp4X1Z3Z2IzamNQLWg3VTE1UWhJNkxKaVJIaGhmQnh4VkNwc1YwMTVLQ3Z5R1RENFN2WXJGd25ZdTNLeXVDQUd2?oc=5",
+    "fonte": "BPMoney",
+    "data": "2026-11-24T15:58:43.000Z"
+   },
+   {
+    "titulo": "Vance é investigado por acordo de petróleo da Venezuela que Lula tentou barrar",
+    "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPV1plOHd3UzAtazlYTHpsZV81RFo1Wk9Rc0p5MkpVajdrX2FNYXMyZGRQWTRtNFB6cDNaUS1pYnRqUVVTZWk1X2dvQV9jcXV6c2NPeTV5MC1KeEdzdVl1MTdaWHZCVndscVhBei0tUk81eU1lZEVnakU0LWpwUWRUaWRMWHZ3U0pVZ19uYzBFSnB2NTFLclhpUjJuc1FDTTdGT2o4WElURGNHemd2RVdGaUpVZG9STE1vMkl1ZHZkdmR6Zw?oc=5",
+    "fonte": "TV Sim Brasil",
+    "data": "2026-11-24T12:41:17.000Z"
+   },
+   {
+    "titulo": "Exportação de petróleo venezuelano aos EUA alcança máxima desde 2017",
+    "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQbll4MFR1SVhfMHUwOWo1WTB6YVVPQ1B2ZnJNNXU0WEVnTFNJTS13VVJ2WWFaQjFxQTRZcEhxN192TVY3M3d4djlpbVRDekVKRy0wZWUteDVlN1hSYVZxNUJRVk9mdFZQS2VWR05QQmhaRFZWbDZuY0dMckFNUk1PTEtLMHhEVVViT2kyYTY4TDZOMUlFV0RMaDZvOTFFSzdHUVNUaXNSWXk1RHNscWl0R3ZoRnNqekk0ZVpXRzRUMmdXWEZB0gHTAUFVX3lxTE1qa1BYM0hLSlB4VVEwOWpDb3ZVNkw4NWloZlZULXJjTzkwbmR1bWxRT2J0SVZqWUpUZmwzSV82QkRwbmlwUXZZZGdfMlF5aW5BLXVSVTY3MUFHWm0zY2k4aldCb1ZoMFJWMmlmRTFvTmF0LVJkdkhxeGJJUndaTEh3ZjlZY1ZsZFR2TmwyUi1ScFBBOVI4RnNaSGp1THI3SzJWVXBxN3l3c0lGYjBmVGlUdjdUWXJfZUF3RWpqWU1lU09reXFSRlhlNjl2dGJOQzFOdTA?oc=5",
     "fonte": "Valor Econômico",
-    "data": "2026-11-24T04:24:30.000Z"
+    "data": "2026-11-24T12:30:00.000Z"
    },
    {
-    "titulo": "“Trump quer subordinar a Venezuela à tutelagem e à ocupação militar dos EUA”, denuncia Elias Jaua",
-    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQWXpxOFRrb0s3Z3FpeGZpTTFSOFhsb1RFajVhRS16MExaV25YYmIxWkJ2eWVkelY0VEdrUmY3OVdGUjNMYXlOOVA2OEtGVW85cldJc0ZJREhJdEtpanBaUjZjc1pZR2RvZWJVSjhtOVExSzJOMFN6b1ZOazR1WHR1ZldiRTdwYVowRHh2U1BDNVNFQm9MbmVMS2Y2QW9LUWhuUzNTLU9LWl8yYjZvUjM4V3g4UlE4NDJwbnFj?oc=5",
-    "fonte": "Hora do Povo",
-    "data": "2026-11-24T03:56:18.000Z"
-   },
-   {
-    "titulo": "Vice-presidente dos EUA é investigado por suposta ajuda a doador em contrato bilionário de petróleo da Venezuela",
-    "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNTTNSYUVNMktTWnZ2WG1JUXdOWGdEdm1oeEZRSEZJb1MzcDlvdGk4Szd5X1YyNVZ6ZUxjWVczdjRUck8xdnA0N3QwaXZ0bzRyMTJHMGZYU1dKeVhfVE9MM0N2UThhbkRqMW84bjNLQ0hsbjhSeXRVQ3lGaGt0bWdORVF4WU5rLWpxc2NaZnFkekhvOVF1WkNEcEd2d2dudG5NcFRZTjdLbUViengtWWVET2Z3VGVBYUJ1TENhbUtDTm5YZkdTdE9xU3hJT2h2dkdCT01nQ2FnUm8xUmhIdEtJcUV2cDVlN1E?oc=5",
-    "fonte": "bra1.com.br",
-    "data": "2026-11-23T22:34:00.000Z"
-   },
-   {
-    "titulo": "Sequestrado nos EUA, Maduro faz 64 anos e envia mensagem sobre renascimento e reconciliação",
-    "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQUE50Q1ZtOGt6S2lETmdIR2RqaXpPMlBPUzdPZUJjNDQ2d19nYTdGdEJ6QjBoSGNVa29PSjY0WGxaR1I0akQ0SWw5bFJrbGZCV0J1dTZ4YUZvRFRLNkY4Mm9uN3dtalM4ZFdCc3F0cldKNWh5anNjVmRPVk8tc2RuczZtLXBLUjhwaVlFRGYwZ1NUZ1gzb1NzV1ZvQllMUmFUc1MyQ211YVIzZDlSSnd5VDktNkdFWHNWVjh2YnY1RGM4MkJUZUVfcDFaWTFGUjA?oc=5",
-    "fonte": "Brasil de Fato",
-    "data": "2026-11-23T19:07:00.000Z"
-   },
-   {
-    "titulo": "Essequibo: entenda a disputa territorial que envolve Guiana e Venezuela",
-    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNaExKQkZhYTd5NXZqR3B3NU15MnhuREtMX016TTh4OUppWlg1M3N2QmVnS0tEVVdFenpadVVUanN1bnV5ckVCQnR2dkRtMXlWV3puS0xrWDdIX0RvTllyLUlFLUtfOHR1WG1SakxWUGMxWjhBNTEwdTdhR3FzMUxtSndDRnctLTZFY3RjcUl2OWxySFE1V0twd2t4RnNrZ0FpdzJZTGRKVUhuRXdoVWlEakFhbnlWc1Y1M2c?oc=5",
-    "fonte": "R7",
-    "data": "2026-11-21T05:00:00.000Z"
-   },
-   {
-    "titulo": "“Os primeiros a chegar à Venezuela serão os investidores de curto prazo”, diz consultor de Washington",
-    "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQQ01YRE51SVUxQVZPaEFwNGJscjY0MTlFTGZhTUYySlJNQjhtUHF5MkxsVFpIUWc5X0RBa2dVb21IRGpjRGhlbUROQS0yWjV5TkxZV1ZoNFROTGNGNVpKSDRObDJWajlwVndGZG9jcjhuLVBqLW5kOXljYW5PZXcyM091amtlQkxEX05YOGtQcDl1eHhRQzZwWVF5cC1qdDdKWGFqTXR1UVM4djg5ajRDd3BNaVhPVGZ6a2FxWTRJM2d6bWdkRTlVZkxhU0Z0a2xGZVJ1R3duTQ?oc=5",
-    "fonte": "BNamericas",
-    "data": "2026-11-20T17:59:33.000Z"
-   },
-   {
-    "titulo": "Tribunal dos EUA marca audiência do presidente Nicolás Maduro em 17 de dezembro",
-    "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPLWNmcjJIMXRCT3h4am53NlRNdUkwUnFZSDB0dXFod3hTNjNQNUFCRmJYVWlTTkNBUDZFNEh5ZkFnalJ5akFwc3V3Z1YxcTFvbVpDaVc4emhrZWtxM0ZwUzlDdi1pV1o2OENwWFBydkE3LWhLd3gzOUVvMC1Oajg2SzdxN1IxWmVLUG9vU1ZsdlFSM3FuVkY5RE1Gc3pxd3RNTlJyRzJDcUFsdnVUUkg4OHlBdTBiODBYUHZDdW5lNWY?oc=5",
-    "fonte": "Brasil de Fato",
-    "data": "2026-11-20T17:58:00.000Z"
-   },
-   {
-    "titulo": "EUA impõe pacto militar à Venezuela e a chama de ‘parceiro de segurança obediente’",
-    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBDalh3NFRWaXBHZnpoTVdsbzVOSHFkVEMtdEZueHdEOVFvTkVlLU1sMFNyQ2dxMjVlTnNMcGswV1VkQXhaM1JILUtLWk1fRXhWbE9ReGluUnlTaEdGRHRINjdSZzhjSlRNMXNIN2dPSnhXc19VS3hhVnZWX3VsMUk?oc=5",
-    "fonte": "A Nova Democracia",
-    "data": "2026-11-20T16:11:16.000Z"
+    "titulo": "Senado dos EUA investiga atuação de Vance em contrato de petróleo da Venezuela",
+    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQbk5kMlJkQkY3MGgyR1k4R0VTb3J3M1dSeVBKamVicXJJZnlyR1ZvbG5jbW5DR2c2RVdXQUtDaEFualdrQlgzdzJQWUEzNTktcW8wd2htSXAwbzZwSU5KOEpkNjl0NVM0MXEwd1VzRVZIcUYwZmdrQmg2em9sVmdPdFRTZE9wRUd2RHpiM2xwdnBOWXY1N0s2RDlBOHduM09KMG9iOW5ZRlJXS1h5VjVvSjJmYVM1RFJGcFJseTFXb2xFUlhEZ18zbXNB0gHYAUFVX3lxTE50S2xHOUV0QXZpM0hxcjBOa0FOYXpTMFJpcEwyZ3dhMk5QNmJNRU54dU9pamVoWmJ4MUcydVpSN043eG53a3BRa2V0Q3h2TUVLT0gxWE9sMU1DNUEtaTVucEhoRVNtLU9tLU5OSTM4Ui1HNFZJMmRLaWIybEo2UHJVcE9vVGFzMzcyUHp3V0M2ck80OHpCdmVyclVKYWlZcHhFT3NRQUpBUkpQcWVFQU9uWXRZcFJDQ0VSbkJXYzlLcG82cElsVXFfeEI0VjFDbFNsWmNJck9SVQ?oc=5",
+    "fonte": "Valor Econômico",
+    "data": "2026-11-24T12:04:05.000Z"
    }
   ],
   "tailandia-camboja": [
@@ -678,12 +714,6 @@
     "link": "https://news.google.com/rss/articles/CBMirAJBVV95cUxNb2RmaWJXU0RrSjJ6RzhjMUh3MEthQ050ckpwVzBScGJQWHpoRHlBU3Y2Y0FvS1g3dHdCVmJHQ1BySFdJd0xVSkJGcVBONEVZV1ZvdklOYVZPYURtd1pFbkQtaGdEU21FaHA3REVDeDZsUjhzNWgxeXVNUkJ4YUg3QUlEYjhWNU5LNGY5OUpFd2NJVHVnZ2xlOVJUV3M0aEh5azRBS3kwT3ZoV0FrVHNoTWpQb3lIWFlVdC1EcmQ2ZXpKa19HX2JkVko5MXFPazFBczI3SFBYUE5NakJTVnR1b3lsSkFFUFVKTVZERGtjVldJTXEtQ1RvbkhGVkRNMWVacWFPMFBLMVU3WV9UTG1rZloxR2FiSXJDUVFxZXdna1F1bjhONmhreVBxbVM?oc=5",
     "fonte": "Super Rádio Tupi",
     "data": "2026-11-18T23:10:39.000Z"
-   },
-   {
-    "titulo": "Trump acorda com Tailândia eliminação de \"todas as tarifas\" sobre bens de EUA",
-    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNY2EwNUVZSWJOSndBYkcyaDg5OEdpWW01aFhjbENxQXctU0FqQXNETEdlTkpEYW0wbW9va0xTVHAxOGlrSFJzeV9IaElabG9Bc3N5aW5vS1pXV0hpSC1QR3lzWkJ4ekVLMkZnMjY1UmdUaXZ6Yk5RWXFiYURDRXhDV2VBRE5OWWxRUW56clNCVkNNNS1CRE1MUnFWcFJqaTU5bGtuaHhoQlJTQmlCb1N1NTVJdUl5V0hhQjhF?oc=5",
-    "fonte": "dnoticias.pt",
-    "data": "2026-11-17T15:25:00.000Z"
    }
   ]
  },
