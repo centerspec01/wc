@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T22:39:31.086Z",
+ "updated": "2026-11-25T09:00:46.212Z",
  "fontes": {
   "noticias": "Google Notícias / GDELT",
   "lideres": "Wikidata (P35 chefe de Estado, P6 chefe de governo)"
@@ -178,10 +178,34 @@
   ],
   "rdc-m23": [
    {
-    "titulo": "Quénia e RDCongo acordam abrir \"novo capítulo\" na cooperação bilateral",
-    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRHN0aW9BQ1BDWmhyN3NhN1EyZU9xZEl6TnpiQk8wTEJXdkIzbVktZFhyMkFMa3VaaEdYclRmZ0lpYXJZYWVfYWN1elFUb1BoakdUVTIxajN6VlY2N1hhajNwcW5TZ184VXFPa3EzWXJ4Vkg1YjhEZnBlUS14SmwyQ05wbnJrZ05DQ2ViWk1sY0tsc1g1bDdrem96UUQ4Yk5nMGhrSzBnbm1CVnVjXzdSLU9qLXV6Zw?oc=5",
-    "fonte": "Notícias ao Minuto",
-    "data": "2026-11-22T19:32:00.000Z"
+    "titulo": "Congo Rebels Pause Advance on Bunia",
+    "link": "https://www.riotimesonline.com/congo-crp-rebels-pause-bunia-advance-iga-barriere/",
+    "fonte": "riotimesonline.com",
+    "data": "2026-11-25T00:45:00Z"
+   },
+   {
+    "titulo": "DR Congo military plane missing in conflict - torn province",
+    "link": "http://www.africaleader.com/news/279452531/dr-congo-military-plane-missing-in-conflict-torn-province",
+    "fonte": "africaleader.com",
+    "data": "2026-11-24T21:30:00Z"
+   },
+   {
+    "titulo": "Congo - Kinshasa : Diocese of Goma in the Democratic Republic of Congo Marks 10 - Year Anniversary",
+    "link": "https://allafrica.com/stories/202611240074.html",
+    "fonte": "allafrica.com",
+    "data": "2026-11-24T06:30:00Z"
+   },
+   {
+    "titulo": "World Health Organization Warns Rebels and Jihadis Are Making Ebola Worse",
+    "link": "https://www.breitbart.com/africa/2026/11/23/world-health-organization-warns-rebels-and-jihadis-are-making-ebola-worse/",
+    "fonte": "breitbart.com",
+    "data": "2026-11-24T01:45:00Z"
+   },
+   {
+    "titulo": "Ruto , Mudavadi Land In Republic Of Congo For Crucial Summit Addressing M23 Rebel Tensions",
+    "link": "https://www.ghafla.co.ke/ruto-mudavadi-land-in-republic-of-congo-for-crucial-summit-addressing-m23-rebel-tensions/",
+    "fonte": "ghafla.co.ke",
+    "data": "2026-11-22T12:30:00Z"
    }
   ],
   "sahel": [
@@ -442,146 +466,152 @@
   ],
   "mexico": [
    {
-    "titulo": "Como o México capturou um dos narcotraficantes mais procurados do país",
-    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQbXpWT2FQV3dLaHplSGNsQ0VFTDRqNkdxTG50d21YNVlVSDZoRVJvN0RNdE92bllNbzNpczA0VmpULW9PZlUya1VrM2xOcUxiV3ZYNDdPZ2Q4cm9ldWpOamVtQ1hjdFFVTU5zS0ViRFZRem03MEZoUlMwUzRpdmdQbEgxbVFPbXRGQXpCREgtYmhuZDlrYmlrZHYzZw?oc=5",
-    "fonte": "Exame",
-    "data": "2026-11-22T14:09:00.000Z"
+    "titulo": "Arrestatie van weer een kartelbaas stort Mexicaans volk in onzekerheid",
+    "link": "https://nos.nl/artikel/2640910-arrestatie-van-weer-een-kartelbaas-stort-mexicaans-volk-in-onzekerheid",
+    "fonte": "nos.nl",
+    "data": "2026-11-25T05:15:00Z"
    },
    {
-    "titulo": "Operação que capturou megatraficante no México deixa 11 mortos e provoca onda de violência",
-    "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNRUFyclNwOXpITVZSQkhyVnJ4bjdDTGVtRU1JdG9MeENkSGlnMks1Q3M3cjUzTmxRS3FMdzFwOVdKN1g1MjFmQV9PREtoVk44TTk3UnQ1UmtLbmUwdjhEM0pmRHJiLTAxQ0lLRjNuWVV1b1VvVFd2aElyeEs0cm5aMmRhX1pISXdfbzJpOThFd3pYblVQdEo3R1NwSVdLc0t1RHVQdnZ0TW85eFVmOElLRkQ4RUZaaDhNZnVYaVRON3JjSTlUZnpoVTBVTnBVaHRq?oc=5",
-    "fonte": "Jornal Opção",
-    "data": "2026-11-22T13:52:00.000Z"
+    "titulo": "EU reconoce error al reportar detención del  Chapo Isidro  en 2025",
+    "link": "https://www.sinembargo.mx/4909554/una-corte-de-eu-reconoce-su-error-al-reportar-la-detencion-del-chapo-isidro-en-2025/",
+    "fonte": "sinembargo.mx",
+    "data": "2026-11-25T03:15:00Z"
    },
    {
-    "titulo": "A captura do traficante Fausto Isidro Meza Flores, conhecido como “El Chapo Isidro”, e de seu número dois, na cidade de Guasave, em Sinaloa, no México, desencadeou uma onda de violência.⁣ ⁣ Um tiroteio começou por volta das 19h de sexta-feira, 20, se",
-    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBUUEt2djVRTGc4YmFXS0Y2aXVXbHpjM2NFaHQ5cXlBNjFsXy1qUTZVLVNtX2xLNlpuUXotcDRxYWVUZDNsSXFYeGpfc3pMU0dLaGkzSk1R?oc=5",
-    "fonte": "Instagram",
-    "data": "2026-11-22T00:31:30.000Z"
+    "titulo": "Del uso de drones a la captura de  El Chapo Isidro : Así colaboran México y EU en operativos de seguridad – El Financiero",
+    "link": "https://www.elfinanciero.com.mx/mundo/2026/11/24/del-uso-de-drones-a-la-captura-de-el-chapo-isidro-asi-colaboran-mexico-y-eu-en-operativos-de-seguridad/",
+    "fonte": "elfinanciero.com.mx",
+    "data": "2026-11-25T01:15:00Z"
    },
    {
-    "titulo": "México captura ‘El Chapo Isidro’, um dos mais procurados",
-    "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNeUt1UDhZZXBNT1VRU1pGbzlyQ0NiQU5JWFZCM1RZZmhyRnJ0SUpXS1VnWW82QmEwRmNxOU9fVlZTbGNpOWF2ZUZDWnh6cGY4eDFGRXVTemhXcjY1R1FuejNGcUowRzNKNmJSQzZmM3VrTG9BR0lIZ1F6VFdpUjk3Z3poSlZEUTBhMTk2Q1RJU01sdw?oc=5",
-    "fonte": "Radio Shiga",
-    "data": "2026-11-21T22:25:38.000Z"
+    "titulo": "De la intervención no autorizada de la CIA al uso de drones : la compleja la relación México y Estados Unidos en la lucha contra los narcos",
+    "link": "https://www.clarin.com/mundo/intervencion-autorizada-cia-uso-drones-compleja-relacion-mexico-estados-unidos-lucha-narcos_0_OkfR6t8O05.html",
+    "fonte": "clarin.com",
+    "data": "2026-11-25T00:45:00Z"
    },
    {
-    "titulo": "Como El Chapo Isidro ascendeu de pequeno traficante a magnata do narcotráfico no México",
-    "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQR00yODl3Q0dTdGZHS3h6emNzS0JnRUNsa1pYZVlNOTNlNVFocHJjSWtzX1VwOTZvcDZPS2YtdENsRkpQcU82TXg3c0xfeHNFdkZuNnFvWXpyLVJCNXh1cG9LM1Izdko3bndHcGw0NHMtZjlVd2M3SlQzVThhaU5wR0NJdFJRd1FQazRfV3E3Q0JBTm9nbFVDZnFuV0c5M3RHWGlhSXBaXzRDbW5oU3pZLUZqNWJ4SGpscG1USXNOcmdBRnFxZFRXX3RlS1LSAdsBQVVfeXFMTXJ2OVZkSEtOSXFmbXlTVkhOa1hnRUFOUUc4RjRUQjZsOUtIS19lVDd5LTBsbWt2OGU2Nm5kalBmYkV6aTF1bGUxLXctZmgxRUVDRUtuWUVtYURVd01aQ0dIWkFYN0FfZm9jR2ZRazJWYkxvOHBCa0VwU0JmR0hoZ181M2MxeWJSdlhlcUxxSEJaT0c1NzRWaER3ZDh1V2tjMUpGQ0FIX2RsakxINW92YnJDUGZyLUVXTWRSZWlDTDg2Q1VhM3h5bW9QaDRlQW5OcDRYemdOSmstRFJB?oc=5",
-    "fonte": "G1",
-    "data": "2026-11-21T20:38:22.000Z"
+    "titulo": "Intelligence sharing offers a path to easing US - Mexico tensions , experts say",
+    "link": "http://www.cecildaily.com/ap/world/intelligence-sharing-offers-a-path-to-easing-us-mexico-tensions-experts-say/article_53e5eea8-f4ef-5705-b26f-dc6d8d0fc76a.html",
+    "fonte": "cecildaily.com",
+    "data": "2026-11-25T00:15:00Z"
    },
    {
-    "titulo": "Como El Chapo ascendeu de pequeno traficante a magnata do narcotráfico",
-    "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPMjVTTldVTTU5SjZIOThrUmlUVU9tdF90NXkzM3NKVGJBUWpScEtjazExbVNsSWVEOC13eVdLWnZtRlVONmtrNXZxbmRiRHZWM3ZXYm4ySVBqTGdSVU9JTU9STm0xanppdHNZXzNWLVBQVTU3RjRHaE9zZHFBU1E5aWFLXzZFZVlSRkc2NGlzYjVaQldneXRfRTB5Y29zQW53N3Vr?oc=5",
-    "fonte": "avozdocampo",
-    "data": "2026-11-21T20:38:22.000Z"
+    "titulo": "Why the arrest of a Mexican cartel leader could lead to more violence",
+    "link": "https://www.wglt.org/2026-11-24/why-the-arrest-of-a-mexican-cartel-leader-could-lead-to-more-violence",
+    "fonte": "wglt.org",
+    "data": "2026-11-25T00:15:00Z"
    },
    {
-    "titulo": "Estadão",
-    "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPMmVJeWxoYXZKb3FsY2FneUFyZFJuYXlXaVdyWUZ3WU1ZLWdqaHY5S3F1NFhfd0hfYTdrdmYyMFdydUtTOUlrRk9LSVRuV2kxc3RIaFZQMmpPYlFxSGxRM2tnbE1zT3ExQ2hfMmg2RGFyd2EzZDFHc2VLVGp1OVdwUjJtSmxlRFFmbmhxZzA3Zk1CcUdXTWVVczdlQ3dEZVhVcEN1cmdhT3Ayb0FJLUVkakpPLWd0bFJSaU1qLVBTRDZnNWFDaElIUEFOSENTYXh1MkNvWWpDX0pvUQ?oc=5",
-    "fonte": "Estadão",
-    "data": "2026-11-21T20:38:08.000Z"
+    "titulo": "Why the arrest of a Mexican cartel leader could lead to more violence",
+    "link": "https://www.kunr.org/npr-news/2026-11-24/why-the-arrest-of-a-mexican-cartel-leader-could-lead-to-more-violence",
+    "fonte": "kunr.org",
+    "data": "2026-11-25T00:15:00Z"
    },
    {
-    "titulo": "Captura de líder de cartel no México desencadeia onda de violência no estado de Sinaloa",
-    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQMVpUUGR2Y05TY2NLOENHbV9sSVozc2t6Q0JpNmFLcFpWUHhBOTUycHpRbmpQZ2JNUHZCamlTUUV2MGR4anZ0WGFuQmNUVnJUSEhaLTIxQ0F5YjdldjhVMlZlMVVDTi1oTDZ1SUJsV3ppMFo3ekhmVjA5WnpMY2szRGVqQnduQy04c2JOX1hBLUdEMXFrUkZ1YjdFNFpQeGxsMjRjNWJVTldkeGx5NEExOWJMamNJaUsySjNidVBRd1RWMmhTSFcxZNIBzgFBVV95cUxNVWdEd19vdXpCUkJKdU4zZm1JQ1lGdEJoaDlHdFhFeUQxcHVxQVF2RUtYbkMySWo4eUNkYm9wdS1qUnlrMlNzbW9wSHd2TFp1cDNfbXVmYTV4VjJGVmt6c0djeERGMVYzVXBnYTA5bWpIa2RSbjZXSThGbHdSbDY3dGl2ZGtIM053R0RZSzA0SVpiNkFFTDgyNW54dnlNaXdrdklPOEtheFJSanpISHVyS3JTTE9hUURGSThrZXFONElCSDRDQjRGOXIteGRiZw?oc=5",
-    "fonte": "Estadão",
-    "data": "2026-11-21T20:33:00.000Z"
+    "titulo": "Why the arrest of a Mexican cartel leader could lead to more violence",
+    "link": "https://www.kasu.org/public-safety-social-justice/2026-11-24/why-the-arrest-of-a-mexican-cartel-leader-could-lead-to-more-violence",
+    "fonte": "kasu.org",
+    "data": "2026-11-24T23:30:00Z"
    }
   ],
   "ira-israel": [
    {
-    "titulo": "Israel acusa Irã de desenvolver armas químicas",
-    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQWmZGU0VZRjdIbDkyREI4QUVKMjlYbUFjNWtPeTI1R19fRUx4cmswRVcyeFdBYUQwemN6bHYyc0ZZSTduMVRrWWpsUTFXcFFZdzlUeE84dkFGWnV5WFE2ODc3dHhxb3Q4aUFDVTNVRFkwTGh3OHlsZllzeHhBamU5WDN3cjN4MmFJeXNSU2pLX3Fial8zdFpiQmd0ZjVSODRUbU5XN3pXNFlEbzNmWkE?oc=5",
-    "fonte": "Correio do Povo",
-    "data": "2026-11-24T20:46:17.000Z"
+    "titulo": "Donald Trump says Iran war funding lasts through January as Democratic Congress nears",
+    "link": "http://www.jpost.com/middle-east/iran-news/article-916036",
+    "fonte": "jpost.com",
+    "data": "2026-11-25T05:45:00Z"
    },
    {
-    "titulo": "Irã afirma que China e Rússia se opõem a uma mudança em sua doutrina nuclear",
-    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOWkd2U1ZPMFJHUTh5Q3FhUU1XSUJ4VnI4M3gtdUN1eWF5MlBnUFVvYUNwaXBaek0xeDhiRTV3WFo1ZXhrZzNMOVNEUVRkMTNrVG1PU3ZnUThQQ1JxazlYNUZ1R1FuWGM5WDJnelJscVY3S0xnQ00xZ1J1ZzFURnFUdlFHYWFTYWR4VVN5azRBbEY0WWMtWVA1ejMxTnpjX1Y0TGVmQmozdFFGeUVWOEE?oc=5",
-    "fonte": "VEJA",
-    "data": "2026-11-24T03:49:44.000Z"
+    "titulo": "Israel Defence Minister claims Iran developing Chemical Weapons , Tehran warns  US bases within strike range  ",
+    "link": "http://www.batonrougepost.com/news/279452993/israel-defence-minister-claims-iran-developing-chemical-weapons-tehran-warns-us-bases-within-strike-range",
+    "fonte": "batonrougepost.com",
+    "data": "2026-11-25T05:15:00Z"
    },
    {
-    "titulo": "Gadi Eisenkot diz que o Irã não é uma ameaça imediata que precise de ação militar",
-    "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOV9NQmZGVlY0Vm5mY3hsWFJKcElmZDk3dElBeXJFam10RzZYLXZKSlU1cEFxZUxkYUpjeDI3VFI2S0Uwb0lvV1lxMm1udm1odkZSeTRJckpyMXhsU1M4cHljUlEtSW04N1J0RFhReGJjUVcxVkNnb216RXE5eUg2MEVxUjhCMjREUWdEVmYtZGdHbmdBZngyVWlaYkNCa3loQ0RoYXRWbF9qeGZqWFo3U0tnazFhdXJGVXJ3NzJUT0xERmNu?oc=5",
-    "fonte": "Segunda Base",
-    "data": "2026-11-23T21:46:30.000Z"
+    "titulo": "قناة النيل للأخبار | ترامب : حرب إيران ممولة حتى يناير .. والديمقراطيون سيحولون نصرنا على إيران إلى هزيمة",
+    "link": "https://www.nile.eg/%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D8%AD%D8%B1%D8%A8-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D9%85%D9%85%D9%88%D9%84%D8%A9-%D8%AD%D8%AA%D9%89-%D9%8A%D9%86%D8%A7%D9%8A%D8%B1-%D9%88%D8%A7%D9%84%D8%AF%D9%8A",
+    "fonte": "nile.eg",
+    "data": "2026-11-25T05:15:00Z"
    },
    {
-    "titulo": "Eisenkot reduz o tom sobre o Irã e não a considera uma ameaça imediata para Israel",
-    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPbGxCcFJ1NGRZTVB2YVEtd09MeHF0OHowTzN4WWlKRDJKWU9uQXhpYVhGU2ZDdDdkTDZrYVVNYUNZRnZ2Q0VVWnFzMnlHVjFwamdLQVNjMERfVkxoSlZkaEF2dHdZWVBHYzNXbktHenRaNWd5X2ltSFNfamg4dXA3am1DSmNiUzhnSm83bEI4T1JYMTZYY3hCSWpCVTFmc3MzNUpuLUdUbmRXMExGY0hFek85RGlkYTFlYmFpUmpibWJOclZSeHdDeNIByAFBVV95cUxPbGxCcFJ1NGRZTVB2YVEtd09MeHF0OHowTzN4WWlKRDJKWU9uQXhpYVhGU2ZDdDdkTDZrYVVNYUNZRnZ2Q0VVWnFzMnlHVjFwamdLQVNjMERfVkxoSlZkaEF2dHdZWVBHYzNXbktHenRaNWd5X2ltSFNfamg4dXA3am1DSmNiUzhnSm83bEI4T1JYMTZYY3hCSWpCVTFmc3MzNUpuLUdUbmRXMExGY0hFek85RGlkYTFlYmFpUmpibWJOclZSeHdDeA?oc=5",
-    "fonte": "Demócrata",
-    "data": "2026-11-23T16:45:04.000Z"
+    "titulo": "Israel Defence Minister claims Iran developing Chemical Weapons , Tehran warns  US bases within strike range  ",
+    "link": "http://www.iranherald.com/news/279452993/israel-defence-minister-claims-iran-developing-chemical-weapons-tehran-warns-us-bases-within-strike-range",
+    "fonte": "iranherald.com",
+    "data": "2026-11-25T04:15:00Z"
    },
    {
-    "titulo": "Piloto de bombardeiro B-2 dos EUA revela detalhes do ataque surpresa ao Irã.",
-    "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNY3RYbjZ2TkgtRTU4bmVRVnpIbkdjZXlYZHE4TWwwTUtUcWY3cXFMekpZR19ZVkRpdE5PNHpwek9ZQWRjcHRqMUhGNnpZeTFLMmxQWmh1XzhTeHZuY0xUbEI3cFVyZzBvUkFlYnRFaDExNE9mbjI4X2RzVEV1dV9hZ08wcHJJZE40TXE5dVduSjVoclE?oc=5",
-    "fonte": "Vietnam.vn",
-    "data": "2026-11-23T16:20:02.000Z"
+    "titulo": "Donald Trump says Iran war funding lasts through January as Democratic Congress nears",
+    "link": "https://www.jpost.com/middle-east/iran-news/article-916036",
+    "fonte": "jpost.com",
+    "data": "2026-11-25T03:45:00Z"
    },
    {
-    "titulo": "Irã promete reagir a bloqueio naval dos EUA: ‘não recuaremos’",
-    "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQRU83WHJGcktXZ3NKRUFJejBCdDFGTzl6WkZUak5XZDVIWHkwUVE5ZEdwUXdVTDdiQXBoaVpmRGVObmV4TDFhWFVLNlBTN3Z6alZ3OEZUWVhQcDF6WmZvcmFxbUEwZ1FxekZGRlpLLXc5SjZ0S21DYTdxQVU4VDd1ekRNWk11SzRYUi11Wm5TVkQwdnZzUWhCZXVzTEdqS0IxZTFmMUZBa1JrSjFUbWxDYzFndVNxTFRWTE1pbE1GZWp3UE1PbjV2eDZLMC1JX1V0VGRPUW9pOE92Tlk?oc=5",
-    "fonte": "Opera Mundi",
-    "data": "2026-11-23T11:16:13.000Z"
+    "titulo": "New York Times Warns of New U . S .- Israeli  War Crime  ",
+    "link": "https://freebeacon.com/media/new-york-times-warns-of-new-u-s-israeli-war-crime/",
+    "fonte": "freebeacon.com",
+    "data": "2026-11-25T03:30:00Z"
    },
    {
-    "titulo": "Trump ameaça retomar ataques ao Irã em 2027",
-    "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPVFVfTlRmaDF2SFFra1d3Tk5JbjU4UTBZZFRET3g3bFdxYXZOZjBDNUhjaFFzM19GMDNtLVNuZUtxS2ZrSHdydC02MWNWVjZVbFgzRjlQWnh4S3VZVWtaQldEU09tVkc5aWtNR1ZOTkVBcDNOdFBGSUhqQ3NQWElIblZjOA?oc=5",
-    "fonte": "Diário da Guanabara",
-    "data": "2026-11-22T19:27:11.000Z"
+    "titulo": "Israel Defence Minister claims Iran developing Chemical Weapons , Tehran warns  US bases within strike range  ",
+    "link": "http://www.bignewsnetwork.com/news/279452993/israel-defence-minister-claims-iran-developing-chemical-weapons-tehran-warns-us-bases-within-strike-range",
+    "fonte": "bignewsnetwork.com",
+    "data": "2026-11-25T03:15:00Z"
    },
    {
-    "titulo": "Notícias de Israel e do mundo judaico em espanhol",
-    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZVNEeVZIVzZIQWIzSXBIRDJPUHJUdzg1RnVDTGJNRW16TTZ0ell4anV5eVAwaGlHQ0Y1a2lKbXpJTWxWOVQxRUJRb2F6V2hhbFV3c01LOFYwY1dnQUxwN2xQZV9KV3FEYVhhYVQ3RFRTMG8wdVNGS2RsTDJDRXd3M1JVUUlYSU43b3Jv?oc=5",
-    "fonte": "Aurora Israel",
-    "data": "2026-11-22T18:26:07.000Z"
+    "titulo": "Trump : Israel regime change goal in Iran  probably doable , but not my goal",
+    "link": "https://www.israelnationalnews.com/news/437060",
+    "fonte": "israelnationalnews.com",
+    "data": "2026-11-25T03:15:00Z"
    }
   ],
   "libano-hezbollah": [
    {
-    "titulo": "Ministro israelita acusa militares libaneses de colaborarem com Hezbollah",
-    "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOVEdYVWEzcXh3aEQtNk1HdjFDcWZWSHU0a1dsdnNzVVJZTGtPUExZbGpjTXFhbWdrQldHd0xFUWdkdnp2ck1zd245bGdmVHFoZ0Yydk13U3k1NHhDWEtrS3JObG9oUW5HVGk1alNzT0cyeUNybTk1Szd6SWxNenlrMHJOQVhJeGprQXRKVlF0ZnZqNU1yUkpEQkpyRmZQRHVrUlJnS3c3U2RuWHRndHZ6TmpNb3ZndTZTQnI3T1NhUmlLbm9UbENQOVJQQWJIc1U?oc=5",
-    "fonte": "Notícias ao Minuto",
-    "data": "2026-11-24T21:14:00.000Z"
+    "titulo": "Iran War Updates : Iran developing chemical weapons , Israeli defense minister claims – Ya Libnan",
+    "link": "https://yalibnan.com/2026/11/25/iran-war-updates-iran-developing-chemical-weapons-israeli-defense-minister-claims/",
+    "fonte": "yalibnan.com",
+    "data": "2026-11-25T05:45:00Z"
    },
    {
-    "titulo": "Israel comete cerca de 160 violações do espaço aéreo e águas libanesas em 5 dias, registra ONU",
-    "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPajkweGhxZjJsdnZDTlF0WTYxbVM0S3VQeExpODhTZnlBcmVNNnBYUzBNeVNneWZVYVFzcHJRd19sNENsLU5hbU8yNzVOZzdVMGdMQTk1SHRKM0dCUTFKaTJIVHY5STRiX2N1NXgtTURMa2RUc2pWRXFfR3VjRi1aeEtpSXgxSGduM192QTFLTGpzeWxsY1g1R1JsY2dtdTl5MkZtbVVBbnZ5ZC1qaTJtOWt3MHdzcGpDMm1oTTd6RFpMamVKTWRyTlY4SHp4dDZXbDBCTk9ieWNBQTR2OWN0bmFkUmZRUmRs?oc=5",
-    "fonte": "Tribuna do Sertão",
-    "data": "2026-11-24T19:48:00.000Z"
+    "titulo": "Photos show UN peacekeepers surrounded by the devastation in Israeli - occupied southern Lebanon",
+    "link": "http://www.cecildaily.com/ap/world/photos-show-un-peacekeepers-surrounded-by-the-devastation-in-israeli-occupied-southern-lebanon/article_3bebfc64-1fc7-5ed4-ab61-71f0f82477c9.html",
+    "fonte": "cecildaily.com",
+    "data": "2026-11-25T00:15:00Z"
    },
    {
-    "titulo": "Indignação no Líbano após visita de um oficial das FDI a uma escola cristã; primeiro-ministro libanês acusa Israel de tentar “branquear a ocupação”",
-    "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOODNYaWtVT3pFbVU5VFRqMW9uUlVGYU1rTDNLQ0hCTVBzRkQ1S2ljejZGVnhHNm4zWWp2YkhzaW04NWtTV0l1dk5BakJWMkNuY25wOWdHZVRwMmVOWVVwTXNRbDNaSVBMMGRZMU80aG9JcVQ5VkhnYmt4WVVLYVVOdHRoSEI5dlJDdHh2R3NENVpoVlZNc3RZdFJaajFTUkRudS15UlpCanZNUkZ3RGFfM2R0UkpERGxoVk9seFZuLVRiUG55WHBjOWpFZFBVek5GeTZCRE1mY1pKN1FtN2pZdzlaVkZYV0VMZnZEVW1NT19rMHBXV0VzcFFQRGlOWnhtWk5Z?oc=5",
-    "fonte": "All Israel News",
-    "data": "2026-11-23T19:33:01.000Z"
+    "titulo": "Houthi rebels close in on the city of Aden as Yemeni forces dig in behind a fortified line",
+    "link": "https://www.hindustantimes.com/world-news/us-news/houthi-rebels-close-in-on-the-city-of-aden-as-yemeni-forces-dig-in-behind-a-fortified-line-101795554051541.html",
+    "fonte": "hindustantimes.com",
+    "data": "2026-11-24T22:15:00Z"
    },
    {
-    "titulo": "Padre Najib, padre no sul do Líbano: \"Minha única luta é a da paz\"",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQNHRwcHdlYzhGVTNTQnQ2dURhODNaYl9IVGdiUkhtYzB5aTMzY1ZVQm9fMTB4MlczLWFJMHZYQjFPSmlaREhDYktReDcxeWtKWl9PNnREeWxHN0hZUjJzTkdVb21mbVBTdmZwR1d3Mm5iSGlKNGFya25KUTEzYkFmaG05U2hraUtXc0RMNnRJTlZyZU9nbkk1VjA1R1B3UQ?oc=5",
-    "fonte": "Aleteia: vida plena com valor",
-    "data": "2026-11-20T09:37:40.000Z"
+    "titulo": " « Иран разрабатывает химическое оружие » ",
+    "link": "https://www.7kanal.co.il/news/295139",
+    "fonte": "7kanal.co.il",
+    "data": "2026-11-24T22:15:00Z"
    },
    {
-    "titulo": "Médio Oriente: Israel reivindica ataque a local de armas do Hezbollah no leste do Líbano",
-    "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPT01jRU5BN2I2ZVVzbWRBSDNOTnZlN1lqb2ZHR1NucklGeU5yMllfanZtdUJqcmt0WlNLcnFaekZJWkE2SVNESTZSaTR4VV9uU0ZHSGwta0NaU1VhU0ktT1Fkb0t3TFFjSEkzaGlyMlNNclhBY2ZKYms4blRmUnhacWJoZ2c1R1FRZURWWHo3YXVYVE5EcWlnb08zYnJqR3NKX082QXdNMi0ybHNENjZBRjZoRkpuWmJXNmJrOA?oc=5",
-    "fonte": "Executive Digest",
-    "data": "2026-11-19T21:30:00.000Z"
+    "titulo": "Photos show UN peacekeepers surrounded by the devastation in Israeli - occupied southern Lebanon",
+    "link": "http://www.stardem.com/ap/world/photos-show-un-peacekeepers-surrounded-by-the-devastation-in-israeli-occupied-southern-lebanon/article_885f1b0d-6dcb-554b-85eb-4d9e6a07ce86.html",
+    "fonte": "stardem.com",
+    "data": "2026-11-24T21:30:00Z"
    },
    {
-    "titulo": "Cinco alegados membros do Hezbollah acusados de formarem \"grupo armado\"",
-    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOUnR4U2dXZllGU21uSWhteXB2U1gzVS1zRzIzazQwVkotRk1IZHgtVmJMZzFhWWplN3pPRjRGakxhTU9jNkNOOU8wMUVaT3hJX1hIdnhad21WUG5udVRiamw1R2k0UGVvQkhMeTIxV3I5YUQ0cklEZjMwRXJELUtKMXk2X1J0LXZNYWdfMVREUHRJOUhIWjNPTU1lM3Y5SUdMWi1sY3BVM3RYTlVrOGJOR1c5M0ZDYkRldTVqTzhtWWFFeVdDT3JBN0FB?oc=5",
-    "fonte": "Notícias ao Minuto",
-    "data": "2026-11-18T19:10:00.000Z"
+    "titulo": "Col . Jacques Baud – The Greanville Post",
+    "link": "https://www.greanvillepost.com/author/jacques-baud/",
+    "fonte": "greanvillepost.com",
+    "data": "2026-11-24T03:15:00Z"
    },
    {
-    "titulo": "Notícias de Israel e do mundo judaico em espanhol",
-    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOSTJSZEVRei1VbnBYRjhWclR0NGtFMzNwa3c5LVNhOFdwV3hSR29OWVdndDBDNnJvRmg1QlBocGEwaDFtOUI5Mkl5QWVzRXdsQzh3YXFqang4VkM0VTZqMnoySU9acHdxOHJMRTlEblI3ZXdmcDNKNUtLUmFtWjJCZEEtV3BjdXd0M0daQWVzX1RqcmhKQi15eTIyZHlGMW44VlFneExycE5PSE5RS3R4c1pmWEFOb0VF?oc=5",
-    "fonte": "Aurora Israel",
-    "data": "2026-11-18T09:07:55.000Z"
+    "titulo": "Lebanese villagers return to wrecked homes as the Israeli army pulls back",
+    "link": "https://www.wdiy.org/npr-news/2026-11-22/lebanese-villagers-return-to-wrecked-homes-as-the-israeli-army-pulls-back",
+    "fonte": "wdiy.org",
+    "data": "2026-11-22T22:30:00Z"
+   },
+   {
+    "titulo": "Lebanese villagers return to wrecked homes as the Israeli army pulls back",
+    "link": "https://kansaspublicradio.org/npr-news/2026-11-22/lebanese-villagers-return-to-wrecked-homes-as-the-israeli-army-pulls-back",
+    "fonte": "kansaspublicradio.org",
+    "data": "2026-11-22T22:30:00Z"
    }
   ],
   "paquistao": [
@@ -704,16 +734,52 @@
   ],
   "tailandia-camboja": [
    {
-    "titulo": "Hun Manet agradeceu a Trump por promover o cessar-fogo entre Camboja e Tailândia.",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbFZlREl1Uk1zY2xrQ3JyUm5KdlB6czBCUEhSODc5eDFVQ1dYeHhHWDBBbE1KN0V0QzFibExvWFYtMllib3Y4UGFnZWVESWdnUjM3Vm11VHBPT1ZVaWRaQ3JfOXdhRWFwOEFfOEFNYnJjS19aUm5ILWU3VmRlcVJaUnJEYUd3Zk9QNm1ydFBmcEM1RnAzaVZPWW53Vk81QQ?oc=5",
-    "fonte": "Vietnam.vn",
-    "data": "2026-11-20T07:10:03.000Z"
+    "titulo": "ASEAN sec - gen warns of renewed Thai - Cambodian clashes , upbeat on finalising South China Sea pact",
+    "link": "https://asianews.network/asean-sec-gen-warns-of-renewed-thai-cambodian-clashes-upbeat-on-finalising-south-china-sea-pact/",
+    "fonte": "asianews.network",
+    "data": "2026-11-25T05:45:00Z"
    },
    {
-    "titulo": "Monges budistas da Tailândia juntaram cerca de 1,5 milhão de garrafas de cerveja vazias e construíram um templo inteiro, com o chão, as paredes e até os banheiros de vidro",
-    "link": "https://news.google.com/rss/articles/CBMirAJBVV95cUxNb2RmaWJXU0RrSjJ6RzhjMUh3MEthQ050ckpwVzBScGJQWHpoRHlBU3Y2Y0FvS1g3dHdCVmJHQ1BySFdJd0xVSkJGcVBONEVZV1ZvdklOYVZPYURtd1pFbkQtaGdEU21FaHA3REVDeDZsUjhzNWgxeXVNUkJ4YUg3QUlEYjhWNU5LNGY5OUpFd2NJVHVnZ2xlOVJUV3M0aEh5azRBS3kwT3ZoV0FrVHNoTWpQb3lIWFlVdC1EcmQ2ZXpKa19HX2JkVko5MXFPazFBczI3SFBYUE5NakJTVnR1b3lsSkFFUFVKTVZERGtjVldJTXEtQ1RvbkhGVkRNMWVacWFPMFBLMVU3WV9UTG1rZloxR2FiSXJDUVFxZXdna1F1bjhONmhreVBxbVM?oc=5",
-    "fonte": "Super Rádio Tupi",
-    "data": "2026-11-18T23:10:39.000Z"
+    "titulo": "Where Will Military Rule Return Next ? ",
+    "link": "https://slguardian.org/where-will-military-rule-return-next/",
+    "fonte": "slguardian.org",
+    "data": "2026-11-25T03:15:00Z"
+   },
+   {
+    "titulo": "川普新關稅最快本週揭曉 ！ 台灣等16經濟體入列 恐疊加現行稅率 | 國際要聞 | 全球",
+    "link": "https://www.nownews.com/news/6895275",
+    "fonte": "nownews.com",
+    "data": "2026-11-25T02:30:00Z"
+   },
+   {
+    "titulo": "รายงาน FATF ชี้เงินเหยื่อสแกมเมอร์อาจหายจากระบบภายใน 5 นาที แนะเร่งตัดวงจรตั้งแต่ก่อนโอน",
+    "link": "https://prachatai.com/journal/2026/11/119557",
+    "fonte": "prachatai.com",
+    "data": "2026-11-25T00:15:00Z"
+   },
+   {
+    "titulo": "Asean warns on Thai - Cambodian conflict , backs Singapore",
+    "link": "https://www.straitstimes.com/asia/se-asia/asean-sec-gen-warns-of-renewed-thai-cambodian-fighting-backs-spore-to-conclude-south-china-sea-pact",
+    "fonte": "straitstimes.com",
+    "data": "2026-11-24T06:30:00Z"
+   },
+   {
+    "titulo": "Illuminated Floats Light Up Serey Sophorn River Despite Boat Race Suspension",
+    "link": "https://www.akp.gov.kh/post/detail/387811",
+    "fonte": "akp.gov.kh",
+    "data": "2026-11-24T04:45:00Z"
+   },
+   {
+    "titulo": "Танк Оплот - Т показав себе в Таїланді надійнішим за VT - 4 , ",
+    "link": "https://www.unian.ua/weapons/tank-oplot-t-pokazav-sebe-v-tajilandi-nadiynishim-za-vt-4-zmi-13569192.html",
+    "fonte": "unian.ua",
+    "data": "2026-11-24T00:30:00Z"
+   },
+   {
+    "titulo": "社論 》 黃仁勳去留的餘震未已 - 自由評論網",
+    "link": "https://talk.ltn.com.tw/article/paper/1779691",
+    "fonte": "talk.ltn.com.tw",
+    "data": "2026-11-23T22:30:00Z"
    }
   ]
  },
