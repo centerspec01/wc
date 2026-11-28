@@ -1,0 +1,15 @@
+{
+  "name": "Bola de Natal Mágica",
+  "short_name": "Bola de Natal",
+  "description": "Globo de neve com água, temas de Natal, músicas e o Papai Noel.",
+  "start_url": "natal.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#070d20",
+  "theme_color": "#070d20",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "natal-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
